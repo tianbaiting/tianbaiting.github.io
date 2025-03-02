@@ -1,0 +1,50 @@
+[
+  {
+    "name": "directoryStructure.json",
+    "type": "file",
+    "path": "/public/directoryStructure.json"
+  },
+  {
+    "name": "index.html",
+    "type": "file",
+    "path": "/public/index.html"
+  },
+  {
+    "name": "life",
+    "type": "directory",
+    "path": "/public/life",
+    "children": [
+      {
+        "name": "sleep",
+        "type": "directory",
+        "path": "/public/life/sleep",
+        "children": []
+      },
+      {
+        "name": "workout",
+        "type": "directory",
+        "path": "/public/life/workout",
+        "children": []
+      },
+      {
+        "name": "有趣小玩意",
+        "type": "directory",
+        "path": "/public/life/有趣小玩意",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "sci",
+    "type": "directory",
+    "path": "/public/sci",
+    "children": [
+      {
+        "name": "project",
+        "type": "directory",
+        "path": "/public/sci/project",
+        "children": []
+      }
+    ]
+  }
+]
