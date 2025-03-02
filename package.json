@@ -2,10 +2,9 @@
   "name": "myweb",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "generateDirectoryStructure.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "generate": "node generateDirectoryStructure.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/tianbaiting/tianbaiting.github.io/issues"
   },
-  "homepage": "https://github.com/tianbaiting/tianbaiting.github.io#readme",
-  "dependencies": {
-    "express": "^4.21.2"
-  }
+  "homepage": "https://tianbaiting.github.io"
 }

@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const directoryPath = path.join(__dirname, 'public');
-const outputFilePath = path.join(__dirname, 'public', 'directoryStructure.json');
+const directoryPath = path.join(__dirname);
+const outputFilePath = path.join(__dirname, 'directoryStructure.json');
 
 function getDirectoryStructure(dir, level = 0) {
     if (level > 1) return [];
