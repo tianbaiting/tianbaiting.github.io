@@ -2,7 +2,7 @@
 # mkdocs-material: https://squidfunk.github.io/mkdocs-material/
 # mkdocs: https://www.mkdocs.org/user-guide/configuration/
 
-site_name: tianbaiting
+site_name: TBT个人网站
 theme:
   name: material
   #  favicon: attachment/portrait.png
@@ -51,9 +51,9 @@ plugins:
       regex:
         - '.*\.(tmp|bin|tar)$'
 
-nav:
-  - Home: index.md
-  - About: about.md
+# nav:
+#   - Home: index.md
+#   - About: about.md
   # - Documentation:
   #   - Introduction: documentation/introduction.md
   #   - Usage: documentation/usage.md
