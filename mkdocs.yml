@@ -50,3 +50,11 @@ plugins:
         - "*.gz"
       regex:
         - '.*\.(tmp|bin|tar)$'
+
+nav:
+  - Home: index.md
+  - About: about.md
+  # - Documentation:
+  #   - Introduction: documentation/introduction.md
+  #   - Usage: documentation/usage.md
+  # - Contact: contact.md
