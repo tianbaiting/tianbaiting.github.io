@@ -1,3 +1,6 @@
+# To show some relation
+
+
 $$
 \begin{aligned}
 \tau_{00} & =I \quad(3 \times 3 \text { unit matrix }) \\
@@ -23,6 +26,9 @@ $$
 \end{aligned}
 $$
 
+
+
+
 $$
 \begin{aligned}
 & A_x=\frac{-1}{\sqrt{3}}\left(T_{11}-T_{1-1}\right) =-\frac{2}{\sqrt{3}} \operatorname{Im} T_{11} ,\\
@@ -36,3 +42,94 @@ $$
 & A_{z z}=\sqrt{ 2}  T_{20} =\sqrt{2} T_{20} .
 \end{aligned}
 $$
+
+
+$iT_{11} = \text{Re } iT_{11} = \frac{\text{Tr} M (\sqrt{3} \mathcal{P}_y / 2) M^\dagger}{\text{Tr} MM^\dagger} = \frac{\sqrt{3}}{2} A_y$
+
+$T_{20} = \text{Re } T_{20} = \frac{\text{Tr} M (\mathcal{P}_{zz} / \sqrt{2}) M^\dagger}{\text{Tr} MM^\dagger} = \frac{1}{\sqrt{2}} A_{zz}$
+
+$T_{21} = \text{Re } T_{21} = \frac{\text{Tr} M (-\mathcal{P}_{xz} / \sqrt{3}) M^\dagger}{\text{Tr} MM^\dagger} = -\frac{1}{\sqrt{3}} A_{xz}$
+
+$T_{22} = \text{Re } T_{22} = \frac{\text{Tr} M ((\mathcal{P}_{xx} - \mathcal{P}_{yy}) / (2\sqrt{3})) M^\dagger}{\text{Tr} MM^\dagger} = \frac{1}{2\sqrt{3}} (A_{xx} - A_{yy})$
+
+
+
+
+## projectail coordinate
+
+coordinate transform.
+
+极化理论中有许多坐标轴。
+
+
+$\begin{pmatrix} P_x \\ P_y \\ P_z \end{pmatrix} = \begin{pmatrix} \cos \phi & -\sin \phi & 0 \\ \sin \phi & \cos \phi & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} P_{x'} \\ P_{y'} \\ P_{z'} \end{pmatrix}$ 
+
+Polarization transfer and spin correlation experiments in nuclear physics 
+
+which we write symbolically as
+
+$\boldsymbol{p} = U\boldsymbol{p}'$. 
+
+Because the analysing reaction is sensitive to $p_y$ only, the result of interest is
+
+$P_y = P_{x'} \sin \phi + P_{y'} \cos \phi$.
+
+The second-rank tensor, here denoted by $\boldsymbol{pp}$, transforms as
+
+$\boldsymbol{pp} = U\boldsymbol{pp}'\tilde{U}$,
+
+$P_{xx} = P_{x'x'} \cos^2 \phi - 2P_{x'y'} \sin \phi \cos \phi + P_{y'y'} \sin^2 \phi$
+
+$P_{yy} = P_{x'x'} \sin^2 \phi + 2P_{x'y'} \sin \phi \cos \phi + P_{y'y'} \cos^2 \phi$
+
+$P_{zz} = P_{z'z'}$
+
+$P_{xy} = \frac{1}{2}(P_{x'x'} - P_{y'y'}) \sin 2\phi + P_{x'y'} \cos 2\phi$
+
+$P_{xz} = P_{x'z'} \cos \phi - P_{y'z'} \sin \phi$
+
+$P_{yz} = P_{x'z'} \sin \phi + P_{y'z'} \cos \phi$
+
+
+## spin polarization axis
+
+![alt text]({B150CA86-508C-4B79-A9CC-37638F82479D}.png)
+
+We can write the vector components of the beam polarization in the projectile helicity frame by resolving $\hat{S}$ into $x$, $y$ and $z$ components and multiplying by the
+
+vector polarization magnitude, $p_z$:
+
+$p_x = -p_z \sin \beta \sin \phi$
+$p_y = p_z \sin \beta \cos \phi$
+$p_z = p_z \cos \beta$. 
+
+The polarization tensor in the X, Y, Z system is
+
+$PP_{XYZ} = \begin{pmatrix} -\frac{1}{2} P_{zz} & 0 & 0 \\ 0 & -\frac{1}{2} P_{zz} & 0 \\ 0 & 0 & P_{zz} \end{pmatrix}$.
+
+This may be rewritten as
+
+$PP_{XYZ} = \frac{3}{2} P_{zz} \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} - \frac{1}{2} P_{zz} \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}$
+
+so that
+
+$PP_{xyz} = \frac{3}{2} P_{zz} U \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} \tilde{U} - \frac{1}{2} P_{zz} \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}$
+
+where we have used the fact that $U\tilde{U} = I$.
+
+Carrying out the indicated operations, we obtain
+
+$P_{xx} = (\frac{3}{2} U_{xz} U_{xz} - \frac{1}{2}) P_{zz} = \frac{1}{2} (3 \sin^2 \beta \sin^2 \phi - 1) P_{zz}$
+
+$P_{yy} = (\frac{3}{2} U_{yz} U_{yz} - \frac{1}{2}) P_{zz} = \frac{1}{2} (3 \sin^2 \beta \cos^2 \phi - 1) P_{zz}$
+
+$P_{zz} = (\frac{3}{2} U_{zz} U_{zz} - \frac{1}{2}) P_{zz} = \frac{1}{2} (3 \cos^2 \beta - 1) P_{zz}$
+
+$P_{xy} = U_{yx} U_{xz} P_{zz} = - \frac{3}{2} \sin^2 \beta \cos \phi \sin \phi P_{zz}$
+
+$P_{yz} = U_{yz} U_{zz} P_{zz} = \sin \beta \cos \beta \cos \phi P_{zz}$
+
+$P_{xz} = U_{xz} U_{zz} P_{zz} = - \sin \beta \cos \beta \sin \phi P_{zz}$
+
+
+
