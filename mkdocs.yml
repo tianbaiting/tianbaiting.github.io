@@ -1,22 +1,18 @@
-# official tutorial 
-# mkdocs-material: https://squidfunk.github.io/mkdocs-material/
-# mkdocs: https://www.mkdocs.org/user-guide/configuration/
-
 site_name: TBT个人网站
 theme:
   name: material
-  #  favicon: attachment/portrait.png
-  language: zh # 中文，解决中文搜索问题
+  language: zh  # 中文，解决中文搜索问题
   features:
     - navigation.expand 
     - tabs 
+
 markdown_extensions: 
-  - attr_list # https://squidfunk.github.io/mkdocs-material/reference/images/
-  - pymdownx.tabbed  # https://squidfunk.github.io/mkdocs-material/reference/content-tabs/
-  - nl2br # newline-to-break 
+  - attr_list
+  - pymdownx.tabbed
+  - nl2br
   - toc:
-      permalink: '#' # heading anchor 
-      slugify: !!python/name:pymdownx.slugs.uslugify # 解决中文标题解析问题
+      permalink: '#'
+      slugify: !!python/name:pymdownx.slugs.uslugify
   - admonition
   - codehilite:
       guess_lang: false
@@ -30,23 +26,17 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
-  # - pymdownx.emoji:
-      # emoji_generator: !!python/name:pymdownx.emoji.to_png
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.arithmatex:
-      generic: true
-      katex_inline: '$'
-      katex_block: '$$'
-      katex_preview: 'none'
+  - pymdownx.superfences
   - pymdownx.tasklist
   - pymdownx.tilde
+
 plugins:
   - search
-  - roamlinks 
-    #- autolinks 
+  - roamlinks
   - exclude:
       glob:
         - "*.tmp"
@@ -55,10 +45,9 @@ plugins:
       regex:
         - '.*\.(tmp|bin|tar)$'
 
-# nav:
-#   - Home: index.md
-#   - About: about.md
-  # - Documentation:
-  #   - Introduction: documentation/introduction.md
-  #   - Usage: documentation/usage.md
-  # - Contact: contact.md
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css
