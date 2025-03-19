@@ -7,7 +7,6 @@ $$
 \tau_{2 \pm 1} & =\mp \frac{1}{\sqrt{3}}\left(\mathscr{P}_{x z} \pm \mathrm{i} \mathscr{P}_{y z}\right) \\
 \tau_{20} & =\frac{1}{\sqrt{2}} \mathscr{P}_{z z}
 \end{aligned}
-\label{huansuan1}
 $$
 
 $$
@@ -22,7 +21,6 @@ $$
 & \mathscr{P}_{y y}=-\frac{\sqrt{ 3} }{2}\left(\tau_{22}+\tau_{2-2}\right)-\frac{1}{\sqrt{2}} \tau_{20}=-\sqrt{3} \operatorname{Re} \tau_{22}-\frac{1}{\sqrt{2}} \tau_{20} ,\\
 & \mathscr{P}_{z z}=\sqrt{ 2}  \tau_{20} =\sqrt{2} \tau_{20} .
 \end{aligned}
-\label{huansuan2}
 $$
 
 $$
@@ -37,5 +35,4 @@ $$
 & A_{y y}=-\frac{\sqrt{ 3} }{2}\left(T_{22}+T_{2-2}\right)-\frac{1}{\sqrt{2}} T_{20}=-\sqrt{3} \operatorname{Re} T_{22}-\frac{1}{\sqrt{2}} T_{20} ,\\
 & A_{z z}=\sqrt{ 2}  T_{20} =\sqrt{2} T_{20} .
 \end{aligned}
-\label{huansuan3}
 $$
