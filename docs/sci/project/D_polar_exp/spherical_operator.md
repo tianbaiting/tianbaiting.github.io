@@ -1,5 +1,11 @@
 # To show some relation
 
+## sperical operator and cartesian operator
+
+不可约张量表示和直角基表示
+
+
+不妨看看科大的PPT [这里](https://faculty.ustc.edu.cn/_tsf/00/03/jmiYVvRZVJve.ppt)
 
 $$
 \begin{aligned}
