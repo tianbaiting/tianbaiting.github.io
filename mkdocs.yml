@@ -36,7 +36,11 @@ markdown_extensions:
   - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+      katex_inline: '\\('
+      katex_block: '\\['
+      katex_preview: 'none'
   - pymdownx.tasklist
   - pymdownx.tilde
 plugins:
