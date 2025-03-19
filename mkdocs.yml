@@ -38,8 +38,8 @@ markdown_extensions:
   - pymdownx.smartsymbols
   - pymdownx.arithmatex:
       generic: true
-      katex_inline: '\\('
-      katex_block: '\\['
+      katex_inline: '$'
+      katex_block: '$$'
       katex_preview: 'none'
   - pymdownx.tasklist
   - pymdownx.tilde
