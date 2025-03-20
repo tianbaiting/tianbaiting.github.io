@@ -75,6 +75,8 @@ $$
 \end{aligned}
 $$
 
+
+
 $$
 \begin{aligned}
 & \mathscr{P}_x=\frac{-1}{\sqrt{3}}\left(\tau_{11}-\tau_{1-1}\right) =-\frac{2}{\sqrt{3}} \operatorname{Im} \tau_{11} ,\\
