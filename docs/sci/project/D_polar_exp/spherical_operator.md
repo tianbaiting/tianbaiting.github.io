@@ -196,3 +196,17 @@ $P_{xz} = U_{xz} U_{zz} P_{zz} = - \sin \beta \cos \beta \sin \phi P_{zz}$
 
 
 
+
+
+## cross section
+
+$$
+\begin{aligned}
+I(\theta, \phi)=I_0(\theta)[1 & +\frac{3}{2}\left(p_{x^{\prime}} \sin \phi+p_{y^{\prime}} \cos \phi\right) A_y(\theta) \\
+&+\frac{2}{3}\left(p_{x^{\prime} z^{\prime}} \cos \phi-p_{y^{\prime} z^{\prime}} \sin \phi\right) A_{x z}(\theta) \\
+&+\frac{1}{6}\left\{\left(p_{x^{\prime} x^{\prime}}-p_{y^{\prime} y^{\prime}}\right) \cos 2 \phi-2 p_{x^{\prime} y^{\prime}} \sin 2 \phi\right\} \\
+&\left\{A_{x x}(\theta)-A_{yy}(\theta)\right\} \\
+& \left.+\frac{1}{2} p_{z^{\prime} z^{\prime}} A_{z z}(\theta)\right] .
+\end{aligned}
+$$
+
