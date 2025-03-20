@@ -1,5 +1,62 @@
 # To show some relation
 
+
+## density matirx
+
+
+$$
+S_x = \frac{1}{\sqrt{2}} \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}
+$$
+
+$$
+S_y = \frac{1}{\sqrt{2}} \begin{pmatrix} 0 & -i & 0 \\ i & 0 & -i \\ 0 & i & 0 \end{pmatrix}
+$$
+
+$$
+S_z = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & -1 \end{pmatrix}
+$$
+
+$$
+\mathscr{P}_x = S_x \begin{pmatrix} 0 & \frac{1}{\sqrt{2}} & 0 \\ \frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\ 0 & \frac{1}{\sqrt{2}} & 0 \end{pmatrix}
+$$
+
+$$
+\mathscr{P}_y = S_y \begin{pmatrix} 0 & -\frac{i}{\sqrt{2}} & 0 \\ \frac{i}{\sqrt{2}} & 0 & -\frac{i}{\sqrt{2}} \\ 0 & \frac{i}{\sqrt{2}} & 0 \end{pmatrix}
+$$
+
+$$
+\mathscr{P}_z = S_z \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & -1 \end{pmatrix}
+$$
+
+$$
+\mathscr{P}_{xy} = 3 S_x \cdot S_y \begin{pmatrix} \frac{3i}{2} & 0 & -\frac{3i}{2} \\ 0 & 0 & 0 \\ \frac{3i}{2} & 0 & -\frac{3i}{2} \end{pmatrix}
+$$
+
+$$
+\mathscr{P}_{yx} = 3 S_y \cdot S_z \begin{pmatrix} 0 & 0 & 0 \\ \frac{3i}{\sqrt{2}} & 0 & \frac{3i}{\sqrt{2}} \\ 0 & 0 & 0 \end{pmatrix}
+$$
+
+$$
+\mathscr{P}_{xz} = 3 S_x \cdot S_z \begin{pmatrix} 0 & 0 & 0 \\ \frac{3}{\sqrt{2}} & 0 & -\frac{3}{\sqrt{2}} \\ 0 & 0 & 0 \end{pmatrix}
+$$
+
+$$
+\mathscr{P}_{xx} = 3 S_x \cdot S_x - 2 I \begin{pmatrix} -\frac{1}{2} & 0 & \frac{3}{2} \\ 0 & 1 & 0 \\ \frac{3}{2} & 0 & -\frac{1}{2} \end{pmatrix}
+$$
+
+$$
+\mathscr{P}_{yy} = 3 S_y \cdot S_y - 2 I \begin{pmatrix} -\frac{1}{2} & 0 & -\frac{3}{2} \\ 0 & 1 & 0 \\ -\frac{3}{2} & 0 & -\frac{1}{2} \end{pmatrix}
+$$
+
+$$
+\mathscr{P}_{zz} = 3 S_z \cdot S_z - 2 I \begin{pmatrix} 1 & 0 & 0 \\ 0 & -2 & 0 \\ 0 & 0 & 1 \end{pmatrix}
+$$
+
+$$
+\mathscr{P}_{xx} + \mathscr{P}_{yy} + \mathscr{P}_{zz} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix}
+$$
+
+
 ## sperical operator and cartesian operator
 
 不可约张量表示和直角基表示
@@ -50,13 +107,13 @@ $$
 $$
 
 
-$iT_{11} = \text{Re } iT_{11} = \frac{\text{Tr} M (\sqrt{3} \mathcal{P}_y / 2) M^\dagger}{\text{Tr} MM^\dagger} = \frac{\sqrt{3}}{2} A_y$
+$iT_{11} = \text{Re } iT_{11} = \frac{\text{Tr} M (\sqrt{3} \mathscr{P}_y / 2) M^\dagger}{\text{Tr} MM^\dagger} = \frac{\sqrt{3}}{2} A_y$
 
-$T_{20} = \text{Re } T_{20} = \frac{\text{Tr} M (\mathcal{P}_{zz} / \sqrt{2}) M^\dagger}{\text{Tr} MM^\dagger} = \frac{1}{\sqrt{2}} A_{zz}$
+$T_{20} = \text{Re } T_{20} = \frac{\text{Tr} M (\mathscr{P}_{zz} / \sqrt{2}) M^\dagger}{\text{Tr} MM^\dagger} = \frac{1}{\sqrt{2}} A_{zz}$
 
-$T_{21} = \text{Re } T_{21} = \frac{\text{Tr} M (-\mathcal{P}_{xz} / \sqrt{3}) M^\dagger}{\text{Tr} MM^\dagger} = -\frac{1}{\sqrt{3}} A_{xz}$
+$T_{21} = \text{Re } T_{21} = \frac{\text{Tr} M (-\mathscr{P}_{xz} / \sqrt{3}) M^\dagger}{\text{Tr} MM^\dagger} = -\frac{1}{\sqrt{3}} A_{xz}$
 
-$T_{22} = \text{Re } T_{22} = \frac{\text{Tr} M ((\mathcal{P}_{xx} - \mathcal{P}_{yy}) / (2\sqrt{3})) M^\dagger}{\text{Tr} MM^\dagger} = \frac{1}{2\sqrt{3}} (A_{xx} - A_{yy})$
+$T_{22} = \text{Re } T_{22} = \frac{\text{Tr} M ((\mathscr{P}_{xx} - \mathscr{P}_{yy}) / (2\sqrt{3})) M^\dagger}{\text{Tr} MM^\dagger} = \frac{1}{2\sqrt{3}} (A_{xx} - A_{yy})$
 
 
 
