@@ -17,39 +17,39 @@ S_z = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & -1 \end{pmatrix}
 $$
 
 $$
-\mathscr{P}_x = S_x \begin{pmatrix} 0 & \frac{1}{\sqrt{2}} & 0 \\ \frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\ 0 & \frac{1}{\sqrt{2}} & 0 \end{pmatrix}
+\mathscr{P}_x = S_x =\begin{pmatrix} 0 & \frac{1}{\sqrt{2}} & 0 \\ \frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}} \\ 0 & \frac{1}{\sqrt{2}} & 0 \end{pmatrix}
 $$
 
 $$
-\mathscr{P}_y = S_y \begin{pmatrix} 0 & -\frac{i}{\sqrt{2}} & 0 \\ \frac{i}{\sqrt{2}} & 0 & -\frac{i}{\sqrt{2}} \\ 0 & \frac{i}{\sqrt{2}} & 0 \end{pmatrix}
+\mathscr{P}_y = S_y =\begin{pmatrix} 0 & -\frac{i}{\sqrt{2}} & 0 \\ \frac{i}{\sqrt{2}} & 0 & -\frac{i}{\sqrt{2}} \\ 0 & \frac{i}{\sqrt{2}} & 0 \end{pmatrix}
 $$
 
 $$
-\mathscr{P}_z = S_z \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & -1 \end{pmatrix}
+\mathscr{P}_z = S_z =\begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & -1 \end{pmatrix}
 $$
 
 $$
-\mathscr{P}_{xy} = 3 S_x \cdot S_y \begin{pmatrix} \frac{3i}{2} & 0 & -\frac{3i}{2} \\ 0 & 0 & 0 \\ \frac{3i}{2} & 0 & -\frac{3i}{2} \end{pmatrix}
+\mathscr{P}_{xy} = 3 S_x \cdot S_y =\begin{pmatrix} \frac{3i}{2} & 0 & -\frac{3i}{2} \\ 0 & 0 & 0 \\ \frac{3i}{2} & 0 & -\frac{3i}{2} \end{pmatrix}
 $$
 
 $$
-\mathscr{P}_{yx} = 3 S_y \cdot S_z \begin{pmatrix} 0 & 0 & 0 \\ \frac{3i}{\sqrt{2}} & 0 & \frac{3i}{\sqrt{2}} \\ 0 & 0 & 0 \end{pmatrix}
+\mathscr{P}_{yx} = 3 S_y \cdot S_z= \begin{pmatrix} 0 & 0 & 0 \\ \frac{3i}{\sqrt{2}} & 0 & \frac{3i}{\sqrt{2}} \\ 0 & 0 & 0 \end{pmatrix}
 $$
 
 $$
-\mathscr{P}_{xz} = 3 S_x \cdot S_z \begin{pmatrix} 0 & 0 & 0 \\ \frac{3}{\sqrt{2}} & 0 & -\frac{3}{\sqrt{2}} \\ 0 & 0 & 0 \end{pmatrix}
+\mathscr{P}_{xz} = 3 S_x \cdot S_z =\begin{pmatrix} 0 & 0 & 0 \\ \frac{3}{\sqrt{2}} & 0 & -\frac{3}{\sqrt{2}} \\ 0 & 0 & 0 \end{pmatrix}
 $$
 
 $$
-\mathscr{P}_{xx} = 3 S_x \cdot S_x - 2 I \begin{pmatrix} -\frac{1}{2} & 0 & \frac{3}{2} \\ 0 & 1 & 0 \\ \frac{3}{2} & 0 & -\frac{1}{2} \end{pmatrix}
+\mathscr{P}_{xx} = 3 S_x \cdot S_x - 2 I= \begin{pmatrix} -\frac{1}{2} & 0 & \frac{3}{2} \\ 0 & 1 & 0 \\ \frac{3}{2} & 0 & -\frac{1}{2} \end{pmatrix}
 $$
 
 $$
-\mathscr{P}_{yy} = 3 S_y \cdot S_y - 2 I \begin{pmatrix} -\frac{1}{2} & 0 & -\frac{3}{2} \\ 0 & 1 & 0 \\ -\frac{3}{2} & 0 & -\frac{1}{2} \end{pmatrix}
+\mathscr{P}_{yy} = 3 S_y \cdot S_y - 2 I =\begin{pmatrix} -\frac{1}{2} & 0 & -\frac{3}{2} \\ 0 & 1 & 0 \\ -\frac{3}{2} & 0 & -\frac{1}{2} \end{pmatrix}
 $$
 
 $$
-\mathscr{P}_{zz} = 3 S_z \cdot S_z - 2 I \begin{pmatrix} 1 & 0 & 0 \\ 0 & -2 & 0 \\ 0 & 0 & 1 \end{pmatrix}
+\mathscr{P}_{zz} = 3 S_z \cdot S_z - 2 I= \begin{pmatrix} 1 & 0 & 0 \\ 0 & -2 & 0 \\ 0 & 0 & 1 \end{pmatrix}
 $$
 
 $$
