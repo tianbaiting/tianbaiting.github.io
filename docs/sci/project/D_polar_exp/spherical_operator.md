@@ -212,3 +212,18 @@ I(\theta, \phi)=I_0(\theta)[1 & +\frac{3}{2}\left(p_{x^{\prime}} \sin \phi+p_{y^
 \end{aligned}
 $$
 
+## put 4 detector
+
+asymetric
+
+z',y'平面内
+
+$\frac{L-R}{L+R} = \frac{\frac{3}{2} P_z \sin \beta A_y}{1 + \frac{1}{2} P_{zz}(\sin^2 \beta A_{yy} + \cos^2 \beta A_{zz})}$
+
+$\frac{U-D}{U+D} = \frac{P_{zz} \sin \beta \cos \beta A_{xz}}{1 + \frac{1}{2} P_{zz}(\sin^2 \beta A_{xx} + \cos^2 \beta A_{zz})}$
+
+$\frac{2(L-R)}{L+R+U+D} = \frac{\frac{3}{2} P_z \sin \beta A_y}{1 + \frac{1}{2} P_{zz}(3 \cos^2 \beta - 1) A_{zz}}$
+
+$\frac{2(U-D)}{L+R+U+D} = \frac{P_{zz} \sin \beta \cos \beta A_{xz}}{1 + \frac{1}{2} P_{zz}(3 \cos^2 \beta - 1) A_{zz}}$
+
+$\frac{(L+R)-(U+D)}{L+R+U+D} = \frac{-\frac{1}{4} P_{zz} \sin^2 \beta (A_{xx} - A_{yy})}{1 + \frac{1}{2} P_{zz}(3 \cos^2 \beta - 1) A_{zz}}$
