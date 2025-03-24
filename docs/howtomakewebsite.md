@@ -1,9 +1,25 @@
 # how to make a web like this
 
+我采用的是Githubpages. 这样并不需要任何购买服务器,也不需要购买域名. 
+
+然后利用mkdocs,由markdown格式来产生一个静态的HTML网站.(不然直接写前端也蛮麻烦的) 
+
+当代码push到github上,利用github work flow自动部署网页.
 
 ## Github Pages介绍
 
 GitHub Pages 是一个静态网站托管服务，您可以直接从 GitHub 仓库中发布网站。它支持与 Jekyll 等静态网站生成器集成，方便地将 Markdown 文件转换为静态网页。
+
+## MkDocs介绍
+
+MkDocs 是一个用于构建静态文档网站的简单且快速的静态站点生成器。它使用 Markdown 编写文档，并生成一个完全静态的 HTML 网站。MkDocs 的主要特点包括：
+
+- **简单易用**：使用简单的命令行工具和配置文件即可生成文档网站。
+- **主题支持**：内置多个主题，并支持自定义主题。
+- **扩展性强**：支持多种插件，可以扩展 MkDocs 的功能。
+- **实时预览**：在本地编写文档时，可以实时预览文档的效果。
+
+通过使用 MkDocs，您可以轻松地将 Markdown 文件转换为美观的静态网站，并将其托管在 GitHub Pages 上。
 
 ## GitHub Workflow介绍
 
