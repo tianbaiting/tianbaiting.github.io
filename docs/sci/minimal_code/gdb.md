@@ -110,6 +110,60 @@
     }
     ```
 
+示例
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "g++ - 调试RLUD",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/code/root_tranform/runPro",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/code/root_tranform",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++ build ROOT",
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}
+```
+task.json
+
+
+```
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C/C++: g++ build ROOT",
+            "type": "shell",
+            "command": "g++ -g -Iinclude -o runPro src/globals.cpp src/function.cpp src/R_LRUD.cpp $(root-config --cflags --glibs)",
+            "options": {
+                "cwd": "${workspaceFolder}/code/root_tranform"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
+```
+
+
 3. 按 F5 开始调试。
 
 通过以上步骤，您可以在 VSCode 中使用 gdb 进行调试。`
