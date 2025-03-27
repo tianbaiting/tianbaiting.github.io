@@ -1,0 +1,916 @@
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-5.5.12">
+    
+    
+      
+        <title>日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析 - TBT个人网站</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4dd2dd8d.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#日版索尼-xperia-1-ii-刷机后-felica-nfc-及-suica-使用情况分析" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="TBT个人网站" class="md-header-nav__button md-logo" aria-label="TBT个人网站">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            TBT个人网站
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        主页
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../sci/minimal_code/gdb/" class="md-tabs__link">
+          Sci
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../%E5%90%83/" class="md-tabs__link md-tabs__link--active">
+          日本生存指南
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    TBT个人网站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="主页" class="md-nav__link">
+      主页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../howtomakewebsite/" title="how to make a web like this" class="md-nav__link">
+      how to make a web like this
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../%E5%89%8D%E8%A8%80/" title="about" class="md-nav__link">
+      about
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Sci
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Sci" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Sci
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Minimal code
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Minimal code" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        <span class="md-nav__icon md-icon"></span>
+        Minimal code
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sci/minimal_code/gdb/" title="gdb 调试" class="md-nav__link">
+      gdb 调试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sci/minimal_code/%E5%BE%85%E8%A7%A3%E5%86%B3%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" title="to be solved" class="md-nav__link">
+      to be solved
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Project
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Project" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        <span class="md-nav__icon md-icon"></span>
+        Project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sci/project/example/" title="hello world" class="md-nav__link">
+      hello world
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2-2" type="checkbox" id="nav-4-2-2">
+    
+    <label class="md-nav__link" for="nav-4-2-2">
+      D polar exp
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="D polar exp" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        D polar exp
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sci/project/D_polar_exp/spherical_operator/" title="To show some relation" class="md-nav__link">
+      To show some relation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sci/project/D_polar_exp/todo_list/" title="To do list" class="md-nav__link">
+      To do list
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      Useful tips
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Useful tips" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        <span class="md-nav__icon md-icon"></span>
+        Useful tips
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sci/useful_tips/overleaf_vscode%E6%8F%92%E4%BB%B6/" title="overleaf插件" class="md-nav__link">
+      overleaf插件
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sci/useful_tips/%E5%88%A9%E7%94%A8%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E5%88%86%E5%B1%8F/" title="移动设备作为电脑的分屏" class="md-nav__link">
+      移动设备作为电脑的分屏
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../sci/useful_tips/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84vscode/" title="如何安装多个版本的code" class="md-nav__link">
+      如何安装多个版本的code
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      日本生存指南
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="日本生存指南" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        日本生存指南
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%90%83/" title="吃" class="md-nav__link">
+      吃
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB/" title="垃圾分类" class="md-nav__link">
+      垃圾分类
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E6%8E%A5%E6%94%B6%E5%BF%AB%E9%80%92/" title="接受快递" class="md-nav__link">
+      接受快递
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析" class="md-nav__link md-nav__link--active">
+      日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#引用的著作" class="md-nav__link">
+    引用的著作
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E7%94%B5%E5%AD%90%E6%94%AF%E4%BB%98-%E4%BA%A4%E9%80%9A%E5%8D%A1/" title="日本电子支付 - 交通卡" class="md-nav__link">
+      日本电子支付 - 交通卡
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E7%94%B5%E8%AF%9D%E5%8D%A1/" title="电话卡" class="md-nav__link">
+      电话卡
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../%E9%93%B6%E8%A1%8C%E5%8D%A1/" title="银行卡" class="md-nav__link">
+      银行卡
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#引用的著作" class="md-nav__link">
+    引用的著作
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="日版索尼-xperia-1-ii-刷机后-felica-nfc-及-suica-使用情况分析"><strong>日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析</strong><a class="headerlink" href="#日版索尼-xperia-1-ii-刷机后-felica-nfc-及-suica-使用情况分析" title="Permanent link">#</a></h1>
+<p><strong>1. 引言</strong><br />
+FeliCa NFC 技术是由索尼公司开发的一种非接触式 RFID 智能卡系统，在日本被广泛应用于电子货币、公共交通等领域 1。该技术以其快速的交易速度和高度的安全性而闻名，非常适合需要处理大量交易的场景 2。例如，在交通出行方面，FeliCa 技术被用于各种电子交通卡，其中最著名的当属由东日本旅客铁道株式会社（JR East）发行的 Suica（西瓜卡）1。Suica 不仅可以用作乘坐火车和公交的支付工具，还可以在许多商店作为电子货币使用 7。鉴于 FeliCa 和 Suica 在日本日常生活中扮演着重要的角色，用户对于日版手机刷入非日本版本系统后是否会影响其 FeliCa NFC 功能（特别是 Suica 的使用）非常关注。同时，用户也希望了解刷回原始日版系统是否能够保证 FeliCa NFC 功能的恢复。本报告将以索尼 Xperia 1 II 为例，深入分析刷机操作对 FeliCa NFC 功能的影响以及恢复的可能性。<br />
+<strong>2. FeliCa NFC 技术原理及应用</strong></p>
+<ul>
+<li><strong>2.1 技术基础</strong><br />
+  FeliCa 是一种近距离无线通信（NFC）技术，更具体地说是 NFC Type-F，其技术规范符合日本工业标准 JIS X 6319-4 1。在 NFC 的框架下，存在 Type-A、Type-B 和 Type-C 等标准，而 FeliCa 则属于 Type-F 3。FeliCa 与其他 NFC 技术共享 13.56 MHz 的工作频率，其无线通信距离通常在 2 至 10 厘米以内 1。FeliCa 的独特之处在于其优化的安全结构和更高的通信速度 3。例如，FeliCa 的数据传输速度可以高达 424 kbit/s 甚至 847 kbps，这使得交易能够在约 0.1 秒内完成 2。这种高速特性是其在日本高流量场景（如火车站）被广泛采用的关键原因 8。值得注意的是，无论是 FeliCa 卡片还是移动设备中的 FeliCa 实现，都依赖于读卡器提供的外部电源进行工作，自身无需电池 1。安全性方面，FeliCa 采用了动态生成的加密密钥，每次相互认证时都会生成新的密钥，有效防止欺诈行为 1。较新版本的 FeliCa IC 芯片还采用了先进的加密标准（AES）以提升安全性 1。FeliCa 技术不仅符合 JIS X 6319-4 标准，并由日本 IC 卡系统应用委员会（JICSAP）监管，同时也被纳入 NFC 论坛规范的合规性要求中 1。  </li>
+<li><strong>2.2 在日本的应用与普及</strong><br />
+  FeliCa 在日本是事实上的非接触式智能卡系统标准 1。其应用范围极其广泛，涵盖了人们日常生活的多个方面 1。主要的电子货币包括 Edy、Rakuten Edy、nanaco 和 WAON 等 1。在公共交通领域，Suica、PASMO 和 ICOCA 等都是基于 FeliCa 技术的交通卡 1。此外，FeliCa 还被用作电子身份证（如学生证、员工卡和住宅门禁卡）、电子票务和会员卡（如登机牌、零售店和体育俱乐部会员卡）、电子申请以及消费电子和物联网设备的授权 2。特别值得一提的是“Mobile FeliCa”和“Osaifu-Keitai”（手机钱包）系统 1。Mobile FeliCa 是索尼针对移动设备开发的 FeliCa 技术 1，而 Osaifu-Keitai 则是日本标准的移动支付系统，它利用 Mobile FeliCa IC 芯片，允许用户在一台手机上使用多种 FeliCa 服务，例如 Suica 和 Edy 1。Osaifu-Keitai 系统的便利性使其在日本的移动支付生态系统中占据核心地位。为了适应日本市场，包括苹果和谷歌在内的主要智能手机平台都已将 FeliCa 技术集成到其产品中。例如，在日本销售的 iPhone 和 Apple Watch 支持通过 Apple Pay 使用 Suica 1，而日本销售的 Pixel 手机也通过 Google Pay 和 Osaifu-Keitai 系统支持 FeliCa 1。然而，这种支持通常仅限于在日本购买的型号 1。FeliCa 在日本的广泛应用和深度集成，使得拥有 FeliCa 功能对于在日本生活或旅行的用户来说至关重要。</li>
+</ul>
+<p><strong>3. FeliCa 在日版手机中的集成</strong></p>
+<ul>
+<li><strong>3.1 硬件组件</strong><br />
+  日版手机实现 FeliCa 功能通常依赖于设备内部嵌入的专用硬件芯片 12。这个芯片与用于其他非接触式技术（如 Visa/Mastercard PayWave）的标准 NFC 芯片是不同的 12。虽然一些全球发售的手机型号可能配备了能够进行部分 FeliCa 通信（NFC-F）的 NFC 芯片，但在日本完整的 FeliCa 生态系统，特别是涉及金融数据（如 Suica 余额）的安全交易，往往需要这个专用的 FeliCa 硬件 12。例如，尽管全球版本的某些手机可能拥有能够支持 FeliCa 的 NFC 芯片，但在其全球 ROM 中，此功能并未被配置或启用 17。对于安卓手机而言，是否支持 FeliCa 通常取决于制造商是否获得了相关的 FeliCa 授权，并在为日本市场生产的手机中集成了必要的硬件 12。值得注意的是，并非所有在日本销售的安卓手机都具备 FeliCa 功能，这表明制造商在为不同市场和型号配置硬件时会做出特定的选择 12。  </li>
+<li><strong>3.2 软件与中间件</strong><br />
+  除了硬件之外，软件驱动程序和中间件在实现 FeliCa 功能方面也起着至关重要的作用。这些组件通常是针对日本市场特定的，可能不会包含在全球 ROM 中 18。Osaifu-Keitai 框架的重要性不容忽视，它为各种基于 FeliCa 的服务提供了必要的 API 和系统级集成 1。Osaifu-Keitai 系统是日本标准的移动支付系统，它使用索尼的 Mobile FeliCa IC 芯片 1。该框架通过查找系统路径中的特定配置文件来判断是否支持 FeliCa 19。如果非日版 ROM 中缺少这些文件，系统将报告不支持 FeliCa。诸如 Mobile Suica 这样的应用程序也依赖于 Osaifu-Keitai 框架才能与 FeliCa 硬件进行交互 1。这些应用程序通常是为日本的软件生态系统设计的，可能无法在运行非日版 ROM 的手机上正常安装或使用。此外，即使硬件存在，ROM 也需要进行适当的配置以正确路由 FeliCa（Type F）通信。由于不同 SKU 的配置差异，这种路由在自定义 ROM 中可能会中断，导致手机无法作为虚拟卡使用 18。</li>
+</ul>
+<p><strong>4. 刷入非日版 ROM 对 FeliCa 功能的影响</strong></p>
+<ul>
+<li><strong>4.1 缺少驱动和配置</strong><br />
+  对于日版索尼 Xperia 1 II 而言，刷入全球版或其他非日本版本的 ROM 很可能导致 FeliCa 功能失效。这是因为非日版 ROM 通常不包含与日版手机中 FeliCa 硬件进行交互所需的特定驱动程序 18。此外，启用 Android 系统中 FeliCa 路由和功能的系统级配置文件也可能不同或完全缺失 18。用户报告也证实了这一点。例如，有用户反映在将日版索尼 Xperia XZ2 Premium 刷入全球版 ROM 后，NFC 功能完全失效 20。这表明，全球版 ROM 由于缺少特定的驱动和配置，无法支持日版手机中的 FeliCa 硬件。  </li>
+<li><strong>4.2 Osaifu-Keitai 及相关应用缺失</strong><br />
+  Osaifu-Keitai 应用程序及其底层框架通常预装在日版 ROM 中或可以方便地获取到。然而，这些组件可能不会包含在全球版 ROM 中，或者即使存在也可能由于缺少必要的依赖项而无法正常工作 18。自定义 ROM 的开发者甚至可能会移除这些应用程序或通过移除内核或设备节点中的驱动程序来破坏其功能 18。由于 Suica 等应用程序依赖于 Osaifu-Keitai 框架进行安全的交易管理，因此，即使某些基本的 NFC-F 通信在刷入全球版 ROM 后仍然可能存在，但由于缺少 Osaifu-Keitai 框架，FeliCa 的主要功能（如使用 Suica）将无法实现。  </li>
+<li><strong>4.3 区域锁定和软件标志</strong><br />
+  日版 ROM 中可能存在特定的软件标志或区域锁定，专门用于启用 FeliCa 功能。这些标志在非日版 ROM 中可能不存在或设置不同，从而阻止 FeliCa 功能的激活 16。例如，有用户提到，尽管某些手机可能已经具备必要的硬件，但谷歌可能会通过型号和功能标志来锁定 FeliCa 功能 21。此外，在日本销售并支持 NFC 的安卓手机通常都应该支持 NFC-F，但这通常指的是为日本市场销售的手机，而非全球市场版本 21。这暗示了软件配置对于启用 FeliCa 功能的重要性。即使某些全球版手机的 NFC 芯片可能在硬件上支持 FeliCa，但由于缺少相应的软件标志和配置，该功能也可能无法使用 16。</li>
+</ul>
+<p><strong>5. 索尼 Xperia 1 II 与 FeliCa 支持</strong></p>
+<ul>
+<li><strong>5.1 日版型号与 FeliCa 硬件</strong><br />
+  可以确认的是，日版索尼 Xperia 1 II 型号（如 SO-51A、SOG01 和 XQ-AT42）确实配备了 FeliCa 硬件 14。有明确指出，所有日版型号都支持“Felica”支付，这暗示了相关硬件的存在 14。与之相反，全球发售的 Xperia 1 II 型号通常不包含这种专用的 FeliCa 硬件 14。有用户提到，FeliCa 芯片仅存在于日版型号中 22。值得注意的是，日本运营商（如 Docomo 和 KDDI）销售的型号与 SIM 卡无锁的全球版型号在型号编号上有所不同 23。例如，SOG01 和 SO-51A 是日本市场的型号 23。这些不同的型号编号暗示了这些为日本市场定制的版本可能拥有特定的硬件配置（包括 FeliCa）和针对日本市场的软件。  </li>
+<li><strong>5.2 日版与全球版 ROM 的软件差异</strong><br />
+  日版 Xperia 1 II 的 ROM 中包含了 Osaifu-Keitai 框架以及 FeliCa 功能所需的其他相关系统应用程序，而这些组件在全球版 ROM 中通常是不存在的 17。有信息表明，尽管全球版 Xperia 1V 的 NFC 芯片可能在硬件上支持 FeliCa，但在其全球版 ROM 中，此功能并未被配置或启用 17，这说明了软件配置的缺失。此外，日版和全球版 ROM 在预装应用程序、运营商特定的定制（对于运营商锁定的日版型号）以及可能针对日本市场优化的性能方面也存在差异 14。例如，有用户提到，与全球版相比，日版索尼设备的整体体验可能存在服务不佳、发热和性能较低等问题 14，这可能与软件优化有关。软件更新的发布时间也因运营商、市场和地区而异 29。最重要的是，即使将日版固件刷入全球版 Xperia 1 II，如果该全球版手机本身缺少 FeliCa 硬件，也无法启用 FeliCa 功能 14。</li>
+</ul>
+<p><strong>6. 刷回日版原厂系统恢复 FeliCa 功能的可能性</strong></p>
+<ul>
+<li><strong>6.1 硬件完整性</strong><br />
+  假设刷机过程正确无误，且没有对手机硬件造成物理损坏，那么日版索尼 Xperia 1 II 中原有的 FeliCa 芯片应该仍然存在并且功能完好 18。有数据表明，与 Mobile FeliCa 相关的应用程序在刷机过程中不会受到影响，FeliCa 功能也不会被故意破坏，并且 FeliCa 数据在刷机后仍然保留 18。这说明，只要刷机操作规范，FeliCa 硬件本身不太可能在刷入非日版 ROM 后损坏。  </li>
+<li><strong>6.2 软件配置恢复</strong><br />
+  理论上，将日版索尼 Xperia 1 II 刷回其原始的日版 ROM 应该能够恢复 FeliCa 功能所需的所有必要驱动程序、中间件（包括 Osaifu-Keitai）、配置文件和预装应用程序 18。有信息表明，如果在使用自定义 ROM 时 FeliCa 功能出现问题，可以通过恢复到官方安卓版本来修复 18。然而，恢复成功的关键在于使用与该特定日版型号（例如 SO-51A、SOG01）完全匹配的原始 ROM 30。刷入与型号不符的 ROM 可能会导致设备变砖等严重问题 30。因此，务必确保刷机过程能够完全覆盖非日版 ROM，并重新安装原始系统的所有必要分区和组件 30。刷入 ROM 的过程通常会擦除设备上的所有数据，因此，刷回原厂系统也应该能够清除之前刷入的非日版 ROM，并恢复到出厂时的软件状态 33。  </li>
+<li><strong>6.3 潜在的复杂情况</strong><br />
+  在极少数情况下，如果用户之前解锁了手机的引导程序并进行了某些底层修改，那么刷回原厂系统后可能会出现一些小问题。尽管如此，有信息表明，解锁引导程序本身通常不会不可逆地破坏 FeliCa 功能 18。此外，如果用户之前已经设置了 Suica 或其他 FeliCa 服务，那么在刷回原厂系统后，可能需要重新注册或重新配置这些服务，具体取决于数据的存储方式 1。总的来说，刷回正确的原始日版 ROM 是恢复 FeliCa 功能最可靠的方法，因为它能够恢复手机出厂时预设的、与 FeliCa 硬件完美匹配的软件环境。</li>
+</ul>
+<p><strong>7. 引导程序解锁和自定义 ROM 的影响</strong></p>
+<ul>
+<li><strong>7.1 引导程序解锁</strong><br />
+  解锁手机的引导程序通常是刷入自定义 ROM 的先决条件 18。需要注意的是，解锁引导程序可能会导致手机失去保修，并且通常会擦除设备上的所有数据 37。此外，解锁引导程序还会带来一定的安全风险，因为它会禁用“安全启动”这一重要的安全功能 38。值得注意的是，在某些日本运营商锁定的 Xperia 手机型号上，引导程序可能无法解锁 14。例如，有信息表明，某些 au、docomo 或 softbank 版本的 Xperia 手机理论上无法在日本境外使用其他运营商的服务，并且其引导程序也无法解锁 14。  </li>
+<li><strong>7.2 自定义 ROM 上的 FeliCa 功能</strong><br />
+  在自定义 ROM 上使用 FeliCa 功能并不能得到保证，其支持情况因 ROM 而异 18。例如，有明确指出，对于日本用户而言，小米的某些自定义 ROM 不支持 FeliCa 40。自定义 ROM 的开发者可能不会包含 FeliCa 所需的驱动程序或配置，特别是如果该 ROM 不是专门为日本市场构建的 18。然而，也有一些高级用户尝试在非日版 ROM 上启用 FeliCa 功能（例如在 Google Pixel 手机上），但这通常需要 root 权限、解锁引导程序以及一定的技术专业知识，例如修改系统文件或使用自定义模块 17。尽管如此，由于安全考虑，与 FeliCa 相关的金融服务应用程序（如 Suica）可能无法在已解锁引导程序或运行自定义 ROM 的设备上正常工作（SafetyNet/Play Integrity 检测可能会失败）18。</li>
+</ul>
+<p><strong>8. 结论与建议</strong><br />
+综上所述，日版索尼 Xperia 1 II 手机是配备了 FeliCa 硬件的。然而，刷入非日本版本的 ROM 很可能会导致 FeliCa 功能失效，这主要是由于缺少必要的驱动程序、系统配置以及 Osaifu-Keitai 框架。对于已经刷入非日版 ROM 并丢失 FeliCa 功能的用户，最有效的解决办法是刷回与该设备型号相匹配的原始日版 ROM。这样做应该能够恢复 FeliCa 功能，前提是刷机过程正确且硬件没有损坏。用户需要注意使用正确的固件版本，并确保刷机过程完整覆盖之前的系统。解锁引导程序和安装自定义 ROM 会进一步增加 FeliCa 支持的不确定性，可能无法保证功能的正常使用，并且可能带来安全风险，甚至影响相关应用程序的运行。因此，如果用户非常依赖 FeliCa 功能（特别是 Suica 的使用），建议避免在日版索尼 Xperia 1 II 上刷入非日版 ROM。如果已经刷入，则应谨慎地刷回正确的原始日版 ROM。在进行任何刷机操作之前，务必仔细阅读相关教程，并使用与设备型号完全匹配的固件，以避免对手机造成不可挽回的损坏。刷回原厂系统后，用户可能需要重新注册或配置其 FeliCa 服务。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">应用类别</th>
+<th style="text-align: left;">示例</th>
+<th style="text-align: left;">相关 Snippet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">电子货币</td>
+<td style="text-align: left;">Edy, Rakuten Edy, nanaco, WAON, QUICPay</td>
+<td style="text-align: left;">1, 1, 1</td>
+</tr>
+<tr>
+<td style="text-align: left;">公共交通支付</td>
+<td style="text-align: left;">Suica, PASMO, ICOCA, Kitaca, TOICA 等</td>
+<td style="text-align: left;">1, 2, 7, 1, 8, 1, 5</td>
+</tr>
+<tr>
+<td style="text-align: left;">电子身份证</td>
+<td style="text-align: left;">学生证, 员工卡, 住宅门禁卡</td>
+<td style="text-align: left;">2, 2, 5</td>
+</tr>
+<tr>
+<td style="text-align: left;">电子票务/会员卡</td>
+<td style="text-align: left;">登机牌, 零售店和体育俱乐部会员卡</td>
+<td style="text-align: left;">2, 2, 5</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">型号</th>
+<th style="text-align: left;">地区</th>
+<th style="text-align: left;">FeliCa 支持</th>
+<th style="text-align: left;">相关 Snippet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">SO-51A</td>
+<td style="text-align: left;">日本 (Docomo)</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">23, 25</td>
+</tr>
+<tr>
+<td style="text-align: left;">SOG01</td>
+<td style="text-align: left;">日本 (KDDI)</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">23, 25, 43</td>
+</tr>
+<tr>
+<td style="text-align: left;">XQ-AT42</td>
+<td style="text-align: left;">日本 (SIM-Free)</td>
+<td style="text-align: left;">是</td>
+<td style="text-align: left;">23, 44, 25</td>
+</tr>
+<tr>
+<td style="text-align: left;">(Global)</td>
+<td style="text-align: left;">全球</td>
+<td style="text-align: left;">否</td>
+<td style="text-align: left;">14, 14, 22</td>
+</tr>
+</tbody>
+</table>
+<h4 id="引用的著作"><strong>引用的著作</strong><a class="headerlink" href="#引用的著作" title="Permanent link">#</a></h4>
+<ol>
+<li>FeliCa - Wikipedia, 访问时间为 三月 25, 2025， <a href="https://en.wikipedia.org/wiki/FeliCa">https://en.wikipedia.org/wiki/FeliCa</a>  </li>
+<li>Overview of FeliCa - What is FeliCa - Sony Corporation, 访问时间为 三月 25, 2025， <a href="https://www.sony.net/Products/felica/about/">https://www.sony.net/Products/felica/about/</a>  </li>
+<li>Differences between NFC and Felica - The world smallest RFID tag by SK-Electronics, 访问时间为 三月 25, 2025， <a href="https://www.sk-el.co.jp/sales/rfid/en/glossary/b04.html">https://www.sk-el.co.jp/sales/rfid/en/glossary/b04.html</a>  </li>
+<li>Host card emulation of FeliCa - Android Open Source Project, 访问时间为 三月 25, 2025， <a href="https://source.android.com/docs/core/connect/felica">https://source.android.com/docs/core/connect/felica</a>  </li>
+<li>FeliCa - Glossary - DevX, 访问时间为 三月 25, 2025， <a href="https://www.devx.com/terms/felica/">https://www.devx.com/terms/felica/</a>  </li>
+<li>​​​​​​​Introduction to FeliCa technology - YouTube, 访问时间为 三月 25, 2025， <a href="https://www.youtube.com/watch?v=q-GE0py4Mh4">https://www.youtube.com/watch?v=q-GE0py4Mh4</a>  </li>
+<li>Suica - Wikipedia, 访问时间为 三月 25, 2025， <a href="https://en.wikipedia.org/wiki/Suica">https://en.wikipedia.org/wiki/Suica</a>  </li>
+<li>Convenient electronic money cards FeliCa/Suica: Two cashless payment systems spreading in Japan - WorkInJapan.today, 访问时间为 三月 25, 2025， <a href="https://workinjapan.today/hightech/cashless-payment-systems-spreading-japan/">https://workinjapan.today/hightech/cashless-payment-systems-spreading-japan/</a>  </li>
+<li>FeliCa - About NFC - Relationship between NFC and FeliCa - Sony Corporation, 访问时间为 三月 25, 2025， <a href="https://www.sony.net/Products/felica/NFC/relation.html">https://www.sony.net/Products/felica/NFC/relation.html</a>  </li>
+<li>Osaifu-Keitai - Wikipedia, 访问时间为 三月 25, 2025， <a href="https://en.wikipedia.org/wiki/Osaifu-Keitai">https://en.wikipedia.org/wiki/Osaifu-Keitai</a>  </li>
+<li>Advances with Osaifu-Keitai ―Starting Services Supporting NFC (Type A/B) on NTT DOCOMO UIM Cards―, 访问时间为 三月 25, 2025， <a href="https://www.docomo.ne.jp/english/binary/pdf/corporate/technology/rd/technical_journal/bn/vol15_1/vol15_1_022en.pdf">https://www.docomo.ne.jp/english/binary/pdf/corporate/technology/rd/technical_journal/bn/vol15_1/vol15_1_022en.pdf</a>  </li>
+<li>Suica Card for Android? : r/JapanTravelTips - Reddit, 访问时间为 三月 25, 2025， <a href="https://www.reddit.com/r/JapanTravelTips/comments/1adf4o8/suica_card_for_android/">https://www.reddit.com/r/JapanTravelTips/comments/1adf4o8/suica_card_for_android/</a>  </li>
+<li>Apple Pay to debut in Japan with FeliCa tap-to-pay support in 2016, report says, 访问时间为 三月 25, 2025， <a href="https://appleinsider.com/articles/16/09/06/apple-pay-to-debut-in-japan-via-felica-tap-to-pay-in-2016-report-says">https://appleinsider.com/articles/16/09/06/apple-pay-to-debut-in-japan-via-felica-tap-to-pay-in-2016-report-says</a>  </li>
+<li>Question - Japan vs global | XDA Forums, 访问时间为 三月 25, 2025， <a href="https://xdaforums.com/t/japan-vs-global.4543557/">https://xdaforums.com/t/japan-vs-global.4543557/</a>  </li>
+<li>NFC-F / FeliCa support on rooted pixel 5? - XDA Forums, 访问时间为 三月 25, 2025， <a href="https://xdaforums.com/t/nfc-f-felica-support-on-rooted-pixel-5.4462157/">https://xdaforums.com/t/nfc-f-felica-support-on-rooted-pixel-5.4462157/</a>  </li>
+<li>How To Guide - How to enable FeliCa's Osaifu-Keitai in a Non-Japanese Google Pixel 6a (step by step tutorial) | XDA Forums, 访问时间为 三月 25, 2025， <a href="https://xdaforums.com/t/how-to-enable-felicas-osaifu-keitai-in-a-non-japanese-google-pixel-6a-step-by-step-tutorial.4662302/">https://xdaforums.com/t/how-to-enable-felicas-osaifu-keitai-in-a-non-japanese-google-pixel-6a-step-by-step-tutorial.4662302/</a>  </li>
+<li>NFC Felica in the 1V? : r/SonyXperia - Reddit, 访问时间为 三月 25, 2025， <a href="https://www.reddit.com/r/SonyXperia/comments/15hcvwb/nfc_felica_in_the_1v/">https://www.reddit.com/r/SonyXperia/comments/15hcvwb/nfc_felica_in_the_1v/</a>  </li>
+<li>Mobile FeliCa support with custom ROM : u/FelicaDude - Reddit, 访问时间为 三月 25, 2025， <a href="https://www.reddit.com/user/FelicaDude/comments/ktmnf0/mobile_felica_support_with_custom_rom/">https://www.reddit.com/user/FelicaDude/comments/ktmnf0/mobile_felica_support_with_custom_rom/</a>  </li>
+<li>Enabling Osaifu-Keitai function on non-Japanese Google Pixel phones. - GitHub, 访问时间为 三月 25, 2025， <a href="https://github.com/kormax/osaifu-keitai-google-pixel">https://github.com/kormax/osaifu-keitai-google-pixel</a>  </li>
+<li>How to Install global ROM on a Japan Sony XPERIA device I FixandMore I WINDOWS PC, 访问时间为 三月 25, 2025， <a href="https://www.youtube.com/watch?v=nj7dkFb4A50">https://www.youtube.com/watch?v=nj7dkFb4A50</a>  </li>
+<li>Nfc felicia Android Compatible phone. : r/japanlife - Reddit, 访问时间为 三月 25, 2025， <a href="https://www.reddit.com/r/japanlife/comments/148ekhp/nfc_felicia_android_compatible_phone/">https://www.reddit.com/r/japanlife/comments/148ekhp/nfc_felicia_android_compatible_phone/</a>  </li>
+<li>Which models have the FeliCa Chip? : r/SonyXperia - Reddit, 访问时间为 三月 25, 2025， <a href="https://www.reddit.com/r/SonyXperia/comments/1hjoh20/which_models_have_the_felica_chip/">https://www.reddit.com/r/SonyXperia/comments/1hjoh20/which_models_have_the_felica_chip/</a>  </li>
+<li>Sony Xperia 1 II - Wikipedia, 访问时间为 三月 25, 2025， <a href="https://en.wikipedia.org/wiki/Sony_Xperia_1_II">https://en.wikipedia.org/wiki/Sony_Xperia_1_II</a>  </li>
+<li>Xperia 1ii Variants and Regions - XDA Forums, 访问时间为 三月 25, 2025， <a href="https://xdaforums.com/t/xperia-1ii-variants-and-regions.4112083/">https://xdaforums.com/t/xperia-1ii-variants-and-regions.4112083/</a>  </li>
+<li>Is getting a second hand xperia 1 mk ii(Japan Variant) in 2023 worth it? - XDA Forums, 访问时间为 三月 25, 2025， <a href="https://xdaforums.com/t/is-getting-a-second-hand-xperia-1-mk-ii-japan-variant-in-2023-worth-it.4528349/">https://xdaforums.com/t/is-getting-a-second-hand-xperia-1-mk-ii-japan-variant-in-2023-worth-it.4528349/</a>  </li>
+<li>Xperia 1 vs Xperia 1 II - How do they perform with Android 11? - YouTube, 访问时间为 三月 25, 2025， <a href="https://www.youtube.com/watch?v=kkHH9SGEF9g">https://www.youtube.com/watch?v=kkHH9SGEF9g</a>  </li>
+<li>Xperia 1 II vs Galaxy S20 Ultra - I've made my decision! Do you agree? - YouTube, 访问时间为 三月 25, 2025， <a href="https://www.youtube.com/watch?v=M8TwXEm0uXk">https://www.youtube.com/watch?v=M8TwXEm0uXk</a>  </li>
+<li>Any Xperia 1iii region-specific differences? : r/SonyXperia - Reddit, 访问时间为 三月 25, 2025， <a href="https://www.reddit.com/r/SonyXperia/comments/pz7atz/any_xperia_1iii_regionspecific_differences/">https://www.reddit.com/r/SonyXperia/comments/pz7atz/any_xperia_1iii_regionspecific_differences/</a>  </li>
+<li>Xperia 1 II software release overview - Sony UK, 访问时间为 三月 25, 2025， <a href="https://www.sony.co.uk/electronics/support/articles/00293714">https://www.sony.co.uk/electronics/support/articles/00293714</a>  </li>
+<li>Changing roms - Sony, 访问时间为 三月 25, 2025， <a href="https://community.sony.com.mk/t5/1-series/changing-roms/td-p/3919163">https://community.sony.com.mk/t5/1-series/changing-roms/td-p/3919163</a>  </li>
+<li>Does flashing roms again and again it effect hardware health - XDA Forums, 访问时间为 三月 25, 2025， <a href="https://xdaforums.com/t/does-flashing-roms-again-and-again-it-effect-hardware-health.3253844/">https://xdaforums.com/t/does-flashing-roms-again-and-again-it-effect-hardware-health.3253844/</a>  </li>
+<li>Is it possible to kill your phone by installing wrong system software? [duplicate], 访问时间为 三月 25, 2025， <a href="https://android.stackexchange.com/questions/55866/is-it-possible-to-kill-your-phone-by-installing-wrong-system-software">https://android.stackexchange.com/questions/55866/is-it-possible-to-kill-your-phone-by-installing-wrong-system-software</a>  </li>
+<li>Xperia X10: Flashing Wolf's Tweaked v2.3 Gingerbread Firmware - YouTube, 访问时间为 三月 25, 2025， <a href="https://www.youtube.com/watch?v=zHBYJW2verg">https://www.youtube.com/watch?v=zHBYJW2verg</a>  </li>
+<li>Android's E-Waste Problem Can't Be Solved With Custom ROMs - VICE, 访问时间为 三月 25, 2025， <a href="https://www.vice.com/en/article/androids-e-waste-problem-cant-be-solved-with-custom-roms/">https://www.vice.com/en/article/androids-e-waste-problem-cant-be-solved-with-custom-roms/</a>  </li>
+<li>Unlocking Bootloaders - postmarketOS Wiki, 访问时间为 三月 25, 2025， <a href="https://wiki.postmarketos.org/wiki/Unlocking_Bootloaders">https://wiki.postmarketos.org/wiki/Unlocking_Bootloaders</a>  </li>
+<li>Lock and unlock the bootloader | Android Open Source Project, 访问时间为 三月 25, 2025， <a href="https://source.android.com/docs/core/architecture/bootloader/locking_unlocking">https://source.android.com/docs/core/architecture/bootloader/locking_unlocking</a>  </li>
+<li>How to unlock bootloader on Android - MOBILedit Forensic, 访问时间为 三月 25, 2025， <a href="https://forensic.manuals.mobiledit.com/MM/how-to-unlock-bootloader-on-android">https://forensic.manuals.mobiledit.com/MM/how-to-unlock-bootloader-on-android</a>  </li>
+<li>A discussion about bootloader locking/unlocking... AKA I want to relock my bootloader, should I? : r/LineageOS - Reddit, 访问时间为 三月 25, 2025， <a href="https://www.reddit.com/r/LineageOS/comments/n7yo7u/a_discussion_about_bootloader_lockingunlocking/">https://www.reddit.com/r/LineageOS/comments/n7yo7u/a_discussion_about_bootloader_lockingunlocking/</a>  </li>
+<li>What "exactly" are the risks of an unlocked bootloader? : r/privacy - Reddit, 访问时间为 三月 25, 2025， <a href="https://www.reddit.com/r/privacy/comments/v8brr7/what_exactly_are_the_risks_of_an_unlocked/">https://www.reddit.com/r/privacy/comments/v8brr7/what_exactly_are_the_risks_of_an_unlocked/</a>  </li>
+<li>Does the POCO F6Pro purchased in Japan still support Felica after installing xiaomi.eu firmware?, 访问时间为 三月 25, 2025， <a href="https://xiaomi.eu/community/threads/does-the-poco-f6pro-purchased-in-japan-still-support-felica-after-installing-xiaomi-eu-firmware.73517/">https://xiaomi.eu/community/threads/does-the-poco-f6pro-purchased-in-japan-still-support-felica-after-installing-xiaomi-eu-firmware.73517/</a>  </li>
+<li>Felica hardware support for Japanese models? - GrapheneOS Discussion Forum, 访问时间为 三月 25, 2025， <a href="https://discuss.grapheneos.org/d/11697-felica-hardware-support-for-japanese-models">https://discuss.grapheneos.org/d/11697-felica-hardware-support-for-japanese-models</a>  </li>
+<li>jjyao88/unlock-felica-pixel: Unlock Felica on non-Japanese Pixel devices that you can use Felica cards in Japan! - GitHub, 访问时间为 三月 25, 2025， <a href="https://github.com/jjyao88/unlock-felica-pixel">https://github.com/jjyao88/unlock-felica-pixel</a>  </li>
+<li>Xperia 1 II driver - Developer World - Sony, 访问时间为 三月 25, 2025， <a href="https://developer.sony.com/file/download/xperia-1-ii-driver">https://developer.sony.com/file/download/xperia-1-ii-driver</a>  </li>
+<li>Sim-free ver. of Xperia's Latest High-end Model "Xperia 1 II"! - Saiga NAK, 访问时间为 三月 25, 2025， <a href="https://saiganak.com/product/sony-xperia-1-ii-sim-free/">https://saiganak.com/product/sony-xperia-1-ii-sim-free/</a></li>
+</ol>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../%E6%8E%A5%E6%94%B6%E5%BF%AB%E9%80%92/" title="接受快递" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                接受快递
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../%E7%94%B5%E5%AD%90%E6%94%AF%E4%BB%98-%E4%BA%A4%E9%80%9A%E5%8D%A1/" title="日本电子支付 - 交通卡" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                日本电子支付 - 交通卡
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.3636a4ec.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ["navigation.expand", "tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
