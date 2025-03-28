@@ -13,7 +13,7 @@ markdown_extensions:
   - nl2br
   - toc:
       permalink: '#'
-      slugify: !!python/name:pymdownx.slugs.uslugify
+  - pymdownx.slugs
   - admonition
   - codehilite:
       guess_lang: false
@@ -36,7 +36,7 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra_files:
-  - docs/google123456789.html
+  - docs/google0ec64d869ee59589.html
   - docs/robots.txt
   
 plugins:
