@@ -99,3 +99,45 @@ GitHub Workflow 是 GitHub Actions 的一部分，它允许您在 GitHub 仓库�
 
 完成以上步骤后，您的网站将自动部署到 GitHub Pages，并可以通过 `https://username.github.io` 访问。
 
+
+## 如何让谷歌能够搜索到个人网页
+
+为了让谷歌能够搜索到您的个人网页，您需要确保您的网站对搜索引擎友好，并遵循以下步骤：
+
+1. **启用 GitHub Pages 索引**：
+   - 确保您的 GitHub Pages 网站是公开的，并且没有被设置为私有仓库。
+   - 检查仓库的 `robots.txt` 文件，确保没有禁止搜索引擎爬取您的网站内容。
+
+2. **提交网站到 Google Search Console**：
+   - 访问 [Google Search Console](https://search.google.com/search-console/)。
+   - 登录您的 Google 帐户并添加您的网站 URL。
+   - 验证您的网站所有权，可以通过 HTML 文件上传、DNS 验证或其他方式完成。
+
+3. **生成并提交 Sitemap**：
+   - MkDocs 会自动生成 `sitemap.xml` 文件，您可以在部署后通过 `https://username.github.io/sitemap.xml` 访问。
+   - 在 Google Search Console 中提交您的 Sitemap URL，帮助谷歌更快地索引您的网站。
+
+4. **优化 SEO（搜索引擎优化）**：
+   - 在 `mkdocs.yml` 文件中添加 `site_description` 和 `site_author` 字段。
+   - 使用 MkDocs 的 SEO 插件（如 `mkdocs-seo-plugin`）来优化您的网站元数据。
+     ```bash
+     pip install mkdocs-seo-plugin
+     ```
+     在 `mkdocs.yml` 中添加：
+     ```yaml
+     plugins:
+       - seo
+     ```
+
+5. **确保内容质量**：
+   - 提供高质量、有价值的内容，确保页面标题和描述清晰且相关。
+   - 使用适当的关键词，但避免关键词堆砌。
+
+6. **建立外部链接**：
+   - 在其他网站或社交媒体上分享您的网站链接，增加外部链接的数量和质量。
+
+完成以上步骤后，您的个人网页将更容易被谷歌搜索到，并在搜索结果中获得更高的排名。
+
+
+
+
