@@ -43,7 +43,7 @@ plugins:
   - search
   - roamlinks
   - sitemap:  # 添加这一部分
-      sitemap_url: https://tianbaiting.github.io/
+      site_url: https://tianbaiting.github.io/
       priority: 0.8  # 可选：页面优先级
       changefreq: weekly  # 可选：更新频率
   - exclude:
