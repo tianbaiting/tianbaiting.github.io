@@ -34,6 +34,10 @@ markdown_extensions:
   - pymdownx.tasklist
   - pymdownx.tilde
 
+extra_files:
+  - docs/google123456789.html
+  - docs/robots.txt
+  
 plugins:
   - search
   - roamlinks
