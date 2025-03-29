@@ -35,13 +35,11 @@ theme:
     - search.share
     - content.tabs.link
 
-markdown_extensions: 
-  - attr_list
-  - pymdownx.tabbed
-  - nl2br
+markdown_extensions:
   - toc:
       permalink: '#'
-  - pymdownx.slugs
+  - pymdownx.tabbed
+  - nl2br
   - admonition
   - codehilite:
       guess_lang: false
@@ -49,18 +47,6 @@ markdown_extensions:
   - footnotes
   - meta
   - def_list
-  - pymdownx.arithmatex
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.caret
-  - pymdownx.critic
-  - pymdownx.details
-  - pymdownx.inlinehilite
-  - pymdownx.magiclink
-  - pymdownx.mark
-  - pymdownx.smartsymbols
-  - pymdownx.superfences
-  - pymdownx.tasklist
   - pymdownx.tilde
 
 extra_files:
@@ -70,10 +56,6 @@ extra_files:
 plugins:
   - search
   - roamlinks
-  - sitemap:  # 添加这一部分
-      site_url: https://tianbaiting.github.io/
-      priority: 0.8  # 可选：页面优先级
-      changefreq: weekly  # 可选：更新频率
   - exclude:
       glob:
         - "*.tmp"
