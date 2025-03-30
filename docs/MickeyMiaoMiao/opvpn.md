@@ -65,4 +65,106 @@ OpenVPN 数据封装过程如下：
 7. 解密后的数据从虚拟接口发送到内部网络
 
 
+# 配置文件技巧
+## 路由
+
+在 OpenVPN 客户端配置文件中，可以插入以下路由规则以实现特定目标 IP 的流量通过默认网关转发：
+
+```
+# bilibili
+route 119.3.70.188 255.255.255.255 net_gateway
+# baidu
+route 39.156.66.10 255.255.255.255 net_gateway
+```
+
+### 格式说明
+
+```
+route [目标IP] [子网掩码] [网关]
+```
+
+
+
+- **目标IP**：指定需要路由的目标地址。可通过ping 网址得到.
+  
+![1743371212659](./.opvpn/1743371212659.png)
+
+- **子网掩码**：定义目标地址的子网范围，通常为 `255.255.255.255` 表示单个 IP。
+- **网关**：指定流量的出口网关，`net_gateway` 表示使用默认网关。
+
+通过上述配置，可以确保特定流量绕过 VPN 隧道，直接通过本地网络访问目标地址。
+
+## 多人登录一个账号
+在我们搭建完 OpenVPN 后，登录验证方式分为证书验证、账户验证、证书+账户。无论哪种，一个证书或账户只能同时登录一个终端。
+
+如果团队有很多人，为每个人创建个账户还可以接受，如果用证书，为每个人创建一个证书管理起来就很混乱了，所以有没有方法，多人用一个证书，有人员变动的时候，吊销证书换一个新的，这样只用维护一个证书就可以了。
+
+**操作**
+
+我这里不再阐述如何安装 OpenVPN，只讲与本文相关的重要配置。
+
+
+
+
+修改 OpenVPN 配置文件 `server.conf`，内容如下：
+
+
+```
+port 1194
+proto udp
+dev tun
+ca ca.crt
+cert server.crt
+key server.key  # This file should be kept secret
+dh dh.pem
+server 10.8.0.0 255.255.255.0
+ifconfig-pool-persist ipp.txt
+push "route 172.16.1.0 255.255.255.0"
+keepalive 10 120
+cipher AES-256-CBC
+persist-key
+persist-tun
+status openvpn-status.log
+verb 3
+explicit-exit-notify 1
+duplicate-cn
+```
+
+**`duplicate-cn`：** 这个字段就是开启一个证书或账户多人同时登录。
+
+**解释：**
+
+* **`duplicate-cn`**：这个配置项是实现单证书多人同时登录的关键。OpenVPN 默认情况下会阻止具有相同证书通用名称（CN）的多个客户端同时连接。启用此选项后，OpenVPN 允许具有相同 CN 的多个客户端同时连接。
+
+**注意事项：**
+
+* 安全性：使用单证书多人同时登录会降低安全性，因为所有用户共享同一个证书。如果证书泄露，所有用户的连接都可能受到威胁。因此，请务必妥善保管证书。
+* 日志和监控：启用 `duplicate-cn` 后，监控和日志记录可能会变得更加复杂。您需要仔细考虑如何跟踪和管理多个使用相同证书的连接。
+* 网络冲突：当多个客户端使用相同的虚拟 IP 地址时，可能会出现网络冲突。OpenVPN 的 `ifconfig-pool-persist` 选项可以帮助管理 IP 地址分配，但您仍然需要仔细规划您的 IP 地址空间。
+* 证书吊销：当人员变动或者证书出现问题时，需要及时吊销证书，并重新生成新的证书，并分发给需要使用vpn的人员。
+
+
+
+## OPENVPN 同时连接多个 VPN
+
+
+**背景：** 当需要维护多个不同地点的网络的时候，经常需要频繁切换 VPN，效率极低。
+
+**原因：** Windows 版 OpenVPN 客户端安装时默认只安装一个 TAP 虚拟网卡，如果需要同时连接多个，则需要为每个 VPN 配置文件配置一个 TAP 虚拟网卡。
+
+**增加虚拟网卡：** 用管理员权限执行以下命令，即可增加一块 TAP 虚拟网卡，需要多块执行多次即可，然后在 ovpn 配置文件中增加 “nobind” 的配置项。
+
+```bash
+"C:\Program Files\TAP-Windows\bin\addtap.bat"
+```
+检查虚拟网卡：
+
+```Bash
+"C:\Program Files\OpenVPN\bin\openvpn" --show-adapters
+```
+当需要指定某个配置文件使用特定的虚拟网卡的时候可以将配置项设置如下：
+
+dev tap
+dev-node "以太网 3"
+
 [妙妙屋](https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh)

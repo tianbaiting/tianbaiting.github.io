@@ -74,6 +74,11 @@ extra_files:
 plugins:
   - search
   - roamlinks
+  # - giscus:
+  #   repo: tianbaiting/tianbaiting.github.io
+  #   repo_id: R_kgDOOB38lw
+  #   category: Announcements
+  #   category_id: DIC_kwDOOB38l84Comp4
   - exclude:
       glob:
         - "*.tmp"
@@ -81,6 +86,8 @@ plugins:
         - "*.gz"
       regex:
         - '.*\.(tmp|bin|tar)$'
+
+
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
