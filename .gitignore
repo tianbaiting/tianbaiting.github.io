@@ -1,1 +1,4 @@
 draft/
+.foam/
+.vscode/
+.DS_Store

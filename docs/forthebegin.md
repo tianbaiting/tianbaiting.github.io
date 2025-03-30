@@ -1,5 +1,5 @@
 ---
-title: about
+title: 关于
 tags:
   - 你的标签名字
 hide:
