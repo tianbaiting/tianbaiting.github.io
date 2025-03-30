@@ -151,5 +151,6 @@ GitHub Workflow 是 GitHub Actions 的一部分，它允许您在 GitHub 仓库�
 完成以上步骤后，您的个人网页将更容易被谷歌搜索到，并在搜索结果中获得更高的排名。
 
 
+## giscus 做评论区
 
-
+很多文档里关于overrides的结构似乎有误。 我经过实验证明，giscus得写在main.html上。

@@ -1,4 +1,4 @@
 draft/
 .foam/
-.vscode/
-.DS_Store
+site/
+mkdocs_upload.sh
