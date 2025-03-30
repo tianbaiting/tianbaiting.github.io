@@ -1,3 +1,15 @@
+---
+title: 怎样做这样一个网站
+tags:
+  - 你的标签名字
+hide:
+  #- navigation # 显示右侧导航
+  #- toc #显示左侧导航
+comments: true  #评论，默认不开启
+---
+
+
+
 # how to make a web like this
 
 我采用的是Githubpages. 这样并不需要任何购买服务器,也不需要购买域名. 
