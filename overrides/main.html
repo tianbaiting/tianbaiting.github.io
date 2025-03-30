@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 
-{% block content %}
+<nav class="md-header__button md-header__button--theme" title="切换主题">
+  <label class="md-icon">
+    <input type="checkbox" data-md-toggle="theme">
+  </label>
+</nav>
+
+{% block disqus %}
   {{ super() }}
   <!-- Giscus -->
   <h2 id="__comments">{{ lang.t("meta.comments") }}</h2>
