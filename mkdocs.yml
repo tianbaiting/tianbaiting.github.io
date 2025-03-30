@@ -1,8 +1,10 @@
 site_name: TBT个人网站
-site_url: https://tianbaiting.github.io/ 
+site_url: https://tianbaiting.github.io/
+
 theme:
   name: material
   language: zh  # 中文，解决中文搜索问题
+  custom_dir: overrides
   palette:
     # 亮色模式
     - media: "(prefers-color-scheme: light)"
@@ -26,33 +28,49 @@ theme:
   icon:
     repo: fontawesome/brands/github
   features:
-    - navigation.instant
-    - navigation.tracking
     - navigation.expand
-    - navigation.indexes
-    - navigation.top
-    - search.highlight
-    - search.share
+    - tabs
     - content.tabs.link
+    - search.highlight
+    - navigation.top
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - search.share
+
 
 markdown_extensions:
-  - toc:
-      permalink: '#'
-  - pymdownx.tabbed
-  - nl2br
-  - admonition
   - codehilite:
       guess_lang: false
-      linenums: false
+      linenums: true  # 启用行号
+  - attr_list
+  - pymdownx.tabbed
+  - nl2br
+  - toc:
+      permalink: '#'
+      slugify: !!python/name:pymdownx.slugs.uslugify
+  - admonition
   - footnotes
   - meta
   - def_list
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
   - pymdownx.tilde
 
 extra_files:
   - docs/google0ec64d869ee59589.html
   - docs/robots.txt
-  
+
 plugins:
   - search
   - roamlinks
