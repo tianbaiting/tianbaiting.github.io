@@ -20,7 +20,7 @@ theme:
     - search.highlight
     - navigation.top
     - navigation.tracking
-    # - navigation.tabs
+    - navigation.tabs
     - navigation.indexes
     - search.share
 
