@@ -1,4 +1,5 @@
 draft/
 .foam/
 site/
+bak_overrides/
 mkdocs_upload.sh

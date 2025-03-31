@@ -60,6 +60,9 @@ markdown_extensions:
 plugins:
   - search
   - roamlinks
+  - git-revision-date-localized:
+    enable_creation_date: true
+    type: timeago
   - exclude:
       glob:
         - "*.tmp"
@@ -84,3 +87,12 @@ extra_css:
 #   - 侧边栏专属:  # 仅侧边栏
 #     - 页面 A: sidebar/page-a.md  # 仅侧边栏
 #     - 页面 B: sidebar/page-b.md  # 仅侧边栏
+
+# nav:
+#   - 首页: 
+#     - index.md  # 顶部和侧边栏
+#     - howtomakewebsite.md
+#   - life: 
+#   - sci: 
+#   - MickeyMiaoMiao: 
+
