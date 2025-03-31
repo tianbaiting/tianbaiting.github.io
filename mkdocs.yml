@@ -75,11 +75,12 @@ extra_javascript:
 extra_css:
   - css/counter.css
 
-nav:
-  - 首页: index.md
-  - 关于: about.md
-  - 怎么做个网站: howtomakewebsite.md
-  # - 日本生存指南:
-  #   - 电话卡: 日本生存指南/电话卡.md
-  #   - 银行卡: 日本生存指南/银行卡.md
-  # - 联系方式: contact.md
+# nav:
+#   - 首页: index.md  # 顶部和侧边栏
+#   - 指南:  # 顶部和侧边栏（下拉菜单）
+#     - 入门: guide/getting-started.md  # 仅侧边栏
+#     - 高级用法: guide/advanced-usage.md  # 仅侧边栏
+#   - 联系方式: contact.md  # 顶部和侧边栏
+#   - 侧边栏专属:  # 仅侧边栏
+#     - 页面 A: sidebar/page-a.md  # 仅侧边栏
+#     - 页面 B: sidebar/page-b.md  # 仅侧边栏
