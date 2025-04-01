@@ -73,7 +73,9 @@ plugins:
 
 
 extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
   - js/scheme.js
+  
 
 extra_css:
   - css/counter.css
