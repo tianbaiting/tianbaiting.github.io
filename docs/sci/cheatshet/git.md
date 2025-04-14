@@ -20,6 +20,7 @@
 - `git checkout <branch-name>`: Switch to a branch.
 - `git merge <branch-name>`: Merge a branch into the current branch.
 
+
 ### Remote Repositories
 - `git remote add origin <url>`: Add a remote repository.
 - `git push -u origin <branch-name>`: Push changes to a remote branch.
@@ -43,3 +44,7 @@
 ### Deleting
 - `git branch -d <branch-name>`: Delete a branch.
 - `git rm <file>`: Remove a file from the repository.
+
+
+
+## 

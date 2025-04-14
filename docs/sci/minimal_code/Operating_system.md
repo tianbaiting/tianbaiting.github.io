@@ -10,6 +10,6 @@ https://www.wepe.com.cn/download.html
 ## linux
 
 
-### 子系统
+### subsystem of win
 
 

@@ -12,6 +12,8 @@ Linux + VScode(vim,emacs) + git + gcc + makefile + cmake 最基本的要求。
 
 在 Linux 环境下，使用 VS Code (或其他编辑器如 Vim, Emacs) 进行 C++ 项目开发，并结合 Git 进行版本控制，是常见的开发模式。  `gcc`, `makefile`, 和 `cmake` 是构建 C++ 项目的关键工具。
 
+c++ 多多文件项目结构
+
 ### 1. 使用 GCC 直接编译
 
 #### 1.1 编写 C++ 源代码
