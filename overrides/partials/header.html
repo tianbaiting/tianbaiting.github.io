@@ -30,39 +30,23 @@
     </div>
     <div class="md-header__options">
       <div class="md-header-nav__scheme md-header-nav__button md-source__icon md-icon">
-          <a
-            href="javascript:toggleScheme();"
-            title="Light mode"
-            class="light-mode"
-          >
-          {% set icon = "material/weather-sunny" %}
-          {% include ".icons/" ~ icon ~ ".svg" %}
-          </a>
-          <a
-            href="javascript:toggleScheme();"
-            title="Dark mode"
-            class="dark-mode"
-          >
-          {% set icon = "material/weather-night" %}
-          {% include ".icons/" ~ icon ~ ".svg" %}
-          </a>
-          <a
-            href="javascript:toggleScheme();"
-            title="System preference"
-            class="system-mode"
-          >
-          {% set icon = "material/theme-light-dark" %}
-          {% include ".icons/" ~ icon ~ ".svg" %}
-          </a>
-           <a
-            href="javascript:toggleScheme();"
-            title="Unknown scheme"
-            class="unknown-mode"
-          >
-          {% set icon = "material/help-circle" %}
-          {% include ".icons/" ~ icon ~ ".svg" %}
-          </a>
-      </div>
+  <a
+    href="javascript:toggleScheme();"
+    title="Toggle theme"
+    class="theme-toggle"
+  >
+    {% set icon = "material/theme-light-dark" %}
+    {% include ".icons/" ~ icon ~ ".svg" %}
+  </a>
+</div>
+
+{% if config.extra.alternate is defined and config.extra.alternate %}
+  <div class="md-header__button md-lang">
+    {% for alt in config.extra.alternate %}
+      <a href="{{ alt.link | url }}" hreflang="{{ alt.lang }}">{{ alt.name }}</a>
+    {% endfor %}
+  </div>
+{% endif %}
     </div>
     {% if "material/search" in config.plugins %}
       <label class="md-header__button md-icon" for="__search">

@@ -14,7 +14,7 @@ theme:
     code: Roboto Mono
 
   features:
-    - navigation.expand
+    # - navigation.expand
     - tabs
     - content.tabs.link
     - search.highlight
@@ -90,6 +90,15 @@ extra_javascript:
 
 extra_css:
   - css/counter.css
+
+extra:
+  alternate:
+    - name: 简体中文
+      link: /
+      lang: zh
+    - name: English
+      link: /en/
+      lang: en
 
 # nav:
 #   - 首页: index.md  # 顶部和侧边栏
