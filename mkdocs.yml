@@ -57,7 +57,18 @@ markdown_extensions:
 #   - docs/google0ec64d869ee59589.html
 #   - docs/robots.txt
 
+
 plugins:
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: zh
+          default: true
+          name: 简体中文
+          build: true
+        - locale: en
+          name: English
+          build: true
   - search
   - roamlinks
   - git-revision-date-localized:
