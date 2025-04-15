@@ -1,4 +1,3 @@
-```markdown
 ---
 title: 格式规范
 tags:
@@ -28,4 +27,4 @@ comments: true  # 启用评论
 
 - [原子物理学和核物理学的量和单位](https://xbbjb.hist.edu.cn/__local/6/A1/9C/387DCE0C963F344A0A71F96AEB8_A8BDCBD6_144194.pdf)
 - [中国物理 B 写作规范要求](https://cpb.iphy.ac.cn/UserFiles/File/C2-manusc.pdf)
-```
+
