@@ -22,6 +22,14 @@ vimrc 文件是 Vim 编辑器的配置文件，用于定义 Vim 的行为、外�
 https://github.com/YanivZalach/Vim_Config_NO_PLUGINS/blob/main/.vimrc
 
 
+
+
+
+
+
+## 常用的插件管理库 vim plug
+
+
 推荐的 vimrc 配置资源
 
 [Amix's Vimrc](https://github.com/amix/vimrc)：一个流行的 Vim 配置仓库，包含丰富的插件和优化。
@@ -31,14 +39,13 @@ https://github.com/YanivZalach/Vim_Config_NO_PLUGINS/blob/main/.vimrc
 
 https://github.com/junegunn/vim-plug
 
+
+
 ```
 // This is a Vim configuration file that sets up basic settings for Vim editor.
 
 :set number
 
-:set laststatus=2
-
-call plug#begin('~/.vim/plugged')
 
 " 示例插件
 Plug 'preservim/nerdtree'         " 文件树
