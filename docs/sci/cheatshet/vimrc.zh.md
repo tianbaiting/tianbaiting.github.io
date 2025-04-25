@@ -15,9 +15,12 @@ vimrc 文件是 Vim 编辑器的配置文件，用于定义 Vim 的行为、外�
   Vim 的功能特性要比 Vi 多得多，但其中大部分都没有缺省启用。为了使用更多的
   特性，您得创建一个 vimrc 文件。
 
-  1. 开始编辑 vimrc 文件，具体命令取决于您所使用的操作系统：
-        :edit ~/.vimrc          这是 Unix 系统所使用的命令
-        :edit $VIM/_vimrc       这是 MS-Windows 系统所使用的命令
+
+
+一个完全不需要插件的vimrc配置
+
+https://github.com/YanivZalach/Vim_Config_NO_PLUGINS/blob/main/.vimrc
+
 
 推荐的 vimrc 配置资源
 
