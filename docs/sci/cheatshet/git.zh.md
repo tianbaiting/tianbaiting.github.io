@@ -1,50 +1,50 @@
-# git cheatsheat
+# git 备忘单
 
-## Common Git Commands
+## 常用 Git 命令
 
-### Initialization
-- `git init`: Initialize a new Git repository.
+### 初始化
+- `git init`：初始化一个新的 Git 仓库。
 
-### Configuration
-- `git config --global user.name "Your Name"`: Set your global username.
-- `git config --global user.email "youremail@example.com"`: Set your global email.
+### 配置
+- `git config --global user.name "你的名字"`：设置全局用户名。
+- `git config --global user.email "你的邮箱@example.com"`：设置全局邮箱。
 
-### Basic Workflow
-- `git status`: Check the status of your working directory.
-- `git add <file>`: Stage changes for commit.
-- `git commit -m "Commit message"`: Commit staged changes.
+### 基本工作流程
+- `git status`：检查工作目录的状态。
+- `git add <文件>`：将更改暂存。
+- `git commit -m "提交信息"`：提交暂存的更改。
 
-### Branching
-- `git branch`: List branches.
-- `git branch <branch-name>`: Create a new branch.
-- `git checkout <branch-name>`: Switch to a branch.
-- `git merge <branch-name>`: Merge a branch into the current branch.
+更复杂的工作流详见[[minimal_code/git.zh]]
 
 
-### Remote Repositories
-- `git remote add origin <url>`: Add a remote repository.
-- `git push -u origin <branch-name>`: Push changes to a remote branch.
-- `git pull`: Fetch and merge changes from the remote repository.
+### 分支管理
+- `git branch`：列出分支。
+- `git branch <分支名>`：创建新分支。
+- `git checkout <分支名>`：切换到某个分支。
+- `git merge <分支名>`：将某个分支合并到当前分支。
 
-### Logs and History
-- `git log`: View commit history.
-- `git diff`: Show changes between commits or the working directory.
+### 远程仓库
+- `git remote add origin <网址>`：添加远程仓库。
+- `git push -u origin <分支名>`：将更改推送到远程分支。
+- `git pull`：从远程仓库获取并合并更改。
 
-### Undoing Changes
-- `git reset <file>`: Unstage a file.
-- `git checkout -- <file>`: Discard changes in a file.
+### 日志与历史
+- `git log`：查看提交历史。
+- `git diff`：显示提交或工作目录之间的更改。
 
-### Stashing
-- `git stash`: Save changes temporarily.
-- `git stash apply`: Reapply stashed changes.
+### 撤销更改
+- `git reset <文件>`：取消暂存文件。
+- `git checkout -- <文件>`：放弃文件中的更改。
 
-### Cloning
-- `git clone <url>`: Clone a repository.
+### 暂存
+- `git stash`：临时保存更改。
+- `git stash apply`：重新应用暂存的更改。
 
-### Deleting
-- `git branch -d <branch-name>`: Delete a branch.
-- `git rm <file>`: Remove a file from the repository.
+### 克隆
+- `git clone <网址>`：克隆一个仓库。
 
+### 删除
+- `git branch -d <分支名>`：删除分支。
+- `git rm <文件>`：从仓库中删除文件。
 
-
-## 利用rebase 合并commit
+## 使用 rebase 合并提交

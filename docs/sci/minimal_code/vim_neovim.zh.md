@@ -5,7 +5,11 @@ title：vim neovim
 
 ## 安装步骤
 
+
 1. **下载 Homebrew**  
+   
+    apt下载的neovim版本可能过于老旧，无法安装lazyvim.
+
     打开终端并运行以下命令安装 Homebrew：  
     ```bash
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

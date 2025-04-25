@@ -48,3 +48,5 @@ Plug 'scrooloose/nerdcommenter'   " 快速注释
 call plug#end()
 
 ```
+
+neovim与lazyvim详见[[vim_neovim.zh]]
