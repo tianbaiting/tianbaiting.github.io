@@ -78,6 +78,11 @@
       <label class="md-overlay" for="__drawer"></label>
       <div data-md-component="skip">
         
+          
+          <a href="#wget" class="md-skip">
+            Skip to content
+          </a>
+        
       </div>
       <div data-md-component="announce">
         
@@ -776,9 +781,38 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Shell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Shell
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wget" class="md-nav__link">
+    wget
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1425,6 +1459,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wget" class="md-nav__link">
+    wget
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                     </div>
                   </div>
@@ -1440,16 +1489,26 @@
 
 
 
+  <h1>Shell</h1>
+
 <p>查看当前目录下所有目录的大小，并限制深度为 1 (以人类可读的格式):<br />
 <div class="highlight"><pre><span></span><code>du -dh 1 .
 </code></pre></div></p>
+<h2 id="wget">wget<a class="headerlink" href="#wget" title="Permanent link">#</a></h2>
+<p>wget -r -p -np -k <a href="https://example.com">https://example.com</a></p>
+<ol>
+<li>从 <a href="https://example.com">https://example.com</a> 开始递归下载所有内容；</li>
+<li>下载页面所需的所有资源（如图片、CSS 等）；</li>
+<li>限制下载范围，不会超出指定目录；</li>
+<li>将 HTML 文件中的链接转换为本地链接，便于离线浏览。</li>
+</ol>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 14, 2025 10:50:32"><span class="timeago" datetime="2025-04-14T10:50:32+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 14, 2025 10:50:32">2025-04-14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 25, 2025 10:26:22"><span class="timeago" datetime="2025-04-25T10:26:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 25, 2025 10:26:22">2025-04-25</span>
       
         <br>
         Created:
