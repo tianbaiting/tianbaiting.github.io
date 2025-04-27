@@ -35,3 +35,6 @@ title：vim neovim
 
 5. **安装插件**  
     启动 Neovim 后，LazyVim 会自动安装所需插件。等待安装完成即可开始使用。
+
+
+## lazyvim 自带的快捷键
