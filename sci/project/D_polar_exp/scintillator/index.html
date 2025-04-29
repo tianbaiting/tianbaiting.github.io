@@ -11,7 +11,7 @@
           <link rel="canonical" href="https://tianbaiting.github.io/sci/project/D_polar_exp/scintillator/">
         
         
-          <link rel="prev" href="../riken_wec_source/">
+          <link rel="prev" href="../riken_web_source/">
         
         
           <link rel="next" href="../spherical_operator/">
@@ -1119,6 +1119,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_2" tabindex="0" aria-expanded="true">
@@ -1139,7 +1141,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../riken_wec_source/" class="md-nav__link">
+      <a href="../jupyternotebook/" class="md-nav__link">
+        jupyter notebook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../riken_web_source/" class="md-nav__link">
         riken 常见资源
       </a>
     </li>
@@ -1578,8 +1594,8 @@
 </table>
 <h2 id="带电粒子在物质中的能量损失">带电粒子在物质中的能量损失**<a class="headerlink" href="#带电粒子在物质中的能量损失" title="Permanent link">#</a></h2>
 <p><strong>A. 理论框架</strong><br />
-带电粒子在物质中穿行时，会通过与物质原子发生电磁相互作用而损失能量。描述带电粒子平均能量损失与穿行距离关系的物理量被称为阻止本领（stopping power），通常用 -dE/dx 表示 38。它也常被称为线性能量转移（LET）。<br />
-描述阻止本领的著名理论是贝特公式（Bethe formula）38。对于速度为 v、电荷为 z（以电子电荷为单位）、能量为 E 的粒子穿过电子数密度为 n、平均激发能为 I 的物质时，相对论形式的贝特公式为 40：<br />
+带电粒子在物质中穿行时，会通过与物质原子发生电磁相互作用而损失能量。描述带电粒子平均能量损失与穿行距离关系的物理量被称为阻止本领（stopping power），通常用 -dE/dx 表示 。它也常被称为线性能量转移（LET）。<br />
+描述阻止本领的著名理论是贝特公式（Bethe formula）。对于速度为 v、电荷为 z（以电子电荷为单位）、能量为 E 的粒子穿过电子数密度为 n、平均激发能为 I 的物质时，相对论形式的贝特公式为 ：<br />
 -dE/dx = (4π(ze)² / (mₑv²)) * n * [ln(2mₑv²γ² / I) - β² - δ/2]<br />
 其中：</p>
 <ul>
@@ -1592,7 +1608,7 @@
 <li>I 是物质的平均激发能  </li>
 <li>δ 是密度效应修正项</li>
 </ul>
-<p>贝特公式表明，阻止本领与入射粒子电荷的平方成正比，在较低能量下与粒子速度的平方成反比 。物质的电子数密度 n 和平均激发能 I 是影响阻止本领的关键材料参数 38。平均激发能 I 反映了阻止物质原子的电子结构特性 。<br />
+<p>贝特公式表明，阻止本领与入射粒子电荷的平方成正比，在较低能量下与粒子速度的平方成反比 。物质的电子数密度 n 和平均激发能 I 是影响阻止本领的关键材料参数 。平均激发能 I 反映了阻止物质原子的电子结构特性 。<br />
 在实际应用中，贝特公式在低能量区域或需要更高精度时需要进行修正，例如考虑电子壳层效应（shell correction）、巴克斯-安德森效应（Barkas-Andersen effect）和密度效应（density effect）等 。这些修正项在诸如 PSTAR 和 ASTAR 等计算程序中已被考虑在内 。<br />
 质量阻止本领（-dE/ρdx）是阻止本领除以物质密度 ρ 得到的物理量 。质量阻止本领在描述不同密度但原子组成相似的材料时非常有用，例如在气体中，阻止本领随压力变化，但质量阻止本领则相对稳定 。  </p>
 <p><strong>C. 1厘米厚度内的能量沉积估算</strong><br />
@@ -1615,7 +1631,7 @@
 <li>氘核（近似）：ΔE ≈ 1.1 MeV cm²/g × 1 cm × 7.13 g/cm³ ≈ 7.84 MeV。</li>
 </ul>
 <p><strong>D. 沉积能量与厚度的关系</strong><br />
-对于给定的入射粒子能量，能量损失随着闪烁体厚度的增加而增加，直到达到粒子的射程。对于高能粒子，例如 300 MeV 的质子和氘核，在材料的初始穿行阶段，能量损失可能相对均匀。在粒子射程的末端，阻止本领会显著增加，形成所谓的布拉格峰 38。然而，对于这些高能粒子，1 厘米的厚度远小于它们在这些材料中的射程。因此，在较小的厚度范围内，能量沉积与厚度近似成正比。要获得更完整的关系，需要计算不同能量下的阻止本领并进行积分。  </p>
+对于给定的入射粒子能量，能量损失随着闪烁体厚度的增加而增加，直到达到粒子的射程。对于高能粒子，例如 300 MeV 的质子和氘核，在材料的初始穿行阶段，能量损失可能相对均匀。在粒子射程的末端，阻止本领会显著增加，形成所谓的布拉格峰 。然而，对于这些高能粒子，1 厘米的厚度远小于它们在这些材料中的射程。因此，在较小的厚度范围内，能量沉积与厚度近似成正比。要获得更完整的关系，需要计算不同能量下的阻止本领并进行积分。  </p>
 <p><strong>E. 阻止本领和能量沉积计算结果总结</strong></p>
 <table>
 <thead>
@@ -1671,13 +1687,16 @@
 </tr>
 </tbody>
 </table>
+<p>参考资料</p>
+<p><a href="https://uspas.fnal.gov/materials/19NewMexico/Radiation/USPAS-lecture%205-alpha%20stopping%20power.pdf">1</a></p>
+<p><a href="https://indico.cern.ch/event/145296/contributions/1381063/attachments/136866/194145/Particle-Interaction-Matter-upload.pdf">2</a></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年4月28日 21:18:48"><span class="timeago" datetime="2025-04-28T21:18:48+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年4月28日 21:18:48">2025-04-28</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年4月29日 07:51:08"><span class="timeago" datetime="2025-04-29T07:51:08+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年4月29日 07:51:08">2025-04-29</span>
       
         <br>
         创建日期:

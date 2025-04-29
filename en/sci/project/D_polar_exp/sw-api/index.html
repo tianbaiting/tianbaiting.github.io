@@ -1153,6 +1153,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_2" tabindex="0" aria-expanded="true">
@@ -1173,7 +1175,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../riken_wec_source/" class="md-nav__link">
+      <a href="../jupyternotebook/" class="md-nav__link">
+        jupyter notebook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../riken_web_source/" class="md-nav__link">
         riken 常见资源
       </a>
     </li>
@@ -1662,70 +1678,70 @@ End Sub
 </code></pre></div></p>
 <p>如下代码所展示，这是一个绘制长方体的命令。</p>
 <p>在 SolidWorks 的 API 中，所有尺寸参数都以「米（m）」为单位。</p>
-<div class="highlight"><pre><span></span><code>import win32com.client
-import os
-import sys
-import pythoncom
-from win32com.client import pywintypes  # 添加此行
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">win32com.client</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pythoncom</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">win32com.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">pywintypes</span>  <span class="c1"># 添加此行</span>
 
-try:
-    # 启动SolidWorks应用
-    swApp = win32com.client.Dispatch(&quot;SldWorks.Application&quot;)
-    swApp.Visible = True
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># 启动SolidWorks应用</span>
+    <span class="n">swApp</span> <span class="o">=</span> <span class="n">win32com</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">Dispatch</span><span class="p">(</span><span class="s2">&quot;SldWorks.Application&quot;</span><span class="p">)</span>
+    <span class="n">swApp</span><span class="o">.</span><span class="n">Visible</span> <span class="o">=</span> <span class="kc">True</span>
 
-    # 新建一个零件文档
-    part = swApp.NewDocument(
-        r&quot;C:\Users\Public\Documents\SOLIDWORKS\SOLIDWORKS 2023\samples\tutorial\advdrawings\part.prtdot&quot;,
-        0, 0.0, 0.0
-    )
+    <span class="c1"># 新建一个零件文档</span>
+    <span class="n">part</span> <span class="o">=</span> <span class="n">swApp</span><span class="o">.</span><span class="n">NewDocument</span><span class="p">(</span>
+        <span class="sa">r</span><span class="s2">&quot;C:\Users\Public\Documents\SOLIDWORKS\SOLIDWORKS 2023\samples\tutorial\advdrawings\part.prtdot&quot;</span><span class="p">,</span>
+        <span class="mi">0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span>
+    <span class="p">)</span>
 
-    if part is None:
-        print(&quot;创建零件失败，请检查模板路径。&quot;)
-        sys.exit(1)
-    else:
-        print(&quot;成功创建新零件！&quot;)
+    <span class="k">if</span> <span class="n">part</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;创建零件失败，请检查模板路径。&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;成功创建新零件！&quot;</span><span class="p">)</span>
 
-    # 获取激活文档
-    model = swApp.ActiveDoc
+    <span class="c1"># 获取激活文档</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">swApp</span><span class="o">.</span><span class="n">ActiveDoc</span>
 
-    if model is None:
-        print(&quot;未能获取激活的SolidWorks文档。请确保已成功创建零件。&quot;)
-        sys.exit(1)
+    <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;未能获取激活的SolidWorks文档。请确保已成功创建零件。&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-    # 选择前视基准面
-    plane_name = &quot;Front Plane&quot;  # 英文版SolidWorks
+    <span class="c1"># 选择前视基准面</span>
+    <span class="n">plane_name</span> <span class="o">=</span> <span class="s2">&quot;Front Plane&quot;</span>  <span class="c1"># 英文版SolidWorks</span>
 
-    # 新建草图
-    model.SketchManager.InsertSketch(True)
-    print(&quot;已进入草图编辑模式。&quot;)
+    <span class="c1"># 新建草图</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">SketchManager</span><span class="o">.</span><span class="n">InsertSketch</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;已进入草图编辑模式。&quot;</span><span class="p">)</span>
 
-    # 绘制矩形
-    model.SketchManager.CreateCenterRectangle(0, 0, 0, 0.05, 0.025, 0)
-    print(&quot;已绘制矩形。&quot;)
+    <span class="c1"># 绘制矩形</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">SketchManager</span><span class="o">.</span><span class="n">CreateCenterRectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;已绘制矩形。&quot;</span><span class="p">)</span>
 
-    # 退出草图
-    model.SketchManager.InsertSketch(True)
-    print(&quot;已退出草图。&quot;)
+    <span class="c1"># 退出草图</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">SketchManager</span><span class="o">.</span><span class="n">InsertSketch</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;已退出草图。&quot;</span><span class="p">)</span>
 
-    # 选择草图
-    sketch_name = &quot;Sketch1&quot;  # 英文版SolidWorks
-    # sketch_name = &quot;草图1&quot;   # 中文版SolidWorks
+    <span class="c1"># 选择草图</span>
+    <span class="n">sketch_name</span> <span class="o">=</span> <span class="s2">&quot;Sketch1&quot;</span>  <span class="c1"># 英文版SolidWorks</span>
+    <span class="c1"># sketch_name = &quot;草图1&quot;   # 中文版SolidWorks</span>
 
-    # 拉伸草图
-    featureMgr = model.FeatureManager
-    feature = featureMgr.FeatureExtrusion2(
-        True, False, False, 0, 0, 0.03, 0.0,
-        False, False, False, False,
-        0, 0, False, False, False, False,
-        True, True, True, 0, 0, False
-    )
+    <span class="c1"># 拉伸草图</span>
+    <span class="n">featureMgr</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">FeatureManager</span>
+    <span class="n">feature</span> <span class="o">=</span> <span class="n">featureMgr</span><span class="o">.</span><span class="n">FeatureExtrusion2</span><span class="p">(</span>
+        <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span>
+        <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">False</span>
+    <span class="p">)</span>
 
-    if feature is None:
-        print(&quot;创建拉伸特征失败。&quot;)
-    else:
-        print(&quot;长方体已创建。&quot;)
-except Exception as e:
-    print(f&quot;发生错误: {type(e).__name__} - {str(e)}&quot;)
+    <span class="k">if</span> <span class="n">feature</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;创建拉伸特征失败。&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;长方体已创建。&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;发生错误: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>待解决的问题，布尔值一直有些问题。</p>
 <p>还未找到详尽的文档</p>
@@ -1737,7 +1753,7 @@ except Exception as e:
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年4月28日 21:18:48"><span class="timeago" datetime="2025-04-28T21:18:48+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年4月28日 21:18:48">2025-04-28</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年4月29日 07:51:08"><span class="timeago" datetime="2025-04-29T07:51:08+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年4月29日 07:51:08">2025-04-29</span>
       
         <br>
         Created:
