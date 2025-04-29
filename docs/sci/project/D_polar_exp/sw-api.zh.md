@@ -72,7 +72,7 @@ SolidWorks 提供了强大的 API（应用程序接口），允许用户通过�
 
 在 SolidWorks 的 API 中，所有尺寸参数都以「米（m）」为单位。
 
-```
+```python
 import win32com.client
 import os
 import sys
