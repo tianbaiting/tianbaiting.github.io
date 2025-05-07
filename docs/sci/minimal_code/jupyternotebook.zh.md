@@ -169,6 +169,7 @@ c = ROOT.TCanvas("c")
 h = ROOT.TH1F("h","ROOT Histo;X;Y",64,-4,4)
 ```
 
+
 此外，您还可以通过使用 **%%cpp** 魔法命令在同一个 notebook 中混合使用 Python 和 C++：
 ```cpp
 %%cpp
