@@ -139,9 +139,29 @@ except Exception as e:
     print(f"发生错误: {type(e).__name__} - {str(e)}")
 ```
 
-待解决的问题，布尔值一直有些问题。
+待解决的问题，布尔值一直有些问题。发现了问题所在。 是由于python的数据类型和visual basic的并不一致。比如说visual basic的整数型数据0在python要用`arg1 = win32com.client.VARIANT(16387, 0)`来转化。
 
-还未找到详尽的文档
+
+
+详见
+
+[fancy argument](https://github.com/RoboMechMinds/SolidWorks-scripting-with-Python/blob/main/03%20Fancy%20arguments/03%20Fancy%20arguments.ipynb)
+
+[note](https://github.com/RoboMechMinds/SolidWorks-scripting-with-Python/blob/main/04%20Start-Close%20SolidWorks%2C%20Create-Open-Save-Rebuild%20a%20document/04%20Start-Close%20SolidWorks%2C%20Create-Open-Save-Rebuild%20a%20document.ipynb) 
+
+[youtube](https://www.youtube.com/watch?v=HQVsASdG0jo&ab_channel=RoboMechMinds)
+
+对于我来说，运行`C:\Users\tbt\anaconda3\Lib\site-packages\win32com\client\makepy.py`处的代码
+
+找到![1746813908270](./.sw-api.zh/1746813908270.png)![1746814173261](./.sw-api.zh/1746814173261.png)，就会出现如下代码，便能在6DD4B124-4733-4DFF-97A8-52F70924D514x0x31x0.py文件里找到。 该makepy生成了要用到的宏文件的定义
+
+```
+PS C:\workspace\D_Polarization\sw-api>  python -u "c:\Users\tbt\anaconda3\pkgs\pywin32-305-py310h2bbff1b_0\Lib\site-packages\win32com\client\makepy.py"
+Generating to C:\Users\tbt\Nutstore\1\physics\nuclear\D_nuclear_experiment\.conda\lib\site-packages\win32com\gen_py\6DD4B124-4733-4DFF-97A8-52F70924D514x0x31x0.py
+Building definitions from type library...
+Generating...
+Importing module
+```
 
 ```
 boolstatus_sketch = model.Extension.SelectByID2()
