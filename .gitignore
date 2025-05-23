@@ -1,5 +1,9 @@
 draft/
+.github/
 .foam/
 site/
 bak_overrides/
 mkdocs_upload.sh
+# 允许上传其他以点开头的文件夹和文件（如 .xxx/ 或 .xxx.png）
+!.*/
+!.*
