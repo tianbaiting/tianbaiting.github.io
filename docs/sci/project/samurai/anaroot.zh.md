@@ -1,4 +1,6 @@
-# **ANAROOT 综合分析框架：从入门到精通——PDC 与 NEBULA 探测器数据分析实战**
+# **ANAROOT 综合分析框架：
+
+该文可能有诸多错误，请看[[anaroot2version.zh]]
 
 ## **前言**
 

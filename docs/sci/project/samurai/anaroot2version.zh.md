@@ -1,4 +1,4 @@
-# ANAROOT 详细中文文档：从入门到精通——SAMURAI PDC与NEBULA数据分析实战
+# ANAROOT 详细中文文档
 
 ## 摘要
 
