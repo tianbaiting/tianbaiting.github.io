@@ -8,27 +8,27 @@
         
         
         
-          <link rel="canonical" href="https://tianbaiting.github.io/en/sci/cheatshet/bashrc/">
+          <link rel="canonical" href="https://tianbaiting.github.io/en/sci/project/samurai/RIDF/">
         
         
-          <link rel="prev" href="../../../life/%E9%A3%9F%E7%89%A9%E5%AE%89%E5%85%A8%E6%B8%A9%E5%BA%A6/">
+          <link rel="prev" href="../../D_polar_exp/todo_list/">
         
         
-          <link rel="next" href="../docker/">
+          <link rel="next" href="../anaroot/">
         
-        <link rel="icon" href="../../../../assets/images/favicon.png">
+        <link rel="icon" href="../../../../../assets/images/favicon.png">
         <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.0.4">
       
       
         
-          <title>Bashrc - TBT个人网站</title>
+          <title>Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Description - TBT个人网站</title>
         
       
       
-        <link rel="stylesheet" href="../../../../assets/stylesheets/main.9c788c91.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/main.9c788c91.min.css">
         
           
-          <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
+          <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.2505c338.min.css">
         
         
 
@@ -44,16 +44,16 @@
         
       
       
-        <link rel="stylesheet" href="../../../../css/timeago.css">
+        <link rel="stylesheet" href="../../../../../css/timeago.css">
       
-        <link rel="stylesheet" href="../../../../css/timeago.css">
+        <link rel="stylesheet" href="../../../../../css/timeago.css">
       
-        <link rel="stylesheet" href="../../../../css/counter.css">
+        <link rel="stylesheet" href="../../../../../css/counter.css">
       
       
-        <link rel="stylesheet" href="../../../../css/counter.css">
+        <link rel="stylesheet" href="../../../../../css/counter.css">
       
-      <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
       
         
 
@@ -70,13 +70,18 @@
       
       <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink">
     
-      <script src="../../../../js/scheme.js" type="text/javascript"></script>
+      <script src="../../../../../js/scheme.js" type="text/javascript"></script>
       
       
       <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
       <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
       <label class="md-overlay" for="__drawer"></label>
       <div data-md-component="skip">
+        
+          
+          <a href="#detailed-explanation-of-riken-ridf-file-structure-data-block-block-description" class="md-skip">
+            Skip to content
+          </a>
         
       </div>
       <div data-md-component="announce">
@@ -88,7 +93,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../" title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+    <a href="../../../../" title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -107,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Bashrc
+              Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Description
             
           </span>
         </div>
@@ -128,7 +133,7 @@
 
   <div class="md-header__button md-lang">
     
-      <a href="../../../../sci/cheatshet/bashrc/" hreflang="zh">简体中文</a>
+      <a href="../../../../../sci/project/samurai/RIDF/" hreflang="zh">简体中文</a>
     
       <a href="./" hreflang="en">English</a>
     
@@ -194,7 +199,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../" class="md-tabs__link">
+    <a href="../../../../" class="md-tabs__link">
       main
     </a>
   </li>
@@ -206,7 +211,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../howtomakewebsite/" class="md-tabs__link">
+    <a href="../../../../howtomakewebsite/" class="md-tabs__link">
       网站制作
     </a>
   </li>
@@ -221,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../MickeyMiaoMiao/firefoxplug/" class="md-tabs__link">
+      <a href="../../../../MickeyMiaoMiao/firefoxplug/" class="md-tabs__link">
         MickeyMiaoMiao
       </a>
     </li>
@@ -237,7 +242,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../life/z30_DeepSky/" class="md-tabs__link">
+      <a href="../../../../life/z30_DeepSky/" class="md-tabs__link">
         Life
       </a>
     </li>
@@ -260,7 +265,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../cheatshet/bashrc/" class="md-tabs__link md-tabs__link--active">
         Sci
       </a>
     </li>
@@ -278,7 +283,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-tabs__link">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-tabs__link">
         日本生存指南
       </a>
     </li>
@@ -306,7 +311,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../" title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+    <a href="../../../../" title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -325,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="../../../../" class="md-nav__link">
         main
       </a>
     </li>
@@ -340,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../howtomakewebsite/" class="md-nav__link">
+      <a href="../../../../howtomakewebsite/" class="md-nav__link">
         网站制作
       </a>
     </li>
@@ -390,7 +395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../MickeyMiaoMiao/firefoxplug/" class="md-nav__link">
+      <a href="../../../../MickeyMiaoMiao/firefoxplug/" class="md-nav__link">
         浏览器插件
       </a>
     </li>
@@ -404,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../MickeyMiaoMiao/opvpn/" class="md-nav__link">
+      <a href="../../../../MickeyMiaoMiao/opvpn/" class="md-nav__link">
         opvpn
       </a>
     </li>
@@ -455,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../MickeyMiaoMiao/useful_tips/overleaf_vscode%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/overleaf_vscode%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         overleaf插件
       </a>
     </li>
@@ -469,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../MickeyMiaoMiao/useful_tips/%E5%88%A9%E7%94%A8%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E5%88%86%E5%B1%8F/" class="md-nav__link">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/%E5%88%A9%E7%94%A8%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E5%88%86%E5%B1%8F/" class="md-nav__link">
         移动设备作为电脑的分屏
       </a>
     </li>
@@ -483,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../MickeyMiaoMiao/useful_tips/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84vscode/" class="md-nav__link">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84vscode/" class="md-nav__link">
         如何安装多个版本的code
       </a>
     </li>
@@ -497,7 +502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../MickeyMiaoMiao/useful_tips/%E6%9C%89%E8%B6%A3%E7%9A%84%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/%E6%9C%89%E8%B6%A3%E7%9A%84%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         有趣的插件
       </a>
     </li>
@@ -561,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../life/z30_DeepSky/" class="md-nav__link">
+      <a href="../../../../life/z30_DeepSky/" class="md-nav__link">
         深空摄影
       </a>
     </li>
@@ -575,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../life/%E9%A3%9F%E7%89%A9%E4%B8%AD%E6%AF%92/" class="md-nav__link">
+      <a href="../../../../life/%E9%A3%9F%E7%89%A9%E4%B8%AD%E6%AF%92/" class="md-nav__link">
         易发中毒食物
       </a>
     </li>
@@ -589,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../life/%E9%A3%9F%E7%89%A9%E5%AE%89%E5%85%A8%E6%B8%A9%E5%BA%A6/" class="md-nav__link">
+      <a href="../../../../life/%E9%A3%9F%E7%89%A9%E5%AE%89%E5%85%A8%E6%B8%A9%E5%BA%A6/" class="md-nav__link">
         食物安全温度
       </a>
     </li>
@@ -648,16 +653,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" checked>
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
       
       
         
@@ -681,7 +684,7 @@
         
       
       
-        <label class="md-nav__link" for="__nav_5_1" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_5_1" tabindex="0" aria-expanded="false">
           Cheatshet
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -697,19 +700,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/bashrc/" class="md-nav__link">
         Bashrc
       </a>
-      
     </li>
   
 
@@ -721,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker/" class="md-nav__link">
+      <a href="../../../cheatshet/docker/" class="md-nav__link">
         Docker
       </a>
     </li>
@@ -735,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git/" class="md-nav__link">
+      <a href="../../../cheatshet/git/" class="md-nav__link">
         git cheatsheat
       </a>
     </li>
@@ -749,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/" class="md-nav__link">
+      <a href="../../../cheatshet/linux/" class="md-nav__link">
         Linux
       </a>
     </li>
@@ -763,7 +758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../number_order_dimension/" class="md-nav__link">
+      <a href="../../../cheatshet/number_order_dimension/" class="md-nav__link">
         数量级估计
       </a>
     </li>
@@ -777,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/" class="md-nav__link">
+      <a href="../../../cheatshet/shell/" class="md-nav__link">
         Shell
       </a>
     </li>
@@ -791,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../site/" class="md-nav__link">
+      <a href="../../../cheatshet/site/" class="md-nav__link">
         网页相关知识
       </a>
     </li>
@@ -805,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../termux/" class="md-nav__link">
+      <a href="../../../cheatshet/termux/" class="md-nav__link">
         termux 运行ubuntu
       </a>
     </li>
@@ -819,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vimrc/" class="md-nav__link">
+      <a href="../../../cheatshet/vimrc/" class="md-nav__link">
         vim配置文件
       </a>
     </li>
@@ -891,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/Operating_system/" class="md-nav__link">
+      <a href="../../../minimal_code/Operating_system/" class="md-nav__link">
         装系统
       </a>
     </li>
@@ -905,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/c%2B%2Bproject/" class="md-nav__link">
+      <a href="../../../minimal_code/c%2B%2Bproject/" class="md-nav__link">
         c++项目
       </a>
     </li>
@@ -919,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/color_scheme/" class="md-nav__link">
+      <a href="../../../minimal_code/color_scheme/" class="md-nav__link">
         Color Scheme in Scientific Visualization
       </a>
     </li>
@@ -933,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/format_guidelines/" class="md-nav__link">
+      <a href="../../../minimal_code/format_guidelines/" class="md-nav__link">
         Formatting Guidelines
       </a>
     </li>
@@ -947,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/gdb/" class="md-nav__link">
+      <a href="../../../minimal_code/gdb/" class="md-nav__link">
         gdb 调试
       </a>
     </li>
@@ -961,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/git/" class="md-nav__link">
+      <a href="../../../minimal_code/git/" class="md-nav__link">
         git
       </a>
     </li>
@@ -975,7 +970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/jupyternotebook/" class="md-nav__link">
+      <a href="../../../minimal_code/jupyternotebook/" class="md-nav__link">
         Jupyter Notebook
       </a>
     </li>
@@ -989,7 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/latex_graphics/" class="md-nav__link">
+      <a href="../../../minimal_code/latex_graphics/" class="md-nav__link">
         latex include graphics
       </a>
     </li>
@@ -1003,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/root_plot/" class="md-nav__link">
+      <a href="../../../minimal_code/root_plot/" class="md-nav__link">
         root_plot
       </a>
     </li>
@@ -1017,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/vim_neovim/" class="md-nav__link">
+      <a href="../../../minimal_code/vim_neovim/" class="md-nav__link">
         Vim neovim
       </a>
     </li>
@@ -1031,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/%E5%BE%85%E8%A7%A3%E5%86%B3%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" class="md-nav__link">
+      <a href="../../../minimal_code/%E5%BE%85%E8%A7%A3%E5%86%B3%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" class="md-nav__link">
         to be solved
       </a>
     </li>
@@ -1083,7 +1078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_theory/scatering_theory/" class="md-nav__link">
+      <a href="../../../minimal_theory/scatering_theory/" class="md-nav__link">
         散射理论
       </a>
     </li>
@@ -1102,14 +1097,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" checked>
       
       
         
@@ -1121,7 +1118,7 @@
         
       
       
-        <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="true">
           Project
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1139,7 +1136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/example/" class="md-nav__link">
+      <a href="../../example/" class="md-nav__link">
         hello world
       </a>
     </li>
@@ -1196,7 +1193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/D_polar_exp/riken_web_source/" class="md-nav__link">
+      <a href="../../D_polar_exp/riken_web_source/" class="md-nav__link">
         riken 常见资源
       </a>
     </li>
@@ -1210,7 +1207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/D_polar_exp/scintillator/" class="md-nav__link">
+      <a href="../../D_polar_exp/scintillator/" class="md-nav__link">
         闪烁体光产额
       </a>
     </li>
@@ -1224,7 +1221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/D_polar_exp/smsimulator/" class="md-nav__link">
+      <a href="../../D_polar_exp/smsimulator/" class="md-nav__link">
         smsimultor
       </a>
     </li>
@@ -1238,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/D_polar_exp/spherical_operator/" class="md-nav__link">
+      <a href="../../D_polar_exp/spherical_operator/" class="md-nav__link">
         To show some relation
       </a>
     </li>
@@ -1252,7 +1249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/D_polar_exp/stastic/" class="md-nav__link">
+      <a href="../../D_polar_exp/stastic/" class="md-nav__link">
         统计
       </a>
     </li>
@@ -1266,7 +1263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/D_polar_exp/sw-api/" class="md-nav__link">
+      <a href="../../D_polar_exp/sw-api/" class="md-nav__link">
         solidworks api接口
       </a>
     </li>
@@ -1280,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/D_polar_exp/todo_list/" class="md-nav__link">
+      <a href="../../D_polar_exp/todo_list/" class="md-nav__link">
         To do list
       </a>
     </li>
@@ -1299,14 +1296,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_3" type="checkbox" id="__nav_5_4_3" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_3" type="checkbox" id="__nav_5_4_3" checked>
       
       
         
@@ -1318,7 +1317,7 @@
         
       
       
-        <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="true">
           Samurai
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1334,11 +1333,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../project/samurai/RIDF/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Description
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Description
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-block-structure" class="md-nav__link">
+    General Block Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-block-content-determined-by-class-id" class="md-nav__link">
+    Data Block Content Determined by Class ID
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hierarchical-nature" class="md-nav__link">
+    Hierarchical Nature
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1350,7 +1404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/samurai/anaroot/" class="md-nav__link">
+      <a href="../anaroot/" class="md-nav__link">
         ANAROOT 综合分析框架：从入门到精通——PDC 与 NEBULA 探测器数据分析实战
       </a>
     </li>
@@ -1364,7 +1418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../project/samurai/detector_samurai/" class="md-nav__link">
+      <a href="../detector_samurai/" class="md-nav__link">
         Detailed Functions of Charged Particle Detectors in the SAMURAI Spectrometer
       </a>
     </li>
@@ -1449,7 +1503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-nav__link">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-nav__link">
         Japanese
       </a>
     </li>
@@ -1463,7 +1517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%8E%BB%E6%97%A5%E6%9C%AC%E5%89%8D%E6%89%93%E5%8C%85/" class="md-nav__link">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%8E%BB%E6%97%A5%E6%9C%AC%E5%89%8D%E6%89%93%E5%8C%85/" class="md-nav__link">
         登机前打包
       </a>
     </li>
@@ -1477,7 +1531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%90%83/" class="md-nav__link">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%90%83/" class="md-nav__link">
         吃
       </a>
     </li>
@@ -1491,7 +1545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
         垃圾分类
       </a>
     </li>
@@ -1505,7 +1559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%8E%A5%E6%94%B6%E5%BF%AB%E9%80%92/" class="md-nav__link">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%8E%A5%E6%94%B6%E5%BF%AB%E9%80%92/" class="md-nav__link">
         接受快递
       </a>
     </li>
@@ -1519,7 +1573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%97%A5%E7%89%88%E6%89%8B%E6%9C%BAfelica%E8%8A%AF%E7%89%87/" class="md-nav__link">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%97%A5%E7%89%88%E6%89%8B%E6%9C%BAfelica%E8%8A%AF%E7%89%87/" class="md-nav__link">
         日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析
       </a>
     </li>
@@ -1533,7 +1587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E5%AD%90%E6%94%AF%E4%BB%98-%E4%BA%A4%E9%80%9A%E5%8D%A1/" class="md-nav__link">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E5%AD%90%E6%94%AF%E4%BB%98-%E4%BA%A4%E9%80%9A%E5%8D%A1/" class="md-nav__link">
         日本电子支付 - 交通卡
       </a>
     </li>
@@ -1547,7 +1601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E8%AF%9D%E5%8D%A1/" class="md-nav__link">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E8%AF%9D%E5%8D%A1/" class="md-nav__link">
         电话卡
       </a>
     </li>
@@ -1561,7 +1615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E8%90%BD%E5%9C%B0todo/" class="md-nav__link">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E8%90%BD%E5%9C%B0todo/" class="md-nav__link">
         落地事宜
       </a>
     </li>
@@ -1575,7 +1629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E9%93%B6%E8%A1%8C%E5%8D%A1/" class="md-nav__link">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E9%93%B6%E8%A1%8C%E5%8D%A1/" class="md-nav__link">
         银行卡
       </a>
     </li>
@@ -1606,6 +1660,37 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-block-structure" class="md-nav__link">
+    General Block Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-block-content-determined-by-class-id" class="md-nav__link">
+    Data Block Content Determined by Class ID
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hierarchical-nature" class="md-nav__link">
+    Hierarchical Nature
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                     </div>
@@ -1622,155 +1707,144 @@
 
 
 
-<div class="highlight"><pre><span></span><code># ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
-# If not running interactively, don&#39;t do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
-
-# don&#39;t put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# append to the history file, don&#39;t overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# If set, the pattern &quot;**&quot; used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] &amp;&amp; eval &quot;$(SHELL=/bin/sh lesspipe)&quot;
-
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z &quot;${debian_chroot:-}&quot; ] &amp;&amp; [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-# set a fancy prompt (non-color, unless we know we &quot;want&quot; color)
-case &quot;$TERM&quot; in
-    xterm-color|*-256color) color_prompt=yes;;
-esac
-
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
-if [ -n &quot;$force_color_prompt&quot; ]; then
-    if [ -x /usr/bin/tput ] &amp;&amp; tput setaf 1 &gt;&amp;/dev/null; then
-    # We have color support; assume it&#39;s compliant with Ecma-48
-    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-    # a case would tend to support setf rather than setaf.)
-    color_prompt=yes
-    else
-    color_prompt=
-    fi
-fi
-
-if [ &quot;$color_prompt&quot; = yes ]; then
-    PS1=&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ &#39;
-else
-    PS1=&#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &#39;
-fi
-unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case &quot;$TERM&quot; in
-xterm*|rxvt*)
-    PS1=&quot;\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1&quot;
-    ;;
-*)
-    ;;
-esac
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors &amp;&amp; eval &quot;$(dircolors -b ~/.dircolors)&quot; || eval &quot;$(dircolors -b)&quot;
-    alias ls=&#39;ls --color=auto&#39;
-    #alias dir=&#39;dir --color=auto&#39;
-    #alias vdir=&#39;vdir --color=auto&#39;
-
-    alias grep=&#39;grep --color=auto&#39;
-    alias fgrep=&#39;fgrep --color=auto&#39;
-    alias egrep=&#39;egrep --color=auto&#39;
-fi
-
-# colored GCC warnings and errors
-#export GCC_COLORS=&#39;error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01&#39;
-
-# some more ls aliases
-alias ll=&#39;ls -alF&#39;
-alias la=&#39;ls -A&#39;
-alias l=&#39;ls -CF&#39;
-
-# Add an &quot;alert&quot; alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert=&#39;notify-send --urgency=low -i &quot;$([ $? = 0 ] &amp;&amp; echo terminal || echo error)&quot; &quot;$(history|tail -n1|sed -e &#39;\&#39;&#39;s/^\s*[0-9]\+\s*//;s/[;&amp;|]\s*alert$//&#39;\&#39;&#39;)&quot;&#39;
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-# enable programmable completion features (you don&#39;t need to enable
-# this, if it&#39;s already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
-
-export DISPLAY=$(awk &#39;/nameserver / {print $2; exit}&#39; /etc/resolv.conf 2&gt;/dev/null):0
-
-export ROOTSYS=/home/$USER/Software/root
-export PATH=$ROOTSYS/bin:$PATH
-export LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
-source /home/tbt/Software/geant4/install/bin/geant4.sh
-source /home/tbt/Software/geant4/install/share/Geant4/geant4make/geant4make.sh
-
-export G4DATA=/home/tbt/Software/geant4/install/share/Geant4/data
-export DISPLAY=172.28.224.1:0.0
-
-PATH=$PATH:/home/tbt/Software/fbm.2004-11-10/bin
-export PATH
-export PATH=$PATH:/home/tbt/workspace/deutron/fresco/source
-
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk &#39;{print $2}&#39;):0.0
-
-[ -f ~/.fzf.bash ] &amp;&amp; source ~/.fzf.bash
-eval &quot;$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)&quot;
-</code></pre></div>
+<h1 id="detailed-explanation-of-riken-ridf-file-structure-data-block-block-description">Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Description<a class="headerlink" href="#detailed-explanation-of-riken-ridf-file-structure-data-block-block-description" title="Permanent link">#</a></h1>
+<p>RIKEN's RIDF (RIBF Data Format) file is a <strong>binary file</strong>, and its basic unit is the <strong>data block (Block)</strong>. The entire file consists of a series of such data blocks arranged sequentially. Each data block describes specific information, such as raw detector data, event information, scaler data, comments, or status information.</p>
+<hr />
+<h2 id="general-block-structure">General Block Structure<a class="headerlink" href="#general-block-structure" title="Permanent link">#</a></h2>
+<p>Each data block begins with one or more <strong>Header Word(s)</strong>, which define the attributes and type of the data block. The most critical is the first header word, typically 32 bits (4 bytes) in size, structured as follows:</p>
+<ol>
+<li>
+<p><strong>First Header Word (32 bits)</strong>:</p>
+<ul>
+<li><strong><code>Revision</code> (2 bits)</strong>: The version number of the block format. Typically <code>0b00</code> (decimal 0), representing version 1.</li>
+<li><strong><code>Layer</code> (2 bits)</strong>: Defines the depth of the data block in the hierarchical structure. For example, a top-level block might be Layer 0, and its sub-blocks might be Layer 1, and so on.</li>
+<li><strong><code>Class ID</code> (6 bits)</strong>: <strong>This is the key field that distinguishes the type of data block.</strong> Different <code>Class ID</code> values represent different types of data blocks, such as event data, raw data segments, comments, etc. We will detail some common <code>Class ID</code> values below.</li>
+<li><strong><code>Block Size</code> (22 bits)</strong>: Defines the <strong>total size of the entire data block</strong>, measured in <strong>short words (2 bytes each)</strong>. This size includes the header word(s) and all subsequent data. This field allows the reading program to determine how much data to read to fully retrieve the current block and locate the starting position of the next block.</li>
+</ul>
+</li>
+<li>
+<p><strong>Address Word (32 bits) (usually immediately following the first header word)</strong>:</p>
+<ul>
+<li>This 32-bit word is typically used to identify the source of the data. For data blocks generated by front-end electronics modules (e.g., VME modules), this address word is often the <strong>Event Fragment ID</strong>, or it may represent the IP address or other identifier of the front-end computer that generated the data.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Thus, a typical data block usually contains at least 8 bytes of header information (the first header word + address word).</strong> The subsequent content is entirely determined by the <code>Class ID</code>.</p>
+<hr />
+<h2 id="data-block-content-determined-by-class-id">Data Block Content Determined by <code>Class ID</code><a class="headerlink" href="#data-block-content-determined-by-class-id" title="Permanent link">#</a></h2>
+<p>The <code>Class ID</code> tells us what kind of data is contained in the block. Below are some common and important <code>Class ID</code> values in RIDF and their corresponding data block meanings:</p>
+<ul>
+<li>
+<p><strong><code>Class ID = 0</code>: Event Fragment</strong></p>
+<ul>
+<li><strong>Purpose</strong>: Represents a data packet about an "event" sent from an independent data source (e.g., a data acquisition card, a front-end computer, or a subsystem).</li>
+<li><strong>Typical Content</strong>:<ul>
+<li>Standard header word(s) and address word (the address word is usually the unique ID of this fragment).</li>
+<li>May contain a fragment-specific header, such as a timestamp or trigger information.</li>
+<li><strong>Core Content</strong>: Usually contains one or more <strong>Segment Blocks (<code>Class ID = 4</code>)</strong>, which hold raw data from different detectors or electronics modules.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Class ID = 1</code>: Event Assembly</strong></p>
+<ul>
+<li><strong>Purpose</strong>: Combines data from different sources (i.e., multiple event fragments, <code>Class ID = 0</code>) that belong to the same physical event. This is the result of the event building process.</li>
+<li><strong>Typical Content</strong>:<ul>
+<li>Standard header word(s) and address word.</li>
+<li>May contain a global event header, such as a global event number or global timestamp.</li>
+<li>Contains multiple previously described <strong>Event Fragment Blocks (Event Fragment)</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Class ID = 4</code>: Segment</strong></p>
+<ul>
+<li><strong>Purpose</strong>: <strong>This is the most basic unit containing actual raw detector data and is very important!</strong></li>
+<li><strong>Typical Content</strong>:<ul>
+<li>Standard header word(s) and address word (the address word may have specific meanings at this level or be inherited from the parent block).</li>
+<li><strong>Segment Header</strong>: A header specific to this data segment, typically containing:<ul>
+<li><strong><code>Segment ID</code></strong>: An integer uniquely identifying the source of this data segment (e.g., which detector, which module). The <code>Segment ID</code> itself is often structurally defined, including device, focal plane, detector type, and module number information.</li>
+<li>Data type indicator: Specifies the exact format of the subsequent data (e.g., ADC data, TDC data, pattern words, etc.).</li>
+<li>Channel count or data word count, etc.</li>
+</ul>
+</li>
+<li><strong>Data Payload</strong>: The actual raw data values (e.g., ADC conversion results, TDC time measurements, etc.).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Class ID = 5</code>: Comment Block</strong></p>
+<ul>
+<li><strong>Purpose</strong>: Used to embed textual comments in the data file, such as run numbers, experimental conditions, operator notes, etc.</li>
+<li><strong>Typical Content</strong>:<ul>
+<li>Standard header word(s) and address word.</li>
+<li>A field specifying the length of the comment.</li>
+<li>Actual ASCII or UTF-8 text string.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Class ID = 11, 12, 13</code>: Scaler Block</strong></p>
+<ul>
+<li><strong>Purpose</strong>: Stores values of various scalers (e.g., beam intensity counts, trigger rate counts, etc.).</li>
+<li><code>Class ID = 11</code>: Non-cleared scaler (24 bits)</li>
+<li><code>Class ID = 12</code>: Cleared scaler (24 bits)</li>
+<li><code>Class ID = 13</code>: Non-cleared scaler (32 bits)</li>
+<li><strong>Typical Content</strong>:<ul>
+<li>Standard header word(s) and address word.</li>
+<li>Usually contains a field indicating the number of scaler channels.</li>
+<li>A series of scaler values.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Class ID = 16</code>: Timestamp Block</strong></p>
+<ul>
+<li><strong>Purpose</strong>: Records timestamp information, often used for event synchronization, dead time calculation, etc.</li>
+<li><strong>Typical Content</strong>:<ul>
+<li>Standard header word(s) and address word.</li>
+<li>One or more high-precision timestamp values.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Class ID = 21</code>: Status Block</strong></p>
+<ul>
+<li><strong>Purpose</strong>: Records the status information of the DAQ system or experiment.</li>
+<li><strong>Typical Content</strong>:<ul>
+<li>Standard header word(s) and address word.</li>
+<li><strong><code>Status ID</code></strong>: Further subdivides the status type.<ul>
+<li><code>Status ID = 11</code>: Run start status, typically containing <strong>XML-formatted text</strong> describing various configurations and parameters at the start of the run.</li>
+<li><code>Status ID = 12</code>: Run end status, also containing <strong>XML-formatted text</strong> recording information at the end of the run.</li>
+</ul>
+</li>
+<li>Status data itself (e.g., XML text content).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="hierarchical-nature">Hierarchical Nature<a class="headerlink" href="#hierarchical-nature" title="Permanent link">#</a></h2>
+<p>It is important to understand the hierarchical structure of RIDF. A high-level data block (e.g., <code>Class ID = 1</code> Event Assembly Block) can contain multiple lower-level data blocks (e.g., multiple <code>Class ID = 0</code> Event Fragment Blocks), and an Event Fragment Block can contain multiple <code>Class ID = 4</code> Segment Blocks. The <code>Block Size</code> field ensures that decoding software can correctly skip or enter these nested blocks.</p>
+<p>This structure makes the data both organized and highly flexible, capable of meeting the needs of RIKEN's complex nuclear physics experiments. Software for decoding RIDF files (e.g., ANAROOT) parses these data blocks one by one, identifies their <code>Class ID</code>, and extracts valid data based on the definitions of different block types.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年4月24日 19:11:32 UTC"><span class="timeago" datetime="2025-04-24T19:11:32+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年4月24日 19:11:32 UTC">2025-04-24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 27, 2025 05:26:03 UTC"><span class="timeago" datetime="2025-05-27T05:26:03+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 27, 2025 05:26:03 UTC">2025-05-27</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年4月24日 19:11:32 UTC"><span class="timeago" datetime="2025-04-24T19:11:32+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年4月24日 19:11:32 UTC">2025-04-24</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 27, 2025 05:26:03 UTC"><span class="timeago" datetime="2025-05-27T05:26:03+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 27, 2025 05:26:03 UTC">2025-05-27</span>
       
     
   </small>
@@ -1842,22 +1916,22 @@ eval &quot;$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)&quot;
         <div class="md-dialog__inner md-typeset"></div>
       </div>
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
       
       
-        <script src="../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+        <script src="../../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
         
-          <script src="../../../../js/timeago.min.js"></script>
+          <script src="../../../../../js/timeago.min.js"></script>
         
-          <script src="../../../../js/timeago_mkdocs_material.js"></script>
+          <script src="../../../../../js/timeago_mkdocs_material.js"></script>
         
-          <script src="../../../../js/timeago.min.js"></script>
+          <script src="../../../../../js/timeago.min.js"></script>
         
-          <script src="../../../../js/timeago_mkdocs_material.js"></script>
+          <script src="../../../../../js/timeago_mkdocs_material.js"></script>
         
           <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
         
-          <script src="../../../../js/scheme.js"></script>
+          <script src="../../../../../js/scheme.js"></script>
         
       
     </body>
