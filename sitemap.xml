@@ -281,6 +281,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/project/samurai/anaroot/"/>
     </url>
     <url>
+        <loc>https://tianbaiting.github.io/sci/project/samurai/anaroot2version/</loc>
+        <lastmod>2025-05-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/project/samurai/anaroot2version/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/project/samurai/anaroot2version/"/>
+    </url>
+    <url>
         <loc>https://tianbaiting.github.io/sci/project/samurai/detector_samurai/</loc>
         <lastmod>2025-05-27</lastmod>
         <changefreq>daily</changefreq>
@@ -648,6 +655,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/project/samurai/anaroot/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/project/samurai/anaroot/"/>
+    </url>
+    <url>
+        <loc>https://tianbaiting.github.io/en/sci/project/samurai/anaroot2version/</loc>
+        <lastmod>2025-05-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/project/samurai/anaroot2version/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/project/samurai/anaroot2version/"/>
     </url>
     <url>
         <loc>https://tianbaiting.github.io/en/sci/project/samurai/detector_samurai/</loc>
