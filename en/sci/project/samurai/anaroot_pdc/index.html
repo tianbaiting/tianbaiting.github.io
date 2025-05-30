@@ -8,20 +8,20 @@
         
         
         
-          <link rel="canonical" href="https://tianbaiting.github.io/en/sci/project/samurai/anaroot2version/">
+          <link rel="canonical" href="https://tianbaiting.github.io/en/sci/project/samurai/anaroot_pdc/">
         
         
-          <link rel="prev" href="../anaroot/">
+          <link rel="prev" href="../anaroot2version/">
         
         
-          <link rel="next" href="../anaroot_pdc/">
+          <link rel="next" href="../detector_samurai/">
         
         <link rel="icon" href="../../../../../assets/images/favicon.png">
         <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.0.4">
       
       
-        
-          <title>ANAROOT Detailed Documentation - TBT个人网站</title>
+        ]
+          <title>ANAROOT Libraries for PDC Analysis - TBT个人网站</title>
         
       
       
@@ -79,7 +79,7 @@
       <div data-md-component="skip">
         
           
-          <a href="#anaroot-detailed-documentation" class="md-skip">
+          <a href="#c-libraries-for-pdc-reconstruction-and-calibration" class="md-skip">
             Skip to content
           </a>
         
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ANAROOT Detailed Documentation
+              ANAROOT Libraries for PDC Analysis
             
           </span>
         </div>
@@ -133,7 +133,7 @@
 
   <div class="md-header__button md-lang">
     
-      <a href="../../../../../sci/project/samurai/anaroot2version/" hreflang="zh">简体中文</a>
+      <a href="../../../../../sci/project/samurai/anaroot_pdc/" hreflang="zh">简体中文</a>
     
       <a href="./" hreflang="en">English</a>
     
@@ -1365,6 +1365,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../anaroot2version/" class="md-nav__link">
+        ANAROOT Detailed Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -1377,12 +1391,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          ANAROOT Detailed Documentation
+          ANAROOT Libraries for PDC Analysis
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        ANAROOT Detailed Documentation
+        ANAROOT Libraries for PDC Analysis
       </a>
       
         
@@ -1401,8 +1415,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
+  <a href="#tartcalibpdchit" class="md-nav__link">
+    TArtCalibPDCHit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tartcalibpdctrack" class="md-nav__link">
+    TArtCalibPDCTrack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tartdchit-and-tartdctrack" class="md-nav__link">
+    TArtDCHit and TArtDCTrack
   </a>
   
 </li>
@@ -1411,20 +1439,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../anaroot_pdc/" class="md-nav__link">
-        ANAROOT Libraries for PDC Analysis
-      </a>
     </li>
   
 
@@ -1688,8 +1702,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
+  <a href="#tartcalibpdchit" class="md-nav__link">
+    TArtCalibPDCHit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tartcalibpdctrack" class="md-nav__link">
+    TArtCalibPDCTrack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tartdchit-and-tartdctrack" class="md-nav__link">
+    TArtDCHit and TArtDCTrack
   </a>
   
 </li>
@@ -1711,34 +1739,263 @@
 
 
 
-<h1 id="anaroot-detailed-documentation">ANAROOT Detailed Documentation<a class="headerlink" href="#anaroot-detailed-documentation" title="Permanent link">#</a></h1>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
-<p>[1] ANAROOT-related web pages, such as tutorials and overview pages. <a href="https://ribf.riken.jp/RIBFDAQ/index.php?plugin=attach&amp;refer=Tools%2FAnalysis%2FANAROOT&amp;openfile=anaroot_ribfusermeeting2013.pdf">https://ribf.riken.jp/RIBFDAQ/index.php?plugin=attach&amp;refer=Tools%2FAnalysis%2FANAROOT&amp;openfile=anaroot_ribfusermeeting2013.pdf</a></p>
-<p>[2] ANAROOT Installation Guide. <a href="https://ribf.riken.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT%2FInstallation">https://ribf.riken.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT%2FInstallation</a></p>
-<p>[3] ANAROOT homepage or developer information. <a href="https://ribf.riken.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT">https://ribf.riken.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT</a></p>
-<p>[4] ANAROOT Tutorial page. <a href="https://ribf.riken.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT%2FTutorial">https://ribf.riken.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT%2FTutorial</a></p>
-<p>[5] ANAROOT Overview (Abstract) page. <a href="https://ribf.riken.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT%2FAbstract">https://ribf.riken.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT%2FAbstract</a></p>
-<p>[6] GitHub or other code hosting platforms (as an auxiliary source for obtaining source code). <a href="https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives">https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives</a></p>
-<p>[7] Same as [6]. <a href="https://docs.github.com/enterprise-cloud@latest/repositories/working-with-files/using-files/downloading-source-code-archives">https://docs.github.com/enterprise-cloud@latest/repositories/working-with-files/using-files/downloading-source-code-archives</a></p>
-<p>[8] ANAROOT internal class documentation or header file comments (e.g., <code>TArtStoreManager.hh</code>, <code>TArtRawEventObject.hh</code>, etc.).</p>
-<p>[9] ANAROOT documentation or examples on parameter management (such as <code>TArtUserParameters</code>, <code>TArtSAMURAIParameters</code>).</p>
-<p>[10] ANAROOT documentation or examples on <code>TArtAnaLoop</code> and <code>Anafile</code> usage (e.g., related to <code>TAlEncExample</code>). <a href="http://be.nucl.ap.titech.ac.jp/~kondo/moin/moin.cgi/ANAROOT/Manual/analoop">http://be.nucl.ap.titech.ac.jp/~kondo/moin/moin.cgi/ANAROOT/Manual/analoop</a></p>
-<p>[11] BigRIPS spectrometer technical documentation or publications. <a href="https://inis.iaea.org/records/w1kc8-5ep03/files/53109350.pdf?download=1">https://inis.iaea.org/records/w1kc8-5ep03/files/53109350.pdf?download=1</a></p>
-<p>[12] SAMURAI spectrometer technical documentation or publications. <a href="https://www.nishina.riken.jp/ribf/SAMURAI/overview.html">https://www.nishina.riken.jp/ribf/SAMURAI/overview.html</a></p>
-<p>[13] Same as [12]. <a href="https://ribf.riken.jp/SAMURAI/120425_SAMURAIConstProp.pdf">https://ribf.riken.jp/SAMURAI/120425_SAMURAIConstProp.pdf</a></p>
-<p>[14] Doctoral theses or detailed technical reports involving SAMURAI PDC and NEBULA data analysis (e.g., mentioning MDF method, cross-talk correction algorithms, etc.). <a href="https://tuprints.ulb.tu-darmstadt.de/20267/1/Dissertation_LehrChristopher_2022-01-04.pdf">https://tuprints.ulb.tu-darmstadt.de/20267/1/Dissertation_LehrChristopher_2022-01-04.pdf</a></p>
-<p>[15] General literature or specific ANAROOT/SAMURAI documentation on the application of Kalman filtering in track reconstruction. <a href="https://www.nishina.riken.jp/researcher/APR/APR049/pdf/161.pdf">https://www.nishina.riken.jp/researcher/APR/APR049/pdf/161.pdf</a></p>
-<p>[16] NEBULA detector technical documentation or publications. <a href="https://www.nishina.riken.jp/researcher/APR/APR056/pdf/91.pdf">https://www.nishina.riken.jp/researcher/APR/APR056/pdf/91.pdf</a></p>
-<p>[17] Publications on NEBULA detector (including NEBULA-Plus) design, performance, and calibration. <a href="https://indico.cern.ch/event/865322/contributions/5048179/attachments/2512879/4319595/2022-02-21%20Neutron%20detectors%20v6.pdf">https://indico.cern.ch/event/865322/contributions/5048179/attachments/2512879/4319595/2022-02-21%20Neutron%20detectors%20v6.pdf</a></p>
-<p>[18] General principles or NEBULA-specific literature on neutron/gamma discrimination (PSD) in plastic scintillators. <a href="https://inis.iaea.org/collection/NCLCollectionStore/_Public/55/078/55078687.pdf">https://inis.iaea.org/collection/NCLCollectionStore/_Public/55/078/55078687.pdf</a></p>
-<p>[19] Sections on <code>analoop</code> and <code>reference</code> in the ANAROOT manual maintained by Kondo-san. <a href="http://be.nucl.ap.titech.ac.jp/~kondo/moin/moin.cgi/ANAROOT/Manual/analoop">http://be.nucl.ap.titech.ac.jp/~kondo/moin/moin.cgi/ANAROOT/Manual/analoop</a></p>
-<p>[20] Sections on CUI commands in the ANAROOT manual maintained by Kondo-san. <a href="http://be.nucl.ap.titech.ac.jp/~kondo/moin/moin.cgi/ANAROOT/Manual/reference">http://be.nucl.ap.titech.ac.jp/~kondo/moin/moin.cgi/ANAROOT/Manual/reference</a></p>
-<p>[21] ROOT Beginner's Guide. <a href="https://root.cern.ch/root/htmldoc/guides/primer/ROOTPrimer.html">https://root.cern.ch/root/htmldoc/guides/primer/ROOTPrimer.html</a></p>
-<p>[22] Same as [21]. <a href="https://www.ao-universe.com/guides/classic-ao/gameplay-guides-6/introduction-to-scripting">https://www.ao-universe.com/guides/classic-ao/gameplay-guides-6/introduction-to-scripting</a></p>
-<p>[23] ROOT histogram tutorials. <a href="https://root.cern/doc/master/group__tutorial__hist.html">https://root.cern/doc/master/group__tutorial__hist.html</a></p>
-<p>[24] Same as [23]. <a href="https://root.cern/manual/histograms/">https://root.cern/manual/histograms/</a></p>
-<p>[25] Other RIBF experiment publications using ANAROOT for data analysis. <a href="https://tuprints.ulb.tu-darmstadt.de/9192/7/PhD_thesis_JKahlbow.pdf">https://tuprints.ulb.tu-darmstadt.de/9192/7/PhD_thesis_JKahlbow.pdf</a></p>
-<p>[26] Same as [25]. <a href="https://indico.global/event/6805/contributions/58357/attachments/29459/52337/OS_day2_id48_ichinohe.pdf">https://indico.global/event/6805/contributions/58357/attachments/29459/52337/OS_day2_id48_ichinohe.pdf</a></p>
+<h1 id="c-libraries-for-pdc-reconstruction-and-calibration">C++ Libraries for PDC Reconstruction and Calibration<a class="headerlink" href="#c-libraries-for-pdc-reconstruction-and-calibration" title="Permanent link">#</a></h1>
+<h2 id="tartcalibpdchit">TArtCalibPDCHit<a class="headerlink" href="#tartcalibpdchit" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>Location:</strong> anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCHit.hh, TArtCalibPDCHit.cc  </li>
+<li><strong>Function:</strong> Performs hit-level calibration and reconstruction for PDC raw data (such as TDC, QDC), generating a TArtDCHit object for each wire.</li>
+<li><strong>Typical usage:</strong><br />
+<div class="highlight"><pre><span></span><code><span class="n">TArtCalibPDCHit</span><span class="w"> </span><span class="o">*</span><span class="n">pdchitcalib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TArtCalibPDCHit</span><span class="p">();</span>
+<span class="n">pdchitcalib</span><span class="o">-&gt;</span><span class="n">ReconstructData</span><span class="p">();</span>
+<span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">pdc_hit_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">&quot;SAMURAIPDCHit&quot;</span><span class="p">);</span>
+</code></pre></div></li>
+</ul>
+<h2 id="tartcalibpdctrack">TArtCalibPDCTrack<a class="headerlink" href="#tartcalibpdctrack" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>Location:</strong> anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCTrack.hh, TArtCalibPDCTrack.cc  </li>
+<li><strong>Function:</strong> Based on the output of TArtCalibPDCHit, reconstructs tracks from all hits and outputs TArtDCTrack objects.</li>
+<li><strong>Typical usage:</strong><br />
+<div class="highlight"><pre><span></span><code><span class="n">TArtCalibPDCTrack</span><span class="w"> </span><span class="o">*</span><span class="n">pdctrackcalib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TArtCalibPDCTrack</span><span class="p">();</span>
+<span class="n">pdctrackcalib</span><span class="o">-&gt;</span><span class="n">ReconstructData</span><span class="p">();</span>
+<span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">pdc_trk_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">&quot;SAMURAIPDCTrack&quot;</span><span class="p">);</span>
+</code></pre></div></li>
+</ul>
+<h2 id="tartdchit-and-tartdctrack">TArtDCHit and TArtDCTrack<a class="headerlink" href="#tartdchit-and-tartdctrack" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>TArtDCHit:</strong> Stores information for a single PDC wire hit (position, TDC, QDC, etc.).</li>
+<li><strong>TArtDCTrack:</strong> Stores a reconstructed PDC track (position, angle, chi2, etc.).</li>
+</ul>
+<h1 id="pdc-parameter-database">PDC Parameter Database<a class="headerlink" href="#pdc-parameter-database" title="Permanent link">#</a></h1>
+<h2 id="samuraipdcxml">SAMURAIPDC.xml<a class="headerlink" href="#samuraipdcxml" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>Location:</strong> SAMURAIPDC.xml  </li>
+<li><strong>Function:</strong> Stores parameters for each PDC wire (geo, ch, wireid, position, etc.), used for lookup and calibration during reconstruction.</li>
+</ul>
+<h1 id="macros-and-scripts">Macros and Scripts<a class="headerlink" href="#macros-and-scripts" title="Permanent link">#</a></h1>
+<h2 id="recopdctrackc">recoPDCTrack.C<a class="headerlink" href="#recopdctrackc" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>Location:</strong> users/tbt/tbt_try/recoPDCTrack.C  </li>
+<li><strong>Function:</strong> Typical macro for PDC reconstruction. Workflow: load parameters → open RIDF → PDC hit reconstruction → PDC track reconstruction → output track parameters.</li>
+<li><strong>Usage:</strong> Batch processing of data files, outputting PDC track parameters for each event.</li>
+</ul>
+<h2 id="ridf2treec">RIDF2Tree.C<a class="headerlink" href="#ridf2treec" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>Location:</strong> users/tbt/tbt_try/RIDF2Tree.C  </li>
+<li><strong>Function:</strong> Decodes RIDF raw data and saves as ROOT TTree format for further analysis. Can include PDC data branches.</li>
+</ul>
+<h2 id="recosamuraic-recotrack_wsksc">RecoSAMURAI.C, RecoTrack_wSks.C<a class="headerlink" href="#recosamuraic-recotrack_wsksc" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>Location:</strong> Macros/SAMURAI/Analysis/RecoSAMURAI.C, Macros/SAMURAI/RKtrace/RecoTrack_wSks.C  </li>
+<li><strong>Function:</strong> Used for fragment momentum and track reconstruction in the SAMURAI spectrometer. By default uses FDC/BDC, but can be modified to use PDC tracks for extrapolation and momentum reconstruction.</li>
+</ul>
+<h2 id="onlinemonitorcc">OnlineMonitor.cc<a class="headerlink" href="#onlinemonitorcc" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>Location:</strong> OnlineMonitor.cc  </li>
+<li><strong>Function:</strong> Online monitoring macro, supports online reconstruction and visualization of PDC data (set fUsePDC=true).</li>
+</ul>
+<h1 id="other-notes">Other Notes<a class="headerlink" href="#other-notes" title="Permanent link">#</a></h1>
+<h2 id="samuraipdcxml-parameter-file">SAMURAIPDC.xml Parameter File<a class="headerlink" href="#samuraipdcxml-parameter-file" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>Note:</strong> All PDC channels (geo/ch) actually used must be defined in this file, otherwise reconstruction will fail.</li>
+</ul>
+<h1 id="summary-and-recommendations">Summary and Recommendations<a class="headerlink" href="#summary-and-recommendations" title="Permanent link">#</a></h1>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Main Function / Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TArtCalibPDCHit</td>
+<td>Class</td>
+<td>PDC hit-level reconstruction (raw signal → hit)</td>
+</tr>
+<tr>
+<td>TArtCalibPDCTrack</td>
+<td>Class</td>
+<td>PDC track reconstruction (hit → track)</td>
+</tr>
+<tr>
+<td>TArtDCHit/TArtDCTrack</td>
+<td>Class</td>
+<td>Store single hit / track information</td>
+</tr>
+<tr>
+<td>SAMURAIPDC.xml</td>
+<td>ParamFile</td>
+<td>Parameter database for each PDC wire</td>
+</tr>
+<tr>
+<td>transPDCData.C</td>
+<td>Macro</td>
+<td>Convert PDC raw data to readable text</td>
+</tr>
+<tr>
+<td>RIDF2Tree.C</td>
+<td>Macro</td>
+<td>Convert RIDF to ROOT TTree, including PDC branches</td>
+</tr>
+<tr>
+<td>RecoSAMURAI.C</td>
+<td>Macro</td>
+<td>Fragment momentum/track reconstruction (PDC track)</td>
+</tr>
+<tr>
+<td>RecoTrack_wSks.C</td>
+<td>Macro</td>
+<td>Runge-Kutta tracking (PDC track)</td>
+</tr>
+<tr>
+<td>OnlineMonitor.s024</td>
+<td>Macro</td>
+<td>Online monitoring, supports PDC data reconstruction</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-to-choose-and-use">How to Choose and Use<a class="headerlink" href="#how-to-choose-and-use" title="Permanent link">#</a></h2>
+<ul>
+<li><strong>Only PDC reconstruction:</strong> Use TArtCalibPDCHit, TArtCalibPDCTrack.</li>
+<li><strong>Full-chain physics analysis:</strong> In macros like RecoSAMURAI.C or RecoTrack_wSks.C, replace FDC/BDC with PDC track for extrapolation to the target and momentum reconstruction.</li>
+<li><strong>Online monitoring:</strong> Use OnlineMonitor.s024 and set fUsePDC=true.</li>
+</ul>
+<hr />
+<h2 id="data-flow-and-algorithm-for-pdc-track-reconstruction">Data Flow and Algorithm for PDC Track Reconstruction<a class="headerlink" href="#data-flow-and-algorithm-for-pdc-track-reconstruction" title="Permanent link">#</a></h2>
+<h3 id="data-flow-overview">Data Flow Overview<a class="headerlink" href="#data-flow-overview" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Input:</strong> All PDC hits (TArtDCHit), each with spatial position (x/y/z), drift time, etc.</li>
+<li><strong>Processing:</strong> In <code>TArtCalibPDCTrack::ReconstructData()</code>, hits are first classified (by layer/direction), then geometric methods (e.g., weighted centroid, line fitting) are used to reconstruct track parameters.</li>
+<li><strong>Output:</strong> Reconstructed track parameters (position, angle, chi2, etc.) are written to TArtDCTrack objects via <code>SetAngle</code>, <code>SetPosition</code>, etc.</li>
+</ul>
+<h3 id="typical-implementation-weighted-centroid-example">Typical Implementation (Weighted Centroid Example)<a class="headerlink" href="#typical-implementation-weighted-centroid-example" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p><strong>Hit Classification</strong><br />
+   Classify all hits by wire direction (u/x/v/y), store in separate buffers.</p>
+</li>
+<li>
+<p><strong>Calculate Weighted Centroid for Each Direction</strong><br />
+   For each layer, calculate the weighted average position (weight is usually drift time difference or signal strength).</p>
+</li>
+<li>
+<p><strong>Line Fitting to Obtain Angles</strong><br />
+   Fit a straight line to the centroid points to get the slope (angle):  </p>
+</li>
+<li>X direction: a = (x2 - x1)/(z2 - z1)</li>
+<li>
+<p>Y direction: b = (y2 - y1)/(z2 - z1)<br />
+   Or use least squares fitting with multiple points.</p>
+</li>
+<li>
+<p><strong>Write to TArtDCTrack</strong><br />
+   Use <code>SetAngle(a, 0)</code> and <code>SetAngle(b, 1)</code> to store the fitted angles in TArtDCTrack's ca[0] and ca[1].</p>
+</li>
+<li>
+<p><strong>Access Later</strong><br />
+   Use <code>GetAngle(0)</code> and <code>GetAngle(1)</code> to retrieve the X and Y angles.</p>
+</li>
+</ol>
+<hr />
+<h2 id="notes-on-momentum">Notes on Momentum<a class="headerlink" href="#notes-on-momentum" title="Permanent link">#</a></h2>
+<p>PDC is a multi-wire drift chamber and can only measure the spatial trajectory (x, y, a, b) of a particle. It cannot determine momentum alone. Momentum reconstruction requires magnetic field information and the spectrometer's transfer matrix (or field tracking algorithms), usually involving tracks at multiple positions (e.g., FDC1, FDC2, BDC, PDC) and magnetic field parameters.</p>
+<hr />
+<h2 id="example-detector-distribution-macro">Example: Detector Distribution Macro<a class="headerlink" href="#example-detector-distribution-macro" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/stat.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;set&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">recoPDCTrack</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ridffile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/home/s057/exp/exp2505_s057/anaroot/users/tbt/ridf/data0074.ridf&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="n">gSystem</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;libXMLParser.so&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 先加载XML解析库</span>
+<span class="w">    </span><span class="n">gSystem</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;libanacore.so&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// 加载PDC参数</span>
+<span class="w">    </span><span class="n">TArtSAMURAIParameters</span><span class="w"> </span><span class="o">*</span><span class="n">samuraiparameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TArtSAMURAIParameters</span><span class="o">::</span><span class="n">Instance</span><span class="p">();</span>
+<span class="w">    </span><span class="n">samuraiparameters</span><span class="o">-&gt;</span><span class="n">LoadParameter</span><span class="p">(</span><span class="s">&quot;../db/SAMURAIPDC.xml&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Open RIDF file</span>
+<span class="w">    </span><span class="n">TArtEventStore</span><span class="w"> </span><span class="o">*</span><span class="n">estore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TArtEventStore</span><span class="p">();</span>
+<span class="w">    </span><span class="n">estore</span><span class="o">-&gt;</span><span class="n">Open</span><span class="p">(</span><span class="n">ridffile</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Initialize PDC hit and track reconstruction</span>
+<span class="w">    </span><span class="n">TArtCalibPDCHit</span><span class="w"> </span><span class="o">*</span><span class="n">pdchitcalib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TArtCalibPDCHit</span><span class="p">();</span>
+<span class="w">    </span><span class="n">TArtCalibPDCTrack</span><span class="w"> </span><span class="o">*</span><span class="n">pdctrackcalib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TArtCalibPDCTrack</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">TArtStoreManager</span><span class="w"> </span><span class="o">*</span><span class="n">sman</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TArtStoreManager</span><span class="o">::</span><span class="n">Instance</span><span class="p">();</span>
+<span class="w">    </span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">pdc_hit_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">&quot;SAMURAIPDCHit&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">pdc_trk_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">&quot;SAMURAIPDCTrack&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// get input file name</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">inputFileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">ridffile</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">inputFileName</span><span class="p">.</span><span class="n">find_last_of</span><span class="p">(</span><span class="sc">&#39;/&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">fileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">pos</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">inputFileName</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">pos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">inputFileName</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// 创建输出ROOT文件和TTree</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">outputDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;./output&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">outroot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">outputDir</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fileName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;_pdc.root&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">outpng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">outputDir</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fileName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;_pdc_track_xy.png&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">TFile</span><span class="w"> </span><span class="o">*</span><span class="n">fout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TFile</span><span class="p">(</span><span class="n">outroot</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span><span class="w"> </span><span class="s">&quot;RECREATE&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">TTree</span><span class="w"> </span><span class="o">*</span><span class="n">tree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TTree</span><span class="p">(</span><span class="s">&quot;pdctree&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PDC Track Tree&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">event</span><span class="p">,</span><span class="w"> </span><span class="n">trackid</span><span class="p">,</span><span class="w"> </span><span class="n">ndf</span><span class="p">,</span><span class="w"> </span><span class="n">nhit</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">ax</span><span class="p">,</span><span class="w"> </span><span class="n">ay</span><span class="p">,</span><span class="w"> </span><span class="n">chi2</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">Branch</span><span class="p">(</span><span class="s">&quot;event&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">event</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;event/I&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">Branch</span><span class="p">(</span><span class="s">&quot;trackid&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">trackid</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;trackid/I&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">Branch</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x/D&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">Branch</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;y/D&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">Branch</span><span class="p">(</span><span class="s">&quot;ax&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ax</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ax/D&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">Branch</span><span class="p">(</span><span class="s">&quot;ay&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ay</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ay/D&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">Branch</span><span class="p">(</span><span class="s">&quot;chi2&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">chi2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;chi2/D&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">Branch</span><span class="p">(</span><span class="s">&quot;ndf&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ndf</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ndf/I&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">Branch</span><span class="p">(</span><span class="s">&quot;nhit&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">nhit</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;nhit/I&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">neve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">estore</span><span class="o">-&gt;</span><span class="n">GetNextEvent</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">neve</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">pdchitcalib</span><span class="o">-&gt;</span><span class="n">ClearData</span><span class="p">();</span>
+<span class="w">        </span><span class="n">pdctrackcalib</span><span class="o">-&gt;</span><span class="n">ClearData</span><span class="p">();</span>
+<span class="w">        </span><span class="n">pdchitcalib</span><span class="o">-&gt;</span><span class="n">ReconstructData</span><span class="p">();</span>
+<span class="w">        </span><span class="n">pdctrackcalib</span><span class="o">-&gt;</span><span class="n">ReconstructData</span><span class="p">();</span>
+
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">ntrk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pdc_trk_array</span><span class="o">-&gt;</span><span class="n">GetEntries</span><span class="p">();</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">ntrk</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">TArtDCTrack</span><span class="w"> </span><span class="o">*</span><span class="n">trk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TArtDCTrack</span><span class="o">*</span><span class="p">)</span><span class="n">pdc_trk_array</span><span class="o">-&gt;</span><span class="n">At</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">            </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetPosition</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">            </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetPosition</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">ax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetAngle</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">            </span><span class="n">ay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetAngle</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">chi2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetChi2</span><span class="p">();</span>
+<span class="w">            </span><span class="n">ndf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetNDF</span><span class="p">();</span>
+<span class="w">            </span><span class="n">nhit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetNumHitLayer</span><span class="p">();</span>
+<span class="w">            </span><span class="n">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">neve</span><span class="p">;</span>
+<span class="w">            </span><span class="n">trackid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">            </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">Fill</span><span class="p">();</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Event: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">neve</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, Track ID: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span>
+<span class="w">                      </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, X: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, Y: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span>
+<span class="w">                      </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, Ax: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ax</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, Ay: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ay</span><span class="w"> </span>
+<span class="w">                      </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, Chi2: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">chi2</span><span class="w"> </span>
+<span class="w">                      </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, NDF: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ndf</span><span class="w"> </span>
+<span class="w">                      </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, NHits: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nhit</span><span class="w"> </span>
+<span class="w">                      </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">neve</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">Write</span><span class="p">();</span>
+
+<span class="w">    </span><span class="n">TCanvas</span><span class="w"> </span><span class="o">*</span><span class="n">c1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TCanvas</span><span class="p">(</span><span class="s">&quot;c1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PDC Track X-Y&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">800</span><span class="p">,</span><span class="w"> </span><span class="mi">600</span><span class="p">);</span>
+<span class="w">    </span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s">&quot;y:x&gt;&gt;hxy&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;COLZ&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">c1</span><span class="o">-&gt;</span><span class="n">SaveAs</span><span class="p">(</span><span class="n">outpng</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">c1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Output ROOT file: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">outroot</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Output PNG file: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">outpng</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">fout</span><span class="o">-&gt;</span><span class="n">Close</span><span class="p">();</span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">pdchitcalib</span><span class="p">;</span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">pdctrackcalib</span><span class="p">;</span>
+<span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">estore</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
@@ -1749,7 +2006,7 @@
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 27, 2025 06:30:41 UTC"><span class="timeago" datetime="2025-05-27T06:30:41+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 27, 2025 06:30:41 UTC">2025-05-27</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 30, 2025 07:10:47 UTC"><span class="timeago" datetime="2025-05-30T07:10:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 30, 2025 07:10:47 UTC">2025-05-30</span>
       
     
   </small>
