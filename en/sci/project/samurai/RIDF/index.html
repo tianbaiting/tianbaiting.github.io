@@ -1319,6 +1319,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="true">
@@ -1424,6 +1426,20 @@
     <li class="md-nav__item">
       <a href="../anaroot2version/" class="md-nav__link">
         ANAROOT Detailed Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anaroot_nebula/" class="md-nav__link">
+        Anaroot nebula
       </a>
     </li>
   
@@ -1741,6 +1757,8 @@
 
 <h1 id="detailed-explanation-of-riken-ridf-file-structure-data-block-block-description">Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Description<a class="headerlink" href="#detailed-explanation-of-riken-ridf-file-structure-data-block-block-description" title="Permanent link">#</a></h1>
 <p>RIKEN's RIDF (RIBF Data Format) file is a <strong>binary file</strong>, and its basic unit is the <strong>data block (Block)</strong>. The entire file consists of a series of such data blocks arranged sequentially. Each data block describes specific information, such as raw detector data, event information, scaler data, comments, or status information.</p>
+<p>The nested structure of [block[segment[data point]]]:</p>
+<p>[Event [[Event Header], [Data Segment 1 [[Segment Header 1], [Data Point Set 1]]], [Data Segment 2 [[Segment Header 2], [Data Point Set 2]]], ...]]</p>
 <hr />
 <h2 id="general-block-structure">General Block Structure<a class="headerlink" href="#general-block-structure" title="Permanent link">#</a></h2>
 <p>Each data block begins with one or more <strong>Header Word(s)</strong>, which define the attributes and type of the data block. The most critical is the first header word, typically 32 bits (4 bytes) in size, structured as follows:</p>
@@ -1866,13 +1884,86 @@
 <h2 id="hierarchical-nature">Hierarchical Nature<a class="headerlink" href="#hierarchical-nature" title="Permanent link">#</a></h2>
 <p>It is important to understand the hierarchical structure of RIDF. A high-level data block (e.g., <code>Class ID = 1</code> Event Assembly Block) can contain multiple lower-level data blocks (e.g., multiple <code>Class ID = 0</code> Event Fragment Blocks), and an Event Fragment Block can contain multiple <code>Class ID = 4</code> Segment Blocks. The <code>Block Size</code> field ensures that decoding software can correctly skip or enter these nested blocks.</p>
 <p>This structure makes the data both organized and highly flexible, capable of meeting the needs of RIKEN's complex nuclear physics experiments. Software for decoding RIDF files (e.g., ANAROOT) parses these data blocks one by one, identifies their <code>Class ID</code>, and extracts valid data based on the definitions of different block types.</p>
+<p>You can use this macros to convert RIDF to human readble data.<br />
+<div class="highlight"><pre><span></span><code>#include &lt;fstream&gt; // Add file stream header
+#include &lt;iostream&gt; // Add to use std::cerr
+
+void convertRIDFtoReadable(const char* ridfFile = &quot;/home/s057/exp/exp2505_s057/anaroot/users/tbt/ridf/data0013.ridf&quot;) {
+    // Load necessary libraries
+    gSystem-&gt;Load(&quot;libanacore.so&quot;);
+
+    // Open RIDF file
+    TArtEventStore *estore = new TArtEventStore();
+    if (!estore-&gt;Open(ridfFile)) {
+        std::cerr &lt;&lt; &quot;Error: Failed to open RIDF file: &quot; &lt;&lt; ridfFile &lt;&lt; std::endl;
+        return;
+    }
+
+    TArtRawEventObject *rawevent = estore-&gt;GetRawEventObject();
+
+    // Open output file
+    std::ofstream outFile(&quot;readable.txt&quot;);
+    if (!outFile.is_open()) {
+        std::cerr &lt;&lt; &quot;Error: Failed to open output file: readable.txt&quot; &lt;&lt; std::endl;
+        return;
+    }
+
+    int neve = 0; // Event counter
+    while (estore-&gt;GetNextEvent() &amp;&amp; neve &lt; 10) { // Only process the first 10 blocks
+        outFile &lt;&lt; &quot;==================== Event &quot; &lt;&lt; neve + 1 &lt;&lt; &quot; ====================&quot; &lt;&lt; std::endl;
+
+        // Iterate over all segments in the current event
+        for (int i = 0; i &lt; rawevent-&gt;GetNumSeg(); i++) {
+            TArtRawSegmentObject *seg = rawevent-&gt;GetSegment(i);
+            outFile &lt;&lt; &quot;Segment &quot; &lt;&lt; i + 1 &lt;&lt; &quot;:&quot; &lt;&lt; std::endl;
+            outFile &lt;&lt; &quot;  Device: &quot; &lt;&lt; seg-&gt;GetDevice() &lt;&lt; std::endl;
+            outFile &lt;&lt; &quot;  FP: &quot; &lt;&lt; seg-&gt;GetFP() &lt;&lt; std::endl;
+            outFile &lt;&lt; &quot;  Detector: &quot; &lt;&lt; seg-&gt;GetDetector() &lt;&lt; std::endl;
+            outFile &lt;&lt; &quot;  Module: &quot; &lt;&lt; seg-&gt;GetModule() &lt;&lt; std::endl;
+            outFile &lt;&lt; &quot;  NumData: &quot; &lt;&lt; seg-&gt;GetNumData() &lt;&lt; std::endl;
+
+            // Iterate over all data points in the segment
+            for (int j = 0; j &lt; seg-&gt;GetNumData(); j++) {
+                TArtRawDataObject *d = seg-&gt;GetData(j);
+                int geo = d-&gt;GetGeo();
+                int ch = d-&gt;GetCh();
+                int val = d-&gt;GetVal();
+                int cat = d-&gt;GetCategoryID();
+                int det = d-&gt;GetDetectorID();
+                int id = d-&gt;GetDatatypeID();
+
+                outFile &lt;&lt; &quot;    Data &quot; &lt;&lt; j + 1 &lt;&lt; &quot;:&quot; &lt;&lt; std::endl;
+                outFile &lt;&lt; &quot;      Geo: &quot; &lt;&lt; geo &lt;&lt; std::endl;
+                outFile &lt;&lt; &quot;      Channel: &quot; &lt;&lt; ch &lt;&lt; std::endl;
+                outFile &lt;&lt; &quot;      Value: &quot; &lt;&lt; val &lt;&lt; std::endl;
+                outFile &lt;&lt; &quot;      Category ID: &quot; &lt;&lt; cat &lt;&lt; std::endl;
+                outFile &lt;&lt; &quot;      Detector ID: &quot; &lt;&lt; det &lt;&lt; std::endl;
+                outFile &lt;&lt; &quot;      Datatype ID: &quot; &lt;&lt; id &lt;&lt; std::endl;
+            }
+        }
+
+        estore-&gt;ClearData(); // Clear current event data
+        neve++;
+    }
+
+    outFile &lt;&lt; &quot;Conversion completed. Processed &quot; &lt;&lt; neve &lt;&lt; &quot; blocks.&quot; &lt;&lt; std::endl;
+
+    // Close output file
+    outFile.close();
+
+    std::cout &lt;&lt; &quot;Conversion completed. Results saved to readable.txt&quot; &lt;&lt; std::endl;
+}
+</code></pre></div></p>
+<p>source:</p>
+<p><a href="https://www-nh.scphys.kyoto-u.ac.jp/~yano/ws/en/docs/documents/daq/dataformat/ridf/">https://www-nh.scphys.kyoto-u.ac.jp/~yano/ws/en/docs/documents/daq/dataformat/ridf/</a></p>
+<p><a href="https://ribf.riken.jp/RIBFDAQ/index.php?plugin=attach&amp;refer=DAQ%2FManual%2FDataformat&amp;openfile=dataformat_101112e.pdf">https://ribf.riken.jp/RIBFDAQ/index.php?plugin=attach&amp;refer=DAQ%2FManual%2FDataformat&amp;openfile=dataformat_101112e.pdf</a></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 27, 2025 05:26:03 UTC"><span class="timeago" datetime="2025-05-27T05:26:03+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 27, 2025 05:26:03 UTC">2025-05-27</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 30, 2025 07:43:55 UTC"><span class="timeago" datetime="2025-05-30T07:43:55+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 30, 2025 07:43:55 UTC">2025-05-30</span>
       
         <br>
         Created:

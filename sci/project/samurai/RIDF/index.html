@@ -1285,6 +1285,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="true">
@@ -1390,6 +1392,20 @@
     <li class="md-nav__item">
       <a href="../anaroot2version/" class="md-nav__link">
         ANAROOT 详细中文文档
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anaroot_nebula/" class="md-nav__link">
+        Anaroot nebula
       </a>
     </li>
   
@@ -1707,6 +1723,8 @@
 
 <h1 id="riken-ridf-文件构成详解数据块-block-说明">RIKEN RIDF 文件构成详解：数据块 (Block) 说明<a class="headerlink" href="#riken-ridf-文件构成详解数据块-block-说明" title="Permanent link">#</a></h1>
 <p>RIKEN的RIDF（RIBF数据格式）文件是一种**二进制文件**，其基本构成单元是**数据块（Block）**。整个文件就是由一系列这样的数据块串行组成的。每个数据块都描述了一部分特定的信息，例如原始探测器数据、事件信息、计数器数据、注释或状态信息等。</p>
+<p>[block[segment[data point]]]的嵌套结构</p>
+<p>[事件 [[事件头], [数据段1 [[段头1], [数据点集合1]]], [数据段2 [[段头2], [数据点集合2]]], ...]]</p>
 <hr />
 <h2 id="通用数据块结构-general-block-structure">通用数据块结构 (General Block Structure)<a class="headerlink" href="#通用数据块结构-general-block-structure" title="Permanent link">#</a></h2>
 <p>每个数据块都以一个或多个**头部字（Header Word(s)）**开始，这些头部字定义了这个数据块的属性和类型。最核心的是第一个头部字，通常为32位（4字节），其结构如下：</p>
@@ -1832,13 +1850,86 @@
 <h2 id="层级结构-hierarchical-nature">层级结构 (Hierarchical Nature)<a class="headerlink" href="#层级结构-hierarchical-nature" title="Permanent link">#</a></h2>
 <p>重要的是要理解RIDF的层级结构。一个高层的数据块（例如 <code>Class ID = 1</code> 的事件汇编块）可以包含多个低层的数据块（例如多个 <code>Class ID = 0</code> 的事件片段块），而一个事件片段块又可以包含多个 <code>Class ID = 4</code> 的数据段块。<code>Block Size</code> 字段确保了解码软件可以正确地跳过或进入这些嵌套的块。</p>
 <p>这种结构使得数据既有组织性，又非常灵活，能够适应RIKEN各种复杂核物理实验的需求。解码RIDF文件的软件（如ANAROOT）就是通过逐个解析这些数据块的头部信息，识别其 <code>Class ID</code>，然后根据不同类型块的定义来提取有效数据。</p>
+<p>你可以通过这个宏来把ridf转成人类可读的结构来了解其是什么。<br />
+<div class="highlight"><pre><span></span><code>#include &lt;fstream&gt; // Add file stream header
+#include &lt;iostream&gt; // Add to use std::cerr
+
+void convertRIDFtoReadable(const char* ridfFile = &quot;/home/s057/exp/exp2505_s057/anaroot/users/tbt/ridf/data0013.ridf&quot;) {
+    // Load necessary libraries
+    gSystem-&gt;Load(&quot;libanacore.so&quot;);
+
+    // Open RIDF file
+    TArtEventStore *estore = new TArtEventStore();
+    if (!estore-&gt;Open(ridfFile)) {
+        std::cerr &lt;&lt; &quot;Error: Failed to open RIDF file: &quot; &lt;&lt; ridfFile &lt;&lt; std::endl;
+        return;
+    }
+
+    TArtRawEventObject *rawevent = estore-&gt;GetRawEventObject();
+
+    // Open output file
+    std::ofstream outFile(&quot;readable.txt&quot;);
+    if (!outFile.is_open()) {
+        std::cerr &lt;&lt; &quot;Error: Failed to open output file: readable.txt&quot; &lt;&lt; std::endl;
+        return;
+    }
+
+    int neve = 0; // Event counter
+    while (estore-&gt;GetNextEvent() &amp;&amp; neve &lt; 10) { // Only process the first 10 blocks
+        outFile &lt;&lt; &quot;==================== Event &quot; &lt;&lt; neve + 1 &lt;&lt; &quot; ====================&quot; &lt;&lt; std::endl;
+
+        // Iterate over all segments in the current event
+        for (int i = 0; i &lt; rawevent-&gt;GetNumSeg(); i++) {
+            TArtRawSegmentObject *seg = rawevent-&gt;GetSegment(i);
+            outFile &lt;&lt; &quot;Segment &quot; &lt;&lt; i + 1 &lt;&lt; &quot;:&quot; &lt;&lt; std::endl;
+            outFile &lt;&lt; &quot;  Device: &quot; &lt;&lt; seg-&gt;GetDevice() &lt;&lt; std::endl;
+            outFile &lt;&lt; &quot;  FP: &quot; &lt;&lt; seg-&gt;GetFP() &lt;&lt; std::endl;
+            outFile &lt;&lt; &quot;  Detector: &quot; &lt;&lt; seg-&gt;GetDetector() &lt;&lt; std::endl;
+            outFile &lt;&lt; &quot;  Module: &quot; &lt;&lt; seg-&gt;GetModule() &lt;&lt; std::endl;
+            outFile &lt;&lt; &quot;  NumData: &quot; &lt;&lt; seg-&gt;GetNumData() &lt;&lt; std::endl;
+
+            // Iterate over all data points in the segment
+            for (int j = 0; j &lt; seg-&gt;GetNumData(); j++) {
+                TArtRawDataObject *d = seg-&gt;GetData(j);
+                int geo = d-&gt;GetGeo();
+                int ch = d-&gt;GetCh();
+                int val = d-&gt;GetVal();
+                int cat = d-&gt;GetCategoryID();
+                int det = d-&gt;GetDetectorID();
+                int id = d-&gt;GetDatatypeID();
+
+                outFile &lt;&lt; &quot;    Data &quot; &lt;&lt; j + 1 &lt;&lt; &quot;:&quot; &lt;&lt; std::endl;
+                outFile &lt;&lt; &quot;      Geo: &quot; &lt;&lt; geo &lt;&lt; std::endl;
+                outFile &lt;&lt; &quot;      Channel: &quot; &lt;&lt; ch &lt;&lt; std::endl;
+                outFile &lt;&lt; &quot;      Value: &quot; &lt;&lt; val &lt;&lt; std::endl;
+                outFile &lt;&lt; &quot;      Category ID: &quot; &lt;&lt; cat &lt;&lt; std::endl;
+                outFile &lt;&lt; &quot;      Detector ID: &quot; &lt;&lt; det &lt;&lt; std::endl;
+                outFile &lt;&lt; &quot;      Datatype ID: &quot; &lt;&lt; id &lt;&lt; std::endl;
+            }
+        }
+
+        estore-&gt;ClearData(); // Clear current event data
+        neve++;
+    }
+
+    outFile &lt;&lt; &quot;Conversion completed. Processed &quot; &lt;&lt; neve &lt;&lt; &quot; blocks.&quot; &lt;&lt; std::endl;
+
+    // Close output file
+    outFile.close();
+
+    std::cout &lt;&lt; &quot;Conversion completed. Results saved to readable.txt&quot; &lt;&lt; std::endl;
+}
+</code></pre></div></p>
+<p>source:</p>
+<p><a href="https://www-nh.scphys.kyoto-u.ac.jp/~yano/ws/en/docs/documents/daq/dataformat/ridf/">https://www-nh.scphys.kyoto-u.ac.jp/~yano/ws/en/docs/documents/daq/dataformat/ridf/</a></p>
+<p><a href="https://ribf.riken.jp/RIBFDAQ/index.php?plugin=attach&amp;refer=DAQ%2FManual%2FDataformat&amp;openfile=dataformat_101112e.pdf">https://ribf.riken.jp/RIBFDAQ/index.php?plugin=attach&amp;refer=DAQ%2FManual%2FDataformat&amp;openfile=dataformat_101112e.pdf</a></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年5月27日 05:26:03 UTC"><span class="timeago" datetime="2025-05-27T05:26:03+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年5月27日 05:26:03 UTC">2025-05-27</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年5月30日 07:43:55 UTC"><span class="timeago" datetime="2025-05-30T07:43:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年5月30日 07:43:55 UTC">2025-05-30</span>
       
         <br>
         创建日期:
