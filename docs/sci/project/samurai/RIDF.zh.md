@@ -6,6 +6,11 @@ title: RIKEN RIDF 文件构成详解：数据块 (Block) 说明
 
 RIKEN的RIDF（RIBF数据格式）文件是一种**二进制文件**，其基本构成单元是**数据块（Block）**。整个文件就是由一系列这样的数据块串行组成的。每个数据块都描述了一部分特定的信息，例如原始探测器数据、事件信息、计数器数据、注释或状态信息等。
 
+[block[segment[data point]]]的嵌套结构
+
+[事件 [[事件头], [数据段1 [[段头1], [数据点集合1]]], [数据段2 [[段头2], [数据点集合2]]], ...]]
+
+
 ---
 
 ## 通用数据块结构 (General Block Structure)
@@ -92,3 +97,83 @@ RIKEN的RIDF（RIBF数据格式）文件是一种**二进制文件**，其基本
 重要的是要理解RIDF的层级结构。一个高层的数据块（例如 `Class ID = 1` 的事件汇编块）可以包含多个低层的数据块（例如多个 `Class ID = 0` 的事件片段块），而一个事件片段块又可以包含多个 `Class ID = 4` 的数据段块。`Block Size` 字段确保了解码软件可以正确地跳过或进入这些嵌套的块。
 
 这种结构使得数据既有组织性，又非常灵活，能够适应RIKEN各种复杂核物理实验的需求。解码RIDF文件的软件（如ANAROOT）就是通过逐个解析这些数据块的头部信息，识别其 `Class ID`，然后根据不同类型块的定义来提取有效数据。
+
+
+你可以通过这个宏来把ridf转成人类可读的结构来了解其是什么。
+```
+#include <fstream> // Add file stream header
+#include <iostream> // Add to use std::cerr
+
+void convertRIDFtoReadable(const char* ridfFile = "/home/s057/exp/exp2505_s057/anaroot/users/tbt/ridf/data0013.ridf") {
+    // Load necessary libraries
+    gSystem->Load("libanacore.so");
+
+    // Open RIDF file
+    TArtEventStore *estore = new TArtEventStore();
+    if (!estore->Open(ridfFile)) {
+        std::cerr << "Error: Failed to open RIDF file: " << ridfFile << std::endl;
+        return;
+    }
+
+    TArtRawEventObject *rawevent = estore->GetRawEventObject();
+
+    // Open output file
+    std::ofstream outFile("readable.txt");
+    if (!outFile.is_open()) {
+        std::cerr << "Error: Failed to open output file: readable.txt" << std::endl;
+        return;
+    }
+
+    int neve = 0; // Event counter
+    while (estore->GetNextEvent() && neve < 10) { // Only process the first 10 blocks
+        outFile << "==================== Event " << neve + 1 << " ====================" << std::endl;
+
+        // Iterate over all segments in the current event
+        for (int i = 0; i < rawevent->GetNumSeg(); i++) {
+            TArtRawSegmentObject *seg = rawevent->GetSegment(i);
+            outFile << "Segment " << i + 1 << ":" << std::endl;
+            outFile << "  Device: " << seg->GetDevice() << std::endl;
+            outFile << "  FP: " << seg->GetFP() << std::endl;
+            outFile << "  Detector: " << seg->GetDetector() << std::endl;
+            outFile << "  Module: " << seg->GetModule() << std::endl;
+            outFile << "  NumData: " << seg->GetNumData() << std::endl;
+
+            // Iterate over all data points in the segment
+            for (int j = 0; j < seg->GetNumData(); j++) {
+                TArtRawDataObject *d = seg->GetData(j);
+                int geo = d->GetGeo();
+                int ch = d->GetCh();
+                int val = d->GetVal();
+                int cat = d->GetCategoryID();
+                int det = d->GetDetectorID();
+                int id = d->GetDatatypeID();
+
+                outFile << "    Data " << j + 1 << ":" << std::endl;
+                outFile << "      Geo: " << geo << std::endl;
+                outFile << "      Channel: " << ch << std::endl;
+                outFile << "      Value: " << val << std::endl;
+                outFile << "      Category ID: " << cat << std::endl;
+                outFile << "      Detector ID: " << det << std::endl;
+                outFile << "      Datatype ID: " << id << std::endl;
+            }
+        }
+
+        estore->ClearData(); // Clear current event data
+        neve++;
+    }
+
+    outFile << "Conversion completed. Processed " << neve << " blocks." << std::endl;
+
+    // Close output file
+    outFile.close();
+
+    std::cout << "Conversion completed. Results saved to readable.txt" << std::endl;
+}
+```
+
+
+source:
+
+https://www-nh.scphys.kyoto-u.ac.jp/~yano/ws/en/docs/documents/daq/dataformat/ridf/
+
+https://ribf.riken.jp/RIBFDAQ/index.php?plugin=attach&refer=DAQ%2FManual%2FDataformat&openfile=dataformat_101112e.pdf

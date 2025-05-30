@@ -6,6 +6,10 @@ title: Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Des
 
 RIKEN's RIDF (RIBF Data Format) file is a **binary file**, and its basic unit is the **data block (Block)**. The entire file consists of a series of such data blocks arranged sequentially. Each data block describes specific information, such as raw detector data, event information, scaler data, comments, or status information.
 
+The nested structure of [block[segment[data point]]]:
+
+[Event [[Event Header], [Data Segment 1 [[Segment Header 1], [Data Point Set 1]]], [Data Segment 2 [[Segment Header 2], [Data Point Set 2]]], ...]]
+
 ---
 
 ## General Block Structure
@@ -92,3 +96,83 @@ The `Class ID` tells us what kind of data is contained in the block. Below are s
 It is important to understand the hierarchical structure of RIDF. A high-level data block (e.g., `Class ID = 1` Event Assembly Block) can contain multiple lower-level data blocks (e.g., multiple `Class ID = 0` Event Fragment Blocks), and an Event Fragment Block can contain multiple `Class ID = 4` Segment Blocks. The `Block Size` field ensures that decoding software can correctly skip or enter these nested blocks.
 
 This structure makes the data both organized and highly flexible, capable of meeting the needs of RIKEN's complex nuclear physics experiments. Software for decoding RIDF files (e.g., ANAROOT) parses these data blocks one by one, identifies their `Class ID`, and extracts valid data based on the definitions of different block types.
+
+
+
+You can use this macros to convert RIDF to human readble data.
+```
+#include <fstream> // Add file stream header
+#include <iostream> // Add to use std::cerr
+
+void convertRIDFtoReadable(const char* ridfFile = "/home/s057/exp/exp2505_s057/anaroot/users/tbt/ridf/data0013.ridf") {
+    // Load necessary libraries
+    gSystem->Load("libanacore.so");
+
+    // Open RIDF file
+    TArtEventStore *estore = new TArtEventStore();
+    if (!estore->Open(ridfFile)) {
+        std::cerr << "Error: Failed to open RIDF file: " << ridfFile << std::endl;
+        return;
+    }
+
+    TArtRawEventObject *rawevent = estore->GetRawEventObject();
+
+    // Open output file
+    std::ofstream outFile("readable.txt");
+    if (!outFile.is_open()) {
+        std::cerr << "Error: Failed to open output file: readable.txt" << std::endl;
+        return;
+    }
+
+    int neve = 0; // Event counter
+    while (estore->GetNextEvent() && neve < 10) { // Only process the first 10 blocks
+        outFile << "==================== Event " << neve + 1 << " ====================" << std::endl;
+
+        // Iterate over all segments in the current event
+        for (int i = 0; i < rawevent->GetNumSeg(); i++) {
+            TArtRawSegmentObject *seg = rawevent->GetSegment(i);
+            outFile << "Segment " << i + 1 << ":" << std::endl;
+            outFile << "  Device: " << seg->GetDevice() << std::endl;
+            outFile << "  FP: " << seg->GetFP() << std::endl;
+            outFile << "  Detector: " << seg->GetDetector() << std::endl;
+            outFile << "  Module: " << seg->GetModule() << std::endl;
+            outFile << "  NumData: " << seg->GetNumData() << std::endl;
+
+            // Iterate over all data points in the segment
+            for (int j = 0; j < seg->GetNumData(); j++) {
+                TArtRawDataObject *d = seg->GetData(j);
+                int geo = d->GetGeo();
+                int ch = d->GetCh();
+                int val = d->GetVal();
+                int cat = d->GetCategoryID();
+                int det = d->GetDetectorID();
+                int id = d->GetDatatypeID();
+
+                outFile << "    Data " << j + 1 << ":" << std::endl;
+                outFile << "      Geo: " << geo << std::endl;
+                outFile << "      Channel: " << ch << std::endl;
+                outFile << "      Value: " << val << std::endl;
+                outFile << "      Category ID: " << cat << std::endl;
+                outFile << "      Detector ID: " << det << std::endl;
+                outFile << "      Datatype ID: " << id << std::endl;
+            }
+        }
+
+        estore->ClearData(); // Clear current event data
+        neve++;
+    }
+
+    outFile << "Conversion completed. Processed " << neve << " blocks." << std::endl;
+
+    // Close output file
+    outFile.close();
+
+    std::cout << "Conversion completed. Results saved to readable.txt" << std::endl;
+}
+```
+
+source:
+
+https://www-nh.scphys.kyoto-u.ac.jp/~yano/ws/en/docs/documents/daq/dataformat/ridf/
+
+https://ribf.riken.jp/RIBFDAQ/index.php?plugin=attach&refer=DAQ%2FManual%2FDataformat&openfile=dataformat_101112e.pdf
