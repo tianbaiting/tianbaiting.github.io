@@ -2,6 +2,13 @@
 
 该文可能有诸多错误，请看[[anaroot2version.zh]]
 
+
+https://tianbaiting.github.io/sci/project/samurai/anaroot2version/
+
+https://tianbaiting.github.io/en/sci/project/samurai/anaroot2version/
+
+虽然这些很可能也有。
+
 ## **前言**
 
 ANAROOT 是一个基于 ROOT 开发的综合性数据分析框架，主要服务于日本理化学研究所仁科加速器科学研究中心 (RIKEN Nishina Center) 的放射性同位素束工厂 (Radioactive Isotope Beam Factory, RIBF) 的各项核物理实验。本报告旨在为 ANAROOT 用户提供一份详尽的中文文档，从软件的基本概念、安装配置，到核心功能的使用，最终帮助用户达到能够熟练运用 ANAROOT 进行实验数据分析的水平。报告将特别详细地介绍如何使用 ANAROOT 分析 BigRIPS 中的平行板雪崩计数器 (Parallel Plate Avalanche Counter, PPAC)（通常称为 PDC）以及 SAMURAI 谱仪中的 NEBULA (NEutron Detectors for Breakup of Unstable Nuclei with Large Acceptance) 中子探测器阵列的数据。  
