@@ -8,8 +8,6 @@ tag:
     - map
 ---
 
-# 引文网络生成工具网址
-
 - [Citation Tree](https://www.citationtree.org)
 - [Connected Papers](https://www.connectedpapers.com)
 - [Inciteful](https://inciteful.xyz)
