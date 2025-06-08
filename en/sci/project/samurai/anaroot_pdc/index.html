@@ -242,7 +242,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../life/z30_DeepSky/" class="md-tabs__link">
+      <a href="../../../../life/flavor/" class="md-tabs__link">
         Life
       </a>
     </li>
@@ -557,6 +557,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
@@ -570,6 +572,20 @@
           Life
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/flavor/" class="md-nav__link">
+        探索味型奥秘：以川菜为例的烹饪科学指南
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1933,7 +1949,24 @@
 <h1 id="other-notes">Other Notes<a class="headerlink" href="#other-notes" title="Permanent link">#</a></h1>
 <h2 id="samuraipdcxml-parameter-file">SAMURAIPDC.xml Parameter File<a class="headerlink" href="#samuraipdcxml-parameter-file" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Note:</strong> All PDC channels (geo/ch) actually used must be defined in this file, otherwise reconstruction will fail.</li>
+<li>
+<p><strong>Note:</strong> All PDC channels (geo/ch) actually used must be defined in this file, otherwise reconstruction will fail.</p>
+</li>
+<li>
+<p><strong>ID</strong>: Unique identifier for the wire (usually the same as wireid).</p>
+</li>
+<li><strong>NAME</strong>: Name of the wire, e.g. <code>PDC_0_0</code> means layer 0, wire 0.</li>
+<li><strong>FPL</strong>: Focal plane number, e.g. 13 means F13.</li>
+<li><strong>layer</strong>: Layer number (e.g. 0, 1, 2, etc.).</li>
+<li><strong>id_plane</strong>: Plane ID (e.g. 81, 82, 83, etc.).</li>
+<li><strong>anodedir</strong>: Anode wire direction (U/X/V), indicates the measurement direction of the layer.</li>
+<li><strong>wireid</strong>: Wire number within the layer.</li>
+<li><strong>wirepos</strong>: Physical position of the wire in this layer (usually in mm).</li>
+<li><strong>wirez</strong>: Z position of the wire (usually in mm).</li>
+<li><strong>tzero_offset</strong>: Time zero offset (usually 0).</li>
+<li><strong>det</strong>: Detector ID (e.g. 37).</li>
+<li><strong>geo</strong>: Electronics geometry number (e.g. 0, 1, 2, etc.).</li>
+<li><strong>ch</strong>: Electronics channel number, used for data decoding.</li>
 </ul>
 <h1 id="summary-and-recommendations">Summary and Recommendations<a class="headerlink" href="#summary-and-recommendations" title="Permanent link">#</a></h1>
 <table>
@@ -2139,7 +2172,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 30, 2025 07:10:47 UTC"><span class="timeago" datetime="2025-05-30T07:10:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 30, 2025 07:10:47 UTC">2025-05-30</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 8, 2025 16:15:15 UTC"><span class="timeago" datetime="2025-06-08T16:15:15+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 8, 2025 16:15:15 UTC">2025-06-08</span>
       
         <br>
         Created:

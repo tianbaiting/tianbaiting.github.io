@@ -21,7 +21,7 @@
       
       
         ]
-          <title>pdc相关的anaroot库 - TBT个人网站</title>
+          <title>anaroot pdcS - TBT个人网站</title>
         
       
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              pdc相关的anaroot库
+              anaroot pdcS
             
           </span>
         </div>
@@ -240,7 +240,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../life/z30_DeepSky/" class="md-tabs__link">
+      <a href="../../../../life/flavor/" class="md-tabs__link">
         Life
       </a>
     </li>
@@ -555,6 +555,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
@@ -568,6 +570,20 @@
           Life
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/flavor/" class="md-nav__link">
+        探索味型奥秘：以川菜为例的烹饪科学指南
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1494,12 +1510,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          pdc相关的anaroot库
+          anaroot pdcS
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        pdc相关的anaroot库
+        anaroot pdcS
       </a>
       
         
@@ -1872,7 +1888,24 @@
 <h2 id="samuraipdcxml">SAMURAIPDC.xml<a class="headerlink" href="#samuraipdcxml" title="Permanent link">#</a></h2>
 <ul>
 <li><strong>位置</strong>：SAMURAIPDC.xml  </li>
-<li><strong>作用</strong>：保存PDC每根丝的参数（如geo、ch、wireid、位置等），供重建时查找和校准。</li>
+<li>
+<p><strong>作用</strong>：保存PDC每根丝的参数（如geo、ch、wireid、位置等），供重建时查找和校准。</p>
+</li>
+<li>
+<p><strong>ID</strong>：该丝的唯一编号（通常与 wireid 一致）。</p>
+</li>
+<li><strong>NAME</strong>：该丝的名称，格式如 <code>PDC_0_0</code>，表示第 0 层第 0 根丝。</li>
+<li><strong>FPL</strong>：焦面编号（Focal Plane），如 13 表示 F13。</li>
+<li><strong>layer</strong>：所在的层号（如 0、1、2 等）。</li>
+<li><strong>id_plane</strong>：平面编号（plane id），如 81、82、83 等。</li>
+<li><strong>anodedir</strong>：阳极丝方向（U/X/V），表示该层的测量方向。</li>
+<li><strong>wireid</strong>：该层内的丝编号。</li>
+<li><strong>wirepos</strong>：该丝在本层的物理位置（单位通常为 mm）。</li>
+<li><strong>wirez</strong>：该丝在 Z 方向的位置（单位通常为 mm）。</li>
+<li><strong>tzero_offset</strong>：时间零点修正（一般为 0）。</li>
+<li><strong>det</strong>：探测器编号（如 37）。</li>
+<li><strong>geo</strong>：电子学几何编号（如 0、1、2 等）。</li>
+<li><strong>ch</strong>：电子学通道号（channel），用于数据解码。</li>
 </ul>
 <h1 id="宏与脚本">宏与脚本<a class="headerlink" href="#宏与脚本" title="Permanent link">#</a></h1>
 <!-- ## recoPDCTrack.C
@@ -2102,7 +2135,7 @@ void recoPDCTrack(const char* ridffile = &quot;/home/s057/exp/exp2505_s057/anaro
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年5月30日 07:10:47 UTC"><span class="timeago" datetime="2025-05-30T07:10:47+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年5月30日 07:10:47 UTC">2025-05-30</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年6月8日 16:15:15 UTC"><span class="timeago" datetime="2025-06-08T16:15:15+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年6月8日 16:15:15 UTC">2025-06-08</span>
       
         <br>
         创建日期:
