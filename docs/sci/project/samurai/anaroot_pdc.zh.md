@@ -1,5 +1,5 @@
 ---
-title: pdc相关的anaroot库
+title: anaroot pdcS
 tag: 
     - anaroot
 ---
@@ -34,6 +34,21 @@ TClonesArray *pdc_trk_array = (TClonesArray *)sman->FindDataContainer("SAMURAIPD
 ## SAMURAIPDC.xml
 - **位置**：SAMURAIPDC.xml  
 - **作用**：保存PDC每根丝的参数（如geo、ch、wireid、位置等），供重建时查找和校准。
+
+
+- **ID**：该丝的唯一编号（通常与 wireid 一致）。
+- **NAME**：该丝的名称，格式如 `PDC_0_0`，表示第 0 层第 0 根丝。
+- **FPL**：焦面编号（Focal Plane），如 13 表示 F13。
+- **layer**：所在的层号（如 0、1、2 等）。
+- **id_plane**：平面编号（plane id），如 81、82、83 等。
+- **anodedir**：阳极丝方向（U/X/V），表示该层的测量方向。
+- **wireid**：该层内的丝编号。
+- **wirepos**：该丝在本层的物理位置（单位通常为 mm）。
+- **wirez**：该丝在 Z 方向的位置（单位通常为 mm）。
+- **tzero_offset**：时间零点修正（一般为 0）。
+- **det**：探测器编号（如 37）。
+- **geo**：电子学几何编号（如 0、1、2 等）。
+- **ch**：电子学通道号（channel），用于数据解码。
 
 # 宏与脚本
 

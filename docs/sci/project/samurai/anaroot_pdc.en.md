@@ -60,6 +60,21 @@ TClonesArray *pdc_trk_array = (TClonesArray *)sman->FindDataContainer("SAMURAIPD
 ## SAMURAIPDC.xml Parameter File
 - **Note:** All PDC channels (geo/ch) actually used must be defined in this file, otherwise reconstruction will fail.
 
+
+- **ID**: Unique identifier for the wire (usually the same as wireid).
+- **NAME**: Name of the wire, e.g. `PDC_0_0` means layer 0, wire 0.
+- **FPL**: Focal plane number, e.g. 13 means F13.
+- **layer**: Layer number (e.g. 0, 1, 2, etc.).
+- **id_plane**: Plane ID (e.g. 81, 82, 83, etc.).
+- **anodedir**: Anode wire direction (U/X/V), indicates the measurement direction of the layer.
+- **wireid**: Wire number within the layer.
+- **wirepos**: Physical position of the wire in this layer (usually in mm).
+- **wirez**: Z position of the wire (usually in mm).
+- **tzero_offset**: Time zero offset (usually 0).
+- **det**: Detector ID (e.g. 37).
+- **geo**: Electronics geometry number (e.g. 0, 1, 2, etc.).
+- **ch**: Electronics channel number, used for data decoding.
+
 # Summary and Recommendations
 
 | Name                  | Type      | Main Function / Usage                                 |
