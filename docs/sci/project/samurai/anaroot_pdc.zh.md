@@ -49,7 +49,8 @@ TClonesArray *pdc_trk_array = (TClonesArray *)sman->FindDataContainer("SAMURAIPD
 - **det**：探测器编号（如 37）。
 - **geo**：电子学几何编号（如 0、1、2 等）。
 - **ch**：电子学通道号（channel），用于数据解码。
-
+  
+  
 # 宏与脚本
 
 <!-- ## recoPDCTrack.C
