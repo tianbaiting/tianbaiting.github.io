@@ -14,7 +14,7 @@
           <link rel="prev" href="../anaroot2version/">
         
         
-          <link rel="next" href="../anaroot_pdc/">
+          <link rel="next" href="../anaroot_nebula_reconstructionfunction/">
         
         <link rel="icon" href="../../../../assets/images/favicon.png">
         <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.0.4">
@@ -1097,6 +1097,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="false">
@@ -1110,6 +1112,20 @@
           Minimal theory
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/TransmissionLineEq/" class="md-nav__link">
+        TransmissionLineEq
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -1424,6 +1440,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_5_3" tabindex="0" aria-expanded="true">
@@ -1526,6 +1544,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anaroot_nebula_reconstructionfunction/" class="md-nav__link">
+        Anaroot nebula reconstructionfunction
+      </a>
     </li>
   
 
@@ -1826,6 +1858,14 @@
 
   <h1>Anaroot nebula</h1>
 
+<p>重建nebula需要这些文件：</p>
+<p>参数 XML 文件（如 NEBULA.20250625.xml）</p>
+<p>TArtCalibNEBULAHPC.hh/.cc</p>
+<p>TArtCalibNEBULA.hh/.cc</p>
+<p>TArtRecoNeutron.hh/.cc</p>
+<p>TArtSAMURAIParameters.hh/.cc</p>
+<p>相关数据对象类TArtNEBULAHPC、TArtNEBULAPla、TArtNeutron </p>
+<p>** TArtCalibNEBULAHPC</p>
 <p>TArtCalibNEBULAHPC *nebulahpc_calib = new TArtCalibNEBULAHPC();</p>
 <p><strong>作用</strong>：负责校准 NEBULA 高压正比计数管（HPC - High Pressure Chamber）的数据。HPC 主要作为中子探测的否决探测器（veto detector），用于区分中子和带电粒子（如伽马射线转换产生的电子或质子）。</p>
 <ul>
@@ -1837,6 +1877,7 @@
 <li><strong>输出</strong>：重建后的 TArtNEBULAHPC 对象，包含每个 HPC hit 的校准后信息（如时间、探测器 ID 等），存储于 TArtStoreManager 的 "NEBULAHPC" TClonesArray。</li>
 </ul>
 <hr />
+<p>** TArtCalibNEBULA </p>
 <p>TArtCalibNEBULA *nebulapla_calib = new TArtCalibNEBULA();</p>
 <p><strong>作用</strong>：负责校准 NEBULA 塑料闪烁体（Pla - Plastic Scintillator）的数据，是 NEBULA 中子探测器的主要组成部分。</p>
 <ul>
@@ -1848,6 +1889,19 @@
 <li>将校准后的时间和电荷转换为物理单位（ns, MeVee）。</li>
 <li><strong>输出</strong>：重建后的 TArtNEBULAPla 对象，包含每个 hit 的详细校准信息（ID, Layer, SubLayer, QUAveCal, TAveCal, PosCal 等），存储于 TArtStoreManager 的 "NEBULAPla" TClonesArray。</li>
 </ul>
+<div class="highlight"><pre><span></span><code>    Double_t pos[3];
+    if(para-&gt;GetSubLayer() != 0){ // NEUT
+      //      pos[0] = para-&gt;GetDetPos(0) + posxoff + gRandom-&gt;Uniform(-6,6);
+      pos[0] = para-&gt;GetDetPos(0) + posxoff;
+    }else{ // VETO
+      //      pos[0] = para-&gt;GetDetPos(0) + posxoff + gRandom-&gt;Uniform(-16,16);
+      pos[0] = para-&gt;GetDetPos(0) + posxoff;
+    }
+    pos[1] = posslw + para-&gt;GetDetPos(1) + posyoff; 
+    pos[2] = para-&gt;GetDetPos(2) + poszoff;
+</code></pre></div>
+<p>代码通过判断 para-&gt;GetSubLayer() 是否为 0，区分 NEUT（中子探测层）和 VETO（反符合层）两种情况。无论是哪种情况，pos[0]（x 坐标）都设置为 para-&gt;GetDetPos(0) + posxoff，即参数表中该单元的 x 位置加上全局偏移量。</p>
+<p>pos[1]（y 坐标）通过 posslw（基于信号时间差重建的 y 位置）加上参数表中的 y 位置和全局偏移量 posyoff 得到。pos[2]（z 坐标）则直接取参数表中的 z 位置加上 poszoff。这样，最终 pos 数组就包含了该探测单元在实验坐标系下的三维空间位置，便于后续的物理分析和可视化。</p>
 <hr />
 <p>TArtRecoNeutron *reco_neutron = new TArtRecoNeutron();</p>
 <p><strong>作用</strong>：负责从中子探测器的校准数据中重建中子事件，是更高级别的重建步骤。</p>
@@ -1906,7 +1960,7 @@
 <blockquote>
 <p>具体代码实现详见下方示例（已集成于本文件后半部分）。</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>#include &lt;iostream&gt;
+<p><div class="highlight"><pre><span></span><code>#include &lt;iostream&gt;
 void recoNebulaTrack(const char* ridffile = &quot;/home/s057/exp/exp2505_s057/anaroot/users/tbt/ridf/data0073.ridf&quot;) {
     gSystem-&gt;Load(&quot;libXMLParser.so&quot;);
     gSystem-&gt;Load(&quot;libanacore.so&quot;);
@@ -2026,14 +2080,15 @@ void recoNebulaTrack(const char* ridffile = &quot;/home/s057/exp/exp2505_s057/an
     // TArtStoreManager::Delete(); // If it&#39;s a singleton managed this way
     // TArtSAMURAIParameters::Delete(); // If it&#39;s a singleton managed this way
 }
-</code></pre></div>
+</code></pre></div><br />
+```</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年5月30日 09:03:06 UTC"><span class="timeago" datetime="2025-05-30T09:03:06+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年5月30日 09:03:06 UTC">2025-05-30</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月13日 07:42:45 UTC"><span class="timeago" datetime="2025-08-13T07:42:45+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月13日 07:42:45 UTC">2025-08-13</span>
       
         <br>
         创建日期:
