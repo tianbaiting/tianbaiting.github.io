@@ -116,7 +116,12 @@ $$
 $$
 波速为 $v = \frac{1}{\sqrt{LC}}$
 
+
+![1755071531442](./TransmissionLineEq.zh/1755071531442.png)
+
 ### 边界条件
+
+
 
 $$
 \left.
@@ -186,7 +191,7 @@ $B = \frac{1}{1+\frac{Z_s}{Z_c}} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U
 
 $\eta = \sqrt{LC}$
 
-### 转换
+### 拉普拉斯逆变换
 $\tilde{U}_0(s) \rightarrow U_0(t)$
 
 $\tilde{U}_0(s)e^{-\gamma x} \rightarrow U_0(t-\sqrt{LC}x)$ (行波)
@@ -225,26 +230,25 @@ $$
 I_i = \frac{1}{Z_c+Z_s}V_s = 40mA
 $$
 $$
-\begin{array}{|l|l|l|l|}
+\begin{array}{|c|c|c|c|}
 \hline
-\text{时刻} & \text{终端} & \text{终端} & \text{终端} \\
+\text{时刻} & V\text{波} & I\text{波} & \text{总} \\
 \hline
-& V \text{波} & I \text{波} & \text{总} \\
+0-2\tau & 6\,\text{V} & 40\,\text{mA} & 0 \\
 \hline
-0-2\tau & 6V & 40mA & 0 \\
-\hline
-2\tau-3\tau & 9.5V & - & - \\
+2\tau-3\tau & 9.5\,\text{V} & - & - \\
 \hline
 \end{array}
 $$
-$ \rho_L = \frac{1000-150}{1000+150} = 0.74 $
+
+$\rho_L = \frac{1000-150}{1000+150} = 0.74$
 
 ## 附录
 
 原图
 
-![1755070142369](./.TransmissionLineEq.zh/1755070142369.png)
+![1755070142369](./TransmissionLineEq.zh/1755070142369.png)
 
-![1755070152228](./.TransmissionLineEq.zh/1755070152228.png)
+![1755070152228](./TransmissionLineEq.zh/1755070152228.png)
 
-![1755070158564](./.TransmissionLineEq.zh/1755070158564.png)
+![1755070158564](./TransmissionLineEq.zh/1755070158564.png)
