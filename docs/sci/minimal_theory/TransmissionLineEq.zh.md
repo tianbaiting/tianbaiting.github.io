@@ -209,10 +209,11 @@ $\gamma = s\sqrt{LC}$
 
 ---
 
-### 匹配
+### 匹配始端
+
 
 $$
-\text{匹配始端} \quad Z_s = Z_c
+\quad Z_s = Z_c
 $$
 
 $$
@@ -228,10 +229,7 @@ $$
 ### 瞬时匹配示例
 
 $$
-R_s = 100\Omega, \quad Z_c = 150\Omega, \quad Z_L = 1k\Omega
-$$
-
-$$
+R_s = 100\Omega, \quad Z_c = 150\Omega, \quad Z_L = 1k\Omega, \quad
 V_{s} = 75V
 $$
 
