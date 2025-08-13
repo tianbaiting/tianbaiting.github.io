@@ -1,0 +1,250 @@
+## 电磁波传输方程 用以类比传输线
+
+$$
+\nabla \cdot E = \frac{\rho}{\varepsilon_0} = 0
+$$
+
+$$
+\nabla \cdot B = 0
+$$
+
+$$
+\nabla \times E = -\frac{\partial B}{\partial t}
+$$
+
+$$
+\nabla \times B = \mu_0 \varepsilon_0 \frac{\partial E}{\partial t}
+$$
+
+$$
+\nabla \times (\nabla \times E) = -\frac{\partial}{\partial t}(\nabla \times B)
+$$
+
+$$
+= -\frac{\partial}{\partial t}(\mu_0 \varepsilon_0 \frac{\partial E}{\partial t})
+$$
+
+$$
+= -\mu_0 \varepsilon_0 \frac{\partial^2 E}{\partial t^2}
+$$
+
+$$
+\nabla \times (\nabla \times E) = \varepsilon_{imn} \partial_m (\varepsilon_{njk} \partial_j E_k)
+$$
+
+$$
+= (\varepsilon_{imn} \varepsilon_{njk}) \partial_m \partial_j E_k
+$$
+
+$$
+= (\varepsilon_{nim} \varepsilon_{njk}) \partial_m \partial_j E_k
+$$
+
+$$
+= (\delta_{ij} \delta_{mk} - \delta_{ik} \delta_{mj}) \partial_m \partial_j E_k
+$$
+
+$$
+= \partial_j \partial_m E_m - (\nabla \cdot \nabla) E
+$$
+
+$$
+-(\nabla \cdot \nabla) E = -\mu_0 \varepsilon_0 \frac{\partial^2 E}{\partial t^2}
+$$
+
+$$
+(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}) E = \mu_0 \varepsilon_0 \frac{\partial^2 E}{\partial t^2}
+$$
+
+波速为 $c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$。
+
+$$
+E = E_0 e^{i\omega t - i\frac{\omega}{c} z}
+$$
+
+$$
+B = B_0 e^{i\omega t - i\frac{\omega}{c} z}
+$$
+
+$E, B$ 是瞬时量， $E_0, B_0$ 相互垂直。
+
+$$
+-\frac{i\omega}{c} E_0 = -B_0 \cdot i\omega
+$$
+
+$$
+E_0 = cB_0
+$$
+
+## 传输线
+
+### 电报方程，传输线方程
+
+![电报方程图示](./TransmissionLineEq.zh/1755069973511.png)
+
+
+### 方程推导
+$$
+u(t,x) = u(t,x+\Delta x) + L\Delta x\frac{\partial i(t,x)}{\partial t} + R\Delta x \cdot i(t,x)
+$$
+$$
+i(t,x) = i(t,x+\Delta x) + C\Delta x \frac{\partial u(t,x+\Delta x)}{\partial t} + G\Delta x \cdot u(t,x+\Delta x)
+$$
+
+$$
+\left\{
+\begin{aligned}
+-\frac{\partial u}{\partial x} &= Ri + L\frac{\partial i}{\partial t} \\
+-\frac{\partial i}{\partial x} &= Gu + C\frac{\partial u}{\partial t}
+\end{aligned}
+\right.
+$$
+
+### 无损线 R=0, G=0
+
+$$
+\left\{
+\begin{aligned}
+-\frac{\partial u}{\partial x} &= L\frac{\partial i}{\partial t} \\
+-\frac{\partial i}{\partial x} &= C\frac{\partial u}{\partial t}
+\end{aligned}
+\right.
+$$
+
+$$
+\frac{\partial^2 u}{\partial x^2} = LC\frac{\partial^2 u}{\partial t^2}
+$$
+波速为 $v = \frac{1}{\sqrt{LC}}$
+
+### 边界条件
+
+$$
+\left.
+\begin{aligned}
+u(t,x) - i(t,x)Z_s &= 0 \\
+u(t,L) &= i(t,L)Z_L
+\end{aligned}
+\right\}
+$$
+
+初始值
+$$
+u(t=0,x) = 0 \\
+i(t=0,x) = 0
+$$
+$$
+\frac{\partial u}{\partial t}(t=0,x) = 0
+$$
+$$
+\frac{\partial i}{\partial t}(t=0,x) = 0
+$$
+
+### 拉普拉斯 变化
+$$
+\mathcal{L}[i(t,x)] = \tilde{I}(s,x)
+$$
+$$
+\mathcal{L}[u(t,x)] = \tilde{U}(s,x)
+$$
+$$
+\left\{
+\begin{aligned}
+-\frac{\partial \tilde{U}}{\partial x} &= sL\tilde{I} \\
+-\frac{\partial \tilde{I}}{\partial x} &= sC\tilde{U}
+\end{aligned}
+\right.
+$$
+$$
+\frac{\partial^2 \tilde{U}}{\partial x^2} = s^2LC\tilde{U}
+$$
+
+解: $\tilde{U}(s,x) = Ae^{-s\sqrt{LC}x} + Be^{+s\sqrt{LC}x}$
+$\tilde{I}(s,x) = \frac{1}{Z_c}(Ae^{-s\sqrt{LC}x} - Be^{+s\sqrt{LC}x})$
+
+$$
+Z_c = \sqrt{\frac{L}{C}}
+$$
+
+$$
+A_1 = \frac{Z_c}{Z_s+Z_c} \tilde{U}_0(s) + \frac{Z_s-Z_c}{Z_s+Z_c} B_1
+$$
+
+$$
+B_1 = \frac{Z_L-Z_c}{Z_L+Z_c} A_1 e^{-2\gamma l}
+$$
+
+$\eta = \sqrt{LC}$
+
+
+
+### 匹配
+$$
+Z_s = Z_c, Z_L = Z_c
+$$
+$A = \frac{1}{1 + \frac{Z_s}{Z_c}} \tilde{U}_0(s) = \frac{Z_c}{Z_s+Z_c} \tilde{U}_0(s)$
+$B = \frac{1}{1+\frac{Z_s}{Z_c}} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s) = \frac{Z_c}{Z_s+Z_c} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s)$
+
+$\eta = \sqrt{LC}$
+
+### 转换
+$\tilde{U}_0(s) \rightarrow U_0(t)$
+
+$\tilde{U}_0(s)e^{-\gamma x} \rightarrow U_0(t-\sqrt{LC}x)$ (行波)
+$\tilde{U}_0(s)e^{+\gamma x} \rightarrow U_0(t+\sqrt{LC}x)$ (反射波)
+
+### 匹配
+$$
+\text{匹配终端} Z_L = Z_c
+$$
+$$
+u(t,x) = \frac{1}{2} U_0(t-\frac{x}{v}) + \frac{1}{2} U_0(t-(2l-x)/v)
+$$
+$$
+\rho = \frac{Z_L-Z_c}{Z_L+Z_c}
+$$
+$$
+\Gamma = \frac{Z_s-Z_c}{Z_s+Z_c}
+$$
+
+### 瞬时匹配
+$$
+R_s = 100\Omega, Z_c = 150\Omega, Z_L = 1k\Omega
+$$
+$$
+V_{s} = 75V
+$$
+
+电线传输到终端，反射
+$I = \frac{V}{Z_c+Z_s}$
+
+$t=0$时，输入终端，波$V_i$
+$$
+V_i = \frac{Z_c}{Z_c+Z_s}V_s = 6V
+$$
+$$
+I_i = \frac{1}{Z_c+Z_s}V_s = 40mA
+$$
+$$
+\begin{array}{|l|l|l|l|}
+\hline
+\text{时刻} & \text{终端} & \text{终端} & \text{终端} \\
+\hline
+& V \text{波} & I \text{波} & \text{总} \\
+\hline
+0-2\tau & 6V & 40mA & 0 \\
+\hline
+2\tau-3\tau & 9.5V & - & - \\
+\hline
+\end{array}
+$$
+$ \rho_L = \frac{1000-150}{1000+150} = 0.74 $
+
+## 附录
+
+原图
+
+![1755070142369](./.TransmissionLineEq.zh/1755070142369.png)
+
+![1755070152228](./.TransmissionLineEq.zh/1755070152228.png)
+
+![1755070158564](./.TransmissionLineEq.zh/1755070158564.png)

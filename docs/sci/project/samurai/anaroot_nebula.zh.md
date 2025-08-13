@@ -1,3 +1,20 @@
+重建nebula需要这些文件：
+
+参数 XML 文件（如 NEBULA.20250625.xml）
+
+TArtCalibNEBULAHPC.hh/.cc
+
+TArtCalibNEBULA.hh/.cc
+
+TArtRecoNeutron.hh/.cc
+
+TArtSAMURAIParameters.hh/.cc
+
+相关数据对象类TArtNEBULAHPC、TArtNEBULAPla、TArtNeutron 
+
+
+** TArtCalibNEBULAHPC
+
 TArtCalibNEBULAHPC *nebulahpc_calib = new TArtCalibNEBULAHPC();
 
 **作用**：负责校准 NEBULA 高压正比计数管（HPC - High Pressure Chamber）的数据。HPC 主要作为中子探测的否决探测器（veto detector），用于区分中子和带电粒子（如伽马射线转换产生的电子或质子）。
@@ -9,7 +26,12 @@ TArtCalibNEBULAHPC *nebulahpc_calib = new TArtCalibNEBULAHPC();
   - 进行基本的 hit 判断。
 - **输出**：重建后的 TArtNEBULAHPC 对象，包含每个 HPC hit 的校准后信息（如时间、探测器 ID 等），存储于 TArtStoreManager 的 "NEBULAHPC" TClonesArray。
 
+
+
+
 ---
+
+** TArtCalibNEBULA 
 
 TArtCalibNEBULA *nebulapla_calib = new TArtCalibNEBULA();
 
@@ -22,6 +44,25 @@ TArtCalibNEBULA *nebulapla_calib = new TArtCalibNEBULA();
   - 计算击中位置（position）。
   - 将校准后的时间和电荷转换为物理单位（ns, MeVee）。
 - **输出**：重建后的 TArtNEBULAPla 对象，包含每个 hit 的详细校准信息（ID, Layer, SubLayer, QUAveCal, TAveCal, PosCal 等），存储于 TArtStoreManager 的 "NEBULAPla" TClonesArray。
+
+```
+    Double_t pos[3];
+    if(para->GetSubLayer() != 0){ // NEUT
+      //      pos[0] = para->GetDetPos(0) + posxoff + gRandom->Uniform(-6,6);
+      pos[0] = para->GetDetPos(0) + posxoff;
+    }else{ // VETO
+      //      pos[0] = para->GetDetPos(0) + posxoff + gRandom->Uniform(-16,16);
+      pos[0] = para->GetDetPos(0) + posxoff;
+    }
+    pos[1] = posslw + para->GetDetPos(1) + posyoff; 
+    pos[2] = para->GetDetPos(2) + poszoff;
+```
+
+
+代码通过判断 para->GetSubLayer() 是否为 0，区分 NEUT（中子探测层）和 VETO（反符合层）两种情况。无论是哪种情况，pos[0]（x 坐标）都设置为 para->GetDetPos(0) + posxoff，即参数表中该单元的 x 位置加上全局偏移量。
+
+pos[1]（y 坐标）通过 posslw（基于信号时间差重建的 y 位置）加上参数表中的 y 位置和全局偏移量 posyoff 得到。pos[2]（z 坐标）则直接取参数表中的 z 位置加上 poszoff。这样，最终 pos 数组就包含了该探测单元在实验坐标系下的三维空间位置，便于后续的物理分析和可视化。
+
 
 ---
 
@@ -190,4 +231,5 @@ void recoNebulaTrack(const char* ridffile = "/home/s057/exp/exp2505_s057/anaroot
     // TArtStoreManager::Delete(); // If it's a singleton managed this way
     // TArtSAMURAIParameters::Delete(); // If it's a singleton managed this way
 }
+```
 ```
