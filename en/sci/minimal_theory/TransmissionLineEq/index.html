@@ -1268,6 +1268,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#总结" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#附录" class="md-nav__link">
     附录
   </a>
@@ -2031,6 +2038,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#总结" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#附录" class="md-nav__link">
     附录
   </a>
@@ -2418,19 +2432,48 @@ V_i = \frac{Z_c}{Z_c+Z_s}V_s = 6V<br />
 $$<br />
 $$<br />
 I_i = \frac{1}{Z_c+Z_s}V_s = 40mA<br />
-$$<br />
-$$<br />
-\begin{array}{|c|c|c|c|}<br />
-\hline<br />
-\text{时刻} &amp; V\text{波} &amp; I\text{波} &amp; \text{总} \<br />
-\hline<br />
-0-2\tau &amp; 6\,\text{V} &amp; 40\,\text{mA} &amp; 0 \<br />
-\hline<br />
-2\tau-3\tau &amp; 9.5\,\text{V} &amp; - &amp; - \<br />
-\hline<br />
-\end{array}<br />
 $$</p>
+<table>
+<thead>
+<tr>
+<th align="left">时间段</th>
+<th align="left">始端电压</th>
+<th align="left">始端电流</th>
+<th align="left">时间段</th>
+<th align="left">终端电压</th>
+<th align="left">终端电流</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">0 - 2τ</td>
+<td align="left"><span class="arithmatex"><span class="MathJax_Preview">V_i = 6V</span><script type="math/tex">V_i = 6V</script></span></td>
+<td align="left"><span class="arithmatex"><span class="MathJax_Preview">I_i = 40mA</span><script type="math/tex">I_i = 40mA</script></span></td>
+<td align="left">0 - 2τ</td>
+<td align="left">0</td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">2τ⁺ - 4τ</td>
+<td align="left"><span class="arithmatex"><span class="MathJax_Preview">V_i + (V_{r1} + V_{r2}) = 9.5V</span><script type="math/tex">V_i + (V_{r1} + V_{r2}) = 9.5V</script></span></td>
+<td align="left"><span class="arithmatex"><span class="MathJax_Preview">I_i + (I_{r1} + I_{r2}) = 4mA</span><script type="math/tex">I_i + (I_{r1} + I_{r2}) = 4mA</script></span></td>
+<td align="left">τ⁺ - 3τ</td>
+<td align="left"><span class="arithmatex"><span class="MathJax_Preview">V_i + V_{r1} = 10.4V</span><script type="math/tex">V_i + V_{r1} = 10.4V</script></span></td>
+<td align="left"><span class="arithmatex"><span class="MathJax_Preview">I_i + I_{r1} = 10mA</span><script type="math/tex">I_i + I_{r1} = 10mA</script></span></td>
+</tr>
+<tr>
+<td align="left">4τ⁺ - 6τ</td>
+<td align="left"><span class="arithmatex"><span class="MathJax_Preview">V_i + (V_{r1} + V_{r2}) + (V_{r3} + V_{r4}) = 8.9V</span><script type="math/tex">V_i + (V_{r1} + V_{r2}) + (V_{r3} + V_{r4}) = 8.9V</script></span></td>
+<td align="left"><span class="arithmatex"><span class="MathJax_Preview">I_i + (I_{r1} + I_{r2}) + (I_{r3} + I_{r4}) = 9.3mA</span><script type="math/tex">I_i + (I_{r1} + I_{r2}) + (I_{r3} + I_{r4}) = 9.3mA</script></span></td>
+<td align="left">3τ⁺ - 5τ</td>
+<td align="left"><span class="arithmatex"><span class="MathJax_Preview">(V_i + V_{r1}) + (V_{r2} + V_{r3}) = 8.9V</span><script type="math/tex">(V_i + V_{r1}) + (V_{r2} + V_{r3}) = 8.9V</script></span></td>
+<td align="left"><span class="arithmatex"><span class="MathJax_Preview">(I_i + I_{r1}) + (I_{r2} + I_{r3}) = 8.4mA</span><script type="math/tex">(I_i + I_{r1}) + (I_{r2} + I_{r3}) = 8.4mA</script></span></td>
+</tr>
+</tbody>
+</table>
 <p><span class="arithmatex"><span class="MathJax_Preview">\rho_L = \frac{1000-150}{1000+150} = 0.74</span><script type="math/tex">\rho_L = \frac{1000-150}{1000+150} = 0.74</script></span></p>
+<h2 id="总结">总结<a class="headerlink" href="#总结" title="Permanent link">#</a></h2>
+<p>只要特性阻抗和负载阻抗不匹配，</p>
 <h2 id="附录">附录<a class="headerlink" href="#附录" title="Permanent link">#</a></h2>
 <p>原图</p>
 <p><img alt="1755070142369" src="../../../../sci/minimal_theory/TransmissionLineEq.zh/1755070142369.png" /></p>
@@ -2442,7 +2485,7 @@ $$</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月13日 07:56:56 UTC"><span class="timeago" datetime="2025-08-13T07:56:56+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月13日 07:56:56 UTC">2025-08-13</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月13日 08:07:35 UTC"><span class="timeago" datetime="2025-08-13T08:07:35+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月13日 08:07:35 UTC">2025-08-13</span>
       
         <br>
         Created:
