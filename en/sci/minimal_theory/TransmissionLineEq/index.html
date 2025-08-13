@@ -1242,8 +1242,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#转换" class="md-nav__link">
-    转换
+  <a href="#拉普拉斯逆变换" class="md-nav__link">
+    拉普拉斯逆变换
   </a>
   
 </li>
@@ -2005,8 +2005,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#转换" class="md-nav__link">
-    转换
+  <a href="#拉普拉斯逆变换" class="md-nav__link">
+    拉普拉斯逆变换
   </a>
   
 </li>
@@ -2262,6 +2262,7 @@ i(t,x) = i(t,x+\Delta x) + C\Delta x \frac{\partial u(t,x+\Delta x)}{\partial t}
 \frac{\partial^2 u}{\partial x^2} = LC\frac{\partial^2 u}{\partial t^2}<br />
 $$<br />
 波速为 <span class="arithmatex"><span class="MathJax_Preview">v = \frac{1}{\sqrt{LC}}</span><script type="math/tex">v = \frac{1}{\sqrt{LC}}</script></span></p>
+<p><img alt="1755071531442" src="../../../../sci/minimal_theory/TransmissionLineEq.zh/1755071531442.png" /></p>
 <h3 id="边界条件">边界条件<a class="headerlink" href="#边界条件" title="Permanent link">#</a></h3>
 <div class="arithmatex">
 <div class="MathJax_Preview">
@@ -2363,7 +2364,7 @@ $$<br />
 <span class="arithmatex"><span class="MathJax_Preview">A = \frac{1}{1 + \frac{Z_s}{Z_c}} \tilde{U}_0(s) = \frac{Z_c}{Z_s+Z_c} \tilde{U}_0(s)</span><script type="math/tex">A = \frac{1}{1 + \frac{Z_s}{Z_c}} \tilde{U}_0(s) = \frac{Z_c}{Z_s+Z_c} \tilde{U}_0(s)</script></span><br />
 <span class="arithmatex"><span class="MathJax_Preview">B = \frac{1}{1+\frac{Z_s}{Z_c}} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s) = \frac{Z_c}{Z_s+Z_c} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s)</span><script type="math/tex">B = \frac{1}{1+\frac{Z_s}{Z_c}} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s) = \frac{Z_c}{Z_s+Z_c} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s)</script></span></p>
 <p><span class="arithmatex"><span class="MathJax_Preview">\eta = \sqrt{LC}</span><script type="math/tex">\eta = \sqrt{LC}</script></span></p>
-<h3 id="转换">转换<a class="headerlink" href="#转换" title="Permanent link">#</a></h3>
+<h3 id="拉普拉斯逆变换">拉普拉斯逆变换<a class="headerlink" href="#拉普拉斯逆变换" title="Permanent link">#</a></h3>
 <p><span class="arithmatex"><span class="MathJax_Preview">\tilde{U}_0(s) \rightarrow U_0(t)</span><script type="math/tex">\tilde{U}_0(s) \rightarrow U_0(t)</script></span></p>
 <p><span class="arithmatex"><span class="MathJax_Preview">\tilde{U}_0(s)e^{-\gamma x} \rightarrow U_0(t-\sqrt{LC}x)</span><script type="math/tex">\tilde{U}_0(s)e^{-\gamma x} \rightarrow U_0(t-\sqrt{LC}x)</script></span> (行波)<br />
 <span class="arithmatex"><span class="MathJax_Preview">\tilde{U}_0(s)e^{+\gamma x} \rightarrow U_0(t+\sqrt{LC}x)</span><script type="math/tex">\tilde{U}_0(s)e^{+\gamma x} \rightarrow U_0(t+\sqrt{LC}x)</script></span> (反射波)</p>
@@ -2419,31 +2420,29 @@ $$<br />
 I_i = \frac{1}{Z_c+Z_s}V_s = 40mA<br />
 $$<br />
 $$<br />
-\begin{array}{|l|l|l|l|}<br />
+\begin{array}{|c|c|c|c|}<br />
 \hline<br />
-\text{时刻} &amp; \text{终端} &amp; \text{终端} &amp; \text{终端} \<br />
+\text{时刻} &amp; V\text{波} &amp; I\text{波} &amp; \text{总} \<br />
 \hline<br />
-&amp; V \text{波} &amp; I \text{波} &amp; \text{总} \<br />
+0-2\tau &amp; 6\,\text{V} &amp; 40\,\text{mA} &amp; 0 \<br />
 \hline<br />
-0-2\tau &amp; 6V &amp; 40mA &amp; 0 \<br />
-\hline<br />
-2\tau-3\tau &amp; 9.5V &amp; - &amp; - \<br />
+2\tau-3\tau &amp; 9.5\,\text{V} &amp; - &amp; - \<br />
 \hline<br />
 \end{array}<br />
-$$<br />
-$ \rho_L = \frac{1000-150}{1000+150} = 0.74 $</p>
+$$</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\rho_L = \frac{1000-150}{1000+150} = 0.74</span><script type="math/tex">\rho_L = \frac{1000-150}{1000+150} = 0.74</script></span></p>
 <h2 id="附录">附录<a class="headerlink" href="#附录" title="Permanent link">#</a></h2>
 <p>原图</p>
-<p><img alt="1755070142369" src="./.TransmissionLineEq.zh/1755070142369.png" /></p>
-<p><img alt="1755070152228" src="./.TransmissionLineEq.zh/1755070152228.png" /></p>
-<p><img alt="1755070158564" src="./.TransmissionLineEq.zh/1755070158564.png" /></p>
+<p><img alt="1755070142369" src="../../../../sci/minimal_theory/TransmissionLineEq.zh/1755070142369.png" /></p>
+<p><img alt="1755070152228" src="../../../../sci/minimal_theory/TransmissionLineEq.zh/1755070152228.png" /></p>
+<p><img alt="1755070158564" src="../../../../sci/minimal_theory/TransmissionLineEq.zh/1755070158564.png" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月13日 07:42:45 UTC"><span class="timeago" datetime="2025-08-13T07:42:45+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月13日 07:42:45 UTC">2025-08-13</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月13日 07:56:56 UTC"><span class="timeago" datetime="2025-08-13T07:56:56+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月13日 07:56:56 UTC">2025-08-13</span>
       
         <br>
         Created:
