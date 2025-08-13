@@ -163,12 +163,17 @@ $$
 \frac{\partial^2 \tilde{U}}{\partial x^2} = s^2LC\tilde{U}
 $$
 
-解: $\tilde{U}(s,x) = Ae^{-s\sqrt{LC}x} + Be^{+s\sqrt{LC}x}$
-$\tilde{I}(s,x) = \frac{1}{Z_c}(Ae^{-s\sqrt{LC}x} - Be^{+s\sqrt{LC}x})$
+解:
 
-$$
+$\tilde{U}(s,x) = Ae^{-s\sqrt{LC}x} + Be^{+s\sqrt{LC}x}$,
+
+
+$\tilde{I}(s,x) = \frac{1}{Z_c}(Ae^{-s\sqrt{LC}x} - Be^{+s\sqrt{LC}x})$.
+
+其中
+$
 Z_c = \sqrt{\frac{L}{C}}
-$$
+$
 
 $$
 A_1 = \frac{Z_c}{Z_s+Z_c} \tilde{U}_0(s) + \frac{Z_s-Z_c}{Z_s+Z_c} B_1
@@ -178,38 +183,41 @@ $$
 B_1 = \frac{Z_L-Z_c}{Z_L+Z_c} A_1 e^{-2\gamma l}
 $$
 
-$\eta = \sqrt{LC}$
+其中$\gamma =S  \sqrt{LC}$
+
+
+<!-- 
+### 若始端匹配 $Z_s = Z_c$
 
 
 
-### 匹配
-$$
-Z_s = Z_c, Z_L = Z_c
-$$
 $A = \frac{1}{1 + \frac{Z_s}{Z_c}} \tilde{U}_0(s) = \frac{Z_c}{Z_s+Z_c} \tilde{U}_0(s)$
-$B = \frac{1}{1+\frac{Z_s}{Z_c}} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s) = \frac{Z_c}{Z_s+Z_c} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s)$
+,
 
-$\eta = \sqrt{LC}$
+$B = \frac{1}{1+\frac{Z_s}{Z_c}} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s) = \frac{Z_c}{Z_s+Z_c} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s)$
+,
+
+$\gamma =S  \sqrt{LC}$ -->
 
 ### 拉普拉斯逆变换
 $\tilde{U}_0(s) \rightarrow U_0(t)$
 
 $\tilde{U}_0(s)e^{-\gamma x} \rightarrow U_0(t-\sqrt{LC}x)$ (行波)
+
 $\tilde{U}_0(s)e^{+\gamma x} \rightarrow U_0(t+\sqrt{LC}x)$ (反射波)
 
 ### 匹配
 $$
-\text{匹配终端} Z_L = Z_c
+\text{匹配始端} Z_s = Z_c
 $$
 $$
-u(t,x) = \frac{1}{2} U_0(t-\frac{x}{v}) + \frac{1}{2} U_0(t-(2l-x)/v)
+u(t,x) = \frac{1}{2} U_0(t-\frac{x}{v}) + \frac{1}{2}\rho U_0(t-(2l-x)/v)
 $$
+
 $$
 \rho = \frac{Z_L-Z_c}{Z_L+Z_c}
 $$
-$$
-\Gamma = \frac{Z_s-Z_c}{Z_s+Z_c}
-$$
+
 
 ### 瞬时匹配
 $$
@@ -240,7 +248,7 @@ $\rho_L = \frac{1000-150}{1000+150} = 0.74$
 
 ## 总结
 
-只要特性阻抗和负载阻抗不匹配，
+只要特性阻抗和负载阻抗不匹配，就会发生发射。 假如始端和终端都不匹配则会发生多次反射。
 
 ## 附录
 
