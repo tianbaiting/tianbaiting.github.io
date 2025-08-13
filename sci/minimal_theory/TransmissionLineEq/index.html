@@ -1201,13 +1201,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#匹配" class="md-nav__link">
-    匹配
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#拉普拉斯逆变换" class="md-nav__link">
     拉普拉斯逆变换
   </a>
@@ -1215,7 +1208,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#匹配_1" class="md-nav__link">
+  <a href="#匹配" class="md-nav__link">
     匹配
   </a>
   
@@ -1971,13 +1964,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#匹配" class="md-nav__link">
-    匹配
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#拉普拉斯逆变换" class="md-nav__link">
     拉普拉斯逆变换
   </a>
@@ -1985,7 +1971,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#匹配_1" class="md-nav__link">
+  <a href="#匹配" class="md-nav__link">
     匹配
   </a>
   
@@ -2310,16 +2296,13 @@ $$
 \frac{\partial^2 \tilde{U}}{\partial x^2} = s^2LC\tilde{U}
 </script>
 </div>
-<p>解: <span class="arithmatex"><span class="MathJax_Preview">\tilde{U}(s,x) = Ae^{-s\sqrt{LC}x} + Be^{+s\sqrt{LC}x}</span><script type="math/tex">\tilde{U}(s,x) = Ae^{-s\sqrt{LC}x} + Be^{+s\sqrt{LC}x}</script></span><br />
-<span class="arithmatex"><span class="MathJax_Preview">\tilde{I}(s,x) = \frac{1}{Z_c}(Ae^{-s\sqrt{LC}x} - Be^{+s\sqrt{LC}x})</span><script type="math/tex">\tilde{I}(s,x) = \frac{1}{Z_c}(Ae^{-s\sqrt{LC}x} - Be^{+s\sqrt{LC}x})</script></span></p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-Z_c = \sqrt{\frac{L}{C}}
-</div>
-<script type="math/tex; mode=display">
-Z_c = \sqrt{\frac{L}{C}}
-</script>
-</div>
+<p>解:</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\tilde{U}(s,x) = Ae^{-s\sqrt{LC}x} + Be^{+s\sqrt{LC}x}</span><script type="math/tex">\tilde{U}(s,x) = Ae^{-s\sqrt{LC}x} + Be^{+s\sqrt{LC}x}</script></span>,</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\tilde{I}(s,x) = \frac{1}{Z_c}(Ae^{-s\sqrt{LC}x} - Be^{+s\sqrt{LC}x})</span><script type="math/tex">\tilde{I}(s,x) = \frac{1}{Z_c}(Ae^{-s\sqrt{LC}x} - Be^{+s\sqrt{LC}x})</script></span>.</p>
+<p>其中<br />
+$<br />
+Z_c = \sqrt{\frac{L}{C}}<br />
+$</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
 A_1 = \frac{Z_c}{Z_s+Z_c} \tilde{U}_0(s) + \frac{Z_s-Z_c}{Z_s+Z_c} B_1
@@ -2336,43 +2319,45 @@ B_1 = \frac{Z_L-Z_c}{Z_L+Z_c} A_1 e^{-2\gamma l}
 B_1 = \frac{Z_L-Z_c}{Z_L+Z_c} A_1 e^{-2\gamma l}
 </script>
 </div>
-<p><span class="arithmatex"><span class="MathJax_Preview">\eta = \sqrt{LC}</span><script type="math/tex">\eta = \sqrt{LC}</script></span></p>
-<h3 id="匹配">匹配<a class="headerlink" href="#匹配" title="Permanent link">#</a></h3>
-<p>$$<br />
-Z_s = Z_c, Z_L = Z_c<br />
-$$<br />
-<span class="arithmatex"><span class="MathJax_Preview">A = \frac{1}{1 + \frac{Z_s}{Z_c}} \tilde{U}_0(s) = \frac{Z_c}{Z_s+Z_c} \tilde{U}_0(s)</span><script type="math/tex">A = \frac{1}{1 + \frac{Z_s}{Z_c}} \tilde{U}_0(s) = \frac{Z_c}{Z_s+Z_c} \tilde{U}_0(s)</script></span><br />
-<span class="arithmatex"><span class="MathJax_Preview">B = \frac{1}{1+\frac{Z_s}{Z_c}} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s) = \frac{Z_c}{Z_s+Z_c} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s)</span><script type="math/tex">B = \frac{1}{1+\frac{Z_s}{Z_c}} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s) = \frac{Z_c}{Z_s+Z_c} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s)</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">\eta = \sqrt{LC}</span><script type="math/tex">\eta = \sqrt{LC}</script></span></p>
+<p>其中<span class="arithmatex"><span class="MathJax_Preview">\gamma =S  \sqrt{LC}</span><script type="math/tex">\gamma =S  \sqrt{LC}</script></span></p>
+<!-- 
+### 若始端匹配 $Z_s = Z_c$
+
+
+
+$A = \frac{1}{1 + \frac{Z_s}{Z_c}} \tilde{U}_0(s) = \frac{Z_c}{Z_s+Z_c} \tilde{U}_0(s)$
+,
+
+$B = \frac{1}{1+\frac{Z_s}{Z_c}} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s) = \frac{Z_c}{Z_s+Z_c} \frac{Z_L-Z_c}{Z_L+Z_c} e^{-2\gamma l} \tilde{U}_0(s)$
+,
+
+$\gamma =S  \sqrt{LC}$ -->
+
 <h3 id="拉普拉斯逆变换">拉普拉斯逆变换<a class="headerlink" href="#拉普拉斯逆变换" title="Permanent link">#</a></h3>
 <p><span class="arithmatex"><span class="MathJax_Preview">\tilde{U}_0(s) \rightarrow U_0(t)</span><script type="math/tex">\tilde{U}_0(s) \rightarrow U_0(t)</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">\tilde{U}_0(s)e^{-\gamma x} \rightarrow U_0(t-\sqrt{LC}x)</span><script type="math/tex">\tilde{U}_0(s)e^{-\gamma x} \rightarrow U_0(t-\sqrt{LC}x)</script></span> (行波)<br />
-<span class="arithmatex"><span class="MathJax_Preview">\tilde{U}_0(s)e^{+\gamma x} \rightarrow U_0(t+\sqrt{LC}x)</span><script type="math/tex">\tilde{U}_0(s)e^{+\gamma x} \rightarrow U_0(t+\sqrt{LC}x)</script></span> (反射波)</p>
-<h3 id="匹配_1">匹配<a class="headerlink" href="#匹配_1" title="Permanent link">#</a></h3>
+<p><span class="arithmatex"><span class="MathJax_Preview">\tilde{U}_0(s)e^{-\gamma x} \rightarrow U_0(t-\sqrt{LC}x)</span><script type="math/tex">\tilde{U}_0(s)e^{-\gamma x} \rightarrow U_0(t-\sqrt{LC}x)</script></span> (行波)</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\tilde{U}_0(s)e^{+\gamma x} \rightarrow U_0(t+\sqrt{LC}x)</span><script type="math/tex">\tilde{U}_0(s)e^{+\gamma x} \rightarrow U_0(t+\sqrt{LC}x)</script></span> (反射波)</p>
+<h3 id="匹配">匹配<a class="headerlink" href="#匹配" title="Permanent link">#</a></h3>
 <div class="arithmatex">
 <div class="MathJax_Preview">
-\text{匹配终端} Z_L = Z_c
+\text{匹配始端} Z_s = Z_c
 $$
 $$
-u(t,x) = \frac{1}{2} U_0(t-\frac{x}{v}) + \frac{1}{2} U_0(t-(2l-x)/v)
-$$
-$$
-\rho = \frac{Z_L-Z_c}{Z_L+Z_c}
-$$
-$$
-\Gamma = \frac{Z_s-Z_c}{Z_s+Z_c}
+u(t,x) = \frac{1}{2} U_0(t-\frac{x}{v}) + \frac{1}{2}\rho U_0(t-(2l-x)/v)
 </div>
 <script type="math/tex; mode=display">
-\text{匹配终端} Z_L = Z_c
+\text{匹配始端} Z_s = Z_c
 $$
 $$
-u(t,x) = \frac{1}{2} U_0(t-\frac{x}{v}) + \frac{1}{2} U_0(t-(2l-x)/v)
-$$
-$$
+u(t,x) = \frac{1}{2} U_0(t-\frac{x}{v}) + \frac{1}{2}\rho U_0(t-(2l-x)/v)
+</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \rho = \frac{Z_L-Z_c}{Z_L+Z_c}
-$$
-$$
-\Gamma = \frac{Z_s-Z_c}{Z_s+Z_c}
+</div>
+<script type="math/tex; mode=display">
+\rho = \frac{Z_L-Z_c}{Z_L+Z_c}
 </script>
 </div>
 <h3 id="瞬时匹配">瞬时匹配<a class="headerlink" href="#瞬时匹配" title="Permanent link">#</a></h3>
@@ -2439,7 +2424,7 @@ $$</p>
 </table>
 <p><span class="arithmatex"><span class="MathJax_Preview">\rho_L = \frac{1000-150}{1000+150} = 0.74</span><script type="math/tex">\rho_L = \frac{1000-150}{1000+150} = 0.74</script></span></p>
 <h2 id="总结">总结<a class="headerlink" href="#总结" title="Permanent link">#</a></h2>
-<p>只要特性阻抗和负载阻抗不匹配，</p>
+<p>只要特性阻抗和负载阻抗不匹配，就会发生发射。 假如始端和终端都不匹配则会发生多次反射。</p>
 <h2 id="附录">附录<a class="headerlink" href="#附录" title="Permanent link">#</a></h2>
 <p>原图</p>
 <p><img alt="1755070142369" src="../TransmissionLineEq.zh/1755070142369.png" /></p>
@@ -2451,7 +2436,7 @@ $$</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月13日 08:07:35 UTC"><span class="timeago" datetime="2025-08-13T08:07:35+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月13日 08:07:35 UTC">2025-08-13</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月13日 08:21:11 UTC"><span class="timeago" datetime="2025-08-13T08:21:11+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月13日 08:21:11 UTC">2025-08-13</span>
       
         <br>
         创建日期:
