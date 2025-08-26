@@ -1,25 +1,43 @@
 # PDC 漂移室模拟方案
 
-## PDC 指标
+## 参考资料与教学
 
-[详细参数与设计说明](https://www.nishina.riken.jp/ribf/SAMURAI/image/Detector-PDC.pdf)
+### 1. 漂移室原理
+- [漂移室教学材料 (中文)](https://yznkxjs.xml-journal.net/cn/article/pdf/preview/10.7538/yzk.1981.15.01.0116.pdf)
+- [Drift Chamber Tutorial (ICFA 2005)](https://indico.cern.ch/event/426015/contributions/1047606/attachments/906077/1278746/DriftChamber_ICFA2005.pdf)
+- [Drift Chamber Principles (IOP)](https://iopscience.iop.org/article/10.1088/1742-6596/18/1/010/pdf)
+
+### 2. Geant4 模拟
+- [Geant4 Simulation Tutorial (Munich 2018)](https://indico.cern.ch/event/709670/contributions/3027829/attachments/1670306/2679293/Munich.pdf)
+
+### 3. PDC 探测器技术文档
+- [PDC 详细参数与设计说明](https://www.nishina.riken.jp/ribf/SAMURAI/image/Detector-PDC.pdf)
+- [PDC CAD 截图](https://indico2.riken.jp/event/2752/contributions/11231/attachments/7528/8801/04_EMIS2012_KobayashiT.pdf)
+
+## PDC 指标
 
 ### 1. 设计与用途
 
 PDC探测器（质子漂移室）用于测量与束流速度相近（projectile-rapidity）的质子的动量，放置在SAMURAI磁铁下游。为减少探测器平面数量，PDC采用阴极读出法获取位置信息，阳极平面使用Walenta型漂移室，8毫米漂移长度设计减少阳极线数量。为探测多粒子事件，阴极线采用三种方向：0度、+45度和-45度。
 
+> **注**：PDC采用阴极读出（cathode readout）。当电离产生的电子向阳极丝漂移并引发雪崩时，会在附近的阴极条上产生感应电荷，通过读取这些感应电荷来确定粒子的位置。
+
 ### 2. 主要参数
 
-- 有效面积：1700mm × 800mm
-- 阳极线：金-钨/铼合金，30μm直径，间距16mm，漂移长度8mm
-- 阴极线：金-铝合金，80μm直径，间距3mm
-- 阳极-阴极间隙：8mm
-- 阴极条宽度：12mm（每4根阴极线合并成一个条）
-- 供电：阳极线施加正高压，势线施加轻微负高压
-- 配置：阴极(U)-阳极(V)-阴极(X)-阳极(U)-阴极(V)
-- 运行气体：Ar+25% i-C4H10 或 Ar+50% C2H6
+- **有效面积**：1700mm × 800mm
+- **阳极线**：金-钨/铼合金，30μm直径，间距16mm，漂移长度8mm
+- **阴极线**：金-铝合金，80μm直径，间距3mm
+- **阳极-阴极间隙**：8mm
+- **阴极条宽度**：12mm（每4根阴极线合并成一个条）
+- **供电**：阳极线施加正高压，势线施加轻微负高压
+- **配置**：阴极(U)-阳极(V)-阴极(X)-阳极(U)-阴极(V)
+- **运行气体**：Ar+25% i-C4H10 或 Ar+50% C2H6
 
 ![PDC结构示意图](assets/PDC.zh/image.png)
+*PDC结构示意图*
+
+![PDC丝室结构](assets/PDC.zh/image-1.png)
+*PDC丝室结构。X, U, V 层通过不同方向的丝（或条）来确定粒子穿过的二维位置。例如，X 层的丝通常垂直于X轴，用于精确测量X坐标。*
 
 ### 3. 读出方案与发展
 
@@ -32,10 +50,10 @@ PDC探测器（质子漂移室）用于测量与束流速度相近（projectile-
 
 需要自行构建 PDC 探测器。Geant4 能够精确模拟粒子与气体分子的电离过程。我们的替代方案如下：
 
-1. 用 Geant4 模拟粒子穿过漂移室气体。
-2. 在 Geant4 的用户动作类（SteppingAction）中，记录所有电离事件（能量沉积）的位置。
-3. 在每根丝附近构建 Sensitive Detector，最近漂移距离作为时间，总沉积为幅度。
-4. 该方法将“点火”简化为“附近发生了电离”，忽略了电子漂移时间、扩散和雪崩增益等复杂过程。
+1.  用 Geant4 模拟粒子穿过漂移室气体。
+2.  在 Geant4 的用户动作类（SteppingAction）中，记录所有电离事件（能量沉积）的位置。
+3.  在每根丝附近构建 Sensitive Detector，将最近漂移距离作为时间，总沉积能量作为幅度。
+4.  该方法将“点火”简化为“附近发生了电离”，忽略了电子漂移时间、扩散和雪崩增益等复杂过程。
 
 ## 方法局限
 
