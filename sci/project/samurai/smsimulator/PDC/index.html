@@ -1821,6 +1821,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#具体code实现" class="md-nav__link">
+    具体code实现
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2239,6 +2246,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#具体code实现" class="md-nav__link">
+    具体code实现
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2294,6 +2308,9 @@
 <em>PDC结构示意图</em></p>
 <p><img alt="PDC丝室结构" src="../assets/PDC.zh/image-1.png" /><br />
 <em>PDC丝室结构。X, U, V 层通过不同方向的丝（或条）来确定粒子穿过的二维位置。例如，X 层的丝通常垂直于X轴，用于精确测量X坐标。</em></p>
+<p>阳极丝线（读出丝）示意图：<br />
+<img alt="alt text" src="../assets/PDC.zh/image-2.png" /></p>
+<p>代码在https://github.com/tianbaiting/Dpol_smsimulator/blob/main/sim_deuteron/forunderstanding/plot_pdc_wires.py</p>
 <h3 id="3-读出方案与发展">3. 读出方案与发展<a class="headerlink" href="#3-读出方案与发展" title="Permanent link">#</a></h3>
 <ul>
 <li><strong>初始方案（已测试）</strong>：为减少读出通道，曾测试电荷分割读出法，将阴极条通过电阻串联，每8个条通过一个电荷灵敏前置放大器读出。原型探测器（600mm × 480mm）对X射线取得1mm（rms）位置分辨率，但无法正确处理两个质子事件。</li>
@@ -2342,13 +2359,88 @@
 <ul>
 <li>每个事件输出所有“点火”信号（可用 TTree/TClonesArray），包括能量、位置、最近丝编号、漂移距离等。</li>
 </ul>
+<h2 id="具体code实现">具体code实现<a class="headerlink" href="#具体code实现" title="Permanent link">#</a></h2>
+<p>数据流向说明</p>
+<p>根据模拟流程，数据的主要流向如下：</p>
+<pre class="mermaid"><code>graph TD
+    subgraph "输入与模拟"
+        A[输入文件&lt;br/&gt;dbreakb01.root] --&gt; B{Geant4 模拟};
+        C[BeamSimTree] --&gt; D[beam数据];
+    end
+
+    subgraph "PDC 径迹探测器处理"
+        E(FragmentSD) --&gt; F[FragSimData];
+    end
+
+    subgraph "中子探测器处理"
+        I(NEBULASD) --&gt; J[NEBULAPla数据];
+        J --&gt; K[中子探测分析];
+    end
+
+    subgraph "其他"
+            G{轨迹重建算法所需} --&gt; H[输出分支&lt;br/&gt;target_*, PDC1*, PDC2*];
+    end
+    B --&gt; E &amp; I;</code></pre>
+<p>/home/tbt/workspace/dpol/smsimulator5.5/sim_deuteron/src/DeutDetectorConstruction.cc<br />
+<div class="highlight"><pre><span></span><code>// 第232-234行：PDC1物理放置
+G4ThreeVector pdc1_pos_lab{fPDC1Pos}; 
+pdc1_pos_lab.rotateY(pdc_angle);  // 坐标变换
+G4Transform3D pdc1_trans{pdc1_rm, pdc1_pos_lab};
+new G4PVPlacement{pdc1_trans, pdc_log, &quot;PDC1&quot;, expHall_log, false, 0};
+
+// 第236-240行：保存到模拟参数
+frag_prm-&gt;fPDC1Position.SetXYZ(
+    fPDC1Pos.x()/mm, 
+    fPDC1Pos.y()/mm, 
+    fPDC1Pos.z()/mm
+);
+</code></pre></div><br />
+先移动，然后再旋转</p>
+<p>PDC有3个独立的敏感层：</p>
+<p>U层： /PDC_U - 倾斜丝线方向<br />
+X层： /PDC_X - 垂直丝线方向<br />
+V层： /PDC_V - 倾斜丝线方向</p>
+<p>// 在DeutDetectorConstruction.cc中的设置<br />
+fPDCSD_U = new FragmentSD("/PDC_U");  // U层敏感探测器<br />
+fPDCSD_X = new FragmentSD("/PDC_X");  // X层敏感探测器<br />
+fPDCSD_V = new FragmentSD("/PDC_V");  // V层敏感探测器</p>
+<p>// 绑定到对应的逻辑体积<br />
+fPDCConstruction-&gt;fLayerU-&gt;SetSensitiveDetector(fPDCSD_U);<br />
+fPDCConstruction-&gt;fLayerX-&gt;SetSensitiveDetector(fPDCSD_X);<br />
+fPDCConstruction-&gt;fLayerV-&gt;SetSensitiveDetector(fPDCSD_V);</p>
+<p>FragmentSD工作原理<br />
+核心方法是 ProcessHits()：</p>
+<div class="highlight"><pre><span></span><code>G4bool FragmentSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
+{
+    // 1. 获取数据管理器
+    SimDataManager *sman = SimDataManager::GetSimDataManager();
+    TClonesArray *SimDataArray = sman-&gt;FindSimDataArray(&quot;FragSimData&quot;);
+
+    // 2. 提取步进信息
+    G4StepPoint* preStepPoint = aStep-&gt;GetPreStepPoint();
+    G4StepPoint* postStepPoint = aStep-&gt;GetPostStepPoint();
+
+    // 3. 筛选条件：只记录主粒子且带电粒子
+    if(parentid == 0 &amp;&amp; aStep-&gt;GetTrack()-&gt;GetDefinition()-&gt;GetPDGCharge() != 0.)
+    {
+        // 4. 创建TSimData对象并填入数据
+        TSimData* data = new TSimData();
+        data-&gt;fTrackID = trackid;
+        data-&gt;fDetectorName = detectorName;  // &quot;U&quot;, &quot;X&quot;, &quot;V&quot;
+        data-&gt;fPrePosition = prePosition;
+        data-&gt;fPostPosition = postPosition;
+        data-&gt;fPreMomentum = preMomentum;
+        // ... 更多物理量
+    }
+}
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月26日 02:51:22 UTC"><span class="timeago" datetime="2025-08-26T02:51:22+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月26日 02:51:22 UTC">2025-08-26</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月28日 01:36:48 UTC"><span class="timeago" datetime="2025-08-28T01:36:48+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月28日 01:36:48 UTC">2025-08-28</span>
       
         <br>
         创建日期:

@@ -1944,6 +1944,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#附录在-mkdocs-中启用-mermaid-图表" class="md-nav__link">
+    附录：在 MkDocs 中启用 Mermaid 图表
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2459,6 +2466,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#附录在-mkdocs-中启用-mermaid-图表" class="md-nav__link">
+    附录：在 MkDocs 中启用 Mermaid 图表
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2815,25 +2829,27 @@
 <h4 id="f-其他">f. 其他<a class="headerlink" href="#f-其他" title="Permanent link">#</a></h4>
 <ul>
 <li><code>fHit</code>: 是否被击中（0/1），用于事件筛选。</li>
-<li>还有大量信号处理相关变量（如 <code>trailing</code>、<code>width</code>、<code>slw</code>），用于详细分析探测器响应特性。<br />
-fPos[3]：击中点的空间坐标（X, Y, Z）。<br />
-fFlightLength：粒子从反应点到探测器的飞行距离。<br />
-fFlightAngle：粒子入射角度。</li>
-<li>多重击中与参考信号<br />
-fTUMulti / fTDMulti：上/下端多重击中计数。<br />
-fTURawRef / fTDRawRef：参考时间信号（如触发参考）。<br />
-fTURaw_SubTRef / fTDRaw_SubTRef：与参考信号的差值。</li>
-<li>其他<br />
-fHit：是否被击中（0/1），用于事件筛选。<br />
-还有大量信号处理相关变量（如 trailing、width、slw），用于详细分析探测器响应特性。</li>
+<li>还有大量信号处理相关变量（如 <code>trailing</code>、<code>width</code>、<code>slw</code>），用于详细分析探测器响应特性。</li>
 </ul>
+<hr />
+<h2 id="附录在-mkdocs-中启用-mermaid-图表">附录：在 MkDocs 中启用 Mermaid 图表<a class="headerlink" href="#附录在-mkdocs-中启用-mermaid-图表" title="Permanent link">#</a></h2>
+<p>要在文档中正确显示 Mermaid 流程图，需要在 <code>mkdocs.yml</code> 配置文件中添加以下扩展。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># mkdocs.yml</span>
+
+<span class="nt">markdown_extensions</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.superfences</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">custom_fences</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mermaid</span>
+<span class="w">          </span><span class="nt">class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mermaid</span>
+<span class="w">          </span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="kt">!!python/name:pymdownx.superfences.fence_code_format</span>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月23日 06:16:49 UTC"><span class="timeago" datetime="2025-08-23T06:16:49+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月23日 06:16:49 UTC">2025-08-23</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月28日 01:36:48 UTC"><span class="timeago" datetime="2025-08-28T01:36:48+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月28日 01:36:48 UTC">2025-08-28</span>
       
         <br>
         创建日期:
