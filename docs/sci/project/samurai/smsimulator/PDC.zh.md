@@ -39,6 +39,13 @@ PDC探测器（质子漂移室）用于测量与束流速度相近（projectile-
 ![PDC丝室结构](assets/PDC.zh/image-1.png)
 *PDC丝室结构。X, U, V 层通过不同方向的丝（或条）来确定粒子穿过的二维位置。例如，X 层的丝通常垂直于X轴，用于精确测量X坐标。*
 
+
+
+阳极丝线（读出丝）示意图：
+![alt text](assets/PDC.zh/image-2.png)
+
+代码在https://github.com/tianbaiting/Dpol_smsimulator/blob/main/sim_deuteron/forunderstanding/plot_pdc_wires.py
+
 ### 3. 读出方案与发展
 
 - **初始方案（已测试）**：为减少读出通道，曾测试电荷分割读出法，将阴极条通过电阻串联，每8个条通过一个电荷灵敏前置放大器读出。原型探测器（600mm × 480mm）对X射线取得1mm（rms）位置分辨率，但无法正确处理两个质子事件。
@@ -89,3 +96,101 @@ PDC探测器（质子漂移室）用于测量与束流速度相近（projectile-
 ## 5. 数据输出
 
 - 每个事件输出所有“点火”信号（可用 TTree/TClonesArray），包括能量、位置、最近丝编号、漂移距离等。
+
+## 具体code实现
+
+
+数据流向说明
+
+根据模拟流程，数据的主要流向如下：
+
+```mermaid
+graph TD
+    subgraph "输入与模拟"
+        A[输入文件<br/>dbreakb01.root] --> B{Geant4 模拟};
+        C[BeamSimTree] --> D[beam数据];
+    end
+
+    subgraph "PDC 径迹探测器处理"
+        E(FragmentSD) --> F[FragSimData];
+    end
+
+    subgraph "中子探测器处理"
+        I(NEBULASD) --> J[NEBULAPla数据];
+        J --> K[中子探测分析];
+    end
+
+    subgraph "其他"
+            G{轨迹重建算法所需} --> H[输出分支<br/>target_*, PDC1*, PDC2*];
+    end
+    B --> E & I;
+```
+
+
+
+
+
+
+/home/tbt/workspace/dpol/smsimulator5.5/sim_deuteron/src/DeutDetectorConstruction.cc
+```
+// 第232-234行：PDC1物理放置
+G4ThreeVector pdc1_pos_lab{fPDC1Pos}; 
+pdc1_pos_lab.rotateY(pdc_angle);  // 坐标变换
+G4Transform3D pdc1_trans{pdc1_rm, pdc1_pos_lab};
+new G4PVPlacement{pdc1_trans, pdc_log, "PDC1", expHall_log, false, 0};
+
+// 第236-240行：保存到模拟参数
+frag_prm->fPDC1Position.SetXYZ(
+    fPDC1Pos.x()/mm, 
+    fPDC1Pos.y()/mm, 
+    fPDC1Pos.z()/mm
+);
+```
+先移动，然后再旋转
+
+
+
+PDC有3个独立的敏感层：
+
+U层： /PDC_U - 倾斜丝线方向
+X层： /PDC_X - 垂直丝线方向
+V层： /PDC_V - 倾斜丝线方向
+
+// 在DeutDetectorConstruction.cc中的设置
+fPDCSD_U = new FragmentSD("/PDC_U");  // U层敏感探测器
+fPDCSD_X = new FragmentSD("/PDC_X");  // X层敏感探测器  
+fPDCSD_V = new FragmentSD("/PDC_V");  // V层敏感探测器
+
+// 绑定到对应的逻辑体积
+fPDCConstruction->fLayerU->SetSensitiveDetector(fPDCSD_U);
+fPDCConstruction->fLayerX->SetSensitiveDetector(fPDCSD_X);
+fPDCConstruction->fLayerV->SetSensitiveDetector(fPDCSD_V);
+
+FragmentSD工作原理
+核心方法是 ProcessHits()：
+
+```
+G4bool FragmentSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
+{
+    // 1. 获取数据管理器
+    SimDataManager *sman = SimDataManager::GetSimDataManager();
+    TClonesArray *SimDataArray = sman->FindSimDataArray("FragSimData");
+    
+    // 2. 提取步进信息
+    G4StepPoint* preStepPoint = aStep->GetPreStepPoint();
+    G4StepPoint* postStepPoint = aStep->GetPostStepPoint();
+    
+    // 3. 筛选条件：只记录主粒子且带电粒子
+    if(parentid == 0 && aStep->GetTrack()->GetDefinition()->GetPDGCharge() != 0.)
+    {
+        // 4. 创建TSimData对象并填入数据
+        TSimData* data = new TSimData();
+        data->fTrackID = trackid;
+        data->fDetectorName = detectorName;  // "U", "X", "V"
+        data->fPrePosition = prePosition;
+        data->fPostPosition = postPosition;
+        data->fPreMomentum = preMomentum;
+        // ... 更多物理量
+    }
+}
+```

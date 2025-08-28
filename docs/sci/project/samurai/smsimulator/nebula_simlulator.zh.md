@@ -325,14 +325,24 @@ private:
 #### f. 其他
 -   `fHit`: 是否被击中（0/1），用于事件筛选。
 -   还有大量信号处理相关变量（如 `trailing`、`width`、`slw`），用于详细分析探测器响应特性。
-fPos[3]：击中点的空间坐标（X, Y, Z）。
-fFlightLength：粒子从反应点到探测器的飞行距离。
-fFlightAngle：粒子入射角度。
-5. 多重击中与参考信号
-fTUMulti / fTDMulti：上/下端多重击中计数。
-fTURawRef / fTDRawRef：参考时间信号（如触发参考）。
-fTURaw_SubTRef / fTDRaw_SubTRef：与参考信号的差值。
-6. 其他
-fHit：是否被击中（0/1），用于事件筛选。
-还有大量信号处理相关变量（如 trailing、width、slw），用于详细分析探测器响应特性。
+
+---
+
+
+
+
+## 附录：在 MkDocs 中启用 Mermaid 图表
+
+要在文档中正确显示 Mermaid 流程图，需要在 `mkdocs.yml` 配置文件中添加以下扩展。
+
+```yaml
+# mkdocs.yml
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+```
 
