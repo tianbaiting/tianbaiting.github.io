@@ -1804,8 +1804,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-key-parameters" class="md-nav__link">
-    2. Key Parameters
+  <a href="#2-main-parameters" class="md-nav__link">
+    2. Main Parameters
   </a>
   
 </li>
@@ -1830,22 +1830,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#method-limitations" class="md-nav__link">
-    Method Limitations
+  <a href="#limitations" class="md-nav__link">
+    Limitations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-physics-model-summary" class="md-nav__link">
-    1. Physics Model Summary
+  <a href="#1-physical-model-summary" class="md-nav__link">
+    1. Physical Model Summary
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-geometry-and-material-construction" class="md-nav__link">
-    2. Geometry and Material Construction
+  <a href="#2-geometry-and-materials-construction" class="md-nav__link">
+    2. Geometry and Materials Construction
   </a>
   
 </li>
@@ -1867,6 +1867,13 @@
         <li class="md-nav__item">
   <a href="#5-data-output" class="md-nav__link">
     5. Data Output
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specific-code-implementation" class="md-nav__link">
+    Specific Code Implementation
   </a>
   
 </li>
@@ -2222,8 +2229,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-key-parameters" class="md-nav__link">
-    2. Key Parameters
+  <a href="#2-main-parameters" class="md-nav__link">
+    2. Main Parameters
   </a>
   
 </li>
@@ -2248,22 +2255,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#method-limitations" class="md-nav__link">
-    Method Limitations
+  <a href="#limitations" class="md-nav__link">
+    Limitations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-physics-model-summary" class="md-nav__link">
-    1. Physics Model Summary
+  <a href="#1-physical-model-summary" class="md-nav__link">
+    1. Physical Model Summary
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-geometry-and-material-construction" class="md-nav__link">
-    2. Geometry and Material Construction
+  <a href="#2-geometry-and-materials-construction" class="md-nav__link">
+    2. Geometry and Materials Construction
   </a>
   
 </li>
@@ -2289,6 +2296,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#specific-code-implementation" class="md-nav__link">
+    Specific Code Implementation
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2310,7 +2324,7 @@
 <h2 id="references-and-tutorials">References and Tutorials<a class="headerlink" href="#references-and-tutorials" title="Permanent link">#</a></h2>
 <h3 id="1-drift-chamber-principles">1. Drift Chamber Principles<a class="headerlink" href="#1-drift-chamber-principles" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="https://yznkxjs.xml-journal.net/cn/article/pdf/preview/10.7538/yzk.1981.15.01.0116.pdf">Drift Chamber Tutorial (Chinese)</a></li>
+<li><a href="https://yznkxjs.xml-journal.net/cn/article/pdf/preview/10.7538/yzk.1981.15.01.0116.pdf">Drift Chamber tutorial (Chinese)</a></li>
 <li><a href="https://indico.cern.ch/event/426015/contributions/1047606/attachments/906077/1278746/DriftChamber_ICFA2005.pdf">Drift Chamber Tutorial (ICFA 2005)</a></li>
 <li><a href="https://iopscience.iop.org/article/10.1088/1742-6596/18/1/010/pdf">Drift Chamber Principles (IOP)</a></li>
 </ul>
@@ -2320,85 +2334,158 @@
 </ul>
 <h3 id="3-pdc-detector-technical-documents">3. PDC Detector Technical Documents<a class="headerlink" href="#3-pdc-detector-technical-documents" title="Permanent link">#</a></h3>
 <ul>
-<li><a href="https://www.nishina.riken.jp/ribf/SAMURAI/image/Detector-PDC.pdf">PDC Detailed Parameters and Design</a></li>
-<li><a href="https://indico2.riken.jp/event/2752/contributions/11231/attachments/7528/8801/04_EMIS2012_KobayashiT.pdf">PDC CAD Drawings (screenshots)</a></li>
+<li><a href="https://www.nishina.riken.jp/ribf/SAMURAI/image/Detector-PDC.pdf">PDC detailed parameters and design</a></li>
+<li><a href="https://indico2.riken.jp/event/2752/contributions/11231/attachments/7528/8801/04_EMIS2012_KobayashiT.pdf">PDC CAD screenshots</a></li>
 </ul>
 <h2 id="pdc-specifications">PDC Specifications<a class="headerlink" href="#pdc-specifications" title="Permanent link">#</a></h2>
 <h3 id="1-design-and-purpose">1. Design and Purpose<a class="headerlink" href="#1-design-and-purpose" title="Permanent link">#</a></h3>
-<p>The PDC (Proton Drift Chamber) is used to measure the momentum of protons at projectile-rapidity and is placed downstream of the SAMURAI magnet. To reduce the number of detector planes, the PDC uses a cathode readout method to obtain position information. The anode plane employs a Walenta-type drift chamber with an 8 mm drift length designed to reduce the number of anode wires. To detect multi-particle events, the cathode wires are arranged in three different directions: 0, +45, and -45 degrees.</p>
-<blockquote>
-<p><strong>Note</strong>: The PDC uses cathode readout. When electrons from ionization drift towards the anode wires and cause an avalanche, induced charges are generated on nearby cathode strips. Reading these induced charges determines the particle's position.</p>
-</blockquote>
-<h3 id="2-key-parameters">2. Key Parameters<a class="headerlink" href="#2-key-parameters" title="Permanent link">#</a></h3>
+<p>The PDC detector (Proton Drift Chamber) measures momenta of protons near projectile rapidity and is placed downstream of the SAMURAI magnet. To reduce the number of readout planes, PDC uses cathode readout for position information while the anode planes use Walenta-type drift chamber wires. An 8 mm drift distance reduces the number of anode wires. To handle multi-particle events, the cathode strips are arranged in three orientations: 0°, +45°, and -45°.</p>
+<p>Note: PDC uses cathode readout. When ionization electrons drift toward the anode wires and cause avalanches, induced charges appear on nearby cathode strips. Reading these induced charges provides particle positions.</p>
+<h3 id="2-main-parameters">2. Main Parameters<a class="headerlink" href="#2-main-parameters" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Effective Area</strong>: 1700mm × 800mm</li>
-<li><strong>Anode Wires</strong>: Gold-plated Tungsten/Rhenium alloy, 30μm diameter, 16mm spacing, 8mm drift length</li>
-<li><strong>Cathode Wires</strong>: Gold-plated Aluminum alloy, 80μm diameter, 3mm spacing</li>
-<li><strong>Anode-Cathode Gap</strong>: 8mm</li>
-<li><strong>Cathode Strip Width</strong>: 12mm (every 4 cathode wires are grouped into one strip)</li>
-<li><strong>Power Supply</strong>: Positive HV on anode wires, slight negative HV on potential wires</li>
-<li><strong>Configuration</strong>: Cathode(U)-Anode(V)-Cathode(X)-Anode(U)-Cathode(V)</li>
-<li><strong>Operating Gas</strong>: Ar+25% i-C4H10 or Ar+50% C2H6</li>
+<li>Effective area: 1700 mm × 800 mm</li>
+<li>Anode wires: gold-tungsten/ rhenium alloy, 30 μm diameter, 16 mm spacing, 8 mm drift length</li>
+<li>Cathode wires: gold-aluminum alloy, 80 μm diameter, 3 mm spacing</li>
+<li>Anode-cathode gap: 8 mm</li>
+<li>Cathode strip width: 12 mm (every 4 cathode wires are grouped into one strip)</li>
+<li>HV scheme: positive high voltage on anode wires, slightly negative potential on field wires</li>
+<li>Layer configuration: Cathode (U) - Anode (V) - Cathode (X) - Anode (U) - Cathode (V)</li>
+<li>Operating gas: Ar + 25% i-C4H10 or Ar + 50% C2H6</li>
 </ul>
-<p><img alt="PDC Structure Diagram" src="../../../../../../sci/project/samurai/smsimulator/assets/PDC.zh/image.png" /><br />
-<em>PDC Structure Diagram</em></p>
-<p><img alt="PDC Wire Chamber Structure" src="../../../../../../sci/project/samurai/smsimulator/assets/PDC.zh/image-1.png" /><br />
-<em>PDC Wire Chamber Structure. The X, U, and V layers use wires (or strips) in different orientations to determine the 2D position of a particle. For example, the X-layer wires are typically perpendicular to the X-axis to precisely measure the X-coordinate.</em></p>
+<p><img alt="PDC structure diagram" src="../../../../../../sci/project/samurai/smsimulator/assets/PDC.zh/image.png" /><br />
+<em>PDC structure diagram</em></p>
+<p><img alt="PDC chamber structure" src="../../../../../../sci/project/samurai/smsimulator/assets/PDC.zh/image-1.png" /><br />
+<em>PDC chamber structure. The X, U, V layers use wires (or strips) at different orientations to determine 2D hit positions. For example, X-layer wires are typically perpendicular to the X-axis to measure the X coordinate precisely.</em></p>
+<p>Anode wire (readout wire) illustration:<br />
+<img alt="alt text" src="../../../../../../sci/project/samurai/smsimulator/assets/PDC.zh/image-2.png" /></p>
+<p>Code: <a href="https://github.com/tianbaiting/Dpol_smsimulator/blob/main/sim_deuteron/forunderstanding/plot_pdc_wires.py">https://github.com/tianbaiting/Dpol_smsimulator/blob/main/sim_deuteron/forunderstanding/plot_pdc_wires.py</a></p>
 <h3 id="3-readout-scheme-and-development">3. Readout Scheme and Development<a class="headerlink" href="#3-readout-scheme-and-development" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Initial Scheme (Tested)</strong>: To reduce readout channels, a charge-division readout method was tested. Cathode strips were connected in series with resistors, and every 8 strips were read out by one charge-sensitive preamplifier. A prototype detector (600mm × 480mm) achieved a position resolution of 1mm (rms) for X-rays but could not handle two-proton events correctly.</li>
-<li><strong>New Scheme (In Development)</strong>: To address the multi-particle issue and improve resolution, a new readout circuit is being developed. Each cathode signal is directly connected to a preamplifier, shaper, and sample-and-hold circuit, then digitized on a Front-End Board (FEB). This new method is expected to improve position resolution by a factor of about 5 and requires approximately 810 readout channels.</li>
+<li>Initial scheme (tested): To reduce readout channels, a charge-division readout was tested where cathode strips were chained through resistors and every 8 strips were read out by one charge-sensitive preamplifier. A prototype chamber (600 mm × 480 mm) achieved ~1 mm (rms) position resolution with X-rays but could not correctly handle two-proton events.</li>
+<li>New scheme (in development): To address multi-particle events and improve resolution, a new readout circuit is being developed. Each cathode signal connects directly to a preamplifier, shaper, and sample-and-hold circuit, digitized on a front-end board (FEB). Position resolution is expected to improve by about 5×, requiring ~810 readout channels.</li>
 </ul>
 <hr />
 <h2 id="simulation-plan-overview">Simulation Plan Overview<a class="headerlink" href="#simulation-plan-overview" title="Permanent link">#</a></h2>
-<p>A custom PDC detector needs to be built. Geant4 can accurately simulate the ionization process of particles with gas molecules. Our alternative approach is as follows:</p>
+<p>You need to build the PDC detector geometry yourself. Geant4 can simulate ionization processes in gas accurately. Our simplified approach:</p>
 <ol>
-<li>Simulate particles passing through the drift chamber gas using Geant4.</li>
-<li>In Geant4's user action class (SteppingAction), record the position of all ionization events (energy deposition).</li>
-<li>Construct a Sensitive Detector near each wire, using the shortest drift distance as time and the total deposited energy as amplitude.</li>
-<li>This method simplifies "firing" to "ionization occurred nearby," ignoring complex processes like electron drift time, diffusion, and avalanche gain.</li>
+<li>Use Geant4 to simulate particles traversing the drift-chamber gas.</li>
+<li>In a Geant4 user action (SteppingAction), record all ionization hits (energy deposits) with positions.</li>
+<li>For each wire, build a Sensitive Detector region; use the nearest-wire distance as a proxy for drift time and the total deposited energy as amplitude.</li>
+<li>This method simplifies "firing" to "ionization occurred nearby," ignoring electron drift time, diffusion, and avalanche gain.</li>
 </ol>
-<h2 id="method-limitations">Method Limitations<a class="headerlink" href="#method-limitations" title="Permanent link">#</a></h2>
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Ignores Electron Drift</strong>: In reality, ionized electrons drift along electric field lines, not just towards the nearest wire. In high-field regions, electrons create an avalanche, which is the actual "firing" process. This method cannot simulate this.</li>
-<li><strong>Cannot Simulate Signal Shape and Time</strong>: Without considering drift time, you cannot obtain precise signal timing information and waveform.</li>
-<li><strong>Cannot Simulate Gain</strong>: Geant4 does not simulate the avalanche process itself, so you cannot get the signal gain for each "firing" event.</li>
+<li>Ignores electron drift: Real ionization electrons drift along field lines and may avalanche in high-field regions. This method cannot simulate that process.</li>
+<li>Cannot model signal shapes and timing: Without drift times, precise timing and waveform information are not available.</li>
+<li>Cannot model gain: Geant4 does not simulate avalanches, so signal gain per “hit” is not available.</li>
 </ul>
 <hr />
-<h2 id="1-physics-model-summary">1. Physics Model Summary<a class="headerlink" href="#1-physics-model-summary" title="Permanent link">#</a></h2>
+<h2 id="1-physical-model-summary">1. Physical Model Summary<a class="headerlink" href="#1-physical-model-summary" title="Permanent link">#</a></h2>
 <ul>
-<li>Build the PDC drift chamber geometry and gas material in Geant4.</li>
-<li>When particles (e.g., protons) pass through the gas, they cause ionization, and the energy deposition is recorded.</li>
-<li>In SteppingAction, determine if an ionization event is near an anode wire, using the nearest distance as the drift time and the energy deposition as the signal amplitude.</li>
-<li>This approach ignores electron drift, avalanche gain, and signal waveform, simulating only the spatial distribution and energy response.</li>
+<li>Build PDC geometry and gas materials in Geant4.</li>
+<li>Particles (e.g., protons) ionize the gas and energy depositions are recorded.</li>
+<li>In SteppingAction, check if an ionization step is near an anode wire; use the nearest distance as drift time and deposited energy as signal amplitude.</li>
+<li>Ignore electron drift, avalanche gain, and signal shaping — simulate only spatial distribution and energy response.</li>
 </ul>
-<h2 id="2-geometry-and-material-construction">2. Geometry and Material Construction<a class="headerlink" href="#2-geometry-and-material-construction" title="Permanent link">#</a></h2>
+<h2 id="2-geometry-and-materials-construction">2. Geometry and Materials Construction<a class="headerlink" href="#2-geometry-and-materials-construction" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Define Gas Mixture</strong>: e.g., 75% Ar + 25% i-C4H10 at 1 atm.</li>
-<li><strong>Build Drift Chamber Box</strong>: Use G4Box or G4Trap to represent the gas volume.</li>
-<li><strong>Build Wire Array</strong>: Use G4Cylinder or G4Tubs to represent the anode wires, arranged according to their actual positions.</li>
+<li>Define the gas mixture, e.g., 75% Ar + 25% i-C4H10 at 1 atm.</li>
+<li>Build the chamber box using G4Box or G4Trap to represent the gas volume.</li>
+<li>Construct the wire array using G4Cylinder or G4Tubs for anode wires and place them at actual positions.</li>
 </ul>
 <h2 id="3-sensitive-detector-setup">3. Sensitive Detector Setup<a class="headerlink" href="#3-sensitive-detector-setup" title="Permanent link">#</a></h2>
 <ul>
-<li>Set the gas volume as a Sensitive Detector (SD) to record the energy deposition and position at each step.</li>
+<li>Set the gas volume as a Sensitive Detector (SD) and record energy deposition and position for each step in the SD.</li>
 </ul>
 <h2 id="4-steppingaction-implementation">4. SteppingAction Implementation<a class="headerlink" href="#4-steppingaction-implementation" title="Permanent link">#</a></h2>
 <ul>
-<li>In UserSteppingAction, check if each step occurs within the gas volume.</li>
-<li>Calculate the distance from the step to the nearest wire, treating it as the drift distance.</li>
-<li>Record energy deposition, position, nearest wire ID, etc.</li>
+<li>In UserSteppingAction, check whether the step is in the gas volume and handle recording accordingly.</li>
 </ul>
 <h2 id="5-data-output">5. Data Output<a class="headerlink" href="#5-data-output" title="Permanent link">#</a></h2>
 <ul>
-<li>For each event, output all "firing" signals (using TTree/TClonesArray), including energy, position, nearest wire ID, drift distance, etc.</li>
+<li>For each event, output all “fired” signals (store in a TTree/TClonesArray), including energy, position, nearest-wire index, drift distance, etc.</li>
 </ul>
+<h2 id="specific-code-implementation">Specific Code Implementation<a class="headerlink" href="#specific-code-implementation" title="Permanent link">#</a></h2>
+<p>Data flow diagram:</p>
+<pre class="mermaid"><code>graph TD
+    subgraph "Input &amp; Simulation"
+        A[Input file&lt;br/&gt;dbreakb01.root] --&gt; B{Geant4 simulation};
+        C[BeamSimTree] --&gt; D[beam data];
+    end
+
+    subgraph "PDC Tracker Processing"
+        E(FragmentSD) --&gt; F[FragSimData];
+    end
+
+    subgraph "Neutron Detector Processing"
+        I(NEBULASD) --&gt; J[NEBULAPla data];
+        J --&gt; K[Neutron analysis];
+    end
+
+    subgraph "Other"
+            G{Needed by tracking algorithms} --&gt; H[Output branches&lt;br/&gt;target_*, PDC1*, PDC2*];
+    end
+    B --&gt; E &amp; I;</code></pre>
+<p>/home/tbt/workspace/dpol/smsimulator5.5/sim_deuteron/src/DeutDetectorConstruction.cc<br />
+<div class="highlight"><pre><span></span><code><span class="c1">// Lines 232-234: place PDC1 in the world</span>
+<span class="n">G4ThreeVector</span><span class="w"> </span><span class="n">pdc1_pos_lab</span><span class="p">{</span><span class="n">fPDC1Pos</span><span class="p">};</span><span class="w"> </span>
+<span class="n">pdc1_pos_lab</span><span class="p">.</span><span class="n">rotateY</span><span class="p">(</span><span class="n">pdc_angle</span><span class="p">);</span><span class="w">  </span><span class="c1">// coordinate transform</span>
+<span class="n">G4Transform3D</span><span class="w"> </span><span class="n">pdc1_trans</span><span class="p">{</span><span class="n">pdc1_rm</span><span class="p">,</span><span class="w"> </span><span class="n">pdc1_pos_lab</span><span class="p">};</span>
+<span class="k">new</span><span class="w"> </span><span class="n">G4PVPlacement</span><span class="p">{</span><span class="n">pdc1_trans</span><span class="p">,</span><span class="w"> </span><span class="n">pdc_log</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PDC1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">expHall_log</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span>
+
+<span class="c1">// Lines 236-240: save to simulation parameters</span>
+<span class="n">frag_prm</span><span class="o">-&gt;</span><span class="n">fPDC1Position</span><span class="p">.</span><span class="n">SetXYZ</span><span class="p">(</span>
+<span class="w">    </span><span class="n">fPDC1Pos</span><span class="p">.</span><span class="n">x</span><span class="p">()</span><span class="o">/</span><span class="n">mm</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">fPDC1Pos</span><span class="p">.</span><span class="n">y</span><span class="p">()</span><span class="o">/</span><span class="n">mm</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="n">fPDC1Pos</span><span class="p">.</span><span class="n">z</span><span class="p">()</span><span class="o">/</span><span class="n">mm</span>
+<span class="p">);</span>
+</code></pre></div><br />
+Translate first, then rotate</p>
+<p>PDC has 3 independent sensitive layers:</p>
+<p>U layer: /PDC_U - tilted wire direction<br />
+X layer: /PDC_X - vertical wire direction<br />
+V layer: /PDC_V - tilted wire direction</p>
+<p>// In DeutDetectorConstruction.cc setup<br />
+fPDCSD_U = new FragmentSD("/PDC_U");  // U-layer sensitive detector<br />
+fPDCSD_X = new FragmentSD("/PDC_X");  // X-layer sensitive detector<br />
+fPDCSD_V = new FragmentSD("/PDC_V");  // V-layer sensitive detector</p>
+<p>// Bind to corresponding logical volumes<br />
+fPDCConstruction-&gt;fLayerU-&gt;SetSensitiveDetector(fPDCSD_U);<br />
+fPDCConstruction-&gt;fLayerX-&gt;SetSensitiveDetector(fPDCSD_X);<br />
+fPDCConstruction-&gt;fLayerV-&gt;SetSensitiveDetector(fPDCSD_V);</p>
+<p>FragmentSD working principle<br />
+Core method is ProcessHits():</p>
+<div class="highlight"><pre><span></span><code><span class="n">G4bool</span><span class="w"> </span><span class="nf">FragmentSD::ProcessHits</span><span class="p">(</span><span class="n">G4Step</span><span class="o">*</span><span class="w"> </span><span class="n">aStep</span><span class="p">,</span><span class="w"> </span><span class="n">G4TouchableHistory</span><span class="o">*</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// 1. Get the data manager</span>
+<span class="w">    </span><span class="n">SimDataManager</span><span class="w"> </span><span class="o">*</span><span class="n">sman</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SimDataManager</span><span class="o">::</span><span class="n">GetSimDataManager</span><span class="p">();</span>
+<span class="w">    </span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">SimDataArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindSimDataArray</span><span class="p">(</span><span class="s">&quot;FragSimData&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// 2. Extract step information</span>
+<span class="w">    </span><span class="n">G4StepPoint</span><span class="o">*</span><span class="w"> </span><span class="n">preStepPoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aStep</span><span class="o">-&gt;</span><span class="n">GetPreStepPoint</span><span class="p">();</span>
+<span class="w">    </span><span class="n">G4StepPoint</span><span class="o">*</span><span class="w"> </span><span class="n">postStepPoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aStep</span><span class="o">-&gt;</span><span class="n">GetPostStepPoint</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// 3. Selection: only record primary particle and charged particles</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">parentid</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">aStep</span><span class="o">-&gt;</span><span class="n">GetTrack</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetDefinition</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">GetPDGCharge</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mf">0.</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// 4. Create a TSimData object and fill fields</span>
+<span class="w">        </span><span class="n">TSimData</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TSimData</span><span class="p">();</span>
+<span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">fTrackID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trackid</span><span class="p">;</span>
+<span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">fDetectorName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">detectorName</span><span class="p">;</span><span class="w">  </span><span class="c1">// &quot;U&quot;, &quot;X&quot;, &quot;V&quot;</span>
+<span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">fPrePosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prePosition</span><span class="p">;</span>
+<span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">fPostPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">postPosition</span><span class="p">;</span>
+<span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">fPreMomentum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">preMomentum</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// ... more physical quantities</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="August 26, 2025 02:51:22 UTC"><span class="timeago" datetime="2025-08-26T02:51:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="August 26, 2025 02:51:22 UTC">2025-08-26</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="August 31, 2025 17:53:28 UTC"><span class="timeago" datetime="2025-08-31T17:53:28+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="August 31, 2025 17:53:28 UTC">2025-08-31</span>
       
         <br>
         Created:
