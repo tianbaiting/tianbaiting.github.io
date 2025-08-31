@@ -3,7 +3,7 @@
 ## References and Tutorials
 
 ### 1. Drift Chamber Principles
-- [Drift Chamber Tutorial (Chinese)](https://yznkxjs.xml-journal.net/cn/article/pdf/preview/10.7538/yzk.1981.15.01.0116.pdf)
+- [Drift Chamber tutorial (Chinese)](https://yznkxjs.xml-journal.net/cn/article/pdf/preview/10.7538/yzk.1981.15.01.0116.pdf)
 - [Drift Chamber Tutorial (ICFA 2005)](https://indico.cern.ch/event/426015/contributions/1047606/attachments/906077/1278746/DriftChamber_ICFA2005.pdf)
 - [Drift Chamber Principles (IOP)](https://iopscience.iop.org/article/10.1088/1742-6596/18/1/010/pdf)
 
@@ -11,81 +11,172 @@
 - [Geant4 Simulation Tutorial (Munich 2018)](https://indico.cern.ch/event/709670/contributions/3027829/attachments/1670306/2679293/Munich.pdf)
 
 ### 3. PDC Detector Technical Documents
-- [PDC Detailed Parameters and Design](https://www.nishina.riken.jp/ribf/SAMURAI/image/Detector-PDC.pdf)
-- [PDC CAD Drawings (screenshots)](https://indico2.riken.jp/event/2752/contributions/11231/attachments/7528/8801/04_EMIS2012_KobayashiT.pdf)
+- [PDC detailed parameters and design](https://www.nishina.riken.jp/ribf/SAMURAI/image/Detector-PDC.pdf)
+- [PDC CAD screenshots](https://indico2.riken.jp/event/2752/contributions/11231/attachments/7528/8801/04_EMIS2012_KobayashiT.pdf)
 
 ## PDC Specifications
 
 ### 1. Design and Purpose
 
-The PDC (Proton Drift Chamber) is used to measure the momentum of protons at projectile-rapidity and is placed downstream of the SAMURAI magnet. To reduce the number of detector planes, the PDC uses a cathode readout method to obtain position information. The anode plane employs a Walenta-type drift chamber with an 8 mm drift length designed to reduce the number of anode wires. To detect multi-particle events, the cathode wires are arranged in three different directions: 0, +45, and -45 degrees.
+The PDC detector (Proton Drift Chamber) measures momenta of protons near projectile rapidity and is placed downstream of the SAMURAI magnet. To reduce the number of readout planes, PDC uses cathode readout for position information while the anode planes use Walenta-type drift chamber wires. An 8 mm drift distance reduces the number of anode wires. To handle multi-particle events, the cathode strips are arranged in three orientations: 0°, +45°, and -45°.
 
-> **Note**: The PDC uses cathode readout. When electrons from ionization drift towards the anode wires and cause an avalanche, induced charges are generated on nearby cathode strips. Reading these induced charges determines the particle's position.
+Note: PDC uses cathode readout. When ionization electrons drift toward the anode wires and cause avalanches, induced charges appear on nearby cathode strips. Reading these induced charges provides particle positions.
 
-### 2. Key Parameters
+### 2. Main Parameters
 
-- **Effective Area**: 1700mm × 800mm
-- **Anode Wires**: Gold-plated Tungsten/Rhenium alloy, 30μm diameter, 16mm spacing, 8mm drift length
-- **Cathode Wires**: Gold-plated Aluminum alloy, 80μm diameter, 3mm spacing
-- **Anode-Cathode Gap**: 8mm
-- **Cathode Strip Width**: 12mm (every 4 cathode wires are grouped into one strip)
-- **Power Supply**: Positive HV on anode wires, slight negative HV on potential wires
-- **Configuration**: Cathode(U)-Anode(V)-Cathode(X)-Anode(U)-Cathode(V)
-- **Operating Gas**: Ar+25% i-C4H10 or Ar+50% C2H6
+- Effective area: 1700 mm × 800 mm
+- Anode wires: gold-tungsten/ rhenium alloy, 30 μm diameter, 16 mm spacing, 8 mm drift length
+- Cathode wires: gold-aluminum alloy, 80 μm diameter, 3 mm spacing
+- Anode-cathode gap: 8 mm
+- Cathode strip width: 12 mm (every 4 cathode wires are grouped into one strip)
+- HV scheme: positive high voltage on anode wires, slightly negative potential on field wires
+- Layer configuration: Cathode (U) - Anode (V) - Cathode (X) - Anode (U) - Cathode (V)
+- Operating gas: Ar + 25% i-C4H10 or Ar + 50% C2H6
 
-![PDC Structure Diagram](assets/PDC.zh/image.png)
-*PDC Structure Diagram*
+![PDC structure diagram](assets/PDC.zh/image.png)
+*PDC structure diagram*
 
-![PDC Wire Chamber Structure](assets/PDC.zh/image-1.png)
-*PDC Wire Chamber Structure. The X, U, and V layers use wires (or strips) in different orientations to determine the 2D position of a particle. For example, the X-layer wires are typically perpendicular to the X-axis to precisely measure the X-coordinate.*
+![PDC chamber structure](assets/PDC.zh/image-1.png)
+*PDC chamber structure. The X, U, V layers use wires (or strips) at different orientations to determine 2D hit positions. For example, X-layer wires are typically perpendicular to the X-axis to measure the X coordinate precisely.*
+
+Anode wire (readout wire) illustration:
+![alt text](assets/PDC.zh/image-2.png)
+
+Code: https://github.com/tianbaiting/Dpol_smsimulator/blob/main/sim_deuteron/forunderstanding/plot_pdc_wires.py
 
 ### 3. Readout Scheme and Development
 
-- **Initial Scheme (Tested)**: To reduce readout channels, a charge-division readout method was tested. Cathode strips were connected in series with resistors, and every 8 strips were read out by one charge-sensitive preamplifier. A prototype detector (600mm × 480mm) achieved a position resolution of 1mm (rms) for X-rays but could not handle two-proton events correctly.
-- **New Scheme (In Development)**: To address the multi-particle issue and improve resolution, a new readout circuit is being developed. Each cathode signal is directly connected to a preamplifier, shaper, and sample-and-hold circuit, then digitized on a Front-End Board (FEB). This new method is expected to improve position resolution by a factor of about 5 and requires approximately 810 readout channels.
+- Initial scheme (tested): To reduce readout channels, a charge-division readout was tested where cathode strips were chained through resistors and every 8 strips were read out by one charge-sensitive preamplifier. A prototype chamber (600 mm × 480 mm) achieved ~1 mm (rms) position resolution with X-rays but could not correctly handle two-proton events.
+- New scheme (in development): To address multi-particle events and improve resolution, a new readout circuit is being developed. Each cathode signal connects directly to a preamplifier, shaper, and sample-and-hold circuit, digitized on a front-end board (FEB). Position resolution is expected to improve by about 5×, requiring ~810 readout channels.
 
 ---
 
 ## Simulation Plan Overview
 
-A custom PDC detector needs to be built. Geant4 can accurately simulate the ionization process of particles with gas molecules. Our alternative approach is as follows:
+You need to build the PDC detector geometry yourself. Geant4 can simulate ionization processes in gas accurately. Our simplified approach:
 
-1.  Simulate particles passing through the drift chamber gas using Geant4.
-2.  In Geant4's user action class (SteppingAction), record the position of all ionization events (energy deposition).
-3.  Construct a Sensitive Detector near each wire, using the shortest drift distance as time and the total deposited energy as amplitude.
-4.  This method simplifies "firing" to "ionization occurred nearby," ignoring complex processes like electron drift time, diffusion, and avalanche gain.
+1. Use Geant4 to simulate particles traversing the drift-chamber gas.
+2. In a Geant4 user action (SteppingAction), record all ionization hits (energy deposits) with positions.
+3. For each wire, build a Sensitive Detector region; use the nearest-wire distance as a proxy for drift time and the total deposited energy as amplitude.
+4. This method simplifies "firing" to "ionization occurred nearby," ignoring electron drift time, diffusion, and avalanche gain.
 
-## Method Limitations
+## Limitations
 
-- **Ignores Electron Drift**: In reality, ionized electrons drift along electric field lines, not just towards the nearest wire. In high-field regions, electrons create an avalanche, which is the actual "firing" process. This method cannot simulate this.
-- **Cannot Simulate Signal Shape and Time**: Without considering drift time, you cannot obtain precise signal timing information and waveform.
-- **Cannot Simulate Gain**: Geant4 does not simulate the avalanche process itself, so you cannot get the signal gain for each "firing" event.
+- Ignores electron drift: Real ionization electrons drift along field lines and may avalanche in high-field regions. This method cannot simulate that process.
+- Cannot model signal shapes and timing: Without drift times, precise timing and waveform information are not available.
+- Cannot model gain: Geant4 does not simulate avalanches, so signal gain per “hit” is not available.
 
 ---
 
-## 1. Physics Model Summary
+## 1. Physical Model Summary
 
-- Build the PDC drift chamber geometry and gas material in Geant4.
-- When particles (e.g., protons) pass through the gas, they cause ionization, and the energy deposition is recorded.
-- In SteppingAction, determine if an ionization event is near an anode wire, using the nearest distance as the drift time and the energy deposition as the signal amplitude.
-- This approach ignores electron drift, avalanche gain, and signal waveform, simulating only the spatial distribution and energy response.
+- Build PDC geometry and gas materials in Geant4.
+- Particles (e.g., protons) ionize the gas and energy depositions are recorded.
+- In SteppingAction, check if an ionization step is near an anode wire; use the nearest distance as drift time and deposited energy as signal amplitude.
+- Ignore electron drift, avalanche gain, and signal shaping — simulate only spatial distribution and energy response.
 
-## 2. Geometry and Material Construction
+## 2. Geometry and Materials Construction
 
-- **Define Gas Mixture**: e.g., 75% Ar + 25% i-C4H10 at 1 atm.
-- **Build Drift Chamber Box**: Use G4Box or G4Trap to represent the gas volume.
-- **Build Wire Array**: Use G4Cylinder or G4Tubs to represent the anode wires, arranged according to their actual positions.
+- Define the gas mixture, e.g., 75% Ar + 25% i-C4H10 at 1 atm.
+- Build the chamber box using G4Box or G4Trap to represent the gas volume.
+- Construct the wire array using G4Cylinder or G4Tubs for anode wires and place them at actual positions.
 
 ## 3. Sensitive Detector Setup
 
-- Set the gas volume as a Sensitive Detector (SD) to record the energy deposition and position at each step.
+- Set the gas volume as a Sensitive Detector (SD) and record energy deposition and position for each step in the SD.
 
 ## 4. SteppingAction Implementation
 
-- In UserSteppingAction, check if each step occurs within the gas volume.
-- Calculate the distance from the step to the nearest wire, treating it as the drift distance.
-- Record energy deposition, position, nearest wire ID, etc.
+- In UserSteppingAction, check whether the step is in the gas volume and handle recording accordingly.
 
 ## 5. Data Output
 
-- For each event, output all "firing" signals (using TTree/TClonesArray), including energy, position, nearest wire ID, drift distance, etc.
+- For each event, output all “fired” signals (store in a TTree/TClonesArray), including energy, position, nearest-wire index, drift distance, etc.
+
+## Specific Code Implementation
+
+Data flow diagram:
+
+```mermaid
+graph TD
+    subgraph "Input & Simulation"
+        A[Input file<br/>dbreakb01.root] --> B{Geant4 simulation};
+        C[BeamSimTree] --> D[beam data];
+    end
+
+    subgraph "PDC Tracker Processing"
+        E(FragmentSD) --> F[FragSimData];
+    end
+
+    subgraph "Neutron Detector Processing"
+        I(NEBULASD) --> J[NEBULAPla data];
+        J --> K[Neutron analysis];
+    end
+
+    subgraph "Other"
+            G{Needed by tracking algorithms} --> H[Output branches<br/>target_*, PDC1*, PDC2*];
+    end
+    B --> E & I;
+```
+
+/home/tbt/workspace/dpol/smsimulator5.5/sim_deuteron/src/DeutDetectorConstruction.cc
+```cpp
+// Lines 232-234: place PDC1 in the world
+G4ThreeVector pdc1_pos_lab{fPDC1Pos}; 
+pdc1_pos_lab.rotateY(pdc_angle);  // coordinate transform
+G4Transform3D pdc1_trans{pdc1_rm, pdc1_pos_lab};
+new G4PVPlacement{pdc1_trans, pdc_log, "PDC1", expHall_log, false, 0};
+
+// Lines 236-240: save to simulation parameters
+frag_prm->fPDC1Position.SetXYZ(
+    fPDC1Pos.x()/mm, 
+    fPDC1Pos.y()/mm, 
+    fPDC1Pos.z()/mm
+);
+```
+Translate first, then rotate
+
+PDC has 3 independent sensitive layers:
+
+U layer: /PDC_U - tilted wire direction  
+X layer: /PDC_X - vertical wire direction  
+V layer: /PDC_V - tilted wire direction
+
+// In DeutDetectorConstruction.cc setup
+fPDCSD_U = new FragmentSD("/PDC_U");  // U-layer sensitive detector
+fPDCSD_X = new FragmentSD("/PDC_X");  // X-layer sensitive detector  
+fPDCSD_V = new FragmentSD("/PDC_V");  // V-layer sensitive detector
+
+// Bind to corresponding logical volumes
+fPDCConstruction->fLayerU->SetSensitiveDetector(fPDCSD_U);
+fPDCConstruction->fLayerX->SetSensitiveDetector(fPDCSD_X);
+fPDCConstruction->fLayerV->SetSensitiveDetector(fPDCSD_V);
+
+FragmentSD working principle
+Core method is ProcessHits():
+
+```cpp
+G4bool FragmentSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
+{
+    // 1. Get the data manager
+    SimDataManager *sman = SimDataManager::GetSimDataManager();
+    TClonesArray *SimDataArray = sman->FindSimDataArray("FragSimData");
+    
+    // 2. Extract step information
+    G4StepPoint* preStepPoint = aStep->GetPreStepPoint();
+    G4StepPoint* postStepPoint = aStep->GetPostStepPoint();
+    
+    // 3. Selection: only record primary particle and charged particles
+    if(parentid == 0 && aStep->GetTrack()->GetDefinition()->GetPDGCharge() != 0.)
+    {
+        // 4. Create a TSimData object and fill fields
+        TSimData* data = new TSimData();
+        data->fTrackID = trackid;
+        data->fDetectorName = detectorName;  // "U", "X", "V"
+        data->fPrePosition = prePosition;
+        data->fPostPosition = postPosition;
+        data->fPreMomentum = preMomentum;
+        // ... more physical quantities
+    }
+}
+```
