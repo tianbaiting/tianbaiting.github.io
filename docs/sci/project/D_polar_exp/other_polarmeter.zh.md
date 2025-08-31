@@ -1,5 +1,5 @@
 ---
-title: 世上polarimeter
+title: 其他研究组的polarimeter
 ---
 
 ## dpol
@@ -17,10 +17,11 @@ title: 世上polarimeter
 
 ---
 
+
 ## bigdpol
 
-### 探测器参数
 
+### 探测器参数
 
 
 ![1750922000979](./polarmeter.zh/1750922000979.png)
