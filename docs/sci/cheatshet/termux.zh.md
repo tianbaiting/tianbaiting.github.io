@@ -77,3 +77,9 @@ Termux 里的 Ubuntu：一个访客环境
 
 ## 添加图形界面
 
+vncserver-stop
+vncserver-start
+
+## 安装vscode
+
+echo 'alias vscode="code --no-sandbox --disable-gpu --user-data-dir ./"' > /root/.bashrc
