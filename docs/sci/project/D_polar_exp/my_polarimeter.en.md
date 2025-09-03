@@ -11,9 +11,9 @@ Harmonic number = 6
 
 $180\ \mathrm{MeV}/u$, so $\beta \approx 0.5$
 
-    The time interval between bunches $\Delta t$ is actually the period of the RF field $T_{RF}$, i.e.:
+The time interval between bunches $\Delta t$ is actually the period of the RF field $T_{RF}$, i.e.:
     
-    $$\Delta t = T_{RF} = \frac{1}{f_{RF}} = \frac{1}{h \times f_{rev}} = 58\ \mathrm{ns}$$
+ $$\Delta t = T_{RF} = \frac{1}{f_{RF}} = \frac{1}{h \times f_{rev}} = 58\ \mathrm{ns}$$
 
 
 
