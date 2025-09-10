@@ -933,6 +933,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="true">
@@ -1445,6 +1447,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#故障排除关于管道输入与预置查询" class="md-nav__link">
+    故障排除：关于管道输入与预置查询
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#总结" class="md-nav__link">
     总结
   </a>
@@ -1468,6 +1477,20 @@
     <li class="md-nav__item">
       <a href="../gdb/" class="md-nav__link">
         gdb 调试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gemni_use_wen2cli/" class="md-nav__link">
+        Gemini 使用限制与付费模式解析
       </a>
     </li>
   
@@ -2911,6 +2934,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#故障排除关于管道输入与预置查询" class="md-nav__link">
+    故障排除：关于管道输入与预置查询
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#总结" class="md-nav__link">
     总结
   </a>
@@ -3278,6 +3308,30 @@ which<span class="w"> </span>fd<span class="w"> </span><span class="o">||</span>
 <div class="highlight"><pre><span></span><code><span class="c1"># 检查按键绑定</span>
 <span class="nb">bind</span><span class="w"> </span>-p<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>fzf
 </code></pre></div>
+<h2 id="故障排除关于管道输入与预置查询">故障排除：关于管道输入与预置查询<a class="headerlink" href="#故障排除关于管道输入与预置查询" title="Permanent link">#</a></h2>
+<p>如果遇到像下面这样的错误：<br />
+<div class="highlight"><pre><span></span><code>rg<span class="w"> </span>--line-number<span class="w"> </span>--no-heading<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>fzf<span class="w"> </span><span class="s2">&quot;termux&quot;</span>
+<span class="c1"># 输出：unknown option: termux</span>
+</code></pre></div></p>
+<p>说明与修正要点：<br />
+- 当把其它命令的输出通过管道传给 fzf 时，若想预先设置查询词（initial query），应使用 -q 或 --query 参数；直接把查询词作为位置参数可能被误解析或在某些组合中产生错误。<br />
+- 推荐使用方式示例：</p>
+<p>正确示例：<br />
+<div class="highlight"><pre><span></span><code><span class="c1"># 使用 -q 指定初始查询（大小写敏感）</span>
+rg<span class="w"> </span>--line-number<span class="w"> </span>--no-heading<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>fzf<span class="w"> </span>-q<span class="w"> </span>termux
+
+<span class="c1"># 使用 --query 指定初始查询（等价）</span>
+rg<span class="w"> </span>--line-number<span class="w"> </span>--no-heading<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>fzf<span class="w"> </span>--query<span class="o">=</span>termux
+
+<span class="c1"># 忽略大小写</span>
+rg<span class="w"> </span>--line-number<span class="w"> </span>--no-heading<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>fzf<span class="w"> </span>-i<span class="w"> </span>-q<span class="w"> </span>termux
+
+<span class="c1"># 带预览的示例（结合 bat）</span>
+rg<span class="w"> </span>--line-number<span class="w"> </span>--no-heading<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>fzf<span class="w"> </span>-q<span class="w"> </span>termux<span class="w"> </span>--preview<span class="w"> </span><span class="s1">&#39;bat --color=always --style=numbers {1}&#39;</span>
+</code></pre></div></p>
+<p>简短说明：<br />
+- -q / --query 用于设置初始过滤关键词；也可以在 fzf 启动后直接输入搜索词。<br />
+- 若仍报奇怪的 option 错误，检查 fzf 版本（fzf --version）并确保没有把查询词误写成以 <code>-</code> 开头的字符串或放在不恰当的位置。</p>
 <h2 id="总结">总结<a class="headerlink" href="#总结" title="Permanent link">#</a></h2>
 <p>FZF 是一个强大的模糊搜索工具，通过合理配置可以大幅提升命令行工作效率。主要优势：</p>
 <ul>
@@ -3285,7 +3339,8 @@ which<span class="w"> </span>fd<span class="w"> </span><span class="o">||</span>
 <li>🎨 丰富的自定义选项</li>
 <li>🔧 与各种工具无缝集成</li>
 <li>⚡ 高性能和低内存占用</li>
-<li>🎯 直观的交互体验</li>
+<li>🎯 直观的交互体</li>
+<li>验</li>
 </ul>
 <p>建议从基础用法开始，逐步添加自定义配置和函数，根据个人工作流程定制最适合的使用方式。</p>
 
@@ -3294,7 +3349,7 @@ which<span class="w"> </span>fd<span class="w"> </span><span class="o">||</span>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年9月3日 08:45:18 UTC"><span class="timeago" datetime="2025-09-03T08:45:18+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月3日 08:45:18 UTC">2025-09-03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年9月10日 15:27:40 UTC"><span class="timeago" datetime="2025-09-10T15:27:40+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月10日 15:27:40 UTC">2025-09-10</span>
       
         <br>
         Created:
