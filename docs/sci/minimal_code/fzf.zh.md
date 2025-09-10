@@ -346,6 +346,37 @@ which fd || sudo apt install fd-find
 bind -p | grep fzf
 ```
 
+## 故障排除：关于管道输入与预置查询
+
+如果遇到像下面这样的错误：
+```bash
+rg --line-number --no-heading '' | fzf "termux"
+# 输出：unknown option: termux
+```
+
+说明与修正要点：
+- 当把其它命令的输出通过管道传给 fzf 时，若想预先设置查询词（initial query），应使用 -q 或 --query 参数；直接把查询词作为位置参数可能被误解析或在某些组合中产生错误。
+- 推荐使用方式示例：
+
+正确示例：
+```bash
+# 使用 -q 指定初始查询（大小写敏感）
+rg --line-number --no-heading '' | fzf -q termux
+
+# 使用 --query 指定初始查询（等价）
+rg --line-number --no-heading '' | fzf --query=termux
+
+# 忽略大小写
+rg --line-number --no-heading '' | fzf -i -q termux
+
+# 带预览的示例（结合 bat）
+rg --line-number --no-heading '' | fzf -q termux --preview 'bat --color=always --style=numbers {1}'
+```
+
+简短说明：
+- -q / --query 用于设置初始过滤关键词；也可以在 fzf 启动后直接输入搜索词。
+- 若仍报奇怪的 option 错误，检查 fzf 版本（fzf --version）并确保没有把查询词误写成以 `-` 开头的字符串或放在不恰当的位置。
+
 ## 总结
 
 FZF 是一个强大的模糊搜索工具，通过合理配置可以大幅提升命令行工作效率。主要优势：
@@ -354,6 +385,7 @@ FZF 是一个强大的模糊搜索工具，通过合理配置可以大幅提升�
 - 🎨 丰富的自定义选项
 - 🔧 与各种工具无缝集成
 - ⚡ 高性能和低内存占用
-- 🎯 直观的交互体验
+- 🎯 直观的交互体
+- 验
 
 建议从基础用法开始，逐步添加自定义配置和函数，根据个人工作流程定制最适合的使用方式。
