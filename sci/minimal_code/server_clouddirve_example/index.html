@@ -1,6 +1,6 @@
 
   <!doctype html>
-  <html lang="en" class="no-js">
+  <html lang="zh" class="no-js">
     <head>
       
         <meta charset="utf-8">
@@ -8,27 +8,27 @@
         
         
         
-          <link rel="canonical" href="https://tianbaiting.github.io/en/sci/minimal_theory/dead_time/">
+          <link rel="canonical" href="https://tianbaiting.github.io/sci/minimal_code/server_clouddirve_example/">
         
         
-          <link rel="prev" href="../TransmissionLineEq/">
+          <link rel="prev" href="../server_clouddirve/">
         
         
-          <link rel="next" href="../scatering_theory/">
+          <link rel="next" href="../termux/">
         
-        <link rel="icon" href="../../../../assets/images/favicon.png">
+        <link rel="icon" href="../../../assets/images/favicon.png">
         <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.0.4">
       
       
         
-          <title>Dead time - TBT个人网站</title>
+          <title>Server clouddirve example - TBT个人网站</title>
         
       
       
-        <link rel="stylesheet" href="../../../../assets/stylesheets/main.9c788c91.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/main.9c788c91.min.css">
         
           
-          <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
+          <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
         
         
 
@@ -44,16 +44,14 @@
         
       
       
-        <link rel="stylesheet" href="../../../../css/timeago.css">
+        <link rel="stylesheet" href="../../../css/timeago.css">
       
-        <link rel="stylesheet" href="../../../../css/timeago.css">
-      
-        <link rel="stylesheet" href="../../../../css/counter.css">
+        <link rel="stylesheet" href="../../../css/counter.css">
       
       
-        <link rel="stylesheet" href="../../../../css/counter.css">
+        <link rel="stylesheet" href="../../../css/counter.css">
       
-      <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
       
         
 
@@ -70,7 +68,7 @@
       
       <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink">
     
-      <script src="../../../../js/scheme.js" type="text/javascript"></script>
+      <script src="../../../js/scheme.js" type="text/javascript"></script>
       
       
       <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -79,8 +77,8 @@
       <div data-md-component="skip">
         
           
-          <a href="#第一部分引言与背景知识" class="md-skip">
-            Skip to content
+          <a href="#教程在-ubuntu-上部署-nextcloud-并通过-openvpn-安全访问" class="md-skip">
+            跳转至
           </a>
         
       </div>
@@ -92,8 +90,8 @@
         
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../" title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -112,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dead time
+              Server clouddirve example
             
           </span>
         </div>
@@ -133,9 +131,9 @@
 
   <div class="md-header__button md-lang">
     
-      <a href="../../../../sci/minimal_theory/dead_time/" hreflang="zh">简体中文</a>
+      <a href="./" hreflang="zh">简体中文</a>
     
-      <a href="./" hreflang="en">English</a>
+      <a href="../../../en/sci/minimal_code/server_clouddirve_example/" hreflang="en">English</a>
     
   </div>
 
@@ -148,18 +146,18 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="查找">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -169,7 +167,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            正在初始化搜索引擎
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -189,7 +187,7 @@
           
             
               
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -199,8 +197,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../" class="md-tabs__link">
-      main
+    <a href="../../.." class="md-tabs__link">
+      主页
     </a>
   </li>
 
@@ -302,9 +300,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../" title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+    <a href="../../.." title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -323,8 +321,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
-        main
+      <a href="../../.." class="md-nav__link">
+        主页
       </a>
     </li>
   
@@ -805,10 +803,6 @@
         
           
         
-          
-        
-          
-        
       
       
         <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
@@ -844,7 +838,7 @@
   
     <li class="md-nav__item">
       <a href="../../cheatshet/docker/" class="md-nav__link">
-        Docker
+        docker
       </a>
     </li>
   
@@ -858,7 +852,7 @@
   
     <li class="md-nav__item">
       <a href="../../cheatshet/git/" class="md-nav__link">
-        git cheatsheat
+        git 备忘单
       </a>
     </li>
   
@@ -887,34 +881,6 @@
     <li class="md-nav__item">
       <a href="../../cheatshet/number_order_dimension/" class="md-nav__link">
         数量级估计
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cheatshet/shell/" class="md-nav__link">
-        Shell
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cheatshet/site/" class="md-nav__link">
-        网页相关知识
       </a>
     </li>
   
@@ -960,14 +926,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
       
       
         
@@ -1011,7 +979,7 @@
         
       
       
-        <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="true">
           Minimal code
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1029,7 +997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/Operating_system/" class="md-nav__link">
+      <a href="../Operating_system/" class="md-nav__link">
         装系统
       </a>
     </li>
@@ -1043,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/c%2B%2Bproject/" class="md-nav__link">
+      <a href="../c%2B%2Bproject/" class="md-nav__link">
         c++项目
       </a>
     </li>
@@ -1057,8 +1025,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/color_scheme/" class="md-nav__link">
-        Color Scheme in Scientific Visualization
+      <a href="../color_scheme/" class="md-nav__link">
+        科研配图
       </a>
     </li>
   
@@ -1071,8 +1039,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/format_guidelines/" class="md-nav__link">
-        Formatting Guidelines
+      <a href="../format_guidelines/" class="md-nav__link">
+        格式规范
       </a>
     </li>
   
@@ -1085,7 +1053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/fzf/" class="md-nav__link">
+      <a href="../fzf/" class="md-nav__link">
         FZF 模糊搜索工具完全教程
       </a>
     </li>
@@ -1099,7 +1067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/gdb/" class="md-nav__link">
+      <a href="../gdb/" class="md-nav__link">
         gdb 调试
       </a>
     </li>
@@ -1113,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/gemni_use_wen2cli/" class="md-nav__link">
+      <a href="../gemni_use_wen2cli/" class="md-nav__link">
         Gemini 使用限制与付费模式解析
       </a>
     </li>
@@ -1127,7 +1095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/git/" class="md-nav__link">
+      <a href="../git/" class="md-nav__link">
         git
       </a>
     </li>
@@ -1141,8 +1109,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/jupyternotebook/" class="md-nav__link">
-        Jupyter Notebook
+      <a href="../jupyternotebook/" class="md-nav__link">
+        jupyter notebook
       </a>
     </li>
   
@@ -1155,7 +1123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/latex_graphics/" class="md-nav__link">
+      <a href="../latex_graphics/" class="md-nav__link">
         latex include graphics
       </a>
     </li>
@@ -1169,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/python_def_class/" class="md-nav__link">
+      <a href="../python_def_class/" class="md-nav__link">
         python 定义类
       </a>
     </li>
@@ -1183,7 +1151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/root_opener/" class="md-nav__link">
+      <a href="../root_opener/" class="md-nav__link">
         设置 ROOT 文件默认浏览器教程
       </a>
     </li>
@@ -1197,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/root_plot/" class="md-nav__link">
+      <a href="../root_plot/" class="md-nav__link">
         root_plot
       </a>
     </li>
@@ -1211,136 +1179,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minimal_code/server_clouddirve/" class="md-nav__link">
+      <a href="../server_clouddirve/" class="md-nav__link">
         如何从零搭建私有云盘服务器 (Markdown 教程)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../minimal_code/server_clouddirve_example/" class="md-nav__link">
-        Server clouddirve example
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../minimal_code/termux/" class="md-nav__link">
-        在 Termux 中安装 Ubuntu 桌面环境并运行 VS Code 的终极指南
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../minimal_code/vim_neovim/" class="md-nav__link">
-        Vim neovim
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../minimal_code/zsh/" class="md-nav__link">
-        Zsh 环境一键配置脚本
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../minimal_code/%E5%BE%85%E8%A7%A3%E5%86%B3%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" class="md-nav__link">
-        to be solved
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" checked>
-      
-      
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="true">
-          Minimal theory
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Minimal theory" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_4">
-          <span class="md-nav__icon md-icon"></span>
-          Minimal theory
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../TransmissionLineEq/" class="md-nav__link">
-        TransmissionLineEq
       </a>
     </li>
   
@@ -1359,114 +1199,92 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Dead time
+          Server clouddirve example
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Dead time
+        Server clouddirve example
       </a>
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#第一部分引言与背景知识" class="md-nav__link">
-    第一部分：引言与背景知识
-  </a>
-  
-    <nav class="md-nav" aria-label="第一部分：引言与背景知识">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-问题的提出为何要研究死时间建模" class="md-nav__link">
-    1.1 问题的提出：为何要研究死时间建模？
+  <a href="#前提条件" class="md-nav__link">
+    前提条件
   </a>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#步骤一系统更新与准备" class="md-nav__link">
+    步骤一：系统更新与准备
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#步骤二安装并配置-openvpn-服务器" class="md-nav__link">
+    步骤二：安装并配置 OpenVPN 服务器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#步骤三安装-docker-和-docker-compose" class="md-nav__link">
+    步骤三：安装 Docker 和 Docker Compose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#步骤四部署-nextcloud-使用-docker-compose" class="md-nav__link">
+    步骤四：部署 Nextcloud (使用 Docker Compose)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#步骤五配置-openvpn-客户端" class="md-nav__link">
+    步骤五：配置 OpenVPN 客户端
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#步骤六访问并完成-nextcloud-初始化" class="md-nav__link">
+    步骤六：访问并完成 Nextcloud 初始化
+  </a>
+  
+    <nav class="md-nav" aria-label="步骤六：访问并完成 Nextcloud 初始化">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#12-基础概念死时间的两种类型" class="md-nav__link">
-    1.2 基础概念：死时间的两种类型
+  <a href="#后续步骤与建议" class="md-nav__link">
+    后续步骤与建议
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#第二部分核心理论---非齐次泊松过程的死时间修正" class="md-nav__link">
-    第二部分：核心理论 - 非齐次泊松过程的死时间修正
-  </a>
-  
-    <nav class="md-nav" aria-label="第二部分：核心理论 - 非齐次泊松过程的死时间修正">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-真实事件率与观测事件率的关系" class="md-nav__link">
-    2.1 真实事件率与观测事件率的关系
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-构建概率模型" class="md-nav__link">
-    2.2 构建概率模型
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#第三部分应用---信号强度推断" class="md-nav__link">
-    第三部分：应用 - 信号强度推断
-  </a>
-  
-    <nav class="md-nav" aria-label="第三部分：应用 - 信号强度推断">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-极大似然法-maximum-likelihood-method" class="md-nav__link">
-    3.1 极大似然法 (Maximum Likelihood Method)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-方法验证与结论" class="md-nav__link">
-    3.2 方法验证与结论
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#第四部分本章总结与意义" class="md-nav__link">
-    第四部分：本章总结与意义
-  </a>
   
 </li>
       
@@ -1485,7 +1303,133 @@
   
   
     <li class="md-nav__item">
-      <a href="../scatering_theory/" class="md-nav__link">
+      <a href="../termux/" class="md-nav__link">
+        在 Termux 中安装 Ubuntu 桌面环境并运行 VS Code 的终极指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vim_neovim/" class="md-nav__link">
+        Vim neovim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zsh/" class="md-nav__link">
+        Zsh 环境一键配置脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%BE%85%E8%A7%A3%E5%86%B3%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        to be solved
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="false">
+          Minimal theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minimal theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Minimal theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_theory/TransmissionLineEq/" class="md-nav__link">
+        TransmissionLineEq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_theory/dead_time/" class="md-nav__link">
+        Dead time
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_theory/scatering_theory/" class="md-nav__link">
         散射理论
       </a>
     </li>
@@ -1803,7 +1747,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/detector_samurai/" class="md-nav__link">
-        Detailed Functions of Charged Particle Detectors in the SAMURAI Spectrometer
+        SAMURAI 光谱仪带电粒子探测器详细功能
       </a>
     </li>
   
@@ -1860,7 +1804,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/RIDF/" class="md-nav__link">
-        Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Description
+        RIKEN RIDF 文件构成详解：数据块 (Block) 说明
       </a>
     </li>
   
@@ -1888,7 +1832,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/anaroot2version/" class="md-nav__link">
-        ANAROOT Detailed Documentation
+        ANAROOT 详细中文文档
       </a>
     </li>
   
@@ -1944,7 +1888,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/anaroot_pdc/" class="md-nav__link">
-        ANAROOT Libraries for PDC Analysis
+        anaroot pdcS
       </a>
     </li>
   
@@ -2018,7 +1962,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/smsimulator/PDC/" class="md-nav__link">
-        PDC Drift Chamber Simulation Plan
+        PDC 漂移室模拟方案
       </a>
     </li>
   
@@ -2304,102 +2248,78 @@
                     <div class="md-sidebar__inner">
                       
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#第一部分引言与背景知识" class="md-nav__link">
-    第一部分：引言与背景知识
-  </a>
-  
-    <nav class="md-nav" aria-label="第一部分：引言与背景知识">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-问题的提出为何要研究死时间建模" class="md-nav__link">
-    1.1 问题的提出：为何要研究死时间建模？
+  <a href="#前提条件" class="md-nav__link">
+    前提条件
   </a>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#步骤一系统更新与准备" class="md-nav__link">
+    步骤一：系统更新与准备
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#步骤二安装并配置-openvpn-服务器" class="md-nav__link">
+    步骤二：安装并配置 OpenVPN 服务器
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#步骤三安装-docker-和-docker-compose" class="md-nav__link">
+    步骤三：安装 Docker 和 Docker Compose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#步骤四部署-nextcloud-使用-docker-compose" class="md-nav__link">
+    步骤四：部署 Nextcloud (使用 Docker Compose)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#步骤五配置-openvpn-客户端" class="md-nav__link">
+    步骤五：配置 OpenVPN 客户端
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#步骤六访问并完成-nextcloud-初始化" class="md-nav__link">
+    步骤六：访问并完成 Nextcloud 初始化
+  </a>
+  
+    <nav class="md-nav" aria-label="步骤六：访问并完成 Nextcloud 初始化">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#12-基础概念死时间的两种类型" class="md-nav__link">
-    1.2 基础概念：死时间的两种类型
+  <a href="#后续步骤与建议" class="md-nav__link">
+    后续步骤与建议
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#第二部分核心理论---非齐次泊松过程的死时间修正" class="md-nav__link">
-    第二部分：核心理论 - 非齐次泊松过程的死时间修正
-  </a>
-  
-    <nav class="md-nav" aria-label="第二部分：核心理论 - 非齐次泊松过程的死时间修正">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-真实事件率与观测事件率的关系" class="md-nav__link">
-    2.1 真实事件率与观测事件率的关系
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-构建概率模型" class="md-nav__link">
-    2.2 构建概率模型
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#第三部分应用---信号强度推断" class="md-nav__link">
-    第三部分：应用 - 信号强度推断
-  </a>
-  
-    <nav class="md-nav" aria-label="第三部分：应用 - 信号强度推断">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-极大似然法-maximum-likelihood-method" class="md-nav__link">
-    3.1 极大似然法 (Maximum Likelihood Method)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-方法验证与结论" class="md-nav__link">
-    3.2 方法验证与结论
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#第四部分本章总结与意义" class="md-nav__link">
-    第四部分：本章总结与意义
-  </a>
   
 </li>
       
@@ -2420,113 +2340,264 @@
 
 
 
-  <h1>Dead time</h1>
+<p>好的，这是一个从配置好 Ubuntu Server 开始，通过 OpenVPN 访问自建 Nextcloud 的全流程 Markdown 教程。</p>
+<p>本教程采用目前社区推荐的最佳实践：</p>
+<ul>
+<li><strong>使用自动化脚本安装 OpenVPN</strong>：避免手动配置证书和网络规则的复杂性，一键完成部署。</li>
+<li><strong>使用 Docker 和 Docker Compose 部署 Nextcloud</strong>：隔离运行环境，简化安装、维护和升级过程。</li>
+</ul>
+<hr />
+<h1 id="教程在-ubuntu-上部署-nextcloud-并通过-openvpn-安全访问">教程：在 Ubuntu 上部署 Nextcloud 并通过 OpenVPN 安全访问<a class="headerlink" href="#教程在-ubuntu-上部署-nextcloud-并通过-openvpn-安全访问" title="Permanent link">#</a></h1>
+<p>本教程将引导您完成以下目标：</p>
+<ol>
+<li>在您的 Ubuntu 服务器上安装并配置一个 OpenVPN 服务器。</li>
+<li>使用 Docker 部署一个稳定运行的 Nextcloud 实例（包含数据库和缓存）。</li>
+<li>配置客户端设备，通过 VPN 隧道安全地访问您的私有云盘。</li>
+</ol>
+<h3 id="前提条件">前提条件<a class="headerlink" href="#前提条件" title="Permanent link">#</a></h3>
+<ul>
+<li>一台已经安装好 <strong>Ubuntu Server 20.04/22.04 LTS</strong> 的服务器。</li>
+<li>拥有服务器的 <code>root</code> 或 <code>sudo</code> 权限。</li>
+<li>服务器拥有一个**静态公网 IP 地址**（或使用 DDNS 将域名指向您的动态公网 IP）。</li>
+</ul>
+<hr />
+<h2 id="步骤一系统更新与准备">步骤一：系统更新与准备<a class="headerlink" href="#步骤一系统更新与准备" title="Permanent link">#</a></h2>
+<p>首先，登录到您的服务器，更新软件包列表和已安装的软件。</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</code></pre></div>
+<p>安装一些必要的工具软件。</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>curl<span class="w"> </span>wget
+</code></pre></div>
+<hr />
+<h2 id="步骤二安装并配置-openvpn-服务器">步骤二：安装并配置 OpenVPN 服务器<a class="headerlink" href="#步骤二安装并配置-openvpn-服务器" title="Permanent link">#</a></h2>
+<p>我们将使用一个广受好评的自动化脚本来安装 OpenVPN，它可以处理所有复杂的配置。</p>
+<ol>
+<li>
+<p><strong>下载安装脚本</strong><br />
+    从 GitHub 下载 <code>openvpn-install</code> 脚本。</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-O<span class="w"> </span>https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh
+</code></pre></div>
+</li>
+<li>
+<p><strong>赋予脚本执行权限</strong></p>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>openvpn-install.sh
+</code></pre></div>
+</li>
+<li>
+<p><strong>运行脚本并进行交互式配置</strong><br />
+    以 root 权限运行脚本，它会引导您完成一系列配置。</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>./openvpn-install.sh
+</code></pre></div>
+<p>您将会看到一系列问题，请根据您的实际情况和以下建议进行选择：</p>
+<ul>
+<li><strong>IP address</strong>: 脚本会自动检测您的公网 IP，直接按回车确认即可。</li>
+<li><strong>Enable IPv6 support</strong>: 如果您的网络支持 IPv6，可以选择 <code>y</code>，否则选 <code>n</code>。（选 <code>n</code> 通常没问题）。</li>
+<li><strong>Port</strong>: 使用默认的 <code>1194</code> 端口即可，按回车。</li>
+<li><strong>Protocol</strong>: 使用默认的 <code>UDP</code> 协议，按回车。UDP 速度更快。</li>
+<li><strong>DNS</strong>: 推荐选择 <code>Cloudflare</code> 或 <code>Google</code> 的 DNS，输入对应的数字后按回车。</li>
+<li><strong>Enable compression</strong>: 选择 <code>n</code>。压缩已被证实存在安全隐患（VORACLE 攻击）。</li>
+<li><strong>Customize encryption settings</strong>: 选择 <code>n</code>。脚本默认的加密设置已经非常安全。</li>
+</ul>
+<p>脚本会自动安装和配置 OpenVPN。完成后，它会提示您创建一个客户端配置文件。</p>
+</li>
+<li>
+<p><strong>创建第一个客户端配置文件</strong></p>
+<ul>
+<li><strong>Client name</strong>: 输入一个客户端名称，例如 <code>my-laptop</code> 或 <code>my-phone</code>，然后按回车。</li>
+<li><strong>Password protect the client</strong>: 您可以选择是否为配置文件添加密码。为了方便，初次可以选 <code>n</code>（不加密），直接导入使用。</li>
+</ul>
+<p>脚本执行完毕后，会在当前目录下生成一个 <code>.ovpn</code> 文件，例如 <code>/root/my-laptop.ovpn</code>。<strong>这个文件就是客户端连接 VPN 所需的唯一凭证，请务必妥善保管。</strong></p>
+<p>如果您想添加更多用户，只需再次运行 <code>./openvpn-install.sh</code> 脚本，它会提供添加用户、吊销用户等管理选项。</p>
+</li>
+</ol>
+<hr />
+<h2 id="步骤三安装-docker-和-docker-compose">步骤三：安装 Docker 和 Docker Compose<a class="headerlink" href="#步骤三安装-docker-和-docker-compose" title="Permanent link">#</a></h2>
+<p>Nextcloud 将运行在 Docker 容器中，这让我们无需在主机系统上安装 PHP、Web服务器和数据库。</p>
+<ol>
+<li>
+<p><strong>安装 Docker</strong><br />
+    使用官方的便利脚本来安装 Docker。</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://get.docker.com<span class="w"> </span>-o<span class="w"> </span>get-docker.sh
+sudo<span class="w"> </span>sh<span class="w"> </span>get-docker.sh
+</code></pre></div>
+<p>将当前用户添加到 <code>docker</code> 组，这样执行 <code>docker</code> 命令时就不用加 <code>sudo</code> 了。（执行后需要重新登录 shell 才能生效）</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>docker<span class="w"> </span><span class="nv">$USER</span>
+newgrp<span class="w"> </span>docker<span class="w"> </span><span class="c1"># 立即生效</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>安装 Docker Compose</strong><br />
+    我们将从 GitHub Release 页面下载 Docker Compose 的二进制文件。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 定义版本和目标路径</span>
+<span class="nv">COMPOSE_VERSION</span><span class="o">=</span><span class="s2">&quot;v2.27.0&quot;</span><span class="w"> </span><span class="c1"># 您可以去GitHub查看最新版本</span>
+<span class="nv">DESTINATION</span><span class="o">=</span><span class="s2">&quot;/usr/local/bin/docker-compose&quot;</span>
 
-<ol>
-<li>理解探测器中“死时间”的基本概念及其两种主要类型。</li>
-<li>掌握死时间对不同类型泊ソン过程（齐次与非齐次）的影响。</li>
-<li>深入学习本章的核心创新点：针对非齐次泊ソン过程的死时间建模及其概率推导。</li>
-<li>了解如何运用该模型构建极大似然法，从受影响的数据中精确推断原始信号强度。</li>
+<span class="c1"># 下载</span>
+sudo<span class="w"> </span>curl<span class="w"> </span>-L<span class="w"> </span><span class="s2">&quot;https://github.com/docker/compose/releases/download/</span><span class="si">${</span><span class="nv">COMPOSE_VERSION</span><span class="si">}</span><span class="s2">/docker-compose-</span><span class="k">$(</span>uname<span class="w"> </span>-s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname<span class="w"> </span>-m<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">$DESTINATION</span>
+
+<span class="c1"># 添加执行权限</span>
+sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span><span class="nv">$DESTINATION</span>
+</code></pre></div>
+<p>验证安装是否成功：</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>--version
+docker-compose<span class="w"> </span>--version
+</code></pre></div>
+<p>如果都输出了版本号，说明安装成功。</p>
+</li>
 </ol>
 <hr />
-<h2 id="第一部分引言与背景知识">第一部分：引言与背景知识<a class="headerlink" href="#第一部分引言与背景知识" title="Permanent link">#</a></h2>
-<h3 id="11-问题的提出为何要研究死时间建模">1.1 问题的提出：为何要研究死时间建模？<a class="headerlink" href="#11-问题的提出为何要研究死时间建模" title="Permanent link">#</a></h3>
-<p>在像超级神冈（SK）这样的水切伦科夫探测器中，当中微子发生相互作用后，会产生带电粒子，这些粒子在水中运动时发出切伦科夫光。光电倍增管（PMT）接收到的是一个短时间内光子数量急剧变化的“光脉冲”。这个过程，其事件（光子到达）的发生率是随时间变化的，在统计学上被称为**非齐次泊松过程 (inhomogeneous Poisson process)**。</p>
-<p>然而，电子学系统在记录一个光子（hit）后，会有一段约900纳秒（ns）的时间内无法响应新的信号，这就是**死时间 (Dead Time)**。这个效应会严重扭曲我们观测到的光子时间和数量分布，尤其是在信号密集的区域（如探测器边界或高能事例中），导致能量重建不准确。</p>
-<p>传统的死时间修正理论主要针对事件率恒定的**齐次泊松过程 (homogeneous Poisson process)**。直接套用于SK这样的非齐次过程会引入很大误差。因此，本章的核心任务就是从第一性原理出发，为非齐次泊松过程建立一个精确的死时间模型，并提出一种能够“解卷积”出真实信号强度的方法。</p>
-<h3 id="12-基础概念死时间的两种类型">1.2 基础概念：死时间的两种类型<a class="headerlink" href="#12-基础概念死时间的两种类型" title="Permanent link">#</a></h3>
-<p>死时间主要分为两种，理解它们的区别至关重要。</p>
-<ul>
-<li><strong>非扩展型 (non-paralyzable)</strong>：探测器记录一个事件后，进入一个固定长度 <span class="arithmatex"><span class="MathJax_Preview">T_D</span><script type="math/tex">T_D</script></span> 的死时间。在此期间到达的任何新事件都会被**完全忽略**，且不会影响当前死时间窗口的结束时刻。</li>
-<li><strong>扩展型 (paralyzable)</strong>：探测器记录一个事件后，启动一个死时间窗口。如果在这个窗口**内部**又有新事件到达，死时间会从这个新事件的时刻点**重新开始计算**。</li>
-</ul>
-<p>这两种类型的区别可以参考论文中的图3.1。SK的电子学系统属于非扩展型死时间系统。</p>
-<hr />
-<h2 id="第二部分核心理论---非齐次泊松过程的死时间修正">第二部分：核心理论 - 非齐次泊松过程的死时间修正<a class="headerlink" href="#第二部分核心理论---非齐次泊松过程的死时间修正" title="Permanent link">#</a></h2>
-<p>本章的第一个主要贡献是将在齐次泊松过程上已经很成熟的死时间理论，推广到了非齐次泊松过程。</p>
-<h3 id="21-真实事件率与观测事件率的关系">2.1 真实事件率与观测事件率的关系<a class="headerlink" href="#21-真实事件率与观测事件率的关系" title="Permanent link">#</a></h3>
-<p>假设真实的事件发生率为 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{R}(t)</span><script type="math/tex">\mathcal{R}(t)</script></span>，观测到的事件发生率为 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{R}^m(t)</span><script type="math/tex">\mathcal{R}^m(t)</script></span>，死时间长度为 <span class="arithmatex"><span class="MathJax_Preview">T_D</span><script type="math/tex">T_D</script></span>。</p>
-<ul>
-<li>
-<p><strong>对于扩展型死时间</strong>：<br />
-    一个事件在时刻 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 被观测到的条件是：1) 它在 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 时刻真实发生；2) 在它之前的 <span class="arithmatex"><span class="MathJax_Preview">(t-T_D, t)</span><script type="math/tex">(t-T_D, t)</script></span> 时间段内，**没有其他真实事件**发生。因此，观测率是真实率乘以一个存活概率。</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\mathcal{R}^{m,para}(t) = \mathcal{R}(t) e^{-\int_{t-T_{D}}^{t}\mathcal{R}(t')dt'}</div>
-<script type="math/tex; mode=display">\mathcal{R}^{m,para}(t) = \mathcal{R}(t) e^{-\int_{t-T_{D}}^{t}\mathcal{R}(t')dt'}</script>
-</div>
-</li>
-<li>
-<p><strong>对于非扩展型死时间</strong>：<br />
-    一个事件在时刻 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 被观测到的条件是：1) 它在 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 时刻真实发生；2) 在它之前的 <span class="arithmatex"><span class="MathJax_Preview">(t-T_D, t)</span><script type="math/tex">(t-T_D, t)</script></span> 时间段内，<strong>没有其他事件被观测到</strong>。这就导致了一个更复杂的关系：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\mathcal{R}^{m,non}(t) = \mathcal{R}(t) \left( 1 - \int_{t-T_{D}}^{t}\mathcal{R}^{m,non}(t')dt' \right)</div>
-<script type="math/tex; mode=display">\mathcal{R}^{m,non}(t) = \mathcal{R}(t) \left( 1 - \int_{t-T_{D}}^{t}\mathcal{R}^{m,non}(t')dt' \right)</script>
-</div>
-<p>这个公式是一个迭代关系，<span class="arithmatex"><span class="MathJax_Preview">\mathcal{R}^{m,non}</span><script type="math/tex">\mathcal{R}^{m,non}</script></span> 出现在了等式的两边，求解起来非常困难。</p>
-</li>
-</ul>
-<h3 id="22-构建概率模型">2.2 构建概率模型<a class="headerlink" href="#22-构建概率模型" title="Permanent link">#</a></h3>
-<p>基于上述关系，我们可以构建在一次观测中（假设时间窗足够短，最多只记录一个hit）的概率模型，这对于后续的极大似然分析至关重要。</p>
-<table>
-<thead>
-<tr>
-<th align="left">采数类型</th>
-<th align="left">观测到1个hit的概率</th>
-<th align="left">观测到0个hit的概率</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><strong>软件触发</strong></td>
-<td align="left"><span class="arithmatex"><span class="MathJax_Preview">\mathcal{R}(t_i) dt e^{-\int \mathcal{R}(t) dt}</span><script type="math/tex">\mathcal{R}(t_i) dt e^{-\int \mathcal{R}(t) dt}</script></span></td>
-<td align="left"><span class="arithmatex"><span class="MathJax_Preview">e^{-\int \mathcal{R}(t) dt}</span><script type="math/tex">e^{-\int \mathcal{R}(t) dt}</script></span></td>
-</tr>
-<tr>
-<td align="left"><strong>扩展型死时间</strong></td>
-<td align="left"><span class="arithmatex"><span class="MathJax_Preview">\mathcal{R}^m(t_i) dt = \mathcal{R}(t_i) dt e^{-\int_{t_i-T_D}^{t_i}\mathcal{R}(t)dt}</span><script type="math/tex">\mathcal{R}^m(t_i) dt = \mathcal{R}(t_i) dt e^{-\int_{t_i-T_D}^{t_i}\mathcal{R}(t)dt}</script></span></td>
-<td align="left"><span class="arithmatex"><span class="MathJax_Preview">1 - \int_{T_L}^{T_R}\mathcal{R}^m(t)dt</span><script type="math/tex">1 - \int_{T_L}^{T_R}\mathcal{R}^m(t)dt</script></span></td>
-</tr>
-<tr>
-<td align="left"><strong>非扩展型死时间</strong></td>
-<td align="left"><span class="arithmatex"><span class="MathJax_Preview">\mathcal{R}^m(t_i) dt = \mathcal{R}(t_i) dt (1 - \int_{t_i-T_D}^{t_i}\mathcal{R}^m(t)dt)</span><script type="math/tex">\mathcal{R}^m(t_i) dt = \mathcal{R}(t_i) dt (1 - \int_{t_i-T_D}^{t_i}\mathcal{R}^m(t)dt)</script></span></td>
-<td align="left"><span class="arithmatex"><span class="MathJax_Preview">1 - \int_{T_L}^{T_R}\mathcal{R}^m(t)dt</span><script type="math/tex">1 - \int_{T_L}^{T_R}\mathcal{R}^m(t)dt</script></span></td>
-</tr>
-</tbody>
-</table>
-<p><em>注：此表是对论文中表3.1的简化解释</em>。</p>
-<hr />
-<h2 id="第三部分应用---信号强度推断">第三部分：应用 - 信号强度推断<a class="headerlink" href="#第三部分应用---信号强度推断" title="Permanent link">#</a></h2>
-<p>本章的第二个主要贡献是基于上述模型，开发了一套从受死时间影响的观测数据中推断真实信号强度 <span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> 的方法。</p>
-<h3 id="31-极大似然法-maximum-likelihood-method">3.1 极大似然法 (Maximum Likelihood Method)<a class="headerlink" href="#31-极大似然法-maximum-likelihood-method" title="Permanent link">#</a></h3>
-<p>我们的模型是 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{R}_{j}(t) = \mu_{j}\hat{R}(t) + b_{j}</span><script type="math/tex">\mathcal{R}_{j}(t) = \mu_{j}\hat{R}(t) + b_{j}</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">\mu_j</span><script type="math/tex">\mu_j</script></span> 是我们想要求的信号强度，<span class="arithmatex"><span class="MathJax_Preview">\hat{R}(t)</span><script type="math/tex">\hat{R}(t)</script></span> 是已知的信号时间分布形状（模板），<span class="arithmatex"><span class="MathJax_Preview">b_j</span><script type="math/tex">b_j</script></span> 是已知的背景噪声率。</p>
+<h2 id="步骤四部署-nextcloud-使用-docker-compose">步骤四：部署 Nextcloud (使用 Docker Compose)<a class="headerlink" href="#步骤四部署-nextcloud-使用-docker-compose" title="Permanent link">#</a></h2>
+<p>现在，我们将创建一个 <code>docker-compose.yml</code> 文件来定义 Nextcloud 服务。</p>
 <ol>
-<li><strong>构造似然函数</strong>：对于探测器上的每一个通道 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>，根据它是否观测到hit以及观测到的时间，我们可以从上面的概率模型中写出其概率 <span class="arithmatex"><span class="MathJax_Preview">P_j</span><script type="math/tex">P_j</script></span>。将所有通道的概率相乘，就得到了总的似然函数：<br />
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\mathcal{L}(\mu) = \prod_{j} P_j(\mu)</span><script type="math/tex">\mathcal{L}(\mu) = \prod_{j} P_j(\mu)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\mathcal{L}(\mu) = \prod_{j} P_j(\mu)</span><script type="math/tex">\mathcal{L}(\mu) = \prod_{j} P_j(\mu)</script></span></script></span></li>
-<li><strong>求解</strong>：通过数值优化的方法，找到一个 <span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> 值，使得这个似然函数 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{L}</span><script type="math/tex">\mathcal{L}</script></span> 最大化。这个 <span class="arithmatex"><span class="MathJax_Preview">\mu_{best}</span><script type="math/tex">\mu_{best}</script></span> 就是我们对真实信号强度的最佳估计。</li>
+<li>
+<p><strong>创建 Nextcloud 工作目录</strong><br />
+    在这个目录中，我们将存放配置文件和数据。</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>~/nextcloud
+<span class="nb">cd</span><span class="w"> </span>~/nextcloud
+</code></pre></div>
+</li>
+<li>
+<p><strong>创建 <code>docker-compose.yml</code> 文件</strong><br />
+    使用 <code>nano</code> 或 <code>vim</code> 创建并编辑这个文件。</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>docker-compose.yml
+</code></pre></div>
+<p>将以下内容**完整地**粘贴到文件中。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.8&#39;</span>
+
+<span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="c1"># Nextcloud 主服务</span>
+<span class="w">  </span><span class="nt">app</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nextcloud:latest</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nextcloud_app</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8080:80&quot;</span><span class="w"> </span><span class="c1"># 将服务器的8080端口映射到容器的80端口</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./nextcloud:/var/www/html</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./apps:/var/www/html/apps</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./config:/var/www/html/config</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./data:/var/www/html/data</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_PASSWORD=your_strong_db_password</span><span class="w"> </span><span class="c1"># &lt;--- !! 修改这里 !! 数据库密码</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_DATABASE=nextcloud</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_USER=nextcloud</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_HOST=db</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">REDIS_HOST=redis</span>
+<span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis</span>
+
+<span class="w">  </span><span class="c1"># MariaDB 数据库服务</span>
+<span class="w">  </span><span class="nt">db</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mariadb:10.6</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nextcloud_db</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+<span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--transaction-isolation=READ-COMMITTED --log-bin=ROW</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./db:/var/lib/mysql</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_ROOT_PASSWORD=your_strong_root_password</span><span class="w"> </span><span class="c1"># &lt;--- !! 修改这里 !! 数据库root密码</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_PASSWORD=your_strong_db_password</span><span class="w">       </span><span class="c1"># &lt;--- !! 修改这里 !! 与上面app服务中的密码保持一致</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_DATABASE=nextcloud</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYSQL_USER=nextcloud</span>
+
+<span class="w">  </span><span class="c1"># Redis 缓存服务 (提升性能)</span>
+<span class="w">  </span><span class="nt">redis</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis:alpine</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nextcloud_redis</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
+
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">nextcloud</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">apps</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">config</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">db</span><span class="p">:</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>重要：修改密码</strong><br />
+    在保存文件之前，**务必**将文件中所有 <code>your_strong_..._password</code> 的地方替换为您自己设置的强密码。<code>MYSQL_PASSWORD</code> 的值在 <code>app</code> 和 <code>db</code> 服务中必须完全相同。</p>
+<p>修改完成后，按 <code>Ctrl + X</code>，然后按 <code>Y</code>，再按回车保存并退出 <code>nano</code>。</p>
+</li>
+<li>
+<p><strong>启动 Nextcloud 服务</strong><br />
+    在 <code>~/nextcloud</code> 目录下，执行以下命令来启动所有服务。<code>-d</code> 参数表示在后台运行。</p>
+<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+<p>Docker 会开始拉取镜像并创建容器。这个过程需要几分钟。您可以使用 <code>docker-compose ps</code> 查看服务状态，确保所有服务的 <code>State</code> 都是 <code>Up</code>。</p>
+</li>
 </ol>
-<h3 id="32-方法验证与结论">3.2 方法验证与结论<a class="headerlink" href="#32-方法验证与结论" title="Permanent link">#</a></h3>
-<p>作者通过蒙特卡洛模拟生成了带有死时间效应的伪数据，然后用新提出的极大似然法进行强度推断，并将结果与真实值进行比较。</p>
-<ul>
-<li><strong>结果</strong>：如图3.4所示，该方法能够非常准确地重构出真实的信号强度，即使在暗噪声率很高的情况下，其偏差（bias）也非常小。</li>
-<li><strong>对比</strong>：相比于不考虑死时间效应的简化模型（软件触发模型），新方法的精度显著提高，尤其是在暗噪声不可忽略时，例如在10kHz时，软件触发模型偏移大约为7%。</li>
-<li><strong>近似</strong>：模拟还表明，在信号强度较低时（<span class="arithmatex"><span class="MathJax_Preview">\mu &lt; 10</span><script type="math/tex">\mu < 10</script></span>）和暗噪声低于20kHz时，使用计算上更简单的“扩展型”模型来分析“非扩展型”系统的数据，其引入的偏差在1%以内，是一个可以接受的近似。</li>
-</ul>
-<p><img alt="1755138119163" src="../../../../sci/minimal_theory/dead_time.zh/1755138119163.png" /></p>
 <hr />
-<h2 id="第四部分本章总结与意义">第四部分：本章总结与意义<a class="headerlink" href="#第四部分本章总结与意义" title="Permanent link">#</a></h2>
-<p>本章的研究是连接理论与实验的关键一步。它不仅在理论上填补了**非齐次泊松过程死时间修正**这一领域的空白，更重要的是，它提供了一套**实用且精确的算法工具**。</p>
-<p>这项工作直接解决了SK低能事例重建中长期存在的能量非均匀性问题。通过应用本章提出的修正方法，可以使得探测器边界处事例的能量重建与中心区域保持一致，这有望将**有效探测体积扩大约10%**，对于增加太阳中微子等低能物理分析的统计量具有重大意义。</p>
+<h2 id="步骤五配置-openvpn-客户端">步骤五：配置 OpenVPN 客户端<a class="headerlink" href="#步骤五配置-openvpn-客户端" title="Permanent link">#</a></h2>
+<p>现在服务器已经准备就绪，我们需要配置您的电脑或手机来连接它。</p>
+<ol>
+<li>
+<p><strong>获取 <code>.ovpn</code> 配置文件</strong><br />
+    您需要将在步骤二中生成的 <code>.ovpn</code> 文件（例如 <code>my-laptop.ovpn</code>）从服务器下载到您的本地设备上。您可以使用 <code>scp</code>、<code>FileZilla</code> 或任何其他 SFTP 工具。</p>
+<p>例如，在您的**本地电脑**上打开终端，使用 <code>scp</code> 命令：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 将 &lt;server_ip&gt; 和 &lt;user&gt; 替换为您的服务器信息</span>
+scp<span class="w"> </span>&lt;user&gt;@&lt;server_ip&gt;:/root/my-laptop.ovpn<span class="w"> </span>.
+</code></pre></div>
+</li>
+<li>
+<p><strong>安装 OpenVPN 客户端软件</strong></p>
+<ul>
+<li><strong>Windows</strong>: <a href="https://openvpn.net/client-connect-vpn-for-windows/">OpenVPN Connect</a></li>
+<li><strong>macOS</strong>: <a href="https://tunnelblick.net/">Tunnelblick</a></li>
+<li><strong>Linux</strong>: 使用包管理器安装 <code>openvpn</code>。</li>
+<li><strong>Android/iOS</strong>: 在应用商店搜索 "OpenVPN Connect"。</li>
+</ul>
+</li>
+<li>
+<p><strong>导入配置并连接</strong><br />
+    打开您安装的客户端软件，选择 "Import Profile" (导入配置文件)，然后选中您刚刚下载的 <code>.ovpn</code> 文件。导入后，点击 "Connect" (连接) 按钮。</p>
+<p>如果一切顺利，您应该会看到连接成功的日志，您的设备现在已经加入了家庭服务器所在的虚拟局域网。</p>
+</li>
+</ol>
+<hr />
+<h2 id="步骤六访问并完成-nextcloud-初始化">步骤六：访问并完成 Nextcloud 初始化<a class="headerlink" href="#步骤六访问并完成-nextcloud-初始化" title="Permanent link">#</a></h2>
+<p>连接 VPN 成功后，您的设备就可以通过服务器的**内网 IP**访问 Nextcloud 了。</p>
+<ol>
+<li>
+<p><strong>获取服务器的 VPN IP 地址</strong><br />
+    在 OpenVPN 的配置中，服务器的 VPN IP 通常是 <code>10.8.0.1</code>。</p>
+</li>
+<li>
+<p><strong>访问 Nextcloud</strong><br />
+    打开您本地设备上的浏览器，在地址栏输入：<br />
+<strong><code>http://10.8.0.1:8080</code></strong></p>
+<p>您应该能看到 Nextcloud 的初始化页面。</p>
+</li>
+<li>
+<p><strong>创建管理员账户</strong></p>
+<ul>
+<li>设置您的**管理员用户名**和**密码**。</li>
+<li>数据库部分**不要修改**，Docker Compose 已经帮我们自动配置好了。</li>
+<li>点击 "安装完成" 按钮。</li>
+</ul>
+<p>初始化过程可能需要一两分钟。完成后，您将被重定向到 Nextcloud 的主界面。</p>
+</li>
+</ol>
+<p><strong>恭喜！您现在拥有一个完全私有、通过安全 VPN 隧道访问的云盘了！</strong></p>
+<hr />
+<h3 id="后续步骤与建议">后续步骤与建议<a class="headerlink" href="#后续步骤与建议" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>数据安全</strong>: 定期备份 <code>~/nextcloud</code> 目录下的所有文件，特别是 <code>db</code> 和 <code>nextcloud</code> 卷，这是您的全部数据！</li>
+<li><strong>客户端同步</strong>: 下载 <a href="https://nextcloud.com/install/">Nextcloud 的桌面和移动客户端</a>，输入服务器地址 <code>http://10.8.0.1:8080</code> 和您的账户密码，即可开始同步文件。</li>
+<li><strong>添加更多 VPN 用户</strong>: 再次运行服务器上的 <code>./openvpn-install.sh</code> 脚本来管理用户。</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
-      Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月18日 00:12:09 UTC"><span class="timeago" datetime="2025-08-18T00:12:09+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月18日 00:12:09 UTC">2025-08-18</span>
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年9月19日 02:25:18 UTC"><span class="timeago" datetime="2025-09-19T02:25:18+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月19日 02:25:18 UTC">2025-09-19</span>
       
         <br>
-        Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月14日 06:50:55 UTC"><span class="timeago" datetime="2025-08-14T06:50:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月14日 06:50:55 UTC">2025-08-14</span>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年9月19日 02:25:18 UTC"><span class="timeago" datetime="2025-09-19T02:25:18+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月19日 02:25:18 UTC">2025-09-19</span>
       
     
   </small>
@@ -2570,7 +2641,7 @@
           
             <a href="#" class="md-top md-icon" data-md-component="top" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-              Back to top
+              回到页面顶部
             </a>
           
         </main>
@@ -2598,22 +2669,18 @@
         <div class="md-dialog__inner md-typeset"></div>
       </div>
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
       
       
-        <script src="../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+        <script src="../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
         
-          <script src="../../../../js/timeago.min.js"></script>
+          <script src="../../../js/timeago.min.js"></script>
         
-          <script src="../../../../js/timeago_mkdocs_material.js"></script>
-        
-          <script src="../../../../js/timeago.min.js"></script>
-        
-          <script src="../../../../js/timeago_mkdocs_material.js"></script>
+          <script src="../../../js/timeago_mkdocs_material.js"></script>
         
           <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
         
-          <script src="../../../../js/scheme.js"></script>
+          <script src="../../../js/scheme.js"></script>
         
       
     </body>
