@@ -1,6 +1,6 @@
 
   <!doctype html>
-  <html lang="zh" class="no-js">
+  <html lang="en" class="no-js">
     <head>
       
         <meta charset="utf-8">
@@ -8,27 +8,27 @@
         
         
         
-          <link rel="canonical" href="https://tianbaiting.github.io/sci/minimal_code/color_scheme/">
+          <link rel="canonical" href="https://tianbaiting.github.io/en/sci/minimal_code/server_clouddirve/">
         
         
-          <link rel="prev" href="../c%2B%2Bproject/">
+          <link rel="prev" href="../root_plot/">
         
         
-          <link rel="next" href="../format_guidelines/">
+          <link rel="next" href="../termux/">
         
-        <link rel="icon" href="../../../assets/images/favicon.png">
+        <link rel="icon" href="../../../../assets/images/favicon.png">
         <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.0.4">
       
       
-        ]
-          <title>科研配图 - TBT个人网站</title>
+        
+          <title>如何从零搭建私有云盘服务器 (Markdown 教程) - TBT个人网站</title>
         
       
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/main.9c788c91.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/main.9c788c91.min.css">
         
           
-          <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+          <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
         
         
 
@@ -44,14 +44,16 @@
         
       
       
-        <link rel="stylesheet" href="../../../css/timeago.css">
+        <link rel="stylesheet" href="../../../../css/timeago.css">
       
-        <link rel="stylesheet" href="../../../css/counter.css">
+        <link rel="stylesheet" href="../../../../css/timeago.css">
+      
+        <link rel="stylesheet" href="../../../../css/counter.css">
       
       
-        <link rel="stylesheet" href="../../../css/counter.css">
+        <link rel="stylesheet" href="../../../../css/counter.css">
       
-      <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
       
         
 
@@ -68,7 +70,7 @@
       
       <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink">
     
-      <script src="../../../js/scheme.js" type="text/javascript"></script>
+      <script src="../../../../js/scheme.js" type="text/javascript"></script>
       
       
       <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -77,8 +79,8 @@
       <div data-md-component="skip">
         
           
-          <a href="#色视觉原理" class="md-skip">
-            跳转至
+          <a href="#如何从零搭建私有云盘服务器-markdown-教程" class="md-skip">
+            Skip to content
           </a>
         
       </div>
@@ -90,8 +92,8 @@
         
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../" title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              科研配图
+              如何从零搭建私有云盘服务器 (Markdown 教程)
             
           </span>
         </div>
@@ -131,9 +133,9 @@
 
   <div class="md-header__button md-lang">
     
-      <a href="./" hreflang="zh">简体中文</a>
+      <a href="../../../../sci/minimal_code/server_clouddirve/" hreflang="zh">简体中文</a>
     
-      <a href="../../../en/sci/minimal_code/color_scheme/" hreflang="en">English</a>
+      <a href="./" hreflang="en">English</a>
     
   </div>
 
@@ -146,18 +148,18 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="查找">
+      <nav class="md-search__options" aria-label="Search">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -167,7 +169,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            正在初始化搜索引擎
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -187,7 +189,7 @@
           
             
               
-<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -197,8 +199,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
-      主页
+    <a href="../../../" class="md-tabs__link">
+      main
     </a>
   </li>
 
@@ -300,9 +302,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+    <a href="../../../" title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -321,8 +323,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
-        主页
+      <a href="../../../" class="md-nav__link">
+        main
       </a>
     </li>
   
@@ -803,6 +805,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
@@ -838,7 +844,7 @@
   
     <li class="md-nav__item">
       <a href="../../cheatshet/docker/" class="md-nav__link">
-        docker
+        Docker
       </a>
     </li>
   
@@ -852,7 +858,7 @@
   
     <li class="md-nav__item">
       <a href="../../cheatshet/git/" class="md-nav__link">
-        git 备忘单
+        git cheatsheat
       </a>
     </li>
   
@@ -881,6 +887,34 @@
     <li class="md-nav__item">
       <a href="../../cheatshet/number_order_dimension/" class="md-nav__link">
         数量级估计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/shell/" class="md-nav__link">
+        Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/site/" class="md-nav__link">
+        网页相关知识
       </a>
     </li>
   
@@ -1021,89 +1055,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          科研配图
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        科研配图
+    <li class="md-nav__item">
+      <a href="../color_scheme/" class="md-nav__link">
+        Color Scheme in Scientific Visualization
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#色视觉原理" class="md-nav__link">
-    色视觉原理
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#科研配色原则" class="md-nav__link">
-    科研配色原则
-  </a>
-  
-    <nav class="md-nav" aria-label="科研配色原则">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#配色的作用应该是辅助的而非必须的" class="md-nav__link">
-    配色的作用应该是辅助的而非必须的
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#填色图应该选择感知一致的配色方案" class="md-nav__link">
-    填色图应该选择感知一致的配色方案
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#色盲色弱对策" class="md-nav__link">
-    色盲、色弱对策
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#有用的网站" class="md-nav__link">
-    有用的网站
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1116,7 +1072,7 @@
   
     <li class="md-nav__item">
       <a href="../format_guidelines/" class="md-nav__link">
-        格式规范
+        Formatting Guidelines
       </a>
     </li>
   
@@ -1186,7 +1142,7 @@
   
     <li class="md-nav__item">
       <a href="../jupyternotebook/" class="md-nav__link">
-        jupyter notebook
+        Jupyter Notebook
       </a>
     </li>
   
@@ -1253,11 +1209,235 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../server_clouddirve/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          如何从零搭建私有云盘服务器 (Markdown 教程)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         如何从零搭建私有云盘服务器 (Markdown 教程)
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#第一步硬件选择-hardware" class="md-nav__link">
+    第一步：硬件选择 (Hardware)
+  </a>
+  
+    <nav class="md-nav" aria-label="第一步：硬件选择 (Hardware)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-利用旧电脑笔记本-repurpose-old-pclaptop" class="md-nav__link">
+    1. 利用旧电脑/笔记本 (Repurpose Old PC/Laptop)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-单板计算机-single-board-computer-sbc" class="md-nav__link">
+    2. 单板计算机 (Single-Board Computer, SBC)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-网络附加存储-nas---network-attached-storage" class="md-nav__link">
+    3. 网络附加存储 (NAS - Network Attached Storage)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-微型服务器nuc-mini-server--nuc" class="md-nav__link">
+    4. 微型服务器/NUC (Mini Server / NUC)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第二步安装操作系统-operating-system" class="md-nav__link">
+    第二步：安装操作系统 (Operating System)
+  </a>
+  
+    <nav class="md-nav" aria-label="第二步：安装操作系统 (Operating System)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-通用服务器linux发行版" class="md-nav__link">
+    1. 通用服务器Linux发行版
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-专为nas设计的操作系统" class="md-nav__link">
+    2. 专为NAS设计的操作系统
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第三步配置网络-networking" class="md-nav__link">
+    第三步：配置网络 (Networking)
+  </a>
+  
+    <nav class="md-nav" aria-label="第三步：配置网络 (Networking)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-设置静态内网ip" class="md-nav__link">
+    1. 设置静态内网IP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-实现外网访问" class="md-nav__link">
+    2. 实现外网访问
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 实现外网访问">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#方案a-端口转发-port-forwarding--ddns-不推荐新手" class="md-nav__link">
+    方案A: 端口转发 (Port Forwarding) + DDNS (不推荐新手)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#方案b-vpn-虚拟专用网络" class="md-nav__link">
+    方案B: VPN (虚拟专用网络)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#方案c-内网穿透反向隧道-强烈推荐" class="md-nav__link">
+    方案C: 内网穿透/反向隧道 (强烈推荐)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第四步部署云盘软件-cloud-drive-software" class="md-nav__link">
+    第四步：部署云盘软件 (Cloud Drive Software)
+  </a>
+  
+    <nav class="md-nav" aria-label="第四步：部署云盘软件 (Cloud Drive Software)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-nextcloud" class="md-nav__link">
+    1. Nextcloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-seafile" class="md-nav__link">
+    2. Seafile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-file-browser" class="md-nav__link">
+    3. File Browser
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第五步数据备份与安全-backup--security" class="md-nav__link">
+    第五步：数据备份与安全 (Backup &amp; Security)
+  </a>
+  
+    <nav class="md-nav" aria-label="第五步：数据备份与安全 (Backup &amp; Security)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-数据备份" class="md-nav__link">
+    1. 数据备份
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-安全加固" class="md-nav__link">
+    2. 安全加固
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#总结流程-checklist" class="md-nav__link">
+    总结流程 (Checklist)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1713,7 +1893,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/detector_samurai/" class="md-nav__link">
-        SAMURAI 光谱仪带电粒子探测器详细功能
+        Detailed Functions of Charged Particle Detectors in the SAMURAI Spectrometer
       </a>
     </li>
   
@@ -1770,7 +1950,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/RIDF/" class="md-nav__link">
-        RIKEN RIDF 文件构成详解：数据块 (Block) 说明
+        Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Description
       </a>
     </li>
   
@@ -1798,7 +1978,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/anaroot2version/" class="md-nav__link">
-        ANAROOT 详细中文文档
+        ANAROOT Detailed Documentation
       </a>
     </li>
   
@@ -1854,7 +2034,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/anaroot_pdc/" class="md-nav__link">
-        anaroot pdcS
+        ANAROOT Libraries for PDC Analysis
       </a>
     </li>
   
@@ -1928,7 +2108,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/smsimulator/PDC/" class="md-nav__link">
-        PDC 漂移室模拟方案
+        PDC Drift Chamber Simulation Plan
       </a>
     </li>
   
@@ -2214,49 +2394,51 @@
                     <div class="md-sidebar__inner">
                       
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      目录
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#色视觉原理" class="md-nav__link">
-    色视觉原理
+  <a href="#第一步硬件选择-hardware" class="md-nav__link">
+    第一步：硬件选择 (Hardware)
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#科研配色原则" class="md-nav__link">
-    科研配色原则
-  </a>
-  
-    <nav class="md-nav" aria-label="科研配色原则">
+    <nav class="md-nav" aria-label="第一步：硬件选择 (Hardware)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#配色的作用应该是辅助的而非必须的" class="md-nav__link">
-    配色的作用应该是辅助的而非必须的
+  <a href="#1-利用旧电脑笔记本-repurpose-old-pclaptop" class="md-nav__link">
+    1. 利用旧电脑/笔记本 (Repurpose Old PC/Laptop)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#填色图应该选择感知一致的配色方案" class="md-nav__link">
-    填色图应该选择感知一致的配色方案
+  <a href="#2-单板计算机-single-board-computer-sbc" class="md-nav__link">
+    2. 单板计算机 (Single-Board Computer, SBC)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#色盲色弱对策" class="md-nav__link">
-    色盲、色弱对策
+  <a href="#3-网络附加存储-nas---network-attached-storage" class="md-nav__link">
+    3. 网络附加存储 (NAS - Network Attached Storage)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-微型服务器nuc-mini-server--nuc" class="md-nav__link">
+    4. 微型服务器/NUC (Mini Server / NUC)
   </a>
   
 </li>
@@ -2267,8 +2449,150 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#有用的网站" class="md-nav__link">
-    有用的网站
+  <a href="#第二步安装操作系统-operating-system" class="md-nav__link">
+    第二步：安装操作系统 (Operating System)
+  </a>
+  
+    <nav class="md-nav" aria-label="第二步：安装操作系统 (Operating System)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-通用服务器linux发行版" class="md-nav__link">
+    1. 通用服务器Linux发行版
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-专为nas设计的操作系统" class="md-nav__link">
+    2. 专为NAS设计的操作系统
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第三步配置网络-networking" class="md-nav__link">
+    第三步：配置网络 (Networking)
+  </a>
+  
+    <nav class="md-nav" aria-label="第三步：配置网络 (Networking)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-设置静态内网ip" class="md-nav__link">
+    1. 设置静态内网IP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-实现外网访问" class="md-nav__link">
+    2. 实现外网访问
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 实现外网访问">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#方案a-端口转发-port-forwarding--ddns-不推荐新手" class="md-nav__link">
+    方案A: 端口转发 (Port Forwarding) + DDNS (不推荐新手)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#方案b-vpn-虚拟专用网络" class="md-nav__link">
+    方案B: VPN (虚拟专用网络)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#方案c-内网穿透反向隧道-强烈推荐" class="md-nav__link">
+    方案C: 内网穿透/反向隧道 (强烈推荐)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第四步部署云盘软件-cloud-drive-software" class="md-nav__link">
+    第四步：部署云盘软件 (Cloud Drive Software)
+  </a>
+  
+    <nav class="md-nav" aria-label="第四步：部署云盘软件 (Cloud Drive Software)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-nextcloud" class="md-nav__link">
+    1. Nextcloud
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-seafile" class="md-nav__link">
+    2. Seafile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-file-browser" class="md-nav__link">
+    3. File Browser
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第五步数据备份与安全-backup--security" class="md-nav__link">
+    第五步：数据备份与安全 (Backup &amp; Security)
+  </a>
+  
+    <nav class="md-nav" aria-label="第五步：数据备份与安全 (Backup &amp; Security)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-数据备份" class="md-nav__link">
+    1. 数据备份
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-安全加固" class="md-nav__link">
+    2. 安全加固
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#总结流程-checklist" class="md-nav__link">
+    总结流程 (Checklist)
   </a>
   
 </li>
@@ -2290,53 +2614,189 @@
 
 
 
-  <h1>科研配图</h1>
-
-<h2 id="色视觉原理">色视觉原理<a class="headerlink" href="#色视觉原理" title="Permanent link">#</a></h2>
-<p>原理部分可见费曼第一卷中的内容。</p>
-<p>这里简述一下，可见光通常指人眼能够感知的电磁波波长范围，大约在 380nm 到 750nm 之间。</p>
-<p>我们可见的就是在380nm 到 750nm的能谱的一个叠加。 实际上是一个无穷维希尔伯特空间的一个矢量。</p>
-<p>而人眼这个探测器(视锥细胞)，是无法分清楚如此多的矢量的。人有3种视锥细胞。 不同波长的光对3种细胞的激活程度不同故而反应出来了不同的颜色。 实际上人眼这个探测器把一个无穷维的希尔伯特空间通过卷积（视锥细胞对不同波长的探测效率卷积）降维成了一个三维流形。</p>
-<p>色品图之所以呈现为二维，是因为它是一个三维颜色空间的二维投影。这个投影简化了三维CIE XYZ色彩空间，使得颜色信息能在平面图上表示出来，便于观察和分析。</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>&gt; CIE XYZ色彩空间：这是由国际照明委员会（CIE）定义的一个标准色彩空间，它使用三个维度（X、Y、Z）来表示颜色。X轴代表红色的刺激，Y轴代表绿色的刺激，Z轴代表蓝色的刺激，但实际上这三个轴并不直接对应于我们通常理解的红、绿、蓝颜色，而是基于人眼对不同波长光线的响应。
-&gt;
-&gt; 色品图的形成：色品图是通过将CIE XYZ空间中的颜色数据投影到一个二维平面上得到的。这个二维平面通常使用x和y坐标，其中x = X/(X+Y+Z)和y = Y/(X+Y+Z)，这样做的目的是为了展示颜色的色度，即颜色的色调和饱和度，而不考虑亮度。
-&gt;
-&gt; 色品图的特性：色品图的边缘代表单色光谱的颜色，从紫色到红色再到黄色，形成一个马蹄形的轮廓。这个轮廓内的每一点代表一种混合颜色。色品图不显示亮度信息，因此它是二维的，只表示颜色的相对比例。
-&gt;
-&gt; 重要性：尽管色品图是二维的，但它能够有效地区分不同颜色的色调和饱和度，对于色彩管理和颜色科学的研究非常重要。通过这个二维图，可以直观地看到不同颜色之间的关系，以及颜色混合的规律。
-</code></pre></div></td></tr></table></div>
-
-<p>人可能会因为基因和疾病的原因，导致其中几种视锥细胞无法正常工作。这便是色弱或者色盲。比如对</p>
-<p>自然界种，也存在着和人不同的感光器官性能不同的动物。比如皮皮虾有16种视锥细胞（恐怖如斯），皮皮虾可见波长范围也比人类广，甚至可以探测到光的偏振状态。</p>
-<p><img alt="pipixia" src="../img/human_pipixia.png" /></p>
-<h2 id="科研配色原则">科研配色原则<a class="headerlink" href="#科研配色原则" title="Permanent link">#</a></h2>
-<p>此部分参考了<a href="https://onlinelibrary.wiley.com/doi/10.1002/anie.202114910">Coloring Chemistry</a>。</p>
-<p>主要有三点要求：1. 配色是辅助. 2.与明度变化一致。3.色弱色盲对策。 </p>
-<p>简单来说就是色彩这个三维流形。 不管你怎么降维都应该是有着颜色随着数值单方向变化的图。不能转成灰度图之后发现灰度随着数值增加一会变大一会变小。</p>
-<h3 id="配色的作用应该是辅助的而非必须的">配色的作用应该是辅助的而非必须的<a class="headerlink" href="#配色的作用应该是辅助的而非必须的" title="Permanent link">#</a></h3>
-<p>考虑使用不同的纹理、符号、排版或注释。</p>
-<h3 id="填色图应该选择感知一致的配色方案">填色图应该选择感知一致的配色方案<a class="headerlink" href="#填色图应该选择感知一致的配色方案" title="Permanent link">#</a></h3>
-<p>感知一致（perceptual uniform）指的是颜色所包含的信息要与明度的变化趋势一致。</p>
-<h3 id="色盲色弱对策">色盲、色弱对策<a class="headerlink" href="#色盲色弱对策" title="Permanent link">#</a></h3>
-<h2 id="有用的网站">有用的网站<a class="headerlink" href="#有用的网站" title="Permanent link">#</a></h2>
+<h1 id="如何从零搭建私有云盘服务器-markdown-教程">如何从零搭建私有云盘服务器 (Markdown 教程)<a class="headerlink" href="#如何从零搭建私有云盘服务器-markdown-教程" title="Permanent link">#</a></h1>
+<p>本教程旨在引导您完成从硬件选择到软件部署的全过程，最终搭建一个完全由您掌控、安全可靠的个人云盘。</p>
+<p>整个过程分为五大步骤：</p>
+<ol>
+<li><strong>硬件选择</strong></li>
+<li><strong>系统安装</strong></li>
+<li><strong>网络配置</strong></li>
+<li><strong>云盘软件部署</strong></li>
+<li><strong>安全与维护</strong></li>
+</ol>
+<h2 id="第一步硬件选择-hardware">第一步：硬件选择 (Hardware)<a class="headerlink" href="#第一步硬件选择-hardware" title="Permanent link">#</a></h2>
+<p>这是所有工作的基础，您可以根据预算和需求灵活选择。</p>
+<h3 id="1-利用旧电脑笔记本-repurpose-old-pclaptop">1. 利用旧电脑/笔记本 (Repurpose Old PC/Laptop)<a class="headerlink" href="#1-利用旧电脑笔记本-repurpose-old-pclaptop" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>优点</strong>: 成本极低，性能通常足够满足个人云盘的需求。</li>
+<li><strong>缺点</strong>: 体积较大，噪音和功耗可能较高。</li>
+<li><strong>适用场景</strong>: 初期尝试，学习和测试。</li>
+</ul>
+<h3 id="2-单板计算机-single-board-computer-sbc">2. 单板计算机 (Single-Board Computer, SBC)<a class="headerlink" href="#2-单板计算机-single-board-computer-sbc" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>代表</strong>: 树莓派 (Raspberry Pi)、香橙派 (Orange Pi) 等。</li>
+<li><strong>优点</strong>: 体积极小，功耗极低 (通常只有几瓦)，无噪音，价格便宜。</li>
+<li><strong>缺点</strong>: 性能有限，I/O速度可能是瓶颈，存储需要外接。</li>
+<li><strong>适用场景</strong>: 轻度使用，对性能要求不高，追求极致低功耗。</li>
+</ul>
+<h3 id="3-网络附加存储-nas---network-attached-storage">3. 网络附加存储 (NAS - Network Attached Storage)<a class="headerlink" href="#3-网络附加存储-nas---network-attached-storage" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>代表</strong>: 群晖 (Synology)、威联通 (QNAP) 的成品NAS，或者自己DIY NAS。</li>
+<li><strong>优点</strong>: 专业为存储设计，功耗和噪音控制得很好，通常支持RAID以提高数据安全性。</li>
+<li><strong>缺点</strong>: 成品NAS价格较高，DIY NAS需要自己挑选配件。</li>
+<li><strong>适用场景</strong>: 对数据安全性和稳定性有较高要求的长期使用者。</li>
+</ul>
+<h3 id="4-微型服务器nuc-mini-server--nuc">4. 微型服务器/NUC (Mini Server / NUC)<a class="headerlink" href="#4-微型服务器nuc-mini-server--nuc" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>代表</strong>: Intel NUC, HP/Dell/Lenovo 的微型工作站。</li>
+<li><strong>优点</strong>: 体积小，性能强大，功耗控制不错，扩展性好。</li>
+<li><strong>缺点</strong>: 价格相对较高。</li>
+<li><strong>适用场景</strong>: 需要在云盘之外，还运行其他多种服务（如虚拟机、代码托管等）的用户。</li>
+</ul>
+<blockquote>
+<p><strong>硬件选择建议</strong>:</p>
+<ul>
+<li><strong>新手入门</strong>: 强烈推荐从 <strong>树莓派</strong> 或 <strong>闲置的旧电脑</strong> 开始，成本最低。</li>
+<li><strong>长期稳定使用</strong>: 推荐 <strong>DIY NAS</strong> 或购买 <strong>Intel NUC</strong>，性价比和灵活性更高。</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="第二步安装操作系统-operating-system">第二步：安装操作系统 (Operating System)<a class="headerlink" href="#第二步安装操作系统-operating-system" title="Permanent link">#</a></h2>
+<p>操作系统是服务器的灵魂，主流选择都是基于Linux的。</p>
+<h3 id="1-通用服务器linux发行版">1. 通用服务器Linux发行版<a class="headerlink" href="#1-通用服务器linux发行版" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>代表</strong>:<ul>
+<li><strong>Ubuntu Server</strong>: <a href="https://ubuntu.com/server">https://ubuntu.com/server</a></li>
+<li><strong>Debian</strong>: <a href="https://www.debian.org/">https://www.debian.org/</a></li>
+</ul>
+</li>
+<li><strong>优点</strong>: 极其灵活，社区支持强大，可以安装任何你想要的服务。</li>
+<li><strong>缺点</strong>: 需要一定的命令行操作基础，所有服务都需要手动配置。</li>
+</ul>
+<h3 id="2-专为nas设计的操作系统">2. 专为NAS设计的操作系统<a class="headerlink" href="#2-专为nas设计的操作系统" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>代表</strong>:<ul>
+<li><strong>TrueNAS (CORE/SCALE)</strong>: <a href="https://www.truenas.com/">https://www.truenas.com/</a></li>
+<li><strong>OpenMediaVault (OMV)</strong>: <a href="https://www.openmediavault.org/">https://www.openmediavault.org/</a></li>
+</ul>
+</li>
+<li><strong>优点</strong>: 提供图形化的Web管理界面，极大地简化了存储管理、用户管理和插件安装。</li>
+<li><strong>缺点</strong>: 灵活性相对通用发行版稍差。</li>
+</ul>
+<blockquote>
+<p><strong>系统选择建议</strong>:</p>
+<ul>
+<li><strong>如果你想少折腾，快速用上</strong>: 选择 <strong>OpenMediaVault</strong> 或 <strong>TrueNAS SCALE</strong>。</li>
+<li><strong>如果你享受从零开始配置的乐趣</strong>: 选择 <strong>Ubuntu Server</strong>。</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="第三步配置网络-networking">第三步：配置网络 (Networking)<a class="headerlink" href="#第三步配置网络-networking" title="Permanent link">#</a></h2>
+<p>这是实现“云”功能，即外网访问的关键。</p>
+<h3 id="1-设置静态内网ip">1. 设置静态内网IP<a class="headerlink" href="#1-设置静态内网ip" title="Permanent link">#</a></h3>
+<p>在你的路由器管理后台，将服务器的MAC地址与一个固定的内网IP地址 (例如 <code>192.168.1.100</code>) 进行绑定。这可以确保服务器在局域网中的地址不会改变。</p>
+<h3 id="2-实现外网访问">2. 实现外网访问<a class="headerlink" href="#2-实现外网访问" title="Permanent link">#</a></h3>
+<p>这是最核心的部分，有多种方案：</p>
+<h4 id="方案a-端口转发-port-forwarding--ddns-不推荐新手">方案A: 端口转发 (Port Forwarding) + DDNS (不推荐新手)<a class="headerlink" href="#方案a-端口转发-port-forwarding--ddns-不推荐新手" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>原理</strong>: 在路由器上设置规则，将来自公网特定端口的请求，转发到你服务器的内网IP。</li>
+<li><strong>前置条件</strong>: 需要有公网IP，并使用DDNS服务 (如 DuckDNS, No-IP) 绑定一个域名。</li>
+<li><strong>缺点</strong>: 将服务直接暴露在公网上，有安全风险。</li>
+</ul>
+<h4 id="方案b-vpn-虚拟专用网络">方案B: VPN (虚拟专用网络)<a class="headerlink" href="#方案b-vpn-虚拟专用网络" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>原理</strong>: 在服务器上搭建VPN服务 (如 <strong>WireGuard</strong>, <strong>OpenVPN</strong>)。从外部设备连接VPN后，即可像在局域网一样访问服务器。</li>
+<li><strong>优点</strong>: <strong>极其安全</strong>，所有流量都经过加密隧道。</li>
+<li><strong>缺点</strong>: 每个客户端都需要配置。</li>
+<li><strong>相关链接</strong>: <a href="https://www.wireguard.com/">WireGuard 官网</a></li>
+</ul>
+<h4 id="方案c-内网穿透反向隧道-强烈推荐">方案C: 内网穿透/反向隧道 (强烈推荐)<a class="headerlink" href="#方案c-内网穿透反向隧道-强烈推荐" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>原理</strong>: 利用第三方服务器进行流量中转，无需公网IP，也无需配置路由器。</li>
+<li><strong>代表服务</strong>: <strong>Cloudflare Tunnel</strong>, <strong>Tailscale</strong>, <strong>Zerotier</strong>。</li>
+<li><strong>优点</strong>: <strong>配置简单且极其安全</strong>，是目前个人用户的最佳实践。</li>
+<li><strong>相关链接</strong>: <a href="https://www.google.com/search?q=https://www.cloudflare.com/zh-cn/products/zero-trust/tunnel/">Cloudflare Zero Trust</a></li>
+</ul>
+<blockquote>
+<p><strong>网络方案建议</strong>:</p>
+<ul>
+<li>为了安全和便利，强烈推荐使用 <strong>Cloudflare Tunnel</strong> 或 <strong>Tailscale</strong>。</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="第四步部署云盘软件-cloud-drive-software">第四步：部署云盘软件 (Cloud Drive Software)<a class="headerlink" href="#第四步部署云盘软件-cloud-drive-software" title="Permanent link">#</a></h2>
+<blockquote>
+<p><strong>核心建议</strong>: 强烈推荐使用 <strong>Docker</strong> 来部署云盘应用。它能将应用及其依赖打包在独立的容器中，实现快速部署、轻松迁移和互不干扰。</p>
+</blockquote>
+<h3 id="1-nextcloud">1. Nextcloud<a class="headerlink" href="#1-nextcloud" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>描述</strong>: 功能最全面的开源私有云解决方案，集成了网盘、日历、联系人、在线文档编辑、照片管理等。</li>
+<li><strong>优点</strong>: 功能强大，生态成熟，客户端全平台支持。</li>
+<li><strong>缺点</strong>: 相对消耗资源。</li>
+<li><strong>官网</strong>: <a href="https://nextcloud.com/">https://nextcloud.com/</a></li>
+</ul>
+<h3 id="2-seafile">2. Seafile<a class="headerlink" href="#2-seafile" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>描述</strong>: 以高性能和文件同步效率著称，特别适合处理大量小文件。</li>
+<li><strong>优点</strong>: 文件同步速度快，资源占用较低，版本控制功能强大。</li>
+<li><strong>缺点</strong>: 附加功能不如Nextcloud丰富。</li>
+<li><strong>官网</strong>: <a href="https://www.seafile.com/">https://www.seafile.com/</a></li>
+</ul>
+<h3 id="3-file-browser">3. File Browser<a class="headerlink" href="#3-file-browser" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>描述</strong>: 一个极其轻量级的、纯粹的网页文件管理和分享工具。</li>
+<li><strong>优点</strong>: 部署极其简单，资源占用极低。</li>
+<li><strong>缺点</strong>: 功能单一，仅限于文件上传、下载、分享。</li>
+<li><strong>官网</strong>: <a href="https://filebrowser.org/">https://filebrowser.org/</a></li>
+</ul>
+<blockquote>
+<p><strong>部署建议</strong>:</p>
+<ul>
+<li><strong>追求功能全面</strong>: 选择 <strong>Nextcloud</strong>。</li>
+<li><strong>追求性能和同步速度</strong>: 选择 <strong>Seafile</strong>。</li>
+<li>学习并使用 <strong>Docker</strong> 和 <strong>Docker Compose</strong> 会让你的运维工作事半功倍。</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="第五步数据备份与安全-backup--security">第五步：数据备份与安全 (Backup &amp; Security)<a class="headerlink" href="#第五步数据备份与安全-backup--security" title="Permanent link">#</a></h2>
+<blockquote>
+<p><strong>重要</strong>: 自己托管数据，意味着**您**是数据安全的唯一负责人。<strong>RAID不是备份！</strong></p>
+</blockquote>
+<h3 id="1-数据备份">1. 数据备份<a class="headerlink" href="#1-数据备份" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>遵守3-2-1备份原则</strong>: 至少有 <strong>3</strong> 份数据副本，储存在 <strong>2</strong> 种不同的介质上，其中 <strong>1</strong> 份放在异地。</li>
+<li><strong>备份工具</strong>: 使用 <code>rsync</code>, <code>Restic</code>, <code>Duplicati</code> 等工具，定期将重要数据加密备份到另一个硬盘，或者备份到商业云存储 (如 Backblaze B2, AWS S3) 中。</li>
+</ul>
+<h3 id="2-安全加固">2. 安全加固<a class="headerlink" href="#2-安全加固" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>定期更新</strong>: 及时更新操作系统和所有应用软件。</li>
+<li><strong>使用HTTPS</strong>: 为你的服务启用HTTPS加密。(Cloudflare Tunnel可自动完成)</li>
+<li><strong>强密码策略</strong>: 为所有账户设置强密码，并开启2FA。</li>
+<li><strong>配置防火墙</strong>: 使用 <code>ufw</code> 等工具，只开放必要的端口。</li>
+<li><strong>安装Fail2ban</strong>: 自动禁止多次尝试登录失败的IP，防止暴力破解。</li>
+</ul>
+<hr />
+<h2 id="总结流程-checklist">总结流程 (Checklist)<a class="headerlink" href="#总结流程-checklist" title="Permanent link">#</a></h2>
+<ol class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>准备硬件</strong>: 找一台旧电脑或买个树莓派/NUC。</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>安装系统</strong>: 安装Ubuntu Server或OpenMediaVault。</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>内网配置</strong>: 在路由器上给服务器设置一个固定IP。</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>外网访问</strong>: 配置Cloudflare Tunnel或VPN，实现远程安全访问。</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>部署应用</strong>: 使用Docker安装Nextcloud或Seafile。</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>最终保障</strong>: 设置一个自动化的备份方案，并保持系统更新。</li>
+</ol>
+<p>祝您搭建顺利！</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
-      最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年4月15日 07:14:21 UTC"><span class="timeago" datetime="2025-04-15T07:14:21+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年4月15日 07:14:21 UTC">2025-04-15</span>
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年9月19日 01:26:30 UTC"><span class="timeago" datetime="2025-09-19T01:26:30+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月19日 01:26:30 UTC">2025-09-19</span>
       
         <br>
-        创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年4月14日 13:46:22 UTC"><span class="timeago" datetime="2025-04-14T13:46:22+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年4月14日 13:46:22 UTC">2025-04-14</span>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年9月19日 01:26:30 UTC"><span class="timeago" datetime="2025-09-19T01:26:30+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月19日 01:26:30 UTC">2025-09-19</span>
       
     
   </small>
@@ -2380,7 +2840,7 @@
           
             <a href="#" class="md-top md-icon" data-md-component="top" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-              回到页面顶部
+              Back to top
             </a>
           
         </main>
@@ -2408,18 +2868,22 @@
         <div class="md-dialog__inner md-typeset"></div>
       </div>
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
       
       
-        <script src="../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+        <script src="../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
         
-          <script src="../../../js/timeago.min.js"></script>
+          <script src="../../../../js/timeago.min.js"></script>
         
-          <script src="../../../js/timeago_mkdocs_material.js"></script>
+          <script src="../../../../js/timeago_mkdocs_material.js"></script>
+        
+          <script src="../../../../js/timeago.min.js"></script>
+        
+          <script src="../../../../js/timeago_mkdocs_material.js"></script>
         
           <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
         
-          <script src="../../../js/scheme.js"></script>
+          <script src="../../../../js/scheme.js"></script>
         
       
     </body>
