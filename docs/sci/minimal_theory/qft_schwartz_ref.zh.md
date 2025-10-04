@@ -2,6 +2,16 @@
 
 我认为 M. D. Schwartz 的《量子场论与标准模型》是目前最适合学生阅读的 QFT 教材之一。语言亲切、铺垫温和，常常在读者产生疑问后不久就给出解释，阅读体验很好。下面是围绕本书的系统化学习资源与建议。
 
+| Schwartz 教材部分 / 核心章节 | 核心概念 | 主要视频资源 (KAIST PH653) | 补充视频资源 (Coleman/MIT) | 推荐补充读物 |
+|---|---|---|---|---|
+| 第一部分：基础 (第 1-7 章) | 第二次量子化、费曼规则、S 矩阵 | 大约第 1-4 周 | Coleman 讲座 1-8 (正则量子化) | Zee, Part I (路径积分的直观理解) |
+| 第二部分：QED (第 8-14 章) | 规范不变性、旋量、QED 路径积分 | 大约第 5-8 周 | MIT OCW 8.323 讲座 4-10 (旋量与 QED) | Peskin & Schroeder, Ch. 3-5 |
+| 第三部分：重整化 (第 15-24 章) | 圈图、发散、重整化群、EFT | 大约第 9-12 周 | Coleman 讲座 18-23 (经典重整化) | Peskin & Schroeder, Ch. 6-7, 10-12 |
+| 第四部分：标准模型 (第 25-32 章) | 非阿贝尔规范理论、QCD、电弱对称性破缺 | QFT II 课程 (参考东北大学教学大纲) | Coleman 讲座 24-28 (对称性破缺) | Peskin & Schroeder, Ch. 15-17, 20 |
+| 第五部分：高等专题 (第 33-36 章) | 红外安全、SCET、重夸克 |  |  | Schwartz 的专题讲座 1 |
+
+各类高等专题研讨会	Schwartz 本人的研究论文
+
 ## 官方资源与作者页面
 - 教材官网（必读）：[schwartzqft.fas.harvard.edu](https://schwartzqft.fas.harvard.edu)  
     - 官方勘误与更新集中发布，强烈建议加入书签并定期查阅。  
@@ -67,6 +77,6 @@ Schwartz 的书既清晰又富有现象学导向，适合把握从理论到实�
 - 非官方习题解答：[非官方习题解答（参考、非教学性）](https://ytcs.github.io/schwartz.pdf)  
 - Physics StackExchange 相关讨论：[Solutions to problems in Schwartz QFT and the Standard Model](https://physics.stackexchange.com/questions/794151/solutions-to-problems-in-schwartz-qft-and-the-standard-model)  
 - Jim Halverson QFT2（GitHub）：[https://github.com/jimhalverson/QFT2](https://github.com/jimhalverson/QFT2)  
-- KAIST PH653 / 相关视频合集（YouTube playlist）
+- KAIST PH653 / 相关视频合集（YouTube playlist）https://www.youtube.com/@generalized_symmetry
 
 （文中所列链接与资源以官网和原始出处为准，阅读时请注意版权与使用条款）
