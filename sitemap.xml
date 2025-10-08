@@ -162,6 +162,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/cheatshet/root_geant4_install/"/>
     </url>
     <url>
+        <loc>https://tianbaiting.github.io/sci/cheatshet/shell/</loc>
+        <lastmod>2025-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/cheatshet/shell/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/cheatshet/shell/"/>
+    </url>
+    <url>
         <loc>https://tianbaiting.github.io/sci/cheatshet/termux/</loc>
         <lastmod>2025-10-08</lastmod>
         <changefreq>daily</changefreq>
@@ -188,6 +195,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_code/c%2B%2Bproject/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_code/c%2B%2Bproject/"/>
+    </url>
+    <url>
+        <loc>https://tianbaiting.github.io/sci/minimal_code/cmake/</loc>
+        <lastmod>2025-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_code/cmake/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_code/cmake/"/>
     </url>
     <url>
         <loc>https://tianbaiting.github.io/sci/minimal_code/color_scheme/</loc>
@@ -754,6 +768,7 @@
         <lastmod>2025-10-08</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/cheatshet/shell/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/cheatshet/shell/"/>
     </url>
     <url>
         <loc>https://tianbaiting.github.io/en/sci/cheatshet/site/</loc>
@@ -788,6 +803,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_code/c%2B%2Bproject/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_code/c%2B%2Bproject/"/>
+    </url>
+    <url>
+        <loc>https://tianbaiting.github.io/en/sci/minimal_code/cmake/</loc>
+        <lastmod>2025-10-08</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_code/cmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_code/cmake/"/>
     </url>
     <url>
         <loc>https://tianbaiting.github.io/en/sci/minimal_code/color_scheme/</loc>
