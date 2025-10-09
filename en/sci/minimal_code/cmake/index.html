@@ -1031,6 +1031,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="true">
@@ -1329,6 +1331,20 @@
     <li class="md-nav__item">
       <a href="../python_def_class/" class="md-nav__link">
         python 定义类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_lib_self/" class="md-nav__link">
+        python 包的创建与使用
       </a>
     </li>
   
@@ -2576,7 +2592,7 @@ extern const char* msg;
 // 在源文件中“定义”实现
 const char* msg = &quot;Hello from b.cpp with header!&quot;;
 </code></pre></div>
-<p>include 相当于在预处理把 b.h 的内容直接插入到 main.cpp 和 b.cpp 里。这样 main.cpp 和 b.cpp 都能看到对 msg 的声明，编译器就知道 msg 是什么了。</p>
+<p>include 相当于在预处理把 b.h 的内容直接插入到 main.cpp 和 b.cpp 里。这样 main.cpp 和 b.cpp 都能看到对 msg 的声明，编译器就知道 msg 是什么了。 所以头文件其实给的一个可以互相嵌套使用的声明域，不需要手动写所有的声明。可以减少重复，减少依赖（或者说是隐藏依赖）。</p>
 <h3 id="动态库-静态库">动态库 静态库<a class="headerlink" href="#动态库-静态库" title="Permanent link">#</a></h3>
 <h4 id="无头文件的不规范写法">无头文件的不规范写法<a class="headerlink" href="#无头文件的不规范写法" title="Permanent link">#</a></h4>
 <p>打包成动态库<br />
@@ -2629,13 +2645,6 @@ g++<span class="w"> </span>main.cpp<span class="w"> </span>-L.<span class="w"> <
 <span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>.:<span class="nv">$LD_LIBRARY_PATH</span>
 ./main
 </code></pre></div></p>
-<p>简短注意事项<br />
-- 头文件保证声明与定义一致，减少调用方错误；不使用头文件易出现类型/签名不匹配难以排查的问题。<br />
-- 模板与 inline 必须放头文件；若需要跨语言或控制可见性，需在头文件中添加相应的修饰（extern "C"、导出宏等）。<br />
-- 保持头文件最小且稳定，避免在头文件中包含大量实现细节以减少不必要的重编译。</p>
-<p>简短注意事项<br />
-- 头文件保证声明与定义一致，减少调用方错误；不使用头文件易出现类型/签名不匹配难以排查的问题。<br />
-- 模板与 inline 必须放头文件；若需要跨语言或控制可见性，需在头文件中添加相应的修饰（extern "C"、导出宏等）。</p>
 <h2 id="make">make<a class="headerlink" href="#make" title="Permanent link">#</a></h2>
 <p>一个较好的文档  <a href="https://seisman.github.io/how-to-write-makefile/index.html">https://seisman.github.io/how-to-write-makefile/index.html</a></p>
 <p>make原理，主要通过文件的时间戳来判断哪些文件需要重新编译。每个目标文件都有一个依赖列表，make 会检查这些依赖文件的修改时间，如果发现某个依赖文件比目标文件新，就会重新编译该目标文件。</p>
@@ -2844,7 +2853,7 @@ make
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月8日 11:57:22 UTC"><span class="timeago" datetime="2025-10-08T11:57:22+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月8日 11:57:22 UTC">2025-10-08</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月9日 02:53:57 UTC"><span class="timeago" datetime="2025-10-09T02:53:57+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月9日 02:53:57 UTC">2025-10-09</span>
       
         <br>
         Created:

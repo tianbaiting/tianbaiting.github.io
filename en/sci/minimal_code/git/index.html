@@ -1031,6 +1031,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="true">
@@ -1357,6 +1359,20 @@
     <li class="md-nav__item">
       <a href="../python_def_class/" class="md-nav__link">
         python 定义类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python_lib_self/" class="md-nav__link">
+        python 包的创建与使用
       </a>
     </li>
   
@@ -2581,9 +2597,10 @@
 <p><code>--soft</code>: 只移动 main 分支的指针到指定的 <commit>，工作目录和暂存区保持不变。</p>
 </li>
 <li><code>--mixed</code>（默认）:移动指针，并用该 <commit> 的内容重置暂存区，工作目录保持不变。</li>
-<li>
-<p><code>--hard</code>: 三位一体的重置，移动指针，并用该 <commit> 的内容同时覆盖暂存区和工作目录；这是一个危险操作，可能会丢失工作目录的修改。</p>
-</li>
+<li><code>--hard</code>: 三位一体的重置，移动指针，并用该 <commit> 的内容同时覆盖暂存区和工作目录；这是一个危险操作，可能会丢失工作目录的修改。</li>
+</ol>
+<p><commit> 可以是分支名（如 main）、标签名（如 v1.0）、HEAD~n（表示当前 HEAD 的第 n 个祖先），hash值</p>
+<ol>
 <li>
 <p><strong><code>git revert &lt;commit&gt;</code></strong>: 创建一个反向操作的新 Commit，而不是移动指针。</p>
 </li>
@@ -2593,6 +2610,8 @@
 <li><code>git switch &lt;branch&gt;</code>: 将 HEAD 指针从指向当前分支，改为指向另一个分支。</li>
 <li><code>git checkout &lt;commit&gt;</code>: 让 HEAD 直接指向一个具体的 Commit 节点，而不是一个分支。这会使你进入 "detached HEAD"（分离头指针）状态。</li>
 </ol>
+<p>git branch -f <branch> <commit>: 强制将某个分支指针移动到指定的 Commit。</p>
+<p>git checkout <commit></p>
 <h3 id="重写历史">重写历史<a class="headerlink" href="#重写历史" title="Permanent link">#</a></h3>
 <p><strong><code>git rebase</code></strong>: 复制一系列节点并嫁接到另一个位置。<br />
 注意：会改变历史，谨慎在共享分支上使用。</p>
@@ -2654,7 +2673,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月8日 13:14:10 UTC"><span class="timeago" datetime="2025-10-08T13:14:10+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月8日 13:14:10 UTC">2025-10-08</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月9日 02:53:57 UTC"><span class="timeago" datetime="2025-10-09T02:53:57+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月9日 02:53:57 UTC">2025-10-09</span>
       
         <br>
         Created:
