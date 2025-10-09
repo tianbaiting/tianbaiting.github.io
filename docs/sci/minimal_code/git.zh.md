@@ -43,16 +43,26 @@ Git 是一个内容寻址的文件系统，其上层是一个由 Commit 对象�
    - `--mixed`（默认）:移动指针，并用该 <commit> 的内容重置暂存区，工作目录保持不变。
    - `--hard`: 三位一体的重置，移动指针，并用该 <commit> 的内容同时覆盖暂存区和工作目录；这是一个危险操作，可能会丢失工作目录的修改。
 
+<commit> 可以是分支名（如 main）、标签名（如 v1.0）、HEAD~n（表示当前 HEAD 的第 n 个祖先），hash值
+
 2. **`git revert <commit>`**: 创建一个反向操作的新 Commit，而不是移动指针。
 
 3. **`git checkout` / `git switch`**: 本质: 移动 HEAD 指针。
    - `git switch <branch>`: 将 HEAD 指针从指向当前分支，改为指向另一个分支。
    - `git checkout <commit>`: 让 HEAD 直接指向一个具体的 Commit 节点，而不是一个分支。这会使你进入 "detached HEAD"（分离头指针）状态。
+  
+
+git branch -f <branch> <commit>: 强制将某个分支指针移动到指定的 Commit。
+
+git checkout <commit>
+
 
 ### 重写历史
 
 **`git rebase`**: 复制一系列节点并嫁接到另一个位置。  
 注意：会改变历史，谨慎在共享分支上使用。
+
+
 
 ## Reflog: 终极安全网
 

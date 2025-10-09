@@ -1,5 +1,5 @@
 draft/
-.github/
+# .github/
 .foam/
 site/
 bak_overrides/

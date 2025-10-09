@@ -359,3 +359,7 @@ set -euo pipefail   # 推荐在脚本顶部开启（严格模式）
 
 和c类似
 
+```
+cat tmp | awk
+
+```
