@@ -1,6 +1,6 @@
 
   <!doctype html>
-  <html lang="zh" class="no-js">
+  <html lang="en" class="no-js">
     <head>
       
         <meta charset="utf-8">
@@ -8,20 +8,20 @@
         
         
         
-          <link rel="canonical" href="https://tianbaiting.github.io/sci/project/D_polar_exp/d_breakup_theory/">
+          <link rel="canonical" href="https://tianbaiting.github.io/en/sci/minimal_code/class_dataTransport/">
         
         
-          <link rel="prev" href="../caogao/">
+          <link rel="prev" href="../c%2B%2Bproject/">
         
         
-          <link rel="next" href="../my_polarimeter/">
+          <link rel="next" href="../cmake/">
         
         <link rel="icon" href="../../../../assets/images/favicon.png">
         <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.0.4">
       
       
         
-          <title>氘核破裂理论上可以如何计算 - TBT个人网站</title>
+          <title>class dataTransport - TBT个人网站</title>
         
       
       
@@ -43,6 +43,8 @@
           <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
         
       
+      
+        <link rel="stylesheet" href="../../../../css/timeago.css">
       
         <link rel="stylesheet" href="../../../../css/timeago.css">
       
@@ -77,8 +79,8 @@
       <div data-md-component="skip">
         
           
-          <a href="#氘核破裂理论上可以如何计算" class="md-skip">
-            跳转至
+          <a href="#面向对象设计教程管理类之间的数据依赖和解耦" class="md-skip">
+            Skip to content
           </a>
         
       </div>
@@ -90,8 +92,8 @@
         
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../.." title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../" title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              氘核破裂理论上可以如何计算
+              class dataTransport
             
           </span>
         </div>
@@ -131,9 +133,9 @@
 
   <div class="md-header__button md-lang">
     
-      <a href="./" hreflang="zh">简体中文</a>
+      <a href="../../../../sci/minimal_code/class_dataTransport/" hreflang="zh">简体中文</a>
     
-      <a href="../../../../en/sci/project/D_polar_exp/d_breakup_theory/" hreflang="en">English</a>
+      <a href="./" hreflang="en">English</a>
     
   </div>
 
@@ -146,18 +148,18 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="查找">
+      <nav class="md-search__options" aria-label="Search">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -167,7 +169,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            正在初始化搜索引擎
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -187,7 +189,7 @@
           
             
               
-<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -197,8 +199,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../.." class="md-tabs__link">
-      主页
+    <a href="../../../" class="md-tabs__link">
+      main
     </a>
   </li>
 
@@ -209,7 +211,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../../howtomakewebsite/" class="md-tabs__link">
+    <a href="../../../howtomakewebsite/" class="md-tabs__link">
       网站制作
     </a>
   </li>
@@ -224,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../MickeyMiaoMiao/citetree/" class="md-tabs__link">
+      <a href="../../../MickeyMiaoMiao/citetree/" class="md-tabs__link">
         MickeyMiaoMiao
       </a>
     </li>
@@ -240,7 +242,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../life/flavor/" class="md-tabs__link">
+      <a href="../../../life/flavor/" class="md-tabs__link">
         Life
       </a>
     </li>
@@ -258,7 +260,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../todolist/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../todolist/" class="md-tabs__link md-tabs__link--active">
         Sci
       </a>
     </li>
@@ -274,7 +276,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-tabs__link">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-tabs__link">
         日本生存指南
       </a>
     </li>
@@ -300,9 +302,9 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+    <a href="../../../" title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -321,8 +323,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
-        主页
+      <a href="../../../" class="md-nav__link">
+        main
       </a>
     </li>
   
@@ -336,7 +338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../howtomakewebsite/" class="md-nav__link">
+      <a href="../../../howtomakewebsite/" class="md-nav__link">
         网站制作
       </a>
     </li>
@@ -388,7 +390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../MickeyMiaoMiao/citetree/" class="md-nav__link">
+      <a href="../../../MickeyMiaoMiao/citetree/" class="md-nav__link">
         引文网络
       </a>
     </li>
@@ -402,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../MickeyMiaoMiao/firefoxplug/" class="md-nav__link">
+      <a href="../../../MickeyMiaoMiao/firefoxplug/" class="md-nav__link">
         浏览器插件
       </a>
     </li>
@@ -416,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../MickeyMiaoMiao/opvpn/" class="md-nav__link">
+      <a href="../../../MickeyMiaoMiao/opvpn/" class="md-nav__link">
         opvpn
       </a>
     </li>
@@ -467,7 +469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../MickeyMiaoMiao/useful_tips/overleaf_vscode%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../../../MickeyMiaoMiao/useful_tips/overleaf_vscode%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         overleaf插件
       </a>
     </li>
@@ -481,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../MickeyMiaoMiao/useful_tips/%E5%88%A9%E7%94%A8%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E5%88%86%E5%B1%8F/" class="md-nav__link">
+      <a href="../../../MickeyMiaoMiao/useful_tips/%E5%88%A9%E7%94%A8%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E5%88%86%E5%B1%8F/" class="md-nav__link">
         移动设备作为电脑的分屏
       </a>
     </li>
@@ -495,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../MickeyMiaoMiao/useful_tips/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84vscode/" class="md-nav__link">
+      <a href="../../../MickeyMiaoMiao/useful_tips/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84vscode/" class="md-nav__link">
         如何安装多个版本的code
       </a>
     </li>
@@ -509,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../MickeyMiaoMiao/useful_tips/%E6%9C%89%E8%B6%A3%E7%9A%84%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+      <a href="../../../MickeyMiaoMiao/useful_tips/%E6%9C%89%E8%B6%A3%E7%9A%84%E6%8F%92%E4%BB%B6/" class="md-nav__link">
         有趣的插件
       </a>
     </li>
@@ -579,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../life/flavor/" class="md-nav__link">
+      <a href="../../../life/flavor/" class="md-nav__link">
         探索味型奥秘：以川菜为例的烹饪科学指南
       </a>
     </li>
@@ -593,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../life/z30_DeepSky/" class="md-nav__link">
+      <a href="../../../life/z30_DeepSky/" class="md-nav__link">
         深空摄影
       </a>
     </li>
@@ -607,7 +609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../life/%E7%84%A6%E8%99%91/" class="md-nav__link">
+      <a href="../../../life/%E7%84%A6%E8%99%91/" class="md-nav__link">
         焦虑
       </a>
     </li>
@@ -621,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../life/%E9%A3%9F%E7%89%A9%E4%B8%AD%E6%AF%92/" class="md-nav__link">
+      <a href="../../../life/%E9%A3%9F%E7%89%A9%E4%B8%AD%E6%AF%92/" class="md-nav__link">
         易发中毒食物
       </a>
     </li>
@@ -635,7 +637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../life/%E9%A3%9F%E7%89%A9%E5%AE%89%E5%85%A8%E6%B8%A9%E5%BA%A6/" class="md-nav__link">
+      <a href="../../../life/%E9%A3%9F%E7%89%A9%E5%AE%89%E5%85%A8%E6%B8%A9%E5%BA%A6/" class="md-nav__link">
         食物安全温度
       </a>
     </li>
@@ -682,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../life/%E5%81%A5%E5%BA%B7/workout_diet/" class="md-nav__link">
+      <a href="../../../life/%E5%81%A5%E5%BA%B7/workout_diet/" class="md-nav__link">
         高性能餐盘：现代健身爱好者的循证营养蓝图
       </a>
     </li>
@@ -696,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../life/%E5%81%A5%E5%BA%B7/%E9%BC%BB%E7%82%8E/" class="md-nav__link">
+      <a href="../../../life/%E5%81%A5%E5%BA%B7/%E9%BC%BB%E7%82%8E/" class="md-nav__link">
         鼻炎综合管理临床报告：过敏性鼻炎与血管运动性鼻炎的深度解析
       </a>
     </li>
@@ -766,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../todolist/" class="md-nav__link">
+      <a href="../../todolist/" class="md-nav__link">
         todo
       </a>
     </li>
@@ -807,6 +809,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
@@ -827,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheatshet/bashrc/" class="md-nav__link">
+      <a href="../../cheatshet/bashrc/" class="md-nav__link">
         Bashrc
       </a>
     </li>
@@ -841,8 +845,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheatshet/docker/" class="md-nav__link">
-        docker
+      <a href="../../cheatshet/docker/" class="md-nav__link">
+        Docker
       </a>
     </li>
   
@@ -855,8 +859,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheatshet/git/" class="md-nav__link">
-        git 备忘单
+      <a href="../../cheatshet/git/" class="md-nav__link">
+        git cheatsheat
       </a>
     </li>
   
@@ -869,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheatshet/linux/" class="md-nav__link">
+      <a href="../../cheatshet/linux/" class="md-nav__link">
         Linux
       </a>
     </li>
@@ -883,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheatshet/number_order_dimension/" class="md-nav__link">
+      <a href="../../cheatshet/number_order_dimension/" class="md-nav__link">
         数量级估计
       </a>
     </li>
@@ -897,7 +901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheatshet/root_geant4_install/" class="md-nav__link">
+      <a href="../../cheatshet/root_geant4_install/" class="md-nav__link">
         Root geant4 install
       </a>
     </li>
@@ -911,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheatshet/shell/" class="md-nav__link">
+      <a href="../../cheatshet/shell/" class="md-nav__link">
         Shell
       </a>
     </li>
@@ -925,7 +929,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheatshet/termux/" class="md-nav__link">
+      <a href="../../cheatshet/site/" class="md-nav__link">
+        网页相关知识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/termux/" class="md-nav__link">
         termux 运行ubuntu
       </a>
     </li>
@@ -939,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cheatshet/vimrc/" class="md-nav__link">
+      <a href="../../cheatshet/vimrc/" class="md-nav__link">
         vim配置文件
       </a>
     </li>
@@ -958,14 +976,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" checked>
       
       
         
@@ -1021,7 +1041,7 @@
         
       
       
-        <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="true">
           Minimal code
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1039,7 +1059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/Operating_system/" class="md-nav__link">
+      <a href="../Operating_system/" class="md-nav__link">
         装系统
       </a>
     </li>
@@ -1053,7 +1073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/c%2B%2Bproject/" class="md-nav__link">
+      <a href="../c%2B%2Bproject/" class="md-nav__link">
         c++项目
       </a>
     </li>
@@ -1065,11 +1085,188 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../minimal_code/class_dataTransport/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          class dataTransport
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         class dataTransport
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#概述" class="md-nav__link">
+    概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#策略一组合--依赖注入composition--dependency-injection" class="md-nav__link">
+    策略一：组合 / 依赖注入（Composition / Dependency Injection）
+  </a>
+  
+    <nav class="md-nav" aria-label="策略一：组合 / 依赖注入（Composition / Dependency Injection）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-操作方式" class="md-nav__link">
+    1. 操作方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-设计权衡" class="md-nav__link">
+    2. 设计权衡
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-c-示例" class="md-nav__link">
+    3. C++ 示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#策略二函数参数传递" class="md-nav__link">
+    策略二：函数参数传递
+  </a>
+  
+    <nav class="md-nav" aria-label="策略二：函数参数传递">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-操作方式_1" class="md-nav__link">
+    1. 操作方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-设计权衡_1" class="md-nav__link">
+    2. 设计权衡
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-c-示例_1" class="md-nav__link">
+    3. C++ 示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#策略三数据结构参数接口隔离" class="md-nav__link">
+    策略三：数据结构参数（接口隔离）
+  </a>
+  
+    <nav class="md-nav" aria-label="策略三：数据结构参数（接口隔离）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-操作方式_2" class="md-nav__link">
+    1. 操作方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-设计权衡_2" class="md-nav__link">
+    2. 设计权衡
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-c-示例_2" class="md-nav__link">
+    3. C++ 示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#策略四全局访问--单例模式反模式慎用" class="md-nav__link">
+    策略四：全局访问 / 单例模式（反模式，慎用）
+  </a>
+  
+    <nav class="md-nav" aria-label="策略四：全局访问 / 单例模式（反模式，慎用）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-操作方式_3" class="md-nav__link">
+    1. 操作方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-设计权衡_3" class="md-nav__link">
+    2. 设计权衡
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#总结和建议" class="md-nav__link">
+    总结和建议
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1081,7 +1278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/cmake/" class="md-nav__link">
+      <a href="../cmake/" class="md-nav__link">
         cmake项目
       </a>
     </li>
@@ -1095,8 +1292,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/color_scheme/" class="md-nav__link">
-        科研配图
+      <a href="../color_scheme/" class="md-nav__link">
+        Color Scheme in Scientific Visualization
       </a>
     </li>
   
@@ -1109,8 +1306,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/format_guidelines/" class="md-nav__link">
-        格式规范
+      <a href="../format_guidelines/" class="md-nav__link">
+        Formatting Guidelines
       </a>
     </li>
   
@@ -1123,7 +1320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/fzf/" class="md-nav__link">
+      <a href="../fzf/" class="md-nav__link">
         FZF 模糊搜索工具完全教程
       </a>
     </li>
@@ -1137,7 +1334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/gdb/" class="md-nav__link">
+      <a href="../gdb/" class="md-nav__link">
         gdb 调试
       </a>
     </li>
@@ -1151,7 +1348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/geant4_oop/" class="md-nav__link">
+      <a href="../geant4_oop/" class="md-nav__link">
         揭秘面向对象编程：Geant4工具包深度导览
       </a>
     </li>
@@ -1165,7 +1362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/gemni_use_wen2cli/" class="md-nav__link">
+      <a href="../gemni_use_wen2cli/" class="md-nav__link">
         Gemini 使用限制与付费模式解析
       </a>
     </li>
@@ -1179,7 +1376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/git/" class="md-nav__link">
+      <a href="../git/" class="md-nav__link">
         Git
       </a>
     </li>
@@ -1193,8 +1390,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/jupyternotebook/" class="md-nav__link">
-        jupyter notebook
+      <a href="../jupyternotebook/" class="md-nav__link">
+        Jupyter Notebook
       </a>
     </li>
   
@@ -1207,7 +1404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/latex_graphics/" class="md-nav__link">
+      <a href="../latex_graphics/" class="md-nav__link">
         latex include graphics
       </a>
     </li>
@@ -1221,7 +1418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/python_def_class/" class="md-nav__link">
+      <a href="../python_def_class/" class="md-nav__link">
         python 定义类
       </a>
     </li>
@@ -1235,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/python_lib_self/" class="md-nav__link">
+      <a href="../python_lib_self/" class="md-nav__link">
         python 包的创建与使用
       </a>
     </li>
@@ -1249,7 +1446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/root_opener/" class="md-nav__link">
+      <a href="../root_opener/" class="md-nav__link">
         设置 ROOT 文件默认浏览器教程
       </a>
     </li>
@@ -1263,7 +1460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/root_plot/" class="md-nav__link">
+      <a href="../root_plot/" class="md-nav__link">
         root_plot
       </a>
     </li>
@@ -1277,7 +1474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/root_visual_geant4/" class="md-nav__link">
+      <a href="../root_visual_geant4/" class="md-nav__link">
         Root visual geant4
       </a>
     </li>
@@ -1291,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/server_clouddirve/" class="md-nav__link">
+      <a href="../server_clouddirve/" class="md-nav__link">
         如何从零搭建私有云盘服务器 (Markdown 教程)
       </a>
     </li>
@@ -1305,7 +1502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/server_clouddirve_example/" class="md-nav__link">
+      <a href="../server_clouddirve_example/" class="md-nav__link">
         Server clouddirve example
       </a>
     </li>
@@ -1319,7 +1516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/termux/" class="md-nav__link">
+      <a href="../termux/" class="md-nav__link">
         在 Termux 中安装 Ubuntu 桌面环境并运行 VS Code 的终极指南
       </a>
     </li>
@@ -1333,7 +1530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/vim_neovim/" class="md-nav__link">
+      <a href="../vim_neovim/" class="md-nav__link">
         Vim neovim
       </a>
     </li>
@@ -1347,7 +1544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/vscode_lsp/" class="md-nav__link">
+      <a href="../vscode_lsp/" class="md-nav__link">
         如何解决 VS Code 中的 C/C++ include 报错问题
       </a>
     </li>
@@ -1361,7 +1558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/zsh/" class="md-nav__link">
+      <a href="../zsh/" class="md-nav__link">
         Zsh 环境一键配置脚本
       </a>
     </li>
@@ -1375,7 +1572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_code/%E5%BE%85%E8%A7%A3%E5%86%B3%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" class="md-nav__link">
+      <a href="../%E5%BE%85%E8%A7%A3%E5%86%B3%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" class="md-nav__link">
         to be solved
       </a>
     </li>
@@ -1433,7 +1630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_theory/TransmissionLineEq/" class="md-nav__link">
+      <a href="../../minimal_theory/TransmissionLineEq/" class="md-nav__link">
         TransmissionLineEq
       </a>
     </li>
@@ -1447,7 +1644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_theory/dead_time/" class="md-nav__link">
+      <a href="../../minimal_theory/dead_time/" class="md-nav__link">
         Dead time
       </a>
     </li>
@@ -1461,7 +1658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_theory/qft_schwartz_ref/" class="md-nav__link">
+      <a href="../../minimal_theory/qft_schwartz_ref/" class="md-nav__link">
         Schwartz — 《量子场论与标准模型》学习资源指南
       </a>
     </li>
@@ -1475,7 +1672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../minimal_theory/scatering_theory/" class="md-nav__link">
+      <a href="../../minimal_theory/scatering_theory/" class="md-nav__link">
         散射理论
       </a>
     </li>
@@ -1494,16 +1691,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" checked>
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
       
       
         
@@ -1515,7 +1710,7 @@
         
       
       
-        <label class="md-nav__link" for="__nav_5_5" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_5_5" tabindex="0" aria-expanded="false">
           Project
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1533,7 +1728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../example/" class="md-nav__link">
+      <a href="../../project/example/" class="md-nav__link">
         hello world
       </a>
     </li>
@@ -1545,16 +1740,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_2" type="checkbox" id="__nav_5_5_2" checked>
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_2" type="checkbox" id="__nav_5_5_2" >
       
       
         
@@ -1582,7 +1775,7 @@
         
       
       
-        <label class="md-nav__link" for="__nav_5_5_2" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_5_5_2" tabindex="0" aria-expanded="false">
           D polar exp
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1600,7 +1793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Sipm_PMT/" class="md-nav__link">
+      <a href="../../project/D_polar_exp/Sipm_PMT/" class="md-nav__link">
         Sipm PMT参数对比
       </a>
     </li>
@@ -1614,7 +1807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../caogao/" class="md-nav__link">
+      <a href="../../project/D_polar_exp/caogao/" class="md-nav__link">
         Caogao
       </a>
     </li>
@@ -1626,66 +1819,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          氘核破裂理论上可以如何计算
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/d_breakup_theory/" class="md-nav__link">
         氘核破裂理论上可以如何计算
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#cdcc" class="md-nav__link">
-    CDCC
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tdse" class="md-nav__link">
-    TDSE
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faddeev" class="md-nav__link">
-    Faddeev
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1697,7 +1835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../my_polarimeter/" class="md-nav__link">
+      <a href="../../project/D_polar_exp/my_polarimeter/" class="md-nav__link">
         My polarimeter
       </a>
     </li>
@@ -1711,7 +1849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../other_polarmeter/" class="md-nav__link">
+      <a href="../../project/D_polar_exp/other_polarmeter/" class="md-nav__link">
         其他研究组的polarimeter
       </a>
     </li>
@@ -1725,7 +1863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../riken_web_source/" class="md-nav__link">
+      <a href="../../project/D_polar_exp/riken_web_source/" class="md-nav__link">
         riken 常见资源
       </a>
     </li>
@@ -1739,7 +1877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../scintillator/" class="md-nav__link">
+      <a href="../../project/D_polar_exp/scintillator/" class="md-nav__link">
         闪烁体光产额
       </a>
     </li>
@@ -1753,7 +1891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../spherical_operator/" class="md-nav__link">
+      <a href="../../project/D_polar_exp/spherical_operator/" class="md-nav__link">
         To show some relation
       </a>
     </li>
@@ -1767,7 +1905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../stastic/" class="md-nav__link">
+      <a href="../../project/D_polar_exp/stastic/" class="md-nav__link">
         统计
       </a>
     </li>
@@ -1781,7 +1919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sw-api/" class="md-nav__link">
+      <a href="../../project/D_polar_exp/sw-api/" class="md-nav__link">
         solidworks api接口
       </a>
     </li>
@@ -1795,7 +1933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../todo_list/" class="md-nav__link">
+      <a href="../../project/D_polar_exp/todo_list/" class="md-nav__link">
         To do list
       </a>
     </li>
@@ -1851,8 +1989,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../samurai/detector_samurai/" class="md-nav__link">
-        SAMURAI 光谱仪带电粒子探测器详细功能
+      <a href="../../project/samurai/detector_samurai/" class="md-nav__link">
+        Detailed Functions of Charged Particle Detectors in the SAMURAI Spectrometer
       </a>
     </li>
   
@@ -1908,8 +2046,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../samurai/anaroot/RIDF/" class="md-nav__link">
-        RIKEN RIDF 文件构成详解：数据块 (Block) 说明
+      <a href="../../project/samurai/anaroot/RIDF/" class="md-nav__link">
+        Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Description
       </a>
     </li>
   
@@ -1922,7 +2060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../samurai/anaroot/anaroot/" class="md-nav__link">
+      <a href="../../project/samurai/anaroot/anaroot/" class="md-nav__link">
         **ANAROOT 综合分析框架：
       </a>
     </li>
@@ -1936,8 +2074,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../samurai/anaroot/anaroot2version/" class="md-nav__link">
-        ANAROOT 详细中文文档
+      <a href="../../project/samurai/anaroot/anaroot2version/" class="md-nav__link">
+        ANAROOT Detailed Documentation
       </a>
     </li>
   
@@ -1950,7 +2088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../samurai/anaroot/anaroot_decoder/" class="md-nav__link">
+      <a href="../../project/samurai/anaroot/anaroot_decoder/" class="md-nav__link">
         Anaroot decoder
       </a>
     </li>
@@ -1964,7 +2102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../samurai/anaroot/anaroot_nebula/" class="md-nav__link">
+      <a href="../../project/samurai/anaroot/anaroot_nebula/" class="md-nav__link">
         Anaroot nebula
       </a>
     </li>
@@ -1978,7 +2116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../samurai/anaroot/anaroot_nebula_reconstructionfunction/" class="md-nav__link">
+      <a href="../../project/samurai/anaroot/anaroot_nebula_reconstructionfunction/" class="md-nav__link">
         Anaroot nebula reconstructionfunction
       </a>
     </li>
@@ -1992,8 +2130,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../samurai/anaroot/anaroot_pdc/" class="md-nav__link">
-        anaroot pdcS
+      <a href="../../project/samurai/anaroot/anaroot_pdc/" class="md-nav__link">
+        ANAROOT Libraries for PDC Analysis
       </a>
     </li>
   
@@ -2052,7 +2190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../samurai/smsimulator/FDC2/" class="md-nav__link">
+      <a href="../../project/samurai/smsimulator/FDC2/" class="md-nav__link">
         FDC2
       </a>
     </li>
@@ -2066,8 +2204,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../samurai/smsimulator/PDC/" class="md-nav__link">
-        PDC 漂移室模拟方案
+      <a href="../../project/samurai/smsimulator/PDC/" class="md-nav__link">
+        PDC Drift Chamber Simulation Plan
       </a>
     </li>
   
@@ -2080,7 +2218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../samurai/smsimulator/nebula_simlulator/" class="md-nav__link">
+      <a href="../../project/samurai/smsimulator/nebula_simlulator/" class="md-nav__link">
         Nebula simlulator
       </a>
     </li>
@@ -2094,7 +2232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../samurai/smsimulator/smsimulator/" class="md-nav__link">
+      <a href="../../project/samurai/smsimulator/smsimulator/" class="md-nav__link">
         smsimultor
       </a>
     </li>
@@ -2108,7 +2246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../samurai/smsimulator/smsimulator_tutor/" class="md-nav__link">
+      <a href="../../project/samurai/smsimulator/smsimulator_tutor/" class="md-nav__link">
         smsimulator 教学
       </a>
     </li>
@@ -2200,7 +2338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-nav__link">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-nav__link">
         Japanese
       </a>
     </li>
@@ -2214,7 +2352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%8E%BB%E6%97%A5%E6%9C%AC%E5%89%8D%E6%89%93%E5%8C%85/" class="md-nav__link">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%8E%BB%E6%97%A5%E6%9C%AC%E5%89%8D%E6%89%93%E5%8C%85/" class="md-nav__link">
         登机前打包
       </a>
     </li>
@@ -2228,7 +2366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%90%83/" class="md-nav__link">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%90%83/" class="md-nav__link">
         吃
       </a>
     </li>
@@ -2242,7 +2380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
         垃圾分类
       </a>
     </li>
@@ -2256,7 +2394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%8E%A5%E6%94%B6%E5%BF%AB%E9%80%92/" class="md-nav__link">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%8E%A5%E6%94%B6%E5%BF%AB%E9%80%92/" class="md-nav__link">
         接受快递
       </a>
     </li>
@@ -2270,7 +2408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%97%A5%E7%89%88%E6%89%8B%E6%9C%BAfelica%E8%8A%AF%E7%89%87/" class="md-nav__link">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%97%A5%E7%89%88%E6%89%8B%E6%9C%BAfelica%E8%8A%AF%E7%89%87/" class="md-nav__link">
         日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析
       </a>
     </li>
@@ -2284,7 +2422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E5%AD%90%E6%94%AF%E4%BB%98-%E4%BA%A4%E9%80%9A%E5%8D%A1/" class="md-nav__link">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E5%AD%90%E6%94%AF%E4%BB%98-%E4%BA%A4%E9%80%9A%E5%8D%A1/" class="md-nav__link">
         日本电子支付 - 交通卡
       </a>
     </li>
@@ -2298,7 +2436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E8%AF%9D%E5%8D%A1/" class="md-nav__link">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E8%AF%9D%E5%8D%A1/" class="md-nav__link">
         电话卡
       </a>
     </li>
@@ -2312,7 +2450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E8%90%BD%E5%9C%B0todo/" class="md-nav__link">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E8%90%BD%E5%9C%B0todo/" class="md-nav__link">
         落地事宜
       </a>
     </li>
@@ -2326,7 +2464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E9%93%B6%E8%A1%8C%E5%8D%A1/" class="md-nav__link">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E9%93%B6%E8%A1%8C%E5%8D%A1/" class="md-nav__link">
         银行卡
       </a>
     </li>
@@ -2353,7 +2491,7 @@
                     <div class="md-sidebar__inner">
                       
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -2362,27 +2500,149 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      目录
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#cdcc" class="md-nav__link">
-    CDCC
+  <a href="#概述" class="md-nav__link">
+    概述
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tdse" class="md-nav__link">
-    TDSE
+  <a href="#策略一组合--依赖注入composition--dependency-injection" class="md-nav__link">
+    策略一：组合 / 依赖注入（Composition / Dependency Injection）
   </a>
+  
+    <nav class="md-nav" aria-label="策略一：组合 / 依赖注入（Composition / Dependency Injection）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-操作方式" class="md-nav__link">
+    1. 操作方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-设计权衡" class="md-nav__link">
+    2. 设计权衡
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-c-示例" class="md-nav__link">
+    3. C++ 示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#faddeev" class="md-nav__link">
-    Faddeev
+  <a href="#策略二函数参数传递" class="md-nav__link">
+    策略二：函数参数传递
+  </a>
+  
+    <nav class="md-nav" aria-label="策略二：函数参数传递">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-操作方式_1" class="md-nav__link">
+    1. 操作方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-设计权衡_1" class="md-nav__link">
+    2. 设计权衡
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-c-示例_1" class="md-nav__link">
+    3. C++ 示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#策略三数据结构参数接口隔离" class="md-nav__link">
+    策略三：数据结构参数（接口隔离）
+  </a>
+  
+    <nav class="md-nav" aria-label="策略三：数据结构参数（接口隔离）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-操作方式_2" class="md-nav__link">
+    1. 操作方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-设计权衡_2" class="md-nav__link">
+    2. 设计权衡
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-c-示例_2" class="md-nav__link">
+    3. C++ 示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#策略四全局访问--单例模式反模式慎用" class="md-nav__link">
+    策略四：全局访问 / 单例模式（反模式，慎用）
+  </a>
+  
+    <nav class="md-nav" aria-label="策略四：全局访问 / 单例模式（反模式，慎用）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-操作方式_3" class="md-nav__link">
+    1. 操作方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-设计权衡_3" class="md-nav__link">
+    2. 设计权衡
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#总结和建议" class="md-nav__link">
+    总结和建议
   </a>
   
 </li>
@@ -2404,27 +2664,240 @@
 
 
 
-<h1 id="氘核破裂理论上可以如何计算">氘核破裂理论上可以如何计算<a class="headerlink" href="#氘核破裂理论上可以如何计算" title="Permanent link">#</a></h1>
-<h2 id="cdcc">CDCC<a class="headerlink" href="#cdcc" title="Permanent link">#</a></h2>
-<p><a href="https://github.com/I-Thompson/fresco">https://github.com/I-Thompson/fresco</a></p>
-<h2 id="tdse">TDSE<a class="headerlink" href="#tdse" title="Permanent link">#</a></h2>
-<p><a href="https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2016/0c27511c09675d8d385577023328248b_MIT8_06S16_chap2.pdf?utm_source=chatgpt.com">https://ocw.mit.edu/courses/8-06-quantum-physics-iii-spring-2016/0c27511c09675d8d385577023328248b_MIT8_06S16_chap2.pdf?utm_source=chatgpt.com</a></p>
-<h2 id="faddeev">Faddeev<a class="headerlink" href="#faddeev" title="Permanent link">#</a></h2>
-<p><a href="https://github.com/seanbsm/Tic-tac">https://github.com/seanbsm/Tic-tac</a> 三体核子求捏 three-nucleon</p>
-<p><a href="https://journals.aps.org/prc/abstract/10.1103/PhysRevC.106.024001">https://journals.aps.org/prc/abstract/10.1103/PhysRevC.106.024001</a></p>
-<p><a href="https://nucldata.tunl.duke.edu/nucldata/Theses/PhD/Sabourov_2006.pdf">https://nucldata.tunl.duke.edu/nucldata/Theses/PhD/Sabourov_2006.pdf</a> </p>
-<p>关于一个pick反应的博士论文. 详细描述了氘核极化.</p>
+<p>好的，我将把我们关于**面向对象设计中数据依赖和解耦**的讨论，整理成一个结构化的教程文档。</p>
+<hr />
+<h1 id="面向对象设计教程管理类之间的数据依赖和解耦">面向对象设计教程：管理类之间的数据依赖和解耦<a class="headerlink" href="#面向对象设计教程管理类之间的数据依赖和解耦" title="Permanent link">#</a></h1>
+<h2 id="概述">概述<a class="headerlink" href="#概述" title="Permanent link">#</a></h2>
+<p>在面向对象编程中，一个类（A）的功能常常需要依赖另一个类（B）所拥有的数据或服务。处理这种跨类的数据依赖，是实现**高内聚、低耦合**设计的核心。本教程将对比四种处理类间数据依赖的方法，并提供设计上的建议。</p>
+<hr />
+<h2 id="策略一组合--依赖注入composition--dependency-injection">策略一：组合 / 依赖注入（Composition / Dependency Injection）<a class="headerlink" href="#策略一组合--依赖注入composition--dependency-injection" title="Permanent link">#</a></h2>
+<p><strong>核心思想：</strong> A 类将 B 类作为自己的**长期组件**或**依赖服务**。</p>
+<h3 id="1-操作方式">1. 操作方式<a class="headerlink" href="#1-操作方式" title="Permanent link">#</a></h3>
+<p>A 类将 B 类的对象（通常以**引用**或**指针**的形式）作为自己的**私有成员变量**。这个 B 对象通常在 A 类的**构造函数**中传入（即**依赖注入**）。A 类的方法通过调用 B 对象的公共接口来获取数据。</p>
+<h3 id="2-设计权衡">2. 设计权衡<a class="headerlink" href="#2-设计权衡" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">优势</th>
+<th align="left">劣势</th>
+<th align="left">推荐指数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>高解耦：</strong> A 类只依赖 B 类的接口，不依赖其内部实现。</td>
+<td align="left"><strong>对象生命周期管理：</strong> 如果 A 持有 B 的指针/引用，需要确保 B 对象在 A 对象存活期间有效。</td>
+<td align="left">⭐⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td align="left"><strong>高灵活性：</strong> 结合抽象接口（基类/虚函数），A 可以在运行时使用 B 的不同实现。</td>
+<td align="left"><strong>引入额外代码：</strong> 需要编写构造函数来接收依赖。</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>清晰的依赖关系：</strong> A 类的依赖在其构造函数中显式声明。</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-c-示例">3. C++ 示例<a class="headerlink" href="#3-c-示例" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Configuration</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* B 类 */</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">getMass</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mf">938.27</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">AnalysisProcessor</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* A 类 */</span>
+<span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Configuration</span><span class="o">&amp;</span><span class="w"> </span><span class="n">config_</span><span class="p">;</span><span class="w"> </span><span class="c1">// 组合/依赖注入</span>
+
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="c1">// 通过构造函数注入依赖</span>
+<span class="w">    </span><span class="n">AnalysisProcessor</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Configuration</span><span class="o">&amp;</span><span class="w"> </span><span class="n">config</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">config_</span><span class="p">(</span><span class="n">config</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">process</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">config_</span><span class="p">.</span><span class="n">getMass</span><span class="p">();</span><span class="w"> </span><span class="c1">// 委托给组件</span>
+<span class="w">        </span><span class="c1">// ... 使用 mass 进行处理</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<hr />
+<h2 id="策略二函数参数传递">策略二：函数参数传递<a class="headerlink" href="#策略二函数参数传递" title="Permanent link">#</a></h2>
+<p><strong>核心思想：</strong> B 类数据是 A 类**瞬时操作的输入上下文**。</p>
+<h3 id="1-操作方式_1">1. 操作方式<a class="headerlink" href="#1-操作方式_1" title="Permanent link">#</a></h3>
+<p>A 类的函数在被调用时，将 B 类的**整个对象（或引用/指针）作为参数**传递给该函数。A 类本身不持有 B 类的长期状态。</p>
+<h3 id="2-设计权衡_1">2. 设计权衡<a class="headerlink" href="#2-设计权衡_1" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">优势</th>
+<th align="left">劣势</th>
+<th align="left">推荐指数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>最简单直接：</strong> 适合处理瞬时数据或上下文。</td>
+<td align="left"><strong>函数签名耦合：</strong> A 类的方法签名必须依赖于 B 类。</td>
+<td align="left">⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td align="left"><strong>易于测试：</strong> 测试 A 类时，可以直接传入一个 Mock 的 B 对象。</td>
+<td align="left"><strong>可读性问题：</strong> 如果 A 类的函数需要很多参数，函数签名会很长。</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>无生命周期问题：</strong> A 不持有 B，因此无需担心 B 何时被销毁。</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-c-示例_1">3. C++ 示例<a class="headerlink" href="#3-c-示例_1" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Event</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* B 类 */</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">energy</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mf">100.0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">DataWriter</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* A 类 */</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="c1">// A 类的函数接受 B 类的引用作为参数</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">writeToFile</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Event</span><span class="o">&amp;</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Writing energy: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="n">energy</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<hr />
+<h2 id="策略三数据结构参数接口隔离">策略三：数据结构参数（接口隔离）<a class="headerlink" href="#策略三数据结构参数接口隔离" title="Permanent link">#</a></h2>
+<p><strong>核心思想：</strong> A 类只应该知道它**绝对需要的数据**，而不是拥有该数据的整个 B 类。</p>
+<h3 id="1-操作方式_2">1. 操作方式<a class="headerlink" href="#1-操作方式_2" title="Permanent link">#</a></h3>
+<p>定义一个**最小数据结构（Value Object 或 Struct）<strong>，其中只包含 A 类函数所需的 B 类中的**部分数据</strong>。B 类负责从自身抽取并封装数据到这个结构体中，然后将此**数据结构**作为参数传递给 A 类的函数。</p>
+<h3 id="2-设计权衡_2">2. 设计权衡<a class="headerlink" href="#2-设计权衡_2" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">优势</th>
+<th align="left">劣势</th>
+<th align="left">推荐指数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>最低耦合：</strong> A 类完全不依赖 B 类的存在，只依赖纯数据结构。</td>
+<td align="left"><strong>数据冗余/转换：</strong> 需要额外代码来定义和封装数据结构。</td>
+<td align="left">⭐⭐⭐</td>
+</tr>
+<tr>
+<td align="left"><strong>接口隔离原则 (ISP)：</strong> A 类的接口非常简洁和聚焦。</td>
+<td align="left"><strong>调试难度：</strong> 调试时，跟踪数据从 B 类到数据结构再到 A 类的流动路径可能更复杂。</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>高度复用：</strong> 定义的数据结构可以在其他不相关的类中复用。</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-c-示例_2">3. C++ 示例<a class="headerlink" href="#3-c-示例_2" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// 最小必要的数据类型</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">MassAndPosition</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">mass</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Particle</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* B 类 */</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">MassAndPosition</span><span class="w"> </span><span class="n">getSnapshot</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// B 类负责打包数据</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">1.67e-27</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Visualizer</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* A 类 */</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="c1">// A 类的函数只接受所需的数据结构</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">plot</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">MassAndPosition</span><span class="o">&amp;</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<hr />
+<h2 id="策略四全局访问--单例模式反模式慎用">策略四：全局访问 / 单例模式（反模式，慎用）<a class="headerlink" href="#策略四全局访问--单例模式反模式慎用" title="Permanent link">#</a></h2>
+<p><strong>核心思想：</strong> 假设数据是**全局可访问**的。</p>
+<h3 id="1-操作方式_3">1. 操作方式<a class="headerlink" href="#1-操作方式_3" title="Permanent link">#</a></h3>
+<p>B 类被设计为**单例**（Singleton），或其数据被定义为**全局变量**。A 类通过静态方法调用或直接访问全局变量来获取数据。</p>
+<h3 id="2-设计权衡_3">2. 设计权衡<a class="headerlink" href="#2-设计权衡_3" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">劣势（为何不推荐）</th>
+<th align="left">适用场景</th>
+<th align="left">推荐指数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>高耦合：</strong> A 类对 B 类的依赖是**隐式的**且**强绑定**的。</td>
+<td align="left">仅当数据是**真正的全局不变配置**（如数学常数、日志系统）时。</td>
+<td align="left">⭐</td>
+</tr>
+<tr>
+<td align="left"><strong>难以测试：</strong> 单元测试 A 类时，需要同时初始化全局的 B 对象。</td>
+<td align="left"><strong>并发问题：</strong> 全局可变状态在多线程环境下极易引发数据竞争。</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>违反面向对象原则：</strong> 破坏了封装性和局部性。</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="总结和建议">总结和建议<a class="headerlink" href="#总结和建议" title="Permanent link">#</a></h2>
+<p>在设计像粒子物理模拟或分析框架这样的大型系统时，应始终追求**低耦合**和**清晰的数据流**：</p>
+<table>
+<thead>
+<tr>
+<th align="left">设计场景</th>
+<th align="left">推荐策略</th>
+<th align="left">核心原则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>A 类是服务消费者，B 类是服务提供者（长期依赖）</strong></td>
+<td align="left">策略一：组合 / 依赖注入</td>
+<td align="left"><strong>高内聚、低耦合</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>B 类是 A 类函数操作的上下文或瞬时数据</strong></td>
+<td align="left">策略二：函数参数传递</td>
+<td align="left"><strong>功能聚焦、简洁接口</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>A 类只需要 B 类中很少的数据，且需要最大限度隔离</strong></td>
+<td align="left">策略三：数据结构参数</td>
+<td align="left"><strong>接口隔离原则 (ISP)</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>全局配置、日志记录</strong></td>
+<td align="left">策略一或四（如果必须，用单例并严格控制）</td>
+<td align="left"><strong>最小化全局状态</strong></td>
+</tr>
+</tbody>
+</table>
 
   <hr>
 <div class="md-source-file">
   <small>
     
-      最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月27日 04:29:17 UTC"><span class="timeago" datetime="2025-08-27T04:29:17+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月27日 04:29:17 UTC">2025-08-27</span>
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月18日 16:57:57 UTC"><span class="timeago" datetime="2025-10-18T16:57:57+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月18日 16:57:57 UTC">2025-10-18</span>
       
         <br>
-        创建日期:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月27日 04:29:17 UTC"><span class="timeago" datetime="2025-08-27T04:29:17+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月27日 04:29:17 UTC">2025-08-27</span>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月18日 16:57:57 UTC"><span class="timeago" datetime="2025-10-18T16:57:57+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月18日 16:57:57 UTC">2025-10-18</span>
       
     
   </small>
@@ -2468,7 +2941,7 @@
           
             <a href="#" class="md-top md-icon" data-md-component="top" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-              回到页面顶部
+              Back to top
             </a>
           
         </main>
@@ -2496,10 +2969,14 @@
         <div class="md-dialog__inner md-typeset"></div>
       </div>
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
       
       
         <script src="../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+        
+          <script src="../../../../js/timeago.min.js"></script>
+        
+          <script src="../../../../js/timeago_mkdocs_material.js"></script>
         
           <script src="../../../../js/timeago.min.js"></script>
         
