@@ -1039,6 +1039,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="true">
@@ -1088,7 +1092,7 @@
   
     <li class="md-nav__item">
       <a href="../class_dataTransport/" class="md-nav__link">
-        class dataTransport
+        面向对象设计教程：管理类之间的数据依赖和解耦
       </a>
     </li>
   
@@ -1117,6 +1121,20 @@
     <li class="md-nav__item">
       <a href="../color_scheme/" class="md-nav__link">
         Color Scheme in Scientific Visualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp_package/" class="md-nav__link">
+        cpp 包管理 以及 依赖管理
       </a>
     </li>
   
@@ -1335,9 +1353,63 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#临时保存" class="md-nav__link">
-    临时保存
+  <a href="#本地查看或还原到某个-commit" class="md-nav__link">
+    本地查看或还原到某个 commit
   </a>
+  
+    <nav class="md-nav" aria-label="本地查看或还原到某个 commit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#查看某个-commit-中的单个文件" class="md-nav__link">
+    查看某个 commit 中的单个文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#将本地所有文件回到某个-commit-的状态" class="md-nav__link">
+    将本地所有文件回到某个 commit 的状态
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#临时保存git-stash" class="md-nav__link">
+    临时保存：git stash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#标记里程碑git-tag-的用法" class="md-nav__link">
+    标记里程碑：git tag 的用法
+  </a>
+  
+    <nav class="md-nav" aria-label="标记里程碑：git tag 的用法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#轻量标签lightweight-tag" class="md-nav__link">
+    轻量标签（Lightweight Tag）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#附注标签annotated-tag推荐" class="md-nav__link">
+    附注标签（Annotated Tag，推荐）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1505,6 +1577,20 @@
     <li class="md-nav__item">
       <a href="../vim_neovim/" class="md-nav__link">
         Vim neovim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vscode_env_path/" class="md-nav__link">
+        Vscode env path
       </a>
     </li>
   
@@ -2580,9 +2666,63 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#临时保存" class="md-nav__link">
-    临时保存
+  <a href="#本地查看或还原到某个-commit" class="md-nav__link">
+    本地查看或还原到某个 commit
   </a>
+  
+    <nav class="md-nav" aria-label="本地查看或还原到某个 commit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#查看某个-commit-中的单个文件" class="md-nav__link">
+    查看某个 commit 中的单个文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#将本地所有文件回到某个-commit-的状态" class="md-nav__link">
+    将本地所有文件回到某个 commit 的状态
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#临时保存git-stash" class="md-nav__link">
+    临时保存：git stash
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#标记里程碑git-tag-的用法" class="md-nav__link">
+    标记里程碑：git tag 的用法
+  </a>
+  
+    <nav class="md-nav" aria-label="标记里程碑：git tag 的用法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#轻量标签lightweight-tag" class="md-nav__link">
+    轻量标签（Lightweight Tag）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#附注标签annotated-tag推荐" class="md-nav__link">
+    附注标签（Annotated Tag，推荐）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2688,6 +2828,29 @@
 1. 切换到 <code>main</code> 分支并 <code>git pull</code> 更新。<br />
 2. 切换回工作分支并 <code>git merge main</code>。<br />
 3. 解决冲突后 <code>git push origin xxx</code>。</p>
+<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main:main
+<span class="c1"># git push &lt;远程仓库别名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</span>
+</code></pre></div><br />
+当远程和本地分支同名时，可以简写为 <code>git push origin main</code>。</p>
+<p>什么是 Remote？ 它只是你本地 Git 仓库的另一个“副本”的别名（比如 origin）。</p>
+<p>“日常侦察”：git diff<br />
+你的笔记里讲了如何“回滚”和“暂存”，但没有讲如何“查看”你到底改了什么。</p>
+<p>git diff：查看变更</p>
+<p>git diff：</p>
+<p>比较对象：工作区 vs 暂存区 (Index)。</p>
+<p>回答的问题：“我修改了哪些内容，但还未 git add？”</p>
+<p>git diff --staged (或 --cached)：</p>
+<p>比较对象：暂存区 (Index) vs HEAD (最后一次 Commit)。</p>
+<p>回答的问题：“我 git add 了哪些内容，即将被提交？”</p>
+<p>git diff HEAD：</p>
+<p>比较对象：工作区 vs HEAD。</p>
+<p>回答的问题：“我本地的所有修改（包括已 add 和未 add 的）和最后一次提交相比，有什么不同？”</p>
+<p>git diff <commit1> <commit2>：</p>
+<p>比较对象：两个任意 Commit 节点。</p>
+<p>回答的问题：“从 commit1 到 commit2 之间，到底发生了什么变化？”</p>
+<p>git diff main origin/main：</p>
+<p>比较对象：本地 main 指针 vs origin/main 指针。</p>
+<p>回答的问题：“我本地的 main 分支比远程 main 多了/少了哪些代码？”</p>
 <h3 id="平行开发">平行开发<a class="headerlink" href="#平行开发" title="Permanent link">#</a></h3>
 <p>两条branch</p>
 <p>特性分支 想要更新主分支的功能</p>
@@ -2708,20 +2871,109 @@
     o---o---o---o next           
 </code></pre></div>
 <p>cherry-pick 后面在讲。</p>
-<h2 id="临时保存">临时保存<a class="headerlink" href="#临时保存" title="Permanent link">#</a></h2>
-<p>使用 <code>git stash</code>:<br />
-- <code>git stash push</code>: 保存当前修改。<br />
-- <code>git stash pop</code>: 恢复保存的修改。<br />
-- <code>git stash list</code>: 查看保存的修改。</p>
+<p>git cherry-pick <commit-hash>：</p>
+<p>本质：从一个分支上“复制”一个 Commit 节点（的变更内容），然后在你当前 HEAD 指向的分支上创建一个新的 Commit。</p>
+<p>图操作：它会计算 <commit-hash> 相比其父节点引入了哪些变更（Diff），然后把这个变更应用到你当前的分支，并创建一个全新的 Commit 节点（会有新的 Hash 值）。</p>
+<p>何时使用：</p>
+<p>从 hotfix 分支拉取一个紧急修复到 main 分支，但又不想合并 hotfix 上的其他所有内容。</p>
+<p>从一个已经废弃的特性分支上抢救一两个有用的 commit。</p>
+<h2 id="本地查看或还原到某个-commit">本地查看或还原到某个 commit<a class="headerlink" href="#本地查看或还原到某个-commit" title="Permanent link">#</a></h2>
+<h3 id="查看某个-commit-中的单个文件">查看某个 commit 中的单个文件<a class="headerlink" href="#查看某个-commit-中的单个文件" title="Permanent link">#</a></h3>
+<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>show<span class="w"> </span>&lt;commit&gt;:&lt;file_path&gt;
+</code></pre></div><br />
+- 显示指定提交中某个文件的内容（不修改工作区）。</p>
+<h3 id="将本地所有文件回到某个-commit-的状态">将本地所有文件回到某个 commit 的状态<a class="headerlink" href="#将本地所有文件回到某个-commit-的状态" title="Permanent link">#</a></h3>
+<p><div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>&lt;commit&gt;
+</code></pre></div><br />
+它会：<br />
+1. 移动 HEAD：HEAD 指向你指定的 <commit>（进入 detached HEAD 状态）。<br />
+2. 更新暂存区和工作区：使其内容与该 <commit> 一致（若与未提交修改冲突会报错以防丢失）。</p>
+<p>注意：<br />
+- detached HEAD：你不在任何分支上，若在此基础上创建新 commit，除非创建分支，否则这些 commit 可能难以找回。<br />
+- 对工作区的影响：Git 会尽量保留与当前未提交修改不冲突的内容，冲突则阻止切换。<br />
+- 提交历史不会被修改；分支指针保持原位。</p>
+<p>如何返回：<br />
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>main<span class="w">   </span><span class="c1"># 或 git checkout &lt;your-branch&gt;</span>
+</code></pre></div></p>
+<p>提示：仅为“回顾历史”时，不建议使用 git reset（reset 会修改分支指针）。</p>
+<hr />
+<h2 id="临时保存git-stash">临时保存：git stash<a class="headerlink" href="#临时保存git-stash" title="Permanent link">#</a></h2>
+<p>常用命令：<br />
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>stash<span class="w"> </span>push<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;message&quot;</span><span class="w">   </span><span class="c1"># 保存当前修改（推荐）</span>
+git<span class="w"> </span>stash<span class="w"> </span>list<span class="w">                </span><span class="c1"># 列出所有 stash</span>
+git<span class="w"> </span>stash<span class="w"> </span>apply<span class="w"> </span>&lt;stash@<span class="o">{</span>n<span class="o">}</span>&gt;<span class="w">   </span><span class="c1"># 应用某个 stash（不删除）</span>
+git<span class="w"> </span>stash<span class="w"> </span>pop<span class="w">                 </span><span class="c1"># 应用最近的 stash 并从堆栈中删除</span>
+git<span class="w"> </span>stash<span class="w"> </span>drop<span class="w"> </span>&lt;stash@<span class="o">{</span>n<span class="o">}</span>&gt;<span class="w">    </span><span class="c1"># 删除某个 stash</span>
+git<span class="w"> </span>stash<span class="w"> </span>clear<span class="w">               </span><span class="c1"># 清空所有 stash</span>
+</code></pre></div></p>
+<p>工作流示例：<br />
+1. 在当前分支保存未完成的修改：<br />
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>stash<span class="w"> </span>push<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;WIP: 说明&quot;</span>
+</code></pre></div><br />
+2. 切换到 main 修复 bug、提交：<br />
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>main
+<span class="c1"># 修复并 commit</span>
+</code></pre></div><br />
+3. 回到原分支并恢复修改：<br />
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>feature-A
+git<span class="w"> </span>stash<span class="w"> </span>pop
+</code></pre></div></p>
+<p>说明：<br />
+- stash 会把已跟踪文件的修改（工作区 + 暂存区）打包到一个堆栈里，恢复后可继续开发。<br />
+- 使用 <code>apply</code> 可以先试用并保留堆栈项；<code>pop</code> 会在应用后删除该项。<br />
+- stash 只保存已跟踪文件的修改，未跟踪（untracked）和忽略（ignored）文件需额外参数保存（如 <code>--include-untracked</code>）。<br />
+- 若遇冲突，按常规冲突流程解决并提交。<br />
+- 若需要把 stash 恢复为一个新分支：<code>git stash branch &lt;new-branch&gt; &lt;stash@{n}&gt;</code>。<br />
+- </p>
+<h2 id="标记里程碑git-tag-的用法">标记里程碑：git tag 的用法<a class="headerlink" href="#标记里程碑git-tag-的用法" title="Permanent link">#</a></h2>
+<p>简要说明：Tag 用于给某个 Commit 打上不会随开发移动的“里程碑”。</p>
+<h3 id="轻量标签lightweight-tag">轻量标签（Lightweight Tag）<a class="headerlink" href="#轻量标签lightweight-tag" title="Permanent link">#</a></h3>
+<ul>
+<li>命令：<br />
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag<span class="w"> </span>v1.0.0
+</code></pre></div></li>
+<li>本质：仅是指向某个 Commit 的不可移动指针（相当于某个 commit 的别名），不包含额外元数据。</li>
+</ul>
+<h3 id="附注标签annotated-tag推荐">附注标签（Annotated Tag，推荐）<a class="headerlink" href="#附注标签annotated-tag推荐" title="Permanent link">#</a></h3>
+<ul>
+<li>命令：<br />
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v1.0.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Release version 1.0.0&quot;</span>
+</code></pre></div></li>
+<li>本质：完整的 Git 对象，包含作者、日期、说明信息，并指向一个 Commit，适合标记发布里程碑。</li>
+<li>查看：<code>git show v1.0.0</code></li>
+</ul>
+<p>git tag -a v1.0 -m "Release version 1.0" a867b41</p>
+<p>对指定 commit 提交打tag.</p>
+<p>常用操作</p>
+<ul>
+<li>列出所有标签：<br />
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag
+</code></pre></div></li>
+<li>推送单个标签到远程：<br />
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>v1.0.0
+</code></pre></div></li>
+<li>推送所有本地标签到远程：<br />
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--tags
+</code></pre></div></li>
+<li>删除本地标签：<br />
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag<span class="w"> </span>-d<span class="w"> </span>v1.0.0
+</code></pre></div></li>
+<li>删除远程标签：<br />
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>--delete<span class="w"> </span>origin<span class="w"> </span>v1.0.0
+</code></pre></div></li>
+</ul>
+<p>说明：Git 默认不会随 <code>git push</code> 推送本地标签，需显式推送。</p>
 <h2 id="附录">附录<a class="headerlink" href="#附录" title="Permanent link">#</a></h2>
 <p><a href="https://ohshitgit.com/zh">Oh Shit, Git!?!</a>: 一些常见问题及解决方法。</p>
+<p>推荐 在线小游戏： <a href="https://learngitbranching.js.org/?locale=zh_CN">learn git branching</a><br />
+这个里面可以学到怎么把修改随意调整 分支如何随意调整。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月9日 02:53:57 UTC"><span class="timeago" datetime="2025-10-09T02:53:57+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月9日 02:53:57 UTC">2025-10-09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月18日 18:08:08 UTC"><span class="timeago" datetime="2025-10-18T18:08:08+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月18日 18:08:08 UTC">2025-10-18</span>
       
         <br>
         Created:
