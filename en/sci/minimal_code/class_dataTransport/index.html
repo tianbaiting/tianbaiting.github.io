@@ -1267,6 +1267,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#详解-策略一二的区别" class="md-nav__link">
+    详解 策略一二的区别
+  </a>
+  
+    <nav class="md-nav" aria-label="详解 策略一二的区别">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#适用场景与专业应用" class="md-nav__link">
+    适用场景与专业应用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#总结关键区别" class="md-nav__link">
+    总结关键区别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2679,6 +2706,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#详解-策略一二的区别" class="md-nav__link">
+    详解 策略一二的区别
+  </a>
+  
+    <nav class="md-nav" aria-label="详解 策略一二的区别">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#适用场景与专业应用" class="md-nav__link">
+    适用场景与专业应用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#总结关键区别" class="md-nav__link">
+    总结关键区别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2750,6 +2804,8 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
+<p>应用场景补充： 这是处理框架级服务（如日志 Logger、配置管理器 ConfigManager、几何体描述 Geometry）的黄金标准。</p>
+<p>例子： 一个 ReconstructionModule（A 类）需要 DetectorGeometry（B 接口）和 Calibrations（C 接口）。通过构造函数注入这些服务，可以轻松切换不同的几何体版本或校准数据库，而无需修改 ReconstructionModule 的核心代码。</p>
 <hr />
 <h2 id="策略二函数参数传递">策略二：函数参数传递<a class="headerlink" href="#策略二函数参数传递" title="Permanent link">#</a></h2>
 <p><strong>核心思想：</strong> B 类数据是 A 类**瞬时操作的输入上下文**。</p>
@@ -2850,6 +2906,10 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">};</span>
 </code></pre></div>
+<p>应用场景补充： 这是跨层级或跨组件传递不可变物理数据的最佳方式。</p>
+<p>例子： TriggerSystem（A 类）只需要 Event（B 类）中的少量Hit 的时间戳和能量，来决定是否保存事件。如果将整个 Event 传给 TriggerSystem，会造成不必要的耦合。定义一个 struct TriggerSnapshot { time; energy; }，可以完美隔离接口。</p>
+<p>接口隔离原则 (ISP) 的体现：它避免了 A 类依赖它不需要的 B 类中的方法（例如，A 不需要 B 的 dumpToROOT() 方法）。</p>
+<p>关于 C++ 示例的改进： 物理学中，这种纯数据结构通常被称为 Plain Old Data (POD) struct 或 Value Object。</p>
 <hr />
 <h2 id="策略四全局访问--单例模式反模式慎用">策略四：全局访问 / 单例模式（反模式，慎用）<a class="headerlink" href="#策略四全局访问--单例模式反模式慎用" title="Permanent link">#</a></h2>
 <p><strong>核心思想：</strong> 假设数据是**全局可访问**的。</p>
@@ -2916,13 +2976,98 @@
 </tr>
 </tbody>
 </table>
+<h2 id="详解-策略一二的区别">详解 策略一二的区别<a class="headerlink" href="#详解-策略一二的区别" title="Permanent link">#</a></h2>
+<p>策略一（组合 / 依赖注入）和策略二（函数参数传递）在处理类间数据依赖时有着本质的区别：<br />
+我将详细对比**策略一：组合/依赖注入**和**策略二：函数参数传递**，突出它们在面向对象设计（特别是您作为粒子物理学家的应用场景中）的核心差异、适用性和优缺点。</p>
+<table>
+<thead>
+<tr>
+<th align="left">对比维度</th>
+<th align="left">策略一：组合 / 依赖注入 (Composition / DI)</th>
+<th align="left">策略二：函数参数传递 (Function Parameter)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>核心思想</strong></td>
+<td align="left"><strong>长期依赖 / 结构性组件：</strong> B 类是 A 类的一部分或为其提供长期服务。</td>
+<td align="left"><strong>瞬时依赖 / 临时上下文：</strong> B 类是 A 类某个特定**操作**的输入数据。</td>
+</tr>
+<tr>
+<td align="left"><strong>依赖位置</strong></td>
+<td align="left">A 类的**成员变量**（通常是私有引用/指针/智能指针）。</td>
+<td align="left">A 类某个**函数的方法参数**。</td>
+</tr>
+<tr>
+<td align="left"><strong>依赖时机</strong></td>
+<td align="left">A 类**构造**时，依赖被建立，并贯穿 A 类的整个生命周期。</td>
+<td align="left">A 类的**函数被调用**时，依赖被瞬时建立，函数结束后依赖关系解除。</td>
+</tr>
+<tr>
+<td align="left"><strong>生命周期管理</strong></td>
+<td align="left"><strong>必须管理：</strong> A 持有 B 的引用/指针，必须确保 B 在 A 存活期间有效（通常使用智能指针解决）。</td>
+<td align="left"><strong>无需管理：</strong> A 不持有 B，依赖的生命周期由调用者控制。</td>
+</tr>
+<tr>
+<td align="left"><strong>耦合程度</strong></td>
+<td align="left"><strong>类级耦合：</strong> A 类对 B 类接口的依赖是类结构的一部分，所有方法都可以访问 B。</td>
+<td align="left"><strong>函数级耦合：</strong> A 类的**特定函数**对 B 类接口有依赖，其他函数可以完全独立。</td>
+</tr>
+<tr>
+<td align="left"><strong>设计原则</strong></td>
+<td align="left">强调 <strong>高内聚</strong> (A 类将服务封装在内部)、<strong>开闭原则</strong> (Open/Closed Principle)。</td>
+<td align="left">强调 <strong>功能隔离</strong>、<strong>接口隔离原则 (ISP)</strong>、<strong>关注点分离</strong>。</td>
+</tr>
+<tr>
+<td align="left"><strong>代码表现</strong></td>
+<td align="left">构造函数长，类中有成员变量存储 B。</td>
+<td align="left">函数签名长，类本身保持精简和无状态。</td>
+</tr>
+<tr>
+<td align="left"><strong>测试难度</strong></td>
+<td align="left">单元测试 A 类时，必须 Mock 或提供 B 对象来实例化 A 类。</td>
+<td align="left">单元测试 A 类**函数**时，可以直接传入 Mock B 对象。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="适用场景与专业应用">适用场景与专业应用<a class="headerlink" href="#适用场景与专业应用" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">策略</th>
+<th align="left">适用场景</th>
+<th align="left">粒子物理应用示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>策略一 (DI)</strong></td>
+<td align="left">A 类需要一个**长期**、**稳定**的服务或配置信息，且该依赖在 A 类的多个方法中重复使用。</td>
+<td align="left">* <strong>配置管理：</strong> <code>AnalysisProcessor</code> (A) 需要 <code>Configuration</code> (B) 来获取束流能量、粒子质量等参数。* <strong>几何服务：</strong> <code>ReconstructionModule</code> (A) 依赖 <code>DetectorGeometry</code> (B) 来转换坐标。* <strong>日志服务：</strong> <code>AnyClass</code> (A) 依赖 <code>Logger</code> (B)。</td>
+</tr>
+<tr>
+<td align="left"><strong>策略二 (参数)</strong></td>
+<td align="left">A 类是一个**无状态的服务**（Utility/Writer），B 类是其**瞬时操作**的输入数据或上下文，且通常 B 类是大量产生的对象（如事件）。</td>
+<td align="left">* <strong>数据写入：</strong> <code>DataWriter</code> (A) 接收 <code>Event</code> (B) 来写入磁盘。* <strong>瞬时计算：</strong> <code>TrackFitter</code> (A) 接收 <code>ClusterCollection</code> (B) 来拟合径迹。* <strong>过滤条件：</strong> <code>Filter</code> (A) 接收 <code>Particle</code> (B) 来判断是否满足筛选标准。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="总结关键区别">总结关键区别<a class="headerlink" href="#总结关键区别" title="Permanent link">#</a></h3>
+<p>区分策略一和策略二的核心在于判断 B 类是 A 类的**结构性“资产”<strong>还是**临时性“输入”</strong>：</p>
+<ol>
+<li><strong>资产 (策略一)：</strong> 如果 B 是 A <strong>长期依赖并持续使用的</strong>，用于定义 A 的行为或配置 A 的状态，使用策略一。</li>
+<li><strong>输入 (策略二)：</strong> 如果 B 只是 A <strong>某个函数**完成一次任务时所需的**临时数据包</strong>，函数执行完就可以丢弃，使用策略二。</li>
+</ol>
+<p>在粒子物理分析框架中，服务（Service）通常用**策略一**（依赖注入），而事件（Event）、粒子（Particle）、簇（Cluster）等瞬时数据通常用**策略二**（函数参数传递）。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月18日 18:08:08 UTC"><span class="timeago" datetime="2025-10-18T18:08:08+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月18日 18:08:08 UTC">2025-10-18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月28日 02:05:04 UTC"><span class="timeago" datetime="2025-10-28T02:05:04+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月28日 02:05:04 UTC">2025-10-28</span>
       
         <br>
         Created:
