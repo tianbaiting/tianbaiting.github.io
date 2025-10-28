@@ -98,12 +98,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ### 科研相关的主页
 
-
+### ORCID
 <!-- ORCID card placeholder -->
 <div id="orcid-card" data-orcid="0000-0002-9018-6480" style="margin:0.6rem 0;"></div>
 
+### 谷歌学术
 
-- [google scholar](https://scholar.google.com/citations?hl=zh-CN&user=Wb4CcQ8AAAAJ)
+[google scholar](https://scholar.google.com/citations?hl=zh-CN&user=Wb4CcQ8AAAAJ)
 
 <!-- Google Scholar card placeholder -->
 <div id="scholar-card" data-user="Wb4CcQ8AAAAJ" style="margin:0.6rem 0;"></div>
