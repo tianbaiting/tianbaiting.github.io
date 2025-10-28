@@ -1,0 +1,246 @@
+/* 知识图谱样式 */
+.graph-container {
+  width: 100%;
+  height: 600px;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 8px;
+  margin: 20px 0;
+  background: var(--md-code-bg-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.graph-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* 图谱控制按钮 */
+.graph-controls {
+  margin: 10px 0;
+  text-align: center;
+  padding: 10px;
+  background: var(--md-default-bg-color);
+  border-radius: 4px;
+}
+
+.graph-controls button {
+  margin: 0 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--md-primary-fg-color);
+  background: transparent;
+  color: var(--md-primary-fg-color);
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.graph-controls button:hover {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  transform: translateY(-1px);
+}
+
+.graph-controls button.active {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* 图谱节点样式 */
+.node {
+  cursor: pointer;
+  stroke: var(--md-default-bg-color);
+  stroke-width: 3px;
+  transition: all 0.3s ease;
+}
+
+.node:hover {
+  stroke-width: 4px;
+  filter: brightness(1.1);
+}
+
+/* 中文节点 - 靛蓝色 */
+.node.zh {
+  fill: #3f51b5;
+}
+
+.node.zh.category {
+  fill: #5c6bc0;
+}
+
+.node.zh.main {
+  fill: #303f9f;
+}
+
+/* 英文节点 - 粉色 */
+.node.en {
+  fill: #e91e63;
+}
+
+.node.en.category {
+  fill: #ec407a;
+}
+
+.node.en.main {
+  fill: #c2185b;
+}
+
+/* 链接样式 */
+.link {
+  stroke: var(--md-default-fg-color--lighter);
+  stroke-opacity: 0.6;
+  stroke-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  stroke-opacity: 1;
+  stroke-width: 3px;
+}
+
+/* 节点文本样式 */
+.node-text {
+  font-family: var(--md-text-font-family);
+  font-size: 12px;
+  font-weight: 500;
+  text-anchor: middle;
+  pointer-events: none;
+  fill: var(--md-default-fg-color);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* 工具提示 */
+.graph-tooltip {
+  position: absolute;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.graph-tooltip.visible {
+  opacity: 1;
+}
+
+/* 图例 */
+.graph-legend {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.graph-legend-item {
+  display: flex;
+  align-items: center;
+  margin: 4px 0;
+}
+
+.graph-legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .graph-container {
+    height: 400px;
+  }
+  
+  .graph-controls {
+    padding: 8px;
+  }
+  
+  .graph-controls button {
+    margin: 4px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .node-text {
+    font-size: 10px;
+  }
+  
+  .graph-legend {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 10px 0;
+  }
+}
+
+/* 加载动画 */
+.graph-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 16px;
+  color: var(--md-default-fg-color--light);
+}
+
+.graph-loading::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--md-primary-fg-color);
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  margin-left: 10px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 搜索框样式 */
+.graph-search {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.graph-search input {
+  padding: 8px 12px;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 4px;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-size: 14px;
+  width: 200px;
+}
+
+.graph-search input:focus {
+  outline: none;
+  border-color: var(--md-primary-fg-color);
+}
+
+/* 高亮节点 */
+.node.highlighted {
+  stroke: #ff9800;
+  stroke-width: 4px;
+  filter: brightness(1.2);
+}
+
+.link.highlighted {
+  stroke: #ff9800;
+  stroke-opacity: 1;
+  stroke-width: 3px;
+}
