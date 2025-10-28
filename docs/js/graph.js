@@ -27,24 +27,33 @@ class KnowledgeGraph {
 
   createControls() {
     // 语言切换控制
-    const controls = this.container
-      .insert('div', '*')
+    const controls = this.container.append('div')
       .attr('class', 'graph-controls');
-
+    
+    // 语言过滤按钮
     controls.append('button')
-      .text('全部 All')
-      .classed('active', this.currentLanguage === 'all')
-      .on('click', () => this.switchLanguage('all'));
-
+      .text('🌐 全部')
+      .attr('class', 'active')
+      .on('click', () => this.setLanguageFilter('all'));
+    
     controls.append('button')
-      .text('中文 🇨🇳')
-      .classed('active', this.currentLanguage === 'zh')
-      .on('click', () => this.switchLanguage('zh'));
-
+      .text('🇨🇳 中文')
+      .on('click', () => this.setLanguageFilter('zh'));
+    
     controls.append('button')
-      .text('English 🇺🇸')
-      .classed('active', this.currentLanguage === 'en')
-      .on('click', () => this.switchLanguage('en'));
+      .text('🇺🇸 English')
+      .on('click', () => this.setLanguageFilter('en'));
+    
+    // 适应画布按钮
+    controls.append('button')
+      .text('📐 适应画布')
+      .on('click', () => this.fitToContainer());
+    
+    // 全屏按钮
+    controls.append('button')
+      .text('🔍 全屏')
+      .attr('class', 'fullscreen-btn')
+      .on('click', () => this.toggleFullscreen());
 
     // 搜索框
     const searchDiv = this.container
@@ -456,6 +465,108 @@ class KnowledgeGraph {
       this.zoom.transform,
       d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale)
     );
+  }
+
+  // 全屏功能
+  toggleFullscreen() {
+    const container = this.container.node();
+    const isFullscreen = container.classList.contains('graph-fullscreen');
+    
+    if (isFullscreen) {
+      this.exitFullscreen();
+    } else {
+      this.enterFullscreen();
+    }
+  }
+
+  enterFullscreen() {
+    const container = this.container.node();
+    
+    // 添加全屏样式类
+    container.classList.add('graph-fullscreen');
+    document.body.classList.add('graph-fullscreen-active');
+    
+    // 更新图谱尺寸
+    const newWidth = window.innerWidth - 40;
+    const newHeight = window.innerHeight - 120;
+    this.width = newWidth;
+    this.height = newHeight;
+    
+    // 更新SVG viewBox和仿真中心
+    this.svg.attr('viewBox', `0 0 ${newWidth} ${newHeight}`);
+    this.simulation.force('center', d3.forceCenter(newWidth / 2, newHeight / 2));
+    this.simulation.alpha(0.3).restart();
+    
+    // 添加退出提示
+    const hint = d3.select('body').append('div')
+      .attr('class', 'fullscreen-hint')
+      .text('按 ESC 键或点击 × 退出全屏');
+    
+    // 3秒后自动移除提示
+    setTimeout(() => {
+      hint.remove();
+    }, 3000);
+    
+    // 更新全屏按钮文字
+    this.container.select('.fullscreen-btn')
+      .text('× 退出全屏');
+    
+    // 添加ESC键监听
+    this.escKeyHandler = (event) => {
+      if (event.key === 'Escape') {
+        this.exitFullscreen();
+      }
+    };
+    document.addEventListener('keydown', this.escKeyHandler);
+    
+    // 添加窗口大小变化监听
+    this.resizeHandler = () => {
+      if (container.classList.contains('graph-fullscreen')) {
+        const newWidth = window.innerWidth - 40;
+        const newHeight = window.innerHeight - 120;
+        this.width = newWidth;
+        this.height = newHeight;
+        this.svg.attr('viewBox', `0 0 ${newWidth} ${newHeight}`);
+        this.simulation.force('center', d3.forceCenter(newWidth / 2, newHeight / 2));
+        this.simulation.alpha(0.1).restart();
+      }
+    };
+    window.addEventListener('resize', this.resizeHandler);
+  }
+
+  exitFullscreen() {
+    const container = this.container.node();
+    
+    // 移除全屏样式类
+    container.classList.remove('graph-fullscreen');
+    document.body.classList.remove('graph-fullscreen-active');
+    
+    // 恢复原始尺寸
+    this.width = 800;
+    this.height = 600;
+    
+    // 更新SVG viewBox和仿真中心
+    this.svg.attr('viewBox', `0 0 ${this.width} ${this.height}`);
+    this.simulation.force('center', d3.forceCenter(this.width / 2, this.height / 2));
+    this.simulation.alpha(0.3).restart();
+    
+    // 更新全屏按钮文字
+    this.container.select('.fullscreen-btn')
+      .text('🔍 全屏');
+    
+    // 移除事件监听器
+    if (this.escKeyHandler) {
+      document.removeEventListener('keydown', this.escKeyHandler);
+      this.escKeyHandler = null;
+    }
+    
+    if (this.resizeHandler) {
+      window.removeEventListener('resize', this.resizeHandler);
+      this.resizeHandler = null;
+    }
+    
+    // 移除可能残留的提示
+    d3.selectAll('.fullscreen-hint').remove();
   }
 }
 
