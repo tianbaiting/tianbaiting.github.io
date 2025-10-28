@@ -244,3 +244,104 @@
   stroke-opacity: 1;
   stroke-width: 3px;
 }
+
+/* 全屏模式样式 */
+.graph-fullscreen {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important;
+  background: var(--md-default-bg-color) !important;
+  margin: 0 !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+}
+
+.graph-fullscreen .graph-svg {
+  width: 100% !important;
+  height: calc(100vh - 120px) !important;
+}
+
+.graph-fullscreen .graph-controls {
+  position: relative !important;
+  z-index: 10000 !important;
+  background: var(--md-default-bg-color) !important;
+  padding: 15px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+  margin-bottom: 15px !important;
+  border: 1px solid var(--md-default-fg-color--lighter) !important;
+}
+
+.graph-fullscreen .graph-info {
+  position: absolute !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 10000 !important;
+}
+
+/* 全屏按钮样式 */
+.fullscreen-btn {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+  margin-left: 10px;
+}
+
+.fullscreen-btn:hover {
+  background: var(--md-accent-fg-color);
+  transform: translateY(-1px);
+}
+
+.fullscreen-btn:active {
+  transform: translateY(0);
+}
+
+/* 退出全屏提示 */
+.fullscreen-hint {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.85);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 10001;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  10%, 90% { opacity: 1; }
+}
+
+/* 全屏模式下的节点和文字样式调整 */
+.graph-fullscreen .node {
+  stroke-width: 2px;
+}
+
+.graph-fullscreen .node-text {
+  font-size: 16px !important;
+  font-weight: 500;
+}
+
+.graph-fullscreen .link {
+  stroke-width: 2px;
+}
+
+/* 防止页面滚动 */
+body.graph-fullscreen-active {
+  overflow: hidden !important;
+}
