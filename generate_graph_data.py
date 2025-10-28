@@ -37,6 +37,8 @@ class GraphDataGenerator:
         self.nodes = []
         self.links = []
         self.processed_files = set()
+        # 默认语言（用于生成站点 URL）
+        self.default_language = 'zh'
         
         # 文件类型映射
         self.category_mapping = {
@@ -333,11 +335,49 @@ class GraphDataGenerator:
             
         return stats
 
+    def compute_node_url(self, node_id: str, language: str) -> str:
+        """根据节点 id 和语言计算站点上的 URL。
+
+        规则：
+        - node_id 是相对于 docs 的路径，且不包含 .md（例如："sci/cheatshet/docker.zh" 或 "index"）
+        - 如果文件名里包含语言后缀（.zh/.en），在生成 URL 时去掉该后缀
+        - 如果语言是默认语言（self.default_language），URL 不带语言前缀；否则在路径前加上 /<lang>/
+        - 目录索引（以 index 结尾）会被映射到上级目录或根路径
+        - 返回以 "/" 开头且以 "/" 结尾的路径（根页面为 "/"）
+        """
+        # 清理并分段
+        parts = node_id.split('/') if node_id else []
+        if parts:
+            # 去掉最后一段的语言后缀（如 filename.zh）
+            parts[-1] = re.sub(r'\.(zh|en)$', '', parts[-1])
+
+        # 处理 index 情况
+        if parts and parts[-1].lower() in ('index', 'readme'):
+            parts = parts[:-1]
+
+        url_path = '/'.join(parts)
+
+        if url_path == '':
+            url = '/'
+        else:
+            url = '/' + url_path.strip('/') + '/'
+
+        # 非默认语言需要加语言前缀
+        if language and language != self.default_language:
+            url = '/' + language.strip('/') + url
+
+        # 规范化连续斜杠
+        url = re.sub(r'//+', '/', url)
+        return url
+
     def save_data(self) -> None:
         """保存数据到JSON文件"""
         # 确保输出目录存在
         self.output_path.parent.mkdir(parents=True, exist_ok=True)
-        
+        # 为每个节点生成 URL 字段
+        for node in self.nodes:
+            node['url'] = self.compute_node_url(node['id'], node.get('language', self.default_language))
+
         # 生成最终数据
         data = {
             'nodes': self.nodes,
@@ -400,6 +440,8 @@ def main():
                        help='Output JSON file path (default: docs/js/graph-data.json)')
     parser.add_argument('--verbose', '-v', action='store_true',
                        help='Enable verbose logging')
+    parser.add_argument('--default-language', '-L', default='zh',
+                       help='Default site language (used to generate URLs), e.g. zh or en')
     
     args = parser.parse_args()
     
@@ -408,6 +450,7 @@ def main():
     
     # 创建生成器并运行
     generator = GraphDataGenerator(args.docs, args.output)
+    generator.default_language = args.default_language or 'zh'
     generator.run()
 
 if __name__ == '__main__':
