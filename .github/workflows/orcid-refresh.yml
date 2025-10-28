@@ -1,0 +1,54 @@
+name: Weekly ORCID refresh
+
+on:
+  schedule:
+    # runs weekly on Monday at 03:00 UTC (adjust if you prefer a different time)
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
+
+jobs:
+  update-orcid:
+    name: Refresh ORCID snapshot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # allow pushing back using the provided token
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+
+      - name: Run ORCID fetch script
+        run: |
+          python3 scripts/fetch_orcid.py 0000-0002-9018-6480
+
+      - name: Run Google Scholar fetch script
+        run: |
+          python3 scripts/fetch_scholar.py Wb4CcQ8AAAAJ
+
+      - name: Commit and push changes (if any)
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          git config user.name "$GIT_AUTHOR_NAME"
+          git config user.email "$GIT_AUTHOR_EMAIL"
+          git add docs/assets/data/orcid-0000-0002-9018-6480.json || true
+          git add docs/assets/data/scholar-Wb4CcQ8AAAAJ.json || true
+          if ! git diff --staged --quiet; then
+            git commit -m "ci: refresh ORCID and Scholar snapshots [ci skip]"
+            git push
+          else
+            echo "No changes to commit"
+          fi

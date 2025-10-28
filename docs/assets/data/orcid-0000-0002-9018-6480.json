@@ -1,0 +1,386 @@
+{
+  "orcid-identifier": {
+    "uri": "https://orcid.org/0000-0002-9018-6480",
+    "path": "0000-0002-9018-6480",
+    "host": "orcid.org"
+  },
+  "preferences": {
+    "locale": "en"
+  },
+  "history": {
+    "creation-method": "MEMBER_REFERRED",
+    "completion-date": null,
+    "submission-date": {
+      "value": 1676033008968
+    },
+    "last-modified-date": {
+      "value": 1761638921963
+    },
+    "claimed": true,
+    "source": null,
+    "deactivation-date": null,
+    "verified-email": true,
+    "verified-primary-email": true
+  },
+  "person": {
+    "last-modified-date": null,
+    "name": {
+      "created-date": {
+        "value": 1676033009229
+      },
+      "last-modified-date": {
+        "value": 1676033009229
+      },
+      "given-names": {
+        "value": "Baiting"
+      },
+      "family-name": {
+        "value": "Tian"
+      },
+      "credit-name": null,
+      "source": null,
+      "visibility": "public",
+      "path": "0000-0002-9018-6480"
+    },
+    "other-names": {
+      "last-modified-date": null,
+      "other-name": [],
+      "path": "/0000-0002-9018-6480/other-names"
+    },
+    "biography": null,
+    "researcher-urls": {
+      "last-modified-date": null,
+      "researcher-url": [],
+      "path": "/0000-0002-9018-6480/researcher-urls"
+    },
+    "emails": {
+      "last-modified-date": null,
+      "email": [],
+      "path": "/0000-0002-9018-6480/email"
+    },
+    "addresses": {
+      "last-modified-date": null,
+      "address": [],
+      "path": "/0000-0002-9018-6480/address"
+    },
+    "keywords": {
+      "last-modified-date": null,
+      "keyword": [],
+      "path": "/0000-0002-9018-6480/keywords"
+    },
+    "external-identifiers": {
+      "last-modified-date": null,
+      "external-identifier": [],
+      "path": "/0000-0002-9018-6480/external-identifiers"
+    },
+    "path": "/0000-0002-9018-6480/person"
+  },
+  "activities-summary": {
+    "last-modified-date": {
+      "value": 1761591516986
+    },
+    "distinctions": {
+      "last-modified-date": null,
+      "affiliation-group": [],
+      "path": "/0000-0002-9018-6480/distinctions"
+    },
+    "educations": {
+      "last-modified-date": null,
+      "affiliation-group": [],
+      "path": "/0000-0002-9018-6480/educations"
+    },
+    "employments": {
+      "last-modified-date": {
+        "value": 1750314727229
+      },
+      "affiliation-group": [
+        {
+          "last-modified-date": {
+            "value": 1750314727229
+          },
+          "external-ids": {
+            "external-id": []
+          },
+          "summaries": [
+            {
+              "employment-summary": {
+                "created-date": {
+                  "value": 1750314727229
+                },
+                "last-modified-date": {
+                  "value": 1750314727229
+                },
+                "source": {
+                  "source-orcid": {
+                    "uri": "https://orcid.org/0000-0002-9018-6480",
+                    "path": "0000-0002-9018-6480",
+                    "host": "orcid.org"
+                  },
+                  "source-client-id": null,
+                  "source-name": {
+                    "value": "Baiting Tian"
+                  },
+                  "assertion-origin-orcid": null,
+                  "assertion-origin-client-id": null,
+                  "assertion-origin-name": null
+                },
+                "put-code": 29855706,
+                "department-name": null,
+                "role-title": null,
+                "start-date": null,
+                "end-date": null,
+                "organization": {
+                  "name": "Tsinghua University",
+                  "address": {
+                    "city": "Beijing",
+                    "region": "Beijing",
+                    "country": "CN"
+                  },
+                  "disambiguated-organization": {
+                    "disambiguated-organization-identifier": "https://ror.org/03cve4549",
+                    "disambiguation-source": "ROR"
+                  }
+                },
+                "url": null,
+                "external-ids": null,
+                "display-index": "0",
+                "visibility": "public",
+                "path": "/0000-0002-9018-6480/employment/29855706"
+              }
+            }
+          ]
+        }
+      ],
+      "path": "/0000-0002-9018-6480/employments"
+    },
+    "fundings": {
+      "last-modified-date": null,
+      "group": [],
+      "path": "/0000-0002-9018-6480/fundings"
+    },
+    "invited-positions": {
+      "last-modified-date": null,
+      "affiliation-group": [],
+      "path": "/0000-0002-9018-6480/invited-positions"
+    },
+    "memberships": {
+      "last-modified-date": null,
+      "affiliation-group": [],
+      "path": "/0000-0002-9018-6480/memberships"
+    },
+    "peer-reviews": {
+      "last-modified-date": null,
+      "group": [],
+      "path": "/0000-0002-9018-6480/peer-reviews"
+    },
+    "qualifications": {
+      "last-modified-date": null,
+      "affiliation-group": [],
+      "path": "/0000-0002-9018-6480/qualifications"
+    },
+    "research-resources": {
+      "last-modified-date": null,
+      "group": [],
+      "path": "/0000-0002-9018-6480/research-resources"
+    },
+    "services": {
+      "last-modified-date": null,
+      "affiliation-group": [],
+      "path": "/0000-0002-9018-6480/services"
+    },
+    "works": {
+      "last-modified-date": {
+        "value": 1761591516986
+      },
+      "group": [
+        {
+          "last-modified-date": {
+            "value": 1761591516986
+          },
+          "external-ids": {
+            "external-id": [
+              {
+                "external-id-type": "doi",
+                "external-id-value": "10.1007/s41605-025-00608-7",
+                "external-id-normalized": {
+                  "value": "10.1007/s41605-025-00608-7",
+                  "transient": true
+                },
+                "external-id-normalized-error": null,
+                "external-id-url": {
+                  "value": "https://doi.org/10.1007/s41605-025-00608-7"
+                },
+                "external-id-relationship": "self"
+              }
+            ]
+          },
+          "work-summary": [
+            {
+              "put-code": 195318299,
+              "created-date": {
+                "value": 1761591516986
+              },
+              "last-modified-date": {
+                "value": 1761591516986
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                  "path": "0000-0001-9884-1913",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Crossref"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Simulation studies of the isovector reorientation effect of deuteron scattering on heavy target"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.1007/s41605-025-00608-7",
+                    "external-id-normalized": {
+                      "value": "10.1007/s41605-025-00608-7",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.1007/s41605-025-00608-7"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://doi.org/10.1007/s41605-025-00608-7"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2025"
+                },
+                "month": {
+                  "value": "10"
+                },
+                "day": {
+                  "value": "27"
+                }
+              },
+              "journal-title": {
+                "value": "Radiation Detection Technology and Methods"
+              },
+              "visibility": "public",
+              "path": "/0000-0002-9018-6480/work/195318299",
+              "display-index": "1"
+            }
+          ]
+        },
+        {
+          "last-modified-date": {
+            "value": 1750045083645
+          },
+          "external-ids": {
+            "external-id": [
+              {
+                "external-id-type": "doi",
+                "external-id-value": "10.1103/PhysRevLett.134.222301",
+                "external-id-normalized": {
+                  "value": "10.1103/physrevlett.134.222301",
+                  "transient": true
+                },
+                "external-id-normalized-error": null,
+                "external-id-url": {
+                  "value": "https://doi.org/10.1103/PhysRevLett.134.222301"
+                },
+                "external-id-relationship": "self"
+              }
+            ]
+          },
+          "work-summary": [
+            {
+              "put-code": 186035018,
+              "created-date": {
+                "value": 1750045083645
+              },
+              "last-modified-date": {
+                "value": 1750045083645
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                  "path": "0000-0001-9884-1913",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Crossref"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Extracting Neutron-Neutron Interaction Strength and Spatiotemporal Dynamics of Neutron Emission from the Two-Particle Correlation Function"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.1103/PhysRevLett.134.222301",
+                    "external-id-normalized": {
+                      "value": "10.1103/physrevlett.134.222301",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.1103/PhysRevLett.134.222301"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://doi.org/10.1103/PhysRevLett.134.222301"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2025"
+                },
+                "month": {
+                  "value": "06"
+                },
+                "day": {
+                  "value": "05"
+                }
+              },
+              "journal-title": {
+                "value": "Physical Review Letters"
+              },
+              "visibility": "public",
+              "path": "/0000-0002-9018-6480/work/186035018",
+              "display-index": "1"
+            }
+          ]
+        }
+      ],
+      "path": "/0000-0002-9018-6480/works"
+    },
+    "path": "/0000-0002-9018-6480/activities"
+  },
+  "path": "/0000-0002-9018-6480"
+}
