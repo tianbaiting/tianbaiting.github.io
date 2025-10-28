@@ -6,7 +6,8 @@
       "language": "zh",
       "category": "main",
       "path": "index.zh.md",
-      "size": 1833
+      "size": 1833,
+      "url": "/"
     },
     {
       "id": "index.en",
@@ -14,7 +15,8 @@
       "language": "en",
       "category": "main",
       "path": "index.en.md",
-      "size": 1940
+      "size": 1940,
+      "url": "/en/"
     },
     {
       "id": "howtomakewebsite",
@@ -22,7 +24,8 @@
       "language": "zh",
       "category": "category",
       "path": "howtomakewebsite.md",
-      "size": 3504
+      "size": 3504,
+      "url": "/howtomakewebsite/"
     },
     {
       "id": "MickeyMiaoMiao/citetree.zh",
@@ -30,7 +33,8 @@
       "language": "zh",
       "category": "category",
       "path": "MickeyMiaoMiao/citetree.zh.md",
-      "size": 638
+      "size": 638,
+      "url": "/MickeyMiaoMiao/citetree/"
     },
     {
       "id": "MickeyMiaoMiao/firefoxplug",
@@ -38,7 +42,8 @@
       "language": "zh",
       "category": "category",
       "path": "MickeyMiaoMiao/firefoxplug.md",
-      "size": 345
+      "size": 345,
+      "url": "/MickeyMiaoMiao/firefoxplug/"
     },
     {
       "id": "MickeyMiaoMiao/opvpn",
@@ -46,7 +51,8 @@
       "language": "zh",
       "category": "category",
       "path": "MickeyMiaoMiao/opvpn.md",
-      "size": 3237
+      "size": 3237,
+      "url": "/MickeyMiaoMiao/opvpn/"
     },
     {
       "id": "life/z30_DeepSky.zh",
@@ -54,7 +60,8 @@
       "language": "zh",
       "category": "category",
       "path": "life/z30_DeepSky.zh.md",
-      "size": 190
+      "size": 190,
+      "url": "/life/z30_DeepSky/"
     },
     {
       "id": "life/食物安全温度.zh",
@@ -62,7 +69,8 @@
       "language": "zh",
       "category": "category",
       "path": "life/食物安全温度.zh.md",
-      "size": 744
+      "size": 744,
+      "url": "/life/食物安全温度/"
     },
     {
       "id": "life/焦虑.zh",
@@ -70,7 +78,8 @@
       "language": "zh",
       "category": "category",
       "path": "life/焦虑.zh.md",
-      "size": 600
+      "size": 600,
+      "url": "/life/焦虑/"
     },
     {
       "id": "life/食物中毒",
@@ -78,7 +87,8 @@
       "language": "zh",
       "category": "category",
       "path": "life/食物中毒.md",
-      "size": 1395
+      "size": 1395,
+      "url": "/life/食物中毒/"
     },
     {
       "id": "life/flavor.zh",
@@ -86,7 +96,8 @@
       "language": "zh",
       "category": "category",
       "path": "life/flavor.zh.md",
-      "size": 18380
+      "size": 18380,
+      "url": "/life/flavor/"
     },
     {
       "id": "sci/todolist.zh",
@@ -94,7 +105,8 @@
       "language": "zh",
       "category": "category",
       "path": "sci/todolist.zh.md",
-      "size": 38
+      "size": 38,
+      "url": "/sci/todolist/"
     },
     {
       "id": "日本生存指南/电话卡",
@@ -102,7 +114,8 @@
       "language": "zh",
       "category": "category",
       "path": "日本生存指南/电话卡.md",
-      "size": 1792
+      "size": 1792,
+      "url": "/日本生存指南/电话卡/"
     },
     {
       "id": "日本生存指南/吃",
@@ -110,7 +123,8 @@
       "language": "zh",
       "category": "category",
       "path": "日本生存指南/吃.md",
-      "size": 40
+      "size": 40,
+      "url": "/日本生存指南/吃/"
     },
     {
       "id": "日本生存指南/接收快递",
@@ -118,7 +132,8 @@
       "language": "zh",
       "category": "category",
       "path": "日本生存指南/接收快递.md",
-      "size": 164
+      "size": 164,
+      "url": "/日本生存指南/接收快递/"
     },
     {
       "id": "日本生存指南/japanese",
@@ -126,7 +141,8 @@
       "language": "en",
       "category": "category",
       "path": "日本生存指南/japanese.md",
-      "size": 3928
+      "size": 3928,
+      "url": "/en/日本生存指南/japanese/"
     },
     {
       "id": "日本生存指南/电子支付-交通卡",
@@ -134,7 +150,8 @@
       "language": "zh",
       "category": "category",
       "path": "日本生存指南/电子支付-交通卡.md",
-      "size": 1397
+      "size": 1397,
+      "url": "/日本生存指南/电子支付-交通卡/"
     },
     {
       "id": "日本生存指南/银行卡",
@@ -142,7 +159,8 @@
       "language": "zh",
       "category": "category",
       "path": "日本生存指南/银行卡.md",
-      "size": 869
+      "size": 869,
+      "url": "/日本生存指南/银行卡/"
     },
     {
       "id": "日本生存指南/日版手机felica芯片",
@@ -150,7 +168,8 @@
       "language": "zh",
       "category": "category",
       "path": "日本生存指南/日版手机felica芯片.md",
-      "size": 17876
+      "size": 17876,
+      "url": "/日本生存指南/日版手机felica芯片/"
     },
     {
       "id": "日本生存指南/去日本前打包",
@@ -158,7 +177,8 @@
       "language": "zh",
       "category": "category",
       "path": "日本生存指南/去日本前打包.md",
-      "size": 327
+      "size": 327,
+      "url": "/日本生存指南/去日本前打包/"
     },
     {
       "id": "日本生存指南/落地todo.zh",
@@ -166,7 +186,8 @@
       "language": "zh",
       "category": "category",
       "path": "日本生存指南/落地todo.zh.md",
-      "size": 524
+      "size": 524,
+      "url": "/日本生存指南/落地todo/"
     },
     {
       "id": "日本生存指南/垃圾分类",
@@ -174,7 +195,8 @@
       "language": "zh",
       "category": "category",
       "path": "日本生存指南/垃圾分类.md",
-      "size": 2400
+      "size": 2400,
+      "url": "/日本生存指南/垃圾分类/"
     },
     {
       "id": "sci/minimal_code/zsh.zh",
@@ -182,7 +204,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/zsh.zh.md",
-      "size": 4414
+      "size": 4414,
+      "url": "/sci/minimal_code/zsh/"
     },
     {
       "id": "sci/minimal_code/vscode_lsp.zh",
@@ -190,7 +213,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/vscode_lsp.zh.md",
-      "size": 3569
+      "size": 3569,
+      "url": "/sci/minimal_code/vscode_lsp/"
     },
     {
       "id": "sci/minimal_code/Operating_system.zh",
@@ -198,7 +222,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/Operating_system.zh.md",
-      "size": 92
+      "size": 92,
+      "url": "/sci/minimal_code/Operating_system/"
     },
     {
       "id": "sci/minimal_code/root_plot.en",
@@ -206,7 +231,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/minimal_code/root_plot.en.md",
-      "size": 3058
+      "size": 3058,
+      "url": "/en/sci/minimal_code/root_plot/"
     },
     {
       "id": "sci/minimal_code/geant4_oop.zh",
@@ -214,7 +240,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/geant4_oop.zh.md",
-      "size": 17940
+      "size": 17940,
+      "url": "/sci/minimal_code/geant4_oop/"
     },
     {
       "id": "sci/minimal_code/待解决的小问题",
@@ -222,7 +249,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/待解决的小问题.md",
-      "size": 709
+      "size": 709,
+      "url": "/sci/minimal_code/待解决的小问题/"
     },
     {
       "id": "sci/minimal_code/format_guidelines.en",
@@ -230,7 +258,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/minimal_code/format_guidelines.en.md",
-      "size": 2731
+      "size": 2731,
+      "url": "/en/sci/minimal_code/format_guidelines/"
     },
     {
       "id": "sci/minimal_code/c++project.zh",
@@ -238,7 +267,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/c++project.zh.md",
-      "size": 9613
+      "size": 9613,
+      "url": "/sci/minimal_code/c++project/"
     },
     {
       "id": "sci/minimal_code/vim_neovim.zh",
@@ -246,7 +276,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/vim_neovim.zh.md",
-      "size": 643
+      "size": 643,
+      "url": "/sci/minimal_code/vim_neovim/"
     },
     {
       "id": "sci/minimal_code/color_scheme.en",
@@ -254,7 +285,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/minimal_code/color_scheme.en.md",
-      "size": 4453
+      "size": 4453,
+      "url": "/en/sci/minimal_code/color_scheme/"
     },
     {
       "id": "sci/minimal_code/server_clouddirve_example.zh",
@@ -262,7 +294,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/server_clouddirve_example.zh.md",
-      "size": 6628
+      "size": 6628,
+      "url": "/sci/minimal_code/server_clouddirve_example/"
     },
     {
       "id": "sci/minimal_code/git.zh",
@@ -270,7 +303,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/git.zh.md",
-      "size": 6179
+      "size": 6179,
+      "url": "/sci/minimal_code/git/"
     },
     {
       "id": "sci/minimal_code/termux.zh",
@@ -278,7 +312,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/termux.zh.md",
-      "size": 5332
+      "size": 5332,
+      "url": "/sci/minimal_code/termux/"
     },
     {
       "id": "sci/minimal_code/root_visual_geant4.zh",
@@ -286,7 +321,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/root_visual_geant4.zh.md",
-      "size": 4660
+      "size": 4660,
+      "url": "/sci/minimal_code/root_visual_geant4/"
     },
     {
       "id": "sci/minimal_code/vscode_env_path.zh",
@@ -294,7 +330,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/vscode_env_path.zh.md",
-      "size": 3012
+      "size": 3012,
+      "url": "/sci/minimal_code/vscode_env_path/"
     },
     {
       "id": "sci/minimal_code/python_lib_self.zh",
@@ -302,7 +339,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/python_lib_self.zh.md",
-      "size": 6206
+      "size": 6206,
+      "url": "/sci/minimal_code/python_lib_self/"
     },
     {
       "id": "sci/minimal_code/python_def_class.zh",
@@ -310,7 +348,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/python_def_class.zh.md",
-      "size": 2951
+      "size": 2951,
+      "url": "/sci/minimal_code/python_def_class/"
     },
     {
       "id": "sci/minimal_code/cmake.zh",
@@ -318,7 +357,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/cmake.zh.md",
-      "size": 8865
+      "size": 8865,
+      "url": "/sci/minimal_code/cmake/"
     },
     {
       "id": "sci/minimal_code/gemni_use_wen2cli.zh",
@@ -326,7 +366,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/gemni_use_wen2cli.zh.md",
-      "size": 2069
+      "size": 2069,
+      "url": "/sci/minimal_code/gemni_use_wen2cli/"
     },
     {
       "id": "sci/minimal_code/format_guidelines.zh",
@@ -334,7 +375,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/format_guidelines.zh.md",
-      "size": 1115
+      "size": 1115,
+      "url": "/sci/minimal_code/format_guidelines/"
     },
     {
       "id": "sci/minimal_code/color_scheme.zh",
@@ -342,7 +384,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/color_scheme.zh.md",
-      "size": 1423
+      "size": 1423,
+      "url": "/sci/minimal_code/color_scheme/"
     },
     {
       "id": "sci/minimal_code/root_plot.zh",
@@ -350,7 +393,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/root_plot.zh.md",
-      "size": 3058
+      "size": 3058,
+      "url": "/sci/minimal_code/root_plot/"
     },
     {
       "id": "sci/minimal_code/cpp_package.zh",
@@ -358,7 +402,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/cpp_package.zh.md",
-      "size": 750
+      "size": 750,
+      "url": "/sci/minimal_code/cpp_package/"
     },
     {
       "id": "sci/minimal_code/jupyternotebook.zh",
@@ -366,7 +411,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/jupyternotebook.zh.md",
-      "size": 6321
+      "size": 6321,
+      "url": "/sci/minimal_code/jupyternotebook/"
     },
     {
       "id": "sci/minimal_code/class_dataTransport.zh",
@@ -374,7 +420,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/class_dataTransport.zh.md",
-      "size": 5814
+      "size": 5814,
+      "url": "/sci/minimal_code/class_dataTransport/"
     },
     {
       "id": "sci/minimal_code/fzf.zh",
@@ -382,7 +429,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/fzf.zh.md",
-      "size": 6169
+      "size": 6169,
+      "url": "/sci/minimal_code/fzf/"
     },
     {
       "id": "sci/minimal_code/server_clouddirve.zh",
@@ -390,7 +438,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/server_clouddirve.zh.md",
-      "size": 4500
+      "size": 4500,
+      "url": "/sci/minimal_code/server_clouddirve/"
     },
     {
       "id": "sci/minimal_code/jupyternotebook.en",
@@ -398,7 +447,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/minimal_code/jupyternotebook.en.md",
-      "size": 5341
+      "size": 5341,
+      "url": "/en/sci/minimal_code/jupyternotebook/"
     },
     {
       "id": "sci/minimal_code/latex_graphics.en",
@@ -406,7 +456,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/minimal_code/latex_graphics.en.md",
-      "size": 544
+      "size": 544,
+      "url": "/en/sci/minimal_code/latex_graphics/"
     },
     {
       "id": "sci/minimal_code/root_opener",
@@ -414,7 +465,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/root_opener.md",
-      "size": 2228
+      "size": 2228,
+      "url": "/sci/minimal_code/root_opener/"
     },
     {
       "id": "sci/minimal_code/gdb.zh",
@@ -422,7 +474,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/gdb.zh.md",
-      "size": 3822
+      "size": 3822,
+      "url": "/sci/minimal_code/gdb/"
     },
     {
       "id": "sci/minimal_code/latex_graphics.zh",
@@ -430,7 +483,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/latex_graphics.zh.md",
-      "size": 544
+      "size": 544,
+      "url": "/sci/minimal_code/latex_graphics/"
     },
     {
       "id": "sci/project/example",
@@ -438,7 +492,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/example.md",
-      "size": 13
+      "size": 13,
+      "url": "/en/sci/project/example/"
     },
     {
       "id": "sci/minimal_theory/scatering_theory.zh",
@@ -446,7 +501,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatering_theory.zh.md",
-      "size": 11
+      "size": 11,
+      "url": "/sci/minimal_theory/scatering_theory/"
     },
     {
       "id": "sci/minimal_theory/TransmissionLineEq.en",
@@ -454,7 +510,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/minimal_theory/TransmissionLineEq.en.md",
-      "size": 5612
+      "size": 5612,
+      "url": "/en/sci/minimal_theory/TransmissionLineEq/"
     },
     {
       "id": "sci/minimal_theory/dead_time.zh",
@@ -462,7 +519,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/dead_time.zh.md",
-      "size": 3295
+      "size": 3295,
+      "url": "/sci/minimal_theory/dead_time/"
     },
     {
       "id": "sci/minimal_theory/qft_schwartz_ref.zh",
@@ -470,7 +528,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/qft_schwartz_ref.zh.md",
-      "size": 4030
+      "size": 4030,
+      "url": "/sci/minimal_theory/qft_schwartz_ref/"
     },
     {
       "id": "sci/minimal_theory/TransmissionLineEq.zh",
@@ -478,7 +537,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/TransmissionLineEq.zh.md",
-      "size": 4902
+      "size": 4902,
+      "url": "/sci/minimal_theory/TransmissionLineEq/"
     },
     {
       "id": "sci/cheatshet/number_order_dimension.zh",
@@ -486,7 +546,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/cheatshet/number_order_dimension.zh.md",
-      "size": 3797
+      "size": 3797,
+      "url": "/sci/cheatshet/number_order_dimension/"
     },
     {
       "id": "sci/cheatshet/docker.en",
@@ -494,7 +555,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/cheatshet/docker.en.md",
-      "size": 0
+      "size": 0,
+      "url": "/en/sci/cheatshet/docker/"
     },
     {
       "id": "sci/cheatshet/shell.en",
@@ -502,7 +564,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/cheatshet/shell.en.md",
-      "size": 328
+      "size": 328,
+      "url": "/en/sci/cheatshet/shell/"
     },
     {
       "id": "sci/cheatshet/site.en",
@@ -510,7 +573,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/cheatshet/site.en.md",
-      "size": 8
+      "size": 8,
+      "url": "/en/sci/cheatshet/site/"
     },
     {
       "id": "sci/cheatshet/linux.zh",
@@ -518,7 +582,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/cheatshet/linux.zh.md",
-      "size": 443
+      "size": 443,
+      "url": "/sci/cheatshet/linux/"
     },
     {
       "id": "sci/cheatshet/git.zh",
@@ -526,7 +591,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/cheatshet/git.zh.md",
-      "size": 866
+      "size": 866,
+      "url": "/sci/cheatshet/git/"
     },
     {
       "id": "sci/cheatshet/docker.zh",
@@ -534,7 +600,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/cheatshet/docker.zh.md",
-      "size": 1906
+      "size": 1906,
+      "url": "/sci/cheatshet/docker/"
     },
     {
       "id": "sci/cheatshet/termux.zh",
@@ -542,7 +609,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/cheatshet/termux.zh.md",
-      "size": 2566
+      "size": 2566,
+      "url": "/sci/cheatshet/termux/"
     },
     {
       "id": "sci/cheatshet/git.en",
@@ -550,7 +618,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/cheatshet/git.en.md",
-      "size": 1425
+      "size": 1425,
+      "url": "/en/sci/cheatshet/git/"
     },
     {
       "id": "sci/cheatshet/root_geant4_install.zh",
@@ -558,7 +627,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/cheatshet/root_geant4_install.zh.md",
-      "size": 506
+      "size": 506,
+      "url": "/sci/cheatshet/root_geant4_install/"
     },
     {
       "id": "sci/cheatshet/bashrc.zh",
@@ -566,7 +636,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/cheatshet/bashrc.zh.md",
-      "size": 4527
+      "size": 4527,
+      "url": "/sci/cheatshet/bashrc/"
     },
     {
       "id": "sci/cheatshet/shell.zh",
@@ -574,7 +645,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/cheatshet/shell.zh.md",
-      "size": 5586
+      "size": 5586,
+      "url": "/sci/cheatshet/shell/"
     },
     {
       "id": "sci/cheatshet/vimrc.zh",
@@ -582,7 +654,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/cheatshet/vimrc.zh.md",
-      "size": 2162
+      "size": 2162,
+      "url": "/sci/cheatshet/vimrc/"
     },
     {
       "id": "sci/project/D_polar_exp/scintillator.zh",
@@ -590,7 +663,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/scintillator.zh.md",
-      "size": 4670
+      "size": 4670,
+      "url": "/sci/project/D_polar_exp/scintillator/"
     },
     {
       "id": "sci/project/D_polar_exp/spherical_operator",
@@ -598,7 +672,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/D_polar_exp/spherical_operator.md",
-      "size": 9108
+      "size": 9108,
+      "url": "/en/sci/project/D_polar_exp/spherical_operator/"
     },
     {
       "id": "sci/project/D_polar_exp/Sipm_PMT.zh",
@@ -606,7 +681,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/Sipm_PMT.zh.md",
-      "size": 12681
+      "size": 12681,
+      "url": "/sci/project/D_polar_exp/Sipm_PMT/"
     },
     {
       "id": "sci/project/D_polar_exp/d_breakup_theory.zh",
@@ -614,7 +690,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/d_breakup_theory.zh.md",
-      "size": 451
+      "size": 451,
+      "url": "/sci/project/D_polar_exp/d_breakup_theory/"
     },
     {
       "id": "sci/project/D_polar_exp/my_polarimeter.en",
@@ -622,7 +699,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/D_polar_exp/my_polarimeter.en.md",
-      "size": 615
+      "size": 615,
+      "url": "/en/sci/project/D_polar_exp/my_polarimeter/"
     },
     {
       "id": "sci/project/D_polar_exp/stastic.zh",
@@ -630,7 +708,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/stastic.zh.md",
-      "size": 2917
+      "size": 2917,
+      "url": "/sci/project/D_polar_exp/stastic/"
     },
     {
       "id": "sci/project/D_polar_exp/my_polarimeter.zh",
@@ -638,7 +717,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/my_polarimeter.zh.md",
-      "size": 539
+      "size": 539,
+      "url": "/sci/project/D_polar_exp/my_polarimeter/"
     },
     {
       "id": "sci/project/D_polar_exp/todo_list",
@@ -646,7 +726,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/todo_list.md",
-      "size": 26
+      "size": 26,
+      "url": "/sci/project/D_polar_exp/todo_list/"
     },
     {
       "id": "sci/project/D_polar_exp/riken_web_source.zh",
@@ -654,7 +735,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/riken_web_source.zh.md",
-      "size": 421
+      "size": 421,
+      "url": "/sci/project/D_polar_exp/riken_web_source/"
     },
     {
       "id": "sci/project/D_polar_exp/caogao",
@@ -662,7 +744,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/caogao.md",
-      "size": 3478
+      "size": 3478,
+      "url": "/sci/project/D_polar_exp/caogao/"
     },
     {
       "id": "sci/project/D_polar_exp/sw-api.zh",
@@ -670,7 +753,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/sw-api.zh.md",
-      "size": 4381
+      "size": 4381,
+      "url": "/sci/project/D_polar_exp/sw-api/"
     },
     {
       "id": "sci/project/D_polar_exp/other_polarmeter.zh",
@@ -678,7 +762,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/other_polarmeter.zh.md",
-      "size": 12124
+      "size": 12124,
+      "url": "/sci/project/D_polar_exp/other_polarmeter/"
     },
     {
       "id": "sci/project/samurai/detector_samurai.zh",
@@ -686,7 +771,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/detector_samurai.zh.md",
-      "size": 1508
+      "size": 1508,
+      "url": "/sci/project/samurai/detector_samurai/"
     },
     {
       "id": "sci/project/samurai/detector_samurai.en",
@@ -694,7 +780,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/detector_samurai.en.md",
-      "size": 3558
+      "size": 3558,
+      "url": "/en/sci/project/samurai/detector_samurai/"
     },
     {
       "id": "sci/project/samurai/anaroot/anaroot_nebula.zh",
@@ -702,7 +789,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot_nebula.zh.md",
-      "size": 8418
+      "size": 8418,
+      "url": "/sci/project/samurai/anaroot/anaroot_nebula/"
     },
     {
       "id": "sci/project/samurai/anaroot/anaroot_nebula.en",
@@ -710,7 +798,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot_nebula.en.md",
-      "size": 9676
+      "size": 9676,
+      "url": "/en/sci/project/samurai/anaroot/anaroot_nebula/"
     },
     {
       "id": "sci/project/samurai/anaroot/anaroot.zh",
@@ -718,7 +807,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot.zh.md",
-      "size": 48038
+      "size": 48038,
+      "url": "/sci/project/samurai/anaroot/anaroot/"
     },
     {
       "id": "sci/project/samurai/anaroot/anaroot_pdc.zh",
@@ -726,7 +816,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot_pdc.zh.md",
-      "size": 7556
+      "size": 7556,
+      "url": "/sci/project/samurai/anaroot/anaroot_pdc/"
     },
     {
       "id": "sci/project/samurai/anaroot/anaroot_decoder.zh",
@@ -734,7 +825,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot_decoder.zh.md",
-      "size": 1912
+      "size": 1912,
+      "url": "/sci/project/samurai/anaroot/anaroot_decoder/"
     },
     {
       "id": "sci/project/samurai/anaroot/RIDF.en",
@@ -742,7 +834,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/anaroot/RIDF.en.md",
-      "size": 10495
+      "size": 10495,
+      "url": "/en/sci/project/samurai/anaroot/RIDF/"
     },
     {
       "id": "sci/project/samurai/anaroot/anaroot_pdc.en",
@@ -750,7 +843,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot_pdc.en.md",
-      "size": 10197
+      "size": 10197,
+      "url": "/en/sci/project/samurai/anaroot/anaroot_pdc/"
     },
     {
       "id": "sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction.zh",
@@ -758,7 +852,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction.zh.md",
-      "size": 7401
+      "size": 7401,
+      "url": "/sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction/"
     },
     {
       "id": "sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction.en",
@@ -766,7 +861,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction.en.md",
-      "size": 2376
+      "size": 2376,
+      "url": "/en/sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction/"
     },
     {
       "id": "sci/project/samurai/anaroot/RIDF.zh",
@@ -774,7 +870,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/anaroot/RIDF.zh.md",
-      "size": 6703
+      "size": 6703,
+      "url": "/sci/project/samurai/anaroot/RIDF/"
     },
     {
       "id": "sci/project/samurai/anaroot/anaroot2version.en",
@@ -782,7 +879,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot2version.en.md",
-      "size": 5746
+      "size": 5746,
+      "url": "/en/sci/project/samurai/anaroot/anaroot2version/"
     },
     {
       "id": "sci/project/samurai/anaroot/anaroot2version.zh",
@@ -790,7 +888,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot2version.zh.md",
-      "size": 54266
+      "size": 54266,
+      "url": "/sci/project/samurai/anaroot/anaroot2version/"
     },
     {
       "id": "sci/project/samurai/smsimulator/nebula_simlulator.zh",
@@ -798,7 +897,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/nebula_simlulator.zh.md",
-      "size": 13307
+      "size": 13307,
+      "url": "/sci/project/samurai/smsimulator/nebula_simlulator/"
     },
     {
       "id": "sci/project/samurai/smsimulator/smsimulator.zh",
@@ -806,7 +906,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/smsimulator.zh.md",
-      "size": 5226
+      "size": 5226,
+      "url": "/sci/project/samurai/smsimulator/smsimulator/"
     },
     {
       "id": "sci/project/samurai/smsimulator/nebula_simlulator.en",
@@ -814,7 +915,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/nebula_simlulator.en.md",
-      "size": 16883
+      "size": 16883,
+      "url": "/en/sci/project/samurai/smsimulator/nebula_simlulator/"
     },
     {
       "id": "sci/project/samurai/smsimulator/FDC2.zh",
@@ -822,7 +924,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/FDC2.zh.md",
-      "size": 3828
+      "size": 3828,
+      "url": "/sci/project/samurai/smsimulator/FDC2/"
     },
     {
       "id": "sci/project/samurai/smsimulator/smsimulator.en",
@@ -830,7 +933,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/smsimulator.en.md",
-      "size": 8024
+      "size": 8024,
+      "url": "/en/sci/project/samurai/smsimulator/smsimulator/"
     },
     {
       "id": "sci/project/samurai/smsimulator/PDC.en",
@@ -838,7 +942,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/PDC.en.md",
-      "size": 8477
+      "size": 8477,
+      "url": "/en/sci/project/samurai/smsimulator/PDC/"
     },
     {
       "id": "sci/project/samurai/smsimulator/PDC.zh",
@@ -846,7 +951,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/PDC.zh.md",
-      "size": 5113
+      "size": 5113,
+      "url": "/sci/project/samurai/smsimulator/PDC/"
     },
     {
       "id": "sci/project/samurai/smsimulator/smsimulator_tutor.zh",
@@ -854,7 +960,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/smsimulator_tutor.zh.md",
-      "size": 988
+      "size": 988,
+      "url": "/sci/project/samurai/smsimulator/smsimulator_tutor/"
     },
     {
       "id": "sci/project/samurai/smsimulator/FDC2.en",
@@ -862,7 +969,8 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/FDC2.en.md",
-      "size": 5058
+      "size": 5058,
+      "url": "/en/sci/project/samurai/smsimulator/FDC2/"
     },
     {
       "id": "life/健康/鼻炎.zh",
@@ -870,7 +978,8 @@
       "language": "zh",
       "category": "page",
       "path": "life/健康/鼻炎.zh.md",
-      "size": 18515
+      "size": 18515,
+      "url": "/life/健康/鼻炎/"
     },
     {
       "id": "life/健康/workout_diet.zh",
@@ -878,7 +987,8 @@
       "language": "zh",
       "category": "page",
       "path": "life/健康/workout_diet.zh.md",
-      "size": 10351
+      "size": 10351,
+      "url": "/life/健康/workout_diet/"
     },
     {
       "id": "MickeyMiaoMiao/useful_tips/如何安装多个版本的vscode",
@@ -886,7 +996,8 @@
       "language": "zh",
       "category": "page",
       "path": "MickeyMiaoMiao/useful_tips/如何安装多个版本的vscode.md",
-      "size": 86
+      "size": 86,
+      "url": "/MickeyMiaoMiao/useful_tips/如何安装多个版本的vscode/"
     },
     {
       "id": "MickeyMiaoMiao/useful_tips/利用移动设备分屏",
@@ -894,7 +1005,8 @@
       "language": "zh",
       "category": "page",
       "path": "MickeyMiaoMiao/useful_tips/利用移动设备分屏.md",
-      "size": 470
+      "size": 470,
+      "url": "/MickeyMiaoMiao/useful_tips/利用移动设备分屏/"
     },
     {
       "id": "MickeyMiaoMiao/useful_tips/有趣的插件",
@@ -902,7 +1014,8 @@
       "language": "zh",
       "category": "page",
       "path": "MickeyMiaoMiao/useful_tips/有趣的插件.md",
-      "size": 17
+      "size": 17,
+      "url": "/MickeyMiaoMiao/useful_tips/有趣的插件/"
     },
     {
       "id": "MickeyMiaoMiao/useful_tips/overleaf_vscode插件",
@@ -910,7 +1023,8 @@
       "language": "zh",
       "category": "page",
       "path": "MickeyMiaoMiao/useful_tips/overleaf_vscode插件.md",
-      "size": 178
+      "size": 178,
+      "url": "/MickeyMiaoMiao/useful_tips/overleaf_vscode插件/"
     }
   ],
   "links": [],
@@ -932,6 +1046,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-10-28 03:34:42.156916"
+    "generated_at": "2025-10-28 06:13:37.176710"
   }
 }

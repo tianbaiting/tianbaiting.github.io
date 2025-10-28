@@ -365,23 +365,29 @@ class KnowledgeGraph {
 
   onNodeClick(event, d) {
     // 如果节点有路径信息，尝试跳转
-    if (d.path) {
+    // 优先使用后端生成的 url 字段（已经考虑了默认语言前缀），否则回退到 path 的推断
+    let url = null;
+    if (d.url) {
+      url = d.url;
+    } else if (d.path) {
       // 构建正确的URL
-      let url = d.path;
+      url = d.path;
       if (!url.endsWith('/') && !url.endsWith('.md')) {
         url += '/';
       }
       if (url.endsWith('.md')) {
         url = url.replace('.md', '/');
       }
-      
       // 如果是相对路径，添加基础路径
       if (!url.startsWith('http')) {
         url = '/' + url.replace(/^\/+/, '');
       }
-      
+    }
+
+    if (url) {
+      // 规范化
+      url = url.replace(/\/\\+/g, '/');
       console.log('Navigating to:', url);
-      // 在新窗口中打开链接
       window.open(url, '_blank');
     }
   }
