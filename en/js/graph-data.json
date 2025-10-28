@@ -352,6 +352,15 @@
       "url": "/sci/minimal_code/python_def_class/"
     },
     {
+      "id": "sci/minimal_code/python_venv.zh",
+      "title": "Python 虚拟环境",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/python_venv.zh.md",
+      "size": 1289,
+      "url": "/sci/minimal_code/python_venv/"
+    },
+    {
       "id": "sci/minimal_code/cmake.zh",
       "title": "cmake项目",
       "language": "zh",
@@ -1029,16 +1038,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 114,
+    "total_nodes": 115,
     "total_links": 0,
     "languages": {
-      "zh": 89,
+      "zh": 90,
       "en": 25
     },
     "categories": {
       "main": 2,
       "category": 20,
-      "page": 92
+      "page": 93
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1046,6 +1055,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-10-28 06:25:54.810693"
+    "generated_at": "2025-10-28 07:39:48.945072"
   }
 }
