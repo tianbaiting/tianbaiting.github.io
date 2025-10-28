@@ -6,7 +6,7 @@
       "language": "zh",
       "category": "main",
       "path": "index.zh.md",
-      "size": 2940,
+      "size": 2956,
       "url": "/"
     },
     {
@@ -1055,6 +1055,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-10-28 08:39:30.270522"
+    "generated_at": "2025-10-28 08:45:01.409034"
   }
 }
