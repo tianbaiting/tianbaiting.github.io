@@ -6,7 +6,7 @@
       "language": "zh",
       "category": "main",
       "path": "index.zh.md",
-      "size": 1833,
+      "size": 2940,
       "url": "/"
     },
     {
@@ -15,7 +15,7 @@
       "language": "en",
       "category": "main",
       "path": "index.en.md",
-      "size": 1940,
+      "size": 2400,
       "url": "/en/"
     },
     {
@@ -992,11 +992,11 @@
     },
     {
       "id": "life/健康/workout_diet.zh",
-      "title": "**高性能餐盘：现代健身爱好者的循证营养蓝图**",
+      "title": "**营养**",
       "language": "zh",
       "category": "page",
       "path": "life/健康/workout_diet.zh.md",
-      "size": 10351,
+      "size": 10333,
       "url": "/life/健康/workout_diet/"
     },
     {
@@ -1055,6 +1055,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-10-28 07:39:48.945072"
+    "generated_at": "2025-10-28 08:39:30.270522"
   }
 }
