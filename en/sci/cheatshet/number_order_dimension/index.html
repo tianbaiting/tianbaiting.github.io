@@ -1,6 +1,6 @@
 
   <!doctype html>
-  <html lang="en" class="no-js">
+  <html lang="zh" class="no-js">
     <head>
       
         <meta charset="utf-8">
@@ -17,7 +17,7 @@
           <link rel="next" href="../root_geant4_install/">
         
         <link rel="icon" href="../../../../assets/images/favicon.png">
-        <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.0.4">
+        <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
       
       
         ]
@@ -44,11 +44,9 @@
         
       
       
-        <link rel="stylesheet" href="../../../../css/timeago.css">
-      
-        <link rel="stylesheet" href="../../../../css/timeago.css">
-      
         <link rel="stylesheet" href="../../../../css/counter.css">
+      
+        <link rel="stylesheet" href="../../../../css/graph.css">
       
       
         <link rel="stylesheet" href="../../../../css/counter.css">
@@ -80,7 +78,7 @@
         
           
           <a href="#单位制换算" class="md-skip">
-            Skip to content
+            跳转至
           </a>
         
       </div>
@@ -92,7 +90,7 @@
         
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href="../../../" title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
       
   
@@ -133,9 +131,9 @@
 
   <div class="md-header__button md-lang">
     
-      <a href="../../../../sci/cheatshet/number_order_dimension/" hreflang="zh">简体中文</a>
+      <a href="/" hreflang="zh">简体中文</a>
     
-      <a href="./" hreflang="en">English</a>
+      <a href="/en/" hreflang="en">English</a>
     
   </div>
 
@@ -148,18 +146,18 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="查找">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -169,7 +167,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            正在初始化搜索引擎
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -189,7 +187,7 @@
           
             
               
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -199,8 +197,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../" class="md-tabs__link">
-      main
+    <a href="../../../howtomakewebsite/" class="md-tabs__link">
+      网站制作
     </a>
   </li>
 
@@ -211,8 +209,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../howtomakewebsite/" class="md-tabs__link">
-      网站制作
+    <a href="../../../" class="md-tabs__link">
+      Index
     </a>
   </li>
 
@@ -302,7 +300,7 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../../" title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
       
@@ -323,8 +321,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
-        main
+      <a href="../../../howtomakewebsite/" class="md-nav__link">
+        网站制作
       </a>
     </li>
   
@@ -338,8 +336,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../howtomakewebsite/" class="md-nav__link">
-        网站制作
+      <a href="../../../" class="md-nav__link">
+        Index
       </a>
     </li>
   
@@ -582,7 +580,7 @@
   
     <li class="md-nav__item">
       <a href="../../../life/flavor/" class="md-nav__link">
-        探索味型奥秘：以川菜为例的烹饪科学指南
+        **探索味型奥秘：以川菜为例的烹饪科学指南**
       </a>
     </li>
   
@@ -685,7 +683,7 @@
   
     <li class="md-nav__item">
       <a href="../../../life/%E5%81%A5%E5%BA%B7/workout_diet/" class="md-nav__link">
-        高性能餐盘：现代健身爱好者的循证营养蓝图
+        **高性能餐盘：现代健身爱好者的循证营养蓝图**
       </a>
     </li>
   
@@ -699,7 +697,7 @@
   
     <li class="md-nav__item">
       <a href="../../../life/%E5%81%A5%E5%BA%B7/%E9%BC%BB%E7%82%8E/" class="md-nav__link">
-        鼻炎综合管理临床报告：过敏性鼻炎与血管运动性鼻炎的深度解析
+        **鼻炎综合管理临床报告：过敏性鼻炎与血管运动性鼻炎的深度解析**
       </a>
     </li>
   
@@ -907,14 +905,14 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -1309,7 +1307,7 @@
   
     <li class="md-nav__item">
       <a href="../../minimal_code/geant4_oop/" class="md-nav__link">
-        揭秘面向对象编程：Geant4工具包深度导览
+        **揭秘面向对象编程：Geant4工具包深度导览**
       </a>
     </li>
   
@@ -1519,7 +1517,7 @@
   
     <li class="md-nav__item">
       <a href="../../minimal_code/vscode_lsp/" class="md-nav__link">
-        如何解决 VS Code 中的 C/C++ include 报错问题
+        如何解决 VS Code 中的 C/C++ `include` 报错问题
       </a>
     </li>
   
@@ -2021,7 +2019,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/RIDF/" class="md-nav__link">
-        Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Description
+        RIDF
       </a>
     </li>
   
@@ -2383,7 +2381,7 @@
   
     <li class="md-nav__item">
       <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%97%A5%E7%89%88%E6%89%8B%E6%9C%BAfelica%E8%8A%AF%E7%89%87/" class="md-nav__link">
-        日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析
+        **日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析**
       </a>
     </li>
   
@@ -2465,14 +2463,14 @@
                     <div class="md-sidebar__inner">
                       
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      目录
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -2614,7 +2612,7 @@
 <p>我不理解为什么要用光强坎德拉如此愚蠢的定义。尤其是要和人眼这一人的主观感受联系起来。这个物理量不配作为七个基本物理量之一。光通量也非常丑陋。不如改成人眼反应强度，或者改成在某个标准瞳孔大小，焦距下视锥细胞的电信号大小。</p>
 <h3 id="人眼">人眼<a class="headerlink" href="#人眼" title="Permanent link">#</a></h3>
 <p>人眼对亮度适应性非常强，人眼能分辨的最小亮度与最大亮度相差10亿倍。瞳孔的大小可以控制射入视网膜上光线的强度，成年人瞳孔直径的变化范围为2至8毫米，相当于四级光圈，射入光线的强度相差16倍。</p>
-<p><img alt="1745331467877" src="../../../../sci/cheatshet/number_order_dimension.zh/1745331467877.png" /></p>
+<p><img alt="1745331467877" src="../number_order_dimension.zh/1745331467877.png" /></p>
 <p>在比较黑暗的地点，例如在亮度为 0.01 尼特的情况下，视锥细胞不再起作用，只能是分布广而相对稀疏的视杆细胞起作用，因此人眼的分辨能力大大下降，中心黄斑部分视力下降到 0.05，反而不如黄斑以外（因为中心黄斑几乎没有视杆细胞），非黄斑区域视力基本不变，最好视力在黄斑边缘附近，大约偏离中心 15 度左右，为 0.1。这时的视力，称为**暗视觉**。但由于视杆细胞只有一种，因此是分辨不出物体颜色的，因此我们观察星云时（其表面亮度大多在 0.01 尼特以下），看不出颜色。有关视力与亮度之间的关系，是逐渐变化的。</p>
 <p>人眼对亮度的反应并非是线性的，比如在昏暗的房间内，我们看到的烛光是明亮的，而同样的烛光放在正午的阳光下，我们甚至连火苗都看不见，说明人眼对亮度变化的反应随着亮度的增加而减弱。人眼的这种特性近似于对数函数，如果用I表示亮度，人眼的反应用S表示，那么二者之间的关系为可以用对数公式表示为。</p>
 <h3 id="手机屏幕">手机屏幕<a class="headerlink" href="#手机屏幕" title="Permanent link">#</a></h3>
@@ -2642,7 +2640,7 @@
 闪烁体发出的光的光子数取决于入射辐射的能量和闪烁体的光产额。例如，如果一个能量为 1 MeV 的伽马射线被 NaI(Tl) 闪烁体吸收，大约会产生几万个可见光光子。这些光子会被光探测器（如光电倍增管或硅光电倍增器）收集并转换为电信号进行分析。  </p>
 <p>带电粒子在塑料闪烁体中的光产额通常在每 MeV 沉积能量下产生 3000 到 20000 个光子的范围内变化 。例如，一种使用苯乙烯开发的塑料闪烁体，其最大发射波长约为 427 nm，对于 1 MeV 的入射辐射，光产额为 6134 个光子。市售的塑料 。Tin 掺杂的塑料闪烁体通常具有约 10000 个光子/MeV 的光产额，并且闪烁衰减时间很快，约为 1 到 10 纳秒 。塑料闪烁体的一个显著优点是其极短的衰减时间，这使得它们对于需要精确飞行时间测量的实验至关重要。</p>
 <h4 id="宇宙射线">宇宙射线<a class="headerlink" href="#宇宙射线" title="Permanent link">#</a></h4>
-<p><img alt="1745335376236" src="../../../../sci/cheatshet/number_order_dimension.zh/1745335376236.png" /></p>
+<p><img alt="1745335376236" src="../number_order_dimension.zh/1745335376236.png" /></p>
 <p><img alt="中文资料-膝区宇宙射线" src="http://center.shao.ac.cn/twxjz/abstract/2013/20130307.pdf" /></p>
 <p>一般都会大气簇射掉，到达地面一般是<span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span>子。μ 子作为主要的地面宇宙射线成分，能量范围为几个GeV，在 1 厘米厚的塑料中沉积的能量相对较小且稳定，约为 1.5-2 MeV。</p>
 <p>塑料闪烁体的闪烁效率通常约为每 MeV 10,000 个光子（对于电子），但对于质子和 α 粒子，由于猝灭效应，光产额会显著降低。For equal energies, aproton will produce only &frac14; to &frac12; the light of anelectron, while alphas will produce only about 1/10 the light. <a href="https://luxiumsolutions.com/sites/default/files/2021-11/Charged-Particle-Detection-Application.pdf">来源</a></p>
@@ -2654,11 +2652,11 @@
 <div class="md-source-file">
   <small>
     
-      Last update:
+      最后更新:
       <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年4月24日 17:52:59 UTC"><span class="timeago" datetime="2025-04-24T17:52:59+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年4月24日 17:52:59 UTC">2025-04-24</span>
       
         <br>
-        Created:
+        创建日期:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年4月22日 15:31:03 UTC"><span class="timeago" datetime="2025-04-22T15:31:03+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年4月22日 15:31:03 UTC">2025-04-22</span>
       
     
@@ -2703,7 +2701,7 @@
           
             <a href="#" class="md-top md-icon" data-md-component="top" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-              Back to top
+              回到页面顶部
             </a>
           
         </main>
@@ -2731,22 +2729,18 @@
         <div class="md-dialog__inner md-typeset"></div>
       </div>
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
       
       
         <script src="../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
         
-          <script src="../../../../js/timeago.min.js"></script>
-        
-          <script src="../../../../js/timeago_mkdocs_material.js"></script>
-        
-          <script src="../../../../js/timeago.min.js"></script>
-        
-          <script src="../../../../js/timeago_mkdocs_material.js"></script>
-        
           <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
         
+          <script src="https://d3js.org/d3.v7.min.js"></script>
+        
           <script src="../../../../js/scheme.js"></script>
+        
+          <script src="../../../../js/graph.js"></script>
         
       
     </body>
