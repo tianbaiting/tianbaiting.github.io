@@ -6,7 +6,7 @@
       "language": "zh",
       "category": "main",
       "path": "index.zh.md",
-      "size": 2956,
+      "size": 2965,
       "url": "/"
     },
     {
@@ -440,6 +440,15 @@
       "path": "sci/minimal_code/fzf.zh.md",
       "size": 6169,
       "url": "/sci/minimal_code/fzf/"
+    },
+    {
+      "id": "sci/minimal_code/yazi.zh",
+      "title": "快捷键",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/yazi.zh.md",
+      "size": 2721,
+      "url": "/sci/minimal_code/yazi/"
     },
     {
       "id": "sci/minimal_code/server_clouddirve.zh",
@@ -1038,16 +1047,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 115,
+    "total_nodes": 116,
     "total_links": 0,
     "languages": {
-      "zh": 90,
+      "zh": 91,
       "en": 25
     },
     "categories": {
       "main": 2,
       "category": 20,
-      "page": 93
+      "page": 94
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1055,6 +1064,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-10-28 08:45:01.409034"
+    "generated_at": "2025-10-30 12:12:24.632127"
   }
 }
