@@ -685,6 +685,15 @@
       "url": "/sci/project/D_polar_exp/scintillator/"
     },
     {
+      "id": "sci/project/D_polar_exp/faddeevWPCD.zh",
+      "title": "Faddeevwpcd",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/D_polar_exp/faddeevWPCD.zh.md",
+      "size": 5563,
+      "url": "/sci/project/D_polar_exp/faddeevWPCD/"
+    },
+    {
       "id": "sci/project/D_polar_exp/spherical_operator",
       "title": "To show some relation",
       "language": "en",
@@ -1047,16 +1056,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 116,
+    "total_nodes": 117,
     "total_links": 0,
     "languages": {
-      "zh": 91,
+      "zh": 92,
       "en": 25
     },
     "categories": {
       "main": 2,
       "category": 20,
-      "page": 94
+      "page": 95
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1064,6 +1073,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-10-30 12:12:24.632127"
+    "generated_at": "2025-10-30 16:59:00.500371"
   }
 }
