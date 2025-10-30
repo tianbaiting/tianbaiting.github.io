@@ -9,9 +9,11 @@ comments: true
 
 hello, world.
 
-我是田柏汀。一个兴趣使然的**。
+我是田柏汀。。
 
 ![alt text](assets/image.png)
+趣味でヒーローをやっている者だ。
+
 
 这里网站也许会放一些东西。
 
