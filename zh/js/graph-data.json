@@ -532,6 +532,33 @@
       "url": "/en/sci/minimal_theory/TransmissionLineEq/"
     },
     {
+      "id": "sci/minimal_theory/functionalAna_SpecThe.zh",
+      "title": "泛函分析 谱理论 预解resolvent算符",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/functionalAna_SpecThe.zh.md",
+      "size": 11344,
+      "url": "/sci/minimal_theory/functionalAna_SpecThe/"
+    },
+    {
+      "id": "sci/minimal_theory/qft_whatisfield",
+      "title": "Qft Whatisfield",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/qft_whatisfield.md",
+      "size": 6397,
+      "url": "/sci/minimal_theory/qft_whatisfield/"
+    },
+    {
+      "id": "sci/minimal_theory/ScateringINQMandQFT.zh",
+      "title": "Scateringinqmandqft",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/ScateringINQMandQFT.zh.md",
+      "size": 0,
+      "url": "/sci/minimal_theory/ScateringINQMandQFT/"
+    },
+    {
       "id": "sci/minimal_theory/dead_time.zh",
       "title": "Dead Time",
       "language": "zh",
@@ -1056,16 +1083,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 117,
+    "total_nodes": 120,
     "total_links": 0,
     "languages": {
-      "zh": 92,
+      "zh": 95,
       "en": 25
     },
     "categories": {
       "main": 2,
       "category": 20,
-      "page": 95
+      "page": 98
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1073,6 +1100,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-10-30 16:59:00.500371"
+    "generated_at": "2025-10-31 08:09:40.966369"
   }
 }

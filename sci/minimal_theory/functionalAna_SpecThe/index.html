@@ -1,0 +1,3188 @@
+
+  <!doctype html>
+  <html lang="zh" class="no-js">
+    <head>
+      
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        
+        
+        
+          <link rel="canonical" href="https://tianbaiting.github.io/sci/minimal_theory/functionalAna_SpecThe/">
+        
+        
+          <link rel="prev" href="../dead_time/">
+        
+        
+          <link rel="next" href="../qft_schwartz_ref/">
+        
+        <link rel="icon" href="../../../assets/images/favicon.png">
+        <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
+      
+      
+        ]
+          <title>泛函分析和谱理论初步 - TBT个人网站</title>
+        
+      
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/main.9c788c91.min.css">
+        
+          
+          <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+        
+        
+
+      
+      
+      
+        
+          
+          
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+          <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        
+      
+      
+        <link rel="stylesheet" href="../../../css/timeago.css">
+      
+        <link rel="stylesheet" href="../../../css/counter.css">
+      
+        <link rel="stylesheet" href="../../../css/graph.css">
+      
+      
+        <link rel="stylesheet" href="../../../css/counter.css">
+      
+      <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      
+        
+
+      
+      
+      
+    </head>
+    
+    
+      
+      
+      
+      
+      
+      <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink">
+    
+      <script src="../../../js/scheme.js" type="text/javascript"></script>
+      
+      
+      <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+      <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+      <label class="md-overlay" for="__drawer"></label>
+      <div data-md-component="skip">
+        
+          
+          <a href="#泛函分析-谱理论-预解resolvent算符" class="md-skip">
+            跳转至
+          </a>
+        
+      </div>
+      <div data-md-component="announce">
+        
+      </div>
+      
+      
+        
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TBT个人网站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              泛函分析和谱理论初步
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      <div class="md-header-nav__scheme md-header-nav__button md-source__icon md-icon">
+  <a
+    href="javascript:toggleScheme();"
+    title="Toggle theme"
+    class="theme-toggle"
+  >
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5 1.43 1.43L4.93 20.5 3.5 19.07 19.07 3.5m-6.18 2.43L11.41 5 9.97 6l.42-1.7L9 3.24l1.75-.12.58-1.65L12 3.1l1.73.03-1.35 1.13.51 1.67m-3.3 3.61-1.16-.73-1.12.78.34-1.32-1.09-.83 1.36-.09.45-1.29.51 1.27 1.36.03-1.05.87.4 1.31M19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58 2.77-1.15-.24 3.35-2.53-2.2m4.33-2.7 1.15-2.77 2.2 2.54-3.35.23m1.15-4.96-1.14-2.78 3.34.24-2.2 2.54M9.63 18.93l2.77 1.15-2.53 2.19-.24-3.34Z"/></svg>
+  </a>
+</div>
+
+
+  <div class="md-header__button md-lang">
+    
+      <a href="/" hreflang="zh">简体中文</a>
+    
+      <a href="/en/" hreflang="en">English</a>
+    
+  </div>
+
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+      
+      <div class="md-container" data-md-component="container">
+        
+        
+          
+            
+              
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../howtomakewebsite/" class="md-tabs__link">
+      网站制作
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      主页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../MickeyMiaoMiao/citetree/" class="md-tabs__link">
+        MickeyMiaoMiao
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../life/flavor/" class="md-tabs__link">
+        Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../todolist/" class="md-tabs__link md-tabs__link--active">
+        Sci
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-tabs__link">
+        日本生存指南
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+            
+          
+        
+        <main class="md-main" data-md-component="main">
+          <div class="md-main__inner md-grid">
+            
+              
+                
+                <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    TBT个人网站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../howtomakewebsite/" class="md-nav__link">
+        网站制作
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          MickeyMiaoMiao
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MickeyMiaoMiao" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          MickeyMiaoMiao
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/citetree/" class="md-nav__link">
+        引文网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/firefoxplug/" class="md-nav__link">
+        浏览器插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/opvpn/" class="md-nav__link">
+        opvpn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_4" tabindex="0" aria-expanded="false">
+          Useful tips
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Useful tips" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Useful tips
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/overleaf_vscode%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        overleaf插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/%E5%88%A9%E7%94%A8%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E5%88%86%E5%B1%8F/" class="md-nav__link">
+        移动设备作为电脑的分屏
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84vscode/" class="md-nav__link">
+        如何安装多个版本的code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/%E6%9C%89%E8%B6%A3%E7%9A%84%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        有趣的插件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Life" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/flavor/" class="md-nav__link">
+        **探索味型奥秘：以川菜为例的烹饪科学指南**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/z30_DeepSky/" class="md-nav__link">
+        深空摄影
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E7%84%A6%E8%99%91/" class="md-nav__link">
+        焦虑
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E9%A3%9F%E7%89%A9%E4%B8%AD%E6%AF%92/" class="md-nav__link">
+        易发中毒食物
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E9%A3%9F%E7%89%A9%E5%AE%89%E5%85%A8%E6%B8%A9%E5%BA%A6/" class="md-nav__link">
+        食物安全温度
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" tabindex="0" aria-expanded="false">
+          健康
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="健康" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          健康
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E5%81%A5%E5%BA%B7/workout_diet/" class="md-nav__link">
+        **营养**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E5%81%A5%E5%BA%B7/%E9%BC%BB%E7%82%8E/" class="md-nav__link">
+        **鼻炎综合管理临床报告：过敏性鼻炎与血管运动性鼻炎的深度解析**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="true">
+          Sci
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sci" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Sci
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todolist/" class="md-nav__link">
+        todo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
+          Cheatshet
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cheatshet" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cheatshet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/bashrc/" class="md-nav__link">
+        Bashrc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/docker/" class="md-nav__link">
+        docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/git/" class="md-nav__link">
+        git 备忘单
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/number_order_dimension/" class="md-nav__link">
+        数量级估计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/root_geant4_install/" class="md-nav__link">
+        Root geant4 install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/shell/" class="md-nav__link">
+        Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/site.en/" class="md-nav__link">
+        网页相关知识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/termux/" class="md-nav__link">
+        termux 运行ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/vimrc/" class="md-nav__link">
+        vim配置文件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
+          Minimal code
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minimal code" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Minimal code
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/Operating_system/" class="md-nav__link">
+        装系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/c%2B%2Bproject/" class="md-nav__link">
+        c++项目
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/class_dataTransport/" class="md-nav__link">
+        面向对象设计教程：管理类之间的数据依赖和解耦
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/cmake/" class="md-nav__link">
+        cmake项目
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/color_scheme/" class="md-nav__link">
+        科研配图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/cpp_package/" class="md-nav__link">
+        cpp 包管理 以及 依赖管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/format_guidelines/" class="md-nav__link">
+        格式规范
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/fzf/" class="md-nav__link">
+        FZF 模糊搜索工具完全教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/gdb/" class="md-nav__link">
+        gdb 调试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/geant4_oop/" class="md-nav__link">
+        **揭秘面向对象编程：Geant4工具包深度导览**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/gemni_use_wen2cli/" class="md-nav__link">
+        Gemini 使用限制与付费模式解析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/jupyternotebook/" class="md-nav__link">
+        jupyter notebook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/latex_graphics/" class="md-nav__link">
+        latex include graphics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/python_def_class/" class="md-nav__link">
+        python 定义类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/python_lib_self/" class="md-nav__link">
+        python 包的创建与使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/python_venv/" class="md-nav__link">
+        Python 虚拟环境
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/root_opener/" class="md-nav__link">
+        设置 ROOT 文件默认浏览器教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/root_plot/" class="md-nav__link">
+        root_plot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/root_visual_geant4/" class="md-nav__link">
+        Root visual geant4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/server_clouddirve/" class="md-nav__link">
+        如何从零搭建私有云盘服务器 (Markdown 教程)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/server_clouddirve_example/" class="md-nav__link">
+        Server clouddirve example
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/termux/" class="md-nav__link">
+        在 Termux 中安装 Ubuntu 桌面环境并运行 VS Code 的终极指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/vim_neovim/" class="md-nav__link">
+        Vim neovim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/vscode_env_path/" class="md-nav__link">
+        Vscode env path
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/vscode_lsp/" class="md-nav__link">
+        如何解决 VS Code 中的 C/C++ `include` 报错问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/yazi/" class="md-nav__link">
+        快捷键
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/zsh/" class="md-nav__link">
+        Zsh 环境一键配置脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/%E5%BE%85%E8%A7%A3%E5%86%B3%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        to be solved
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="true">
+          Minimal theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minimal theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Minimal theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ScateringINQMandQFT/" class="md-nav__link">
+        ScateringINQMandQFT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TransmissionLineEq/" class="md-nav__link">
+        TransmissionLineEq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dead_time/" class="md-nav__link">
+        Dead time
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          泛函分析和谱理论初步
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        泛函分析和谱理论初步
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#泛函分析的核心思想" class="md-nav__link">
+    泛函分析的核心思想
+  </a>
+  
+    <nav class="md-nav" aria-label="泛函分析的核心思想">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#函数空间" class="md-nav__link">
+    函数空间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#希尔伯特空间" class="md-nav__link">
+    希尔伯特空间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#线性算符" class="md-nav__link">
+    线性算符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#谱理论的核心内容" class="md-nav__link">
+    谱理论的核心内容
+  </a>
+  
+    <nav class="md-nav" aria-label="谱理论的核心内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#谱的分类" class="md-nav__link">
+    谱的分类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#预解算符" class="md-nav__link">
+    预解算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#微扰理论工具" class="md-nav__link">
+    微扰理论工具
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolvent-的核心概念" class="md-nav__link">
+    Resolvent 的核心概念
+  </a>
+  
+    <nav class="md-nav" aria-label="Resolvent 的核心概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolvent-的定义" class="md-nav__link">
+    Resolvent 的定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolvent-的三大作用" class="md-nav__link">
+    Resolvent 的三大作用
+  </a>
+  
+    <nav class="md-nav" aria-label="Resolvent 的三大作用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-谱的探测器-spectrum-detector" class="md-nav__link">
+    1. 谱的探测器 (Spectrum Detector)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-响应的发生器-greens-function" class="md-nav__link">
+    2. 响应的发生器 (Green's Function)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-微扰的发动机-perturbation-engine" class="md-nav__link">
+    3. 微扰的发动机 (Perturbation Engine)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolvent-的总结" class="md-nav__link">
+    Resolvent 的总结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qft_schwartz_ref/" class="md-nav__link">
+        Schwartz — 《量子场论与标准模型》学习资源指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qft_whatisfield/" class="md-nav__link">
+        Qft whatisfield
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatering_theory/" class="md-nav__link">
+        散射理论
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5" tabindex="0" aria-expanded="false">
+          Project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Project" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/example/" class="md-nav__link">
+        hello world
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_2" type="checkbox" id="__nav_5_5_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_2" tabindex="0" aria-expanded="false">
+          D polar exp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="D polar exp" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          D polar exp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/Sipm_PMT/" class="md-nav__link">
+        Sipm PMT参数对比
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/caogao/" class="md-nav__link">
+        Caogao
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/d_breakup_theory/" class="md-nav__link">
+        氘核破裂理论上可以如何计算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/faddeevWPCD/" class="md-nav__link">
+        faddeevWPCD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/my_polarimeter/" class="md-nav__link">
+        My polarimeter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/other_polarmeter/" class="md-nav__link">
+        其他研究组的polarimeter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/riken_web_source/" class="md-nav__link">
+        riken 常见资源
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/scintillator/" class="md-nav__link">
+        闪烁体光产额
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/spherical_operator/" class="md-nav__link">
+        To show some relation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/stastic/" class="md-nav__link">
+        统计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/sw-api/" class="md-nav__link">
+        solidworks api接口
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/todo_list/" class="md-nav__link">
+        To do list
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_3" type="checkbox" id="__nav_5_5_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3" tabindex="0" aria-expanded="false">
+          Samurai
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Samurai" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Samurai
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/detector_samurai/" class="md-nav__link">
+        SAMURAI 光谱仪带电粒子探测器详细功能
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_3_2" type="checkbox" id="__nav_5_5_3_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3_2" tabindex="0" aria-expanded="false">
+          Anaroot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Anaroot" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Anaroot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/RIDF/" class="md-nav__link">
+        RIKEN RIDF 文件构成详解：数据块 (Block) 说明
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot/" class="md-nav__link">
+        **ANAROOT 综合分析框架：
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot2version/" class="md-nav__link">
+        ANAROOT 详细中文文档
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_decoder/" class="md-nav__link">
+        Anaroot decoder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_nebula/" class="md-nav__link">
+        Anaroot nebula
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_nebula_reconstructionfunction/" class="md-nav__link">
+        Anaroot nebula reconstructionfunction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_pdc/" class="md-nav__link">
+        anaroot pdcS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_3_3" type="checkbox" id="__nav_5_5_3_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3_3" tabindex="0" aria-expanded="false">
+          Smsimulator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Smsimulator" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Smsimulator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/FDC2/" class="md-nav__link">
+        FDC2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/PDC/" class="md-nav__link">
+        PDC 漂移室模拟方案
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/nebula_simlulator/" class="md-nav__link">
+        Nebula simlulator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/smsimulator/" class="md-nav__link">
+        smsimultor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/smsimulator_tutor/" class="md-nav__link">
+        smsimulator 教学
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          日本生存指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="日本生存指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          日本生存指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-nav__link">
+        Japanese
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%8E%BB%E6%97%A5%E6%9C%AC%E5%89%8D%E6%89%93%E5%8C%85/" class="md-nav__link">
+        登机前打包
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%90%83/" class="md-nav__link">
+        吃
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        垃圾分类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%8E%A5%E6%94%B6%E5%BF%AB%E9%80%92/" class="md-nav__link">
+        接受快递
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%97%A5%E7%89%88%E6%89%8B%E6%9C%BAfelica%E8%8A%AF%E7%89%87/" class="md-nav__link">
+        **日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E5%AD%90%E6%94%AF%E4%BB%98-%E4%BA%A4%E9%80%9A%E5%8D%A1/" class="md-nav__link">
+        日本电子支付 - 交通卡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E8%AF%9D%E5%8D%A1/" class="md-nav__link">
+        电话卡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E8%90%BD%E5%9C%B0todo/" class="md-nav__link">
+        落地事宜
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E9%93%B6%E8%A1%8C%E5%8D%A1/" class="md-nav__link">
+        银行卡
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                    </div>
+                  </div>
+                </div>
+              
+              
+                
+                <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#泛函分析的核心思想" class="md-nav__link">
+    泛函分析的核心思想
+  </a>
+  
+    <nav class="md-nav" aria-label="泛函分析的核心思想">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#函数空间" class="md-nav__link">
+    函数空间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#希尔伯特空间" class="md-nav__link">
+    希尔伯特空间
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#线性算符" class="md-nav__link">
+    线性算符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#谱理论的核心内容" class="md-nav__link">
+    谱理论的核心内容
+  </a>
+  
+    <nav class="md-nav" aria-label="谱理论的核心内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#谱的分类" class="md-nav__link">
+    谱的分类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#预解算符" class="md-nav__link">
+    预解算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#微扰理论工具" class="md-nav__link">
+    微扰理论工具
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolvent-的核心概念" class="md-nav__link">
+    Resolvent 的核心概念
+  </a>
+  
+    <nav class="md-nav" aria-label="Resolvent 的核心概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolvent-的定义" class="md-nav__link">
+    Resolvent 的定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolvent-的三大作用" class="md-nav__link">
+    Resolvent 的三大作用
+  </a>
+  
+    <nav class="md-nav" aria-label="Resolvent 的三大作用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-谱的探测器-spectrum-detector" class="md-nav__link">
+    1. 谱的探测器 (Spectrum Detector)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-响应的发生器-greens-function" class="md-nav__link">
+    2. 响应的发生器 (Green's Function)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-微扰的发动机-perturbation-engine" class="md-nav__link">
+    3. 微扰的发动机 (Perturbation Engine)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resolvent-的总结" class="md-nav__link">
+    Resolvent 的总结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                    </div>
+                  </div>
+                </div>
+                
+              
+            
+            
+              <div class="md-content" data-md-component="content">
+                <article class="md-content__inner md-typeset">
+                  
+                    
+
+
+
+<h1 id="泛函分析-谱理论-预解resolvent算符">泛函分析 谱理论 预解resolvent算符<a class="headerlink" href="#泛函分析-谱理论-预解resolvent算符" title="Permanent link">#</a></h1>
+<p>泛函分析 (<span style="color:red;">Functional Analysis</span>) 和谱理论 (<span style="color:red;">Spectral Theory</span>) 是研究无穷维线性空间及其线性算符性质的强大工具，在量子力学 (<span style="color:red;">QM</span>) 和量子场论 (<span style="color:red;">QFT</span>) 中具有核心地位。 其中resolvent算符是泛函分析和谱理论中最重要的概念之一。 它不仅编码了线性算符的全部谱信息，还作为格林函数和微扰理论的基础。</p>
+<p>当然在经典物理里面这些盖概念也有很多应用， 因为人类几乎只能求解线性问题，非线性问题几乎只能微扰展开， 所以泛函分析和谱理论的工具无处不在。</p>
+<p>而且我建议先了解经典物理里面的微扰，以免误认为发散之类的概念是量子理论特有的。 (我认为这里很多工具是为了求解流体力学，动力系统（一个偏微分，一个常微分方向）等经典物理问题而发明的， 量子力学和量子场论只是顺手拿来用了一下而已。)</p>
+<p>推荐中文书籍, 数学物理中的渐进分析，为微扰展开打一点基础。 至于谱理论 推荐书籍？</p>
+<h2 id="泛函分析的核心思想">泛函分析的核心思想<a class="headerlink" href="#泛函分析的核心思想" title="Permanent link">#</a></h2>
+<h3 id="函数空间">函数空间<a class="headerlink" href="#函数空间" title="Permanent link">#</a></h3>
+<p>泛函分析的核心洞见是将函数 <span class="arithmatex"><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span> 视为一个具有无穷多个分量的向量，所有这些函数构成了一个无限维向量空间。例如，<span class="arithmatex"><span class="MathJax_Preview">L^2(\mathbb{R})</span><script type="math/tex">L^2(\mathbb{R})</script></span> 空间是所有平方可积函数的集合，也是量子力学中波函数 <span class="arithmatex"><span class="MathJax_Preview">\psi(x)</span><script type="math/tex">\psi(x)</script></span> 的“家园”。</p>
+<h3 id="希尔伯特空间">希尔伯特空间<a class="headerlink" href="#希尔伯特空间" title="Permanent link">#</a></h3>
+<p>希尔伯特空间是泛函分析中最重要的函数空间，具有内积结构：<br />
+$$<br />
+\langle f | g \rangle = \int f^*(x) g(x) dx<br />
+$$<br />
+内积定义了几何概念，如范数、角度和正交性。量子力学的数学框架正是基于希尔伯特空间。</p>
+<h3 id="线性算符">线性算符<a class="headerlink" href="#线性算符" title="Permanent link">#</a></h3>
+<p>线性算符是泛函分析中的“矩阵”，它将一个函数 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 映射为另一个函数 <span class="arithmatex"><span class="MathJax_Preview">g = Af</span><script type="math/tex">g = Af</script></span>。例如：<br />
+- 位置算符 <span class="arithmatex"><span class="MathJax_Preview">\hat{x}</span><script type="math/tex">\hat{x}</script></span>：<span class="arithmatex"><span class="MathJax_Preview">(\hat{x}f)(x) = x \cdot f(x)</span><script type="math/tex">(\hat{x}f)(x) = x \cdot f(x)</script></span><br />
+- 动量算符 <span class="arithmatex"><span class="MathJax_Preview">\hat{p}</span><script type="math/tex">\hat{p}</script></span>：<span class="arithmatex"><span class="MathJax_Preview">(\hat{p}f)(x) = -i\hbar \frac{d}{dx}f(x)</span><script type="math/tex">(\hat{p}f)(x) = -i\hbar \frac{d}{dx}f(x)</script></span></p>
+<p>这些算符将微分方程（如薛定谔方程 <span class="arithmatex"><span class="MathJax_Preview">H\psi = E\psi</span><script type="math/tex">H\psi = E\psi</script></span>）转化为无限维线性代数问题。</p>
+<h2 id="谱理论的核心内容">谱理论的核心内容<a class="headerlink" href="#谱理论的核心内容" title="Permanent link">#</a></h2>
+<h3 id="谱的分类">谱的分类<a class="headerlink" href="#谱的分类" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>点谱 (Point Spectrum)</strong>：对应于算符的本征值，描述束缚态（如氢原子的分立能级）。</li>
+<li><strong>连续谱 (Continuous Spectrum)</strong>：描述散射态（如自由粒子的连续能量）。</li>
+</ul>
+<h3 id="预解算符">预解算符<a class="headerlink" href="#预解算符" title="Permanent link">#</a></h3>
+<p>谱理论通过研究预解算符 <span class="arithmatex"><span class="MathJax_Preview">R(z; A) = (zI - A)^{-1}</span><script type="math/tex">R(z; A) = (zI - A)^{-1}</script></span> 来提取算符的谱信息。<span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span> 的奇点（如极点、分支切割）编码了点谱和连续谱的全部信息。</p>
+<h3 id="微扰理论工具">微扰理论工具<a class="headerlink" href="#微扰理论工具" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Resolvent 恒等式</strong>：<br />
+    $$<br />
+    R = R_0 + R_0 V R<br />
+    $$</li>
+<li><strong>玻恩级数 (Born Series)</strong>：<br />
+    $$<br />
+    R = R_0 + R_0 V R_0 + R_0 V R_0 V R_0 + \dots<br />
+    $$</li>
+<li><strong>Lippmann-Schwinger 方程**和 **Dyson 方程</strong>：微扰理论的具体实现。</li>
+</ul>
+<h2 id="resolvent-的核心概念">Resolvent 的核心概念<a class="headerlink" href="#resolvent-的核心概念" title="Permanent link">#</a></h2>
+<p>“Resolvent” 是泛函分析（Functional Analysis）和谱理论（Spectral Theory）中最核心、最强大的概念之一。它的精髓在于，它是一个“万能钥匙”，几乎编码了一个线性系统（用算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 描述）的全部信息。</p>
+<h3 id="resolvent-的定义">Resolvent 的定义<a class="headerlink" href="#resolvent-的定义" title="Permanent link">#</a></h3>
+<p>从数学上讲，给定一个线性算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>（可以是一个 <span class="arithmatex"><span class="MathJax_Preview">N \times N</span><script type="math/tex">N \times N</script></span> 矩阵，也可以是一个微分算符，如 <span class="arithmatex"><span class="MathJax_Preview">\frac{d^2}{dx^2}</span><script type="math/tex">\frac{d^2}{dx^2}</script></span>），其 Resolvent <span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span> 定义为：<br />
+$$<br />
+R(z; A) = (zI - A)^{-1}<br />
+$$<br />
+其中，<span class="arithmatex"><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span> 是单位算符，<span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 是复数。</p>
+<ul>
+<li>Resolvent 是 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的“逆”，但通过复变量 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 进行参数化。</li>
+<li>当 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 不是 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的本征值时，<span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span> 是解析的。</li>
+</ul>
+<h3 id="resolvent-的三大作用">Resolvent 的三大作用<a class="headerlink" href="#resolvent-的三大作用" title="Permanent link">#</a></h3>
+<h4 id="1-谱的探测器-spectrum-detector">1. 谱的探测器 (Spectrum Detector)<a class="headerlink" href="#1-谱的探测器-spectrum-detector" title="Permanent link">#</a></h4>
+<p>Resolvent 的奇点（如极点、分支切割）揭示了算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱信息：<br />
+- <strong>离散谱</strong>：孤立极点对应束缚态能量。<br />
+- <strong>连续谱</strong>：分支切割对应散射态能量。<br />
+- <strong>共振态</strong>：第二黎曼片上的极点对应共振态。</p>
+<p>通过研究 <span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span> 的奇点，可以提取 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的所有谱信息，而无需直接解 <span class="arithmatex"><span class="MathJax_Preview">A\psi = \lambda\psi</span><script type="math/tex">A\psi = \lambda\psi</script></span>。</p>
+<h4 id="2-响应的发生器-greens-function">2. 响应的发生器 (Green's Function)<a class="headerlink" href="#2-响应的发生器-greens-function" title="Permanent link">#</a></h4>
+<p>Resolvent 是系统的格林函数。对于一个源驱动的线性系统：<br />
+$$<br />
+(A - \lambda_0) \psi = f<br />
+$$<br />
+其解为：<br />
+$$<br />
+\psi = -R(\lambda_0; A) f<br />
+$$<br />
+因此，<span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span> 描述了系统 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 在频率 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 下对点源的响应。</p>
+<h4 id="3-微扰的发动机-perturbation-engine">3. 微扰的发动机 (Perturbation Engine)<a class="headerlink" href="#3-微扰的发动机-perturbation-engine" title="Permanent link">#</a></h4>
+<p>假设 <span class="arithmatex"><span class="MathJax_Preview">A = A_0 + V</span><script type="math/tex">A = A_0 + V</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">A_0</span><script type="math/tex">A_0</script></span> 的 Resolvent 已知，<span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 是微扰。通过 Resolvent 恒等式：<br />
+$$<br />
+R = R_0 + R_0 V R<br />
+$$<br />
+可以迭代生成微扰级数：<br />
+$$<br />
+R = R_0 + R_0 V R_0 + R_0 V R_0 V R_0 + \dots<br />
+$$<br />
+这为微扰理论提供了系统的数学框架。</p>
+<h3 id="resolvent-的总结">Resolvent 的总结<a class="headerlink" href="#resolvent-的总结" title="Permanent link">#</a></h3>
+<p>Resolvent <span class="arithmatex"><span class="MathJax_Preview">R(z; A) = (zI - A)^{-1}</span><script type="math/tex">R(z; A) = (zI - A)^{-1}</script></span> 是一个集大成者：<br />
+- <strong>谱的字典</strong>：奇点揭示系统的谱。<br />
+- <strong>响应的蓝图</strong>：它是格林函数。<br />
+- <strong>微扰的引擎</strong>：生成微扰级数。<br />
+- <strong>算符函数的定义</strong>：通过复积分定义 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的函数。</p>
+<p>Resolvent 将线性代数问题转化为复分析问题，是泛函分析和谱理论中的核心工具。</p>
+<h1 id="resolvent-再谈">Resolvent 再谈<a class="headerlink" href="#resolvent-再谈" title="Permanent link">#</a></h1>
+<h2 id="谱的探测器复平面上的奇点地图">谱的探测器：复平面上的“奇点”地图<a class="headerlink" href="#谱的探测器复平面上的奇点地图" title="Permanent link">#</a></h2>
+<p>你问：“Resolvent 和这些支点割线有什么关系？”关系就是：Resolvent 是一个在复平面上“活着”的函数，而算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的“谱” <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)</span><script type="math/tex">\sigma(A)</script></span>，就是这个函数的“奇点”集合。我们来构建这个“地图”：</p>
+<h3 id="地图的定义">“地图”的定义<a class="headerlink" href="#地图的定义" title="Permanent link">#</a></h3>
+<ul>
+<li><strong>Resolvent <span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span></strong>: 定义为 <span class="arithmatex"><span class="MathJax_Preview">R(z; A) = (zI - A)^{-1}</span><script type="math/tex">R(z; A) = (zI - A)^{-1}</script></span>，是一个以复数 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 为变量的算符值函数。</li>
+<li><strong>Resolvent Set <span class="arithmatex"><span class="MathJax_Preview">\rho(A)</span><script type="math/tex">\rho(A)</script></span></strong>: 在复平面 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 上，所有使 <span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span> 存在且有界（即 <span class="arithmatex"><span class="MathJax_Preview">(zI-A)</span><script type="math/tex">(zI-A)</script></span> 可逆）的点，构成了“安全”区域。在这些点上，<span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span> 是解析的（analytic）。</li>
+<li><strong>谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)</span><script type="math/tex">\sigma(A)</script></span></strong>: 在复平面 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 上，所有使 <span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span> 不存在或无界（即 <span class="arithmatex"><span class="MathJax_Preview">(zI-A)</span><script type="math/tex">(zI-A)</script></span> 不可逆）的点，构成了“危险”区域。这些点就是 <span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span> 的奇点。</li>
+</ul>
+<h3 id="危险区域-奇点-的分类">“危险区域” (奇点) 的分类<a class="headerlink" href="#危险区域-奇点-的分类" title="Permanent link">#</a></h3>
+<p>对于量子力学中的厄米算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>（<span class="arithmatex"><span class="MathJax_Preview">A = A^\dagger</span><script type="math/tex">A = A^\dagger</script></span>），它的谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)</span><script type="math/tex">\sigma(A)</script></span> 必须位于实轴上。Resolvent 在实轴上的“奇点”形态，精确地对应了不同谱的分类：</p>
+<h4 id="离散谱-point-spectrum-toto-孤立极点-isolated-poles">离散谱 (Point Spectrum) <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 孤立极点 (Isolated Poles)<a class="headerlink" href="#离散谱-point-spectrum-toto-孤立极点-isolated-poles" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>数学</strong>: 假设 <span class="arithmatex"><span class="MathJax_Preview">\lambda_n</span><script type="math/tex">\lambda_n</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的一个离散本征值（束缚态能量），对应的本征态为 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n\rangle</span><script type="math/tex">|\psi_n\rangle</script></span>。在 <span class="arithmatex"><span class="MathJax_Preview">z \approx \lambda_n</span><script type="math/tex">z \approx \lambda_n</script></span> 附近，Resolvent 的矩阵元 <span class="arithmatex"><span class="MathJax_Preview">\langle \phi | R(z) | \chi \rangle</span><script type="math/tex">\langle \phi | R(z) | \chi \rangle</script></span> 的主导行为是：<br />
+    $$<br />
+    \langle \phi | (zI - A)^{-1} | \chi \rangle \approx \frac{\langle \phi | \psi_n \rangle \langle \psi_n | \chi \rangle}{z - \lambda_n} + (\text{其他解析部分})<br />
+    $$<br />
+    结论： <span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span> 在复平面 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 上的每一个离散本征值 <span class="arithmatex"><span class="MathJax_Preview">\lambda_n</span><script type="math/tex">\lambda_n</script></span> 处，都有一个一级极点 (simple pole)。</li>
+<li><strong>物理</strong>: 探测这个 Resolvent 函数，找到它在实轴上的所有“杆子”（poles），你就找到了系统的所有“束缚态”能量。</li>
+</ul>
+<h4 id="连续谱-continuous-spectrum-toto-分支切割-branch-cuts">连续谱 (Continuous Spectrum) <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 分支切割 (Branch Cuts)<a class="headerlink" href="#连续谱-continuous-spectrum-toto-分支切割-branch-cuts" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>数学</strong>: 假设 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱在 <span class="arithmatex"><span class="MathJax_Preview">[E_{min}, \infty)</span><script type="math/tex">[E_{min}, \infty)</script></span> 上是连续的（散射态能量）。<span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span> 的矩阵元包含一个积分：<br />
+    $$<br />
+    \langle \phi | R(z) | \chi \rangle = \int_{E_{min}}^{\infty} dE \frac{\langle \phi | \psi_E \rangle \langle \psi_E | \chi \rangle}{z - E} + (\text{束缚态的极点})<br />
+    $$<br />
+    这个积分定义了一个在实轴 <span class="arithmatex"><span class="MathJax_Preview">[E_{min}, \infty)</span><script type="math/tex">[E_{min}, \infty)</script></span> 上有“分支切割”的函数。根据 Sokhotski–Plemelj 定理，这个积分的值会“跳变”：<br />
+    $$<br />
+    \lim_{\epsilon \to 0^+} \frac{1}{E_0 \pm i\epsilon - E} = \mathcal{P}\left(\frac{1}{E_0 - E}\right) \mp i\pi \delta(E_0 - E)<br />
+    $$<br />
+    （<span class="arithmatex"><span class="MathJax_Preview">\mathcal{P}</span><script type="math/tex">\mathcal{P}</script></span> 表示柯西主值）<br />
+    结论： <span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">[E_{min}, \infty)</span><script type="math/tex">[E_{min}, \infty)</script></span> 这条线上是不连续的。这条不连续的线，就是一个分支切割 (Branch Cut)。</li>
+<li><strong>物理</strong>: 系统的“连续谱”在 Resolvent 上的体现，就是一条它无法跨越的“割线”。</li>
+</ul>
+<h4 id="共振态-resonances-toto-第二黎曼片上的极点">共振态 (Resonances) <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 第二黎曼片上的极点<a class="headerlink" href="#共振态-resonances-toto-第二黎曼片上的极点" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>数学</strong>: 割线 <span class="arithmatex"><span class="MathJax_Preview">[E_{min}, \infty)</span><script type="math/tex">[E_{min}, \infty)</script></span> 把复平面分成了“两半”。<span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span> 可以被解析延拓到“第二”（“非物理”）黎曼片。一个共振态表现为 <span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span> 在第二黎曼片上的一个极点：<br />
+    $$<br />
+    z_{res} = E_0 - i\frac{\Gamma}{2}<br />
+    $$<br />
+    实部 <span class="arithmatex"><span class="MathJax_Preview">E_0</span><script type="math/tex">E_0</script></span> 是共振能量，虚部 <span class="arithmatex"><span class="MathJax_Preview">\Gamma/2</span><script type="math/tex">\Gamma/2</script></span> 决定了它的衰变宽度（寿命 <span class="arithmatex"><span class="MathJax_Preview">\tau = \hbar/\Gamma</span><script type="math/tex">\tau = \hbar/\Gamma</script></span>）。</li>
+<li><strong>物理</strong>: Resolvent 的“地图”比我们想象的要大。在“地图”的“背面”（第二黎曼片），藏着所有“共振态”的极点。</li>
+</ul>
+<h2 id="响应的发生器-greens-function">响应的发生器 (Green's Function)<a class="headerlink" href="#响应的发生器-greens-function" title="Permanent link">#</a></h2>
+<p>你对这部分的总结已经非常精确了。我只补充一点数学上的“翻译”：</p>
+<h3 id="算符-toto-积分核-kernel">算符 <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 积分核 (Kernel)<a class="headerlink" href="#算符-toto-积分核-kernel" title="Permanent link">#</a></h3>
+<p>你写的 <span class="arithmatex"><span class="MathJax_Preview">\psi = -R(\lambda_0; A) f</span><script type="math/tex">\psi = -R(\lambda_0; A) f</script></span> 是一个抽象的算符方程。在位置表象中，这个方程“翻译”为：<br />
+$$<br />
+\langle x | \psi \rangle = - \int dy \, \langle x | R(\lambda_0; A) | y \rangle \langle y | f \rangle<br />
+$$<br />
+我们定义 <span class="arithmatex"><span class="MathJax_Preview">G(x, y; \lambda_0) \equiv \langle x | R(\lambda_0; A) | y \rangle</span><script type="math/tex">G(x, y; \lambda_0) \equiv \langle x | R(\lambda_0; A) | y \rangle</script></span>。这就是你熟悉的格林函数方程：<br />
+$$<br />
+\psi(x) = - \int dy \, G(x, y; \lambda_0) f(y)<br />
+$$<br />
+<span class="arithmatex"><span class="MathJax_Preview">G(x, y; \lambda_0)</span><script type="math/tex">G(x, y; \lambda_0)</script></span> 被称为 Resolvent 算符的积分核 (Integral Kernel)。</p>
+<p><strong>精髓</strong>: Resolvent 是抽象的算符，而格林函数是它在某个具体表象（如位置表象）下的“矩阵元”。</p>
+<h2 id="为什么微扰能够成立">为什么微扰“能够成立”？<a class="headerlink" href="#为什么微扰能够成立" title="Permanent link">#</a></h2>
+<p>这个问题是微扰论的核心：“为什么这个无穷级数 <span class="arithmatex"><span class="MathJax_Preview">R = R_0 + R_0 V R_0 + \dots</span><script type="math/tex">R = R_0 + R_0 V R_0 + \dots</script></span> 能够成立？”答案是：它“成立”有两种截然不同的含义，这两种含义对应了两种不同的数学结构。</p>
+<h3 id="含义一收敛级数-convergent-series">含义一：“收敛级数” (Convergent Series)<a class="headerlink" href="#含义一收敛级数-convergent-series" title="Permanent link">#</a></h3>
+<p><span class="arithmatex"><span class="MathJax_Preview">R = R_0 (I - V R_0)^{-1}</span><script type="math/tex">R = R_0 (I - V R_0)^{-1}</script></span>。我们把它展开成 <span class="arithmatex"><span class="MathJax_Preview">R = R_0 \sum_{n=0}^\infty (V R_0)^n</span><script type="math/tex">R = R_0 \sum_{n=0}^\infty (V R_0)^n</script></span>。这是一个算符的几何级数（Geometric Series）。</p>
+<ul>
+<li>
+<p><strong>什么时候成立？</strong> 这个级数绝对收敛 (converges) 的充分条件是，它的“公比”的**范数（Norm）**小于1：<br />
+    $$<br />
+    | V R_0 | &lt; 1<br />
+    $$<br />
+<span class="arithmatex"><span class="MathJax_Preview">R_0(z) = (zI - A_0)^{-1}</span><script type="math/tex">R_0(z) = (zI - A_0)^{-1}</script></span> 的“大小”取决于 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 离 <span class="arithmatex"><span class="MathJax_Preview">A_0</span><script type="math/tex">A_0</script></span> 的谱（本征值）有多远。</p>
+</li>
+<li>
+<p><strong>物理含义</strong>: 如果微扰 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 足够“小”，并且探测的能量 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 离系统的“裸”能级（<span class="arithmatex"><span class="MathJax_Preview">A_0</span><script type="math/tex">A_0</script></span> 的谱）足够“远”，那么这个级数就会收敛。</p>
+</li>
+</ul>
+<h3 id="含义二渐近级数-asymptotic-series">含义二：“渐近级数” (Asymptotic Series)<a class="headerlink" href="#含义二渐近级数-asymptotic-series" title="Permanent link">#</a></h3>
+<p>这是物理学中（尤其是 QFT）更常见也更深刻的情况。</p>
+<ul>
+<li>
+<p><strong>定义</strong>: 一个级数 <span class="arithmatex"><span class="MathJax_Preview">S_N = \sum_{n=0}^N c_n \lambda^n</span><script type="math/tex">S_N = \sum_{n=0}^N c_n \lambda^n</script></span> 即使在 <span class="arithmatex"><span class="MathJax_Preview">N \to \infty</span><script type="math/tex">N \to \infty</script></span> 时发散，它也可以是 <span class="arithmatex"><span class="MathJax_Preview">S(\lambda)</span><script type="math/tex">S(\lambda)</script></span> 的一个“渐近”表示。如果“截断误差”满足：<br />
+    $$<br />
+    | S(\lambda) - S_N(\lambda) | = O(\lambda^{N+1}) \quad (\text{当 } \lambda \to 0 \text{ 时})<br />
+    $$<br />
+    我们就称这个（可能发散的）级数是 <span class="arithmatex"><span class="MathJax_Preview">S(\lambda)</span><script type="math/tex">S(\lambda)</script></span> 的渐近级数。</p>
+</li>
+<li>
+<p><strong>物理含义</strong>: 这意味着，对于一个固定的项数 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>，当耦合常数 <span class="arithmatex"><span class="MathJax_Preview">\lambda \to 0</span><script type="math/tex">\lambda \to 0</script></span> 时，这个近似解 <span class="arithmatex"><span class="MathJax_Preview">S_N(\lambda)</span><script type="math/tex">S_N(\lambda)</script></span> 会快速逼近真实解 <span class="arithmatex"><span class="MathJax_Preview">S(\lambda)</span><script type="math/tex">S(\lambda)</script></span>。</p>
+</li>
+</ul>
+<h3 id="总结">总结<a class="headerlink" href="#总结" title="Permanent link">#</a></h3>
+<p>Resolvent 恒等式 <span class="arithmatex"><span class="MathJax_Preview">R = R_0 + R_0 V R</span><script type="math/tex">R = R_0 + R_0 V R</script></span> 是精确的、非微扰的。它的迭代级数 <span class="arithmatex"><span class="MathJax_Preview">R = R_0 + R_0 V R_0 + \dots</span><script type="math/tex">R = R_0 + R_0 V R_0 + \dots</script></span> 为什么“成立”？</p>
+<ul>
+<li>在“良好”的系统（如 QM 束缚态）中：因为它是一个收敛级数（只要 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 足够小）。</li>
+<li>在“病态”的系统（如 QFT）中：因为它是一个渐近级数。它虽然在 <span class="arithmatex"><span class="MathJax_Preview">n \to \infty</span><script type="math/tex">n \to \infty</script></span> 时发散，但它的“前几项”提供了对真实物理的极其精确的近似。</li>
+</ul>
+<h2 id="微扰展开-截断">微扰展开 截断<a class="headerlink" href="#微扰展开-截断" title="Permanent link">#</a></h2>
+<p>发散级数并非无用，比如斯特林公式的渐近展开：<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">n! \sim \sqrt{2\pi n} \left(\frac{n}{e}\right)^n \left(1 + \frac{1}{12n} + \frac{1}{288n^2} - \frac{139}{51840 n^3} + \dots \right)</span><script type="math/tex">n! \sim \sqrt{2\pi n} \left(\frac{n}{e}\right)^n \left(1 + \frac{1}{12n} + \frac{1}{288n^2} - \frac{139}{51840 n^3} + \dots \right)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">n! \sim \sqrt{2\pi n} \left(\frac{n}{e}\right)^n \left(1 + \frac{1}{12n} + \frac{1}{288n^2} - \frac{139}{51840 n^3} + \dots \right)</span><script type="math/tex">n! \sim \sqrt{2\pi n} \left(\frac{n}{e}\right)^n \left(1 + \frac{1}{12n} + \frac{1}{288n^2} - \frac{139}{51840 n^3} + \dots \right)</script></span></script></span></p>
+<p>比如余误差函数的渐近展开：<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\operatorname{erfc}(x) \sim \frac{e^{-x^2}}{x\sqrt{\pi}}\left(1 - \frac{1}{2x^2} + \frac{3}{4x^4} - \frac{15}{8x^6} + \dots\right) \quad (x \to +\infty)</span><script type="math/tex">\operatorname{erfc}(x) \sim \frac{e^{-x^2}}{x\sqrt{\pi}}\left(1 - \frac{1}{2x^2} + \frac{3}{4x^4} - \frac{15}{8x^6} + \dots\right) \quad (x \to +\infty)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\operatorname{erfc}(x) \sim \frac{e^{-x^2}}{x\sqrt{\pi}}\left(1 - \frac{1}{2x^2} + \frac{3}{4x^4} - \frac{15}{8x^6} + \dots\right) \quad (x \to +\infty)</span><script type="math/tex">\operatorname{erfc}(x) \sim \frac{e^{-x^2}}{x\sqrt{\pi}}\left(1 - \frac{1}{2x^2} + \frac{3}{4x^4} - \frac{15}{8x^6} + \dots\right) \quad (x \to +\infty)</script></span></script></span></p>
+<p><img alt="alt text" src="../assets/functionalAna_SpecThe.zh/image.png" /></p>
+<p><img alt="alt text" src="../assets/functionalAna_SpecThe.zh/image-1.png" /></p>
+<p><img alt="alt text" src="../assets/functionalAna_SpecThe.zh/image-2.png" /></p>
+<p><img alt="alt text" src="../assets/functionalAna_SpecThe.zh/image-3.png" /></p>
+<p>级数收敛性的改进 shanks变换：</p>
+<p>级数解的解析延拓</p>
+<p><img alt="alt text" src="../assets/functionalAna_SpecThe.zh/image-4.png" /></p>
+<h2 id="重整化">重整化<a class="headerlink" href="#重整化" title="Permanent link">#</a></h2>
+<p>重整化 (Renormalization) 是一套“数学处方”，它告诉我们如何构造 (construct) 微扰级数的每一项 <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span>。<br />
+渐近分析 (Asymptotic Analysis) 是一种“哲学诠释”，它告诉我们为什么这个（即使项项有限但整体发散的）级数 <span class="arithmatex"><span class="MathJax_Preview">\sum S_n</span><script type="math/tex">\sum S_n</script></span> 值得计算。<br />
+而谱理论 (Spectral Theory) 是我们这一切的终极目标：我们做这一切，就是为了计算“真实”算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱（即 Resolvent <span class="arithmatex"><span class="MathJax_Preview">R(z; A)</span><script type="math/tex">R(z; A)</script></span> 的奇点）。</p>
+<hr />
+<h3 id="1-谱理论的理想-vs-qft-的灾难">1. 谱理论的“理想” vs QFT 的“灾难”<a class="headerlink" href="#1-谱理论的理想-vs-qft-的灾难" title="Permanent link">#</a></h3>
+<p>我们从谱理论的“理想”出发：</p>
+<ul>
+<li>
+<p><strong>理想（目标）</strong>：<br />
+    我们想求解一个“真实”的、相互作用的系统 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>。我们想找到它的 Resolvent <span class="arithmatex"><span class="MathJax_Preview">R(z; A) = (zI - A)^{-1}</span><script type="math/tex">R(z; A) = (zI - A)^{-1}</script></span>。<br />
+    因为 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 的极点（Poles）就是我们想知道的物理谱（例如，实验中测量的“物理质量” <span class="arithmatex"><span class="MathJax_Preview">m_p</span><script type="math/tex">m_p</script></span>）。</p>
+</li>
+<li>
+<p><strong>策略（微扰）</strong>：<br />
+    我们不会解 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>，我们只会解“自由”系统 <span class="arithmatex"><span class="MathJax_Preview">A_0</span><script type="math/tex">A_0</script></span>（它的 Resolvent <span class="arithmatex"><span class="MathJax_Preview">R_0 = (zI - A_0)^{-1}</span><script type="math/tex">R_0 = (zI - A_0)^{-1}</script></span> 是已知的，极点在“裸质量” <span class="arithmatex"><span class="MathJax_Preview">m_0</span><script type="math/tex">m_0</script></span> 处）。</p>
+</li>
+<li>
+<p><strong>发动机</strong>：<br />
+    我们用 Resolvent 恒等式 <span class="arithmatex"><span class="MathJax_Preview">R = R_0 + R_0 V R</span><script type="math/tex">R = R_0 + R_0 V R</script></span> 来“构建” <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>。<br />
+    $$<br />
+    R = R_0 + R_0 V R_0 + R_0 V R_0 V R_0 + \dots<br />
+    $$<br />
+    在 QFT 中，<span class="arithmatex"><span class="MathJax_Preview">R_0 V R_0</span><script type="math/tex">R_0 V R_0</script></span> 这样的项，就对应“1-loop”费曼图，<span class="arithmatex"><span class="MathJax_Preview">R_0 V R_0 V R_0</span><script type="math/tex">R_0 V R_0 V R_0</script></span> 就对应“2-loop”费曼图，等等。</p>
+</li>
+<li>
+<p><strong>灾难（QFT的现实）</strong>：<br />
+    当我们真的去计算 QFT 中的这些项时，我们发现它们是无穷大。<br />
+    比如，在 <span class="arithmatex"><span class="MathJax_Preview">\lambda\phi^4</span><script type="math/tex">\lambda\phi^4</script></span> 理论中，1-loop 自能图 <span class="arithmatex"><span class="MathJax_Preview">\Sigma</span><script type="math/tex">\Sigma</script></span>（它就是 <span class="arithmatex"><span class="MathJax_Preview">V R_0</span><script type="math/tex">V R_0</script></span> 这类项的核心）的积分是：<br />
+    $$<br />
+    \int d^4k \frac{1}{k^2 - m_0^2}<br />
+    $$<br />
+    这个积分在 <span class="arithmatex"><span class="MathJax_Preview">k \to \infty</span><script type="math/tex">k \to \infty</script></span> 时是发散的 (Divergent)。</p>
+</li>
+<li>
+<p><strong>后果</strong>：<br />
+    我们的微扰级数 <span class="arithmatex"><span class="MathJax_Preview">R = R_0 + (\infty) + (\infty)^2 + \dots</span><script type="math/tex">R = R_0 + (\infty) + (\infty)^2 + \dots</script></span> 根本无法计算。我们连级数的第一项修正都写不出来。</p>
+</li>
+</ul>
+<hr />
+<h3 id="2-重整化强行构造级数项-s_ns_n">2. 重整化：强行“构造”级数项 <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span><a class="headerlink" href="#2-重整化强行构造级数项-s_ns_n" title="Permanent link">#</a></h3>
+<p>重整化 (Renormalization) 不是一个深刻的物理原理，它是一套极其精巧的“数学急救术”，其唯一目的，就是为了让我们能够写出微扰级数的（有限的）每一项。<br />
+它在“渐近分析”和“谱理论”的框架下，扮演了如下角色：</p>
+<h4 id="第一步承认裸参数的病态-regularization">第一步：承认“裸”参数的“病态” (Regularization)<a class="headerlink" href="#第一步承认裸参数的病态-regularization" title="Permanent link">#</a></h4>
+<p>我们不能处理 <span class="arithmatex"><span class="MathJax_Preview">\infty</span><script type="math/tex">\infty</script></span>。所以我们引入一个“调节器”（Regularization），比如一个紫外截止 <span class="arithmatex"><span class="MathJax_Preview">\Lambda</span><script type="math/tex">\Lambda</script></span>。<br />
+现在，所有的圈图积分都是有限的，但它们依赖于 <span class="arithmatex"><span class="MathJax_Preview">\Lambda</span><script type="math/tex">\Lambda</script></span>（例如 <span class="arithmatex"><span class="MathJax_Preview">\Sigma(\Lambda) \sim \Lambda^2</span><script type="math/tex">\Sigma(\Lambda) \sim \Lambda^2</script></span>）。<br />
+我们的 Resolvent 级数变成了：<br />
+$$<br />
+R(z; \Lambda) = R_0 + S_1(\Lambda) + S_2(\Lambda) + \dots<br />
+$$</p>
+<h4 id="第二步重新定义起点-a_0a_0-renormalization">第二步：重新定义“起点” <span class="arithmatex"><span class="MathJax_Preview">A_0</span><script type="math/tex">A_0</script></span> (Renormalization)<a class="headerlink" href="#第二步重新定义起点-a_0a_0-renormalization" title="Permanent link">#</a></h4>
+<p>这是最核心的诡计。我们原来的目标是：从“裸谱” <span class="arithmatex"><span class="MathJax_Preview">m_0</span><script type="math/tex">m_0</script></span>（<span class="arithmatex"><span class="MathJax_Preview">R_0</span><script type="math/tex">R_0</script></span>的极点）出发，计算出“物理谱” <span class="arithmatex"><span class="MathJax_Preview">m_p</span><script type="math/tex">m_p</script></span>（<span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>的极点）。<br />
+我们的计算（在谱理论中）表明：<br />
+$$<br />
+m_p^2 = m_0^2 + \delta m^2(\Lambda)<br />
+$$<br />
+其中 <span class="arithmatex"><span class="MathJax_Preview">\delta m^2(\Lambda)</span><script type="math/tex">\delta m^2(\Lambda)</script></span> 就是那个发散的自能 <span class="arithmatex"><span class="MathJax_Preview">\Sigma(\Lambda)</span><script type="math/tex">\Sigma(\Lambda)</script></span>。当 <span class="arithmatex"><span class="MathJax_Preview">\Lambda \to \infty</span><script type="math/tex">\Lambda \to \infty</script></span> 时，<span class="arithmatex"><span class="MathJax_Preview">\delta m^2(\Lambda) \to \infty</span><script type="math/tex">\delta m^2(\Lambda) \to \infty</script></span>。</p>
+<ul>
+<li>
+<p><strong>重整化说</strong>：<br />
+    倒过来！我们不认识什么“裸质量” <span class="arithmatex"><span class="MathJax_Preview">m_0</span><script type="math/tex">m_0</script></span>。我们只认识我们在实验室测量的“物理质量” <span class="arithmatex"><span class="MathJax_Preview">m_p</span><script type="math/tex">m_p</script></span>。<br />
+    我们强行定义（“重整化条件”）<span class="arithmatex"><span class="MathJax_Preview">m_p</span><script type="math/tex">m_p</script></span> 是一个有限的、已知的数。这就迫使我们的“裸质量” <span class="arithmatex"><span class="MathJax_Preview">m_0</span><script type="math/tex">m_0</script></span> 必须是一个依赖于 <span class="arithmatex"><span class="MathJax_Preview">\Lambda</span><script type="math/tex">\Lambda</script></span> 的“反常项” (Counter-term)：<br />
+    $$<br />
+    m_0^2(\Lambda) \equiv m_p^2 - \delta m^2(\Lambda)<br />
+    $$<br />
+    当 <span class="arithmatex"><span class="MathJax_Preview">\Lambda \to \infty</span><script type="math/tex">\Lambda \to \infty</script></span> 时，这个“裸质量” <span class="arithmatex"><span class="MathJax_Preview">m_0^2(\Lambda)</span><script type="math/tex">m_0^2(\Lambda)</script></span> 也必须是 <span class="arithmatex"><span class="MathJax_Preview">\to -\infty</span><script type="math/tex">\to -\infty</script></span>，它被精确地定义为那个可以抵消掉 <span class="arithmatex"><span class="MathJax_Preview">\delta m^2(\Lambda)</span><script type="math/tex">\delta m^2(\Lambda)</script></span> 的无穷大。</p>
+</li>
+<li>
+<p><strong>结果</strong>：<br />
+    一个“可用”的微扰级数<br />
+    通过这个“用无穷抵消无穷”的重新定义，我们成功地**重写（re-write）**了我们的 Resolvent 级数。</p>
+<ul>
+<li>
+<p>原始的（发散的）级数：<br />
+    $$<br />
+    R = R_0(m_0) + S_1(m_0, \lambda_0) + \dots<br />
+    $$</p>
+</li>
+<li>
+<p>重整化后的（有限的）级数：<br />
+    $$<br />
+    R = R_p(m_p) + S'_1(m_p, \lambda_p) + S'_2(m_p, \lambda_p) + \dots<br />
+    $$<br />
+    在这个新级数中，每一项 <span class="arithmatex"><span class="MathJax_Preview">S'_n</span><script type="math/tex">S'_n</script></span> 都是有限的（在 <span class="arithmatex"><span class="MathJax_Preview">\Lambda \to \infty</span><script type="math/tex">\Lambda \to \infty</script></span> 极限下）。</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="3-渐近分析给这个构造赋予意义">3. 渐近分析：给这个“构造”赋予意义<a class="headerlink" href="#3-渐近分析给这个构造赋予意义" title="Permanent link">#</a></h3>
+<p>好了，通过“重整化”，我们终于有了一个级数 <span class="arithmatex"><span class="MathJax_Preview">R \approx \sum_{n=0}^N S'_n</span><script type="math/tex">R \approx \sum_{n=0}^N S'_n</script></span>。我们安全了吗？没有。<br />
+物理学家（特别是 Freeman Dyson）很快意识到，这个“重整化后”的 QED 级数（一个关于 <span class="arithmatex"><span class="MathJax_Preview">\alpha \approx 1/137</span><script type="math/tex">\alpha \approx 1/137</script></span> 的级数）它自己很可能也是发散的（当 <span class="arithmatex"><span class="MathJax_Preview">n \to \infty</span><script type="math/tex">n \to \infty</script></span> 时）！</p>
+<h4 id="为什么dyson的启发式论证">为什么？（Dyson的启发式论证）<a class="headerlink" href="#为什么dyson的启发式论证" title="Permanent link">#</a></h4>
+<p>假设 QED 级数是收敛的。那么 <span class="arithmatex"><span class="MathJax_Preview">R(\alpha)</span><script type="math/tex">R(\alpha)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">\alpha=0</span><script type="math/tex">\alpha=0</script></span> 附近是解析的。这意味着 <span class="arithmatex"><span class="MathJax_Preview">R(\alpha)</span><script type="math/tex">R(\alpha)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">\alpha = -1/137</span><script type="math/tex">\alpha = -1/137</script></span> （一个小的负值）也应该是收敛的、有意义的。<br />
+但是，一个 <span class="arithmatex"><span class="MathJax_Preview">\alpha &lt; 0</span><script type="math/tex">\alpha < 0</script></span> 的 QED（同性电荷相吸，异性电荷相斥）是一个极度不稳定的理论。真空会“衰变”，系统会“崩溃”。<br />
+一个“崩溃”的理论不可能有一个定义良好的 Resolvent。这表明 <span class="arithmatex"><span class="MathJax_Preview">R(\alpha)</span><script type="math/tex">R(\alpha)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">\alpha=0</span><script type="math/tex">\alpha=0</script></span> 这一点不可能是解析的（它有一个本质奇点 (Essential Singularity)）。<br />
+如果 <span class="arithmatex"><span class="MathJax_Preview">R(\alpha)</span><script type="math/tex">R(\alpha)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">\alpha=0</span><script type="math/tex">\alpha=0</script></span> 不是解析的，那么它的泰勒级数（微扰级数）的收敛半径必定为 0。</p>
+<ul>
+<li><strong>结论</strong>：<br />
+    微扰级数 <span class="arithmatex"><span class="MathJax_Preview">\sum S'_n</span><script type="math/tex">\sum S'_n</script></span> 必定在 <span class="arithmatex"><span class="MathJax_Preview">n \to \infty</span><script type="math/tex">n \to \infty</script></span> 时发散！</li>
+</ul>
+<h4 id="那我们到底在干什么">那我们到底在干什么？<a class="headerlink" href="#那我们到底在干什么" title="Permanent link">#</a></h4>
+<p>这就是渐近分析登场的地方。微扰级数 <span class="arithmatex"><span class="MathJax_Preview">\sum S'_n</span><script type="math/tex">\sum S'_n</script></span> 不是一个“收敛级数”，它是一个“渐近级数”。<br />
+它的“意义”不在于 <span class="arithmatex"><span class="MathJax_Preview">n \to \infty</span><script type="math/tex">n \to \infty</script></span> 的总和，而在于它在 <span class="arithmatex"><span class="MathJax_Preview">\lambda \to 0</span><script type="math/tex">\lambda \to 0</script></span> 时的行为。</p>
+<ul>
+<li><strong>渐近分析的视角</strong>：<br />
+    我们“重整化”所辛苦构造出来的级数 <span class="arithmatex"><span class="MathJax_Preview">\sum S'_n</span><script type="math/tex">\sum S'_n</script></span>，它在数学上是 “真实”Resolvent <span class="arithmatex"><span class="MathJax_Preview">R(\lambda)</span><script type="math/tex">R(\lambda)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">\lambda=0</span><script type="math/tex">\lambda=0</script></span> 处的渐近展开。<br />
+    $$<br />
+    R(\lambda) \sim \sum_{n=0}^N S'_n \lambda^n + O(\lambda^{N+1})<br />
+    $$</li>
+</ul>
+<hr />
+<h3 id="最终总结三者的角色">最终总结：三者的角色<a class="headerlink" href="#最终总结三者的角色" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p><strong>谱理论（目标）</strong>：<br />
+    我们的目标是找到“真实”算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱（Resolvent <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 的极点）。这个真实的谱 <span class="arithmatex"><span class="MathJax_Preview">m_p</span><script type="math/tex">m_p</script></span> 是有限的。</p>
+</li>
+<li>
+<p><strong>微扰 + 重整化（构造过程）</strong>：<br />
+    我们假设 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 可以按 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 展开 <span class="arithmatex"><span class="MathJax_Preview">R \sim \sum S'_n \lambda^n</span><script type="math/tex">R \sim \sum S'_n \lambda^n</script></span>。<br />
+    我们发现 <span class="arithmatex"><span class="MathJax_Preview">S'_n</span><script type="math/tex">S'_n</script></span> 充满了 <span class="arithmatex"><span class="MathJax_Preview">\infty</span><script type="math/tex">\infty</script></span>（来自 <span class="arithmatex"><span class="MathJax_Preview">R_0 V \dots</span><script type="math/tex">R_0 V \dots</script></span> 的圈图）。<br />
+    重整化是一个“黑魔法”，它通过定义 <span class="arithmatex"><span class="MathJax_Preview">A_0</span><script type="math/tex">A_0</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 中的“反常项” <span class="arithmatex"><span class="MathJax_Preview">\delta m(\Lambda)</span><script type="math/tex">\delta m(\Lambda)</script></span>，强行使得这个展开式中的每一个系数 <span class="arithmatex"><span class="MathJax_Preview">S'_n</span><script type="math/tex">S'_n</script></span> 都是有限的（用物理谱 <span class="arithmatex"><span class="MathJax_Preview">m_p</span><script type="math/tex">m_p</script></span> 来表达）。</p>
+</li>
+<li>
+<p><strong>渐近分析（意义诠释）</strong>：<br />
+    我们承认，我们构造出来的这个级数 <span class="arithmatex"><span class="MathJax_Preview">\sum S'_n \lambda^n</span><script type="math/tex">\sum S'_n \lambda^n</script></span> 本身是发散的（当 <span class="arithmatex"><span class="MathJax_Preview">n \to \infty</span><script type="math/tex">n \to \infty</script></span>）。<br />
+    但我们指出，它是一个渐近级数。因此，计算它的前几项（比如到 <span class="arithmatex"><span class="MathJax_Preview">S'_2</span><script type="math/tex">S'_2</script></span>，即 two-loop），是有意义的、且是（目前）唯一可行的，用以近似那个“真实”但我们无法企及的 <span class="arithmatex"><span class="MathJax_Preview">R(\lambda)</span><script type="math/tex">R(\lambda)</script></span> 的方法。</p>
+</li>
+</ul>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月31日 08:08:30 UTC"><span class="timeago" datetime="2025-10-31T08:08:30+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月31日 08:08:30 UTC">2025-10-31</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月31日 08:08:30 UTC"><span class="timeago" datetime="2025-10-31T08:08:30+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月31日 08:08:30 UTC">2025-10-31</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="tianbaiting/tianbaiting.github.io"
+        data-repo-id="R_kgDOOB38lw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOOB38l84Comp4"
+        data-mapping="url"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+  <script>
+    if (document.querySelector("body").getAttribute("data-md-color-scheme") === "slate") {
+      var giscus = document.querySelector("script[src*=giscus]")
+      giscus.setAttribute("data-theme", "https://gcore.jsdelivr.net/gh/TonyCrane/note/docs/css/giscus.css") 
+    }
+  </script>
+
+                  
+                </article>
+              </div>
+            
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+          
+            <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+              回到页面顶部
+            </a>
+          
+        </main>
+        
+          <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+        
+      </div>
+      <div class="md-dialog" data-md-component="dialog">
+        <div class="md-dialog__inner md-typeset"></div>
+      </div>
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+      
+      
+        <script src="../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+        
+          <script src="../../../js/timeago.min.js"></script>
+        
+          <script src="../../../js/timeago_mkdocs_material.js"></script>
+        
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        
+          <script src="https://d3js.org/d3.v7.min.js"></script>
+        
+          <script src="../../../js/scheme.js"></script>
+        
+          <script src="../../../js/graph.js"></script>
+        
+      
+    </body>
+  </html>
+  

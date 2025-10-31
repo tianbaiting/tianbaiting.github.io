@@ -1,0 +1,2932 @@
+
+  <!doctype html>
+  <html lang="zh" class="no-js">
+    <head>
+      
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        
+        
+        
+          <link rel="canonical" href="https://tianbaiting.github.io/sci/minimal_theory/qft_whatisfield/">
+        
+        
+          <link rel="prev" href="../qft_schwartz_ref/">
+        
+        
+          <link rel="next" href="../scatering_theory/">
+        
+        <link rel="icon" href="../../../assets/images/favicon.png">
+        <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
+      
+      
+        
+          <title>Qft whatisfield - TBT个人网站</title>
+        
+      
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/main.9c788c91.min.css">
+        
+          
+          <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+        
+        
+
+      
+      
+      
+        
+          
+          
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+          <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        
+      
+      
+        <link rel="stylesheet" href="../../../css/timeago.css">
+      
+        <link rel="stylesheet" href="../../../css/counter.css">
+      
+        <link rel="stylesheet" href="../../../css/graph.css">
+      
+      
+        <link rel="stylesheet" href="../../../css/counter.css">
+      
+      <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      
+        
+
+      
+      
+      
+    </head>
+    
+    
+      
+      
+      
+      
+      
+      <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink">
+    
+      <script src="../../../js/scheme.js" type="text/javascript"></script>
+      
+      
+      <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+      <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+      <label class="md-overlay" for="__drawer"></label>
+      <div data-md-component="skip">
+        
+          
+          <a href="#1-核心定义一个时空依赖的算符" class="md-skip">
+            跳转至
+          </a>
+        
+      </div>
+      <div data-md-component="announce">
+        
+      </div>
+      
+      
+        
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TBT个人网站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Qft whatisfield
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      <div class="md-header-nav__scheme md-header-nav__button md-source__icon md-icon">
+  <a
+    href="javascript:toggleScheme();"
+    title="Toggle theme"
+    class="theme-toggle"
+  >
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5 1.43 1.43L4.93 20.5 3.5 19.07 19.07 3.5m-6.18 2.43L11.41 5 9.97 6l.42-1.7L9 3.24l1.75-.12.58-1.65L12 3.1l1.73.03-1.35 1.13.51 1.67m-3.3 3.61-1.16-.73-1.12.78.34-1.32-1.09-.83 1.36-.09.45-1.29.51 1.27 1.36.03-1.05.87.4 1.31M19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58 2.77-1.15-.24 3.35-2.53-2.2m4.33-2.7 1.15-2.77 2.2 2.54-3.35.23m1.15-4.96-1.14-2.78 3.34.24-2.2 2.54M9.63 18.93l2.77 1.15-2.53 2.19-.24-3.34Z"/></svg>
+  </a>
+</div>
+
+
+  <div class="md-header__button md-lang">
+    
+      <a href="/" hreflang="zh">简体中文</a>
+    
+      <a href="/en/" hreflang="en">English</a>
+    
+  </div>
+
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+      
+      <div class="md-container" data-md-component="container">
+        
+        
+          
+            
+              
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../howtomakewebsite/" class="md-tabs__link">
+      网站制作
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      主页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../MickeyMiaoMiao/citetree/" class="md-tabs__link">
+        MickeyMiaoMiao
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../life/flavor/" class="md-tabs__link">
+        Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../todolist/" class="md-tabs__link md-tabs__link--active">
+        Sci
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-tabs__link">
+        日本生存指南
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+            
+          
+        
+        <main class="md-main" data-md-component="main">
+          <div class="md-main__inner md-grid">
+            
+              
+                
+                <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    TBT个人网站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../howtomakewebsite/" class="md-nav__link">
+        网站制作
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          MickeyMiaoMiao
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MickeyMiaoMiao" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          MickeyMiaoMiao
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/citetree/" class="md-nav__link">
+        引文网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/firefoxplug/" class="md-nav__link">
+        浏览器插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/opvpn/" class="md-nav__link">
+        opvpn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_4" tabindex="0" aria-expanded="false">
+          Useful tips
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Useful tips" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Useful tips
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/overleaf_vscode%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        overleaf插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/%E5%88%A9%E7%94%A8%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E5%88%86%E5%B1%8F/" class="md-nav__link">
+        移动设备作为电脑的分屏
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84vscode/" class="md-nav__link">
+        如何安装多个版本的code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/%E6%9C%89%E8%B6%A3%E7%9A%84%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        有趣的插件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Life" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/flavor/" class="md-nav__link">
+        **探索味型奥秘：以川菜为例的烹饪科学指南**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/z30_DeepSky/" class="md-nav__link">
+        深空摄影
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E7%84%A6%E8%99%91/" class="md-nav__link">
+        焦虑
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E9%A3%9F%E7%89%A9%E4%B8%AD%E6%AF%92/" class="md-nav__link">
+        易发中毒食物
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E9%A3%9F%E7%89%A9%E5%AE%89%E5%85%A8%E6%B8%A9%E5%BA%A6/" class="md-nav__link">
+        食物安全温度
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" tabindex="0" aria-expanded="false">
+          健康
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="健康" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          健康
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E5%81%A5%E5%BA%B7/workout_diet/" class="md-nav__link">
+        **营养**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E5%81%A5%E5%BA%B7/%E9%BC%BB%E7%82%8E/" class="md-nav__link">
+        **鼻炎综合管理临床报告：过敏性鼻炎与血管运动性鼻炎的深度解析**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="true">
+          Sci
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sci" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Sci
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todolist/" class="md-nav__link">
+        todo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
+          Cheatshet
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cheatshet" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cheatshet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/bashrc/" class="md-nav__link">
+        Bashrc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/docker/" class="md-nav__link">
+        docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/git/" class="md-nav__link">
+        git 备忘单
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/number_order_dimension/" class="md-nav__link">
+        数量级估计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/root_geant4_install/" class="md-nav__link">
+        Root geant4 install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/shell/" class="md-nav__link">
+        Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/site.en/" class="md-nav__link">
+        网页相关知识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/termux/" class="md-nav__link">
+        termux 运行ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/vimrc/" class="md-nav__link">
+        vim配置文件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
+          Minimal code
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minimal code" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Minimal code
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/Operating_system/" class="md-nav__link">
+        装系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/c%2B%2Bproject/" class="md-nav__link">
+        c++项目
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/class_dataTransport/" class="md-nav__link">
+        面向对象设计教程：管理类之间的数据依赖和解耦
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/cmake/" class="md-nav__link">
+        cmake项目
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/color_scheme/" class="md-nav__link">
+        科研配图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/cpp_package/" class="md-nav__link">
+        cpp 包管理 以及 依赖管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/format_guidelines/" class="md-nav__link">
+        格式规范
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/fzf/" class="md-nav__link">
+        FZF 模糊搜索工具完全教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/gdb/" class="md-nav__link">
+        gdb 调试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/geant4_oop/" class="md-nav__link">
+        **揭秘面向对象编程：Geant4工具包深度导览**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/gemni_use_wen2cli/" class="md-nav__link">
+        Gemini 使用限制与付费模式解析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/jupyternotebook/" class="md-nav__link">
+        jupyter notebook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/latex_graphics/" class="md-nav__link">
+        latex include graphics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/python_def_class/" class="md-nav__link">
+        python 定义类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/python_lib_self/" class="md-nav__link">
+        python 包的创建与使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/python_venv/" class="md-nav__link">
+        Python 虚拟环境
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/root_opener/" class="md-nav__link">
+        设置 ROOT 文件默认浏览器教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/root_plot/" class="md-nav__link">
+        root_plot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/root_visual_geant4/" class="md-nav__link">
+        Root visual geant4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/server_clouddirve/" class="md-nav__link">
+        如何从零搭建私有云盘服务器 (Markdown 教程)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/server_clouddirve_example/" class="md-nav__link">
+        Server clouddirve example
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/termux/" class="md-nav__link">
+        在 Termux 中安装 Ubuntu 桌面环境并运行 VS Code 的终极指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/vim_neovim/" class="md-nav__link">
+        Vim neovim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/vscode_env_path/" class="md-nav__link">
+        Vscode env path
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/vscode_lsp/" class="md-nav__link">
+        如何解决 VS Code 中的 C/C++ `include` 报错问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/yazi/" class="md-nav__link">
+        快捷键
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/zsh/" class="md-nav__link">
+        Zsh 环境一键配置脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/%E5%BE%85%E8%A7%A3%E5%86%B3%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        to be solved
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="true">
+          Minimal theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minimal theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Minimal theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ScateringINQMandQFT/" class="md-nav__link">
+        ScateringINQMandQFT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TransmissionLineEq/" class="md-nav__link">
+        TransmissionLineEq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dead_time/" class="md-nav__link">
+        Dead time
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functionalAna_SpecThe/" class="md-nav__link">
+        泛函分析和谱理论初步
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qft_schwartz_ref/" class="md-nav__link">
+        Schwartz — 《量子场论与标准模型》学习资源指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Qft whatisfield
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Qft whatisfield
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-核心定义一个时空依赖的算符" class="md-nav__link">
+    1. 核心定义：一个时空依赖的算符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-数学构造用产生与湮灭算符构建" class="md-nav__link">
+    2. 数学构造：用产生与湮灭算符构建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-定义特征量子化条件与因果性" class="md-nav__link">
+    3. 定义特征：量子化条件与因果性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#总结场算符的要点" class="md-nav__link">
+    总结：场算符的要点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-核心骨架泛函分析-functional-analysis" class="md-nav__link">
+    1. 核心骨架：泛函分析 (Functional Analysis)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-指导原则对称性与群论-symmetry--group-theory" class="md-nav__link">
+    2. 指导原则：对称性与群论 (Symmetry &amp; Group Theory)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-几何结构微分几何-differential-geometry" class="md-nav__link">
+    3. 几何结构：微分几何 (Differential Geometry)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-计算引擎路径积分-path-integrals--functional-integrals" class="md-nav__link">
+    4. 计算引擎：路径积分 (Path Integrals / Functional Integrals)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-严格基础公理化qft-axiomatic-qft" class="md-nav__link">
+    5. 严格基础：公理化QFT (Axiomatic QFT)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatering_theory/" class="md-nav__link">
+        散射理论
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5" tabindex="0" aria-expanded="false">
+          Project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Project" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/example/" class="md-nav__link">
+        hello world
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_2" type="checkbox" id="__nav_5_5_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_2" tabindex="0" aria-expanded="false">
+          D polar exp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="D polar exp" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          D polar exp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/Sipm_PMT/" class="md-nav__link">
+        Sipm PMT参数对比
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/caogao/" class="md-nav__link">
+        Caogao
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/d_breakup_theory/" class="md-nav__link">
+        氘核破裂理论上可以如何计算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/faddeevWPCD/" class="md-nav__link">
+        faddeevWPCD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/my_polarimeter/" class="md-nav__link">
+        My polarimeter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/other_polarmeter/" class="md-nav__link">
+        其他研究组的polarimeter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/riken_web_source/" class="md-nav__link">
+        riken 常见资源
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/scintillator/" class="md-nav__link">
+        闪烁体光产额
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/spherical_operator/" class="md-nav__link">
+        To show some relation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/stastic/" class="md-nav__link">
+        统计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/sw-api/" class="md-nav__link">
+        solidworks api接口
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/todo_list/" class="md-nav__link">
+        To do list
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_3" type="checkbox" id="__nav_5_5_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3" tabindex="0" aria-expanded="false">
+          Samurai
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Samurai" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Samurai
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/detector_samurai/" class="md-nav__link">
+        SAMURAI 光谱仪带电粒子探测器详细功能
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_3_2" type="checkbox" id="__nav_5_5_3_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3_2" tabindex="0" aria-expanded="false">
+          Anaroot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Anaroot" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Anaroot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/RIDF/" class="md-nav__link">
+        RIKEN RIDF 文件构成详解：数据块 (Block) 说明
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot/" class="md-nav__link">
+        **ANAROOT 综合分析框架：
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot2version/" class="md-nav__link">
+        ANAROOT 详细中文文档
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_decoder/" class="md-nav__link">
+        Anaroot decoder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_nebula/" class="md-nav__link">
+        Anaroot nebula
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_nebula_reconstructionfunction/" class="md-nav__link">
+        Anaroot nebula reconstructionfunction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_pdc/" class="md-nav__link">
+        anaroot pdcS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_3_3" type="checkbox" id="__nav_5_5_3_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3_3" tabindex="0" aria-expanded="false">
+          Smsimulator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Smsimulator" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Smsimulator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/FDC2/" class="md-nav__link">
+        FDC2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/PDC/" class="md-nav__link">
+        PDC 漂移室模拟方案
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/nebula_simlulator/" class="md-nav__link">
+        Nebula simlulator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/smsimulator/" class="md-nav__link">
+        smsimultor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/smsimulator_tutor/" class="md-nav__link">
+        smsimulator 教学
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          日本生存指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="日本生存指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          日本生存指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-nav__link">
+        Japanese
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%8E%BB%E6%97%A5%E6%9C%AC%E5%89%8D%E6%89%93%E5%8C%85/" class="md-nav__link">
+        登机前打包
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%90%83/" class="md-nav__link">
+        吃
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        垃圾分类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%8E%A5%E6%94%B6%E5%BF%AB%E9%80%92/" class="md-nav__link">
+        接受快递
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%97%A5%E7%89%88%E6%89%8B%E6%9C%BAfelica%E8%8A%AF%E7%89%87/" class="md-nav__link">
+        **日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E5%AD%90%E6%94%AF%E4%BB%98-%E4%BA%A4%E9%80%9A%E5%8D%A1/" class="md-nav__link">
+        日本电子支付 - 交通卡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E8%AF%9D%E5%8D%A1/" class="md-nav__link">
+        电话卡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E8%90%BD%E5%9C%B0todo/" class="md-nav__link">
+        落地事宜
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E9%93%B6%E8%A1%8C%E5%8D%A1/" class="md-nav__link">
+        银行卡
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                    </div>
+                  </div>
+                </div>
+              
+              
+                
+                <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-核心定义一个时空依赖的算符" class="md-nav__link">
+    1. 核心定义：一个时空依赖的算符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-数学构造用产生与湮灭算符构建" class="md-nav__link">
+    2. 数学构造：用产生与湮灭算符构建
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-定义特征量子化条件与因果性" class="md-nav__link">
+    3. 定义特征：量子化条件与因果性
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#总结场算符的要点" class="md-nav__link">
+    总结：场算符的要点
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-核心骨架泛函分析-functional-analysis" class="md-nav__link">
+    1. 核心骨架：泛函分析 (Functional Analysis)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-指导原则对称性与群论-symmetry--group-theory" class="md-nav__link">
+    2. 指导原则：对称性与群论 (Symmetry &amp; Group Theory)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-几何结构微分几何-differential-geometry" class="md-nav__link">
+    3. 几何结构：微分几何 (Differential Geometry)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-计算引擎路径积分-path-integrals--functional-integrals" class="md-nav__link">
+    4. 计算引擎：路径积分 (Path Integrals / Functional Integrals)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-严格基础公理化qft-axiomatic-qft" class="md-nav__link">
+    5. 严格基础：公理化QFT (Axiomatic QFT)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                    </div>
+                  </div>
+                </div>
+                
+              
+            
+            
+              <div class="md-content" data-md-component="content">
+                <article class="md-content__inner md-typeset">
+                  
+                    
+
+
+
+  <h1>Qft whatisfield</h1>
+
+<p>好的，让我们抛开比喻，直击数学和物理的核心。</p>
+<p>一个场算符（Field Operator），以最简单的自由标量场 <span class="arithmatex"><span class="MathJax_Preview">\hat\phi(x)</span><script type="math/tex">\hat\phi(x)</script></span> 为例，是一个精确的数学对象，它同时满足以下定义：</p>
+<hr />
+<h3 id="1-核心定义一个时空依赖的算符">1. 核心定义：一个时空依赖的算符<a class="headerlink" href="#1-核心定义一个时空依赖的算符" title="Permanent link">#</a></h3>
+<p>首先，场算符 <span class="arithmatex"><span class="MathJax_Preview">\hat\phi(x)</span><script type="math/tex">\hat\phi(x)</script></span> 不是一个数，也不是一个波函数。<br />
+它是一个算符（operator），类似量子力学中的位置算符 <span class="arithmatex"><span class="MathJax_Preview">\hat x</span><script type="math/tex">\hat x</script></span> 或动量算符 <span class="arithmatex"><span class="MathJax_Preview">\hat p</span><script type="math/tex">\hat p</script></span>，作用在希尔伯特空间（例如 Fock 空间）上的态矢 <span class="arithmatex"><span class="MathJax_Preview">|\Psi\rangle</span><script type="math/tex">|\Psi\rangle</script></span>。</p>
+<p>关键区别在于：</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">\hat x</span><script type="math/tex">\hat x</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">\hat p</span><script type="math/tex">\hat p</script></span> 是不依赖于空间坐标的算符（在海森堡绘景中可含时间依赖）。  </li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\hat\phi(x)</span><script type="math/tex">\hat\phi(x)</script></span> 是时空坐标 <span class="arithmatex"><span class="MathJax_Preview">x^\mu=(t,\mathbf{x})</span><script type="math/tex">x^\mu=(t,\mathbf{x})</script></span> 的函数。</li>
+</ul>
+<p>因此，场算符是一个“算符值分布”（operator-valued distribution）：对时空中的每一点 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\hat\phi(x)</span><script type="math/tex">\hat\phi(x)</script></span> 都是定义在 Fock 空间上的一个算符。</p>
+<p>精确理解：场 <span class="arithmatex"><span class="MathJax_Preview">\hat\phi</span><script type="math/tex">\hat\phi</script></span> 是一个映射，把闵可夫斯基时空的每一点 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 关联到作用于 Fock 空间的算符 <span class="arithmatex"><span class="MathJax_Preview">\hat\phi(x)</span><script type="math/tex">\hat\phi(x)</script></span>。</p>
+<hr />
+<h3 id="2-数学构造用产生与湮灭算符构建">2. 数学构造：用产生与湮灭算符构建<a class="headerlink" href="#2-数学构造用产生与湮灭算符构建" title="Permanent link">#</a></h3>
+<p>自由标量场算符的常见展开（在相互作用绘景或自由场情况下）为：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\hat\phi(x)=\hat\phi(\mathbf{x},t)
+=\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}}
+\left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right),
+</div>
+<script type="math/tex; mode=display">
+\hat\phi(x)=\hat\phi(\mathbf{x},t)
+=\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}}
+\left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right),
+</script>
+</div>
+<p>其中 <span class="arithmatex"><span class="MathJax_Preview">p\cdot x=E_{\mathbf{p}}t-\mathbf{p}\cdot\mathbf{x}</span><script type="math/tex">p\cdot x=E_{\mathbf{p}}t-\mathbf{p}\cdot\mathbf{x}</script></span>。拆解如下：</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">\int\frac{d^3p}{(2\pi)^3}</span><script type="math/tex">\int\frac{d^3p}{(2\pi)^3}</script></span>：遍历所有三维动量模式 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{p}</span><script type="math/tex">\mathbf{p}</script></span>，对应“无限个谐振子”中的每个模式。  </li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\hat a_{\mathbf{p}}</span><script type="math/tex">\hat a_{\mathbf{p}}</script></span>：湮灭算符，作用时会移除一个动量为 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{p}</span><script type="math/tex">\mathbf{p}</script></span> 的粒子。  </li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\hat a_{\mathbf{p}}^\dagger</span><script type="math/tex">\hat a_{\mathbf{p}}^\dagger</script></span>：产生算符，作用时会创造一个动量为 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{p}</span><script type="math/tex">\mathbf{p}</script></span> 的粒子。  </li>
+<li><span class="arithmatex"><span class="MathJax_Preview">e^{-ip\cdot x},\,e^{ip\cdot x}</span><script type="math/tex">e^{-ip\cdot x},\,e^{ip\cdot x}</script></span>：平面波因子，分别对应湮灭和产生部分的时空相位。  </li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\frac{1}{\sqrt{2E_{\mathbf{p}}}}</span><script type="math/tex">\frac{1}{\sqrt{2E_{\mathbf{p}}}}</script></span>：洛伦兹不变的归一化因子（保证测度 <span class="arithmatex"><span class="MathJax_Preview">\frac{d^3p}{E_{\mathbf{p}}}</span><script type="math/tex">\frac{d^3p}{E_{\mathbf{p}}}</script></span> 的不变性）。</li>
+</ul>
+<p>当场算符作用于真空态 <span class="arithmatex"><span class="MathJax_Preview">|0\rangle</span><script type="math/tex">|0\rangle</script></span> 时：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\hat\phi(x)\lvert0\rangle
+=\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}}
+\left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right)\lvert0\rangle.
+</div>
+<script type="math/tex; mode=display">
+\hat\phi(x)\lvert0\rangle
+=\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}}
+\left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right)\lvert0\rangle.
+</script>
+</div>
+<p>由于 <span class="arithmatex"><span class="MathJax_Preview">\hat a_{\mathbf{p}}\lvert0\rangle=0</span><script type="math/tex">\hat a_{\mathbf{p}}\lvert0\rangle=0</script></span>，只剩下产生部分：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\hat\phi(x)\lvert0\rangle
+=\int\frac{d^3p}{(2\pi)^3}\frac{e^{ip\cdot x}}{\sqrt{2E_{\mathbf{p}}}}\,
+\hat a_{\mathbf{p}}^\dagger\lvert0\rangle.
+</div>
+<script type="math/tex; mode=display">
+\hat\phi(x)\lvert0\rangle
+=\int\frac{d^3p}{(2\pi)^3}\frac{e^{ip\cdot x}}{\sqrt{2E_{\mathbf{p}}}}\,
+\hat a_{\mathbf{p}}^\dagger\lvert0\rangle.
+</script>
+</div>
+<p>该结果是一个单粒子态，但不是动量本征态，而是局域于点 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 的粒子激发。因此常说“场算符在点 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 创建了一个粒子”。</p>
+<hr />
+<h3 id="3-定义特征量子化条件与因果性">3. 定义特征：量子化条件与因果性<a class="headerlink" href="#3-定义特征量子化条件与因果性" title="Permanent link">#</a></h3>
+<p>场的量子化通过其对易（或反对易）关系给出。标量玻色场的等时对易关系为：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+[\hat\phi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=i\delta^{(3)}(\mathbf{x}-\mathbf{y}),
+</div>
+<script type="math/tex; mode=display">
+[\hat\phi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=i\delta^{(3)}(\mathbf{x}-\mathbf{y}),
+</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+[\hat\phi(t,\mathbf{x}),\,\hat\phi(t,\mathbf{y})]=0,\qquad
+[\hat\pi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=0,
+</div>
+<script type="math/tex; mode=display">
+[\hat\phi(t,\mathbf{x}),\,\hat\phi(t,\mathbf{y})]=0,\qquad
+[\hat\pi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=0,
+</script>
+</div>
+<p>其中共轭动量场 <span class="arithmatex"><span class="MathJax_Preview">\hat\pi(x)=\partial\mathcal{L}/\partial(\partial_0\hat\phi(x))</span><script type="math/tex">\hat\pi(x)=\partial\mathcal{L}/\partial(\partial_0\hat\phi(x))</script></span>。</p>
+<p>更普适的因果性（微观局域性）条件是：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+[\hat\phi(x),\,\hat\phi(y)]=0\quad\text{当 }(x-y)^2&lt;0\ (\text{类空间隔}),
+</div>
+<script type="math/tex; mode=display">
+[\hat\phi(x),\,\hat\phi(y)]=0\quad\text{当 }(x-y)^2<0\ (\text{类空间隔}),
+</script>
+</div>
+<p>即若两点间为类空间隔，则相应的场算符必须对易，保证在这两点的局域测量互不影响（不违反狭义相对论因果律）。</p>
+<hr />
+<h3 id="总结场算符的要点">总结：场算符的要点<a class="headerlink" href="#总结场算符的要点" title="Permanent link">#</a></h3>
+<ol>
+<li>场算符 <span class="arithmatex"><span class="MathJax_Preview">\hat\phi(x)</span><script type="math/tex">\hat\phi(x)</script></span> 是一个算符值分布，把时空点 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 映射到作用于 Fock 空间的算符。  </li>
+<li>它由所有动量模式的产生算符 <span class="arithmatex"><span class="MathJax_Preview">\hat a^\dagger</span><script type="math/tex">\hat a^\dagger</script></span> 与湮灭算符 <span class="arithmatex"><span class="MathJax_Preview">\hat a</span><script type="math/tex">\hat a</script></span> 的线性组合构成（傅里叶展开）。  </li>
+<li>它在时空点 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 处创建或湮灭局域的粒子激发。  </li>
+<li>它满足（反）对易关系以同时兼容量子力学与狭义相对论的因果性。</li>
+</ol>
+<p>对比量子力学：在 QM 中 <span class="arithmatex"><span class="MathJax_Preview">\hat x</span><script type="math/tex">\hat x</script></span> 是观测量，波函数 <span class="arithmatex"><span class="MathJax_Preview">\psi(x)</span><script type="math/tex">\psi(x)</script></span> 是态；在 QFT 中 <span class="arithmatex"><span class="MathJax_Preview">\hat\phi(x)</span><script type="math/tex">\hat\phi(x)</script></span> 是场算符，态是 Fock 空间中的矢量（例如 <span class="arithmatex"><span class="MathJax_Preview">\lvert0\rangle</span><script type="math/tex">\lvert0\rangle</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">\hat a_p^\dagger\hat a_q^\dagger\lvert0\rangle</span><script type="math/tex">\hat a_p^\dagger\hat a_q^\dagger\lvert0\rangle</script></span>）。所谓“第二次量子化”即将经典场升格为算符场的过程。</p>
+<p>数学结构 </p>
+<p>这是一个直击核心的问题。量子场论（QFT）的数学结构 <strong>不是一个单一的、统一的框架</strong>，而是多个数学分支的**集合体**。</p>
+<p>你所感受到的“繁琐”和“逻辑跳跃”（比如先用场，最后才知道场是什么），正是因为物理学家所使用的“QFT”（我们称之为**“应用QFT”**）是一个极其强大、但在数学上充满“启发式”（heuristic）和“直觉”的工具箱。</p>
+<p>与此同时，数学家们在试图建立一个逻辑自洽的“QFT”（我们称之为**“公理化QFT”**），但这个版本又极其抽象，难以用于计算（比如标准模型）。</p>
+<p>作为一名粒子物理学家，你日常打交道的QFT，其数学结构主要建立在以下几个“支柱”之上：</p>
+<hr />
+<h3 id="1-核心骨架泛函分析-functional-analysis">1. 核心骨架：泛函分析 (Functional Analysis)<a class="headerlink" href="#1-核心骨架泛函分析-functional-analysis" title="Permanent link">#</a></h3>
+<p>这是QFT的“语言”。它处理的是无限维空间上的数学。</p>
+<ul>
+<li><strong>希尔伯特空间 (Hilbert Space)：</strong> QFT的状态空间是一个无限维的希尔伯特空间，称为**Fock空间 (Fock Space)**。</li>
+<li><strong>Fock空间：</strong> 它的“基矢”描述了“包含了任意数量粒子”的状态。例如：<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">|0\rangle</span><script type="math/tex">|0\rangle</script></span> (真空态，0个粒子)</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">a_{\vec{p}}^\dagger |0\rangle</span><script type="math/tex">a_{\vec{p}}^\dagger |0\rangle</script></span> (一个动量为 <span class="arithmatex"><span class="MathJax_Preview">\vec{p}</span><script type="math/tex">\vec{p}</script></span> 的粒子)</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">a_{\vec{p}}^\dagger a_{\vec{q}}^\dagger |0\rangle</span><script type="math/tex">a_{\vec{p}}^\dagger a_{\vec{q}}^\dagger |0\rangle</script></span> (两个粒子，动量分别为 <span class="arithmatex"><span class="MathJax_Preview">\vec{p}, \vec{q}</span><script type="math/tex">\vec{p}, \vec{q}</script></span>)</li>
+<li>...等等，直到无穷多粒子。</li>
+</ul>
+</li>
+<li><strong>算符 (Operators)：</strong> 所有的物理量都是算符。<ul>
+<li><strong><span class="arithmatex"><span class="MathJax_Preview">a, a^\dagger</span><script type="math/tex">a, a^\dagger</script></span> (产生/湮灭算符)：</strong> 这是Fock空间最基本的算符。</li>
+<li><strong><span class="arithmatex"><span class="MathJax_Preview">\hat{\phi}(x)</span><script type="math/tex">\hat{\phi}(x)</script></span> (场算符)：</strong> 正如我们之前讨论的，它是一个**算符值分布 (Operator-Valued Distribution)**。它不是一个普通的函数，你必须用一个“测试函数” <span class="arithmatex"><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span> 去“探测”它（即 <span class="arithmatex"><span class="MathJax_Preview">\int d^4x f(x) \hat{\phi}(x)</span><script type="math/tex">\int d^4x f(x) \hat{\phi}(x)</script></span>），才能得到一个“行为良好”的算符。这是QFT中“无穷大”的第一个来源。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-指导原则对称性与群论-symmetry--group-theory">2. 指导原则：对称性与群论 (Symmetry &amp; Group Theory)<a class="headerlink" href="#2-指导原则对称性与群论-symmetry--group-theory" title="Permanent link">#</a></h3>
+<p>这是QFT的“灵魂”。它决定了“什么可以存在”以及“它们如何相互作用”。</p>
+<ul>
+<li>
+<p><strong>时空对称性：庞加莱群 (Poincaré Group)</strong></p>
+<ul>
+<li>这是狭义相对论（洛伦兹变换 + 平移）的对称群。</li>
+<li><strong>Wigner的分类：</strong> QFT的数学结构指出，一个“基本粒子”<strong>就是**庞加莱群的一个**不可约幺正表示 (Unitary Irreducible Representation)</strong>。</li>
+<li><strong>这才是“粒子”的最终定义！</strong> 这个表示由两个数（Casimir不变量）来标记：<strong>质量 (<span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>)</strong> 和**自旋 (<span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>)**。</li>
+<li>这就是为什么世界上只存在标量粒子（<span class="arithmatex"><span class="MathJax_Preview">s=0</span><script type="math/tex">s=0</script></span>）、旋量粒子（<span class="arithmatex"><span class="MathJax_Preview">s=1/2</span><script type="math/tex">s=1/2</script></span>）、矢量粒子（<span class="arithmatex"><span class="MathJax_Preview">s=1</span><script type="math/tex">s=1</script></span>）等，而不存在 <span class="arithmatex"><span class="MathJax_Preview">s=1/3</span><script type="math/tex">s=1/3</script></span> 的粒子。</li>
+</ul>
+</li>
+<li>
+<p><strong>内部对称性：李群 (Lie Groups)</strong></p>
+<ul>
+<li>这是**规范场论 (Gauge Theory)** 的核心。</li>
+<li>它描述了“力”的来源。一个力源于一个**局域规范不变性 (Local Gauge Invariance)**。</li>
+<li>QFT的数学结构要求，为了维持这种局域对称性，**必须**引入一个新的场——规范场（即“力”的传播子）。</li>
+<li><strong>U(1)群 <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 量子电动力学 (QED)</strong> <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 光子</li>
+<li><strong>SU(2)群 <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 弱相互作用</strong> <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> W/Z 玻色子</li>
+<li><strong>SU(3)群 <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 强相互作用 (QCD)</strong> <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 胶子</li>
+<li>标准模型 (<span class="arithmatex"><span class="MathJax_Preview">\text{SU(3)}_C \times \text{SU(2)}_L \times \text{U(1)}_Y</span><script type="math/tex">\text{SU(3)}_C \times \text{SU(2)}_L \times \text{U(1)}_Y</script></span>) 的拉格朗日量，**完全**是由这个群结构决定的。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-几何结构微分几何-differential-geometry">3. 几何结构：微分几何 (Differential Geometry)<a class="headerlink" href="#3-几何结构微分几何-differential-geometry" title="Permanent link">#</a></h3>
+<p>这是“规范场论”的**精确**数学语言，尽管物理教材（如Peskin）很少明确使用它。</p>
+<ul>
+<li><strong>纤维丛 (Fiber Bundle)：</strong> 这是描述规范场论最优雅的数学结构。<ul>
+<li><strong>底流形 (Base Manifold)：</strong> 我们的四维时空。</li>
+<li><strong>纤维 (Fiber)：</strong> 在时空中的**每一点**，都“附加”着一个内部对称空间（例如U(1)群对应的复平面上的一个圆周）。</li>
+<li><strong>场 (Field)：</strong> 物理场（如电子场）是这个丛上的一个**截面 (Section)**。</li>
+<li><strong>规范联络 (Gauge Connection)：</strong> <strong>这正是规范场（<span class="arithmatex"><span class="MathJax_Preview">A_\mu</span><script type="math/tex">A_\mu</script></span>）的数学定义！</strong> 它告诉你如何在时空的不同点之间“平行移动”一个场而不改变其物理（即“协变导数” <span class="arithmatex"><span class="MathJax_Preview">D_\mu = \partial_\mu - igA_\mu</span><script type="math/tex">D_\mu = \partial_\mu - igA_\mu</script></span>）。</li>
+<li><strong>曲率 (Curvature)：</strong> <strong>这正是场强（<span class="arithmatex"><span class="MathJax_Preview">F_{\mu\nu}</span><script type="math/tex">F_{\mu\nu}</script></span>）的数学定义！</strong> 它描述了规范场的“弯曲”程度，即力的强度。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-计算引擎路径积分-path-integrals--functional-integrals">4. 计算引擎：路径积分 (Path Integrals / Functional Integrals)<a class="headerlink" href="#4-计算引擎路径积分-path-integrals--functional-integrals" title="Permanent link">#</a></h3>
+<p>这是物理学家**实际使用**的QFT结构。</p>
+<ul>
+<li><strong>核心思想：</strong> 一个系统从状态A到状态B，经历了**所有可能**的路径，其总振幅是所有路径振幅的**泛函积分 (Functional Integral)**：<br />
+    $$<br />
+    Z = \int \mathcal{D}\phi \exp\left( \frac{i}{\hbar} S[\phi] \right)<br />
+    $$<br />
+    其中 <span class="arithmatex"><span class="MathJax_Preview">S[\phi] = \int d^4x \mathcal{L}(\phi, \partial\mu\phi)</span><script type="math/tex">S[\phi] = \int d^4x \mathcal{L}(\phi, \partial\mu\phi)</script></span> 是作用量。</li>
+<li><strong>数学问题：</strong> 这是一个**无穷维**的积分。<span class="arithmatex"><span class="MathJax_Preview">\mathcal{D}\phi</span><script type="math/tex">\mathcal{D}\phi</script></span> 这个“测度”在数学上是**严格病态的 (ill-defined)**。</li>
+<li><strong>物理学家的“诡计”：</strong><ol>
+<li><strong>微扰论：</strong> 我们假设相互作用很弱，将 <span class="arithmatex"><span class="MathJax_Preview">e^{iS_{int}}</span><script type="math/tex">e^{iS_{int}}</script></span> 展开为泰勒级数。</li>
+<li><strong>费曼图：</strong> 这个级数的每一项都对应一个费曼图，它把一个极其复杂的泛函积分“简化”成了（仍然很复杂的）普通高维动量积分。</li>
+<li><strong>重整化 (Renormalization)：</strong> 这些动量积分几乎都是**发散**（无穷大）的。重整化是一套系统的“黑魔法”，它告诉我们如何系统地从这些无穷大中“减去”另一些无穷大，从而得到一个有限的、可与实验对比的物理结果。</li>
+</ol>
+</li>
+</ul>
+<hr />
+<h3 id="5-严格基础公理化qft-axiomatic-qft">5. 严格基础：公理化QFT (Axiomatic QFT)<a class="headerlink" href="#5-严格基础公理化qft-axiomatic-qft" title="Permanent link">#</a></h3>
+<p>这是数学家们试图建立的“坚实”的QFT结构，它**不**依赖于拉格朗日量或路径积分。</p>
+<ul>
+<li><strong>Wightman公理 (Wightman Axioms)：</strong> 这是最接近物理学家直觉的公理化。它试图给“场算符” <span class="arithmatex"><span class="MathJax_Preview">\hat{\phi}(x)</span><script type="math/tex">\hat{\phi}(x)</script></span> 和“真空态” <span class="arithmatex"><span class="MathJax_Preview">|0\rangle</span><script type="math/tex">|0\rangle</script></span> 下一组严格的数学定义（包括洛伦兹协变性、微观因果律、谱条件等）。</li>
+<li><strong>代数QFT (Algebraic QFT / Haag-Kastler Axioms)：</strong> 这是最抽象的。它完全抛弃了“场” <span class="arithmatex"><span class="MathJax_Preview">\hat{\phi}(x)</span><script type="math/tex">\hat{\phi}(x)</script></span> 的概念（因为它是一个“坏”的分布）。它认为，物理学的基本实体是在时空某个区域内**可观测量的代数（C*-Algebra）**。</li>
+</ul>
+<hr />
+<p>所学的“QFT”是一个**实用主义的大杂烩**：</p>
+<ul>
+<li>你**借用**了**经典场论**的拉格朗日量 (Lagrangian)。</li>
+<li>你**应用**了**泛函分析**的Fock空间和算符。</li>
+<li>你**遵从**了**群论**的对称性要求（Poincaré + Gauge）。</li>
+<li>你**使用**了**微分几何**的结构（协变导数）来写下拉格朗日量。</li>
+<li>你**依赖**了（数学上可疑的）**路径积分**和**费曼图**来进行计算。</li>
+<li>你**“修复”**了路径积分的发散，用的是**重整化**这套复杂的处方。</li>
+</ul>
+<p>QFT的数学结构之所以看起来如此繁琐和不连贯，<strong>是因为它本身就是拼凑起来的</strong>。它是一套“能用就行”的规则，其惊人的成功（例如QED的g-2因子）掩盖了其数学基础的薄弱。而试图建立坚实基础的“公理化QFT”，又因为过于抽象而无法指导我们计算标准模型。</p>
+<p>。我们正站在一个**计算上极其成功**，但**数学结构上仍未统一**的理论之上。</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月31日 08:08:30 UTC"><span class="timeago" datetime="2025-10-31T08:08:30+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月31日 08:08:30 UTC">2025-10-31</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月31日 08:08:30 UTC"><span class="timeago" datetime="2025-10-31T08:08:30+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月31日 08:08:30 UTC">2025-10-31</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="tianbaiting/tianbaiting.github.io"
+        data-repo-id="R_kgDOOB38lw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOOB38l84Comp4"
+        data-mapping="url"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+  <script>
+    if (document.querySelector("body").getAttribute("data-md-color-scheme") === "slate") {
+      var giscus = document.querySelector("script[src*=giscus]")
+      giscus.setAttribute("data-theme", "https://gcore.jsdelivr.net/gh/TonyCrane/note/docs/css/giscus.css") 
+    }
+  </script>
+
+                  
+                </article>
+              </div>
+            
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+          
+            <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+              回到页面顶部
+            </a>
+          
+        </main>
+        
+          <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+        
+      </div>
+      <div class="md-dialog" data-md-component="dialog">
+        <div class="md-dialog__inner md-typeset"></div>
+      </div>
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+      
+      
+        <script src="../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+        
+          <script src="../../../js/timeago.min.js"></script>
+        
+          <script src="../../../js/timeago_mkdocs_material.js"></script>
+        
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        
+          <script src="https://d3js.org/d3.v7.min.js"></script>
+        
+          <script src="../../../js/scheme.js"></script>
+        
+          <script src="../../../js/graph.js"></script>
+        
+      
+    </body>
+  </html>
+  
