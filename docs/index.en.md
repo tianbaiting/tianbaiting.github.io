@@ -10,6 +10,26 @@ hello, world.
 
 I'am Tian Baiting.
 
+
+## Preface
+
+
+
+
+## my web
+- [bilibili](https://space.bilibili.com/255797047)
+- [zhihu](https://www.zhihu.com/people/tian-bu-ding-45-77)
+ - [google scholar](https://scholar.google.com/citations?hl=zh-CN&user=Wb4CcQ8AAAAJ)
+ - [orcid](https://orcid.org/0000-0002-9018-6480)
+
+<!-- ORCID card placeholder -->
+<div id="orcid-card" data-orcid="0000-0002-9018-6480" style="margin:0.6rem 0;"></div>
+
+<!-- Google Scholar card placeholder -->
+<div id="scholar-card" data-user="Wb4CcQ8AAAAJ" style="margin:0.6rem 0;"></div>
+
+
+
 ## Knowledge Graph
 
 <div class="graph-container">
@@ -42,6 +62,8 @@ I'am Tian Baiting.
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="js/graph.js"></script>
+<script src="js/orcid-card.js"></script>
+<script src="js/scholar-card.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize graph after page load
@@ -59,14 +81,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
-
-## Preface
-
-
-
-
-## my web
-- [bilibili](https://space.bilibili.com/255797047)
-- [zhihu](https://www.zhihu.com/people/tian-bu-ding-45-77)
-
-
