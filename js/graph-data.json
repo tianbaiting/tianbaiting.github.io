@@ -537,7 +537,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/functionalAna_SpecThe.zh.md",
-      "size": 11344,
+      "size": 11348,
       "url": "/sci/minimal_theory/functionalAna_SpecThe/"
     },
     {
@@ -717,7 +717,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/faddeevWPCD.zh.md",
-      "size": 5563,
+      "size": 5571,
       "url": "/sci/project/D_polar_exp/faddeevWPCD/"
     },
     {
@@ -1100,6 +1100,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-10-31 08:09:40.966369"
+    "generated_at": "2025-10-31 08:17:58.717417"
   }
 }
