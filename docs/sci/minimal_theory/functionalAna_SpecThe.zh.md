@@ -226,10 +226,12 @@ Resolvent 恒等式 $R = R_0 + R_0 V R$ 是精确的、非微扰的。它的迭�
 ## 微扰展开 截断
 
 发散级数并非无用，比如斯特林公式的渐近展开：
-$$n! \sim \sqrt{2\pi n} \left(\frac{n}{e}\right)^n \left(1 + \frac{1}{12n} + \frac{1}{288n^2} - \frac{139}{51840 n^3} + \dots \right)$$
+
+$$ n! \sim \sqrt{2\pi n} \left(\frac{n}{e}\right)^n \left(1 + \frac{1}{12n} + \frac{1}{288n^2} - \frac{139}{51840 n^3} + \dots \right)$$
 
 比如余误差函数的渐近展开：
-$$\operatorname{erfc}(x) \sim \frac{e^{-x^2}}{x\sqrt{\pi}}\left(1 - \frac{1}{2x^2} + \frac{3}{4x^4} - \frac{15}{8x^6} + \dots\right) \quad (x \to +\infty)$$
+
+$$ \operatorname{erfc}(x) \sim \frac{e^{-x^2}}{x\sqrt{\pi}}\left(1 - \frac{1}{2x^2} + \frac{3}{4x^4} - \frac{15}{8x^6} + \dots\right) \quad (x \to +\infty)$$
 
 ![alt text](assets/functionalAna_SpecThe.zh/image.png)
 
