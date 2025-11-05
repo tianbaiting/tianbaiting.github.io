@@ -537,7 +537,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/functionalAna_SpecThe.zh.md",
-      "size": 11348,
+      "size": 11313,
       "url": "/sci/minimal_theory/functionalAna_SpecThe/"
     },
     {
@@ -820,6 +820,24 @@
       "url": "/sci/project/D_polar_exp/other_polarmeter/"
     },
     {
+      "id": "sci/project/faddeev/faddeev_WavePacket.zh",
+      "title": "faddeev方程 的Wave-packet continuum discretisation",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/faddeev/faddeev_WavePacket.zh.md",
+      "size": 23154,
+      "url": "/sci/project/faddeev/faddeev_WavePacket/"
+    },
+    {
+      "id": "sci/project/faddeev/construct_basis.zh",
+      "title": "Construct Basis",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/faddeev/construct_basis.zh.md",
+      "size": 4488,
+      "url": "/sci/project/faddeev/construct_basis/"
+    },
+    {
       "id": "sci/project/samurai/detector_samurai.zh",
       "title": "SAMURAI 光谱仪带电粒子探测器详细功能",
       "language": "zh",
@@ -1083,16 +1101,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 120,
+    "total_nodes": 122,
     "total_links": 0,
     "languages": {
-      "zh": 95,
+      "zh": 97,
       "en": 25
     },
     "categories": {
       "main": 2,
       "category": 20,
-      "page": 98
+      "page": 100
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1100,6 +1118,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-10-31 08:17:58.717417"
+    "generated_at": "2025-11-05 10:00:50.286810"
   }
 }

@@ -1,0 +1,3720 @@
+
+  <!doctype html>
+  <html lang="zh" class="no-js">
+    <head>
+      
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        
+        
+        
+          <link rel="canonical" href="https://tianbaiting.github.io/zh/sci/project/faddeev/faddeev_WavePacket/">
+        
+        
+          <link rel="prev" href="../construct_basis/">
+        
+        
+          <link rel="next" href="../../samurai/detector_samurai/">
+        
+        <link rel="icon" href="../../../../../assets/images/favicon.png">
+        <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
+      
+      
+        
+          <title>faddeev方程 的Wave-packet continuum discretisation - TBT个人网站</title>
+        
+      
+      
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/main.9c788c91.min.css">
+        
+          
+          <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.2505c338.min.css">
+        
+        
+
+      
+      
+      
+        
+          
+          
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+          <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        
+      
+      
+        <link rel="stylesheet" href="../../../../../css/counter.css">
+      
+        <link rel="stylesheet" href="../../../../../css/graph.css">
+      
+      
+        <link rel="stylesheet" href="../../../../../css/counter.css">
+      
+      <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      
+        
+
+      
+      
+      
+    </head>
+    
+    
+      
+      
+      
+      
+      
+      <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink">
+    
+      <script src="../../../../../js/scheme.js" type="text/javascript"></script>
+      
+      
+      <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+      <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+      <label class="md-overlay" for="__drawer"></label>
+      <div data-md-component="skip">
+        
+          
+          <a href="#faddeev方程-的wave-packet-continuum-discretisation" class="md-skip">
+            跳转至
+          </a>
+        
+      </div>
+      <div data-md-component="announce">
+        
+      </div>
+      
+      
+        
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../../" title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TBT个人网站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              faddeev方程 的Wave-packet continuum discretisation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      <div class="md-header-nav__scheme md-header-nav__button md-source__icon md-icon">
+  <a
+    href="javascript:toggleScheme();"
+    title="Toggle theme"
+    class="theme-toggle"
+  >
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5 1.43 1.43L4.93 20.5 3.5 19.07 19.07 3.5m-6.18 2.43L11.41 5 9.97 6l.42-1.7L9 3.24l1.75-.12.58-1.65L12 3.1l1.73.03-1.35 1.13.51 1.67m-3.3 3.61-1.16-.73-1.12.78.34-1.32-1.09-.83 1.36-.09.45-1.29.51 1.27 1.36.03-1.05.87.4 1.31M19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58 2.77-1.15-.24 3.35-2.53-2.2m4.33-2.7 1.15-2.77 2.2 2.54-3.35.23m1.15-4.96-1.14-2.78 3.34.24-2.2 2.54M9.63 18.93l2.77 1.15-2.53 2.19-.24-3.34Z"/></svg>
+  </a>
+</div>
+
+
+  <div class="md-header__button md-lang">
+    
+      <a href="/" hreflang="zh">简体中文</a>
+    
+      <a href="/en/" hreflang="en">English</a>
+    
+  </div>
+
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+      
+      <div class="md-container" data-md-component="container">
+        
+        
+          
+            
+              
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../../howtomakewebsite/" class="md-tabs__link">
+      网站制作
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../../" class="md-tabs__link">
+      主页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../MickeyMiaoMiao/citetree/" class="md-tabs__link">
+        MickeyMiaoMiao
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../life/flavor/" class="md-tabs__link">
+        Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../todolist/" class="md-tabs__link md-tabs__link--active">
+        Sci
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-tabs__link">
+        日本生存指南
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+            
+          
+        
+        <main class="md-main" data-md-component="main">
+          <div class="md-main__inner md-grid">
+            
+              
+                
+                <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../" title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    TBT个人网站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../howtomakewebsite/" class="md-nav__link">
+        网站制作
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          MickeyMiaoMiao
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MickeyMiaoMiao" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          MickeyMiaoMiao
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/citetree/" class="md-nav__link">
+        引文网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/firefoxplug/" class="md-nav__link">
+        浏览器插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/opvpn/" class="md-nav__link">
+        opvpn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_4" tabindex="0" aria-expanded="false">
+          Useful tips
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Useful tips" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Useful tips
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/overleaf_vscode%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        overleaf插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/%E5%88%A9%E7%94%A8%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E5%88%86%E5%B1%8F/" class="md-nav__link">
+        移动设备作为电脑的分屏
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84vscode/" class="md-nav__link">
+        如何安装多个版本的code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/%E6%9C%89%E8%B6%A3%E7%9A%84%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        有趣的插件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Life" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/flavor/" class="md-nav__link">
+        **探索味型奥秘：以川菜为例的烹饪科学指南**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/z30_DeepSky/" class="md-nav__link">
+        深空摄影
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/%E7%84%A6%E8%99%91/" class="md-nav__link">
+        焦虑
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/%E9%A3%9F%E7%89%A9%E4%B8%AD%E6%AF%92/" class="md-nav__link">
+        易发中毒食物
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/%E9%A3%9F%E7%89%A9%E5%AE%89%E5%85%A8%E6%B8%A9%E5%BA%A6/" class="md-nav__link">
+        食物安全温度
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" tabindex="0" aria-expanded="false">
+          健康
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="健康" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          健康
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/%E5%81%A5%E5%BA%B7/workout_diet/" class="md-nav__link">
+        **营养**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/%E5%81%A5%E5%BA%B7/%E9%BC%BB%E7%82%8E/" class="md-nav__link">
+        **鼻炎综合管理临床报告：过敏性鼻炎与血管运动性鼻炎的深度解析**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="true">
+          Sci
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sci" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Sci
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../todolist/" class="md-nav__link">
+        todo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
+          Cheatshet
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cheatshet" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cheatshet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/bashrc/" class="md-nav__link">
+        Bashrc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/docker/" class="md-nav__link">
+        docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/git/" class="md-nav__link">
+        git 备忘单
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/number_order_dimension/" class="md-nav__link">
+        数量级估计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/root_geant4_install/" class="md-nav__link">
+        Root geant4 install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/shell/" class="md-nav__link">
+        Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/site.en/" class="md-nav__link">
+        网页相关知识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/termux/" class="md-nav__link">
+        termux 运行ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/vimrc/" class="md-nav__link">
+        vim配置文件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
+          Minimal code
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minimal code" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Minimal code
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/Operating_system/" class="md-nav__link">
+        装系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/c%2B%2Bproject/" class="md-nav__link">
+        c++项目
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/class_dataTransport/" class="md-nav__link">
+        面向对象设计教程：管理类之间的数据依赖和解耦
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/cmake/" class="md-nav__link">
+        cmake项目
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/color_scheme/" class="md-nav__link">
+        科研配图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/cpp_package/" class="md-nav__link">
+        cpp 包管理 以及 依赖管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/format_guidelines/" class="md-nav__link">
+        格式规范
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/fzf/" class="md-nav__link">
+        FZF 模糊搜索工具完全教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/gdb/" class="md-nav__link">
+        gdb 调试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/geant4_oop/" class="md-nav__link">
+        **揭秘面向对象编程：Geant4工具包深度导览**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/gemni_use_wen2cli/" class="md-nav__link">
+        Gemini 使用限制与付费模式解析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/jupyternotebook/" class="md-nav__link">
+        jupyter notebook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/latex_graphics/" class="md-nav__link">
+        latex include graphics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/python_def_class/" class="md-nav__link">
+        python 定义类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/python_lib_self/" class="md-nav__link">
+        python 包的创建与使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/python_venv/" class="md-nav__link">
+        Python 虚拟环境
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/root_opener/" class="md-nav__link">
+        设置 ROOT 文件默认浏览器教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/root_plot/" class="md-nav__link">
+        root_plot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/root_visual_geant4/" class="md-nav__link">
+        Root visual geant4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/server_clouddirve/" class="md-nav__link">
+        如何从零搭建私有云盘服务器 (Markdown 教程)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/server_clouddirve_example/" class="md-nav__link">
+        Server clouddirve example
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/termux/" class="md-nav__link">
+        在 Termux 中安装 Ubuntu 桌面环境并运行 VS Code 的终极指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vim_neovim/" class="md-nav__link">
+        Vim neovim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vscode_env_path/" class="md-nav__link">
+        Vscode env path
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vscode_lsp/" class="md-nav__link">
+        如何解决 VS Code 中的 C/C++ `include` 报错问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/yazi/" class="md-nav__link">
+        快捷键
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/zsh/" class="md-nav__link">
+        Zsh 环境一键配置脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/%E5%BE%85%E8%A7%A3%E5%86%B3%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        to be solved
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="false">
+          Minimal theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minimal theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Minimal theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/ScateringINQMandQFT/" class="md-nav__link">
+        ScateringINQMandQFT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/TransmissionLineEq/" class="md-nav__link">
+        TransmissionLineEq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/dead_time/" class="md-nav__link">
+        Dead time
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/functionalAna_SpecThe/" class="md-nav__link">
+        泛函分析和谱理论初步
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/qft_schwartz_ref/" class="md-nav__link">
+        Schwartz — 《量子场论与标准模型》学习资源指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/qft_whatisfield/" class="md-nav__link">
+        Qft whatisfield
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatering_theory/" class="md-nav__link">
+        散射理论
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5" tabindex="0" aria-expanded="true">
+          Project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Project" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../example/" class="md-nav__link">
+        hello world
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_2" type="checkbox" id="__nav_5_5_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_2" tabindex="0" aria-expanded="false">
+          D polar exp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="D polar exp" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          D polar exp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/Sipm_PMT/" class="md-nav__link">
+        Sipm PMT参数对比
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/caogao/" class="md-nav__link">
+        Caogao
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/d_breakup_theory/" class="md-nav__link">
+        氘核破裂理论上可以如何计算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/faddeevWPCD/" class="md-nav__link">
+        faddeevWPCD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/my_polarimeter/" class="md-nav__link">
+        My polarimeter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/other_polarmeter/" class="md-nav__link">
+        其他研究组的polarimeter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/riken_web_source/" class="md-nav__link">
+        riken 常见资源
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/scintillator/" class="md-nav__link">
+        闪烁体光产额
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/spherical_operator/" class="md-nav__link">
+        To show some relation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/stastic/" class="md-nav__link">
+        统计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/sw-api/" class="md-nav__link">
+        solidworks api接口
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/todo_list/" class="md-nav__link">
+        To do list
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_3" type="checkbox" id="__nav_5_5_3" checked>
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3" tabindex="0" aria-expanded="true">
+          Faddeev
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Faddeev" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Faddeev
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construct_basis/" class="md-nav__link">
+        Construct basis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          faddeev方程 的Wave-packet continuum discretisation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        faddeev方程 的Wave-packet continuum discretisation
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#第一章-为何两体散射理论在三体世界轰然倒塌" class="md-nav__link">
+    第一章 为何两体散射理论在三体世界轰然倒塌
+  </a>
+  
+    <nav class="md-nav" aria-label="第一章 为何两体散射理论在三体世界轰然倒塌">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-两体散射理论回顾" class="md-nav__link">
+    1.1 两体散射理论回顾
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 两体散射理论回顾">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-薛定谔方程与散射边界条件" class="md-nav__link">
+    1.1.1 薛定谔方程与散射边界条件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-lippmannschwinger-方程从微分到积分" class="md-nav__link">
+    1.1.2 Lippmann–Schwinger 方程：从微分到积分
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-t-矩阵一个更本质的算符" class="md-nav__link">
+    1.1.3 T-矩阵：一个更本质的算符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-走进三体迷宫坐标与哈密顿量" class="md-nav__link">
+    1.2 走进三体迷宫：坐标与哈密顿量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-致命缺陷三体-lippmannschwinger-方程的病态本质" class="md-nav__link">
+    1.3 致命缺陷：三体 Lippmann–Schwinger 方程的病态本质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#法捷耶夫-三体" class="md-nav__link">
+    法捷耶夫-三体
+  </a>
+  
+    <nav class="md-nav" aria-label="法捷耶夫-三体">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-核心思想对散射过程的分解" class="md-nav__link">
+    2.1 核心思想：对散射过程的分解
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 核心思想：对散射过程的分解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-t-矩阵的分解" class="md-nav__link">
+    2.1.1 T-矩阵的分解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-波函数的分解" class="md-nav__link">
+    2.1.2 波函数的分解
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-法捷耶夫方程的推导" class="md-nav__link">
+    2.2 法捷耶夫方程的推导
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-方程的结构与数学上的治愈" class="md-nav__link">
+    2.3 方程的结构与数学上的治愈
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 方程的结构与数学上的治愈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-矩阵形式与方程核" class="md-nav__link">
+    2.3.1 矩阵形式与方程核
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-数学治愈紧致核的魔力" class="md-nav__link">
+    2.3.2 数学治愈：紧致核的魔力
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第三章-离散化" class="md-nav__link">
+    第三章 离散化
+  </a>
+  
+    <nav class="md-nav" aria-label="第三章 离散化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-分波展开-partial-wave-expansion" class="md-nav__link">
+    3.1 分波展开 (Partial Wave Expansion)
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 分波展开 (Partial Wave Expansion)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-两体系统的角动量耦合" class="md-nav__link">
+    3.1.1 两体系统的角动量耦合
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-三体系统的角动量耦合" class="md-nav__link">
+    3.1.2 三体系统的角动量耦合
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-动量空间基矢离散化" class="md-nav__link">
+    3.2 动量空间基矢离散化
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 动量空间基矢离散化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-动量空间的归一化与基矢" class="md-nav__link">
+    3.2.1 动量空间的归一化与基矢
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-区间选取与-p_maxp_max-的确定" class="md-nav__link">
+    3.2.2 区间选取与 p_{\max}p_{\max} 的确定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-wpcd-基矢的高效构造" class="md-nav__link">
+    3.2.3 WP‑CD 基矢的高效构造
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-总结" class="md-nav__link">
+    3.3 总结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第四章-构建与求解分波ags方程" class="md-nav__link">
+    第四章 构建与求解分波AGS方程
+  </a>
+  
+    <nav class="md-nav" aria-label="第四章 构建与求解分波AGS方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-方程的组成部件x-y-k" class="md-nav__link">
+    4.1 方程的组成部件：X, Y, K
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 方程的组成部件：X, Y, K">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#411-未知解向量-x" class="md-nav__link">
+    4.1.1 未知解向量 X
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412-驱动项-y" class="md-nav__link">
+    4.1.2 驱动项 Y
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#413-核矩阵-k" class="md-nav__link">
+    4.1.3 核矩阵 K
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-置换算符与角动量重耦合" class="md-nav__link">
+    4.2 置换算符与角动量重耦合
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-最终矩阵的结构与求解" class="md-nav__link">
+    4.3 最终矩阵的结构与求解
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-收获物理从解向量-x-到可观测量" class="md-nav__link">
+    4.4 收获物理：从解向量 X 到可观测量
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_4" type="checkbox" id="__nav_5_5_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_4" tabindex="0" aria-expanded="false">
+          Samurai
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Samurai" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Samurai
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/detector_samurai/" class="md-nav__link">
+        SAMURAI 光谱仪带电粒子探测器详细功能
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_4_2" type="checkbox" id="__nav_5_5_4_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_4_2" tabindex="0" aria-expanded="false">
+          Anaroot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Anaroot" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Anaroot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/anaroot/RIDF/" class="md-nav__link">
+        RIKEN RIDF 文件构成详解：数据块 (Block) 说明
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/anaroot/anaroot/" class="md-nav__link">
+        **ANAROOT 综合分析框架：
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/anaroot/anaroot2version/" class="md-nav__link">
+        ANAROOT 详细中文文档
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/anaroot/anaroot_decoder/" class="md-nav__link">
+        Anaroot decoder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/anaroot/anaroot_nebula/" class="md-nav__link">
+        Anaroot nebula
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/anaroot/anaroot_nebula_reconstructionfunction/" class="md-nav__link">
+        Anaroot nebula reconstructionfunction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/anaroot/anaroot_pdc/" class="md-nav__link">
+        anaroot pdcS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_4_3" type="checkbox" id="__nav_5_5_4_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_4_3" tabindex="0" aria-expanded="false">
+          Smsimulator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Smsimulator" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Smsimulator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/smsimulator/FDC2/" class="md-nav__link">
+        FDC2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/smsimulator/PDC/" class="md-nav__link">
+        PDC 漂移室模拟方案
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/smsimulator/nebula_simlulator/" class="md-nav__link">
+        Nebula simlulator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/smsimulator/smsimulator/" class="md-nav__link">
+        smsimultor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/smsimulator/smsimulator_tutor/" class="md-nav__link">
+        smsimulator 教学
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          日本生存指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="日本生存指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          日本生存指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-nav__link">
+        Japanese
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%8E%BB%E6%97%A5%E6%9C%AC%E5%89%8D%E6%89%93%E5%8C%85/" class="md-nav__link">
+        登机前打包
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%90%83/" class="md-nav__link">
+        吃
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        垃圾分类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%8E%A5%E6%94%B6%E5%BF%AB%E9%80%92/" class="md-nav__link">
+        接受快递
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%97%A5%E7%89%88%E6%89%8B%E6%9C%BAfelica%E8%8A%AF%E7%89%87/" class="md-nav__link">
+        **日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E5%AD%90%E6%94%AF%E4%BB%98-%E4%BA%A4%E9%80%9A%E5%8D%A1/" class="md-nav__link">
+        日本电子支付 - 交通卡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E8%AF%9D%E5%8D%A1/" class="md-nav__link">
+        电话卡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E8%90%BD%E5%9C%B0todo/" class="md-nav__link">
+        落地事宜
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E9%93%B6%E8%A1%8C%E5%8D%A1/" class="md-nav__link">
+        银行卡
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                    </div>
+                  </div>
+                </div>
+              
+              
+                
+                <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#第一章-为何两体散射理论在三体世界轰然倒塌" class="md-nav__link">
+    第一章 为何两体散射理论在三体世界轰然倒塌
+  </a>
+  
+    <nav class="md-nav" aria-label="第一章 为何两体散射理论在三体世界轰然倒塌">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-两体散射理论回顾" class="md-nav__link">
+    1.1 两体散射理论回顾
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 两体散射理论回顾">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-薛定谔方程与散射边界条件" class="md-nav__link">
+    1.1.1 薛定谔方程与散射边界条件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-lippmannschwinger-方程从微分到积分" class="md-nav__link">
+    1.1.2 Lippmann–Schwinger 方程：从微分到积分
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-t-矩阵一个更本质的算符" class="md-nav__link">
+    1.1.3 T-矩阵：一个更本质的算符
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-走进三体迷宫坐标与哈密顿量" class="md-nav__link">
+    1.2 走进三体迷宫：坐标与哈密顿量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-致命缺陷三体-lippmannschwinger-方程的病态本质" class="md-nav__link">
+    1.3 致命缺陷：三体 Lippmann–Schwinger 方程的病态本质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#法捷耶夫-三体" class="md-nav__link">
+    法捷耶夫-三体
+  </a>
+  
+    <nav class="md-nav" aria-label="法捷耶夫-三体">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-核心思想对散射过程的分解" class="md-nav__link">
+    2.1 核心思想：对散射过程的分解
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 核心思想：对散射过程的分解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-t-矩阵的分解" class="md-nav__link">
+    2.1.1 T-矩阵的分解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-波函数的分解" class="md-nav__link">
+    2.1.2 波函数的分解
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-法捷耶夫方程的推导" class="md-nav__link">
+    2.2 法捷耶夫方程的推导
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-方程的结构与数学上的治愈" class="md-nav__link">
+    2.3 方程的结构与数学上的治愈
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 方程的结构与数学上的治愈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-矩阵形式与方程核" class="md-nav__link">
+    2.3.1 矩阵形式与方程核
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-数学治愈紧致核的魔力" class="md-nav__link">
+    2.3.2 数学治愈：紧致核的魔力
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第三章-离散化" class="md-nav__link">
+    第三章 离散化
+  </a>
+  
+    <nav class="md-nav" aria-label="第三章 离散化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-分波展开-partial-wave-expansion" class="md-nav__link">
+    3.1 分波展开 (Partial Wave Expansion)
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 分波展开 (Partial Wave Expansion)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311-两体系统的角动量耦合" class="md-nav__link">
+    3.1.1 两体系统的角动量耦合
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312-三体系统的角动量耦合" class="md-nav__link">
+    3.1.2 三体系统的角动量耦合
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-动量空间基矢离散化" class="md-nav__link">
+    3.2 动量空间基矢离散化
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 动量空间基矢离散化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-动量空间的归一化与基矢" class="md-nav__link">
+    3.2.1 动量空间的归一化与基矢
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-区间选取与-p_maxp_max-的确定" class="md-nav__link">
+    3.2.2 区间选取与 p_{\max}p_{\max} 的确定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-wpcd-基矢的高效构造" class="md-nav__link">
+    3.2.3 WP‑CD 基矢的高效构造
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-总结" class="md-nav__link">
+    3.3 总结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第四章-构建与求解分波ags方程" class="md-nav__link">
+    第四章 构建与求解分波AGS方程
+  </a>
+  
+    <nav class="md-nav" aria-label="第四章 构建与求解分波AGS方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-方程的组成部件x-y-k" class="md-nav__link">
+    4.1 方程的组成部件：X, Y, K
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 方程的组成部件：X, Y, K">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#411-未知解向量-x" class="md-nav__link">
+    4.1.1 未知解向量 X
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412-驱动项-y" class="md-nav__link">
+    4.1.2 驱动项 Y
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#413-核矩阵-k" class="md-nav__link">
+    4.1.3 核矩阵 K
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-置换算符与角动量重耦合" class="md-nav__link">
+    4.2 置换算符与角动量重耦合
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-最终矩阵的结构与求解" class="md-nav__link">
+    4.3 最终矩阵的结构与求解
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-收获物理从解向量-x-到可观测量" class="md-nav__link">
+    4.4 收获物理：从解向量 X 到可观测量
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                    </div>
+                  </div>
+                </div>
+                
+              
+            
+            
+              <div class="md-content" data-md-component="content">
+                <article class="md-content__inner md-typeset">
+                  
+                    
+
+
+
+<h1 id="faddeev方程-的wave-packet-continuum-discretisation">faddeev方程 的Wave-packet continuum discretisation<a class="headerlink" href="#faddeev方程-的wave-packet-continuum-discretisation" title="Permanent link">#</a></h1>
+<h2 id="第一章-为何两体散射理论在三体世界轰然倒塌">第一章 为何两体散射理论在三体世界轰然倒塌<a class="headerlink" href="#第一章-为何两体散射理论在三体世界轰然倒塌" title="Permanent link">#</a></h2>
+<p>本章是整个理论体系的基石和出发点。我们将以最详尽的步骤，重游您所熟悉的量子力学散射理论，然后进入三体世界，从数学和物理的两个层面，一层层地剖析为何这个在两体问题中如此成功的理论，在面对三个粒子时会遭遇不可逾越的障碍。深刻且直观地理解这个“失败”的根源，是领会法捷耶夫革命性贡献为何如此伟大的绝对前提。</p>
+<h3 id="11-两体散射理论回顾">1.1 两体散射理论回顾<a class="headerlink" href="#11-两体散射理论回顾" title="Permanent link">#</a></h3>
+<h4 id="111-薛定谔方程与散射边界条件">1.1.1 薛定谔方程与散射边界条件<a class="headerlink" href="#111-薛定谔方程与散射边界条件" title="Permanent link">#</a></h4>
+<p>一切物理学的核心始于系统的哈密顿量 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 和它所主宰的定态薛定谔方程：<br />
+$$<br />
+H |\psi\rangle = E |\psi\rangle<br />
+$$<br />
+在质心参考系中，一个两体系统的哈密顿量可以写为 <span class="arithmatex"><span class="MathJax_Preview">H = H_0 + V</span><script type="math/tex">H = H_0 + V</script></span>。</p>
+<ul>
+<li><strong>自由哈密顿量 <span class="arithmatex"><span class="MathJax_Preview">H_0 = \dfrac{\vec{p}^2}{2\mu}</span><script type="math/tex">H_0 = \dfrac{\vec{p}^2}{2\mu}</script></span></strong>，其中 <span class="arithmatex"><span class="MathJax_Preview">\vec{p}</span><script type="math/tex">\vec{p}</script></span> 是两粒子间的相对动量，<span class="arithmatex"><span class="MathJax_Preview">\mu = \dfrac{m_1 m_2}{m_1+m_2}</span><script type="math/tex">\mu = \dfrac{m_1 m_2}{m_1+m_2}</script></span> 是约化质量。<span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 的本征态是动量为 <span class="arithmatex"><span class="MathJax_Preview">\hbar\vec{k}</span><script type="math/tex">\hbar\vec{k}</script></span> 的平面波 <span class="arithmatex"><span class="MathJax_Preview">|\vec{k}\rangle</span><script type="math/tex">|\vec{k}\rangle</script></span>，其能量为 <span class="arithmatex"><span class="MathJax_Preview">E_k = \dfrac{\hbar^2 k^2}{2\mu}</span><script type="math/tex">E_k = \dfrac{\hbar^2 k^2}{2\mu}</script></span>。</li>
+<li><strong>相互作用势 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span></strong>，我们假设它是一个只依赖于相对坐标 <span class="arithmatex"><span class="MathJax_Preview">\vec{r}</span><script type="math/tex">\vec{r}</script></span> 的局域势 <span class="arithmatex"><span class="MathJax_Preview">V(\vec{r})</span><script type="math/tex">V(\vec{r})</script></span>，并且是短程的，即当 <span class="arithmatex"><span class="MathJax_Preview">r \to \infty</span><script type="math/tex">r \to \infty</script></span> 时，<span class="arithmatex"><span class="MathJax_Preview">V(r)</span><script type="math/tex">V(r)</script></span> 比 <span class="arithmatex"><span class="MathJax_Preview">1/r</span><script type="math/tex">1/r</script></span> 更快地趋于零。</li>
+</ul>
+<p>对于散射问题，我们寻找的是能量 <span class="arithmatex"><span class="MathJax_Preview">E &gt; 0</span><script type="math/tex">E > 0</script></span> 的连续谱解。这个解在物理上必须描述一个清晰的散射过程：一束粒子（平面波）入射，与散射中心相互作用后，以球面波的形式向四面八方散射开来。这个直观的物理图像，被精确地表述为波函数在坐标空间中的渐进行为（Asymptotic Behavior）：<br />
+$$<br />
+\psi_{\vec{k}}^+(\vec{r}) \xrightarrow{r \to \infty} e^{i\vec{k}\cdot\vec{r}} + f_{\vec{k}}(\hat{r}) \frac{e^{ikr}}{r}<br />
+$$<br />
+让我们仔细解读这个公式的每一部分：</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">\psi_{\vec{k}}^+(\vec{r})</span><script type="math/tex">\psi_{\vec{k}}^+(\vec{r})</script></span>：代表一个具有特定边界条件的散射态。<span class="arithmatex"><span class="MathJax_Preview">\vec{k}</span><script type="math/tex">\vec{k}</script></span> 是入射波的波向量，上标 + 是一个关键标记，代表我们选择的是出射（outgoing）球面波的边界条件。</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">e^{i\vec{k}\cdot\vec{r}}</span><script type="math/tex">e^{i\vec{k}\cdot\vec{r}}</script></span>：描述入射的平面波。</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">f_{\vec{k}}(\hat{r})</span><script type="math/tex">f_{\vec{k}}(\hat{r})</script></span>：散射振幅（Scattering Amplitude）。这是连接理论与实验的桥梁。它描述了从入射方向 <span class="arithmatex"><span class="MathJax_Preview">\vec{k}</span><script type="math/tex">\vec{k}</script></span> 散射到出射方向 <span class="arithmatex"><span class="MathJax_Preview">\hat{r} = \vec{r}/r</span><script type="math/tex">\hat{r} = \vec{r}/r</script></span> 的概率幅。它的量纲是长度。</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\dfrac{e^{ikr}}{r}</span><script type="math/tex">\dfrac{e^{ikr}}{r}</script></span>：描述一个单位振幅的、以角频率 <span class="arithmatex"><span class="MathJax_Preview">\omega = E/\hbar</span><script type="math/tex">\omega = E/\hbar</script></span> 向外传播的球面波。分母上的 <span class="arithmatex"><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> 保证了粒子流密度按 <span class="arithmatex"><span class="MathJax_Preview">1/r^2</span><script type="math/tex">1/r^2</script></span> 衰减，符合粒子数守恒。</li>
+</ul>
+<p>实验上测量的微分散射截面（Differential Cross Section），即单位立体角内散射的粒子数与入射粒子流强度的比值，就由散射振幅的模平方直接给出：<br />
+$$<br />
+\frac{d\sigma}{d\Omega} = |f_{\vec{k}}(\hat{r})|^2<br />
+$$</p>
+<h4 id="112-lippmannschwinger-方程从微分到积分">1.1.2 Lippmann–Schwinger 方程：从微分到积分<a class="headerlink" href="#112-lippmannschwinger-方程从微分到积分" title="Permanent link">#</a></h4>
+<p>直接求解带有上述边界条件的薛定谔偏微分方程是可行的（例如通过分波法），但为了理论的普适性和后续推广，我们更倾向于将其转化为一个等价的积分方程。</p>
+<p>从 <span class="arithmatex"><span class="MathJax_Preview">(E - H_0) |\psi\rangle = V |\psi\rangle</span><script type="math/tex">(E - H_0) |\psi\rangle = V |\psi\rangle</script></span> 出发，我们可以形式上写出：<br />
+$$<br />
+|\psi\rangle = |\phi\rangle + \frac{1}{E - H_0} V |\psi\rangle<br />
+$$<br />
+其中 <span class="arithmatex"><span class="MathJax_Preview">|\phi\rangle</span><script type="math/tex">|\phi\rangle</script></span> 是齐次方程 <span class="arithmatex"><span class="MathJax_Preview">(E - H_0)|\phi\rangle = 0</span><script type="math/tex">(E - H_0)|\phi\rangle = 0</script></span> 的解，即入射平面波。这里的核心问题在于算符 <span class="arithmatex"><span class="MathJax_Preview">(E - H_0)^{-1}</span><script type="math/tex">(E - H_0)^{-1}</script></span> 的定义。当能量 <span class="arithmatex"><span class="MathJax_Preview">E</span><script type="math/tex">E</script></span> 落在 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 的连续谱上时，存在一个能量为 <span class="arithmatex"><span class="MathJax_Preview">E</span><script type="math/tex">E</script></span> 的本征态，导致分母为零，使得这个逆算符是奇异的、未明确定义的。</p>
+<p>为了解决这个奇点问题并正确地引入物理边界条件，我们采用所谓的 +iε 规则：<br />
+$$<br />
+|\psi_E^+\rangle = |\phi_E\rangle + \lim_{\epsilon \to 0^+} \frac{1}{E - H_0 + i\epsilon} V |\psi_E^+\rangle<br />
+$$<br />
+这就是著名的 Lippmann–Schwinger (LS) 方程。</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">G_0^+(E) = \lim_{\epsilon \to 0^+} (E - H_0 + i\epsilon)^{-1}</span><script type="math/tex">G_0^+(E) = \lim_{\epsilon \to 0^+} (E - H_0 + i\epsilon)^{-1}</script></span> 被称为出射波自由格林函数。这个小小的虚部 <span class="arithmatex"><span class="MathJax_Preview">+i\epsilon</span><script type="math/tex">+i\epsilon</script></span> 蕴含着深刻的物理。在数学上，它将积分路径上的奇点（极点）推离了实轴，使得积分有明确的定义。在物理上，通过留数定理可以证明，这个规定恰好产生了我们所需要的向外传播的出射球面波。如果使用 <span class="arithmatex"><span class="MathJax_Preview">-i\epsilon</span><script type="math/tex">-i\epsilon</script></span>，则会得到向内汇聚的入射球面波，对应于另一种非物理的边界条件。</p>
+<h4 id="113-t-矩阵一个更本质的算符">1.1.3 T-矩阵：一个更本质的算符<a class="headerlink" href="#113-t-矩阵一个更本质的算符" title="Permanent link">#</a></h4>
+<p>LS 方程虽然优美，但它的未知数是依赖于具体入射条件的波函数 <span class="arithmatex"><span class="MathJax_Preview">|\psi^+\rangle</span><script type="math/tex">|\psi^+\rangle</script></span>。我们希望能有一个更本质的、只依赖于系统哈密顿量而不依赖于具体入射态的算符。这个算符就是 T-矩阵（Transition Matrix）。</p>
+<p>我们定义 T-矩阵 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 满足：<br />
+$$<br />
+V |\psi^+\rangle \equiv T |\phi\rangle<br />
+$$<br />
+这个定义是说，T-矩阵作用在入射的自由态 <span class="arithmatex"><span class="MathJax_Preview">|\phi\rangle</span><script type="math/tex">|\phi\rangle</script></span> 上，其效果等同于完整的相互作用势 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 作用在包含了所有散射效应的真实态 <span class="arithmatex"><span class="MathJax_Preview">|\psi^+\rangle</span><script type="math/tex">|\psi^+\rangle</script></span> 上。它将复杂的散射过程“打包”成了一个算符。</p>
+<p>将此定义代入 LS 方程，我们得到波函数与 T-矩阵的关系：<br />
+$$<br />
+|\psi^+\rangle = |\phi\rangle + G_0^+ V |\psi^+\rangle = |\phi\rangle + G_0^+ T |\phi\rangle<br />
+$$<br />
+为了得到 T-矩阵自身的方程，我们将 <span class="arithmatex"><span class="MathJax_Preview">T|\phi\rangle = V|\psi^+\rangle</span><script type="math/tex">T|\phi\rangle = V|\psi^+\rangle</script></span> 的两边替换入并整理，得到算符方程：<br />
+$$<br />
+T = V + V G_0^+ T<br />
+$$<br />
+这就是 T-矩阵的 Lippmann–Schwinger 方程。它是现代散射理论的基石。一旦通过求解这个方程得到了算符 <span class="arithmatex"><span class="MathJax_Preview">T(E)</span><script type="math/tex">T(E)</script></span>，我们就可以计算任何初态 <span class="arithmatex"><span class="MathJax_Preview">|\phi_i\rangle</span><script type="math/tex">|\phi_i\rangle</script></span> 到末态 <span class="arithmatex"><span class="MathJax_Preview">|\phi_f\rangle</span><script type="math/tex">|\phi_f\rangle</script></span> 的散射振幅：<br />
+$$<br />
+f_{fi} = -\frac{(2\pi)^2 \mu}{\hbar^2} \langle \phi_f | T(E) | \phi_i \rangle<br />
+$$<br />
+对于两体问题，这个理论框架是完美自洽的。LS 方程是一个 Fredholm 第二类积分方程，其积分核 <span class="arithmatex"><span class="MathJax_Preview">K = G_0^+ V</span><script type="math/tex">K = G_0^+ V</script></span> 是一个紧致算符（Compact Operator）。根据 Fredholm 理论，这意味着对于非齐次方程，其解是唯一的。这保证了我们的理论框架是稳固的。</p>
+<hr />
+<h3 id="12-走进三体迷宫坐标与哈密顿量">1.2 走进三体迷宫：坐标与哈密顿量<a class="headerlink" href="#12-走进三体迷宫坐标与哈密顿量" title="Permanent link">#</a></h3>
+<p>现在，我们带着在两体世界中获得的强大武器，自信地踏入三体世界。一个由三个粒子组成的系统，其哈密顿量为：<br />
+$$<br />
+H = \sum_{i=1}^3 \frac{\vec{p}<em 12="12">i^2}{2m_i} + V</em>(\vec{r}<em 23="23">1 - \vec{r}_2) + V</em>(\vec{r}<em 31="31">2 - \vec{r}_3) + V</em>(\vec{r}_3 - \vec{r}_1)<br />
+$$<br />
+这个系统有 9 个坐标自由度。总动量 <span class="arithmatex"><span class="MathJax_Preview">\vec{P} = \vec{p}_1+\vec{p}_2+\vec{p}_3</span><script type="math/tex">\vec{P} = \vec{p}_1+\vec{p}_2+\vec{p}_3</script></span> 守恒，意味着质心的运动是平凡的匀速直线运动。为了分离出这 3 个无关的自由度，我们必须引入雅可比坐标（Jacobi Coordinates）。</p>
+<p>这是一个至关重要的步骤，因为三体问题天然地存在三种不同的“组合”方式：(12)+3、(23)+1、(31)+2。每一种组合方式都对应一套最适合描述它的雅可比坐标。</p>
+<p><strong>第一套雅可比坐标（标记为 "3"）：</strong> 适合描述粒子 1 和 2 构成子系统，粒子 3 是“旁观者”。<br />
+$$<br />
+\begin{align*}<br />
+\vec{\rho}_3 &amp;= \vec{r}_1 - \vec{r}_2 \quad &amp;(\text{子系统(12)的内部相对坐标}) \<br />
+\vec{\lambda}_3 &amp;= \frac{m_1\vec{r}_1 + m_2\vec{r}_2}{m_1+m_2} - \vec{r}_3 \quad &amp;(\text{粒子3相对于子系统(12)质心的相对坐标}) \<br />
+\vec{R} &amp;= \frac{m_1\vec{r}_1 + m_2\vec{r}_2 + m_3\vec{r}_3}{M} \quad &amp;(\text{总质心坐标}, M=m_1+m_2+m_3)<br />
+\end{align*}<br />
+$$</p>
+<p>在质心系中（<span class="arithmatex"><span class="MathJax_Preview">\vec{R}=0, \vec{P}=0</span><script type="math/tex">\vec{R}=0, \vec{P}=0</script></span>），自由哈密顿量 <span class="arithmatex"><span class="MathJax_Preview">H_0 = \sum \dfrac{\vec{p}_i^2}{2m_i}</span><script type="math/tex">H_0 = \sum \dfrac{\vec{p}_i^2}{2m_i}</script></span> 被完美地分离为两个独立的动能项：<br />
+$$<br />
+H_0 = \frac{\vec{p}<em 12="12">{\rho_3}^2}{2\mu</em>} + \frac{\vec{p}_{\lambda_3}^2}{2\nu_3}<br />
+$$<br />
+其中 <span class="arithmatex"><span class="MathJax_Preview">\mu_{12} = \dfrac{m_1m_2}{m_1+m_2}</span><script type="math/tex">\mu_{12} = \dfrac{m_1m_2}{m_1+m_2}</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">\nu_3 = \dfrac{(m_1+m_2)m_3}{M}</span><script type="math/tex">\nu_3 = \dfrac{(m_1+m_2)m_3}{M}</script></span> 是对应的约化质量。这种分离是精确的，没有任何交叉项。</p>
+<p>同理，我们可以定义另外两套雅可比坐标：<br />
+<strong>第二套（标记为 "1"）：</strong> <span class="arithmatex"><span class="MathJax_Preview">\vec{\rho}_1 = \vec{r}_2 - \vec{r}_3</span><script type="math/tex">\vec{\rho}_1 = \vec{r}_2 - \vec{r}_3</script></span>, <span class="arithmatex"><span class="MathJax_Preview">\vec{\lambda}_1 = \dfrac{m_2\vec{r}_2+m_3\vec{r}_3}{m_2+m_3} - \vec{r}_1</span><script type="math/tex">\vec{\lambda}_1 = \dfrac{m_2\vec{r}_2+m_3\vec{r}_3}{m_2+m_3} - \vec{r}_1</script></span>。适合描述 (23)+1 子系统。<br />
+<strong>第三套（标记为 "2"）：</strong> <span class="arithmatex"><span class="MathJax_Preview">\vec{\rho}_2 = \vec{r}_3 - \vec{r}_1</span><script type="math/tex">\vec{\rho}_2 = \vec{r}_3 - \vec{r}_1</script></span>, <span class="arithmatex"><span class="MathJax_Preview">\vec{\lambda}_2 = \dfrac{m_3\vec{r}_3+m_1\vec{r}_1}{m_3+m_1} - \vec{r}_2</span><script type="math/tex">\vec{\lambda}_2 = \dfrac{m_3\vec{r}_3+m_1\vec{r}_1}{m_3+m_1} - \vec{r}_2</script></span>。适合描述 (31)+2 子系统。</p>
+<p>这三套坐标系只是对同一个物理系统的不同描述，它们之间可以通过线性变换相互转换。理解这一点对于后续理解置换算符至关重要。</p>
+<hr />
+<h3 id="13-致命缺陷三体-lippmannschwinger-方程的病态本质">1.3 致命缺陷：三体 Lippmann–Schwinger 方程的病态本质<a class="headerlink" href="#13-致命缺陷三体-lippmannschwinger-方程的病态本质" title="Permanent link">#</a></h3>
+<p>现在，我们形式上写出三体系统的 LS 方程：<br />
+$$<br />
+|\Psi^+\rangle = |\Phi_\alpha\rangle + G_0^+(E) (V_{12} + V_{23} + V_{31}) |\Psi^+\rangle<br />
+$$<br />
+<span class="arithmatex"><span class="MathJax_Preview">|\Phi_\alpha\rangle</span><script type="math/tex">|\Phi_\alpha\rangle</script></span> 是入射态，<span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 标记了入射通道。以中子—氘核散射为例，入射通道是 (23)+1，入射态是粒子 1（中子）以动量 <span class="arithmatex"><span class="MathJax_Preview">\vec{q}</span><script type="math/tex">\vec{q}</script></span> 运动，粒子 2 和 3（氘核内的质子和中子）处于束缚态 <span class="arithmatex"><span class="MathJax_Preview">\phi_d</span><script type="math/tex">\phi_d</script></span>。在雅可比坐标系 "1" 中，这个态可以写作：<br />
+$$<br />
+|\Phi_1\rangle = |\phi_d(\vec{\rho}_1)\rangle \otimes |\vec{q}(\vec{\lambda}_1)\rangle<br />
+$$<br />
+它的能量是 <span class="arithmatex"><span class="MathJax_Preview">E = -\epsilon_d + \dfrac{q^2}{2\nu_1}</span><script type="math/tex">E = -\epsilon_d + \dfrac{q^2}{2\nu_1}</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">\epsilon_d</span><script type="math/tex">\epsilon_d</script></span> 是氘核的结合能。</p>
+<p><strong>病灶在何处？</strong></p>
+<p>让我们对 LS 方程进行迭代展开（Born 级数），并仔细审视其中的一项：<br />
+$$<br />
+|\Psi^+\rangle = |\Phi_1\rangle + G_0^+V|\Phi_1\rangle + G_0<sup>+VG_0</sup>+V|\Phi_1\rangle + \dots<br />
+$$<br />
+考虑二阶项中的一个特定过程：<span class="arithmatex"><span class="MathJax_Preview">G_0^+ V_{23} G_0^+ V_{23} |\Phi_1\rangle</span><script type="math/tex">G_0^+ V_{23} G_0^+ V_{23} |\Phi_1\rangle</script></span>。</p>
+<ul>
+<li><strong>初态 <span class="arithmatex"><span class="MathJax_Preview">|\Phi_1\rangle</span><script type="math/tex">|\Phi_1\rangle</script></span></strong>：粒子 2 和 3 被束缚成氘核，粒子 1 自由飞行。</li>
+<li><strong>第一次作用 <span class="arithmatex"><span class="MathJax_Preview">V_{23}</span><script type="math/tex">V_{23}</script></span></strong>：势 <span class="arithmatex"><span class="MathJax_Preview">V_{23}</span><script type="math/tex">V_{23}</script></span> 只依赖于 <span class="arithmatex"><span class="MathJax_Preview">\vec{\rho}_1</span><script type="math/tex">\vec{\rho}_1</script></span>，它只作用于子系统 (23)。它可以使氘核保持束缚，也可以使其激发或破裂，但它**完全不影响**粒子 1 的运动状态。</li>
+<li><strong>第一次传播 <span class="arithmatex"><span class="MathJax_Preview">G_0^+</span><script type="math/tex">G_0^+</script></span></strong>：格林函数 <span class="arithmatex"><span class="MathJax_Preview">G_0^+(E) = (E - H_{0,23} - H_{0,1} + i\epsilon)^{-1}</span><script type="math/tex">G_0^+(E) = (E - H_{0,23} - H_{0,1} + i\epsilon)^{-1}</script></span> 作用。 <span class="arithmatex"><span class="MathJax_Preview">G_0^+(E) = \frac{1}{E - H_0 + i\epsilon}</span><script type="math/tex">G_0^+(E) = \frac{1}{E - H_0 + i\epsilon}</script></span>。在动量表象中，它是一个乘法算符：<span class="arithmatex"><span class="MathJax_Preview">\frac{1}{E - \frac{p_{\rho_1}^2}{2\mu_{23}} - \frac{p_{\lambda_1}^2}{2\nu_1} + i\epsilon}</span><script type="math/tex">\frac{1}{E - \frac{p_{\rho_1}^2}{2\mu_{23}} - \frac{p_{\lambda_1}^2}{2\nu_1} + i\epsilon}</script></span>。</li>
+<li><strong>第二次作用 <span class="arithmatex"><span class="MathJax_Preview">V_{23}</span><script type="math/tex">V_{23}</script></span></strong>：势 <span class="arithmatex"><span class="MathJax_Preview">V_{23}</span><script type="math/tex">V_{23}</script></span> 再次作用于子系统 (23)。</li>
+</ul>
+<p>在整个 <span class="arithmatex"><span class="MathJax_Preview">G_0^+ V_{23} G_0^+ V_{23} \dots</span><script type="math/tex">G_0^+ V_{23} G_0^+ V_{23} \dots</script></span> 的链条中，粒子 1 始终是“旁观者”。这个过程描述的是子系统 (23) 自身的散射，而粒子 1 则完全没有参与，像一个幽灵一样从旁边飞过。</p>
+<p>让我们在动量表象中看得更清楚。<span class="arithmatex"><span class="MathJax_Preview">V_{23}</span><script type="math/tex">V_{23}</script></span> 作用在 <span class="arithmatex"><span class="MathJax_Preview">|\Phi_1\rangle</span><script type="math/tex">|\Phi_1\rangle</script></span> 上，会将其分解到 (23) 对的各种激发态上，但粒子1的动量 <span class="arithmatex"><span class="MathJax_Preview">\vec{q}</span><script type="math/tex">\vec{q}</script></span> 保持不变。<br />
+$$<br />
+V_{23}|\Phi_1\rangle = \int d\vec{k}' |\vec{k}'(\vec{\rho}<em 23="23">1)\rangle \otimes |\vec{q}(\vec{\lambda}_1)\rangle \langle \vec{k}'|V</em>|\phi_d\rangle<br />
+$$<br />
+当 <span class="arithmatex"><span class="MathJax_Preview">G_0^+</span><script type="math/tex">G_0^+</script></span> 作用于此态时，它变成：<br />
+$$<br />
+\int d\vec{k}' \frac{1}{E - \frac{k'^2}{2\mu_{23}} - \frac{q^2}{2\nu_1} + i\epsilon} |\vec{k}'(\vec{\rho}<em 23="23">1)\rangle \otimes |\vec{q}(\vec{\lambda}_1)\rangle \langle \vec{k}'|V</em>|\phi_d\rangle<br />
+$$<br />
+注意到 <span class="arithmatex"><span class="MathJax_Preview">E = -\epsilon_d + \frac{q^2}{2\nu_1}</span><script type="math/tex">E = -\epsilon_d + \frac{q^2}{2\nu_1}</script></span>，分母变为 <span class="arithmatex"><span class="MathJax_Preview">-\epsilon_d - \frac{k'^2}{2\mu_{23}} + i\epsilon</span><script type="math/tex">-\epsilon_d - \frac{k'^2}{2\mu_{23}} + i\epsilon</script></span>。这没有问题。</p>
+<p>但当 <span class="arithmatex"><span class="MathJax_Preview">V_{23}</span><script type="math/tex">V_{23}</script></span> 再次作用，然后 <span class="arithmatex"><span class="MathJax_Preview">G_0^+</span><script type="math/tex">G_0^+</script></span> 再次作用时，我们实际上是在计算一个描述 (23) 对自身散射的T-矩阵的过程。整个过程中，粒子1的动量 <span class="arithmatex"><span class="MathJax_Preview">\vec{q}</span><script type="math/tex">\vec{q}</script></span> 像一个幽灵一样，始终没有改变。</p>
+<p>在数学上，这意味着在整个积分链条中，始终存在一个未被积分的动量守恒 <span class="arithmatex"><span class="MathJax_Preview">\delta(\vec{q} - \vec{q}')</span><script type="math/tex">\delta(\vec{q} - \vec{q}')</script></span>。这个 <span class="arithmatex"><span class="MathJax_Preview">\delta</span><script type="math/tex">\delta</script></span> 函数来自于算符 <span class="arithmatex"><span class="MathJax_Preview">V_{23}</span><script type="math/tex">V_{23}</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 对粒子1的“不作为”。它使得积分核 <span class="arithmatex"><span class="MathJax_Preview">K = G_0^+V</span><script type="math/tex">K = G_0^+V</script></span> <strong>不是紧致算符</strong>。</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">V_{23}</span><script type="math/tex">V_{23}</script></span>再换一种写法：<br />
+$$<br />
+\langle \vec{p}', \vec{q}' | V_{23} | \vec{p}, \vec{q} \rangle = \delta(\vec{q}' - \vec{q}) \cdot V_{23}(\vec{p}', \vec{p})<br />
+$$<br />
+看到了吗？它包含一个狄拉克 <span class="arithmatex"><span class="MathJax_Preview">\delta</span><script type="math/tex">\delta</script></span> 函数 <span class="arithmatex"><span class="MathJax_Preview">\delta(\vec{q}' - \vec{q})</span><script type="math/tex">\delta(\vec{q}' - \vec{q})</script></span>！这个 <span class="arithmatex"><span class="MathJax_Preview">\delta</span><script type="math/tex">\delta</script></span> 函数精确地表述了“旁观者动量守恒”。</p>
+<p>现在考察积分核 <span class="arithmatex"><span class="MathJax_Preview">K = G_0^+ V = G_0^+ (V_{12}+V_{23}+V_{31})</span><script type="math/tex">K = G_0^+ V = G_0^+ (V_{12}+V_{23}+V_{31})</script></span>。其中的 <span class="arithmatex"><span class="MathJax_Preview">G_0^+ V_{23}</span><script type="math/tex">G_0^+ V_{23}</script></span> 项就包含了上述的 <span class="arithmatex"><span class="MathJax_Preview">\delta</span><script type="math/tex">\delta</script></span> 函数。当我们在 LS 积分方程中进行积分时，例如 <span class="arithmatex"><span class="MathJax_Preview">\int d^3q \dots \delta(\vec{q}' - \vec{q}) \dots</span><script type="math/tex">\int d^3q \dots \delta(\vec{q}' - \vec{q}) \dots</script></span>，这个 <span class="arithmatex"><span class="MathJax_Preview">\delta</span><script type="math/tex">\delta</script></span> 函数不会被消除！它会一直存在于方程的迭代级数中。</p>
+<p>一个包含 <span class="arithmatex"><span class="MathJax_Preview">\delta</span><script type="math/tex">\delta</script></span> 函数的积分核，在数学上被称为非紧致（Non-Compact）。<br />
+直观理解：紧致算符有“平滑”作用，能把粗糙的函数变得平滑。而非紧致算符没有这种性质，它会保留甚至制造奇点。<br />
+数学后果：Fredholm 积分方程理论的核心定理之一，就是只有当积分核是紧致时，方程解的唯一性才能得到保证。对于我们这里的非紧致核，Fredholm 理论不适用，方程的解**不唯一**。</p>
+<p><strong>什么是紧致算符？</strong><br />
+一个直观的理解是，紧致算符能把有界集合映射到紧集（一个更“小”的集合），它具有“平滑”效应。在积分方程中，紧致的积分核能保证解的良定性。非紧致的核，就像我们这里遇到的，包含无法消除的 <span class="arithmatex"><span class="MathJax_Preview">\delta</span><script type="math/tex">\delta</script></span> 函数奇点，它破坏了解的唯一性。</p>
+<p>三体LS方程失败了，因为它无法区分两种截然不同的物理过程：</p>
+<ol>
+<li><strong>连通的 (Connected) 过程：</strong> 所有三个粒子都紧密地参与相互作用，例如粒子1撞击氘核，氘核破裂，然后三个粒子重新组合。这是我们真正关心的复杂散射。</li>
+<li><strong>非连通的 (Disconnected) 过程：</strong> 一个子系统在内部演化，而第三个粒子作为旁观者自由飞行。例如，氘核内部的质子和中子相互作用，而入射的中子在远处飞过，从未靠近。</li>
+</ol>
+<p>LS方程将这两种过程混为一谈，其数学结构因此而崩溃。我们需要一个全新的、能够从一开始就将这两种过程分离开来的方程。这就是法捷耶夫方程即将要完成的使命。</p>
+<h2 id="法捷耶夫-三体">法捷耶夫-三体<a class="headerlink" href="#法捷耶夫-三体" title="Permanent link">#</a></h2>
+<p>在第一章中，我们陷入了理论的泥潭：直接推广的 Lippmann–Schwinger (LS) 方程在三体问题中是病态的，其解不唯一。其病灶在于积分核中包含了描述“非连通”散射过程的项，导致了数学上的非紧致性。本章我们将详细学习 L. D. Faddeev 在 1960 年提出的革命性方案。法捷耶夫的天才之处在于，他没有试图去“修补”LS方程，而是对问题本身进行了根本性的重构（rearrangement），将一个病态的方程等价地转化为一组性质优良的耦合方程组。</p>
+<h3 id="21-核心思想对散射过程的分解">2.1 核心思想：对散射过程的分解<a class="headerlink" href="#21-核心思想对散射过程的分解" title="Permanent link">#</a></h3>
+<p>法捷耶夫的出发点是，LS 方程 <span class="arithmatex"><span class="MathJax_Preview">T = V + V G_0 T</span><script type="math/tex">T = V + V G_0 T</script></span> 之所以失败，是因为总相互作用势 <span class="arithmatex"><span class="MathJax_Preview">V = V_1 + V_2 + V_3</span><script type="math/tex">V = V_1 + V_2 + V_3</script></span>（我们沿用上一章的约定，<span class="arithmatex"><span class="MathJax_Preview">V_k</span><script type="math/tex">V_k</script></span> 是粒子 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> 不参与的那对粒子间的势）被当作一个整体来处理，无法区分出真正“连通”的三体相互作用。</p>
+<p>他的核心思想是，将总的散射算符 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 分解为三个部分，每一部分对应于某一对粒子进行的“最后一次”相互作用。</p>
+<h4 id="211-t-矩阵的分解">2.1.1 T-矩阵的分解<a class="headerlink" href="#211-t-矩阵的分解" title="Permanent link">#</a></h4>
+<p>我们定义三个法捷耶夫 T-矩阵分量 <span class="arithmatex"><span class="MathJax_Preview">T^{(i)}</span><script type="math/tex">T^{(i)}</script></span>（<span class="arithmatex"><span class="MathJax_Preview">i=1,2,3</span><script type="math/tex">i=1,2,3</script></span>）：<br />
+$$<br />
+T^{(i)} \equiv V_i + V_i G_0 T<br />
+$$<br />
+这个定义的物理含义是：<span class="arithmatex"><span class="MathJax_Preview">T^{(i)}</span><script type="math/tex">T^{(i)}</script></span> 描述了所有以 <span class="arithmatex"><span class="MathJax_Preview">V_i</span><script type="math/tex">V_i</script></span> 相互作用为“结尾”的散射过程的总和。第一项 <span class="arithmatex"><span class="MathJax_Preview">V_i</span><script type="math/tex">V_i</script></span> 是最简单的过程（一次 Born 近似），第二项 <span class="arithmatex"><span class="MathJax_Preview">V_i G_0 T</span><script type="math/tex">V_i G_0 T</script></span> 描述了系统先经历了完整的、复杂的散射过程 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>，然后自由传播 <span class="arithmatex"><span class="MathJax_Preview">G_0</span><script type="math/tex">G_0</script></span>，最后以一次 <span class="arithmatex"><span class="MathJax_Preview">V_i</span><script type="math/tex">V_i</script></span> 相互作用结束。</p>
+<p>这一定义是自洽的吗？把三个分量相加：<br />
+$$<br />
+\sum_{i=1}^3 T^{(i)} = \sum_{i=1}^3 (V_i + V_i G_0 T) = \left(\sum_{i=1}^3 V_i\right) + \left(\sum_{i=1}^3 V_i\right) G_0 T.<br />
+$$<br />
+因为 <span class="arithmatex"><span class="MathJax_Preview">\sum_i V_i = V</span><script type="math/tex">\sum_i V_i = V</script></span>，上式变为<br />
+$$<br />
+\sum_{i=1}^3 T^{(i)} = V + V G_0 T,<br />
+$$<br />
+根据 T-矩阵的 LS 方程，右边正好就是总的 T 矩阵 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>。所以，我们得到了一个精确的、不含任何近似的分解关系：<br />
+$$<br />
+T = T^{(1)} + T^{(2)} + T^{(3)}.<br />
+$$<br />
+到目前为止，我们只是用三个新的未知数 <span class="arithmatex"><span class="MathJax_Preview">T^{(i)}</span><script type="math/tex">T^{(i)}</script></span> 替换了原来的一个未知数 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>。真正的突破在于，这三个新的未知数所满足的方程，其性质将发生根本性的改变。</p>
+<h4 id="212-波函数的分解">2.1.2 波函数的分解<a class="headerlink" href="#212-波函数的分解" title="Permanent link">#</a></h4>
+<p>同样的思想也可以应用在波函数上。总的散射波函数 <span class="arithmatex"><span class="MathJax_Preview">|\Psi\rangle</span><script type="math/tex">|\Psi\rangle</script></span> 可以分解为：<br />
+$$<br />
+|\Psi\rangle = |\Phi\rangle + |\Psi^{(1)}\rangle + |\Psi^{(2)}\rangle + |\Psi^{(3)}\rangle,<br />
+$$<br />
+其中 <span class="arithmatex"><span class="MathJax_Preview">|\Phi\rangle</span><script type="math/tex">|\Phi\rangle</script></span> 是入射平面波，而法捷耶夫波函数分量定义为<br />
+$$<br />
+|\Psi^{(i)}\rangle \equiv G_0 V_i |\Psi\rangle.<br />
+$$<br />
+这个定义同样诠释了“以 <span class="arithmatex"><span class="MathJax_Preview">V_i</span><script type="math/tex">V_i</script></span> 为末次作用”的思想。虽然波函数分解在物理上非常直观，但在实际数值计算中，处理 T-矩阵分量通常更为方便和直接。因此，本讲义将聚焦于 T-矩阵的推导。</p>
+<hr />
+<h3 id="22-法捷耶夫方程的推导">2.2 法捷耶夫方程的推导<a class="headerlink" href="#22-法捷耶夫方程的推导" title="Permanent link">#</a></h3>
+<p>现在，我们为 <span class="arithmatex"><span class="MathJax_Preview">T^{(i)}</span><script type="math/tex">T^{(i)}</script></span> 建立自洽方程组，这是整个理论的核心推导。</p>
+<ol>
+<li>出发点：从 <span class="arithmatex"><span class="MathJax_Preview">T^{(1)}</span><script type="math/tex">T^{(1)}</script></span> 的定义开始：<br />
+$$<br />
+T^{(1)} = V_1 + V_1 G_0 T.<br />
+$$</li>
+<li>代入分解式：将 <span class="arithmatex"><span class="MathJax_Preview">T = T^{(1)} + T^{(2)} + T^{(3)}</span><script type="math/tex">T = T^{(1)} + T^{(2)} + T^{(3)}</script></span> 代入上式：<br />
+$$<br />
+T^{(1)} = V_1 + V_1 G_0 (T^{(1)} + T^{(2)} + T^{(3)}).<br />
+$$</li>
+<li>
+<p>分离变量：将包含未知数 <span class="arithmatex"><span class="MathJax_Preview">T^{(1)}</span><script type="math/tex">T^{(1)}</script></span> 的项移到左边：<br />
+$$<br />
+T^{(1)} - V_1 G_0 T^{(1)} = V_1 + V_1 G_0 (T^{(2)} + T^{(3)}),<br />
+$$<br />
+即<br />
+$$<br />
+(I - V_1 G_0) T^{(1)} = V_1 + V_1 G_0 (T^{(2)} + T^{(3)}).<br />
+$$<br />
+这里的 <span class="arithmatex"><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span> 是单位算符。</p>
+</li>
+<li>
+<p>关键一步：引入两体 t-矩阵。两体散射理论中的两体 t-矩阵 <span class="arithmatex"><span class="MathJax_Preview">t_1</span><script type="math/tex">t_1</script></span> 满足<br />
+$$<br />
+t_1 = V_1 + V_1 G_0 t_1,<br />
+$$<br />
+即 <span class="arithmatex"><span class="MathJax_Preview">(I - V_1 G_0) t_1 = V_1</span><script type="math/tex">(I - V_1 G_0) t_1 = V_1</script></span>。若算符 <span class="arithmatex"><span class="MathJax_Preview">(I - V_1 G_0)</span><script type="math/tex">(I - V_1 G_0)</script></span> 可逆（对非束缚态能量通常成立），则<br />
+$$<br />
+t_1 = (I - V_1 G_0)^{-1} V_1.<br />
+$$<br />
+两体 t-矩阵 <span class="arithmatex"><span class="MathJax_Preview">t_1</span><script type="math/tex">t_1</script></span> “打包”了所有由势 <span class="arithmatex"><span class="MathJax_Preview">V_1</span><script type="math/tex">V_1</script></span> 产生的两体散射效应，是三体问题中的已知构件。</p>
+</li>
+<li>
+<p>完成推导：对上述方程左右同乘以 <span class="arithmatex"><span class="MathJax_Preview">(I - V_1 G_0)^{-1}</span><script type="math/tex">(I - V_1 G_0)^{-1}</script></span>：<br />
+$$<br />
+T^{(1)} = (I - V_1 G_0)^{-1}\big[ V_1 + V_1 G_0 (T^{(2)} + T^{(3)}) \big].<br />
+$$<br />
+分配并用 <span class="arithmatex"><span class="MathJax_Preview">t_1 = (I - V_1 G_0)^{-1} V_1</span><script type="math/tex">t_1 = (I - V_1 G_0)^{-1} V_1</script></span> 得到<br />
+$$<br />
+T^{(1)} = t_1 + t_1 G_0 (T^{(2)} + T^{(3)}).<br />
+$$<br />
+对 <span class="arithmatex"><span class="MathJax_Preview">T^{(2)}</span><script type="math/tex">T^{(2)}</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">T^{(3)}</span><script type="math/tex">T^{(3)}</script></span> 进行相同操作，最终得到对称的耦合方程组，即法捷耶夫方程（在 T-矩阵形式下常称为 AGS 方程，以 Alt, Grassberger, Sandhas 命名）：<br />
+$$<br />
+\begin{cases}<br />
+T^{(1)} = t_1 + t_1 G_0 (T^{(2)} + T^{(3)})\[4pt]<br />
+T^{(2)} = t_2 + t_2 G_0 (T^{(3)} + T^{(1)})\[4pt]<br />
+T^{(3)} = t_3 + t_3 G_0 (T^{(1)} + T^{(2)})<br />
+\end{cases}<br />
+$$</p>
+</li>
+</ol>
+<hr />
+<h3 id="23-方程的结构与数学上的治愈">2.3 方程的结构与数学上的治愈<a class="headerlink" href="#23-方程的结构与数学上的治愈" title="Permanent link">#</a></h3>
+<h4 id="231-矩阵形式与方程核">2.3.1 矩阵形式与方程核<a class="headerlink" href="#231-矩阵形式与方程核" title="Permanent link">#</a></h4>
+<p>这组方程可视作一个 3×3 的算符矩阵方程。令列向量 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{X}=[T^{(1)},T^{(2)},T^{(3)}]^T</span><script type="math/tex">\mathbf{X}=[T^{(1)},T^{(2)},T^{(3)}]^T</script></span> 和驱动向量 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{Y}=[t_1,t_2,t_3]^T</span><script type="math/tex">\mathbf{Y}=[t_1,t_2,t_3]^T</script></span>，AGS 方程可写为<br />
+$$<br />
+\mathbf{X} = \mathbf{Y} + \mathbf{K}\mathbf{X},<br />
+$$<br />
+其中核算符矩阵 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{K}</span><script type="math/tex">\mathbf{K}</script></span> 为<br />
+$$<br />
+\mathbf{K} = \begin{pmatrix}<br />
+0 &amp; t_1 G_0 &amp; t_1 G_0\[4pt]<br />
+t_2 G_0 &amp; 0 &amp; t_2 G_0\[4pt]<br />
+t_3 G_0 &amp; t_3 G_0 &amp; 0<br />
+\end{pmatrix}.<br />
+$$<br />
+请注意 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{K}</span><script type="math/tex">\mathbf{K}</script></span> 的结构：对角线元素严格为零。这在代数上禁止了形如 <span class="arithmatex"><span class="MathJax_Preview">t_i G_0 T^{(i)}</span><script type="math/tex">t_i G_0 T^{(i)}</script></span> 的项出现——物理上意味着以 <span class="arithmatex"><span class="MathJax_Preview">V_i</span><script type="math/tex">V_i</script></span> 结尾的散射过程，其“前一步”不可能又以 <span class="arithmatex"><span class="MathJax_Preview">V_i</span><script type="math/tex">V_i</script></span> 结尾。相互作用必须在不同粒子对之间传递，从根本上消除了导致 LS 方程病态的“非连通图”。</p>
+<h4 id="232-数学治愈紧致核的魔力">2.3.2 数学治愈：紧致核的魔力<a class="headerlink" href="#232-数学治愈紧致核的魔力" title="Permanent link">#</a></h4>
+<p>AGS 方程 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{X}=\mathbf{Y}+\mathbf{K}\mathbf{X}</span><script type="math/tex">\mathbf{X}=\mathbf{Y}+\mathbf{K}\mathbf{X}</script></span> 仍是 Fredholm 第二类积分方程，其性质由核 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{K}</span><script type="math/tex">\mathbf{K}</script></span> 决定。虽然 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{K}</span><script type="math/tex">\mathbf{K}</script></span> 本身不一定是紧致的（因含有奇异的 <span class="arithmatex"><span class="MathJax_Preview">G_0</span><script type="math/tex">G_0</script></span>），但考察其二次迭代核 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{K}^2</span><script type="math/tex">\mathbf{K}^2</script></span>：<br />
+$$<br />
+\mathbf{K}^2 = \mathbf{K}\mathbf{K}.<br />
+$$<br />
+例如，<br />
+$$<br />
+(\mathbf{K}^2)<em 12="12">{11} = (K</em>K_{21}) + (K_{13}K_{31}) = (t_1 G_0)(t_2 G_0) + (t_1 G_0)(t_3 G_0),<br />
+$$<br />
+以及<br />
+$$<br />
+(\mathbf{K}^2)<em 12="12">{12} = (K</em>K_{22}) + (K_{13}K_{32}) = (t_1 G_0)(0) + (t_1 G_0)(t_3 G_0) = t_1 G_0 t_3 G_0.<br />
+$$<br />
+我们发现 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{K}^2</span><script type="math/tex">\mathbf{K}^2</script></span> 的所有矩阵元都是形如 <span class="arithmatex"><span class="MathJax_Preview">t_i G_0 t_j</span><script type="math/tex">t_i G_0 t_j</script></span>（<span class="arithmatex"><span class="MathJax_Preview">i\ne j</span><script type="math/tex">i\ne j</script></span>）的算符线性组合。</p>
+<p>中心定理：对于常见的相互作用势，虽然 <span class="arithmatex"><span class="MathJax_Preview">G_0</span><script type="math/tex">G_0</script></span> 本身是奇异的，但当两个不同子系统的 t-矩阵夹在中间时，诸如 <span class="arithmatex"><span class="MathJax_Preview">t_i G_0 t_j</span><script type="math/tex">t_i G_0 t_j</script></span>（<span class="arithmatex"><span class="MathJax_Preview">i\ne j</span><script type="math/tex">i\ne j</script></span>）的乘积是紧致算符。直观上，<span class="arithmatex"><span class="MathJax_Preview">t_j</span><script type="math/tex">t_j</script></span> 对中间动量积分，再被另一个不同的 <span class="arithmatex"><span class="MathJax_Preview">t_i</span><script type="math/tex">t_i</script></span> 平滑处理，使得 <span class="arithmatex"><span class="MathJax_Preview">G_0</span><script type="math/tex">G_0</script></span> 的奇点被“平滑掉”。</p>
+<p>因此 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{K}^2</span><script type="math/tex">\mathbf{K}^2</script></span> 是紧致算符。根据 Fredholm 理论：</p>
+<ul>
+<li>要么对于任意驱动项 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{Y}</span><script type="math/tex">\mathbf{Y}</script></span>，方程存在唯一且良定义的解 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{X}=(\mathbf{I}-\mathbf{K})^{-1}\mathbf{Y}</span><script type="math/tex">\mathbf{X}=(\mathbf{I}-\mathbf{K})^{-1}\mathbf{Y}</script></span>；</li>
+<li>要么齐次方程 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{X}=\mathbf{K}\mathbf{X}</span><script type="math/tex">\mathbf{X}=\mathbf{K}\mathbf{X}</script></span> 存在非零解，这对应于系统在某些负能量下存在三体束缚态（物理上合理且有意义）。</li>
+</ul>
+<p>结论：法捷耶夫通过将病态的 LS 方程等价重构为耦合的 AGS 方程，得到了一个其二次迭代核为紧致的方程组。从数学上根治了非连通图导致的问题，保证了三体散射问题解的唯一性与稳定性，为后续数值计算提供了坚实的理论基础。</p>
+<h2 id="第三章-离散化">第三章 离散化<a class="headerlink" href="#第三章-离散化" title="Permanent link">#</a></h2>
+<p>在第二章，我们得到了数学上完美、结构优美的 AGS 方程。然而，它依旧是“由连续函数空间中的算符构成。我们需要选取jishi来做计算: 分波展开和基矢离散化——将一个无穷维的、三维矢量问题，一步步地塑造成一个有限维的、一维的、计算机可以求解的矩阵问题。</p>
+<hr />
+<h3 id="31-分波展开-partial-wave-expansion">3.1 分波展开 (Partial Wave Expansion)<a class="headerlink" href="#31-分波展开-partial-wave-expansion" title="Permanent link">#</a></h3>
+<p>三体问题中的动量是三维矢量，直接在三维动量空间中求解 AGS 方程，其计算量是天文数字。幸运的是，物理系统往往具有对称性，而对称性是简化的根源。对于绝大多数核物理问题，相互作用势是中心对称的（不依赖于坐标系的方向），这意味着系统的总角动量 <span class="arithmatex"><span class="MathJax_Preview">\vec{J}</span><script type="math/tex">\vec{J}</script></span> 和总宇称 <span class="arithmatex"><span class="MathJax_Preview">\Pi</span><script type="math/tex">\Pi</script></span> 是守恒量。</p>
+<p>核心思想：哈密顿量 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 与算符 <span class="arithmatex"><span class="MathJax_Preview">\hat{J}^2,\ \hat{J}_z,\ \hat{\Pi}</span><script type="math/tex">\hat{J}^2,\ \hat{J}_z,\ \hat{\Pi}</script></span> 对易。根据量子力学基本原理（舒尔引理），这意味着在以 <span class="arithmatex"><span class="MathJax_Preview">\{\,|...,J,M,\Pi\rangle\,\}</span><script type="math/tex">\{\,|...,J,M,\Pi\rangle\,\}</script></span> 为基矢的表象中，哈密顿量矩阵是块对角化的。也就是说，不同 <span class="arithmatex"><span class="MathJax_Preview">J</span><script type="math/tex">J</script></span> 或不同 <span class="arithmatex"><span class="MathJax_Preview">\Pi</span><script type="math/tex">\Pi</script></span> 的态之间不存在跃迁：<br />
+$$<br />
+\langle ...,J',M',\Pi'|H|...,J,M,\Pi\rangle<br />
+= \delta_{J'J}\,\delta_{M'M}\,\delta_{\Pi'\Pi}\cdot H^{(J,\Pi)}_{...}.<br />
+$$<br />
+这允许我们将一个庞大的、耦合所有自由度的问题，分解为一系列互不相关的、在每个固定 <span class="arithmatex"><span class="MathJax_Preview">(J,\Pi)</span><script type="math/tex">(J,\Pi)</script></span> 通道内求解的、规模小得多的子问题。分别求解每个子问题，最后将它们的物理结果（例如散射振幅）相干地叠加起来，得到最终的物理可观测量。</p>
+<h4 id="311-两体系统的角动量耦合">3.1.1 两体系统的角动量耦合<a class="headerlink" href="#311-两体系统的角动量耦合" title="Permanent link">#</a></h4>
+<p>两体态由相对动量 <span class="arithmatex"><span class="MathJax_Preview">\vec{p}</span><script type="math/tex">\vec{p}</script></span> 和总自旋 <span class="arithmatex"><span class="MathJax_Preview">\vec{s}=\vec{s}_1+\vec{s}_2</span><script type="math/tex">\vec{s}=\vec{s}_1+\vec{s}_2</script></span> 描述。平面波态 <span class="arithmatex"><span class="MathJax_Preview">|\vec{p}\rangle</span><script type="math/tex">|\vec{p}\rangle</script></span> 可以展开在分波基矢 <span class="arithmatex"><span class="MathJax_Preview">|p,l,m_l\rangle</span><script type="math/tex">|p,l,m_l\rangle</script></span> 上。考虑自旋后，一个更完备的基矢是 <span class="arithmatex"><span class="MathJax_Preview">|p;(l,s)j,m_j\rangle</span><script type="math/tex">|p;(l,s)j,m_j\rangle</script></span>，其中：</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 是相对动量的大小；</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">l</span><script type="math/tex">l</script></span> 是轨道角动量量子数；</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 是两粒子的总自旋量子数（例如 n–p 系统，可为 <span class="arithmatex"><span class="MathJax_Preview">s=0</span><script type="math/tex">s=0</script></span> 单重态或 <span class="arithmatex"><span class="MathJax_Preview">s=1</span><script type="math/tex">s=1</script></span> 三重态）；</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\vec{j}=\vec{l}+\vec{s}</span><script type="math/tex">\vec{j}=\vec{l}+\vec{s}</script></span> 是该子系统的总角动量（通道角动量）；</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">m_j</span><script type="math/tex">m_j</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> 的磁量子数。</li>
+</ul>
+<p>由于 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">m_j</span><script type="math/tex">m_j</script></span> 在两体散射中守恒，势能矩阵元 <span class="arithmatex"><span class="MathJax_Preview">\langle p',l',s'|V|p,l,s\rangle</span><script type="math/tex">\langle p',l',s'|V|p,l,s\rangle</script></span> 只有在 <span class="arithmatex"><span class="MathJax_Preview">j,m_j,s</span><script type="math/tex">j,m_j,s</script></span> 相同时才非零。但请注意，轨道角动量 <span class="arithmatex"><span class="MathJax_Preview">l</span><script type="math/tex">l</script></span> 不一定守恒。核力中一个非常重要的组成部分——张量力（tensor force），其算符形如<br />
+$$<br />
+S_{12}=3(\vec{\sigma}_1\cdot\hat{r})(\vec{\sigma}_2\cdot\hat{r})-\vec{\sigma}_1\cdot\vec{\sigma}_2,<br />
+$$<br />
+它不与 <span class="arithmatex"><span class="MathJax_Preview">\hat{L}^2</span><script type="math/tex">\hat{L}^2</script></span> 对易，导致耦合通道（coupled channels）现象。</p>
+<p>经典例子是氘核。其总角动量 <span class="arithmatex"><span class="MathJax_Preview">j=1</span><script type="math/tex">j=1</script></span>，总自旋 <span class="arithmatex"><span class="MathJax_Preview">s=1</span><script type="math/tex">s=1</script></span>，宇称为正。满足这些条件的轨道角动量可为 <span class="arithmatex"><span class="MathJax_Preview">l=0</span><script type="math/tex">l=0</script></span>（S 波）和 <span class="arithmatex"><span class="MathJax_Preview">l=2</span><script type="math/tex">l=2</script></span>（D 波）。张量力使氘核波函数是两者的混合：主要为 <span class="arithmatex"><span class="MathJax_Preview">^3S_1</span><script type="math/tex">^3S_1</script></span> 态，但混入约 4% 的 <span class="arithmatex"><span class="MathJax_Preview">^3D_1</span><script type="math/tex">^3D_1</script></span> 态。因此，在 <span class="arithmatex"><span class="MathJax_Preview">^3S_1</span><script type="math/tex">^3S_1</script></span>–<span class="arithmatex"><span class="MathJax_Preview">^3D_1</span><script type="math/tex">^3D_1</script></span> 耦合通道中，势能 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 和 t 矩阵都是 <span class="arithmatex"><span class="MathJax_Preview">2\times2</span><script type="math/tex">2\times2</script></span> 的矩阵，其元素连接 S 波与 D 波。</p>
+<h4 id="312-三体系统的角动量耦合">3.1.2 三体系统的角动量耦合<a class="headerlink" href="#312-三体系统的角动量耦合" title="Permanent link">#</a></h4>
+<p>三体系统的角动量耦合更为复杂，但遵循相同原则。以 n–d 散射为例，需要耦合三个角动量来源： (np) 子系统的内部轨道角动量 <span class="arithmatex"><span class="MathJax_Preview">l_p</span><script type="math/tex">l_p</script></span>、旁观中子相对于 (np) 质心的轨道角动量 <span class="arithmatex"><span class="MathJax_Preview">l_q</span><script type="math/tex">l_q</script></span>，以及三粒子的总自旋。一种常用耦合方式（LS 耦合）如下：</p>
+<ol>
+<li>子系统内部耦合：<span class="arithmatex"><span class="MathJax_Preview">\vec{l}_p+\vec{S}_{np}=\vec{j}_{np}</span><script type="math/tex">\vec{l}_p+\vec{S}_{np}=\vec{j}_{np}</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">\vec{S}_{np}=\vec{s}_n+\vec{s}_p</span><script type="math/tex">\vec{S}_{np}=\vec{s}_n+\vec{s}_p</script></span>；</li>
+<li>旁观者耦合：<span class="arithmatex"><span class="MathJax_Preview">\vec{l}_q+\vec{s}_{\text{spectator}}=\vec{j}_{\text{spectator}}</span><script type="math/tex">\vec{l}_q+\vec{s}_{\text{spectator}}=\vec{j}_{\text{spectator}}</script></span>；</li>
+<li>最终耦合：<span class="arithmatex"><span class="MathJax_Preview">\vec{j}_{np}+\vec{j}_{\text{spectator}}=\vec{J}</span><script type="math/tex">\vec{j}_{np}+\vec{j}_{\text{spectator}}=\vec{J}</script></span>。</li>
+</ol>
+<p>最终的三体分波基矢可记为<br />
+$$<br />
+|p,q;\,((l_p,S_{np})j_{np},(l_q,s_{\text{spectator}})j_{\text{spectator}})\,J,M\rangle.<br />
+$$<br />
+在实际计算中通常用复合指标 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 表示除 <span class="arithmatex"><span class="MathJax_Preview">p,q</span><script type="math/tex">p,q</script></span> 与 <span class="arithmatex"><span class="MathJax_Preview">J,M</span><script type="math/tex">J,M</script></span> 之外的所有内部量子数组合。</p>
+<p>分波展开的最终成果是：原本关于三维矢量动量 <span class="arithmatex"><span class="MathJax_Preview">\vec{p},\vec{q}</span><script type="math/tex">\vec{p},\vec{q}</script></span> 的 AGS 方程，被转化为一系列关于一维标量动量 <span class="arithmatex"><span class="MathJax_Preview">p,q</span><script type="math/tex">p,q</script></span> 的耦合积分方程。每个方程对应一个固定的总角动量 <span class="arithmatex"><span class="MathJax_Preview">J</span><script type="math/tex">J</script></span> 与总宇称 <span class="arithmatex"><span class="MathJax_Preview">\Pi</span><script type="math/tex">\Pi</script></span> 的通道。问题的维数从六维（<span class="arithmatex"><span class="MathJax_Preview">\vec{p},\vec{q}</span><script type="math/tex">\vec{p},\vec{q}</script></span>）降低到了二维（<span class="arithmatex"><span class="MathJax_Preview">p,q</span><script type="math/tex">p,q</script></span>）。</p>
+<hr />
+<h3 id="32-动量空间基矢离散化">3.2 动量空间基矢离散化<a class="headerlink" href="#32-动量空间基矢离散化" title="Permanent link">#</a></h3>
+<p>现在我们面对的是关于标量动量 <span class="arithmatex"><span class="MathJax_Preview">p,q</span><script type="math/tex">p,q</script></span> 的积分方程。这仍是连续的、无穷维的。下一步是将这一维的连续自由度，用有限的、离散的基矢来近似。</p>
+<h4 id="321-动量空间的归一化与基矢">3.2.1 动量空间的归一化与基矢<a class="headerlink" href="#321-动量空间的归一化与基矢" title="Permanent link">#</a></h4>
+<p>在分波展开后，径向积分的测度为 <span class="arithmatex"><span class="MathJax_Preview">p^2\,dp</span><script type="math/tex">p^2\,dp</script></span>（三维动量测度 <span class="arithmatex"><span class="MathJax_Preview">d^3p=p^2dp\,d\Omega_p</span><script type="math/tex">d^3p=p^2dp\,d\Omega_p</script></span> 对角度部分积分后得到）。因此径向基函数的正交归一条件必须包含该雅可比因子：<br />
+$$<br />
+\int_0^\infty p^2\,dp\; g_m(p)\,g_n(p)=\delta_{mn}.<br />
+$$<br />
+这确保 <span class="arithmatex"><span class="MathJax_Preview">\{|g_n\rangle\}</span><script type="math/tex">\{|g_n\rangle\}</script></span> 是一组标准正交基。在实际操作中，积分上限并非无穷，而是一个经过选择的截断动量 <span class="arithmatex"><span class="MathJax_Preview">p_{\max}</span><script type="math/tex">p_{\max}</script></span>。</p>
+<h4 id="322-区间选取与-p_maxp_max-的确定">3.2.2 区间选取与 <span class="arithmatex"><span class="MathJax_Preview">p_{\max}</span><script type="math/tex">p_{\max}</script></span> 的确定<a class="headerlink" href="#322-区间选取与-p_maxp_max-的确定" title="Permanent link">#</a></h4>
+<p>如何选择动量区间上限 <span class="arithmatex"><span class="MathJax_Preview">p_{\max}</span><script type="math/tex">p_{\max}</script></span>？这是影响精度与效率的关键实践问题。</p>
+<ul>
+<li>物理需求：<span class="arithmatex"><span class="MathJax_Preview">p_{\max}</span><script type="math/tex">p_{\max}</script></span> 必须足够大，以包含波函数的重要特征。对于束缚态（如氘核），动量空间的高动量尾巴必须被覆盖，否则结合能等将不准确。对于散射态，较高散射能会在高动量区产生更多振荡，需更大 <span class="arithmatex"><span class="MathJax_Preview">p_{\max}</span><script type="math/tex">p_{\max}</script></span>。</li>
+<li>经验法则：<span class="arithmatex"><span class="MathJax_Preview">p_{\max}</span><script type="math/tex">p_{\max}</script></span> 的选取通常与核力的“硬度”有关。对经过重整化群得到的“软”势，动量空间矩阵元在高动量下迅速衰减，通常 <span class="arithmatex"><span class="MathJax_Preview">p_{\max}\sim3</span><script type="math/tex">p_{\max}\sim3</script></span>–<span class="arithmatex"><span class="MathJax_Preview">5\ \text{fm}^{-1}</span><script type="math/tex">5\ \text{fm}^{-1}</script></span>（约 600–1000 MeV/c）就足够；对“硬”势可能需更大值。</li>
+<li>收敛性检验：最可靠的方法是做收敛性检验。选一个 <span class="arithmatex"><span class="MathJax_Preview">p_{\max}</span><script type="math/tex">p_{\max}</script></span> 计算（例如氘核结合能）得 <span class="arithmatex"><span class="MathJax_Preview">E_1</span><script type="math/tex">E_1</script></span>，再增大到 <span class="arithmatex"><span class="MathJax_Preview">p_{\max}+\Delta p</span><script type="math/tex">p_{\max}+\Delta p</script></span> 得 <span class="arithmatex"><span class="MathJax_Preview">E_2</span><script type="math/tex">E_2</script></span>，比较 <span class="arithmatex"><span class="MathJax_Preview">|E_1-E_2|</span><script type="math/tex">|E_1-E_2|</script></span>。若小于容忍阈值（例如 <span class="arithmatex"><span class="MathJax_Preview">10^{-4}</span><script type="math/tex">10^{-4}</script></span> MeV），则认为 <span class="arithmatex"><span class="MathJax_Preview">p_{\max}</span><script type="math/tex">p_{\max}</script></span> 足够；否则继续增大直至收敛。对基矢数目 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 同样需要做收敛性检验。</li>
+</ul>
+<h4 id="323-wpcd-基矢的高效构造">3.2.3 WP‑CD 基矢的高效构造<a class="headerlink" href="#323-wpcd-基矢的高效构造" title="Permanent link">#</a></h4>
+<p>如 Sean Miller 等人所示，可以通过求解广义特征值问题，高效构造一组既正交又“物理优化”的基矢：</p>
+<ol>
+<li>选择一组简单的、可完备的非正交种子基函数，例如 B‑样条或广义高斯基 <span class="arithmatex"><span class="MathJax_Preview">\{|\phi_i(p)\rangle\}</span><script type="math/tex">\{|\phi_i(p)\rangle\}</script></span>；</li>
+<li>计算哈密顿量矩阵 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{H}_{ij}=\langle\phi_i|H_0+V|\phi_j\rangle</span><script type="math/tex">\mathbf{H}_{ij}=\langle\phi_i|H_0+V|\phi_j\rangle</script></span> 和重叠矩阵 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{B}_{ij}=\langle\phi_i|\phi_j\rangle</span><script type="math/tex">\mathbf{B}_{ij}=\langle\phi_i|\phi_j\rangle</script></span>；</li>
+<li>求解广义特征值问题 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{H}\,\mathbf{c}=E\,\mathbf{B}\,\mathbf{c}</span><script type="math/tex">\mathbf{H}\,\mathbf{c}=E\,\mathbf{B}\,\mathbf{c}</script></span>（可用 LAPACK 等库）；</li>
+<li>用本征向量构造新的基矢 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n\rangle=\sum_i c_{n,i}|\phi_i\rangle</span><script type="math/tex">|\psi_n\rangle=\sum_i c_{n,i}|\phi_i\rangle</script></span>。这些 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n\rangle</span><script type="math/tex">|\psi_n\rangle</script></span> 具有良好性质：严格正交 <span class="arithmatex"><span class="MathJax_Preview">\langle\psi_m|\psi_n\rangle=\delta_{mn}</span><script type="math/tex">\langle\psi_m|\psi_n\rangle=\delta_{mn}</script></span>，并且是哈密顿量 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 的本征态或良好近似。能量为负的本征态对应束缚态，而能量为正的一系列本征态则构成离散化的连续谱基矢，即 WP‑CD 基矢。</li>
+</ol>
+<hr />
+<h3 id="33-总结">3.3 总结<a class="headerlink" href="#33-总结" title="Permanent link">#</a></h3>
+<p>通过本章介绍的两把“利斧”，我们将抽象、无穷维、三维矢量自由度的 AGS 方程，转化为一系列（每个 <span class="arithmatex"><span class="MathJax_Preview">(J,\Pi)</span><script type="math/tex">(J,\Pi)</script></span> 通道一个）具体的、有限维的、关于一维标量自由度的矩阵方程。</p>
+<ul>
+<li>分波展开利用旋转对称性，将问题分解为独立的角动量通道，把矢量问题变为径向问题；</li>
+<li>基矢离散化利用伽辽金类方法，通过选择一组巧妙的（例如 WP‑CD）平方可积基矢，将径向连续自由度近似为有限维矩阵表示。</li>
+</ul>
+<p>我们已完成零件加工与图纸设计。下一章进入“总装配车间”，把这些矩阵零件组装成最终的三体矩阵，并讨论如何启动并求解这台复杂的机器。</p>
+<h2 id="第四章-构建与求解分波ags方程">第四章 构建与求解分波AGS方程<a class="headerlink" href="#第四章-构建与求解分波ags方程" title="Permanent link">#</a></h2>
+<p>在第三章，我们已经将理论各部分打磨好：在特定分波通道下、在离散基矢上表示的两体t-矩阵。本章的使命，是将这些部分精确地组装起来，构建出最终的、可以在计算机上求解的巨型AGS矩阵方程。我们将严格在一个固定的总角动量 <span class="arithmatex"><span class="MathJax_Preview">(J, \Pi)</span><script type="math/tex">(J, \Pi)</script></span> 通道内进行所有讨论，因为我们知道，不同 <span class="arithmatex"><span class="MathJax_Preview">(J, \Pi)</span><script type="math/tex">(J, \Pi)</script></span> 的块之间是完全解耦的。</p>
+<hr />
+<h3 id="41-方程的组成部件x-y-k">4.1 方程的组成部件：X, Y, K<a class="headerlink" href="#41-方程的组成部件x-y-k" title="Permanent link">#</a></h3>
+<p>我们的目标是求解线性代数方程：<br />
+$$<br />
+(\mathbf{I} - \mathbf{K}) \mathbf{X} = \mathbf{Y}<br />
+$$<br />
+在进行任何计算之前，我们必须精确地理解这三个巨型矩阵/向量的结构和内容。</p>
+<h4 id="411-未知解向量-x">4.1.1 未知解向量 X<a class="headerlink" href="#411-未知解向量-x" title="Permanent link">#</a></h4>
+<p>向量 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{X}</span><script type="math/tex">\mathbf{X}</script></span> 是我们要求解的目标。它是一个“向量的向量”，其结构如下：<br />
+$$<br />
+\mathbf{X} = \begin{pmatrix} \mathbf{X}^{(1)} \ \mathbf{X}^{(2)} \ \mathbf{X}^{(3)} \end{pmatrix}<br />
+$$</p>
+<ul>
+<li>它由三个块组成，分别对应三个法捷耶夫分量 <span class="arithmatex"><span class="MathJax_Preview">T^{(1)}, T^{(2)}, T^{(3)}</span><script type="math/tex">T^{(1)}, T^{(2)}, T^{(3)}</script></span>。</li>
+<li>每一个块，例如 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{X}^{(1)}</span><script type="math/tex">\mathbf{X}^{(1)}</script></span>，本身又是一个长长的列向量。它的每一个元素，都对应着 <span class="arithmatex"><span class="MathJax_Preview">T^{(1)}</span><script type="math/tex">T^{(1)}</script></span> 在我们三体分波基矢 <span class="arithmatex"><span class="MathJax_Preview">|1; \alpha, m, j\rangle</span><script type="math/tex">|1; \alpha, m, j\rangle</script></span> 下的一个展开系数。</li>
+</ul>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+(\mathbf{X}^{(1)})_{\alpha, m, j} = \langle 1; \alpha, m, j | T^{(1)} | \text{Initial State} \rangle
+</div>
+<script type="math/tex; mode=display">
+(\mathbf{X}^{(1)})_{\alpha, m, j} = \langle 1; \alpha, m, j | T^{(1)} | \text{Initial State} \rangle
+</script>
+</div>
+<p>这里的复合索引 <span class="arithmatex"><span class="MathJax_Preview">(\alpha, m, j)</span><script type="math/tex">(\alpha, m, j)</script></span> 遍历了所有可能的内部角动量通道、子系统径向基矢和旁观者动量基矢。解出向量 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{X}</span><script type="math/tex">\mathbf{X}</script></span>，就意味着我们知道了三体T-矩阵的所有信息。</p>
+<h4 id="412-驱动项-y">4.1.2 驱动项 Y<a class="headerlink" href="#412-驱动项-y" title="Permanent link">#</a></h4>
+<p>向量 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{Y}</span><script type="math/tex">\mathbf{Y}</script></span> 代表了散射的“初始条件”或“第一推动力”。在AGS方程中，它对应于两体t-矩阵项。对于 n-d 散射，入射态是一个中子 + 一个氘核。</p>
+<ul>
+<li>物理图像：在散射发生前，系统处于雅可比坐标系 <span class="arithmatex"><span class="MathJax_Preview">k=1</span><script type="math/tex">k=1</script></span>（假设粒子1是入射中子）所描述的通道中。在这个通道里，子系统(23)的状态是氘核束缚态，而粒子1则以一个确定的入射动量 <span class="arithmatex"><span class="MathJax_Preview">q_{in}</span><script type="math/tex">q_{in}</script></span> 运动。</li>
+<li>
+<p>数学表示：这意味着，在我们的巨大基矢空间中，驱动项 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{Y}</span><script type="math/tex">\mathbf{Y}</script></span> 是一个非常“稀疏”的向量。它只在那些描述入射物理图像的特定分量上才非零。具体来说：</p>
+<ul>
+<li>只有在法捷耶夫分量 <span class="arithmatex"><span class="MathJax_Preview">k=1</span><script type="math/tex">k=1</script></span> 的块 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{Y}^{(1)}</span><script type="math/tex">\mathbf{Y}^{(1)}</script></span> 中有非零项。</li>
+<li>在 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{Y}^{(1)}</span><script type="math/tex">\mathbf{Y}^{(1)}</script></span> 内部，只有在内部角动量通道 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 对应于氘核（例如 ³S₁-³D₁ 通道）的子块中，才有非零项。</li>
+<li>在更深的子块中，只有在旁观者动量 <span class="arithmatex"><span class="MathJax_Preview">q_j</span><script type="math/tex">q_j</script></span> 对应于入射动量 <span class="arithmatex"><span class="MathJax_Preview">q_{in}</span><script type="math/tex">q_{in}</script></span> 的分量上，才有非零项。</li>
+</ul>
+</li>
+</ul>
+<p>因此，构建驱动项 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{Y}</span><script type="math/tex">\mathbf{Y}</script></span> 的过程，就是将物理的入射条件“翻译”为数学上的向量表示。</p>
+<h4 id="413-核矩阵-k">4.1.3 核矩阵 K<a class="headerlink" href="#413-核矩阵-k" title="Permanent link">#</a></h4>
+<p>核矩阵 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{K}</span><script type="math/tex">\mathbf{K}</script></span> 是这台机器最复杂、最核心的引擎。它是一个 <span class="arithmatex"><span class="MathJax_Preview">3 \times 3</span><script type="math/tex">3 \times 3</script></span> 的块矩阵，其中每个块 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{K}_{ik}</span><script type="math/tex">\mathbf{K}_{ik}</script></span> 本身又是一个维度为 <span class="arithmatex"><span class="MathJax_Preview">(N_\alpha N_p N_q) \times (N_\alpha N_p N_q)</span><script type="math/tex">(N_\alpha N_p N_q) \times (N_\alpha N_p N_q)</script></span> 的巨型矩阵。<br />
+$$<br />
+\mathbf{K} = \begin{pmatrix}<br />
+0 &amp; \mathbf{K}<em 13="13">{12} &amp; \mathbf{K}</em> \<br />
+\mathbf{K}<em 23="23">{21} &amp; 0 &amp; \mathbf{K}</em> \<br />
+\mathbf{K}<em 32="32">{31} &amp; \mathbf{K}</em> &amp; 0<br />
+\end{pmatrix}<br />
+\quad \text{其中 } \mathbf{K}<em ki="ki">{ik} \text{ 对应于算符 } t_i G_0 P</em><br />
+$$<br />
+构建 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{K}</span><script type="math/tex">\mathbf{K}</script></span> 的过程，就是计算其每一个矩阵元<br />
+$$<br />
+\langle i; \alpha', m', j' | t_i G_0 P_{ki} | k; \alpha, m, j \rangle.<br />
+$$<br />
+这是整个计算中 CPU 耗时最长的部分。</p>
+<hr />
+<h3 id="42-置换算符与角动量重耦合">4.2 置换算符与角动量重耦合<a class="headerlink" href="#42-置换算符与角动量重耦合" title="Permanent link">#</a></h3>
+<p>现在，我们来深入分析计算一个核矩阵元 <span class="arithmatex"><span class="MathJax_Preview">\langle \text{final} | t_i G_0 P_{ki} | \text{initial} \rangle</span><script type="math/tex">\langle \text{final} | t_i G_0 P_{ki} | \text{initial} \rangle</script></span> 的详细步骤。这就像一个三步的流水线作业。</p>
+<p>第一步：置换算符 <span class="arithmatex"><span class="MathJax_Preview">P_{ki}</span><script type="math/tex">P_{ki}</script></span>（最难的一步）</p>
+<p>置换算符 <span class="arithmatex"><span class="MathJax_Preview">P_{ki}</span><script type="math/tex">P_{ki}</script></span> 交换粒子 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>。在分波表象下，它做两件纠缠在一起的复杂事情：</p>
+<ol>
+<li>动量变换（几何部分）：它将用雅可比动量 <span class="arithmatex"><span class="MathJax_Preview">(\vec{p}_k, \vec{q}_k)</span><script type="math/tex">(\vec{p}_k, \vec{q}_k)</script></span> 描述的态，变为用 <span class="arithmatex"><span class="MathJax_Preview">(\vec{p}_i, \vec{q}_i)</span><script type="math/tex">(\vec{p}_i, \vec{q}_i)</script></span> 描述的态。新旧动量的大小和它们之间的夹角，都可以通过粒子质量和旧动量计算出来。这是一个纯粹的坐标变换。</li>
+<li>角动量重耦合（代数部分）：一个在 <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>-系下耦合的角动量态（例如 <span class="arithmatex"><span class="MathJax_Preview">((l_k, S_k)j_k, l_{q_k})J</span><script type="math/tex">((l_k, S_k)j_k, l_{q_k})J</script></span>），必须被重新展开为 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>-系下所有可能的角动量态（例如 <span class="arithmatex"><span class="MathJax_Preview">((l_i, S_i)j_i, l_{q_i})J</span><script type="math/tex">((l_i, S_i)j_i, l_{q_i})J</script></span>）的线性叠加。</li>
+</ol>
+<p>最终，<span class="arithmatex"><span class="MathJax_Preview">P_{ki}</span><script type="math/tex">P_{ki}</script></span> 的矩阵元可以分解为一个几何积分和一个代数因子的乘积：<br />
+$$<br />
+\langle i; \alpha', m' | P_{ki} | k; \alpha, m \rangle = \text{GeometricFactor} \times \text{RecouplingCoefficient}<br />
+$$</p>
+<ul>
+<li>几何因子：这是一个涉及到动量变换和基函数 <span class="arithmatex"><span class="MathJax_Preview">g_n(p)</span><script type="math/tex">g_n(p)</script></span> 的积分。它本质上是计算一个变换后的基函数在另一个基函数上的投影。</li>
+<li>重耦合系数 (Recoupling Coefficient)：这部分是纯粹的角动量代数，与径向动量无关。它包含了所有从一套角动量耦合方案到另一套方案的变换信息。对于三体系统，这个系数可以被精确地表示为 Wigner 6-j 和 9-j 符号的乘积。</li>
+</ul>
+<p>实践中的核心 (The Trick):</p>
+<p>在编写代码时，置换算符的矩阵是一个巨大的、需要预先计算或在循环中动态计算的表格。其核心是一个调用标准库（例如一个专门的角动量计算库）来获得精确的 6-j 和 9-j 符号的子程序，以及一个执行复杂几何积分的数值积分程序。正确、高效地实现置换算符是三体分波计算中最高、最陡峭的一座山峰。</p>
+<p>第二步：自由格林函数 <span class="arithmatex"><span class="MathJax_Preview">G_0</span><script type="math/tex">G_0</script></span></p>
+<p>置换完成后，我们得到了一系列在 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>-系下的基矢。现在轮到 <span class="arithmatex"><span class="MathJax_Preview">G_0</span><script type="math/tex">G_0</script></span> 登场。在三体分波基矢下，<span class="arithmatex"><span class="MathJax_Preview">G_0</span><script type="math/tex">G_0</script></span> 是对角的。它的作用非常简单，就是给每个基矢 <span class="arithmatex"><span class="MathJax_Preview">|i; \alpha', m', j'\rangle</span><script type="math/tex">|i; \alpha', m', j'\rangle</script></span> 乘上一个数字因子：<br />
+$$<br />
+G_0 |i; \alpha', m', j'\rangle = \frac{1}{E - E_{m'} - E_{j'} + i\epsilon} \; |i; \alpha', m', j'\rangle<br />
+$$<br />
+其中 <span class="arithmatex"><span class="MathJax_Preview">E_{m'}</span><script type="math/tex">E_{m'}</script></span> 是子系统基矢 <span class="arithmatex"><span class="MathJax_Preview">m'</span><script type="math/tex">m'</script></span> 的能量，<span class="arithmatex"><span class="MathJax_Preview">E_{j'}</span><script type="math/tex">E_{j'}</script></span> 是旁观者基矢 <span class="arithmatex"><span class="MathJax_Preview">j'</span><script type="math/tex">j'</script></span> 的能量。</p>
+<p>第三步：两体 t-矩阵 <span class="arithmatex"><span class="MathJax_Preview">t_i</span><script type="math/tex">t_i</script></span></p>
+<p>最后，轮到我们预先计算好的“零件”——两体 t-矩阵 <span class="arithmatex"><span class="MathJax_Preview">t_i</span><script type="math/tex">t_i</script></span> 上场。它也只在 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>-系下作用，并且只作用于子系统的自由度（即 <span class="arithmatex"><span class="MathJax_Preview">\alpha'</span><script type="math/tex">\alpha'</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">m'</span><script type="math/tex">m'</script></span>）。它的矩阵元<br />
+$$<br />
+\langle i; \alpha'', m'' | t_i | i; \alpha', m' \rangle<br />
+$$<br />
+就是我们在第三章中费尽心力计算出的两体 t-矩阵 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{t}^{(j,s)}_{l'' l'}(E_{sub})</span><script type="math/tex">\mathbf{t}^{(j,s)}_{l'' l'}(E_{sub})</script></span>。注意，这里的能量 <span class="arithmatex"><span class="MathJax_Preview">E_{sub}</span><script type="math/tex">E_{sub}</script></span> 是子系统的能量，它依赖于总能量 <span class="arithmatex"><span class="MathJax_Preview">E</span><script type="math/tex">E</script></span> 和旁观者能量 <span class="arithmatex"><span class="MathJax_Preview">E_{j'}</span><script type="math/tex">E_{j'}</script></span>。</p>
+<p>总结：</p>
+<p>一个完整的核矩阵元，是以上三步流水线作业的最终产物。它是一个对所有可能的中间态求和的过程：<br />
+$$<br />
+K_{final, initial} = \sum_{\text{intermediate states}} \langle \text{final} | t_i | \text{intermediate}\rangle \cdot (\text{Propagator Factor}) \cdot \langle \text{intermediate} | P_{ki} | \text{initial}\rangle<br />
+$$</p>
+<hr />
+<h3 id="43-最终矩阵的结构与求解">4.3 最终矩阵的结构与求解<a class="headerlink" href="#43-最终矩阵的结构与求解" title="Permanent link">#</a></h3>
+<p>经过上述复杂的构建过程，我们得到了一个巨大的、但结构清晰的线性方程组 <span class="arithmatex"><span class="MathJax_Preview">(\mathbf{I} - \mathbf{K}) \mathbf{X} = \mathbf{Y}</span><script type="math/tex">(\mathbf{I} - \mathbf{K}) \mathbf{X} = \mathbf{Y}</script></span>。下面是这个矩阵的结构示意图：</p>
+<div class="highlight"><pre><span></span><code>+----------------------------------------------------------------------------------+
+| (I - K) Matrix for a fixed (J, Pi) channel                                       | 
++==================================================================================+
+| BLOCK (i=1, k=1) = I           | BLOCK (i=1, k=2) = -K_12         | BLOCK (i=1, k=3) = -K_13         |
+| (dim: D x D, contains many     | (dim: D x D, couples all         | (dim: D x D, couples all         |
+|  sub-blocks for angular        |  channels)                       |  channels)                       |
+|  momentum channels)            |                                  |                                  |
++--------------------------------+----------------------------------+--------------------------------+
+| BLOCK (i=2, k=1) = -K_21       | BLOCK (i=2, k=2) = I             | BLOCK (i=2, k=3) = -K_23        |
+| (dim: D x D, couples all       | (dim: D x D, contains many       | (dim: D x D, couples all         |
+|  channels)                     |  sub-blocks for angular          |  channels)                       |
+|                                |  momentum channels)              |                                  |
++--------------------------------+----------------------------------+--------------------------------+
+| BLOCK (i=3, k=1) = -K_31       | BLOCK (i=3, k=2) = -K_32         | BLOCK (i=3, k=3) = I            |
+| (dim: D x D, couples all       | (dim: D x D, couples all         | (dim: D x D, contains many       |
+|  channels)                     |  channels)                       |  sub-blocks for angular          |
+|                                |                                  |  momentum channels)              |
++--------------------------------+----------------------------------+--------------------------------+
+(where D = N<span class="ge">_\alpha * N_</span>p * N_q)
+</code></pre></div>
+<p>求解这个巨型矩阵方程，直接求逆是不可行的。必须使用迭代求解器。在现代计算中，GMRES（广义最小残差方法）是求解这类大型非对称线性系统的首选标准。它是一种 Krylov 子空间方法，能够高效、稳定地在巨大的解空间中找到最优近似解。</p>
+<h2 id="44-收获物理从解向量-x-到可观测量">4.4 收获物理：从解向量 X 到可观测量<a class="headerlink" href="#44-收获物理从解向量-x-到可观测量" title="Permanent link">#</a></h2>
+<p>求解器最终返回一个巨大的解向量 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{X}</span><script type="math/tex">\mathbf{X}</script></span>，它包含了所有 T-矩阵分量在分波基矢下的展开系数。现在是收获物理果实的时候了。</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\circ</span><script type="math/tex">\circ</script></span> 计算单通道跃迁矩阵 <span class="arithmatex"><span class="MathJax_Preview">T^J_{fi}</span><script type="math/tex">T^J_{fi}</script></span></p>
+<p>对于一个给定的总角动量 <span class="arithmatex"><span class="MathJax_Preview">J</span><script type="math/tex">J</script></span>，从初态分波 <span class="arithmatex"><span class="MathJax_Preview">|i\rangle</span><script type="math/tex">|i\rangle</script></span>（例如入射 <span class="arithmatex"><span class="MathJax_Preview">l_q=0</span><script type="math/tex">l_q=0</script></span>）到末态分波 <span class="arithmatex"><span class="MathJax_Preview">|f\rangle</span><script type="math/tex">|f\rangle</script></span>（例如出射 <span class="arithmatex"><span class="MathJax_Preview">l_q=0</span><script type="math/tex">l_q=0</script></span>）的物理跃迁矩阵元 <span class="arithmatex"><span class="MathJax_Preview">T^J_{fi}</span><script type="math/tex">T^J_{fi}</script></span>，可以通过将解向量 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{X}</span><script type="math/tex">\mathbf{X}</script></span> 与初末态做投影得到。<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">T^J_{fi} = \langle f | T | i \rangle = \sum_{k=1}^3 \langle f | T^{(k)} | i \rangle</span><script type="math/tex">T^J_{fi} = \langle f | T | i \rangle = \sum_{k=1}^3 \langle f | T^{(k)} | i \rangle</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">T^J_{fi} = \langle f | T | i \rangle = \sum_{k=1}^3 \langle f | T^{(k)} | i \rangle</span><script type="math/tex">T^J_{fi} = \langle f | T | i \rangle = \sum_{k=1}^3 \langle f | T^{(k)} | i \rangle</script></span></script></span></p>
+<p>右边的每一项 <span class="arithmatex"><span class="MathJax_Preview">\langle f | T^{(k)} | i \rangle</span><script type="math/tex">\langle f | T^{(k)} | i \rangle</script></span> 都可以从 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{X}</span><script type="math/tex">\mathbf{X}</script></span> 的对应分量中线性组合出来。</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\circ</span><script type="math/tex">\circ</script></span> 构建物理散射振幅 <span class="arithmatex"><span class="MathJax_Preview">f(\theta, \phi)</span><script type="math/tex">f(\theta, \phi)</script></span></p>
+<p>完整的散射振幅是一个在自旋空间中的矩阵。它是所有分波贡献的相干叠加：<br />
+$$<br />
+f_{m_f, m_i}(\theta, \phi) = \sum_{J, l_q, l_q', \dots} C_{\text{coeffs}} \cdot T^J_{fi} \cdot Y_{l_q' m_{l_q'}}(\theta, \phi)<br />
+$$<br />
+这里的 <span class="arithmatex"><span class="MathJax_Preview">C_{\text{coeffs}}</span><script type="math/tex">C_{\text{coeffs}}</script></span> 是一大堆 Clebsch–Gordan 系数，它们负责将线性动量的散射角 <span class="arithmatex"><span class="MathJax_Preview">(\theta, \phi)</span><script type="math/tex">(\theta, \phi)</script></span> 与各种抽象的角动量量子数组合起来，还原出真实的角分布。</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\circ</span><script type="math/tex">\circ</script></span> 计算可观测量</p>
+<ul>
+<li>非极化微分截面：对所有末态自旋求和，并对所有初态自旋做平均。<br />
+    $$<br />
+    \frac{d\sigma}{d\Omega} = \frac{1}{(2s_n+1)(2s_d+1)} \sum_{\text{all spins}} |f_{m_f, m_i}(\theta, \phi)|^2<br />
+    $$</li>
+<li>极化可观测量（例如分析能 <span class="arithmatex"><span class="MathJax_Preview">A_y</span><script type="math/tex">A_y</script></span>）：需要计算初态粒子自旋向上（<span class="arithmatex"><span class="MathJax_Preview">\uparrow</span><script type="math/tex">\uparrow</script></span>）和向下（<span class="arithmatex"><span class="MathJax_Preview">\downarrow</span><script type="math/tex">\downarrow</script></span>）的散射截面。<br />
+    $$<br />
+    A_y(\theta) = \frac{d\sigma_{\uparrow}/d\Omega - d\sigma_{\downarrow}/d\Omega}{d\sigma_{\uparrow}/d\Omega + d\sigma_{\downarrow}/d\Omega}<br />
+    $$<br />
+    分析能这类可观测量对核力的自旋依赖部分（特别是张量力和自旋-轨道耦合力）以及三体力效应极为敏感，是检验理论模型的“精密放大镜”。</li>
+</ul>
+<p>至此，我们完成了一次从第一性原理出发，通过严谨的理论和复杂的数值计算，最终得到可与高精度实验数据直接对比的物理预测的完整旅程。这正是现代少体核物理计算研究的核心路径和魅力所在。</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月5日 10:00:17 UTC"><span class="timeago" datetime="2025-11-05T10:00:17+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月5日 10:00:17 UTC">2025-11-05</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月5日 10:00:17 UTC"><span class="timeago" datetime="2025-11-05T10:00:17+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月5日 10:00:17 UTC">2025-11-05</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="tianbaiting/tianbaiting.github.io"
+        data-repo-id="R_kgDOOB38lw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOOB38l84Comp4"
+        data-mapping="url"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+  <script>
+    if (document.querySelector("body").getAttribute("data-md-color-scheme") === "slate") {
+      var giscus = document.querySelector("script[src*=giscus]")
+      giscus.setAttribute("data-theme", "https://gcore.jsdelivr.net/gh/TonyCrane/note/docs/css/giscus.css") 
+    }
+  </script>
+
+                  
+                </article>
+              </div>
+            
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+          
+            <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+              回到页面顶部
+            </a>
+          
+        </main>
+        
+          <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+        
+      </div>
+      <div class="md-dialog" data-md-component="dialog">
+        <div class="md-dialog__inner md-typeset"></div>
+      </div>
+      
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+      
+      
+        <script src="../../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+        
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        
+          <script src="https://d3js.org/d3.v7.min.js"></script>
+        
+          <script src="../../../../../js/scheme.js"></script>
+        
+          <script src="../../../../../js/graph.js"></script>
+        
+      
+    </body>
+  </html>
+  
