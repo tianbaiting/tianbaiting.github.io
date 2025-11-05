@@ -170,11 +170,11 @@ Resolvent 将线性代数问题转化为复分析问题，是泛函分析和谱�
 
 ## 响应的发生器 (Green's Function)
 
-你对这部分的总结已经非常精确了。我只补充一点数学上的“翻译”：
+
 
 ### 算符 $\to$ 积分核 (Kernel)
 
-你写的 $\psi = -R(\lambda_0; A) f$ 是一个抽象的算符方程。在位置表象中，这个方程“翻译”为：
+ $\psi = -R(\lambda_0; A) f$ 是一个抽象的算符方程。在位置表象中，这个方程“翻译”为：
 $$
 \langle x | \psi \rangle = - \int dy \, \langle x | R(\lambda_0; A) | y \rangle \langle y | f \rangle
 $$
@@ -226,7 +226,6 @@ Resolvent 恒等式 $R = R_0 + R_0 V R$ 是精确的、非微扰的。它的迭�
 ## 微扰展开 截断
 
 发散级数并非无用，比如斯特林公式的渐近展开：
-
 $$ n! \sim \sqrt{2\pi n} \left(\frac{n}{e}\right)^n \left(1 + \frac{1}{12n} + \frac{1}{288n^2} - \frac{139}{51840 n^3} + \dots \right)$$
 
 比如余误差函数的渐近展开：
