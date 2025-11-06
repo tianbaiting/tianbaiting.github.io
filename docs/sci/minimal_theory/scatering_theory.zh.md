@@ -70,18 +70,54 @@ $$\Omega_\pm=\lim_{t\to\mp\infty} e^{iHt/\hbar}e^{-iH_0 t/\hbar}.$$
     $$f_l(k)=\frac{e^{i\delta_l}\sin\delta_l}{k}=\frac{1}{k\cot\delta_l-ik}.$$
 分波法将三维问题化为若干径向一维问题（求 $\delta_l$），低能下常只需少数几个分波。
 
-## 6. 角动量叠加与希尔伯特空间的张量积
-- 张量积：若系统由子系统 1、2 组成，
-    $$\mathcal{H}=\mathcal{H}_1\otimes\mathcal{H}_2.$$
-    基由 $|i\rangle_1\otimes|j\rangle_2$（简记 $|i,j\rangle$）给出。
-    例：轨道空间 $\otimes$ 自旋空间 $\cong L^2(\mathbb{R}^3)\otimes\mathbb{C}^{2s+1}$。
-- 角动量合成：若有 $\mathbf J_1,\mathbf J_2$，总角动量
-    $$\mathbf J=\mathbf J_1+\mathbf J_2.$$
-    常用基：
-    - 非耦合基：$|j_1,m_1;j_2,m_2\rangle$（$J_{1z},J_{2z}$ 对角）
-    - 耦合基：$|j_1,j_2;J,M\rangle$（$J^2,J_z$ 对角）
-    两基之间由 Clebsch–Gordan 系数变换：
-    $$|j_1,j_2;J,M\rangle=\sum_{m_1,m_2}\langle j_1 m_1,j_2 m_2|J M\rangle\,|j_1,m_1;j_2,m_2\rangle.$$
-- 在散射中的应用：当势含自旋相关项（如自旋-轨道耦合 $V_{SO}\propto\mathbf L\cdot\mathbf S$）时，$L^2$ 与 $S_z$ 不再分别守恒，但若势旋转不变，$J^2$ 和 $J_z$ 仍守恒。此时应在耦合基 $|l,s;J,M\rangle$ 下展开，S 矩阵在 $J,M$ 表象下对角，但可在 $l$ 上非对角（例如在张量势作用下）。
+## 6. 角动量叠加 & Hilbert 空间叠加
 
-（结束）
+
+当粒子具有内部自由度（如自旋）或我们考虑多个粒子的系统时，需要用到希尔伯特空间的叠加。
+
+Hilbert 空间叠加 (Tensor Product):
+如果一个系统由两个子系统 1 和 2 组成（例如，一个粒子的轨道运动 $\mathcal{H}_{orb}$ 和它的自旋 $\mathcal{H}_{spin}$），那么复合系统的希尔伯特空间是两个子系统希尔伯特空间的张量积 (Tensor Product)：
+
+$$\mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2$$
+
+如果 $\{|i\rangle_1\}$ 是 $\mathcal{H}_1$ 的基，$\{|j\rangle_2\}$ 是 $\mathcal{H}_2$ 的基，那么 $\mathcal{H}$ 的一组基是 $\{|i\rangle_1 \otimes |j\rangle_2\}$，常简记为 $|i, j\rangle$。
+
+例子: 一个自旋 $s$ 的粒子在空间中运动。
+
+$\mathcal{H} = \mathcal{H}_{orbital} \otimes \mathcal{H}_{spin} \cong L^2(\mathbb{R}^3) \otimes \mathbb{C}^{2s+1}$
+
+一个态矢量可以写为 $|\psi\rangle$，其波函数为 $\psi(\mathbf{x}, m_s) = \langle \mathbf{x}, m_s | \psi \rangle$，是一个 $(2s+1)$ 分量的自旋波函数。
+
+角动量叠加 (Angular Momentum Addition):
+这是张量积空间中一个极其重要的应用。假设子系统 1 有角动量 $\mathbf{J}_1$，子系统 2 有角动量 $\mathbf{J}_2$。
+总角动量算符定义在 $\mathcal{H}$ 上：
+
+$$\mathbf{J} = \mathbf{J}_1 \otimes \mathbf{1} + \mathbf{1} \otimes \mathbf{J}_2 \quad (\text{简记为 } \mathbf{J} = \mathbf{J}_1 + \mathbf{J}_2)$$
+
+基的变换:
+在 $\mathcal{H}$ 空间中，我们有两组常用的基：
+
+- 非耦合基 (Uncoupled Basis): $|j_1, m_1; j_2, m_2\rangle$
+它们是 $J_1^2, J_{1z}, J_2^2, J_{2z}$ 的共同本征矢。
+
+- 耦合基 (Coupled Basis): $|j_1, j_2; J, M\rangle$
+它们是 $J_1^2, J_2^2, J^2, J_z$ 的共同本征矢。（注意 $J^2 = (\mathbf{J}_1+\mathbf{J}_2)^2$）
+
+这两组基通过 Clebsch-Gordan (CG) 系数 $\langle j_1 m_1, j_2 m_2 | J M \rangle$ 进行变换：
+
+$$|j_1, j_2; J, M\rangle = \sum_{m_1, m_2} \langle j_1 m_1, j_2 m_2 | J M \rangle |j_1, m_1; j_2, m_2\rangle$$
+
+在散射理论中的应用:
+当相互作用 $V$ 不仅仅是中心势 $V(r)$，而是包含自旋相关的项时（例如 自旋-轨道耦合 $V_{SO} \propto \mathbf{L} \cdot \mathbf{S}$）：
+
+$H$ 不再与 $\mathbf{L}$ 和 $\mathbf{S}$ 单独对易。
+
+$L^2$ 和 $S_z$ 不再是守恒量。
+
+但是，如果 $V$ 仍然是旋转不变的（例如 $\mathbf{L} \cdot \mathbf{S}$ 项），$H$ 仍然与总角动量 $\mathbf{J} = \mathbf{L} + \mathbf{S}$ 对易。
+
+$[H, J^2] = 0, \quad [H, J_z] = 0$
+
+在这种情况下，分波展开的正确 basis 不再是 $|l, m_l\rangle$，而是耦合基 $|l, s; J, M\rangle$。
+
+散射在 $J$ 和 $M$ 表象下是对角的（$J$ 和 $M$ 守恒），但S矩阵元 $\langle l', s; J, M | S | l, s; J, M \rangle$ 可能在 $l$ 上非对角（即 $l$ 不守恒，例如在张量势作用下）。
