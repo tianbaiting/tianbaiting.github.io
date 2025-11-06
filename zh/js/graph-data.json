@@ -519,8 +519,17 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatering_theory.zh.md",
-      "size": 3960,
+      "size": 5165,
       "url": "/sci/minimal_theory/scatering_theory/"
+    },
+    {
+      "id": "sci/minimal_theory/linearspace.zh",
+      "title": "线性空间、对偶空间与量子态",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/linearspace.zh.md",
+      "size": 4572,
+      "url": "/sci/minimal_theory/linearspace/"
     },
     {
       "id": "sci/minimal_theory/TransmissionLineEq.en",
@@ -557,6 +566,15 @@
       "path": "sci/minimal_theory/ScateringINQMandQFT.zh.md",
       "size": 0,
       "url": "/sci/minimal_theory/ScateringINQMandQFT/"
+    },
+    {
+      "id": "sci/minimal_theory/directProductAndSum.zh",
+      "title": "直积 / 直和 / 张量积 辨析",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/directProductAndSum.zh.md",
+      "size": 8245,
+      "url": "/sci/minimal_theory/directProductAndSum/"
     },
     {
       "id": "sci/minimal_theory/dead_time.zh",
@@ -1110,16 +1128,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 123,
+    "total_nodes": 125,
     "total_links": 0,
     "languages": {
-      "zh": 98,
+      "zh": 100,
       "en": 25
     },
     "categories": {
       "main": 2,
       "category": 20,
-      "page": 101
+      "page": 103
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1127,6 +1145,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-11-06 04:31:19.506764"
+    "generated_at": "2025-11-06 07:20:51.358664"
   }
 }

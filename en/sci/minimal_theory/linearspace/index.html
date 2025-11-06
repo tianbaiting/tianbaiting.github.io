@@ -1,0 +1,3424 @@
+
+  <!doctype html>
+  <html lang="zh" class="no-js">
+    <head>
+      
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        
+        
+        
+          <link rel="canonical" href="https://tianbaiting.github.io/en/sci/minimal_theory/linearspace/">
+        
+        
+          <link rel="prev" href="../functionalAna_SpecThe/">
+        
+        
+          <link rel="next" href="../qft_schwartz_ref/">
+        
+        <link rel="icon" href="../../../../assets/images/favicon.png">
+        <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
+      
+      
+        
+          <title>线性空间、对偶空间与量子态 - TBT个人网站</title>
+        
+      
+      
+        <link rel="stylesheet" href="../../../../assets/stylesheets/main.9c788c91.min.css">
+        
+          
+          <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
+        
+        
+
+      
+      
+      
+        
+          
+          
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+          <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        
+      
+      
+        <link rel="stylesheet" href="../../../../css/counter.css">
+      
+        <link rel="stylesheet" href="../../../../css/graph.css">
+      
+      
+        <link rel="stylesheet" href="../../../../css/counter.css">
+      
+      <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      
+        
+
+      
+      
+      
+    </head>
+    
+    
+      
+      
+      
+      
+      
+      <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink">
+    
+      <script src="../../../../js/scheme.js" type="text/javascript"></script>
+      
+      
+      <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+      <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+      <label class="md-overlay" for="__drawer"></label>
+      <div data-md-component="skip">
+        
+          
+          <a href="#线性空间对偶空间与量子态" class="md-skip">
+            跳转至
+          </a>
+        
+      </div>
+      <div data-md-component="announce">
+        
+      </div>
+      
+      
+        
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../" title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TBT个人网站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              线性空间、对偶空间与量子态
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      <div class="md-header-nav__scheme md-header-nav__button md-source__icon md-icon">
+  <a
+    href="javascript:toggleScheme();"
+    title="Toggle theme"
+    class="theme-toggle"
+  >
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5 1.43 1.43L4.93 20.5 3.5 19.07 19.07 3.5m-6.18 2.43L11.41 5 9.97 6l.42-1.7L9 3.24l1.75-.12.58-1.65L12 3.1l1.73.03-1.35 1.13.51 1.67m-3.3 3.61-1.16-.73-1.12.78.34-1.32-1.09-.83 1.36-.09.45-1.29.51 1.27 1.36.03-1.05.87.4 1.31M19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58 2.77-1.15-.24 3.35-2.53-2.2m4.33-2.7 1.15-2.77 2.2 2.54-3.35.23m1.15-4.96-1.14-2.78 3.34.24-2.2 2.54M9.63 18.93l2.77 1.15-2.53 2.19-.24-3.34Z"/></svg>
+  </a>
+</div>
+
+
+  <div class="md-header__button md-lang">
+    
+      <a href="/" hreflang="zh">简体中文</a>
+    
+      <a href="/en/" hreflang="en">English</a>
+    
+  </div>
+
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+      
+      <div class="md-container" data-md-component="container">
+        
+        
+          
+            
+              
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../howtomakewebsite/" class="md-tabs__link">
+      网站制作
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../" class="md-tabs__link">
+      Index
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../MickeyMiaoMiao/citetree/" class="md-tabs__link">
+        MickeyMiaoMiao
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../life/flavor/" class="md-tabs__link">
+        Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../todolist/" class="md-tabs__link md-tabs__link--active">
+        Sci
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-tabs__link">
+        日本生存指南
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+            
+          
+        
+        <main class="md-main" data-md-component="main">
+          <div class="md-main__inner md-grid">
+            
+              
+                
+                <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    TBT个人网站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../howtomakewebsite/" class="md-nav__link">
+        网站制作
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          MickeyMiaoMiao
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MickeyMiaoMiao" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          MickeyMiaoMiao
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/citetree/" class="md-nav__link">
+        引文网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/firefoxplug/" class="md-nav__link">
+        浏览器插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/opvpn/" class="md-nav__link">
+        opvpn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_4" tabindex="0" aria-expanded="false">
+          Useful tips
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Useful tips" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Useful tips
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/overleaf_vscode%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        overleaf插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/%E5%88%A9%E7%94%A8%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E5%88%86%E5%B1%8F/" class="md-nav__link">
+        移动设备作为电脑的分屏
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84vscode/" class="md-nav__link">
+        如何安装多个版本的code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/%E6%9C%89%E8%B6%A3%E7%9A%84%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        有趣的插件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Life" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/flavor/" class="md-nav__link">
+        **探索味型奥秘：以川菜为例的烹饪科学指南**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/z30_DeepSky/" class="md-nav__link">
+        深空摄影
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E7%84%A6%E8%99%91/" class="md-nav__link">
+        焦虑
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E9%A3%9F%E7%89%A9%E4%B8%AD%E6%AF%92/" class="md-nav__link">
+        易发中毒食物
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E9%A3%9F%E7%89%A9%E5%AE%89%E5%85%A8%E6%B8%A9%E5%BA%A6/" class="md-nav__link">
+        食物安全温度
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" tabindex="0" aria-expanded="false">
+          健康
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="健康" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          健康
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E5%81%A5%E5%BA%B7/workout_diet/" class="md-nav__link">
+        **营养**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E5%81%A5%E5%BA%B7/%E9%BC%BB%E7%82%8E/" class="md-nav__link">
+        **鼻炎综合管理临床报告：过敏性鼻炎与血管运动性鼻炎的深度解析**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="true">
+          Sci
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sci" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Sci
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todolist/" class="md-nav__link">
+        todo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
+          Cheatshet
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cheatshet" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cheatshet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/bashrc/" class="md-nav__link">
+        Bashrc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/git/" class="md-nav__link">
+        git cheatsheat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/number_order_dimension/" class="md-nav__link">
+        数量级估计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/root_geant4_install/" class="md-nav__link">
+        Root geant4 install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/shell/" class="md-nav__link">
+        Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/site/" class="md-nav__link">
+        网页相关知识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/termux/" class="md-nav__link">
+        termux 运行ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/vimrc/" class="md-nav__link">
+        vim配置文件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
+          Minimal code
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minimal code" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Minimal code
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/Operating_system/" class="md-nav__link">
+        装系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/c%2B%2Bproject/" class="md-nav__link">
+        c++项目
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/class_dataTransport/" class="md-nav__link">
+        面向对象设计教程：管理类之间的数据依赖和解耦
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/cmake/" class="md-nav__link">
+        cmake项目
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/color_scheme/" class="md-nav__link">
+        Color Scheme in Scientific Visualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/cpp_package/" class="md-nav__link">
+        cpp 包管理 以及 依赖管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/format_guidelines/" class="md-nav__link">
+        Formatting Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/fzf/" class="md-nav__link">
+        FZF 模糊搜索工具完全教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/gdb/" class="md-nav__link">
+        gdb 调试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/geant4_oop/" class="md-nav__link">
+        **揭秘面向对象编程：Geant4工具包深度导览**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/gemni_use_wen2cli/" class="md-nav__link">
+        Gemini 使用限制与付费模式解析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/jupyternotebook/" class="md-nav__link">
+        Jupyter Notebook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/latex_graphics/" class="md-nav__link">
+        latex include graphics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/python_def_class/" class="md-nav__link">
+        python 定义类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/python_lib_self/" class="md-nav__link">
+        python 包的创建与使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/python_venv/" class="md-nav__link">
+        Python 虚拟环境
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/root_opener/" class="md-nav__link">
+        设置 ROOT 文件默认浏览器教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/root_plot/" class="md-nav__link">
+        root_plot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/root_visual_geant4/" class="md-nav__link">
+        Root visual geant4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/server_clouddirve/" class="md-nav__link">
+        如何从零搭建私有云盘服务器 (Markdown 教程)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/server_clouddirve_example/" class="md-nav__link">
+        Server clouddirve example
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/termux/" class="md-nav__link">
+        在 Termux 中安装 Ubuntu 桌面环境并运行 VS Code 的终极指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/vim_neovim/" class="md-nav__link">
+        Vim neovim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/vscode_env_path/" class="md-nav__link">
+        Vscode env path
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/vscode_lsp/" class="md-nav__link">
+        如何解决 VS Code 中的 C/C++ `include` 报错问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/yazi/" class="md-nav__link">
+        快捷键
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/zsh/" class="md-nav__link">
+        Zsh 环境一键配置脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/%E5%BE%85%E8%A7%A3%E5%86%B3%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        to be solved
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="true">
+          Minimal theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minimal theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Minimal theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ScateringINQMandQFT/" class="md-nav__link">
+        ScateringINQMandQFT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TransmissionLineEq/" class="md-nav__link">
+        TransmissionLineEq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dead_time/" class="md-nav__link">
+        Dead time
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../directProductAndSum/" class="md-nav__link">
+        直积 / 直和 / 张量积 辨析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functionalAna_SpecThe/" class="md-nav__link">
+        泛函分析和谱理论初步
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          线性空间、对偶空间与量子态
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        线性空间、对偶空间与量子态
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#目录" class="md-nav__link">
+    目录
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-线性空间vector-space" class="md-nav__link">
+    1. 线性空间（Vector Space）
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 线性空间（Vector Space）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#定义" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#例子" class="md-nav__link">
+    例子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#基底与坐标" class="md-nav__link">
+    基底与坐标
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-对偶空间dual-space" class="md-nav__link">
+    2. 对偶空间（Dual Space）
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 对偶空间（Dual Space）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#定义_1" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#对偶基" class="md-nav__link">
+    对偶基
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-线性算符与对偶映射" class="md-nav__link">
+    3. 线性算符与对偶映射
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 线性算符与对偶映射">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#定义_2" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#对偶映射伴随映射" class="md-nav__link">
+    对偶映射（伴随映射）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#矩阵形式" class="md-nav__link">
+    矩阵形式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-希尔伯特空间hilbert-space与态矢state-vector" class="md-nav__link">
+    4. 希尔伯特空间（Hilbert Space）与态矢（State Vector）
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 希尔伯特空间（Hilbert Space）与态矢（State Vector）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#定义_3" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riesz-表示定理" class="md-nav__link">
+    Riesz 表示定理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#物理诠释" class="md-nav__link">
+    物理诠释
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-直和与张量积" class="md-nav__link">
+    5. 直和与张量积
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-散射态与束缚态的希尔伯特空间结构" class="md-nav__link">
+    6. 散射态与束缚态的希尔伯特空间结构
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 散射态与束缚态的希尔伯特空间结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#哈密顿量与谱分解" class="md-nav__link">
+    哈密顿量与谱分解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#渐进自由态asymptotic-free-states" class="md-nav__link">
+    渐进自由态（Asymptotic Free States）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-møller-算符与-s-算符" class="md-nav__link">
+    7. Møller 算符与 S 算符
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Møller 算符与 S 算符">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#时间演化算符" class="md-nav__link">
+    时间演化算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#møller-算符wave-operators" class="md-nav__link">
+    Møller 算符（Wave Operators）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s-算符scattering-operator" class="md-nav__link">
+    S 算符（Scattering Operator）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-三种语言对照表" class="md-nav__link">
+    8. 三种语言对照表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#小结" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qft_schwartz_ref/" class="md-nav__link">
+        Schwartz — 《量子场论与标准模型》学习资源指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qft_whatisfield/" class="md-nav__link">
+        Qft whatisfield
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatering_theory/" class="md-nav__link">
+        散射理论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatteringTheoryBook/" class="md-nav__link">
+        散射理论书籍推荐
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5" tabindex="0" aria-expanded="false">
+          Project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Project" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/example/" class="md-nav__link">
+        hello world
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_2" type="checkbox" id="__nav_5_5_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_2" tabindex="0" aria-expanded="false">
+          D polar exp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="D polar exp" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          D polar exp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/Sipm_PMT/" class="md-nav__link">
+        Sipm PMT参数对比
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/caogao/" class="md-nav__link">
+        Caogao
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/d_breakup_theory/" class="md-nav__link">
+        氘核破裂理论上可以如何计算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/faddeevWPCD/" class="md-nav__link">
+        faddeevWPCD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/my_polarimeter/" class="md-nav__link">
+        My polarimeter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/other_polarmeter/" class="md-nav__link">
+        其他研究组的polarimeter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/riken_web_source/" class="md-nav__link">
+        riken 常见资源
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/scintillator/" class="md-nav__link">
+        闪烁体光产额
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/spherical_operator/" class="md-nav__link">
+        To show some relation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/stastic/" class="md-nav__link">
+        统计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/sw-api/" class="md-nav__link">
+        solidworks api接口
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/todo_list/" class="md-nav__link">
+        To do list
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_3" type="checkbox" id="__nav_5_5_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3" tabindex="0" aria-expanded="false">
+          Faddeev
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Faddeev" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Faddeev
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/construct_basis/" class="md-nav__link">
+        Construct basis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
+        faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_4" type="checkbox" id="__nav_5_5_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_4" tabindex="0" aria-expanded="false">
+          Samurai
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Samurai" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Samurai
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/detector_samurai/" class="md-nav__link">
+        Detailed Functions of Charged Particle Detectors in the SAMURAI Spectrometer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_4_2" type="checkbox" id="__nav_5_5_4_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_4_2" tabindex="0" aria-expanded="false">
+          Anaroot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Anaroot" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Anaroot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/RIDF/" class="md-nav__link">
+        RIDF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot/" class="md-nav__link">
+        **ANAROOT 综合分析框架：
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot2version/" class="md-nav__link">
+        ANAROOT Detailed Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_decoder/" class="md-nav__link">
+        Anaroot decoder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_nebula/" class="md-nav__link">
+        Anaroot nebula
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_nebula_reconstructionfunction/" class="md-nav__link">
+        Anaroot nebula reconstructionfunction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_pdc/" class="md-nav__link">
+        ANAROOT Libraries for PDC Analysis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_4_3" type="checkbox" id="__nav_5_5_4_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_4_3" tabindex="0" aria-expanded="false">
+          Smsimulator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Smsimulator" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Smsimulator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/FDC2/" class="md-nav__link">
+        FDC2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/PDC/" class="md-nav__link">
+        PDC Drift Chamber Simulation Plan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/nebula_simlulator/" class="md-nav__link">
+        Nebula simlulator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/smsimulator/" class="md-nav__link">
+        smsimultor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/smsimulator_tutor/" class="md-nav__link">
+        smsimulator 教学
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          日本生存指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="日本生存指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          日本生存指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-nav__link">
+        Japanese
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%8E%BB%E6%97%A5%E6%9C%AC%E5%89%8D%E6%89%93%E5%8C%85/" class="md-nav__link">
+        登机前打包
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%90%83/" class="md-nav__link">
+        吃
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        垃圾分类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%8E%A5%E6%94%B6%E5%BF%AB%E9%80%92/" class="md-nav__link">
+        接受快递
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%97%A5%E7%89%88%E6%89%8B%E6%9C%BAfelica%E8%8A%AF%E7%89%87/" class="md-nav__link">
+        **日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E5%AD%90%E6%94%AF%E4%BB%98-%E4%BA%A4%E9%80%9A%E5%8D%A1/" class="md-nav__link">
+        日本电子支付 - 交通卡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E8%AF%9D%E5%8D%A1/" class="md-nav__link">
+        电话卡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E8%90%BD%E5%9C%B0todo/" class="md-nav__link">
+        落地事宜
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E9%93%B6%E8%A1%8C%E5%8D%A1/" class="md-nav__link">
+        银行卡
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                    </div>
+                  </div>
+                </div>
+              
+              
+                
+                <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#目录" class="md-nav__link">
+    目录
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-线性空间vector-space" class="md-nav__link">
+    1. 线性空间（Vector Space）
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 线性空间（Vector Space）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#定义" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#例子" class="md-nav__link">
+    例子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#基底与坐标" class="md-nav__link">
+    基底与坐标
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-对偶空间dual-space" class="md-nav__link">
+    2. 对偶空间（Dual Space）
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 对偶空间（Dual Space）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#定义_1" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#对偶基" class="md-nav__link">
+    对偶基
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-线性算符与对偶映射" class="md-nav__link">
+    3. 线性算符与对偶映射
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 线性算符与对偶映射">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#定义_2" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#对偶映射伴随映射" class="md-nav__link">
+    对偶映射（伴随映射）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#矩阵形式" class="md-nav__link">
+    矩阵形式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-希尔伯特空间hilbert-space与态矢state-vector" class="md-nav__link">
+    4. 希尔伯特空间（Hilbert Space）与态矢（State Vector）
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 希尔伯特空间（Hilbert Space）与态矢（State Vector）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#定义_3" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#riesz-表示定理" class="md-nav__link">
+    Riesz 表示定理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#物理诠释" class="md-nav__link">
+    物理诠释
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-直和与张量积" class="md-nav__link">
+    5. 直和与张量积
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-散射态与束缚态的希尔伯特空间结构" class="md-nav__link">
+    6. 散射态与束缚态的希尔伯特空间结构
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 散射态与束缚态的希尔伯特空间结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#哈密顿量与谱分解" class="md-nav__link">
+    哈密顿量与谱分解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#渐进自由态asymptotic-free-states" class="md-nav__link">
+    渐进自由态（Asymptotic Free States）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-møller-算符与-s-算符" class="md-nav__link">
+    7. Møller 算符与 S 算符
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Møller 算符与 S 算符">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#时间演化算符" class="md-nav__link">
+    时间演化算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#møller-算符wave-operators" class="md-nav__link">
+    Møller 算符（Wave Operators）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s-算符scattering-operator" class="md-nav__link">
+    S 算符（Scattering Operator）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-三种语言对照表" class="md-nav__link">
+    8. 三种语言对照表
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#小结" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                    </div>
+                  </div>
+                </div>
+                
+              
+            
+            
+              <div class="md-content" data-md-component="content">
+                <article class="md-content__inner md-typeset">
+                  
+                    
+
+
+
+<h1 id="线性空间对偶空间与量子态">线性空间、对偶空间与量子态<a class="headerlink" href="#线性空间对偶空间与量子态" title="Permanent link">#</a></h1>
+<h2 id="目录">目录<a class="headerlink" href="#目录" title="Permanent link">#</a></h2>
+<ol>
+<li>线性空间的定义与例子  </li>
+<li>对偶空间与配对  </li>
+<li>线性算符与对偶映射  </li>
+<li>希尔伯特空间与态矢  </li>
+<li>直和与张量积的区分  </li>
+<li>散射态与束缚态的希尔伯特空间结构  </li>
+<li>Møller 算符与 S 算符  </li>
+<li>三种语言对照：形式化、指标、Dirac 记号</li>
+</ol>
+<hr />
+<h2 id="1-线性空间vector-space">1. 线性空间（Vector Space）<a class="headerlink" href="#1-线性空间vector-space" title="Permanent link">#</a></h2>
+<h3 id="定义">定义<a class="headerlink" href="#定义" title="Permanent link">#</a></h3>
+<p>设 <span class="arithmatex"><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span> 为数域（通常为 <span class="arithmatex"><span class="MathJax_Preview">\mathbb{R}</span><script type="math/tex">\mathbb{R}</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">\mathbb{C}</span><script type="math/tex">\mathbb{C}</script></span>）。<br />
+线性空间（向量空间） <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 是带有加法 <span class="arithmatex"><span class="MathJax_Preview">+</span><script type="math/tex">+</script></span> 与数乘 <span class="arithmatex"><span class="MathJax_Preview">\cdot</span><script type="math/tex">\cdot</script></span> 的集合，满足：</p>
+<ol>
+<li><span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 对加法封闭；  </li>
+<li>数乘对加法、数的乘法满足分配律；  </li>
+<li>存在零向量和加法逆元；  </li>
+<li>单位元 <span class="arithmatex"><span class="MathJax_Preview">1\in F</span><script type="math/tex">1\in F</script></span> 满足 <span class="arithmatex"><span class="MathJax_Preview">1\cdot v = v</span><script type="math/tex">1\cdot v = v</script></span>。</li>
+</ol>
+<p>简言之：线性空间是可以“相加、缩放”的抽象空间。</p>
+<h3 id="例子">例子<a class="headerlink" href="#例子" title="Permanent link">#</a></h3>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>：实数 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 维向量。  </li>
+<li>函数空间 <span class="arithmatex"><span class="MathJax_Preview">V=\{f:\mathbb{R}\to\mathbb{C}\}</span><script type="math/tex">V=\{f:\mathbb{R}\to\mathbb{C}\}</script></span>。  </li>
+<li>波函数空间 <span class="arithmatex"><span class="MathJax_Preview">L^2(\mathbb{R}^3)</span><script type="math/tex">L^2(\mathbb{R}^3)</script></span>（平方可积复函数）。</li>
+</ul>
+<h3 id="基底与坐标">基底与坐标<a class="headerlink" href="#基底与坐标" title="Permanent link">#</a></h3>
+<p>若有基 <span class="arithmatex"><span class="MathJax_Preview">\{e_i\}_{i=1}^n</span><script type="math/tex">\{e_i\}_{i=1}^n</script></span>，则任意 <span class="arithmatex"><span class="MathJax_Preview">v\in V</span><script type="math/tex">v\in V</script></span> 可写作<br />
+$$<br />
+v = v^i e_i.<br />
+$$<br />
+分量 <span class="arithmatex"><span class="MathJax_Preview">v^i</span><script type="math/tex">v^i</script></span> 为“逆变分量”，上标常用于表示它是向量在该基下的系数（爱因斯坦求和约定）。</p>
+<hr />
+<h2 id="2-对偶空间dual-space">2. 对偶空间（Dual Space）<a class="headerlink" href="#2-对偶空间dual-space" title="Permanent link">#</a></h2>
+<h3 id="定义_1">定义<a class="headerlink" href="#定义_1" title="Permanent link">#</a></h3>
+<p>对偶空间 <span class="arithmatex"><span class="MathJax_Preview">V^*</span><script type="math/tex">V^*</script></span> 是所有从 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 到 <span class="arithmatex"><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span> 的线性泛函的集合：<br />
+$$<br />
+V^* = {\alpha: V\to F \mid \alpha(a v + b w)=a\alpha(v)+b\alpha(w)}.<br />
+$$</p>
+<h3 id="对偶基">对偶基<a class="headerlink" href="#对偶基" title="Permanent link">#</a></h3>
+<p>若 <span class="arithmatex"><span class="MathJax_Preview">\{e_i\}</span><script type="math/tex">\{e_i\}</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 的基，则存在唯一对偶基 <span class="arithmatex"><span class="MathJax_Preview">\{e^i\}\subset V^*</span><script type="math/tex">\{e^i\}\subset V^*</script></span>，满足<br />
+$$<br />
+e^i(e_j) = \delta^i_j.<br />
+$$<br />
+于是<br />
+$$<br />
+\alpha = \alpha_i e^i,\quad v=v^i e_i,\quad<br />
+\alpha(v)=\alpha_i v^i.<br />
+$$</p>
+<p>记号约定：</p>
+<ul>
+<li>向量分量 <span class="arithmatex"><span class="MathJax_Preview">v^i</span><script type="math/tex">v^i</script></span>：上标（反变）。  </li>
+<li>对偶分量 <span class="arithmatex"><span class="MathJax_Preview">\alpha_i</span><script type="math/tex">\alpha_i</script></span>：下标（协变）。</li>
+</ul>
+<hr />
+<h2 id="3-线性算符与对偶映射">3. 线性算符与对偶映射<a class="headerlink" href="#3-线性算符与对偶映射" title="Permanent link">#</a></h2>
+<h3 id="定义_2">定义<a class="headerlink" href="#定义_2" title="Permanent link">#</a></h3>
+<p>线性算符 <span class="arithmatex"><span class="MathJax_Preview">A:V\to W</span><script type="math/tex">A:V\to W</script></span> 满足<br />
+$$<br />
+A(av+bw)=aA(v)+bA(w).<br />
+$$</p>
+<h3 id="对偶映射伴随映射">对偶映射（伴随映射）<a class="headerlink" href="#对偶映射伴随映射" title="Permanent link">#</a></h3>
+<p>定义 <span class="arithmatex"><span class="MathJax_Preview">A^*:W^*\to V^*</span><script type="math/tex">A^*:W^*\to V^*</script></span>，对任意 <span class="arithmatex"><span class="MathJax_Preview">\beta\in W^*</span><script type="math/tex">\beta\in W^*</script></span>、<span class="arithmatex"><span class="MathJax_Preview">v\in V</span><script type="math/tex">v\in V</script></span>，<br />
+$$<br />
+(A^*\beta)(v)=\beta(A v).<br />
+$$</p>
+<h3 id="矩阵形式">矩阵形式<a class="headerlink" href="#矩阵形式" title="Permanent link">#</a></h3>
+<p>若 <span class="arithmatex"><span class="MathJax_Preview">A(e_i)=f_a\,A^a{}_{i}</span><script type="math/tex">A(e_i)=f_a\,A^a{}_{i}</script></span>（$ {f_a}$ 为 <span class="arithmatex"><span class="MathJax_Preview">W</span><script type="math/tex">W</script></span> 基），则<br />
+$$<br />
+A<sup>*(f</sup>a) = e^i A^a{}_{i}.<br />
+$$<br />
+即 <span class="arithmatex"><span class="MathJax_Preview">A^*</span><script type="math/tex">A^*</script></span> 的矩阵为 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的转置（对复数域通常取共轭转置）。</p>
+<hr />
+<h2 id="4-希尔伯特空间hilbert-space与态矢state-vector">4. 希尔伯特空间（Hilbert Space）与态矢（State Vector）<a class="headerlink" href="#4-希尔伯特空间hilbert-space与态矢state-vector" title="Permanent link">#</a></h2>
+<h3 id="定义_3">定义<a class="headerlink" href="#定义_3" title="Permanent link">#</a></h3>
+<p>希尔伯特空间 <span class="arithmatex"><span class="MathJax_Preview">\mathcal H</span><script type="math/tex">\mathcal H</script></span> 是带有内积且完备的线性空间：<br />
+$$<br />
+\langle\phi|\psi\rangle \in \mathbb C,\qquad<br />
+\langle a\phi+b\chi|\psi\rangle = a^<em>\langle\phi|\psi\rangle + b^</em>\langle\chi|\psi\rangle.<br />
+$$</p>
+<h3 id="riesz-表示定理">Riesz 表示定理<a class="headerlink" href="#riesz-表示定理" title="Permanent link">#</a></h3>
+<p>在希尔伯特空间中，每个连续线性泛函 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 对应唯一向量 <span class="arithmatex"><span class="MathJax_Preview">|u\rangle</span><script type="math/tex">|u\rangle</script></span>，使得：<br />
+$$<br />
+\alpha(|\psi\rangle) = \langle u|\psi\rangle.<br />
+$$<br />
+因此 <span class="arithmatex"><span class="MathJax_Preview">\mathcal H \cong \mathcal H^*</span><script type="math/tex">\mathcal H \cong \mathcal H^*</script></span>。</p>
+<h3 id="物理诠释">物理诠释<a class="headerlink" href="#物理诠释" title="Permanent link">#</a></h3>
+<p>在量子力学中：</p>
+<ul>
+<li>ket <span class="arithmatex"><span class="MathJax_Preview">|\psi\rangle\in\mathcal H</span><script type="math/tex">|\psi\rangle\in\mathcal H</script></span>：态矢；  </li>
+<li>bra <span class="arithmatex"><span class="MathJax_Preview">\langle\psi|\in\mathcal H^*</span><script type="math/tex">\langle\psi|\in\mathcal H^*</script></span>：其对偶；  </li>
+<li>内积 <span class="arithmatex"><span class="MathJax_Preview">\langle\phi|\psi\rangle</span><script type="math/tex">\langle\phi|\psi\rangle</script></span>：概率幅；  </li>
+<li>算符 <span class="arithmatex"><span class="MathJax_Preview">A:\mathcal H\to\mathcal H</span><script type="math/tex">A:\mathcal H\to\mathcal H</script></span>：物理可观测量的表示。</li>
+</ul>
+<hr />
+<h2 id="5-直和与张量积">5. 直和与张量积<a class="headerlink" href="#5-直和与张量积" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="right">操作</th>
+<th align="center">符号</th>
+<th align="left">数学定义</th>
+<th align="left">物理意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">直和</td>
+<td align="center"><span class="arithmatex"><span class="MathJax_Preview">\mathcal H_1\oplus\mathcal H_2</span><script type="math/tex">\mathcal H_1\oplus\mathcal H_2</script></span></td>
+<td align="left">元素为 <span class="arithmatex"><span class="MathJax_Preview">(v_1,v_2)</span><script type="math/tex">(v_1,v_2)</script></span>，内积为两个分量内积之和</td>
+<td align="left">系统只能处于 <span class="arithmatex"><span class="MathJax_Preview">\mathcal H_1</span><script type="math/tex">\mathcal H_1</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">\mathcal H_2</span><script type="math/tex">\mathcal H_2</script></span>（如散射态 vs 束缚态）</td>
+</tr>
+<tr>
+<td align="right">张量积</td>
+<td align="center"><span class="arithmatex"><span class="MathJax_Preview">\mathcal H_1\otimes\mathcal H_2</span><script type="math/tex">\mathcal H_1\otimes\mathcal H_2</script></span></td>
+<td align="left">双线性生成空间</td>
+<td align="left">两个系统组合成一个复合系统</td>
+</tr>
+</tbody>
+</table>
+<p>例子：</p>
+<ul>
+<li>自旋 + 轨道角动量：<span class="arithmatex"><span class="MathJax_Preview">\mathcal H = \mathcal H_L \otimes \mathcal H_S</span><script type="math/tex">\mathcal H = \mathcal H_L \otimes \mathcal H_S</script></span>。  </li>
+<li>散射 + 束缚态：<span class="arithmatex"><span class="MathJax_Preview">\mathcal H = \mathcal H_{\mathrm{bound}} \oplus \mathcal H_{\mathrm{scatt}}</span><script type="math/tex">\mathcal H = \mathcal H_{\mathrm{bound}} \oplus \mathcal H_{\mathrm{scatt}}</script></span>。</li>
+</ul>
+<hr />
+<h2 id="6-散射态与束缚态的希尔伯特空间结构">6. 散射态与束缚态的希尔伯特空间结构<a class="headerlink" href="#6-散射态与束缚态的希尔伯特空间结构" title="Permanent link">#</a></h2>
+<h3 id="哈密顿量与谱分解">哈密顿量与谱分解<a class="headerlink" href="#哈密顿量与谱分解" title="Permanent link">#</a></h3>
+<p>给定 <span class="arithmatex"><span class="MathJax_Preview">H = H_0 + V</span><script type="math/tex">H = H_0 + V</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 是自由哈密顿量，<span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 是势或相互作用。谱分解为：<br />
+$$<br />
+\mathcal H = \mathcal H_{\mathrm{bound}} \oplus \mathcal H_{\mathrm{scatt}}.<br />
+$$</p>
+<ul>
+<li>束缚态（Bound state）：离散本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>，对应归一化本征态 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n\rangle\in\mathcal H_{\mathrm{bound}}</span><script type="math/tex">|\psi_n\rangle\in\mathcal H_{\mathrm{bound}}</script></span>，满足 <span class="arithmatex"><span class="MathJax_Preview">\langle\psi_n|\psi_m\rangle=\delta_{nm}</span><script type="math/tex">\langle\psi_n|\psi_m\rangle=\delta_{nm}</script></span>。  </li>
+<li>散射态（Scattering state）：连续谱 <span class="arithmatex"><span class="MathJax_Preview">E&gt;0</span><script type="math/tex">E>0</script></span>，形式归一化 <span class="arithmatex"><span class="MathJax_Preview">\langle \psi_E | \psi_{E'}\rangle = \delta(E-E')</span><script type="math/tex">\langle \psi_E | \psi_{E'}\rangle = \delta(E-E')</script></span>。</li>
+</ul>
+<h3 id="渐进自由态asymptotic-free-states">渐进自由态（Asymptotic Free States）<a class="headerlink" href="#渐进自由态asymptotic-free-states" title="Permanent link">#</a></h3>
+<p>在 <span class="arithmatex"><span class="MathJax_Preview">t\to\pm\infty</span><script type="math/tex">t\to\pm\infty</script></span> 极限下，相互作用项 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 的影响消失，系统表现如自由粒子。自由态生成的空间为：<br />
+$$<br />
+\mathcal H_{\mathrm{free}} = \operatorname{span}{|\phi_p\rangle : H_0|\phi_p\rangle = E_p|\phi_p\rangle}.<br />
+$$</p>
+<hr />
+<h2 id="7-møller-算符与-s-算符">7. Møller 算符与 S 算符<a class="headerlink" href="#7-møller-算符与-s-算符" title="Permanent link">#</a></h2>
+<h3 id="时间演化算符">时间演化算符<a class="headerlink" href="#时间演化算符" title="Permanent link">#</a></h3>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+U(t,t_0)=e^{-\frac{i}{\hbar}H(t-t_0)}.
+</div>
+<script type="math/tex; mode=display">
+U(t,t_0)=e^{-\frac{i}{\hbar}H(t-t_0)}.
+</script>
+</div>
+<h3 id="møller-算符wave-operators">Møller 算符（Wave Operators）<a class="headerlink" href="#møller-算符wave-operators" title="Permanent link">#</a></h3>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\Omega_\pm = \lim_{t\to\mp\infty} e^{iH_0 t} e^{-iHt},
+</div>
+<script type="math/tex; mode=display">
+\Omega_\pm = \lim_{t\to\mp\infty} e^{iH_0 t} e^{-iHt},
+</script>
+</div>
+<p>其中 <span class="arithmatex"><span class="MathJax_Preview">\Omega_\pm:\mathcal H_{\mathrm{free}}\to\mathcal H_{\mathrm{int}}</span><script type="math/tex">\Omega_\pm:\mathcal H_{\mathrm{free}}\to\mathcal H_{\mathrm{int}}</script></span>，将自由态映射为“渐进相互作用态”。</p>
+<h3 id="s-算符scattering-operator">S 算符（Scattering Operator）<a class="headerlink" href="#s-算符scattering-operator" title="Permanent link">#</a></h3>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+S = \Omega_+^\dagger \Omega_-.
+</div>
+<script type="math/tex; mode=display">
+S = \Omega_+^\dagger \Omega_-.
+</script>
+</div>
+<p>作用在自由空间上：<br />
+$$<br />
+|\psi_{\mathrm{out}}\rangle = S |\psi_{\mathrm{in}}\rangle.<br />
+$$</p>
+<p>因此 <span class="arithmatex"><span class="MathJax_Preview">\mathcal H_{\mathrm{int}} \cong \mathcal H_{\mathrm{free}}</span><script type="math/tex">\mathcal H_{\mathrm{int}} \cong \mathcal H_{\mathrm{free}}</script></span>，同构映射由 <span class="arithmatex"><span class="MathJax_Preview">\Omega_\pm</span><script type="math/tex">\Omega_\pm</script></span> 给出。</p>
+<hr />
+<h2 id="8-三种语言对照表">8. 三种语言对照表<a class="headerlink" href="#8-三种语言对照表" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>形式化定义</th>
+<th>指标形式</th>
+<th>Dirac 记号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>向量</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">v=v^i e_i</span><script type="math/tex">v=v^i e_i</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">(v^i)</span><script type="math/tex">(v^i)</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\| v \rangle</span><script type="math/tex">\| v \rangle</script></span></td>
+</tr>
+<tr>
+<td>对偶向量</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\alpha=\alpha_i e^i</span><script type="math/tex">\alpha=\alpha_i e^i</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">(\alpha_i)</span><script type="math/tex">(\alpha_i)</script></span> | $\langle\alpha</td>
+<td>$</td>
+</tr>
+<tr>
+<td>配对</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\alpha(v)=\alpha_i v^i</span><script type="math/tex">\alpha(v)=\alpha_i v^i</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\alpha_i v^i</span><script type="math/tex">\alpha_i v^i</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\langle\alpha\|v\rangle</span><script type="math/tex">\langle\alpha\|v\rangle</script></span></td>
+</tr>
+<tr>
+<td>算符</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">A(e_i)=A^j{}_{i} e_j</span><script type="math/tex">A(e_i)=A^j{}_{i} e_j</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">(A^j{}_{i})</span><script type="math/tex">(A^j{}_{i})</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">A\|\psi\rangle</span><script type="math/tex">A\|\psi\rangle</script></span></td>
+</tr>
+<tr>
+<td>伴随算符</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\langle Av,w\rangle=\langle v,A^\dagger w\rangle</span><script type="math/tex">\langle Av,w\rangle=\langle v,A^\dagger w\rangle</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">A^{\dagger i}{}_{j}=(A^j{}_{i})^*</span><script type="math/tex">A^{\dagger i}{}_{j}=(A^j{}_{i})^*</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\langle v\|A^\dagger\|w\rangle</span><script type="math/tex">\langle v\|A^\dagger\|w\rangle</script></span></td>
+</tr>
+<tr>
+<td>张量积</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">v_1\otimes v_2</span><script type="math/tex">v_1\otimes v_2</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">v_1^i v_2^j</span><script type="math/tex">v_1^i v_2^j</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\|v_1\rangle\otimes\|v_2\rangle</span><script type="math/tex">\|v_1\rangle\otimes\|v_2\rangle</script></span></td>
+</tr>
+<tr>
+<td>直和</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">(v_1,v_2)</span><script type="math/tex">(v_1,v_2)</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">(v_1^i,v_2^j)</span><script type="math/tex">(v_1^i,v_2^j)</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\|v_1\rangle\oplus\|v_2\rangle</span><script type="math/tex">\|v_1\rangle\oplus\|v_2\rangle</script></span></td>
+</tr>
+<tr>
+<td>自由态</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 本征态</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\phi_p</span><script type="math/tex">\phi_p</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\|\phi_p\rangle</span><script type="math/tex">\|\phi_p\rangle</script></span>（例如波函数 <span class="arithmatex"><span class="MathJax_Preview">\psi_p(x)=e^{ipx}</span><script type="math/tex">\psi_p(x)=e^{ipx}</script></span>）</td>
+</tr>
+<tr>
+<td>相互作用态</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 本征态</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\psi</span><script type="math/tex">\psi</script></span></td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\|\psi\rangle</span><script type="math/tex">\|\psi\rangle</script></span>（波包或束缚波）</td>
+</tr>
+<tr>
+<td>渐进关系</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\psi_{\mathrm{in/out}}=\Omega_{\mp}\phi</span><script type="math/tex">\psi_{\mathrm{in/out}}=\Omega_{\mp}\phi</script></span></td>
+<td>—</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">\psi(x,t\to\pm\infty)\sim e^{ipx}+\dots</span><script type="math/tex">\psi(x,t\to\pm\infty)\sim e^{ipx}+\dots</script></span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="小结">小结<a class="headerlink" href="#小结" title="Permanent link">#</a></h2>
+<ul>
+<li>线性空间：抽象的“可叠加”的集合。  </li>
+<li>对偶空间：作用在向量上的线性泛函。  </li>
+<li>算符：向量空间上的线性映射。  </li>
+<li>希尔伯特空间：具有内积与完备性的线性空间，是物理态空间。  </li>
+<li>直和：表示系统状态空间的分块。  </li>
+<li>张量积：表示复合系统。  </li>
+<li>散射理论：<span class="arithmatex"><span class="MathJax_Preview">\mathcal H_{\mathrm{int}}</span><script type="math/tex">\mathcal H_{\mathrm{int}}</script></span> 与 <span class="arithmatex"><span class="MathJax_Preview">\mathcal H_{\mathrm{free}}</span><script type="math/tex">\mathcal H_{\mathrm{free}}</script></span> 通过 Møller 算符同构，S 算符描述输入输出映射。</li>
+</ul>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月6日 07:20:21 UTC"><span class="timeago" datetime="2025-11-06T07:20:21+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月6日 07:20:21 UTC">2025-11-06</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月6日 07:20:21 UTC"><span class="timeago" datetime="2025-11-06T07:20:21+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月6日 07:20:21 UTC">2025-11-06</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="tianbaiting/tianbaiting.github.io"
+        data-repo-id="R_kgDOOB38lw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOOB38l84Comp4"
+        data-mapping="url"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+  <script>
+    if (document.querySelector("body").getAttribute("data-md-color-scheme") === "slate") {
+      var giscus = document.querySelector("script[src*=giscus]")
+      giscus.setAttribute("data-theme", "https://gcore.jsdelivr.net/gh/TonyCrane/note/docs/css/giscus.css") 
+    }
+  </script>
+
+                  
+                </article>
+              </div>
+            
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+          
+            <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+              回到页面顶部
+            </a>
+          
+        </main>
+        
+          <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+        
+      </div>
+      <div class="md-dialog" data-md-component="dialog">
+        <div class="md-dialog__inner md-typeset"></div>
+      </div>
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+      
+      
+        <script src="../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+        
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        
+          <script src="https://d3js.org/d3.v7.min.js"></script>
+        
+          <script src="../../../../js/scheme.js"></script>
+        
+          <script src="../../../../js/graph.js"></script>
+        
+      
+    </body>
+  </html>
+  

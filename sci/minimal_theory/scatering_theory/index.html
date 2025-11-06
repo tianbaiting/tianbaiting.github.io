@@ -1505,6 +1505,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="true">
@@ -1567,8 +1571,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../directProductAndSum/" class="md-nav__link">
+        直积 / 直和 / 张量积 辨析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../functionalAna_SpecThe/" class="md-nav__link">
         泛函分析和谱理论初步
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linearspace/" class="md-nav__link">
+        线性空间、对偶空间与量子态
       </a>
     </li>
   
@@ -1678,8 +1710,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-角动量叠加与希尔伯特空间的张量积" class="md-nav__link">
-    6. 角动量叠加与希尔伯特空间的张量积
+  <a href="#6-角动量叠加--hilbert-空间叠加" class="md-nav__link">
+    6. 角动量叠加 &amp; Hilbert 空间叠加
   </a>
   
 </li>
@@ -2653,8 +2685,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-角动量叠加与希尔伯特空间的张量积" class="md-nav__link">
-    6. 角动量叠加与希尔伯特空间的张量积
+  <a href="#6-角动量叠加--hilbert-空间叠加" class="md-nav__link">
+    6. 角动量叠加 &amp; Hilbert 空间叠加
   </a>
   
 </li>
@@ -2749,31 +2781,57 @@
 <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">f_l(k)=\frac{e^{i\delta_l}\sin\delta_l}{k}=\frac{1}{k\cot\delta_l-ik}.</span><script type="math/tex">f_l(k)=\frac{e^{i\delta_l}\sin\delta_l}{k}=\frac{1}{k\cot\delta_l-ik}.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">f_l(k)=\frac{e^{i\delta_l}\sin\delta_l}{k}=\frac{1}{k\cot\delta_l-ik}.</span><script type="math/tex">f_l(k)=\frac{e^{i\delta_l}\sin\delta_l}{k}=\frac{1}{k\cot\delta_l-ik}.</script></span></script></span><br />
 分波法将三维问题化为若干径向一维问题（求 <span class="arithmatex"><span class="MathJax_Preview">\delta_l</span><script type="math/tex">\delta_l</script></span>），低能下常只需少数几个分波。</li>
 </ul>
-<h2 id="6-角动量叠加与希尔伯特空间的张量积">6. 角动量叠加与希尔伯特空间的张量积<a class="headerlink" href="#6-角动量叠加与希尔伯特空间的张量积" title="Permanent link">#</a></h2>
+<h2 id="6-角动量叠加--hilbert-空间叠加">6. 角动量叠加 &amp; Hilbert 空间叠加<a class="headerlink" href="#6-角动量叠加--hilbert-空间叠加" title="Permanent link">#</a></h2>
+<p>当粒子具有内部自由度（如自旋）或我们考虑多个粒子的系统时，需要用到希尔伯特空间的叠加。</p>
+<p>Hilbert 空间叠加 (Tensor Product):<br />
+如果一个系统由两个子系统 1 和 2 组成（例如，一个粒子的轨道运动 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}_{orb}</span><script type="math/tex">\mathcal{H}_{orb}</script></span> 和它的自旋 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}_{spin}</span><script type="math/tex">\mathcal{H}_{spin}</script></span>），那么复合系统的希尔伯特空间是两个子系统希尔伯特空间的张量积 (Tensor Product)：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2</div>
+<script type="math/tex; mode=display">\mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2</script>
+</div>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">\{|i\rangle_1\}</span><script type="math/tex">\{|i\rangle_1\}</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}_1</span><script type="math/tex">\mathcal{H}_1</script></span> 的基，<span class="arithmatex"><span class="MathJax_Preview">\{|j\rangle_2\}</span><script type="math/tex">\{|j\rangle_2\}</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}_2</span><script type="math/tex">\mathcal{H}_2</script></span> 的基，那么 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> 的一组基是 <span class="arithmatex"><span class="MathJax_Preview">\{|i\rangle_1 \otimes |j\rangle_2\}</span><script type="math/tex">\{|i\rangle_1 \otimes |j\rangle_2\}</script></span>，常简记为 <span class="arithmatex"><span class="MathJax_Preview">|i, j\rangle</span><script type="math/tex">|i, j\rangle</script></span>。</p>
+<p>例子: 一个自旋 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 的粒子在空间中运动。</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\mathcal{H} = \mathcal{H}_{orbital} \otimes \mathcal{H}_{spin} \cong L^2(\mathbb{R}^3) \otimes \mathbb{C}^{2s+1}</span><script type="math/tex">\mathcal{H} = \mathcal{H}_{orbital} \otimes \mathcal{H}_{spin} \cong L^2(\mathbb{R}^3) \otimes \mathbb{C}^{2s+1}</script></span></p>
+<p>一个态矢量可以写为 <span class="arithmatex"><span class="MathJax_Preview">|\psi\rangle</span><script type="math/tex">|\psi\rangle</script></span>，其波函数为 <span class="arithmatex"><span class="MathJax_Preview">\psi(\mathbf{x}, m_s) = \langle \mathbf{x}, m_s | \psi \rangle</span><script type="math/tex">\psi(\mathbf{x}, m_s) = \langle \mathbf{x}, m_s | \psi \rangle</script></span>，是一个 <span class="arithmatex"><span class="MathJax_Preview">(2s+1)</span><script type="math/tex">(2s+1)</script></span> 分量的自旋波函数。</p>
+<p>角动量叠加 (Angular Momentum Addition):<br />
+这是张量积空间中一个极其重要的应用。假设子系统 1 有角动量 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{J}_1</span><script type="math/tex">\mathbf{J}_1</script></span>，子系统 2 有角动量 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{J}_2</span><script type="math/tex">\mathbf{J}_2</script></span>。<br />
+总角动量算符定义在 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> 上：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\mathbf{J} = \mathbf{J}_1 \otimes \mathbf{1} + \mathbf{1} \otimes \mathbf{J}_2 \quad (\text{简记为 } \mathbf{J} = \mathbf{J}_1 + \mathbf{J}_2)</div>
+<script type="math/tex; mode=display">\mathbf{J} = \mathbf{J}_1 \otimes \mathbf{1} + \mathbf{1} \otimes \mathbf{J}_2 \quad (\text{简记为 } \mathbf{J} = \mathbf{J}_1 + \mathbf{J}_2)</script>
+</div>
+<p>基的变换:<br />
+在 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> 空间中，我们有两组常用的基：</p>
 <ul>
-<li>张量积：若系统由子系统 1、2 组成，<br />
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}=\mathcal{H}_1\otimes\mathcal{H}_2.</span><script type="math/tex">\mathcal{H}=\mathcal{H}_1\otimes\mathcal{H}_2.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}=\mathcal{H}_1\otimes\mathcal{H}_2.</span><script type="math/tex">\mathcal{H}=\mathcal{H}_1\otimes\mathcal{H}_2.</script></span></script></span><br />
-    基由 <span class="arithmatex"><span class="MathJax_Preview">|i\rangle_1\otimes|j\rangle_2</span><script type="math/tex">|i\rangle_1\otimes|j\rangle_2</script></span>（简记 <span class="arithmatex"><span class="MathJax_Preview">|i,j\rangle</span><script type="math/tex">|i,j\rangle</script></span>）给出。<br />
-    例：轨道空间 <span class="arithmatex"><span class="MathJax_Preview">\otimes</span><script type="math/tex">\otimes</script></span> 自旋空间 <span class="arithmatex"><span class="MathJax_Preview">\cong L^2(\mathbb{R}^3)\otimes\mathbb{C}^{2s+1}</span><script type="math/tex">\cong L^2(\mathbb{R}^3)\otimes\mathbb{C}^{2s+1}</script></span>。</li>
-<li>角动量合成：若有 <span class="arithmatex"><span class="MathJax_Preview">\mathbf J_1,\mathbf J_2</span><script type="math/tex">\mathbf J_1,\mathbf J_2</script></span>，总角动量<br />
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\mathbf J=\mathbf J_1+\mathbf J_2.</span><script type="math/tex">\mathbf J=\mathbf J_1+\mathbf J_2.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\mathbf J=\mathbf J_1+\mathbf J_2.</span><script type="math/tex">\mathbf J=\mathbf J_1+\mathbf J_2.</script></span></script></span><br />
-    常用基：<ul>
-<li>非耦合基：<span class="arithmatex"><span class="MathJax_Preview">|j_1,m_1;j_2,m_2\rangle</span><script type="math/tex">|j_1,m_1;j_2,m_2\rangle</script></span>（<span class="arithmatex"><span class="MathJax_Preview">J_{1z},J_{2z}</span><script type="math/tex">J_{1z},J_{2z}</script></span> 对角）</li>
-<li>耦合基：<span class="arithmatex"><span class="MathJax_Preview">|j_1,j_2;J,M\rangle</span><script type="math/tex">|j_1,j_2;J,M\rangle</script></span>（<span class="arithmatex"><span class="MathJax_Preview">J^2,J_z</span><script type="math/tex">J^2,J_z</script></span> 对角）<br />
-两基之间由 Clebsch–Gordan 系数变换：<br />
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">|j_1,j_2;J,M\rangle=\sum_{m_1,m_2}\langle j_1 m_1,j_2 m_2|J M\rangle\,|j_1,m_1;j_2,m_2\rangle.</span><script type="math/tex">|j_1,j_2;J,M\rangle=\sum_{m_1,m_2}\langle j_1 m_1,j_2 m_2|J M\rangle\,|j_1,m_1;j_2,m_2\rangle.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">|j_1,j_2;J,M\rangle=\sum_{m_1,m_2}\langle j_1 m_1,j_2 m_2|J M\rangle\,|j_1,m_1;j_2,m_2\rangle.</span><script type="math/tex">|j_1,j_2;J,M\rangle=\sum_{m_1,m_2}\langle j_1 m_1,j_2 m_2|J M\rangle\,|j_1,m_1;j_2,m_2\rangle.</script></span></script></span></li>
-</ul>
+<li>
+<p>非耦合基 (Uncoupled Basis): <span class="arithmatex"><span class="MathJax_Preview">|j_1, m_1; j_2, m_2\rangle</span><script type="math/tex">|j_1, m_1; j_2, m_2\rangle</script></span><br />
+它们是 <span class="arithmatex"><span class="MathJax_Preview">J_1^2, J_{1z}, J_2^2, J_{2z}</span><script type="math/tex">J_1^2, J_{1z}, J_2^2, J_{2z}</script></span> 的共同本征矢。</p>
 </li>
-<li>在散射中的应用：当势含自旋相关项（如自旋-轨道耦合 <span class="arithmatex"><span class="MathJax_Preview">V_{SO}\propto\mathbf L\cdot\mathbf S</span><script type="math/tex">V_{SO}\propto\mathbf L\cdot\mathbf S</script></span>）时，<span class="arithmatex"><span class="MathJax_Preview">L^2</span><script type="math/tex">L^2</script></span> 与 <span class="arithmatex"><span class="MathJax_Preview">S_z</span><script type="math/tex">S_z</script></span> 不再分别守恒，但若势旋转不变，<span class="arithmatex"><span class="MathJax_Preview">J^2</span><script type="math/tex">J^2</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">J_z</span><script type="math/tex">J_z</script></span> 仍守恒。此时应在耦合基 <span class="arithmatex"><span class="MathJax_Preview">|l,s;J,M\rangle</span><script type="math/tex">|l,s;J,M\rangle</script></span> 下展开，S 矩阵在 <span class="arithmatex"><span class="MathJax_Preview">J,M</span><script type="math/tex">J,M</script></span> 表象下对角，但可在 <span class="arithmatex"><span class="MathJax_Preview">l</span><script type="math/tex">l</script></span> 上非对角（例如在张量势作用下）。</li>
+<li>
+<p>耦合基 (Coupled Basis): <span class="arithmatex"><span class="MathJax_Preview">|j_1, j_2; J, M\rangle</span><script type="math/tex">|j_1, j_2; J, M\rangle</script></span><br />
+它们是 <span class="arithmatex"><span class="MathJax_Preview">J_1^2, J_2^2, J^2, J_z</span><script type="math/tex">J_1^2, J_2^2, J^2, J_z</script></span> 的共同本征矢。（注意 <span class="arithmatex"><span class="MathJax_Preview">J^2 = (\mathbf{J}_1+\mathbf{J}_2)^2</span><script type="math/tex">J^2 = (\mathbf{J}_1+\mathbf{J}_2)^2</script></span>）</p>
+</li>
 </ul>
-<p>（结束）</p>
+<p>这两组基通过 Clebsch-Gordan (CG) 系数 <span class="arithmatex"><span class="MathJax_Preview">\langle j_1 m_1, j_2 m_2 | J M \rangle</span><script type="math/tex">\langle j_1 m_1, j_2 m_2 | J M \rangle</script></span> 进行变换：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">|j_1, j_2; J, M\rangle = \sum_{m_1, m_2} \langle j_1 m_1, j_2 m_2 | J M \rangle |j_1, m_1; j_2, m_2\rangle</div>
+<script type="math/tex; mode=display">|j_1, j_2; J, M\rangle = \sum_{m_1, m_2} \langle j_1 m_1, j_2 m_2 | J M \rangle |j_1, m_1; j_2, m_2\rangle</script>
+</div>
+<p>在散射理论中的应用:<br />
+当相互作用 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 不仅仅是中心势 <span class="arithmatex"><span class="MathJax_Preview">V(r)</span><script type="math/tex">V(r)</script></span>，而是包含自旋相关的项时（例如 自旋-轨道耦合 <span class="arithmatex"><span class="MathJax_Preview">V_{SO} \propto \mathbf{L} \cdot \mathbf{S}</span><script type="math/tex">V_{SO} \propto \mathbf{L} \cdot \mathbf{S}</script></span>）：</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 不再与 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{L}</span><script type="math/tex">\mathbf{L}</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{S}</span><script type="math/tex">\mathbf{S}</script></span> 单独对易。</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">L^2</span><script type="math/tex">L^2</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">S_z</span><script type="math/tex">S_z</script></span> 不再是守恒量。</p>
+<p>但是，如果 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 仍然是旋转不变的（例如 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{L} \cdot \mathbf{S}</span><script type="math/tex">\mathbf{L} \cdot \mathbf{S}</script></span> 项），<span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 仍然与总角动量 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{J} = \mathbf{L} + \mathbf{S}</span><script type="math/tex">\mathbf{J} = \mathbf{L} + \mathbf{S}</script></span> 对易。</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">[H, J^2] = 0, \quad [H, J_z] = 0</span><script type="math/tex">[H, J^2] = 0, \quad [H, J_z] = 0</script></span></p>
+<p>在这种情况下，分波展开的正确 basis 不再是 <span class="arithmatex"><span class="MathJax_Preview">|l, m_l\rangle</span><script type="math/tex">|l, m_l\rangle</script></span>，而是耦合基 <span class="arithmatex"><span class="MathJax_Preview">|l, s; J, M\rangle</span><script type="math/tex">|l, s; J, M\rangle</script></span>。</p>
+<p>散射在 <span class="arithmatex"><span class="MathJax_Preview">J</span><script type="math/tex">J</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> 表象下是对角的（<span class="arithmatex"><span class="MathJax_Preview">J</span><script type="math/tex">J</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> 守恒），但S矩阵元 <span class="arithmatex"><span class="MathJax_Preview">\langle l', s; J, M | S | l, s; J, M \rangle</span><script type="math/tex">\langle l', s; J, M | S | l, s; J, M \rangle</script></span> 可能在 <span class="arithmatex"><span class="MathJax_Preview">l</span><script type="math/tex">l</script></span> 上非对角（即 <span class="arithmatex"><span class="MathJax_Preview">l</span><script type="math/tex">l</script></span> 不守恒，例如在张量势作用下）。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月6日 04:30:44 UTC"><span class="timeago" datetime="2025-11-06T04:30:44+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月6日 04:30:44 UTC">2025-11-06</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月6日 07:20:21 UTC"><span class="timeago" datetime="2025-11-06T07:20:21+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月6日 07:20:21 UTC">2025-11-06</span>
       
         <br>
         创建日期:
