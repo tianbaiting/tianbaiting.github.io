@@ -573,7 +573,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/directProductAndSum.zh.md",
-      "size": 8245,
+      "size": 11113,
       "url": "/sci/minimal_theory/directProductAndSum/"
     },
     {
@@ -1145,6 +1145,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-11-06 07:20:51.358664"
+    "generated_at": "2025-11-06 10:19:04.035352"
   }
 }
