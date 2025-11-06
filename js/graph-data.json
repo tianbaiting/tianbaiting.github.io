@@ -519,7 +519,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatering_theory.zh.md",
-      "size": 122,
+      "size": 3960,
       "url": "/sci/minimal_theory/scatering_theory/"
     },
     {
@@ -1127,6 +1127,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-11-06 04:17:12.353753"
+    "generated_at": "2025-11-06 04:31:19.506764"
   }
 }

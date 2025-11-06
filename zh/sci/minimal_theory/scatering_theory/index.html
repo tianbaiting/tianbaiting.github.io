@@ -1641,36 +1641,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#数学基础" class="md-nav__link">
-    数学基础
+  <a href="#1-数学基础--希尔伯特空间-hilbert-space" class="md-nav__link">
+    1. 数学基础 — 希尔伯特空间 (Hilbert Space)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mt-r矩阵" class="md-nav__link">
-    M,T ,R矩阵
+  <a href="#2-态的极限与-møller-算符" class="md-nav__link">
+    2. 态的极限与 Møller 算符
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#g-算符---resolvent" class="md-nav__link">
-    G 算符 - resolvent
+  <a href="#3-srt-矩阵" class="md-nav__link">
+    3. S、R、T 矩阵
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#分波--寻找basis" class="md-nav__link">
-    分波 -寻找basis
+  <a href="#4-resolventg-算符与-lippmannschwinger-方程" class="md-nav__link">
+    4. Resolvent（G 算符）与 Lippmann–Schwinger 方程
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#角动量叠加-hibert空间叠加" class="md-nav__link">
-    角动量叠加 Hibert空间叠加
+  <a href="#5-分波-partial-waves--选取basis" class="md-nav__link">
+    5. 分波 (Partial Waves) — 选取basis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-角动量叠加与希尔伯特空间的张量积" class="md-nav__link">
+    6. 角动量叠加与希尔伯特空间的张量积
   </a>
   
 </li>
@@ -2609,36 +2616,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#数学基础" class="md-nav__link">
-    数学基础
+  <a href="#1-数学基础--希尔伯特空间-hilbert-space" class="md-nav__link">
+    1. 数学基础 — 希尔伯特空间 (Hilbert Space)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mt-r矩阵" class="md-nav__link">
-    M,T ,R矩阵
+  <a href="#2-态的极限与-møller-算符" class="md-nav__link">
+    2. 态的极限与 Møller 算符
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#g-算符---resolvent" class="md-nav__link">
-    G 算符 - resolvent
+  <a href="#3-srt-矩阵" class="md-nav__link">
+    3. S、R、T 矩阵
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#分波--寻找basis" class="md-nav__link">
-    分波 -寻找basis
+  <a href="#4-resolventg-算符与-lippmannschwinger-方程" class="md-nav__link">
+    4. Resolvent（G 算符）与 Lippmann–Schwinger 方程
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#角动量叠加-hibert空间叠加" class="md-nav__link">
-    角动量叠加 Hibert空间叠加
+  <a href="#5-分波-partial-waves--选取basis" class="md-nav__link">
+    5. 分波 (Partial Waves) — 选取basis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-角动量叠加与希尔伯特空间的张量积" class="md-nav__link">
+    6. 角动量叠加与希尔伯特空间的张量积
   </a>
   
 </li>
@@ -2661,21 +2675,103 @@
 
 
 <h1 id="散射理论">散射理论<a class="headerlink" href="#散射理论" title="Permanent link">#</a></h1>
-<h2 id="数学基础">数学基础<a class="headerlink" href="#数学基础" title="Permanent link">#</a></h2>
-<p>希尔伯特空间</p>
-<p>H space 举例</p>
-<p>态的强极限 弱极限：</p>
-<h2 id="mt-r矩阵">M,T ,R矩阵<a class="headerlink" href="#mt-r矩阵" title="Permanent link">#</a></h2>
-<h2 id="g-算符---resolvent">G 算符 - resolvent<a class="headerlink" href="#g-算符---resolvent" title="Permanent link">#</a></h2>
-<h2 id="分波--寻找basis">分波 -寻找basis<a class="headerlink" href="#分波--寻找basis" title="Permanent link">#</a></h2>
-<h2 id="角动量叠加-hibert空间叠加">角动量叠加 Hibert空间叠加<a class="headerlink" href="#角动量叠加-hibert空间叠加" title="Permanent link">#</a></h2>
+<h2 id="1-数学基础--希尔伯特空间-hilbert-space">1. 数学基础 — 希尔伯特空间 (Hilbert Space)<a class="headerlink" href="#1-数学基础--希尔伯特空间-hilbert-space" title="Permanent link">#</a></h2>
+<p>在量子力学中，物理系统的态由希尔伯特空间 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> 中的态矢量描述。希尔伯特空间是带内积 <span class="arithmatex"><span class="MathJax_Preview">\langle\cdot|\cdot\rangle</span><script type="math/tex">\langle\cdot|\cdot\rangle</script></span> 的完备矢量空间。</p>
+<ul>
+<li>内积 (Inner product)：概率幅 <span class="arithmatex"><span class="MathJax_Preview">\langle\phi|\psi\rangle</span><script type="math/tex">\langle\phi|\psi\rangle</script></span>，概率为 <span class="arithmatex"><span class="MathJax_Preview">|\langle\phi|\psi\rangle|^2</span><script type="math/tex">|\langle\phi|\psi\rangle|^2</script></span>。</li>
+<li>完备性 (Completeness)：所有柯西序列收敛于空间内点，保证极限运算良定。</li>
+<li>可分离 (Separable)：存在可数稠密子集或可数正交归一基。</li>
+</ul>
+<p>常见例子：<br />
+- 有限维：<span class="arithmatex"><span class="MathJax_Preview">\mathbb{C}^n</span><script type="math/tex">\mathbb{C}^n</script></span>，如自旋-&frac12; 系统 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}=\mathbb{C}^2</span><script type="math/tex">\mathcal{H}=\mathbb{C}^2</script></span>：<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">|\psi\rangle=\alpha|\uparrow\rangle+\beta|\downarrow\rangle=\begin{pmatrix}\alpha\\\beta\end{pmatrix},\quad |\alpha|^2+|\beta|^2=1.</span><script type="math/tex">|\psi\rangle=\alpha|\uparrow\rangle+\beta|\downarrow\rangle=\begin{pmatrix}\alpha\\\beta\end{pmatrix},\quad |\alpha|^2+|\beta|^2=1.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">|\psi\rangle=\alpha|\uparrow\rangle+\beta|\downarrow\rangle=\begin{pmatrix}\alpha\\\beta\end{pmatrix},\quad |\alpha|^2+|\beta|^2=1.</span><script type="math/tex">|\psi\rangle=\alpha|\uparrow\rangle+\beta|\downarrow\rangle=\begin{pmatrix}\alpha\\\beta\end{pmatrix},\quad |\alpha|^2+|\beta|^2=1.</script></span></script></span><br />
+    内积 <span class="arithmatex"><span class="MathJax_Preview">\langle\phi|\psi\rangle=\phi_1^*\psi_1+\phi_2^*\psi_2</span><script type="math/tex">\langle\phi|\psi\rangle=\phi_1^*\psi_1+\phi_2^*\psi_2</script></span>。<br />
+- 可数基（例如 <span class="arithmatex"><span class="MathJax_Preview">\ell^2</span><script type="math/tex">\ell^2</script></span>）：平方可和复数序列 <span class="arithmatex"><span class="MathJax_Preview">a=(a_1,a_2,\dots)</span><script type="math/tex">a=(a_1,a_2,\dots)</script></span> 满足 <span class="arithmatex"><span class="MathJax_Preview">\sum|a_n|^2&lt;\infty</span><script type="math/tex">\sum|a_n|^2<\infty</script></span>。例：一维谐振子，基态 <span class="arithmatex"><span class="MathJax_Preview">|n\rangle</span><script type="math/tex">|n\rangle</script></span>。<br />
+- <span class="arithmatex"><span class="MathJax_Preview">L^2(\mathbb{R}^3)</span><script type="math/tex">L^2(\mathbb{R}^3)</script></span>：平方可积波函数 <span class="arithmatex"><span class="MathJax_Preview">\psi(\mathbf{x})</span><script type="math/tex">\psi(\mathbf{x})</script></span>，内积<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\langle\phi|\psi\rangle=\int_{\mathbb{R}^3}\phi^*(\mathbf{x})\psi(\mathbf{x})\,d^3x.</span><script type="math/tex">\langle\phi|\psi\rangle=\int_{\mathbb{R}^3}\phi^*(\mathbf{x})\psi(\mathbf{x})\,d^3x.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\langle\phi|\psi\rangle=\int_{\mathbb{R}^3}\phi^*(\mathbf{x})\psi(\mathbf{x})\,d^3x.</span><script type="math/tex">\langle\phi|\psi\rangle=\int_{\mathbb{R}^3}\phi^*(\mathbf{x})\psi(\mathbf{x})\,d^3x.</script></span></script></span><br />
+    注意平面波 <span class="arithmatex"><span class="MathJax_Preview">e^{i\mathbf{k}\cdot\mathbf{x}}</span><script type="math/tex">e^{i\mathbf{k}\cdot\mathbf{x}}</script></span> 为广义本征矢，需用配备希尔伯特空间（rigged Hilbert space）处理。</p>
+<h2 id="2-态的极限与-møller-算符">2. 态的极限与 Møller 算符<a class="headerlink" href="#2-态的极限与-møller-算符" title="Permanent link">#</a></h2>
+<p>在散射理论中“入/出”态通过 <span class="arithmatex"><span class="MathJax_Preview">t\to\mp\infty</span><script type="math/tex">t\to\mp\infty</script></span> 的极限定义。</p>
+<ul>
+<li>强极限 (strong limit)：<span class="arithmatex"><span class="MathJax_Preview">s\text{-}\lim_{n\to\infty}|\psi_n\rangle=|\psi\rangle</span><script type="math/tex">s\text{-}\lim_{n\to\infty}|\psi_n\rangle=|\psi\rangle</script></span> 当且仅当<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\lim_{n\to\infty}\||\psi_n\rangle-|\psi\rangle\|=0.</span><script type="math/tex">\lim_{n\to\infty}\||\psi_n\rangle-|\psi\rangle\|=0.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\lim_{n\to\infty}\||\psi_n\rangle-|\psi\rangle\|=0.</span><script type="math/tex">\lim_{n\to\infty}\||\psi_n\rangle-|\psi\rangle\|=0.</script></span></script></span></li>
+<li>弱极限 (weak limit)：<span class="arithmatex"><span class="MathJax_Preview">w\text{-}\lim_{n\to\infty}|\psi_n\rangle=|\psi\rangle</span><script type="math/tex">w\text{-}\lim_{n\to\infty}|\psi_n\rangle=|\psi\rangle</script></span> 当且仅当对任意固定 <span class="arithmatex"><span class="MathJax_Preview">|\phi\rangle\in\mathcal{H}</span><script type="math/tex">|\phi\rangle\in\mathcal{H}</script></span>，<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\lim_{n\to\infty}\langle\phi|\psi_n\rangle=\langle\phi|\psi\rangle.</span><script type="math/tex">\lim_{n\to\infty}\langle\phi|\psi_n\rangle=\langle\phi|\psi\rangle.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\lim_{n\to\infty}\langle\phi|\psi_n\rangle=\langle\phi|\psi\rangle.</span><script type="math/tex">\lim_{n\to\infty}\langle\phi|\psi_n\rangle=\langle\phi|\psi\rangle.</script></span></script></span><br />
+强收敛蕴含弱收敛，反之不然。</li>
+</ul>
+<p>Møller 算符（要求为强极限）将自由演化态映射到相互作用态：<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\Omega_\pm=\lim_{t\to\mp\infty} e^{iHt/\hbar}e^{-iH_0 t/\hbar}.</span><script type="math/tex">\Omega_\pm=\lim_{t\to\mp\infty} e^{iHt/\hbar}e^{-iH_0 t/\hbar}.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\Omega_\pm=\lim_{t\to\mp\infty} e^{iHt/\hbar}e^{-iH_0 t/\hbar}.</span><script type="math/tex">\Omega_\pm=\lim_{t\to\mp\infty} e^{iHt/\hbar}e^{-iH_0 t/\hbar}.</script></span></script></span><br />
+入态/出态定义为 <span class="arithmatex"><span class="MathJax_Preview">|\psi^{(\pm)}\rangle=\Omega_\pm|\phi\rangle</span><script type="math/tex">|\psi^{(\pm)}\rangle=\Omega_\pm|\phi\rangle</script></span>。</p>
+<h2 id="3-srt-矩阵">3. S、R、T 矩阵<a class="headerlink" href="#3-srt-矩阵" title="Permanent link">#</a></h2>
+<ul>
+<li>S 算符（散射算符）：将入态映射到出态<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">|\psi_{out}\rangle=S|\psi_{in}\rangle,\qquad S=\Omega_-^\dagger\Omega_+.</span><script type="math/tex">|\psi_{out}\rangle=S|\psi_{in}\rangle,\qquad S=\Omega_-^\dagger\Omega_+.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">|\psi_{out}\rangle=S|\psi_{in}\rangle,\qquad S=\Omega_-^\dagger\Omega_+.</span><script type="math/tex">|\psi_{out}\rangle=S|\psi_{in}\rangle,\qquad S=\Omega_-^\dagger\Omega_+.</script></span></script></span><br />
+    矩阵元 <span class="arithmatex"><span class="MathJax_Preview">S_{fi}=\langle\phi_f|S|\phi_i\rangle</span><script type="math/tex">S_{fi}=\langle\phi_f|S|\phi_i\rangle</script></span>。</li>
+<li>R 算符（Reaction）：去掉未散射的单位部分<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">S=\mathbf{1}+R.</span><script type="math/tex">S=\mathbf{1}+R.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">S=\mathbf{1}+R.</span><script type="math/tex">S=\mathbf{1}+R.</script></span></script></span></li>
+<li>T 算符（跃迁算符）：通过能量 <span class="arithmatex"><span class="MathJax_Preview">\delta</span><script type="math/tex">\delta</script></span> 把 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 的能量守恒部分分离出来<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">R_{fi}=-2\pi i\,\delta(E_f-E_i)\,T_{fi},</span><script type="math/tex">R_{fi}=-2\pi i\,\delta(E_f-E_i)\,T_{fi},</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">R_{fi}=-2\pi i\,\delta(E_f-E_i)\,T_{fi},</span><script type="math/tex">R_{fi}=-2\pi i\,\delta(E_f-E_i)\,T_{fi},</script></span></script></span><br />
+    即<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">S_{fi}=\delta_{fi}-2\pi i\,\delta(E_f-E_i)\,T_{fi}.</span><script type="math/tex">S_{fi}=\delta_{fi}-2\pi i\,\delta(E_f-E_i)\,T_{fi}.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">S_{fi}=\delta_{fi}-2\pi i\,\delta(E_f-E_i)\,T_{fi}.</span><script type="math/tex">S_{fi}=\delta_{fi}-2\pi i\,\delta(E_f-E_i)\,T_{fi}.</script></span></script></span><br />
+    在壳 (on-shell) 的 <span class="arithmatex"><span class="MathJax_Preview">T_{fi}</span><script type="math/tex">T_{fi}</script></span> 可由相互作用势 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 與入态求得：<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">T_{fi}=\langle\phi_f|V|\psi_i^{(+)}\rangle.</span><script type="math/tex">T_{fi}=\langle\phi_f|V|\psi_i^{(+)}\rangle.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">T_{fi}=\langle\phi_f|V|\psi_i^{(+)}\rangle.</span><script type="math/tex">T_{fi}=\langle\phi_f|V|\psi_i^{(+)}\rangle.</script></span></script></span></li>
+</ul>
+<h2 id="4-resolventg-算符与-lippmannschwinger-方程">4. Resolvent（G 算符）与 Lippmann–Schwinger 方程<a class="headerlink" href="#4-resolventg-算符与-lippmannschwinger-方程" title="Permanent link">#</a></h2>
+<ul>
+<li>预解算符（Resolvent）：<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">G(z)=(z-H)^{-1},\qquad G_0(z)=(z-H_0)^{-1},\quad z\in\mathbb{C}.</span><script type="math/tex">G(z)=(z-H)^{-1},\qquad G_0(z)=(z-H_0)^{-1},\quad z\in\mathbb{C}.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">G(z)=(z-H)^{-1},\qquad G_0(z)=(z-H_0)^{-1},\quad z\in\mathbb{C}.</span><script type="math/tex">G(z)=(z-H)^{-1},\qquad G_0(z)=(z-H_0)^{-1},\quad z\in\mathbb{C}.</script></span></script></span></li>
+<li>Dyson 恒等式：<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">G=G_0+G_0 V G = G_0 + G V G_0.</span><script type="math/tex">G=G_0+G_0 V G = G_0 + G V G_0.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">G=G_0+G_0 V G = G_0 + G V G_0.</span><script type="math/tex">G=G_0+G_0 V G = G_0 + G V G_0.</script></span></script></span></li>
+<li>Lippmann–Schwinger 方程（散射态）：<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">|\psi^{(\pm)}\rangle=|\phi\rangle+G_0(E\pm i0) V |\psi^{(\pm)}\rangle,</span><script type="math/tex">|\psi^{(\pm)}\rangle=|\phi\rangle+G_0(E\pm i0) V |\psi^{(\pm)}\rangle,</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">|\psi^{(\pm)}\rangle=|\phi\rangle+G_0(E\pm i0) V |\psi^{(\pm)}\rangle,</span><script type="math/tex">|\psi^{(\pm)}\rangle=|\phi\rangle+G_0(E\pm i0) V |\psi^{(\pm)}\rangle,</script></span></script></span><br />
+    其中 <span class="arithmatex"><span class="MathJax_Preview">H_0|\phi\rangle=E|\phi\rangle</span><script type="math/tex">H_0|\phi\rangle=E|\phi\rangle</script></span>，<span class="arithmatex"><span class="MathJax_Preview">i0</span><script type="math/tex">i0</script></span>（<span class="arithmatex"><span class="MathJax_Preview">i\epsilon,\ \epsilon\to0^+</span><script type="math/tex">i\epsilon,\ \epsilon\to0^+</script></span>）指定边值并保证正确渐进行为。</li>
+<li>T 算符的表示与方程：<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">T(z)=V+V G(z) V = V + V G_0(z) T(z).</span><script type="math/tex">T(z)=V+V G(z) V = V + V G_0(z) T(z).</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">T(z)=V+V G(z) V = V + V G_0(z) T(z).</span><script type="math/tex">T(z)=V+V G(z) V = V + V G_0(z) T(z).</script></span></script></span><br />
+    取 <span class="arithmatex"><span class="MathJax_Preview">z=E_i+i0</span><script type="math/tex">z=E_i+i0</script></span> 得 <span class="arithmatex"><span class="MathJax_Preview">T_{fi}=\langle\phi_f|T(E_i+i0)|\phi_i\rangle</span><script type="math/tex">T_{fi}=\langle\phi_f|T(E_i+i0)|\phi_i\rangle</script></span>。</li>
+</ul>
+<h2 id="5-分波-partial-waves--选取basis">5. 分波 (Partial Waves) — 选取basis<a class="headerlink" href="#5-分波-partial-waves--选取basis" title="Permanent link">#</a></h2>
+<p>对中心势 <span class="arithmatex"><span class="MathJax_Preview">V(\mathbf r)=V(r)</span><script type="math/tex">V(\mathbf r)=V(r)</script></span>，系统旋转不变，<span class="arithmatex"><span class="MathJax_Preview">[H,L^2]=[H,L_z]=0</span><script type="math/tex">[H,L^2]=[H,L_z]=0</script></span>，可取共同本征态 <span class="arithmatex"><span class="MathJax_Preview">|E,l,m\rangle</span><script type="math/tex">|E,l,m\rangle</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">|k,l,m\rangle</span><script type="math/tex">|k,l,m\rangle</script></span>。</p>
+<ul>
+<li>平面波的分波展开：<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">e^{i\mathbf{k}\cdot\mathbf{r}}=\sum_{l=0}^\infty\sum_{m=-l}^l 4\pi i^l j_l(kr) Y_{lm}^*(\hat{\mathbf k}) Y_{lm}(\hat{\mathbf r}).</span><script type="math/tex">e^{i\mathbf{k}\cdot\mathbf{r}}=\sum_{l=0}^\infty\sum_{m=-l}^l 4\pi i^l j_l(kr) Y_{lm}^*(\hat{\mathbf k}) Y_{lm}(\hat{\mathbf r}).</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">e^{i\mathbf{k}\cdot\mathbf{r}}=\sum_{l=0}^\infty\sum_{m=-l}^l 4\pi i^l j_l(kr) Y_{lm}^*(\hat{\mathbf k}) Y_{lm}(\hat{\mathbf r}).</span><script type="math/tex">e^{i\mathbf{k}\cdot\mathbf{r}}=\sum_{l=0}^\infty\sum_{m=-l}^l 4\pi i^l j_l(kr) Y_{lm}^*(\hat{\mathbf k}) Y_{lm}(\hat{\mathbf r}).</script></span></script></span><br />
+    若 <span class="arithmatex"><span class="MathJax_Preview">\hat{\mathbf k}=\hat{\mathbf z}</span><script type="math/tex">\hat{\mathbf k}=\hat{\mathbf z}</script></span>：<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">e^{ikz}=\sum_{l=0}^\infty(2l+1)i^l j_l(kr)P_l(\cos\theta).</span><script type="math/tex">e^{ikz}=\sum_{l=0}^\infty(2l+1)i^l j_l(kr)P_l(\cos\theta).</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">e^{ikz}=\sum_{l=0}^\infty(2l+1)i^l j_l(kr)P_l(\cos\theta).</span><script type="math/tex">e^{ikz}=\sum_{l=0}^\infty(2l+1)i^l j_l(kr)P_l(\cos\theta).</script></span></script></span></li>
+<li>相移 (phase shift)：每一分波在远场产生相移 <span class="arithmatex"><span class="MathJax_Preview">\delta_l(k)</span><script type="math/tex">\delta_l(k)</script></span>：<ul>
+<li>自由径向波：<span class="arithmatex"><span class="MathJax_Preview">R_l(r)\sim\sin(kr-l\pi/2)</span><script type="math/tex">R_l(r)\sim\sin(kr-l\pi/2)</script></span></li>
+<li>散射后：<span class="arithmatex"><span class="MathJax_Preview">R_l(r)\sim\sin(kr-l\pi/2+\delta_l)</span><script type="math/tex">R_l(r)\sim\sin(kr-l\pi/2+\delta_l)</script></span></li>
+</ul>
+</li>
+<li>散射振幅与分波展开：<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">f(\theta)=\sum_{l=0}^\infty (2l+1) f_l(k) P_l(\cos\theta),</span><script type="math/tex">f(\theta)=\sum_{l=0}^\infty (2l+1) f_l(k) P_l(\cos\theta),</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">f(\theta)=\sum_{l=0}^\infty (2l+1) f_l(k) P_l(\cos\theta),</span><script type="math/tex">f(\theta)=\sum_{l=0}^\infty (2l+1) f_l(k) P_l(\cos\theta),</script></span></script></span><br />
+    其中<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">f_l(k)=\frac{e^{i\delta_l}\sin\delta_l}{k}=\frac{1}{k\cot\delta_l-ik}.</span><script type="math/tex">f_l(k)=\frac{e^{i\delta_l}\sin\delta_l}{k}=\frac{1}{k\cot\delta_l-ik}.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">f_l(k)=\frac{e^{i\delta_l}\sin\delta_l}{k}=\frac{1}{k\cot\delta_l-ik}.</span><script type="math/tex">f_l(k)=\frac{e^{i\delta_l}\sin\delta_l}{k}=\frac{1}{k\cot\delta_l-ik}.</script></span></script></span><br />
+分波法将三维问题化为若干径向一维问题（求 <span class="arithmatex"><span class="MathJax_Preview">\delta_l</span><script type="math/tex">\delta_l</script></span>），低能下常只需少数几个分波。</li>
+</ul>
+<h2 id="6-角动量叠加与希尔伯特空间的张量积">6. 角动量叠加与希尔伯特空间的张量积<a class="headerlink" href="#6-角动量叠加与希尔伯特空间的张量积" title="Permanent link">#</a></h2>
+<ul>
+<li>张量积：若系统由子系统 1、2 组成，<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}=\mathcal{H}_1\otimes\mathcal{H}_2.</span><script type="math/tex">\mathcal{H}=\mathcal{H}_1\otimes\mathcal{H}_2.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}=\mathcal{H}_1\otimes\mathcal{H}_2.</span><script type="math/tex">\mathcal{H}=\mathcal{H}_1\otimes\mathcal{H}_2.</script></span></script></span><br />
+    基由 <span class="arithmatex"><span class="MathJax_Preview">|i\rangle_1\otimes|j\rangle_2</span><script type="math/tex">|i\rangle_1\otimes|j\rangle_2</script></span>（简记 <span class="arithmatex"><span class="MathJax_Preview">|i,j\rangle</span><script type="math/tex">|i,j\rangle</script></span>）给出。<br />
+    例：轨道空间 <span class="arithmatex"><span class="MathJax_Preview">\otimes</span><script type="math/tex">\otimes</script></span> 自旋空间 <span class="arithmatex"><span class="MathJax_Preview">\cong L^2(\mathbb{R}^3)\otimes\mathbb{C}^{2s+1}</span><script type="math/tex">\cong L^2(\mathbb{R}^3)\otimes\mathbb{C}^{2s+1}</script></span>。</li>
+<li>角动量合成：若有 <span class="arithmatex"><span class="MathJax_Preview">\mathbf J_1,\mathbf J_2</span><script type="math/tex">\mathbf J_1,\mathbf J_2</script></span>，总角动量<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\mathbf J=\mathbf J_1+\mathbf J_2.</span><script type="math/tex">\mathbf J=\mathbf J_1+\mathbf J_2.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\mathbf J=\mathbf J_1+\mathbf J_2.</span><script type="math/tex">\mathbf J=\mathbf J_1+\mathbf J_2.</script></span></script></span><br />
+    常用基：<ul>
+<li>非耦合基：<span class="arithmatex"><span class="MathJax_Preview">|j_1,m_1;j_2,m_2\rangle</span><script type="math/tex">|j_1,m_1;j_2,m_2\rangle</script></span>（<span class="arithmatex"><span class="MathJax_Preview">J_{1z},J_{2z}</span><script type="math/tex">J_{1z},J_{2z}</script></span> 对角）</li>
+<li>耦合基：<span class="arithmatex"><span class="MathJax_Preview">|j_1,j_2;J,M\rangle</span><script type="math/tex">|j_1,j_2;J,M\rangle</script></span>（<span class="arithmatex"><span class="MathJax_Preview">J^2,J_z</span><script type="math/tex">J^2,J_z</script></span> 对角）<br />
+两基之间由 Clebsch–Gordan 系数变换：<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">|j_1,j_2;J,M\rangle=\sum_{m_1,m_2}\langle j_1 m_1,j_2 m_2|J M\rangle\,|j_1,m_1;j_2,m_2\rangle.</span><script type="math/tex">|j_1,j_2;J,M\rangle=\sum_{m_1,m_2}\langle j_1 m_1,j_2 m_2|J M\rangle\,|j_1,m_1;j_2,m_2\rangle.</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">|j_1,j_2;J,M\rangle=\sum_{m_1,m_2}\langle j_1 m_1,j_2 m_2|J M\rangle\,|j_1,m_1;j_2,m_2\rangle.</span><script type="math/tex">|j_1,j_2;J,M\rangle=\sum_{m_1,m_2}\langle j_1 m_1,j_2 m_2|J M\rangle\,|j_1,m_1;j_2,m_2\rangle.</script></span></script></span></li>
+</ul>
+</li>
+<li>在散射中的应用：当势含自旋相关项（如自旋-轨道耦合 <span class="arithmatex"><span class="MathJax_Preview">V_{SO}\propto\mathbf L\cdot\mathbf S</span><script type="math/tex">V_{SO}\propto\mathbf L\cdot\mathbf S</script></span>）时，<span class="arithmatex"><span class="MathJax_Preview">L^2</span><script type="math/tex">L^2</script></span> 与 <span class="arithmatex"><span class="MathJax_Preview">S_z</span><script type="math/tex">S_z</script></span> 不再分别守恒，但若势旋转不变，<span class="arithmatex"><span class="MathJax_Preview">J^2</span><script type="math/tex">J^2</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">J_z</span><script type="math/tex">J_z</script></span> 仍守恒。此时应在耦合基 <span class="arithmatex"><span class="MathJax_Preview">|l,s;J,M\rangle</span><script type="math/tex">|l,s;J,M\rangle</script></span> 下展开，S 矩阵在 <span class="arithmatex"><span class="MathJax_Preview">J,M</span><script type="math/tex">J,M</script></span> 表象下对角，但可在 <span class="arithmatex"><span class="MathJax_Preview">l</span><script type="math/tex">l</script></span> 上非对角（例如在张量势作用下）。</li>
+</ul>
+<p>（结束）</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月6日 04:16:28 UTC"><span class="timeago" datetime="2025-11-06T04:16:28+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月6日 04:16:28 UTC">2025-11-06</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月6日 04:30:44 UTC"><span class="timeago" datetime="2025-11-06T04:30:44+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月6日 04:30:44 UTC">2025-11-06</span>
       
         <br>
         创建日期:
