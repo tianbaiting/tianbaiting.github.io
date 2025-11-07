@@ -134,7 +134,7 @@ Stone 公式（或 Stone-von Neumann 公式）是上述直觉的严格数学表�
 
 Stone 公式指出，这个谱测量 $E(\Delta)$ 可以通过 $G(z)$ 在实轴上方和下方的极限来恢复 [24](#ref-24)。令 $G(\lambda \pm i0) = \lim_{\epsilon \to 0^+} G(\lambda \pm i\epsilon)$。对于任意区间 $(a, b)$，我们有：
 
-$ \frac{E((a, b)) + E([a, b])}{2} = \lim_{\epsilon \to 0^+} \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda $  
+$$ \frac{E((a, b)) + E([a, b])}{2} = \lim_{\epsilon \to 0^+} \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda $$
 
 这个公式是复分析中 Sokhotski–Plemelj 定理的算符版本，它表明 $G(z)$ 跨越实轴的“跳跃” $\text{Disc}[G(\lambda)] = G(\lambda+i0) - G(\lambda-i0)$（注意符号约定）与谱测量 $dE_\lambda$ 成正比。 
 
@@ -291,7 +291,10 @@ $$P_n(\lambda) = P_n^{(0)} + \lambda P_n^{(1)} + \lambda^2 P_n^{(2)} + \dots$$
 
 1. 定义投影算符 $P$ 和 $Q$：  
 
-$$P = P_n^{(0)} = |\psi_n^{(0)}\rangle\langle \psi_n^{(0)}|$$ （投影到我们关心的未微扰态）  
+$$P = P_n^{(0)} = |\psi_n^{(0)}\rangle\langle \psi_n^{(0)}|$$
+
+（投影到我们关心的未微扰态)
+
 $$Q = I - P = \sum_{k \neq n} |\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|$$
 
    （投影到所有其他态的正交子空间）[26](#ref-26)。  
@@ -509,7 +512,7 @@ $$\lambda (PVP) P|\psi\rangle = \lambda E^{(1)} P|\psi\rangle$$
 
 <a id="ref-26"></a>26. Chapter 17\. Time-Independent Perturbation Theory of Non ...， [https://people.chem.ucsb.edu/metiu/horia/OldFiles/QM2015/Ch17QM.pdf](https://people.chem.ucsb.edu/metiu/horia/OldFiles/QM2015/Ch17QM.pdf)  
 
-<a id="ref-27"></a>27. Perturbation theory (quantum mechanics) \- Wikipedia， [https://en.wikipedia.org/wiki/Perturbation\_theory\_(quantum\_mechanics)](https://en.wikipedia.org/wiki/Perturbation_theory_\(quantum_mechanics\))  
+<a id="ref-27"></a>27. Perturbation theory (quantum mechanics) \- Wikipedia， [https://en.wikipedia.org/wiki/Perturbation\_theory\_(quantum\_mechanics)](https://en.wikipedia.org/wiki/Perturbation_theory_(quantum_mechanics))  
 
 <a id="ref-28"></a>28. RAYLEIGH-SCHR¨ODINGER PERTURBATION ... \- Hikari Ltd， [https://www.m-hikari.com/mccartin.pdf](https://www.m-hikari.com/mccartin.pdf)  
 
