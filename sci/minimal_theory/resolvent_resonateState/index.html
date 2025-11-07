@@ -21,7 +21,7 @@
       
       
         
-          <title>**共振态的数学理论：作为解析延拓预解式算符极点的证明** - TBT个人网站</title>
+          <title>共振态 resolvent - TBT个人网站</title>
         
       
       
@@ -79,7 +79,7 @@
       <div data-md-component="skip">
         
           
-          <a href="#共振态的数学理论作为解析延拓预解式算符极点的证明" class="md-skip">
+          <a href="#共振态-resolvent" class="md-skip">
             跳转至
           </a>
         
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              **共振态的数学理论：作为解析延拓预解式算符极点的证明**
+              共振态 resolvent
             
           </span>
         </div>
@@ -1669,12 +1669,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          **共振态的数学理论：作为解析延拓预解式算符极点的证明**
+          共振态 resolvent
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        **共振态的数学理论：作为解析延拓预解式算符极点的证明**
+        共振态 resolvent
       </a>
       
         
@@ -3038,7 +3038,7 @@
 
 
 
-<h1 id="共振态的数学理论作为解析延拓预解式算符极点的证明"><strong>共振态的数学理论：作为解析延拓预解式算符极点的证明</strong><a class="headerlink" href="#共振态的数学理论作为解析延拓预解式算符极点的证明" title="Permanent link">#</a></h1>
+<h1 id="共振态-resolvent">共振态 resolvent<a class="headerlink" href="#共振态-resolvent" title="Permanent link">#</a></h1>
 <h2 id="第一节引言预解式算符谱与核心悖论"><strong>第一节：引言：预解式算符、谱与核心悖论</strong><a class="headerlink" href="#第一节引言预解式算符谱与核心悖论" title="Permanent link">#</a></h2>
 <h3 id="11-预解式算符与谱的定义"><strong>1.1 预解式算符与谱的定义</strong><a class="headerlink" href="#11-预解式算符与谱的定义" title="Permanent link">#</a></h3>
 <p>在量子力学的数学框架中，一个物理系统的哈密顿算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>（在本文中也记为 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span>）是一个在希尔伯特空间 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span> 上作用的（通常是无界的）自伴算符。该算符的谱 (spectrum) <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)</span><script type="math/tex">\sigma(A)</script></span> 包含了系统所有可能的能量测量值。<br />
@@ -3192,7 +3192,7 @@ T 矩阵 <span class="arithmatex"><span class="MathJax_Preview">T(z)</span><scri
 在等式两边从左侧同乘以 <span class="arithmatex"><span class="MathJax_Preview">G_0(z) = (z - H_0)^{-1}</span><script type="math/tex">G_0(z) = (z - H_0)^{-1}</script></span>，我们得到 <a href="#ref-28">28</a>：</p>
 <p>$$ G(z) = G_0(z) + G_0(z) V G(z) \quad \cdots \quad (\text{L-S 方程 1}) $$<br />
 这是第一个 Lippmann-Schwinger (L-S) 方程，它将完整预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 与自由预解式 <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 联系起来。<br />
-T 矩阵算符 <span class="arithmatex"><span class="MathJax_Preview">T(z)</span><script type="math/tex">T(z)</script></span> 通常通过它与 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 的关系来定义，即满足第二个 L-S 方程 [28](#ref-28]：</p>
+T 矩阵算符 <span class="arithmatex"><span class="MathJax_Preview">T(z)</span><script type="math/tex">T(z)</script></span> 通常通过它与 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 的关系来定义，即满足第二个 L-S 方程 <a href="#ref-28">28</a>：</p>
 <p>$$ T(z) = V + V G_0(z) T(z) \quad \cdots \quad (\text{L-S 方程 2}) $$<br />
 这个方程的迭代解（Born 级数）给出了 <span class="arithmatex"><span class="MathJax_Preview">T(z)</span><script type="math/tex">T(z)</script></span> 的物理图像：</p>
 <div class="arithmatex">
@@ -3207,7 +3207,7 @@ T 矩阵算符 <span class="arithmatex"><span class="MathJax_Preview">T(z)</span
 <script type="math/tex; mode=display"> G = G_0 + G_0 V (G_0 + G_0 V G) = G_0 + G_0 V G_0 + G_0 V G_0 V G </script>
 </div>
 <p>$$ G = G_0 + G_0 [V + V G_0 V + V G_0 V G_0 V + \dots] G_0 $$<br />
-我们观察到，方括号中的无穷级数正是 <span class="arithmatex"><span class="MathJax_Preview">T(z)</span><script type="math/tex">T(z)</script></span> 的 Born 级数 <a href="#ref-8">8</a>。因此，我们得到了连接 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">T(z)</span><script type="math/tex">T(z)</script></span> 的第一个关键恒等式 [28](#ref-28]：</p>
+我们观察到，方括号中的无穷级数正是 <span class="arithmatex"><span class="MathJax_Preview">T(z)</span><script type="math/tex">T(z)</script></span> 的 Born 级数 <a href="#ref-8">8</a>。因此，我们得到了连接 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">T(z)</span><script type="math/tex">T(z)</script></span> 的第一个关键恒等式 <a href="#ref-28">28</a>：</p>
 <p>$$ G(z) = G_0(z) + G_0(z) T(z) G_0(z) \quad \cdots \quad (\text{恒等式 1}) $$<br />
 <strong>证明：</strong> 假设 <span class="arithmatex"><span class="MathJax_Preview">T(z)</span><script type="math/tex">T(z)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">z = z_R</span><script type="math/tex">z = z_R</script></span> 处有一个极点。根据第 3 节的定义，这是一个共振态，因此 <span class="arithmatex"><span class="MathJax_Preview">z_R</span><script type="math/tex">z_R</script></span> 是一个**非实数**的复数（<span class="arithmatex"><span class="MathJax_Preview">z_R = E_R - i\Gamma/2</span><script type="math/tex">z_R = E_R - i\Gamma/2</script></span>）。<br />
 现在我们来分析恒等式 1 在 <span class="arithmatex"><span class="MathJax_Preview">z = z_R</span><script type="math/tex">z = z_R</script></span> 处的行为：</p>
@@ -3261,9 +3261,9 @@ T 矩阵算符 <span class="arithmatex"><span class="MathJax_Preview">T(z)</span
 <li>我们采纳了现代散射理论的观点，将共振态严格**定义**为 S 矩阵（或 T 矩阵）在非物理片上的极点。</li>
 <li>最后，通过推导 Lippmann-Schwinger 方程的两种等价形式，我们严格证明了**预解式算符 <span class="arithmatex"><span class="MathJax_Preview">R(z, H)</span><script type="math/tex">R(z, H)</script></span> 与 T 矩阵 <span class="arithmatex"><span class="MathJax_Preview">T(z)</span><script type="math/tex">T(z)</script></span> 具有完全相同的极点结构**。</li>
 </ol>
-<p>这一结论不仅解决了最初的悖论，而且揭示了共振态的深刻数学本质。这些位于非物理片上的极点，其留数所对应的本征矢量被称为**Gamow 矢量** <a href="#ref-9">9</a>。这些矢量不属于标准的希尔伯特空间 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span>（因为它们的范数会发散），而是属于一个更大的数学结构——<strong>装备希尔伯特空间 (Rigged Hilbert Space)</strong> [29](#ref-29]。<br />
-在装备希尔伯特空间中，Gamow 矢量是哈密顿算符的广义本征矢量，其本征值恰好是复数 <span class="arithmatex"><span class="MathJax_Preview">z_R = E_R - i\Gamma/2</span><script type="math/tex">z_R = E_R - i\Gamma/2</script></span>。当一个系统处于由 Gamow 矢量描述的共振态时，其时间演化是**纯粹的指数衰减**，没有像标准量子力学中那样的非指数修正项 [22](#ref-22]。<br />
-这种不可逆的、纯粹指数性的衰减为量子力学中的时间箭头和微观不可逆性提供了严格的数学基础 [26](#ref-26]。<br />
+<p>这一结论不仅解决了最初的悖论，而且揭示了共振态的深刻数学本质。这些位于非物理片上的极点，其留数所对应的本征矢量被称为**Gamow 矢量** <a href="#ref-9">9</a>。这些矢量不属于标准的希尔伯特空间 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{H}</span><script type="math/tex">\mathcal{H}</script></span>（因为它们的范数会发散），而是属于一个更大的数学结构——<strong>装备希尔伯特空间 (Rigged Hilbert Space)</strong> <a href="#ref-29">29</a>。<br />
+在装备希尔伯特空间中，Gamow 矢量是哈密顿算符的广义本征矢量，其本征值恰好是复数 <span class="arithmatex"><span class="MathJax_Preview">z_R = E_R - i\Gamma/2</span><script type="math/tex">z_R = E_R - i\Gamma/2</script></span>。当一个系统处于由 Gamow 矢量描述的共振态时，其时间演化是**纯粹的指数衰减**，没有像标准量子力学中那样的非指数修正项 <a href="#ref-22">22</a>。<br />
+这种不可逆的、纯粹指数性的衰减为量子力学中的时间箭头和微观不可逆性提供了严格的数学基础 <a href="#ref-26">26</a>。<br />
 因此，共振态作为解析延拓预解式的极点，不仅仅是一个数学上的巧合，它揭示了量子系统在超越标准希尔伯特空间框架后更深层次的结构。</p>
 <h4 id="引用的文献"><strong>引用的文献</strong><a class="headerlink" href="#引用的文献" title="Permanent link">#</a></h4>
 <p><a id="ref-1"></a>1. Resolvent formalism - Wikipedia, <a href="https://en.wikipedia.org/wiki/Resolvent_formalism">https://en.wikipedia.org/wiki/Resolvent_formalism</a><br />
@@ -3301,7 +3301,7 @@ T 矩阵算符 <span class="arithmatex"><span class="MathJax_Preview">T(z)</span
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月7日 06:07:36 UTC"><span class="timeago" datetime="2025-11-07T06:07:36+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月7日 06:07:36 UTC">2025-11-07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月7日 07:08:13 UTC"><span class="timeago" datetime="2025-11-07T07:08:13+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月7日 07:08:13 UTC">2025-11-07</span>
       
         <br>
         创建日期:
