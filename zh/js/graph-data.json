@@ -568,6 +568,24 @@
       "url": "/sci/minimal_theory/ScateringINQMandQFT/"
     },
     {
+      "id": "sci/minimal_theory/resolvent.zh",
+      "title": "resolvent",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/resolvent.zh.md",
+      "size": 35865,
+      "url": "/sci/minimal_theory/resolvent/"
+    },
+    {
+      "id": "sci/minimal_theory/resolvent_resonateState.zh",
+      "title": "**共振态的数学理论：作为解析延拓预解式算符极点的证明**",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/resolvent_resonateState.zh.md",
+      "size": 17063,
+      "url": "/sci/minimal_theory/resolvent_resonateState/"
+    },
+    {
       "id": "sci/minimal_theory/directProductAndSum.zh",
       "title": "直积 / 直和 / 张量积 辨析",
       "language": "zh",
@@ -1128,16 +1146,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 125,
+    "total_nodes": 127,
     "total_links": 0,
     "languages": {
-      "zh": 100,
+      "zh": 102,
       "en": 25
     },
     "categories": {
       "main": 2,
       "category": 20,
-      "page": 103
+      "page": 105
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1145,6 +1163,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-11-06 10:19:04.035352"
+    "generated_at": "2025-11-07 06:08:55.043486"
   }
 }

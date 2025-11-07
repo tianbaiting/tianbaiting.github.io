@@ -1,0 +1,3580 @@
+
+  <!doctype html>
+  <html lang="zh" class="no-js">
+    <head>
+      
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        
+        
+        
+          <link rel="canonical" href="https://tianbaiting.github.io/en/sci/minimal_theory/resolvent/">
+        
+        
+          <link rel="prev" href="../qft_whatisfield/">
+        
+        
+          <link rel="next" href="../resolvent_resonateState/">
+        
+        <link rel="icon" href="../../../../assets/images/favicon.png">
+        <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
+      
+      
+        
+          <title>resolvent - TBT个人网站</title>
+        
+      
+      
+        <link rel="stylesheet" href="../../../../assets/stylesheets/main.9c788c91.min.css">
+        
+          
+          <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
+        
+        
+
+      
+      
+      
+        
+          
+          
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+          <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        
+      
+      
+        <link rel="stylesheet" href="../../../../css/counter.css">
+      
+        <link rel="stylesheet" href="../../../../css/graph.css">
+      
+      
+        <link rel="stylesheet" href="../../../../css/counter.css">
+      
+      <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      
+        
+
+      
+      
+      
+    </head>
+    
+    
+      
+      
+      
+      
+      
+      <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink">
+    
+      <script src="../../../../js/scheme.js" type="text/javascript"></script>
+      
+      
+      <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+      <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+      <label class="md-overlay" for="__drawer"></label>
+      <div data-md-component="skip">
+        
+          
+          <a href="#resolvent" class="md-skip">
+            跳转至
+          </a>
+        
+      </div>
+      <div data-md-component="announce">
+        
+      </div>
+      
+      
+        
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../" title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TBT个人网站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              resolvent
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      <div class="md-header-nav__scheme md-header-nav__button md-source__icon md-icon">
+  <a
+    href="javascript:toggleScheme();"
+    title="Toggle theme"
+    class="theme-toggle"
+  >
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5 1.43 1.43L4.93 20.5 3.5 19.07 19.07 3.5m-6.18 2.43L11.41 5 9.97 6l.42-1.7L9 3.24l1.75-.12.58-1.65L12 3.1l1.73.03-1.35 1.13.51 1.67m-3.3 3.61-1.16-.73-1.12.78.34-1.32-1.09-.83 1.36-.09.45-1.29.51 1.27 1.36.03-1.05.87.4 1.31M19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58 2.77-1.15-.24 3.35-2.53-2.2m4.33-2.7 1.15-2.77 2.2 2.54-3.35.23m1.15-4.96-1.14-2.78 3.34.24-2.2 2.54M9.63 18.93l2.77 1.15-2.53 2.19-.24-3.34Z"/></svg>
+  </a>
+</div>
+
+
+  <div class="md-header__button md-lang">
+    
+      <a href="/" hreflang="zh">简体中文</a>
+    
+      <a href="/en/" hreflang="en">English</a>
+    
+  </div>
+
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+      
+      <div class="md-container" data-md-component="container">
+        
+        
+          
+            
+              
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../howtomakewebsite/" class="md-tabs__link">
+      网站制作
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../" class="md-tabs__link">
+      Index
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../MickeyMiaoMiao/citetree/" class="md-tabs__link">
+        MickeyMiaoMiao
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../life/flavor/" class="md-tabs__link">
+        Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../todolist/" class="md-tabs__link md-tabs__link--active">
+        Sci
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-tabs__link">
+        日本生存指南
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+            
+          
+        
+        <main class="md-main" data-md-component="main">
+          <div class="md-main__inner md-grid">
+            
+              
+                
+                <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    TBT个人网站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../howtomakewebsite/" class="md-nav__link">
+        网站制作
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          MickeyMiaoMiao
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MickeyMiaoMiao" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          MickeyMiaoMiao
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/citetree/" class="md-nav__link">
+        引文网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/firefoxplug/" class="md-nav__link">
+        浏览器插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/opvpn/" class="md-nav__link">
+        opvpn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_4" tabindex="0" aria-expanded="false">
+          Useful tips
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Useful tips" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Useful tips
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/overleaf_vscode%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        overleaf插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/%E5%88%A9%E7%94%A8%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E5%88%86%E5%B1%8F/" class="md-nav__link">
+        移动设备作为电脑的分屏
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84vscode/" class="md-nav__link">
+        如何安装多个版本的code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../MickeyMiaoMiao/useful_tips/%E6%9C%89%E8%B6%A3%E7%9A%84%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        有趣的插件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Life" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/flavor/" class="md-nav__link">
+        **探索味型奥秘：以川菜为例的烹饪科学指南**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/z30_DeepSky/" class="md-nav__link">
+        深空摄影
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E7%84%A6%E8%99%91/" class="md-nav__link">
+        焦虑
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E9%A3%9F%E7%89%A9%E4%B8%AD%E6%AF%92/" class="md-nav__link">
+        易发中毒食物
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E9%A3%9F%E7%89%A9%E5%AE%89%E5%85%A8%E6%B8%A9%E5%BA%A6/" class="md-nav__link">
+        食物安全温度
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" tabindex="0" aria-expanded="false">
+          健康
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="健康" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          健康
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E5%81%A5%E5%BA%B7/workout_diet/" class="md-nav__link">
+        **营养**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../life/%E5%81%A5%E5%BA%B7/%E9%BC%BB%E7%82%8E/" class="md-nav__link">
+        **鼻炎综合管理临床报告：过敏性鼻炎与血管运动性鼻炎的深度解析**
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="true">
+          Sci
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sci" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Sci
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todolist/" class="md-nav__link">
+        todo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
+          Cheatshet
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cheatshet" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cheatshet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/bashrc/" class="md-nav__link">
+        Bashrc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/git/" class="md-nav__link">
+        git cheatsheat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/number_order_dimension/" class="md-nav__link">
+        数量级估计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/root_geant4_install/" class="md-nav__link">
+        Root geant4 install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/shell/" class="md-nav__link">
+        Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/site/" class="md-nav__link">
+        网页相关知识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/termux/" class="md-nav__link">
+        termux 运行ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/vimrc/" class="md-nav__link">
+        vim配置文件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
+          Minimal code
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minimal code" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Minimal code
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/Operating_system/" class="md-nav__link">
+        装系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/c%2B%2Bproject/" class="md-nav__link">
+        c++项目
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/class_dataTransport/" class="md-nav__link">
+        面向对象设计教程：管理类之间的数据依赖和解耦
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/cmake/" class="md-nav__link">
+        cmake项目
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/color_scheme/" class="md-nav__link">
+        Color Scheme in Scientific Visualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/cpp_package/" class="md-nav__link">
+        cpp 包管理 以及 依赖管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/format_guidelines/" class="md-nav__link">
+        Formatting Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/fzf/" class="md-nav__link">
+        FZF 模糊搜索工具完全教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/gdb/" class="md-nav__link">
+        gdb 调试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/geant4_oop/" class="md-nav__link">
+        **揭秘面向对象编程：Geant4工具包深度导览**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/gemni_use_wen2cli/" class="md-nav__link">
+        Gemini 使用限制与付费模式解析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/jupyternotebook/" class="md-nav__link">
+        Jupyter Notebook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/latex_graphics/" class="md-nav__link">
+        latex include graphics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/python_def_class/" class="md-nav__link">
+        python 定义类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/python_lib_self/" class="md-nav__link">
+        python 包的创建与使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/python_venv/" class="md-nav__link">
+        Python 虚拟环境
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/root_opener/" class="md-nav__link">
+        设置 ROOT 文件默认浏览器教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/root_plot/" class="md-nav__link">
+        root_plot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/root_visual_geant4/" class="md-nav__link">
+        Root visual geant4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/server_clouddirve/" class="md-nav__link">
+        如何从零搭建私有云盘服务器 (Markdown 教程)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/server_clouddirve_example/" class="md-nav__link">
+        Server clouddirve example
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/termux/" class="md-nav__link">
+        在 Termux 中安装 Ubuntu 桌面环境并运行 VS Code 的终极指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/vim_neovim/" class="md-nav__link">
+        Vim neovim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/vscode_env_path/" class="md-nav__link">
+        Vscode env path
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/vscode_lsp/" class="md-nav__link">
+        如何解决 VS Code 中的 C/C++ `include` 报错问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/yazi/" class="md-nav__link">
+        快捷键
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/zsh/" class="md-nav__link">
+        Zsh 环境一键配置脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/%E5%BE%85%E8%A7%A3%E5%86%B3%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        to be solved
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="true">
+          Minimal theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minimal theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Minimal theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ScateringINQMandQFT/" class="md-nav__link">
+        ScateringINQMandQFT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TransmissionLineEq/" class="md-nav__link">
+        TransmissionLineEq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dead_time/" class="md-nav__link">
+        Dead time
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../directProductAndSum/" class="md-nav__link">
+        直积 / 直和 / 张量积 辨析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functionalAna_SpecThe/" class="md-nav__link">
+        泛函分析和谱理论初步
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linearspace/" class="md-nav__link">
+        线性空间、对偶空间与量子态
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qft_schwartz_ref/" class="md-nav__link">
+        Schwartz — 《量子场论与标准模型》学习资源指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qft_whatisfield/" class="md-nav__link">
+        Qft whatisfield
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          resolvent
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        resolvent
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#预解式算符的定义与谱理论基础" class="md-nav__link">
+    预解式算符的定义与谱理论基础
+  </a>
+  
+    <nav class="md-nav" aria-label="预解式算符的定义与谱理论基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-算符谱与预解集泛函分析的观点" class="md-nav__link">
+    1.1 算符、谱与预解集：泛函分析的观点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-谱的精细结构逆算符失效的三种模式" class="md-nav__link">
+    1.2 谱的精细结构：逆算符失效的三种模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-预解式算符-rz-arz-a-及其解析性质" class="md-nav__link">
+    1.3 预解式算符 R(z, A)R(z, A) 及其解析性质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第二部分核心证明为什么预解式的奇点包含谱信息" class="md-nav__link">
+    第二部分：
+  </a>
+  
+    <nav class="md-nav" aria-label="第二部分：【核心证明】为什么预解式的奇点包含谱信息？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-证明-i-离散谱-极点-与-riesz-投影" class="md-nav__link">
+    2.1 证明 (I): 离散谱 (极点) 与 Riesz 投影
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-证明-ii-连续谱-割线-与-stone-公式" class="md-nav__link">
+    2.2 证明 (II): 连续谱 (割线) 与 Stone 公式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#证明共振态是什么" class="md-nav__link">
+    证明共振态是什么
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#总结谱与奇点的对应关系" class="md-nav__link">
+    总结：谱与奇点的对应关系
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第三部分微扰理论的预解式推导从恒等式到级数" class="md-nav__link">
+    第三部分：微扰理论的预解式推导：从恒等式到级数
+  </a>
+  
+    <nav class="md-nav" aria-label="第三部分：微扰理论的预解式推导：从恒等式到级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-微扰设置与历史脉络" class="md-nav__link">
+    3.1 微扰设置与历史脉络
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-预解式恒等式-dyson方程" class="md-nav__link">
+    3.2 预解式恒等式 (Dyson方程)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-born-neumann-级数gzgz-的迭代展开" class="md-nav__link">
+    3.3 Born-Neumann 级数：G(z)G(z) 的迭代展开
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第四部分完整推导rayleigh-schrödinger-微扰理论" class="md-nav__link">
+    第四部分：
+  </a>
+  
+    <nav class="md-nav" aria-label="第四部分：【完整推导】Rayleigh-Schrödinger 微扰理论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-kato-的严谨框架利用投影算符" class="md-nav__link">
+    4.1 Kato 的严谨框架：利用投影算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-划分-partitioning-方法" class="md-nav__link">
+    4.2 划分 (Partitioning) 方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-约化预解式-the-reduced-resolvent" class="md-nav__link">
+    4.3 约化预解式 (The Reduced Resolvent)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-能量与波函数的系统推导" class="md-nav__link">
+    4.4 能量与波函数的系统推导
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-简并情况的处理" class="md-nav__link">
+    4.5 简并情况的处理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第五部分结论与展望" class="md-nav__link">
+    第五部分：结论与展望
+  </a>
+  
+    <nav class="md-nav" aria-label="第五部分：结论与展望">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-总结预解式连接解析函数论与线性算符的桥梁" class="md-nav__link">
+    5.1 总结：预解式——连接解析函数论与线性算符的桥梁
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-超越微扰预解式在现代数学物理中的应用" class="md-nav__link">
+    5.2 超越微扰：预解式在现代数学物理中的应用
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 超越微扰：预解式在现代数学物理中的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#引用的著作" class="md-nav__link">
+    引用的著作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resolvent_resonateState/" class="md-nav__link">
+        **共振态的数学理论：作为解析延拓预解式算符极点的证明**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatering_theory/" class="md-nav__link">
+        散射理论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatteringTheoryBook/" class="md-nav__link">
+        散射理论书籍推荐
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5" tabindex="0" aria-expanded="false">
+          Project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Project" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/example/" class="md-nav__link">
+        hello world
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_2" type="checkbox" id="__nav_5_5_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_2" tabindex="0" aria-expanded="false">
+          D polar exp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="D polar exp" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          D polar exp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/Sipm_PMT/" class="md-nav__link">
+        Sipm PMT参数对比
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/caogao/" class="md-nav__link">
+        Caogao
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/d_breakup_theory/" class="md-nav__link">
+        氘核破裂理论上可以如何计算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/faddeevWPCD/" class="md-nav__link">
+        faddeevWPCD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/my_polarimeter/" class="md-nav__link">
+        My polarimeter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/other_polarmeter/" class="md-nav__link">
+        其他研究组的polarimeter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/riken_web_source/" class="md-nav__link">
+        riken 常见资源
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/scintillator/" class="md-nav__link">
+        闪烁体光产额
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/spherical_operator/" class="md-nav__link">
+        To show some relation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/stastic/" class="md-nav__link">
+        统计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/sw-api/" class="md-nav__link">
+        solidworks api接口
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/D_polar_exp/todo_list/" class="md-nav__link">
+        To do list
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_3" type="checkbox" id="__nav_5_5_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3" tabindex="0" aria-expanded="false">
+          Faddeev
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Faddeev" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Faddeev
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/construct_basis/" class="md-nav__link">
+        Construct basis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
+        faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_4" type="checkbox" id="__nav_5_5_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_4" tabindex="0" aria-expanded="false">
+          Samurai
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Samurai" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Samurai
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/detector_samurai/" class="md-nav__link">
+        Detailed Functions of Charged Particle Detectors in the SAMURAI Spectrometer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_4_2" type="checkbox" id="__nav_5_5_4_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_4_2" tabindex="0" aria-expanded="false">
+          Anaroot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Anaroot" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Anaroot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/RIDF/" class="md-nav__link">
+        RIDF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot/" class="md-nav__link">
+        **ANAROOT 综合分析框架：
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot2version/" class="md-nav__link">
+        ANAROOT Detailed Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_decoder/" class="md-nav__link">
+        Anaroot decoder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_nebula/" class="md-nav__link">
+        Anaroot nebula
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_nebula_reconstructionfunction/" class="md-nav__link">
+        Anaroot nebula reconstructionfunction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/anaroot/anaroot_pdc/" class="md-nav__link">
+        ANAROOT Libraries for PDC Analysis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_4_3" type="checkbox" id="__nav_5_5_4_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_4_3" tabindex="0" aria-expanded="false">
+          Smsimulator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Smsimulator" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Smsimulator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/FDC2/" class="md-nav__link">
+        FDC2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/PDC/" class="md-nav__link">
+        PDC Drift Chamber Simulation Plan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/nebula_simlulator/" class="md-nav__link">
+        Nebula simlulator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/smsimulator/" class="md-nav__link">
+        smsimultor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/samurai/smsimulator/smsimulator_tutor/" class="md-nav__link">
+        smsimulator 教学
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          日本生存指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="日本生存指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          日本生存指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-nav__link">
+        Japanese
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%8E%BB%E6%97%A5%E6%9C%AC%E5%89%8D%E6%89%93%E5%8C%85/" class="md-nav__link">
+        登机前打包
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%90%83/" class="md-nav__link">
+        吃
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        垃圾分类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%8E%A5%E6%94%B6%E5%BF%AB%E9%80%92/" class="md-nav__link">
+        接受快递
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%97%A5%E7%89%88%E6%89%8B%E6%9C%BAfelica%E8%8A%AF%E7%89%87/" class="md-nav__link">
+        **日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析**
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E5%AD%90%E6%94%AF%E4%BB%98-%E4%BA%A4%E9%80%9A%E5%8D%A1/" class="md-nav__link">
+        日本电子支付 - 交通卡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E8%AF%9D%E5%8D%A1/" class="md-nav__link">
+        电话卡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E8%90%BD%E5%9C%B0todo/" class="md-nav__link">
+        落地事宜
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E9%93%B6%E8%A1%8C%E5%8D%A1/" class="md-nav__link">
+        银行卡
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                    </div>
+                  </div>
+                </div>
+              
+              
+                
+                <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#预解式算符的定义与谱理论基础" class="md-nav__link">
+    预解式算符的定义与谱理论基础
+  </a>
+  
+    <nav class="md-nav" aria-label="预解式算符的定义与谱理论基础">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-算符谱与预解集泛函分析的观点" class="md-nav__link">
+    1.1 算符、谱与预解集：泛函分析的观点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-谱的精细结构逆算符失效的三种模式" class="md-nav__link">
+    1.2 谱的精细结构：逆算符失效的三种模式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-预解式算符-rz-arz-a-及其解析性质" class="md-nav__link">
+    1.3 预解式算符 R(z, A)R(z, A) 及其解析性质
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第二部分核心证明为什么预解式的奇点包含谱信息" class="md-nav__link">
+    第二部分：
+  </a>
+  
+    <nav class="md-nav" aria-label="第二部分：【核心证明】为什么预解式的奇点包含谱信息？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-证明-i-离散谱-极点-与-riesz-投影" class="md-nav__link">
+    2.1 证明 (I): 离散谱 (极点) 与 Riesz 投影
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-证明-ii-连续谱-割线-与-stone-公式" class="md-nav__link">
+    2.2 证明 (II): 连续谱 (割线) 与 Stone 公式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#证明共振态是什么" class="md-nav__link">
+    证明共振态是什么
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#总结谱与奇点的对应关系" class="md-nav__link">
+    总结：谱与奇点的对应关系
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第三部分微扰理论的预解式推导从恒等式到级数" class="md-nav__link">
+    第三部分：微扰理论的预解式推导：从恒等式到级数
+  </a>
+  
+    <nav class="md-nav" aria-label="第三部分：微扰理论的预解式推导：从恒等式到级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-微扰设置与历史脉络" class="md-nav__link">
+    3.1 微扰设置与历史脉络
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-预解式恒等式-dyson方程" class="md-nav__link">
+    3.2 预解式恒等式 (Dyson方程)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-born-neumann-级数gzgz-的迭代展开" class="md-nav__link">
+    3.3 Born-Neumann 级数：G(z)G(z) 的迭代展开
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第四部分完整推导rayleigh-schrödinger-微扰理论" class="md-nav__link">
+    第四部分：
+  </a>
+  
+    <nav class="md-nav" aria-label="第四部分：【完整推导】Rayleigh-Schrödinger 微扰理论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-kato-的严谨框架利用投影算符" class="md-nav__link">
+    4.1 Kato 的严谨框架：利用投影算符
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-划分-partitioning-方法" class="md-nav__link">
+    4.2 划分 (Partitioning) 方法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-约化预解式-the-reduced-resolvent" class="md-nav__link">
+    4.3 约化预解式 (The Reduced Resolvent)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-能量与波函数的系统推导" class="md-nav__link">
+    4.4 能量与波函数的系统推导
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-简并情况的处理" class="md-nav__link">
+    4.5 简并情况的处理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#第五部分结论与展望" class="md-nav__link">
+    第五部分：结论与展望
+  </a>
+  
+    <nav class="md-nav" aria-label="第五部分：结论与展望">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-总结预解式连接解析函数论与线性算符的桥梁" class="md-nav__link">
+    5.1 总结：预解式——连接解析函数论与线性算符的桥梁
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-超越微扰预解式在现代数学物理中的应用" class="md-nav__link">
+    5.2 超越微扰：预解式在现代数学物理中的应用
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 超越微扰：预解式在现代数学物理中的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#引用的著作" class="md-nav__link">
+    引用的著作
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                    </div>
+                  </div>
+                </div>
+                
+              
+            
+            
+              <div class="md-content" data-md-component="content">
+                <article class="md-content__inner md-typeset">
+                  
+                    
+
+
+
+<h1 id="resolvent">resolvent<a class="headerlink" href="#resolvent" title="Permanent link">#</a></h1>
+<h2 id="预解式算符的定义与谱理论基础"><strong>预解式算符的定义与谱理论基础</strong><a class="headerlink" href="#预解式算符的定义与谱理论基础" title="Permanent link">#</a></h2>
+<h3 id="11-算符谱与预解集泛函分析的观点"><strong>1.1 算符、谱与预解集：泛函分析的观点</strong><a class="headerlink" href="#11-算符谱与预解集泛函分析的观点" title="Permanent link">#</a></h3>
+<p>在数学物理中，一个物理系统的可观测量（如能量、动量）由一个复Hilbert空间 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 上的线性算符 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 来表示 <a href="#ref-1">1</a>。这些算符，特别是像哈密顿算符 (Hamiltonian) 这样的能量算符，通常是无界的 (unbounded)，但它们满足一个关键的拓扑性质：它们是“闭算符” (closed operators) <a href="#ref-2">2</a>。谱理论 (Spectral theory) 的研究必须在这个更广泛的闭算符框架内进行，而不仅仅局限于有界算符 (bounded operators) <a href="#ref-3">3</a>。</p>
+<p>谱理论的核心是理解算符 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> 的可逆性，其中 <span class="arithmatex"><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span> 是恒等算符，<span class="arithmatex"><span class="MathJax_Preview">\\lambda</span><script type="math/tex">\\lambda</script></span> 是一个复数。</p>
+<p>定义 1.1 (预解集)<br />
+算符 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 的预解集 (resolvent set)，记为 <span class="arithmatex"><span class="MathJax_Preview">\rho(T)</span><script type="math/tex">\rho(T)</script></span>，是所有复数 <span class="arithmatex"><span class="MathJax_Preview">\lambda \in \mathbb{C}</span><script type="math/tex">\lambda \in \mathbb{C}</script></span> 的集合，满足以下条件：算符 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> 是一个双射（即单射且满射），并且其逆算符 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)^{-1}</span><script type="math/tex">(T - \lambda I)^{-1}</script></span> 是一个在 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 上处处定义（defined everywhere）的有界线性算符 <a href="#ref-1">1</a>。  </p>
+<p>定义 1.2 (谱)<br />
+算符 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 的谱 (spectrum)，记为 <span class="arithmatex"><span class="MathJax_Preview">\sigma(T)</span><script type="math/tex">\sigma(T)</script></span>，是预解集 <span class="arithmatex"><span class="MathJax_Preview">\rho(T)</span><script type="math/tex">\rho(T)</script></span> 在复平面 <span class="arithmatex"><span class="MathJax_Preview">\mathbb{C}</span><script type="math/tex">\mathbb{C}</script></span> 上的补集，即 <span class="arithmatex"><span class="MathJax_Preview">\sigma(T) = \mathbb{C} \setminus \rho(T)</span><script type="math/tex">\sigma(T) = \mathbb{C} \setminus \rho(T)</script></span> <a href="#ref-1">1</a>。谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(T)</span><script type="math/tex">\sigma(T)</script></span> 总是复平面上的一个闭集 <a href="#ref-6">6</a>。  </p>
+<p>在有限维空间中（例如，<span class="arithmatex"><span class="MathJax_Preview">N \times N</span><script type="math/tex">N \times N</script></span> 矩阵），算符 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> 的可逆性仅仅取决于其行列式是否为零。因此，谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(T)</span><script type="math/tex">\sigma(T)</script></span> 精确地等于 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 的本征值 (eigenvalues) 的集合 <a href="#ref-4">4</a>。然而，在无限维空间中（例如，量子力学的波函数空间 <span class="arithmatex"><span class="MathJax_Preview">L^2(\mathbb{R})</span><script type="math/tex">L^2(\mathbb{R})</script></span>），这一图像被根本性地改变了。一个算符可能是单射的（即没有本征值），但仍然不可逆（例如，它不是满射的）<a href="#ref-4">4</a>。<a href="#ref-4">4</a> 中给出的右移算符 (right shift operator) 示例完美地说明了这一点：它没有本征值，但 0 仍然在谱中，因为它不是满射的。因此，谱是本征值概念在无限维空间中的必要推广 <a href="#ref-4">4</a>。</p>
+<p>对于物理学中重要的闭算符（这包括所有有界算符和自伴哈密顿算符），“有界逆算符定理” (Bounded Inverse Theorem) [3](#ref-3] 和“闭图像定理” (Closed Graph Theorem) [3](#ref-3] 极大地简化了定义 1.1。这些定理保证，如果一个闭算符 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 的逆 <span class="arithmatex"><span class="MathJax_Preview">T^{-1}</span><script type="math/tex">T^{-1}</script></span> <em>存在</em>（即 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 是双射的），那么 <span class="arithmatex"><span class="MathJax_Preview">T^{-1}</span><script type="math/tex">T^{-1}</script></span> <em>自动*是有界的。因此，对于我们关心的闭算符，谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(T)</span><script type="math/tex">\sigma(T)</script></span> *就是*使 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> *不是双射</em> (not bijective) 的 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 的集合 [3](#ref-3]。</p>
+<h3 id="12-谱的精细结构逆算符失效的三种模式"><strong>1.2 谱的精细结构：逆算符失效的三种模式</strong><a class="headerlink" href="#12-谱的精细结构逆算符失效的三种模式" title="Permanent link">#</a></h3>
+<p>谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(T)</span><script type="math/tex">\sigma(T)</script></span> 之所以存在，是因为 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> 作为双射的条件（单射、满射、有界逆）至少有一条被破坏了。根据具体是哪条条件失效，谱可以被分解为三个互不相交的子集 <a href="#ref-2">2</a>。</p>
+<p>定义 1.3 (点谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_p(T)</span><script type="math/tex">\sigma_p(T)</script></span>)<br />
+点谱 (Point Spectrum) 是所有 <span class="arithmatex"><span class="MathJax_Preview">\lambda \in \mathbb{C}</span><script type="math/tex">\lambda \in \mathbb{C}</script></span> 的集合，使得 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> 不满足单射性 (not injective)。这意味着存在非零向量 <span class="arithmatex"><span class="MathJax_Preview">v \in H</span><script type="math/tex">v \in H</script></span> 使得 <span class="arithmatex"><span class="MathJax_Preview">T v = \lambda v</span><script type="math/tex">T v = \lambda v</script></span> <a href="#ref-5">5</a>。这些 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 正是传统的本征值。  </p>
+<p>定义 1.4 (连续谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_c(T)</span><script type="math/tex">\sigma_c(T)</script></span>)<br />
+连续谱 (Continuous Spectrum) 是所有 <span class="arithmatex"><span class="MathJax_Preview">\lambda \in \mathbb{C}</span><script type="math/tex">\lambda \in \mathbb{C}</script></span> 的集合，使得 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> 满足单射性，其值域 <span class="arithmatex"><span class="MathJax_Preview">R(T - \lambda I)</span><script type="math/tex">R(T - \lambda I)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 中是稠密的 (dense)，但其（在值域上定义的）逆算符是无界的 <a href="#ref-5">5</a>。  </p>
+<p>定义 1.5 (剩余谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_r(T)</span><script type="math/tex">\sigma_r(T)</script></span>)<br />
+剩余谱 (Residual Spectrum) 是所有 <span class="arithmatex"><span class="MathJax_Preview">\lambda \in \mathbb{C}</span><script type="math/tex">\lambda \in \mathbb{C}</script></span> 的集合，使得 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> 满足单射性，但其值域 <span class="arithmatex"><span class="MathJax_Preview">R(T - \lambda I)</span><script type="math/tex">R(T - \lambda I)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 中不是稠密的 <a href="#ref-5">5</a>。  </p>
+<p><em>注：对于物理学中最重要的自伴算符 (self-adjoint operators)，可以证明其剩余谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_r(T)</span><script type="math/tex">\sigma_r(T)</script></span> 是空集。</em></p>
+<p>这种谱的分解在物理学上具有至关重要的意义。点谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_p(T)</span><script type="math/tex">\sigma_p(T)</script></span> 通常对应于系统的**束缚态** (Bound States)，例如氢原子中能量量子化的离散能级。连续谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_c(T)</span><script type="math/tex">\sigma_c(T)</script></span> 则对应于**散射态** (Scattering States)，例如能量可以取 <span class="arithmatex"><span class="MathJax_Preview">[0, \infty)</span><script type="math/tex">[0, \infty)</script></span> 区间内任意值的自由粒子，或从势阱中电离的电子 <a href="#ref-8">8</a>。</p>
+<h3 id="13-预解式算符-rz-arz-a-及其解析性质"><strong>1.3 预解式算符 <span class="arithmatex"><span class="MathJax_Preview">R(z, A)</span><script type="math/tex">R(z, A)</script></span> 及其解析性质</strong><a class="headerlink" href="#13-预解式算符-rz-arz-a-及其解析性质" title="Permanent link">#</a></h3>
+<p>谱理论的核心工具——预解式算符——现在可以被定义。</p>
+<p>定义 1.6 (预解式)<br />
+对于复参数 <span class="arithmatex"><span class="MathJax_Preview">z \in \rho(A)</span><script type="math/tex">z \in \rho(A)</script></span>（即 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 位于预解集中），算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的预解式 (Resolvent)，记为 <span class="arithmatex"><span class="MathJax_Preview">R(z, A)</span><script type="math/tex">R(z, A)</script></span>，定义为：</p>
+<p><span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">R(z, A) = (A - zI)^{-1}</span><script type="math/tex">R(z, A) = (A - zI)^{-1}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">R(z, A) = (A - zI)^{-1}</span><script type="math/tex">R(z, A) = (A - zI)^{-1}</script></span></script></span><br />
+<a href="#ref-9">9</a>。在物理文献中，特别是在微扰理论和格林函数 (Green's function) 理论中，更常见的约定是 <span class="arithmatex"><span class="MathJax_Preview">G(z, A) = (z - A)^{-1}</span><script type="math/tex">G(z, A) = (z - A)^{-1}</script></span> <a href="#ref-10">10</a>。这两种定义仅相差一个负号和 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 的重新标记，但 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的形式在Lippmann-Schwinger方程中更为自然。本报告将主要采用 <span class="arithmatex"><span class="MathJax_Preview">G(z) = (z - A)^{-1}</span><script type="math/tex">G(z) = (z - A)^{-1}</script></span> 这一约定。</p>
+<p>预解式的最重要特性，也是使其成为连接物理与数学的桥梁的特性是：<strong><span class="arithmatex"><span class="MathJax_Preview">G(z, A)</span><script type="math/tex">G(z, A)</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">\rho(A)</span><script type="math/tex">\rho(A)</script></span> 上的一个全纯 (holomorphic) 或者说解析 (analytic) 的算符值函数</strong> <a href="#ref-8">8</a>。</p>
+<p>这实现了一个根本性的范式转移 (paradigm shift)。我们不再直接研究算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>（它可能是一个复杂的、无界的微分算符），而是转而研究一个*函数* <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span>。<span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 是一个以复数 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 为变量、以*有界算符*为值的解析函数。</p>
+<p>在这个新范式中，算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)</span><script type="math/tex">\sigma(A)</script></span>，即 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> <em>没有*定义的点集，就是 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 作为解析函数**失去其解析性**的地方。换言之，**算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)</span><script type="math/tex">\sigma(A)</script></span> 就是其预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的奇点 (singularities) 的集合*</em> <a href="#ref-7">7</a>。</p>
+<p>这种将算符谱问题转化为复分析函数奇点问题的思想，就是“预解式形式主义” (Resolvent Formalism) 的精髓 [9](#ref-9]。它允许我们动用复分析中所有强大的工具——柯西积分、留数定理、Plemelj公式等——来“探测”算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱结构。</p>
+<h2 id="第二部分核心证明为什么预解式的奇点包含谱信息"><strong>第二部分：【核心证明】为什么预解式的奇点包含谱信息？</strong><a class="headerlink" href="#第二部分核心证明为什么预解式的奇点包含谱信息" title="Permanent link">#</a></h2>
+<p>本部分将严格证明预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的两种主要奇点类型（极点和割线）如何分别编码了算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的离散谱（本征值）和连续谱。</p>
+<h3 id="21-证明-i-离散谱-极点-与-riesz-投影"><strong>2.1 证明 (I): 离散谱 (极点) 与 Riesz 投影</strong><a class="headerlink" href="#21-证明-i-离散谱-极点-与-riesz-投影" title="Permanent link">#</a></h3>
+<p><strong>论点</strong>：谱的孤立点（即孤立的本征值）对应于预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的**极点** (Poles) <a href="#ref-12">12</a>。</p>
+<p>对于许多物理系统，例如束缚在势阱中的粒子，其哈密顿算符具有“紧预解式” (compact resolvent)，这意味着它们的谱*只*由孤立的本征值构成 <a href="#ref-16">16</a>。</p>
+<p>证明 2.1 (Riesz 投影的定义)<br />
+假设 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> 是算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)</span><script type="math/tex">\sigma(A)</script></span> 中的一个孤立点。这意味着我们可以找到一个半径足够小的简单闭合围道 (contour) <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span>，它在复平面上只包围 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>，而将谱的其余所有部分都排除在外 [9](#ref-9]。<br />
+我们利用复分析中的柯西积分，定义一个算符 <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span>，称为 Riesz 投影 (Riesz projection) [18](#ref-18]：</p>
+<p><span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">P_n = \frac{1}{2\pi i} \oint_{C_n} G(z, A) dz = \frac{1}{2\pi i} \oint_{C_n} (z - A)^{-1} dz</span><script type="math/tex">P_n = \frac{1}{2\pi i} \oint_{C_n} G(z, A) dz = \frac{1}{2\pi i} \oint_{C_n} (z - A)^{-1} dz</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">P_n = \frac{1}{2\pi i} \oint_{C_n} G(z, A) dz = \frac{1}{2\pi i} \oint_{C_n} (z - A)^{-1} dz</span><script type="math/tex">P_n = \frac{1}{2\pi i} \oint_{C_n} G(z, A) dz = \frac{1}{2\pi i} \oint_{C_n} (z - A)^{-1} dz</script></span></script></span><br />
+<a href="#ref-9">9</a>。（注：使用 <span class="arithmatex"><span class="MathJax_Preview">G(z) = (z-A)^{-1}</span><script type="math/tex">G(z) = (z-A)^{-1}</script></span> 约定，积分为正号。若使用 <span class="arithmatex"><span class="MathJax_Preview">R(z)=(A-zI)^{-1}</span><script type="math/tex">R(z)=(A-zI)^{-1}</script></span>，则积分前需加负号 [9](#ref-9]。）</p>
+<p>证明 2.2 ( <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> 是一个投影算符)<br />
+我们现在必须证明 <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> 确实是一个投影算符，即它满足幂等性： <span class="arithmatex"><span class="MathJax_Preview">P_n^2 = P_n</span><script type="math/tex">P_n^2 = P_n</script></span>。</p>
+<ol>
+<li>工具：证明的关键是“第一预解式恒等式”（或 Hilbert 恒等式）。对于任意 <span class="arithmatex"><span class="MathJax_Preview">z, w \in \rho(A)</span><script type="math/tex">z, w \in \rho(A)</script></span>：<br />
+<span class="arithmatex"><span class="MathJax_Preview">G(z) - G(w) = (z - A)^{-1} - (w - A)^{-1} = (z - A)^{-1} [ (w - A) - (z - A) ] (w - A)^{-1}</span><script type="math/tex">G(z) - G(w) = (z - A)^{-1} - (w - A)^{-1} = (z - A)^{-1} [ (w - A) - (z - A) ] (w - A)^{-1}</script></span><br />
+<span class="arithmatex"><span class="MathJax_Preview">G(z) - G(w) = G(z) (w - z) G(w)</span><script type="math/tex">G(z) - G(w) = G(z) (w - z) G(w)</script></span><br />
+   或 <span class="arithmatex"><span class="MathJax_Preview">G(w) G(z) = \frac{G(w) - G(z)}{z - w}</span><script type="math/tex">G(w) G(z) = \frac{G(w) - G(z)}{z - w}</script></span> <a href="#ref-8">8</a>。  </li>
+<li>推导：我们取两个围道 <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">C_n'</span><script type="math/tex">C_n'</script></span>，它们都只包围 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>，并且 <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span> 严格位于 <span class="arithmatex"><span class="MathJax_Preview">C_n'</span><script type="math/tex">C_n'</script></span> 内部 <a href="#ref-18]。  
+   $$ P_n^2 = \left( \frac{1}{2\pi i} \oint_{C_n'} G(w">18</a> dw \right) \left( \frac{1}{2\pi i} \oint_{C_n} G(z) dz \right) = \frac{1}{(2\pi i)^2} \oint_{C_n'} \oint_{C_n} G(w) G(z) dz dw $$  </li>
+<li>应用预解式恒等式：</li>
+</ol>
+<p><span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} \oint_{C_n} \frac{G(w) - G(z)}{z - w} dz dw</span><script type="math/tex">P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} \oint_{C_n} \frac{G(w) - G(z)}{z - w} dz dw</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} \oint_{C_n} \frac{G(w) - G(z)}{z - w} dz dw</span><script type="math/tex">P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} \oint_{C_n} \frac{G(w) - G(z)}{z - w} dz dw</script></span></script></span><br />
+4. 我们将积分分为两部分：<br />
+   $$ P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} G(w) \left( \oint_{C_n} \frac{dz}{z - w} \right) dw - \frac{1}{(2\pi i)^2} \oint_{C_n} G(z) \left( \oint_{C_n'} \frac{dw}{z - w} \right) dz $$<br />
+5. <strong>计算内层积分</strong>（利用柯西积分公式）：<br />
+   * 在第一项中， <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> 位于*外部*围道 <span class="arithmatex"><span class="MathJax_Preview">C_n'</span><script type="math/tex">C_n'</script></span> 上，而 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 位于*内部*围道 <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span> 上。因此 <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> 始终在 <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span> 的*外部*。根据柯西定理， <span class="arithmatex"><span class="MathJax_Preview">\oint_{C_n} \frac{dz}{z - w} = 0</span><script type="math/tex">\oint_{C_n} \frac{dz}{z - w} = 0</script></span>。<br />
+   * 在第二项中， <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 位于*内部*围道 <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span> 上，而 <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> 位于*外部*围道 <span class="arithmatex"><span class="MathJax_Preview">C_n'</span><script type="math/tex">C_n'</script></span> 上。<span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 始终在 <span class="arithmatex"><span class="MathJax_Preview">C_n'</span><script type="math/tex">C_n'</script></span> 的*内部*。根据柯西积分公式， <span class="arithmatex"><span class="MathJax_Preview">\oint_{C_n'} \frac{dw}{z - w} = - \oint_{C_n'} \frac{dw}{w - z} = - (2\pi i)</span><script type="math/tex">\oint_{C_n'} \frac{dw}{z - w} = - \oint_{C_n'} \frac{dw}{w - z} = - (2\pi i)</script></span>。<br />
+6. 将结果代回：  </p>
+<p>$$ P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} G(w) (0) dw - \frac{1}{(2\pi i)^2} \oint_{C_n} G(z) (-2\pi i) dz $$ </p>
+<p>$$ P_n^2 = 0 + \frac{1}{2\pi i} \oint_{C_n} G(z) dz = P_n $$<br />
+   证明 <span class="arithmatex"><span class="MathJax_Preview">P_n^2 = P_n</span><script type="math/tex">P_n^2 = P_n</script></span> 完毕 [18](#ref-18]。</p>
+<p>证明 2.3 ( <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> 投影到本征子空间)<br />
+可以进一步证明，Riesz 投影 <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> 与算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 是对易的 (<span class="arithmatex"><span class="MathJax_Preview">AP_n = P_n A</span><script type="math/tex">AP_n = P_n A</script></span>) [12](#ref-12]，并且 <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> 的值域 (Range) 恰好是对应于本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> 的（广义）本征子空间 [18](#ref-18]。对于自伴算符，这就是本征子空间。如果 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> 是非简并的， <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> 就是 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n\rangle\langle \psi_n|</span><script type="math/tex">|\psi_n\rangle\langle \psi_n|</script></span>。  </p>
+<p>核心结论 (I)：<br />
+上述证明揭示了预解式极点的深刻含义。我们想知道一个孤立本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> 及其本征态 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n\rangle</span><script type="math/tex">|\psi_n\rangle</script></span>。预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">z = E_n</span><script type="math/tex">z = E_n</script></span> 处有一个极点。通过围绕这个极点进行围道积分（即计算留数 (Residue)），我们严格地恢复了投影算符 <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span>。<br />
+因此，离散谱的信息被完整地编码在 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的极点中：</p>
+<ul>
+<li><strong>极点的位置 (Location) <span class="arithmatex"><span class="MathJax_Preview">\implies</span><script type="math/tex">\implies</script></span> 本征值 (Eigenvalue) <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>。</strong>  </li>
+<li><strong>极点的留数 (Residue) <span class="arithmatex"><span class="MathJax_Preview">\implies</span><script type="math/tex">\implies</script></span> 到本征子空间的投影算符 (Projection) <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span></strong> [15](#ref-15]。</li>
+</ul>
+<h3 id="22-证明-ii-连续谱-割线-与-stone-公式"><strong>2.2 证明 (II): 连续谱 (割线) 与 Stone 公式</strong><a class="headerlink" href="#22-证明-ii-连续谱-割线-与-stone-公式" title="Permanent link">#</a></h3>
+<p><strong>论点</strong>：连续谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_c(A)</span><script type="math/tex">\sigma_c(A)</script></span> 对应于预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的**分支割线** (Branch Cut) [8](#ref-8]。</p>
+<p>对于自伴算符（如哈密顿算符），谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)</span><script type="math/tex">\sigma(A)</script></span> 完全位于实轴 <span class="arithmatex"><span class="MathJax_Preview">\mathbb{R}</span><script type="math/tex">\mathbb{R}</script></span> 上 [8](#ref-8]。连续谱通常表现为实轴上的一个区间，例如自由粒子的 <span class="arithmatex"><span class="MathJax_Preview">[0, \infty)</span><script type="math/tex">[0, \infty)</script></span> <a href="#ref-8">8</a>。（尽管它也可以是更复杂的集合，如康托尔集 [22](#ref-22]。）</p>
+<p>直观理解 (连续的极点)：<br />
+一个孤立的极点 <span class="arithmatex"><span class="MathJax_Preview">G(z) \sim (z-E_n)^{-1}</span><script type="math/tex">G(z) \sim (z-E_n)^{-1}</script></span> 对应一个离散能级。那么连续谱在复平面上对应什么呢？直观上，连续谱可以被想象为沿着一条线（例如实轴的 <span class="arithmatex"><span class="MathJax_Preview">[a, b]</span><script type="math/tex">[a, b]</script></span> 段）连续地分布着无穷多个极点。<br />
+<a href="#ref-21">21</a> 中的一个简单计算完美地展示了这一点：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\int_a^b \frac{1}{z-u} du = \log(z-b) - \log(z-a) = \log\left(\frac{z-b}{z-a}\right)</div>
+<script type="math/tex; mode=display">\int_a^b \frac{1}{z-u} du = \log(z-b) - \log(z-a) = \log\left(\frac{z-b}{z-a}\right)</script>
+</div>
+<p>等式左边是一个“连续的极点之和”（在 <span class="arithmatex"><span class="MathJax_Preview">[a, b]</span><script type="math/tex">[a, b]</script></span> 区间内的每个 <span class="arithmatex"><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> 处，都有一个留数为 <span class="arithmatex"><span class="MathJax_Preview">du</span><script type="math/tex">du</script></span> 的极点）。等式右边是一个具有 <span class="arithmatex"><span class="MathJax_Preview">[a, b]</span><script type="math/tex">[a, b]</script></span> 分支割线的对数函数。这个例子表明，极点的连续分布在复分析中自然地产生了分支割线。因此，连续谱在 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的解析结构中表现为分支割线 [21](#ref-21]。  </p>
+<p>证明 2.4 (Stone 公式)<br />
+Stone 公式（或 Stone-von Neumann 公式）是上述直觉的严格数学表述。它将 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 跨越实轴（割线）的不连续性（或“跳跃”）与谱测量 (Spectral Measure) <span class="arithmatex"><span class="MathJax_Preview">E(\lambda)</span><script type="math/tex">E(\lambda)</script></span> 直接联系起来 [8](#ref-8]。<br />
+根据谱定理，对于自伴算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>，存在一个唯一的投影值谱测量 <span class="arithmatex"><span class="MathJax_Preview">E(\lambda)</span><script type="math/tex">E(\lambda)</script></span>，使得 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 可以被分解为 <span class="arithmatex"><span class="MathJax_Preview">A = \int_{-\infty}^\infty \lambda dE(\lambda)</span><script type="math/tex">A = \int_{-\infty}^\infty \lambda dE(\lambda)</script></span>。<span class="arithmatex"><span class="MathJax_Preview">E(\Delta)</span><script type="math/tex">E(\Delta)</script></span> 表示投影到谱位于区间 <span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span> 内的子空间上的投影算符。</p>
+<p>Stone 公式指出，这个谱测量 <span class="arithmatex"><span class="MathJax_Preview">E(\Delta)</span><script type="math/tex">E(\Delta)</script></span> 可以通过 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 在实轴上方和下方的极限来恢复 [24](#ref-24]。令 <span class="arithmatex"><span class="MathJax_Preview">G(\lambda \pm i0) = \lim_{\epsilon \to 0^+} G(\lambda \pm i\epsilon)</span><script type="math/tex">G(\lambda \pm i0) = \lim_{\epsilon \to 0^+} G(\lambda \pm i\epsilon)</script></span>。对于任意区间 <span class="arithmatex"><span class="MathJax_Preview">(a, b)</span><script type="math/tex">(a, b)</script></span>，我们有：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview"> \frac{E((a, b)) + E([a, b])}{2} = \lim_{\epsilon \to 0^+} \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda </div>
+<script type="math/tex; mode=display"> \frac{E((a, b)) + E([a, b])}{2} = \lim_{\epsilon \to 0^+} \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda </script>
+</div>
+<p>这个公式是复分析中 Sokhotski–Plemelj 定理的算符版本，它表明 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 跨越实轴的“跳跃” <span class="arithmatex"><span class="MathJax_Preview">\\text{Disc}[G(\lambda)] = G(\lambda+i0) - G(\lambda-i0)</span><script type="math/tex">\\text{Disc}[G(\lambda)] = G(\lambda+i0) - G(\lambda-i0)</script></span>（注意符号约定）与谱测量 <span class="arithmatex"><span class="MathJax_Preview">dE_\lambda</span><script type="math/tex">dE_\lambda</script></span> 成正比。 </p>
+<p>证明 2.5 (Stone 公式的推导草图)<br />
+这个公式的推导可以优雅地通过泛函演算 (Functional Calculus) 完成 [24](#ref-24]。</p>
+<ol>
+<li>
+<p>我们希望计算的积分 <span class="arithmatex"><span class="MathJax_Preview">F_\epsilon(A) = \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda</span><script type="math/tex">F_\epsilon(A) = \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda</script></span> 实际上是 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的一个函数，<span class="arithmatex"><span class="MathJax_Preview">F_\epsilon(A) = f_\epsilon(A)</span><script type="math/tex">F_\epsilon(A) = f_\epsilon(A)</script></span>。  </p>
+</li>
+<li>
+<p>我们只需分析对应的标量函数 <span class="arithmatex"><span class="MathJax_Preview">f_\epsilon(t)</span><script type="math/tex">f_\epsilon(t)</script></span>（其中 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 是实变量，代表 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱值）：  </p>
+</li>
+</ol>
+<p>$$ f_\epsilon(t) = \frac{1}{2\pi i} \int_a^b \left( \frac{1}{t - (\lambda - i\epsilon)} - \frac{1}{t - (\lambda + i\epsilon)} \right) d\lambda $$<br />
+3. 合并分式： </p>
+<p>$$ f_\epsilon(t) = \frac{1}{2\pi i} \int_a^b \frac{(t - \lambda - i\epsilon) - (t - \lambda + i\epsilon)}{(t - \lambda)^2 + \epsilon^2} d\lambda = \frac{1}{2\pi i} \int_a^b \frac{-2i\epsilon}{(t - \lambda)^2 + \epsilon^2} d\lambda $$ $$ f_\epsilon(t) = \frac{1}{\pi} \int_a^b \frac{\epsilon}{(t - \lambda)^2 + \epsilon^2} d\lambda $$<br />
+4. 这是一个洛伦兹分布 (Lorentzian) 或柯西分布 (Cauchy distribution) 的积分，它是 <span class="arithmatex"><span class="MathJax_Preview">\\delta</span><script type="math/tex">\\delta</script></span>-函数的一个表示。积分 <span class="arithmatex"><span class="MathJax_Preview">f_\epsilon(t)</span><script type="math/tex">f_\epsilon(t)</script></span> 可以被精确计算：  </p>
+<p>$$ f_\epsilon(t) = \frac{1}{\pi} \left[ \arctan\left(\frac{b - t}{\epsilon}\right) - \arctan\left(\frac{a - t}{\epsilon}\right) \right] $$<br />
+5. 在 <span class="arithmatex"><span class="MathJax_Preview">\epsilon \to 0^+</span><script type="math/tex">\epsilon \to 0^+</script></span> 的极限下， <span class="arithmatex"><span class="MathJax_Preview">\arctan(x/\epsilon)</span><script type="math/tex">\arctan(x/\epsilon)</script></span> 趋向于一个阶梯函数 <span class="arithmatex"><span class="MathJax_Preview">\frac{\pi}{2} \text{sgn}(x)</span><script type="math/tex">\frac{\pi}{2} \text{sgn}(x)</script></span>。因此：  </p>
+<p>$$ \lim_{\epsilon \to 0^+} f_\epsilon(t) = \frac{1}{\pi} \left( \frac{\pi}{2} \text{sgn}(b-t) - \frac{\pi}{2} \text{sgn}(a-t) \right) = \begin{cases} 1 &amp; \text{if } t \in (a,b) \ &frac12; &amp; \text{if } t = a \text{ or } t = b \ 0 &amp; \text{otherwise} \end{cases} $$<br />
+6. 这个极限函数 <span class="arithmatex"><span class="MathJax_Preview">\chi_{(a,b)}(t)</span><script type="math/tex">\chi_{(a,b)}(t)</script></span> 正是区间 <span class="arithmatex"><span class="MathJax_Preview">(a,b)</span><script type="math/tex">(a,b)</script></span> 的特征函数（在端点处取平均值）。<br />
+7. 根据泛函演算的谱映射定理，算符的极限 <span class="arithmatex"><span class="MathJax_Preview">\lim_{\epsilon \to 0^+} F_\epsilon(A)</span><script type="math/tex">\lim_{\epsilon \to 0^+} F_\epsilon(A)</script></span> 就是 <span class="arithmatex"><span class="MathJax_Preview">\chi_{(a,b)}(A)</span><script type="math/tex">\chi_{(a,b)}(A)</script></span>。根据谱定理， <span class="arithmatex"><span class="MathJax_Preview">\chi_{(a,b)}(A)</span><script type="math/tex">\chi_{(a,b)}(A)</script></span> <em>正是*谱投影 <span class="arithmatex"><span class="MathJax_Preview">E((a,b))</span><script type="math/tex">E((a,b))</script></span>（加上端点贡献）。**证明完毕*</em> [24](#ref-24]。</p>
+<p>核心结论 (II)：<br />
+Stone 公式严格地证明了连续谱的信息被完整地编码在 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的分支割线中：</p>
+<ul>
+<li><strong>割线的位置 (Location) <span class="arithmatex"><span class="MathJax_Preview">\implies</span><script type="math/tex">\implies</script></span> 连续谱 (Continuous Spectrum) <span class="arithmatex"><span class="MathJax_Preview">\sigma_c(A)</span><script type="math/tex">\sigma_c(A)</script></span>。</strong>  </li>
+<li><strong>割线上的不连续性 (Discontinuity) <span class="arithmatex"><span class="MathJax_Preview">\implies</span><script type="math/tex">\implies</script></span> 谱密度 (Spectral Density) <span class="arithmatex"><span class="MathJax_Preview">dE_\lambda / d\lambda</span><script type="math/tex">dE_\lambda / d\lambda</script></span></strong> [24](#ref-24]。</li>
+</ul>
+<h3 id="证明共振态是什么">证明共振态是什么<a class="headerlink" href="#证明共振态是什么" title="Permanent link">#</a></h3>
+<h3 id="总结谱与奇点的对应关系"><strong>总结：谱与奇点的对应关系</strong><a class="headerlink" href="#总结谱与奇点的对应关系" title="Permanent link">#</a></h3>
+<p>第二部分的两个核心证明清晰地回答了“为什么预解式能给出谱信息”的问题。下表总结了这一深刻的对应关系：</p>
+<table>
+<thead>
+<tr>
+<th align="left">谱的类型 (Spectrum Type)</th>
+<th align="left">物理图像 (Physical Picture)</th>
+<th align="left">预解式 G(z) 的奇点类型 (Singularity Type)</th>
+<th align="left">奇点揭示的信息 (Information Revealed)</th>
+<th align="left">关键数学工具 (Key Mathematical Tool)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><strong>点谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_p(A)</span><script type="math/tex">\sigma_p(A)</script></span></strong> (Discrete)</td>
+<td align="left">束缚态 (Bound States)</td>
+<td align="left"><strong>极点 (Pole)</strong> <a href="#ref-12">12</a></td>
+<td align="left"><strong>位置</strong>: 本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> <strong>留数</strong>: 投影算符 $P_n =</td>
+<td align="left">\psi_n\rangle\langle \psi_n</td>
+</tr>
+<tr>
+<td align="left"><strong>连续谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_c(A)</span><script type="math/tex">\sigma_c(A)</script></span></strong> (Continuous)</td>
+<td align="left">散射态 (Scattering States)</td>
+<td align="left"><strong>分支割线 (Branch Cut)</strong> <a href="#ref-8">8</a></td>
+<td align="left"><strong>位置</strong>: 连续谱区间 $</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="第三部分微扰理论的预解式推导从恒等式到级数"><strong>第三部分：微扰理论的预解式推导：从恒等式到级数</strong><a class="headerlink" href="#第三部分微扰理论的预解式推导从恒等式到级数" title="Permanent link">#</a></h2>
+<p>现在我们转向用户的第二个问题：如何使用预解式理论进行微扰求解。我们将展示预解式形式主义如何为Rayleigh-Schrödinger微扰理论（RSPT）提供了最自然和最严谨的推导基础。</p>
+<h3 id="31-微扰设置与历史脉络"><strong>3.1 微扰设置与历史脉络</strong><a class="headerlink" href="#31-微扰设置与历史脉络" title="Permanent link">#</a></h3>
+<p>微扰理论的核心思想是将一个复杂（但“可解”）的系统的哈密顿算符 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 加上一个“小”的微扰 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> <a href="#ref-26">26</a>。总哈密顿算符为：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">H = H_0 + V</div>
+<script type="math/tex; mode=display">H = H_0 + V</script>
+</div>
+<p>我们的目标是，在已知 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 的本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(0)}</span><script type="math/tex">E_n^{(0)}</script></span> 和本征态 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n^{(0)}\rangle</span><script type="math/tex">|\psi_n^{(0)}\rangle</script></span> 的情况下，近似求解 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 的本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> 和本征态 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n\rangle</span><script type="math/tex">|\psi_n\rangle</script></span>。<br />
+正如用户查询中所指出的，这一方法的历史脉络深刻地根植于物理学的发展：</p>
+<ol>
+<li><strong>Rayleigh (19世纪)</strong>: 约翰·斯特拉特，即瑞利勋爵 (Lord Rayleigh)，在其巨著《声学理论》(The Theory of Sound) 中，首次系统地研究了物理系统的微扰。他研究了振动弦（如小提琴弦）由于密度存在“轻微的不均匀性” (small inhomogeneities) <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 而引起的基频（本征值）的漂移 <a href="#ref-27">27</a>。  </li>
+<li><strong>Schrödinger (1926)</strong>: 埃尔温·薛定谔 (Erwin Schrödinger) 在其1926年奠定波动力学的系列论文中，明确引用了Rayleigh的工作 [27](#ref-27]。他将Rayleigh的方法从经典声学推广到量子力学，用以计算（例如）外加电场（微扰 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span>）如何导致氢原子能级（本征值）发生移动，即著名的斯塔克效应 (Stark effect) <a href="#ref-27">27</a>。  </li>
+<li><strong>Kato (1949)</strong>: 尽管Rayleigh-Schrödinger (RS) 理论在物理学中取得了巨大成功，但在数学上，它在近半个世纪里都只是一个“形式级数” (formal series)，其收敛性和严谨性存疑 [32](#ref-32]。直到1949年左右，加藤敏夫 (Tosio Kato) [30](#ref-30] 和 Franz Rellich [30](#ref-30] 才为其提供了坚实的数学基础。Kato在其划时代的著作《线性算符的微扰理论》(Perturbation Theory for Linear Operators) [34](#ref-34] 中，系统地发展了基于预解式算符的微扰理论，彻底解决了这一问题 [30](#ref-30]。</li>
+</ol>
+<h3 id="32-预解式恒等式-dyson方程"><strong>3.2 预解式恒等式 (Dyson方程)</strong><a class="headerlink" href="#32-预解式恒等式-dyson方程" title="Permanent link">#</a></h3>
+<p>预解式方法的核心是建立未微扰预解式 <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 和完整预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 之间的精确关系。<br />
+令 <span class="arithmatex"><span class="MathJax_Preview">G(z) = (z - H)^{-1}</span><script type="math/tex">G(z) = (z - H)^{-1}</script></span> 且 <span class="arithmatex"><span class="MathJax_Preview">G_0(z) = (z - H_0)^{-1}</span><script type="math/tex">G_0(z) = (z - H_0)^{-1}</script></span>。<br />
+推导 3.1 (第二预解式恒等式)<br />
+该恒等式的推导是纯粹的算符代数：</p>
+<ol>
+<li>从 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 的定义开始：<br />
+<span class="arithmatex"><span class="MathJax_Preview">G_0^{-1}(z) = z - H_0</span><script type="math/tex">G_0^{-1}(z) = z - H_0</script></span><br />
+<span class="arithmatex"><span class="MathJax_Preview">G^{-1}(z) = z - H = z - (H_0 + V) = (z - H_0) - V = G_0^{-1}(z) - V</span><script type="math/tex">G^{-1}(z) = z - H = z - (H_0 + V) = (z - H_0) - V = G_0^{-1}(z) - V</script></span>  </li>
+<li>因此，我们得到 <span class="arithmatex"><span class="MathJax_Preview">G_0^{-1}(z) - G^{-1}(z) = V</span><script type="math/tex">G_0^{-1}(z) - G^{-1}(z) = V</script></span>。  </li>
+<li>在这条恒等式的左侧乘以 <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span>，右侧乘以 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span>：<br />
+<span class="arithmatex"><span class="MathJax_Preview">G_0(z) [ G_0^{-1}(z) - G^{-1}(z) ] G(z) = G_0(z) V G(z)</span><script type="math/tex">G_0(z) [ G_0^{-1}(z) - G^{-1}(z) ] G(z) = G_0(z) V G(z)</script></span>  </li>
+<li>展开左侧：<br />
+<span class="arithmatex"><span class="MathJax_Preview">G_0(z) G_0^{-1}(z) G(z) - G_0(z) G^{-1}(z) G(z) = G_0(z) V G(z)</span><script type="math/tex">G_0(z) G_0^{-1}(z) G(z) - G_0(z) G^{-1}(z) G(z) = G_0(z) V G(z)</script></span>  </li>
+<li>利用 <span class="arithmatex"><span class="MathJax_Preview">G_0 G_0^{-1} = I</span><script type="math/tex">G_0 G_0^{-1} = I</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">G^{-1} G = I</span><script type="math/tex">G^{-1} G = I</script></span>：<br />
+<span class="arithmatex"><span class="MathJax_Preview">I \cdot G(z) - G_0(z) \cdot I = G_0(z) V G(z)</span><script type="math/tex">I \cdot G(z) - G_0(z) \cdot I = G_0(z) V G(z)</script></span>  </li>
+<li>结果：</li>
+</ol>
+<p><span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">G(z) = G_0(z) + G_0(z) V G(z)</span><script type="math/tex">G(z) = G_0(z) + G_0(z) V G(z)</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">G(z) = G_0(z) + G_0(z) V G(z)</span><script type="math/tex">G(z) = G_0(z) + G_0(z) V G(z)</script></span></script></span><br />
+<a href="#ref-10">10</a>。这被称为第二预解式恒等式（或Dyson方程）。</p>
+<p>这个恒等式是整个微扰理论的基石。它以一种非微扰的、精确的形式，将复杂的 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span>（我们想知道其极点）与已知的 <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 和微扰 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 联系起来。</p>
+<p>这个恒等式在物理学的不同分支中以不同的名称出现，显示了其普适性：</p>
+<ul>
+<li>在量子散射理论中，它被称为 <strong>Lippmann-Schwinger 方程</strong> [11](#ref-11]。  </li>
+<li>在量子场论和多体物理学中，它被称为 <strong>Dyson 方程</strong> [41](#ref-41]。</li>
+</ul>
+<p>预解式形式主义提供了一个统一的语言，将束缚态微扰（RSPT）和散射问题（Born近似）无缝地联系在同一个数学框架下。</p>
+<h3 id="33-born-neumann-级数gzgz-的迭代展开"><strong>3.3 Born-Neumann 级数：<span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的迭代展开</strong><a class="headerlink" href="#33-born-neumann-级数gzgz-的迭代展开" title="Permanent link">#</a></h3>
+<p>Dyson方程 <span class="arithmatex"><span class="MathJax_Preview">G = G_0 + G_0 V G</span><script type="math/tex">G = G_0 + G_0 V G</script></span> 是一个 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的自洽方程。求解它的最直接方法是迭代法 [11](#ref-11]：</p>
+<ol>
+<li>将右侧的 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 替换为整个方程：<br />
+<span class="arithmatex"><span class="MathJax_Preview">G = G_0 + G_0 V (G_0 + G_0 V G)</span><script type="math/tex">G = G_0 + G_0 V (G_0 + G_0 V G)</script></span>  </li>
+<li>展开并再次迭代：<br />
+<span class="arithmatex"><span class="MathJax_Preview">G = G_0 + G_0 V G_0 + G_0 V G_0 V (G_0 + G_0 V G)</span><script type="math/tex">G = G_0 + G_0 V G_0 + G_0 V G_0 V (G_0 + G_0 V G)</script></span>  </li>
+<li>无限次迭代下去，我们得到一个无穷级数：</li>
+</ol>
+<p><span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">G(z) = G_0(z) + G_0(z) V G_0(z) + G_0(z) V G_0(z) V G_0(z) + \dots</span><script type="math/tex">G(z) = G_0(z) + G_0(z) V G_0(z) + G_0(z) V G_0(z) V G_0(z) + \dots</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">G(z) = G_0(z) + G_0(z) V G_0(z) + G_0(z) V G_0(z) V G_0(z) + \dots</span><script type="math/tex">G(z) = G_0(z) + G_0(z) V G_0(z) + G_0(z) V G_0(z) V G_0(z) + \dots</script></span></script></span><br />
+   [11](#ref-11]。</p>
+<p>这个级数在数学上被称为 <strong>Neumann 级数</strong> (Neumann series) [7](#ref-7]，在物理学中被称为 <strong>Born 级数</strong> (Born series) [39](#ref-39]。如果截取到 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 的一阶， <span class="arithmatex"><span class="MathJax_Preview">G \approx G_0 + G_0 V G_0</span><script type="math/tex">G \approx G_0 + G_0 V G_0</script></span>，这就对应于散射理论中的 Born 近似 [39](#ref-39]。</p>
+<p>然而，这个级数在应用于束缚态微扰时，存在一个 <strong>灾难性的问题</strong>。</p>
+<p>Born 级数是一个几何级数，其收敛的充分条件是其“公比”的范数小于 1，即 <span class="arithmatex"><span class="MathJax_Preview">\|V G_0(z)\| &lt; 1</span><script type="math/tex">\|V G_0(z)\| < 1</script></span> [7](#ref-7]。但是，我们使用预解式的*目的*是研究 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 的本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>。<span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> 通常非常接近 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 的本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(0)}</span><script type="math/tex">E_n^{(0)}</script></span>。而 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(0)}</span><script type="math/tex">E_n^{(0)}</script></span> 恰好是 <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 的一个*极点*（根据第二部分）！</p>
+<p>这意味着，当我们让 <span class="arithmatex"><span class="MathJax_Preview">z \to E_n^{(0)}</span><script type="math/tex">z \to E_n^{(0)}</script></span> 时， <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 的范数会发散 <span class="arithmatex"><span class="MathJax_Preview">\|G_0(z)\| \to \infty</span><script type="math/tex">\|G_0(z)\| \to \infty</script></span> [7](#ref-7]。因此，Born 级数 <span class="arithmatex"><span class="MathJax_Preview">G = \sum G_0 (V G_0)^n</span><script type="math/tex">G = \sum G_0 (V G_0)^n</script></span> 在我们最关心的点（即 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 的谱附近）是*灾难性发散*的。</p>
+<p><strong>结论</strong>：直接使用 Born 级数来寻找*新*极点（即 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 的本征值）是行不通的。这正是 Rayleigh 和 Schrödinger 的形式推导中“除以零”问题的数学根源 [45](#ref-45]。我们需要一个更精巧的工具来系统地处理 <span class="arithmatex"><span class="MathJax_Preview">z = E_n^{(0)}</span><script type="math/tex">z = E_n^{(0)}</script></span> 处的奇异性。这个工具正是 Kato 的严谨框架的核心。</p>
+<h2 id="第四部分完整推导rayleigh-schrödinger-微扰理论"><strong>第四部分：【完整推导】Rayleigh-Schrödinger 微扰理论</strong><a class="headerlink" href="#第四部分完整推导rayleigh-schrödinger-微扰理论" title="Permanent link">#</a></h2>
+<p>我们将展示如何利用预解式形式主义，特别是通过引入投影算符和约化预解式，来严格且系统地推导RSPT的完整级数。</p>
+<h3 id="41-kato-的严谨框架利用投影算符"><strong>4.1 Kato 的严谨框架：利用投影算符</strong><a class="headerlink" href="#41-kato-的严谨框架利用投影算符" title="Permanent link">#</a></h3>
+<p>Kato 和 Rellich 的核心思想是 [30](#ref-30]，我们不应该直接展开 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 本身，因为 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 在我们关心的点附近是奇异的。相反，我们应该研究由 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的围道积分定义的*投影算符* <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> [33](#ref-33]。</p>
+<p>我们引入一个微扰参数 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>， <span class="arithmatex"><span class="MathJax_Preview">H(\lambda) = H_0 + \lambda V</span><script type="math/tex">H(\lambda) = H_0 + \lambda V</script></span>。我们想求解的是 <span class="arithmatex"><span class="MathJax_Preview">H(\lambda)</span><script type="math/tex">H(\lambda)</script></span> 的新本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n(\lambda)</span><script type="math/tex">E_n(\lambda)</script></span> 和新投影 <span class="arithmatex"><span class="MathJax_Preview">P_n(\lambda)</span><script type="math/tex">P_n(\lambda)</script></span>，它们都是 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 的函数。</p>
+<p>Kato-Rellich 理论 [32](#ref-32] 证明了一个深刻的定理：如果 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(0)}</span><script type="math/tex">E_n^{(0)}</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 的一个孤立本征值，并且微扰 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 是（相对 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span>）“解析”的，那么 <span class="arithmatex"><span class="MathJax_Preview">E_n(\lambda)</span><script type="math/tex">E_n(\lambda)</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">P_n(\lambda)</span><script type="math/tex">P_n(\lambda)</script></span> <em>也是</em> <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 的**解析函数**（至少在 <span class="arithmatex"><span class="MathJax_Preview">\lambda=0</span><script type="math/tex">\lambda=0</script></span> 附近的一个邻域内是收敛的幂级数） [14](#ref-14]。</p>
+<p>这意味着我们可以写：</p>
+<p><span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">E_n(\lambda) = E_n^{(0)} + \lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \dots</span><script type="math/tex">E_n(\lambda) = E_n^{(0)} + \lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \dots</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">E_n(\lambda) = E_n^{(0)} + \lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \dots</span><script type="math/tex">E_n(\lambda) = E_n^{(0)} + \lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \dots</script></span></script></span><br />
+<a href="#ref-27">27</a></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">P_n(\lambda) = P_n^{(0)} + \lambda P_n^{(1)} + \lambda^2 P_n^{(2)} + \dots</div>
+<script type="math/tex; mode=display">P_n(\lambda) = P_n^{(0)} + \lambda P_n^{(1)} + \lambda^2 P_n^{(2)} + \dots</script>
+</div>
+<p>我们的任务就是求解这些展开式的系数 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(k)}</span><script type="math/tex">E_n^{(k)}</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">P_n^{(k)}</span><script type="math/tex">P_n^{(k)}</script></span>。这在复平面上的图像是：<span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">z=E_n^{(0)}</span><script type="math/tex">z=E_n^{(0)}</script></span> 处的极点，在微扰 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 的作用下，“漂移” (shift) 到了 <span class="arithmatex"><span class="MathJax_Preview">G(z, \lambda)</span><script type="math/tex">G(z, \lambda)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">z=E_n(\lambda)</span><script type="math/tex">z=E_n(\lambda)</script></span> 处的新极点 [48](#ref-48]。</p>
+<h3 id="42-划分-partitioning-方法"><strong>4.2 划分 (Partitioning) 方法</strong><a class="headerlink" href="#42-划分-partitioning-方法" title="Permanent link">#</a></h3>
+<p>推导 RSPT 最清晰、最有力的方法是 Feshbach-Löwdin 划分方法 [26](#ref-26]。这种方法自然地引出了 Kato 的关键工具，并能统一处理简并和非简并情况。</p>
+<p>推导 4.1 (导出 <span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span>)<br />
+为简单起见，我们设 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(0)}</span><script type="math/tex">E_n^{(0)}</script></span> 是非简并的。</p>
+<ol>
+<li>定义投影算符 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span>：<br />
+<span class="arithmatex"><span class="MathJax_Preview">P = P_n^{(0)} = |\psi_n^{(0)}\rangle\langle \psi_n^{(0)}|</span><script type="math/tex">P = P_n^{(0)} = |\psi_n^{(0)}\rangle\langle \psi_n^{(0)}|</script></span> （投影到我们关心的未微扰态）<br />
+<span class="arithmatex"><span class="MathJax_Preview">Q = I - P = \sum_{k \neq n} |\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|</span><script type="math/tex">Q = I - P = \sum_{k \neq n} |\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|</script></span> （投影到所有其他态的正交子空间）[26](#ref-26]。  </li>
+<li><span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span> 与 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 对易 (<span class="arithmatex"><span class="MathJax_Preview">PH_0 = H_0 P</span><script type="math/tex">PH_0 = H_0 P</script></span>)，但与 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 不对易。  </li>
+<li>我们将完整的薛定谔方程 <span class="arithmatex"><span class="MathJax_Preview">(H_0 + \lambda V) |\psi\rangle = E |\psi\rangle</span><script type="math/tex">(H_0 + \lambda V) |\psi\rangle = E |\psi\rangle</script></span> 插入一个 <span class="arithmatex"><span class="MathJax_Preview">I = P + Q</span><script type="math/tex">I = P + Q</script></span>，并分别用 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span> 作用于方程的左侧 [26](#ref-26]：<br />
+   (a) <span class="arithmatex"><span class="MathJax_Preview">P (H_0 + \lambda V) (P + Q) |\psi\rangle = E P |\psi\rangle</span><script type="math/tex">P (H_0 + \lambda V) (P + Q) |\psi\rangle = E P |\psi\rangle</script></span><br />
+   (b) <span class="arithmatex"><span class="MathJax_Preview">Q (H_0 + \lambda V) (P + Q) |\psi\rangle = E Q |\psi\rangle</span><script type="math/tex">Q (H_0 + \lambda V) (P + Q) |\psi\rangle = E Q |\psi\rangle</script></span>  </li>
+<li>展开 (a) 式（利用 <span class="arithmatex"><span class="MathJax_Preview">PH_0 Q = 0</span><script type="math/tex">PH_0 Q = 0</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">PH_0 P = E_n^{(0)} P</span><script type="math/tex">PH_0 P = E_n^{(0)} P</script></span>）：<br />
+<span class="arithmatex"><span class="MathJax_Preview">(E_n^{(0)} P + \lambda PVP) P\|\psi\rangle + \lambda PVQ Q\|\psi\rangle = E P\|\psi\rangle</span><script type="math/tex">(E_n^{(0)} P + \lambda PVP) P\|\psi\rangle + \lambda PVQ Q\|\psi\rangle = E P\|\psi\rangle</script></span>  </li>
+<li>展开 (b) 式（利用 <span class="arithmatex"><span class="MathJax_Preview">QH_0 P = 0</span><script type="math/tex">QH_0 P = 0</script></span>）：<br />
+<span class="arithmatex"><span class="MathJax_Preview">(Q H_0 Q + \lambda QVQ) Q\|\psi\rangle + \lambda QVP P\|\psi\rangle = E Q\|\psi\rangle</span><script type="math/tex">(Q H_0 Q + \lambda QVQ) Q\|\psi\rangle + \lambda QVP P\|\psi\rangle = E Q\|\psi\rangle</script></span>  </li>
+<li>从 (b) 式中形式上解出 <span class="arithmatex"><span class="MathJax_Preview">Q\|\psi\rangle</span><script type="math/tex">Q\|\psi\rangle</script></span>：<br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">[ E - Q H_0 Q - \lambda QVQ ] Q\|\psi\rangle = \lambda QVP P\|\psi\rangle</span><script type="math/tex">[ E - Q H_0 Q - \lambda QVQ ] Q\|\psi\rangle = \lambda QVP P\|\psi\rangle</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">[ E - Q H_0 Q - \lambda QVQ ] Q\|\psi\rangle = \lambda QVP P\|\psi\rangle</span><script type="math/tex">[ E - Q H_0 Q - \lambda QVQ ] Q\|\psi\rangle = \lambda QVP P\|\psi\rangle</script></span></script></span><br />
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">Q\|\psi\rangle = (E - H_0 - \lambda QVQ)^{-1} Q \cdot (\lambda QVP) P\|\psi\rangle</span><script type="math/tex">Q\|\psi\rangle = (E - H_0 - \lambda QVQ)^{-1} Q \cdot (\lambda QVP) P\|\psi\rangle</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">Q\|\psi\rangle = (E - H_0 - \lambda QVQ)^{-1} Q \cdot (\lambda QVP) P\|\psi\rangle</span><script type="math/tex">Q\|\psi\rangle = (E - H_0 - \lambda QVQ)^{-1} Q \cdot (\lambda QVP) P\|\psi\rangle</script></span></script></span><br />
+   （注意： <span class="arithmatex"><span class="MathJax_Preview">(E - H_0 - \lambda QVQ)^{-1}</span><script type="math/tex">(E - H_0 - \lambda QVQ)^{-1}</script></span> 的逆只在 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span> 空间中计算）  </li>
+<li>将 <span class="arithmatex"><span class="MathJax_Preview">Q\|\psi\rangle</span><script type="math/tex">Q\|\psi\rangle</script></span> 的这个精确表达式代回到 (a) 式中：<br />
+<span class="arithmatex"><span class="MathJax_Preview">(E_n^{(0)} P + \lambda PVP) P\|\psi\rangle + \lambda PVQ \left[ (E - H_0 - \lambda QVQ)^{-1} Q \cdot (\lambda QVP) \right] P\|\psi\rangle = E P\|\psi\rangle</span><script type="math/tex">(E_n^{(0)} P + \lambda PVP) P\|\psi\rangle + \lambda PVQ \left[ (E - H_0 - \lambda QVQ)^{-1} Q \cdot (\lambda QVP) \right] P\|\psi\rangle = E P\|\psi\rangle</script></span>  </li>
+<li>这是一个只在 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 空间中（在本例中是一维的）的精确本征方程：</li>
+</ol>
+<p><span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">H_{eff}(E, \lambda) P|\psi\rangle = E P|\psi\rangle</span><script type="math/tex">H_{eff}(E, \lambda) P|\psi\rangle = E P|\psi\rangle</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">H_{eff}(E, \lambda) P|\psi\rangle = E P|\psi\rangle</span><script type="math/tex">H_{eff}(E, \lambda) P|\psi\rangle = E P|\psi\rangle</script></span></script></span></p>
+<p>其中，有效哈密顿算符 (Effective Hamiltonian) <span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span> 为：</p>
+<p><span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">H_{eff}(E, \lambda) = E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ (E - H_0 - \lambda QVQ)^{-1} Q QVP</span><script type="math/tex">H_{eff}(E, \lambda) = E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ (E - H_0 - \lambda QVQ)^{-1} Q QVP</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">H_{eff}(E, \lambda) = E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ (E - H_0 - \lambda QVQ)^{-1} Q QVP</span><script type="math/tex">H_{eff}(E, \lambda) = E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ (E - H_0 - \lambda QVQ)^{-1} Q QVP</script></span></script></span></p>
+<p>这个方程是精确的，但 <span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span> 自身又依赖于 <span class="arithmatex"><span class="MathJax_Preview">E</span><script type="math/tex">E</script></span>（在分母中），这是一个隐式方程。</p>
+<ul>
+<li><strong>Brillouin-Wigner 理论</strong> [49](#ref-49]：通过迭代求解这个隐式方程 <span class="arithmatex"><span class="MathJax_Preview">E = f(E)</span><script type="math/tex">E = f(E)</script></span>，得到 BW 级数。  </li>
+<li><strong>Rayleigh-Schrödinger 理论</strong> [49](#ref-49]：通过在 <span class="arithmatex"><span class="MathJax_Preview">H_{eff}(E)</span><script type="math/tex">H_{eff}(E)</script></span> 的分母中*也*将 <span class="arithmatex"><span class="MathJax_Preview">E</span><script type="math/tex">E</script></span> 按 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 展开 (<span class="arithmatex"><span class="MathJax_Preview">E = E_n^{(0)} + \lambda E_n^{(1)} + \dots</span><script type="math/tex">E = E_n^{(0)} + \lambda E_n^{(1)} + \dots</script></span>)，然后逐阶收集 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 的幂，得到 RSPT 级数。这是我们接下来要做的。</li>
+</ul>
+<h3 id="43-约化预解式-the-reduced-resolvent"><strong>4.3 约化预解式 (The Reduced Resolvent)</strong><a class="headerlink" href="#43-约化预解式-the-reduced-resolvent" title="Permanent link">#</a></h3>
+<p>RSPT 的核心就是展开 <span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span> 中的那个逆算符。其 <span class="arithmatex"><span class="MathJax_Preview">\\lambda^0</span><script type="math/tex">\\lambda^0</script></span> 阶近似为 <span class="arithmatex"><span class="MathJax_Preview">(E_n^{(0)} - H_0)^{-1} Q</span><script type="math/tex">(E_n^{(0)} - H_0)^{-1} Q</script></span>。这个算符在 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span> 空间（即 <span class="arithmatex"><span class="MathJax_Preview">k \neq n</span><script type="math/tex">k \neq n</script></span> 的子空间）上是良定义的，但在 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 空间上是发散的。</p>
+<p>定义 4.1 (约化预解式 <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span>)<br />
+我们定义约化预解式 (Reduced Resolvent) <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span>（在 Kato 的文献中常记为 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>） [30](#ref-30] 为：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">S_n \equiv Q (E_n^{(0)} - H_0)^{-1} Q</div>
+<script type="math/tex; mode=display">S_n \equiv Q (E_n^{(0)} - H_0)^{-1} Q</script>
+</div>
+<p>这个算符 <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span> 完美地对应于标准 RSPT 教科书中的形式和：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">S_n = \sum_{k \neq n} \frac{|\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|}{E_n^{(0)} - E_k^{(0)}}</div>
+<script type="math/tex; mode=display">S_n = \sum_{k \neq n} \frac{|\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|}{E_n^{(0)} - E_k^{(0)}}</script>
+</div>
+<p>Kato 的关键贡献在于 [30](#ref-30]，他证明了 <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">z=E_n^{(0)}</span><script type="math/tex">z=E_n^{(0)}</script></span> 附近的洛朗展开 (Laurent expansion) 总是可以（在算符范数下）分解为：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">G_0(z) = \frac{P_n^{(0)}}{z - E_n^{(0)}} + S(z)</div>
+<script type="math/tex; mode=display">G_0(z) = \frac{P_n^{(0)}}{z - E_n^{(0)}} + S(z)</script>
+</div>
+<p>其中 <span class="arithmatex"><span class="MathJax_Preview">S(z)</span><script type="math/tex">S(z)</script></span> 是在 <span class="arithmatex"><span class="MathJax_Preview">z=E_n^{(0)}</span><script type="math/tex">z=E_n^{(0)}</script></span> 处全纯的部分。约化预解式 <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span> 就是这个全纯部分在该点的取值 <span class="arithmatex"><span class="MathJax_Preview">S_n = S(E_n^{(0)})</span><script type="math/tex">S_n = S(E_n^{(0)})</script></span> [30](#ref-30]。它是一个严格定义的有界算符，它取代了所有非严谨的“除以 <span class="arithmatex"><span class="MathJax_Preview">(E_n - E_k)</span><script type="math/tex">(E_n - E_k)</script></span>” 的无穷求和 [45](#ref-45]。</p>
+<h3 id="44-能量与波函数的系统推导"><strong>4.4 能量与波函数的系统推导</strong><a class="headerlink" href="#44-能量与波函数的系统推导" title="Permanent link">#</a></h3>
+<p>现在我们准备收获成果。我们将 <span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span> 中的逆算符 <span class="arithmatex"><span class="MathJax_Preview">G_Q(E, \lambda) \equiv (E - H_0 - \lambda QVQ)^{-1} Q</span><script type="math/tex">G_Q(E, \lambda) \equiv (E - H_0 - \lambda QVQ)^{-1} Q</script></span> 展开。</p>
+<p>推导 4.2 (<span class="arithmatex"><span class="MathJax_Preview">G_Q</span><script type="math/tex">G_Q</script></span> 的展开)<br />
+$$ G_Q(E, \lambda) = \left( (E_n^{(0)} - H_0) + (\lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \dots) - \lambda QVQ \right)^{-1} Q $$<br />
+利用算符恒等式 <span class="arithmatex"><span class="MathJax_Preview">(A+B)^{-1} = (I + A^{-1}B)^{-1} A^{-1} \\approx (I - A^{-1}B) A^{-1}</span><script type="math/tex">(A+B)^{-1} = (I + A^{-1}B)^{-1} A^{-1} \\approx (I - A^{-1}B) A^{-1}</script></span>，并只保留到 <span class="arithmatex"><span class="MathJax_Preview">\\lambda^0</span><script type="math/tex">\\lambda^0</script></span> 阶（因为 <span class="arithmatex"><span class="MathJax_Preview">G_Q</span><script type="math/tex">G_Q</script></span> 总是与 <span class="arithmatex"><span class="MathJax_Preview">\\lambda^2</span><script type="math/tex">\\lambda^2</script></span> 相乘）：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">G_Q(E, \lambda) = (E_n^{(0)} - H_0)^{-1} Q + \mathcal{O}(\lambda)$$  
+$$G_Q(E, \lambda) = S_n + \mathcal{O}(\lambda)</div>
+<script type="math/tex; mode=display">G_Q(E, \lambda) = (E_n^{(0)} - H_0)^{-1} Q + \mathcal{O}(\lambda)$$  
+$$G_Q(E, \lambda) = S_n + \mathcal{O}(\lambda)</script>
+</div>
+<p>（因为 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span> 算符使得 <span class="arithmatex"><span class="MathJax_Preview">(E_n^{(0)} - H_0)^{-1}</span><script type="math/tex">(E_n^{(0)} - H_0)^{-1}</script></span> 的极点消失了）。<br />
+推导 4.3 (能量 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(1)}, E_n^{(2)}</span><script type="math/tex">E_n^{(1)}, E_n^{(2)}</script></span>)<br />
+我们将 <span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span> 作用在 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n^{(0)}\rangle</span><script type="math/tex">|\psi_n^{(0)}\rangle</script></span> 上并取内积（对于非简并情况，这给出了标量本征值 <span class="arithmatex"><span class="MathJax_Preview">E</span><script type="math/tex">E</script></span>）：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">E_n = \langle \psi_n^{(0)} | H_{eff}(E, \lambda) | \psi_n^{(0)} \rangle</div>
+<script type="math/tex; mode=display">E_n = \langle \psi_n^{(0)} | H_{eff}(E, \lambda) | \psi_n^{(0)} \rangle</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">E_n = \langle \psi_n^{(0)} \| (E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ G_Q(E, \lambda) QVP) \| \psi_n^{(0)} \rangle </div>
+<script type="math/tex; mode=display">E_n = \langle \psi_n^{(0)} \| (E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ G_Q(E, \lambda) QVP) \| \psi_n^{(0)} \rangle </script>
+</div>
+<p>利用 <span class="arithmatex"><span class="MathJax_Preview">P|\psi_n^{(0)}\rangle = |\psi_n^{(0)}\rangle</span><script type="math/tex">P|\psi_n^{(0)}\rangle = |\psi_n^{(0)}\rangle</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">Q|\psi_n^{(0)}\rangle = 0</span><script type="math/tex">Q|\psi_n^{(0)}\rangle = 0</script></span>：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">  
+E_n = E_n^{(0)} + \lambda \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle + \lambda^2 \langle \psi_n^{(0)} | V Q G_Q(E, \lambda) Q V | \psi_n^{(0)} \rangle </div>
+<script type="math/tex; mode=display">  
+E_n = E_n^{(0)} + \lambda \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle + \lambda^2 \langle \psi_n^{(0)} | V Q G_Q(E, \lambda) Q V | \psi_n^{(0)} \rangle </script>
+</div>
+<ol>
+<li>一阶能量 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(1)}</span><script type="math/tex">E_n^{(1)}</script></span> [27](#ref-27]：<br />
+   比较 <span class="arithmatex"><span class="MathJax_Preview">\lambda^1</span><script type="math/tex">\lambda^1</script></span> 的系数：</li>
+</ol>
+<p><span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">E_n^{(1)} = \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle</span><script type="math/tex">E_n^{(1)} = \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">E_n^{(1)} = \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle</span><script type="math/tex">E_n^{(1)} = \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle</script></span></script></span><br />
+2. 二阶能量 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(2)}</span><script type="math/tex">E_n^{(2)}</script></span> [27](#ref-27]：<br />
+   比较 <span class="arithmatex"><span class="MathJax_Preview">\lambda^2</span><script type="math/tex">\lambda^2</script></span> 的系数。我们需要 <span class="arithmatex"><span class="MathJax_Preview">G_Q(E, \lambda)</span><script type="math/tex">G_Q(E, \lambda)</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">\lambda^0</span><script type="math/tex">\lambda^0</script></span> 阶近似，即 <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span>：  </p>
+<p>$$ E_n^{(2)} = \langle \psi_n^{(0)} | V Q (S_n) Q V | \psi_n^{(0)} \rangle = \langle \psi_n^{(0)} | V S_n V | \psi_n^{(0)} \rangle $$<br />
+   （因为 <span class="arithmatex"><span class="MathJax_Preview">S_n = Q S_n Q</span><script type="math/tex">S_n = Q S_n Q</script></span>）。<br />
+   代入 <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span> 的求和形式：</p>
+<p>$$ E_n^{(2)} = \sum_{k \neq n} \langle \psi_n^{(0)} | V | \psi_k^{(0)} \rangle \frac{1}{E_n^{(0)} - E_k^{(0)}} \langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle $$  </p>
+<p>$$ E_n^{(2)} = \sum_{k \neq n} \frac{|\langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle|<sup _0_="(0)">2}{E_n</sup> - E_k^{(0)}} $$</p>
+<p>推导 4.4 (波函数 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n^{(1)}\rangle</span><script type="math/tex">|\psi_n^{(1)}\rangle</script></span>)<br />
+完整的波函数是 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n\rangle = P|\psi_n\rangle + Q|\psi_n\rangle</span><script type="math/tex">|\psi_n\rangle = P|\psi_n\rangle + Q|\psi_n\rangle</script></span>。我们使用“中间归一化” (intermediate normalization)，即 <span class="arithmatex"><span class="MathJax_Preview">P|\psi_n\rangle = |\psi_n^{(0)}\rangle</span><script type="math/tex">P|\psi_n\rangle = |\psi_n^{(0)}\rangle</script></span>（所有 <span class="arithmatex"><span class="MathJax_Preview">\\lambda</span><script type="math/tex">\\lambda</script></span> 阶的修正都在 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span> 空间中）。<br />
+我们需要 <span class="arithmatex"><span class="MathJax_Preview">Q|\psi_n\rangle</span><script type="math/tex">Q|\psi_n\rangle</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">\\lambda^1</span><script type="math/tex">\\lambda^1</script></span> 阶项，记为 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n^{(1)}\rangle = Q |\psi_n^{(1)}\rangle</span><script type="math/tex">|\psi_n^{(1)}\rangle = Q |\psi_n^{(1)}\rangle</script></span> [50](#ref-50]。<br />
+从推导 4.1 的 (6) 式：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">Q|\\psi\\rangle = G\_Q(E, \\lambda) \\cdot (\\lambda QVP) P|\\psi\\rangle$$  
+$$Q|\\psi\\rangle = \\lambda G\_Q(E, \\lambda) V |\\psi\_n^{(0)}\\rangle</div>
+<script type="math/tex; mode=display">Q|\\psi\\rangle = G\_Q(E, \\lambda) \\cdot (\\lambda QVP) P|\\psi\\rangle$$  
+$$Q|\\psi\\rangle = \\lambda G\_Q(E, \\lambda) V |\\psi\_n^{(0)}\\rangle</script>
+</div>
+<p>我们需要 <span class="arithmatex"><span class="MathJax_Preview">\\lambda^1</span><script type="math/tex">\\lambda^1</script></span> 阶的项。我们使用 <span class="arithmatex"><span class="MathJax_Preview">G\_Q</span><script type="math/tex">G\_Q</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">\\lambda^0</span><script type="math/tex">\\lambda^0</script></span> 阶近似 <span class="arithmatex"><span class="MathJax_Preview">S\_n</span><script type="math/tex">S\_n</script></span>：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview"> |\psi_n^{(1)}\rangle = \[ \lambda G_Q(E, \lambda) V |\psi_n^{(0)}\rangle \]{\mathcal{O}(\lambda^1)} = S_n V |\psi_n^{(0)}\rangle </div>
+<script type="math/tex; mode=display"> |\psi_n^{(1)}\rangle = \[ \lambda G_Q(E, \lambda) V |\psi_n^{(0)}\rangle \]{\mathcal{O}(\lambda^1)} = S_n V |\psi_n^{(0)}\rangle </script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">代入 S_n 的求和形式：$$
+|\psi_n^{(1)}\rangle = \sum_{k \neq n} |\psi_k^{(0)}\rangle \frac{\langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle}{E_n^{(0)} - E_k^{(0)}} </div>
+<script type="math/tex; mode=display">代入 S_n 的求和形式：$$
+|\psi_n^{(1)}\rangle = \sum_{k \neq n} |\psi_k^{(0)}\rangle \frac{\langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle}{E_n^{(0)} - E_k^{(0)}} </script>
+</div>
+<p>这个过程（Kato-Rellich 理论的计算方面）是完全严谨的 [14](#ref-14]。它不仅*证明*了 RSPT 级数的存在性 [46](#ref-46]，而且还提供了一个*系统*的算法来计算任意阶的修正 [35](#ref-35]。</p>
+<h3 id="45-简并情况的处理"><strong>4.5 简并情况的处理</strong><a class="headerlink" href="#45-简并情况的处理" title="Permanent link">#</a></h3>
+<p>标准 RSPT 教科书通常需要一个完全独立的章节来处理简并微扰理论 (degenerate perturbation theory) [27](#ref-27]。</p>
+<p>预解式方法的真正威力在于，它**统一**了简并和非简并情况。</p>
+<p>在 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(0)}</span><script type="math/tex">E_n^{(0)}</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> 维简并的情况下，推导 4.1 和 4.2 <em>保持完全不变</em>。唯一的区别是：</p>
+<ol>
+<li><span class="arithmatex"><span class="MathJax_Preview">P = P_n^{(0)}</span><script type="math/tex">P = P_n^{(0)}</script></span> 不再是一维投影，而是投影到 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> 维的简并子空间。  </li>
+<li><span class="arithmatex"><span class="MathJax_Preview">H_{eff}(E, \lambda) P\|\psi\rangle = E P\|\psi\rangle</span><script type="math/tex">H_{eff}(E, \lambda) P\|\psi\rangle = E P\|\psi\rangle</script></span> 不再是一个标量方程，而是一个 <span class="arithmatex"><span class="MathJax_Preview">m \times m</span><script type="math/tex">m \times m</script></span> 的**矩阵本征值问题**。</li>
+</ol>
+<p>我们来看一阶近似：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">H_{eff}(E, \lambda) \approx E_n^{(0)} P + \lambda PVP</div>
+<script type="math/tex; mode=display">H_{eff}(E, \lambda) \approx E_n^{(0)} P + \lambda PVP</script>
+</div>
+<p><span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span> 的本征值 <span class="arithmatex"><span class="MathJax_Preview">E \approx E_n^{(0)} + \lambda E^{(1)}</span><script type="math/tex">E \approx E_n^{(0)} + \lambda E^{(1)}</script></span> 必须满足：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">(E_n^{(0)} P + \lambda PVP) P|\psi\rangle = (E_n^{(0)} + \lambda E^{(1)}) P|\psi\rangle$$  
+$$\lambda (PVP) P|\psi\rangle = \lambda E^{(1)} P|\psi\rangle</div>
+<script type="math/tex; mode=display">(E_n^{(0)} P + \lambda PVP) P|\psi\rangle = (E_n^{(0)} + \lambda E^{(1)}) P|\psi\rangle$$  
+$$\lambda (PVP) P|\psi\rangle = \lambda E^{(1)} P|\psi\rangle</script>
+</div>
+<p>这等价于：在简并子空间 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 中，求解 <span class="arithmatex"><span class="MathJax_Preview">PVP</span><script type="math/tex">PVP</script></span> 算符的本征值 <span class="arithmatex"><span class="MathJax_Preview">E^{(1)}</span><script type="math/tex">E^{(1)}</script></span>。这正是标准教科书中“在简并子空间中对角化微扰 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span>”的步骤。<br />
+因此，简并情况只是 <span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 空间维数 <span class="arithmatex"><span class="MathJax_Preview">m &gt; 1</span><script type="math/tex">m > 1</script></span> 的情况。非简并情况是 <span class="arithmatex"><span class="MathJax_Preview">m=1</span><script type="math/tex">m=1</script></span> 的平凡特例。Kato 的预解式方法 [37](#ref-37]（以及 <a href="#ref-26">26</a> 中的划分方法）从一开始就统一处理了这两种情况。</p>
+<h2 id="第五部分结论与展望"><strong>第五部分：结论与展望</strong><a class="headerlink" href="#第五部分结论与展望" title="Permanent link">#</a></h2>
+<h3 id="51-总结预解式连接解析函数论与线性算符的桥梁"><strong>5.1 总结：预解式——连接解析函数论与线性算符的桥梁</strong><a class="headerlink" href="#51-总结预解式连接解析函数论与线性算符的桥梁" title="Permanent link">#</a></h3>
+<p>本报告从泛函分析的基础出发，系统地回答了用户关于预解式算符 <span class="arithmatex"><span class="MathJax_Preview">G(z, A) = (z - A)^{-1}</span><script type="math/tex">G(z, A) = (z - A)^{-1}</script></span> 的核心问题。预解式是现代数学物理的基石 [8](#ref-8]，它将线性算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的（通常很棘手的）谱理论问题，巧妙地转化为了复值函数 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的（相对易于处理的）解析性质问题。</p>
+<p>我们已经严格证明了：</p>
+<ol>
+<li>“为什么预解式的极点...能给出那些信息？”<br />
+   答案：因为算符的孤立本征值（点谱）被定义为 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的极点。如 Riesz 投影（第二部分，证明 2.2）所示，通过留数定理，极点的位置给出了本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>，而极点的留数则严格地给出了到该本征子空间的投影算符 <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> [14](#ref-14]，后者完整地编码了本征态的信息。  </li>
+<li>“为什么预解式的...割线能给出那些信息？”<br />
+   答案：因为算符的连续谱被定义为 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的分支割线 [8](#ref-8]。如 Stone 公式（第二部分，证明 2.5）所示，通过 Sokhotski–Plemelj 定理，预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 跨越这条割线的不连续性（“跳跃”）就是谱密度函数 <span class="arithmatex"><span class="MathJax_Preview">dE_\lambda / d\lambda</span><script type="math/tex">dE_\lambda / d\lambda</script></span> [24](#ref-24]，它编码了连续谱“本征态”的分布。  </li>
+<li>“如何使用预解式理论进行微扰求解？”<br />
+   答案：我们将 <span class="arithmatex"><span class="MathJax_Preview">H = H_0 + V</span><script type="math/tex">H = H_0 + V</script></span> 的微扰问题转化为 <span class="arithmatex"><span class="MathJax_Preview">G_0</span><script type="math/tex">G_0</script></span> 到 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 的微扰问题。通过 <span class="arithmatex"><span class="MathJax_Preview">P/Q</span><script type="math/tex">P/Q</script></span> 空间划分 [26](#ref-26] 和 Kato 的约化预解式 <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span> [30](#ref-30]，我们绕过了 <span class="arithmatex"><span class="MathJax_Preview">G_0</span><script type="math/tex">G_0</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(0)}</span><script type="math/tex">E_n^{(0)}</script></span> 处的奇异性，从而严格且系统地推导了 Rayleigh-Schrödinger 微扰理论的所有标准公式（<span class="arithmatex"><span class="MathJax_Preview">E_n^{(1)}, E_n^{(2)}, |\psi_n^{(1)}\rangle</span><script type="math/tex">E_n^{(1)}, E_n^{(2)}, |\psi_n^{(1)}\rangle</script></span>），并统一了简并与非简并情况（第四部分）。</li>
+</ol>
+<h3 id="52-超越微扰预解式在现代数学物理中的应用"><strong>5.2 超越微扰：预解式在现代数学物理中的应用</strong><a class="headerlink" href="#52-超越微扰预解式在现代数学物理中的应用" title="Permanent link">#</a></h3>
+<p>预解式形式主义的应用远不止于RSPT，它已渗透到数学物理的各个前沿领域：</p>
+<ul>
+<li><strong>散射理论 (Scattering Theory)</strong>: 预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 在连续谱割线上的边界值（“跳跃”）与 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 矩阵和 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 矩阵（散射矩阵）直接相关，是计算散射截面的核心 [10](#ref-10]。  </li>
+<li><strong>随机矩阵理论 (Random Matrix Theory)</strong>: 在混沌和无序系统中，人们研究的不是单个 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span>，而是预解式的系综平均 <span class="arithmatex"><span class="MathJax_Preview">\langle G(z) \rangle</span><script type="math/tex">\langle G(z) \rangle</script></span>。这个平均预解式满足的方程（Dyson方程的矩阵形式）决定了能级的普适统计分布 [42](#ref-42]。  </li>
+<li><strong>谱几何与数论 (Spectral Geometry &amp; Number Theory)</strong>: 在黎曼曲面上，Laplace 算符的预解式（格林函数）及其谱行列式，与数论中的 <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>-函数（如 Riemann Zeta 函数）深刻相关。<span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>-函数的零点（“谱”）与预解式的极点（共振）之间存在着对应关系 [8](#ref-8]。</li>
+</ul>
+<p>从19世纪 Rayleigh 对声波的经典研究 [29](#ref-29]，到20世纪 Schrödinger 的量子论 [27](#ref-27] 和 Kato 的泛函分析 [30](#ref-30]，再到21世纪对量子混沌与数论的探索 [8](#ref-8]，预解式形式主义始终是连接物理直觉与数学严谨性的最强大、最普适的工具之一。</p>
+<h4 id="引用的著作"><strong>引用的著作</strong><a class="headerlink" href="#引用的著作" title="Permanent link">#</a></h4>
+<p><a id="ref-1"></a>1. Spectrum and resolvent of bounded linear operators | Functional Analysis Class Notes， <a href="https://fiveable.me/functional-analysis/unit-8/spectrum-resolvent-bounded-linear-operators/study-guide/OcHYnGLAxbZAkIkV">https://fiveable.me/functional-analysis/unit-8/spectrum-resolvent-bounded-linear-operators/study-guide/OcHYnGLAxbZAkIkV</a><br />
+<a id="ref-2"></a>2. Resolvent set - Wikipedia， <a href="https://en.wikipedia.org/wiki/Resolvent_set">https://en.wikipedia.org/wiki/Resolvent_set</a><br />
+<a id="ref-3"></a>3. Spectrum (functional analysis) - Wikipedia， <a href="https://en.wikipedia.org/wiki/Spectrum_functional_analysisfunctional_analysis">https://en.wikipedia.org/wiki/Spectrum_(functional_analysis)</a><br />
+<a id="ref-4"></a>4. Spectrum (functional analysis)， <a href="https://www.impan.pl/~pmh/teach/algebra/additional/spectrum.pdf">https://www.impan.pl/~pmh/teach/algebra/additional/spectrum.pdf</a><br />
+<a id="ref-5"></a>5. 1 A Note on Spectral Theory， <a href="https://www.math.chalmers.se/Math/Grundutb/CTH/tma401/0304/spectraltheory.pdf">https://www.math.chalmers.se/Math/Grundutb/CTH/tma401/0304/spectraltheory.pdf</a><br />
+<a id="ref-6"></a>6. The Resolvent of an Operator - UW Math Department - University of Washington， <a href="https://sites.math.washington.edu/~hart/m556/Lecture1.pdf">https://sites.math.washington.edu/~hart/m556/Lecture1.pdf</a><br />
+<a id="ref-7"></a>7. Why should I look at the resolvent formalism and think it is a useful tool for spectral theory?， <a href="https://mathoverflow.net/questions/372538/why-should-i-look-at-the-resolvent-formalism-and-think-it-is-a-useful-tool-for-s">https://mathoverflow.net/questions/372538/why-should-i-look-at-the-resolvent-formalism-and-think-it-is-a-useful-tool-for-s</a><br />
+<a id="ref-8"></a>8. Etudes of the resolvent.pdf - Stony Brook Mathematics Department ...， <a href="https://www.math.stonybrook.edu/~leontak/Etudes%20of%20the%20resolvent.pdf">https://www.math.stonybrook.edu/~leontak/Etudes%20of%20the%20resolvent.pdf</a><br />
+<a id="ref-9"></a>9. Resolvent formalism - Wikipedia， <a href="https://en.wikipedia.org/wiki/Resolvent_formalism">https://en.wikipedia.org/wiki/Resolvent_formalism</a><br />
+<a id="ref-10"></a>10. NOTES ON 1-PARTICLE SCATTERING 1. The resolvent and the propagator Given a Hamiltonian ˆH, the resolvent and time-propagator ar， <a href="http://wwwteor.mi.infn.it/~molinari/NOTES/Notes_on_1_particle_scattering.pdf">http://wwwteor.mi.infn.it/~molinari/NOTES/Notes_on_1_particle_scattering.pdf</a><br />
+<a id="ref-11"></a>11. Copyright cG 2019 by Robert G. Littlejohn Physics 221B Spring ...， <a href="https://bohr.physics.berkeley.edu/classes/221/1112/notes/lippschw.pdf">https://bohr.physics.berkeley.edu/classes/221/1112/notes/lippschw.pdf</a><br />
+<a id="ref-12"></a>12. Resolvent 81 Resolvent Let V be a finite-dimensional vector space and L G C(V). If Q /G σ(L), then the operator L - QI is inver， <a href="https://sites.math.washington.edu/~burke/crs/554/notes/ch16.pdf">https://sites.math.washington.edu/~burke/crs/554/notes/ch16.pdf</a><br />
+<a id="ref-13"></a>13. Spectral theory - Wikipedia， <a href="https://en.wikipedia.org/wiki/Spectral_theory">https://en.wikipedia.org/wiki/Spectral_theory</a><br />
+<a id="ref-14"></a>14. Perturbation Theory - Niels Benedikter， <a href="https://nielsbenedikter.de/advmaphys2/pert-theory.pdf">https://nielsbenedikter.de/advmaphys2/pert-theory.pdf</a><br />
+<a id="ref-15"></a>15. Beyond the Spectral Theorem: Spectrally Decomposing Arbitrary Functions of Nondiagonalizable Operators， <a href="https://csc.ucdavis.edu/~cmg/papers/bst.pdf">https://csc.ucdavis.edu/~cmg/papers/bst.pdf</a><br />
+<a id="ref-16"></a>16. functional analysis - Why are nonzero eigenvalues of a compact ...， <a href="https://math.stackexchange.com/questions/2880361/why-are-nonzero-eigenvalues-of-a-compact-operator-poles-of-its-resolvent">https://math.stackexchange.com/questions/2880361/why-are-nonzero-eigenvalues-of-a-compact-operator-poles-of-its-resolvent</a><br />
+<a id="ref-17"></a>17. Compact resolvents 1. Application of perturbation theory， <a href="https://www-users.cse.umn.edu/~garrett/m/fun/compact_resolvent.pdf">https://www-users.cse.umn.edu/~garrett/m/fun/compact_resolvent.pdf</a><br />
+<a id="ref-18"></a>18. reference request - Eigenprojection as Contour Integral over ...， <a href="https://math.stackexchange.com/questions/153690/eigenprojection-as-contour-integral-over-resolvent">https://math.stackexchange.com/questions/153690/eigenprojection-as-contour-integral-over-resolvent</a><br />
+<a id="ref-19"></a>19. Residue of trace of resolvent - linear algebra - Math Stack Exchange， <a href="https://math.stackexchange.com/questions/1786324/residue-of-trace-of-resolvent">https://math.stackexchange.com/questions/1786324/residue-of-trace-of-resolvent</a><br />
+<a id="ref-20"></a>20. 80 Linear Algebra and Matrix Analysis Resolvent Let V be a finite-dimensional vector space and L G C(V). If c /G σ(L), then the， <a href="https://sites.math.washington.edu/~greenbau/Math_554/Course_Notes/ch1.6.pdf">https://sites.math.washington.edu/~greenbau/Math_554/Course_Notes/ch1.6.pdf</a><br />
+<a id="ref-21"></a>21. quantum mechanics - Resolvent Operator in QM - Physics Stack ...， <a href="https://physics.stackexchange.com/questions/339111/resolvent-operator-in-qm">https://physics.stackexchange.com/questions/339111/resolvent-operator-in-qm</a><br />
+<a id="ref-22"></a>22. Proof that the continuous part of a spectrum really is "interval like"? - Math Stack Exchange， <a href="https://math.stackexchange.com/questions/3849562/proof-that-the-continuous-part-of-a-spectrum-really-is-interval-like">https://math.stackexchange.com/questions/3849562/proof-that-the-continuous-part-of-a-spectrum-really-is-interval-like</a><br />
+<a id="ref-23"></a>23. Computing Spectral Measures and Spectral Types - DAMTP， <a href="https://www.damtp.cam.ac.uk/user/mjc249/pdfs/SpecMeasuresMJC.pdf">https://www.damtp.cam.ac.uk/user/mjc249/pdfs/SpecMeasuresMJC.pdf</a><br />
+<a id="ref-24"></a>24. functional analysis - Proving Stone's Formula for Constructively ...， <a href="https://math.stackexchange.com/questions/1009409/proving-stones-formula-for-constructively-obtaining-the-spectral-measure-for-a">https://math.stackexchange.com/questions/1009409/proving-stones-formula-for-constructively-obtaining-the-spectral-measure-for-a</a><br />
+<a id="ref-25"></a>25. fa.functional analysis - Spectral measure and Stone's theorem ...， <a href="https://mathoverflow.net/questions/150913/spectral-measure-and-stones-theorem">https://mathoverflow.net/questions/150913/spectral-measure-and-stones-theorem</a><br />
+<a id="ref-26"></a>26. Chapter 17. Time-Independent Perturbation Theory of Non ...， <a href="https://people.chem.ucsb.edu/metiu/horia/OldFiles/QM2015/Ch17QM.pdf">https://people.chem.ucsb.edu/metiu/horia/OldFiles/QM2015/Ch17QM.pdf</a><br />
+<a id="ref-27"></a>27. Perturbation theory (quantum mechanics) - Wikipedia， <a href="https://en.wikipedia.org/wiki/Perturbation_theory_quantum_mechanicsquantum_mechanics">https://en.wikipedia.org/wiki/Perturbation_theory_(quantum_mechanics)</a><br />
+<a id="ref-28"></a>28. RAYLEIGH-SCHR¨ODINGER PERTURBATION ... - Hikari Ltd， <a href="https://www.m-hikari.com/mccartin.pdf">https://www.m-hikari.com/mccartin.pdf</a><br />
+<a id="ref-29"></a>29. The pre-history of 20<sup>th</sup> century acoustics: the legacy of Lord Rayleigh， <a href="https://dael.euracoustics.org/confs/fa2023/data/articles/000143.pdf">https://dael.euracoustics.org/confs/fa2023/data/articles/000143.pdf</a><br />
+<a id="ref-30"></a>30. Tosio Kato's work on non-relativistic quantum mechanics: part 1， <a href="https://d-nb.info/1159765766/34">https://d-nb.info/1159765766/34</a><br />
+<a id="ref-31"></a>31. 1926-Schrodinger.pdf， <a href="https://ee.sharif.edu/~sarvari/25290/1926-Schrodinger.pdf">https://ee.sharif.edu/~sarvari/25290/1926-Schrodinger.pdf</a><br />
+<a id="ref-32"></a>32. Fifty years of eigenvalue perturbation theory - ResearchGate， <a href="https://www.researchgate.net/publication/239991927_Fifty_years_of_eigenvalue_perturbation_theory">https://www.researchgate.net/publication/239991927_Fifty_years_of_eigenvalue_perturbation_theory</a><br />
+<a id="ref-33"></a>33. On the perturbation theory of closed linear operators. - Project Euclid， <a href="https://projecteuclid.org/journals/journal-of-the-mathematical-society-of-japan/volume-4/issue-3-4/On-the-perturbation-theory-of-closed-linear-operators/10.2969/jmsj/00430323.pdf">https://projecteuclid.org/journals/journal-of-the-mathematical-society-of-japan/volume-4/issue-3-4/On-the-perturbation-theory-of-closed-linear-operators/10.2969/jmsj/00430323.pdf</a><br />
+<a id="ref-34"></a>34. Perturbation Theory， <a href="https://webhomes.maths.ed.ac.uk/~v1ranick/papers/kato1.pdf">https://webhomes.maths.ed.ac.uk/~v1ranick/papers/kato1.pdf</a><br />
+<a id="ref-35"></a>35. Kato perturbation expansion in classical mechanics and an explicit expression for a Deprit generator. - arXiv， <a href="https://arxiv.org/pdf/1307.3368">https://arxiv.org/pdf/1307.3368</a><br />
+<a id="ref-36"></a>36. Perturbation Theory， <a href="https://dl.icdst.org/pdfs/files3/a7adfee17f4de1980378c675da417acd.pdf">https://dl.icdst.org/pdfs/files3/a7adfee17f4de1980378c675da417acd.pdf</a><br />
+<a id="ref-37"></a>37. Perturbation Theory for Linear Operators - Ruda's Personal Wiki， <a href="https://wiki.ruda.city/Perturbation-Theory-for-Linear-Operators">https://wiki.ruda.city/Perturbation-Theory-for-Linear-Operators</a><br />
+<a id="ref-38"></a>38. Resolvent Formulas, Special and General 98 - RIMS, Kyoto University， <a href="https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/1234-8.pdf">https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/1234-8.pdf</a><br />
+<a id="ref-39"></a>39. Born series - Wikipedia， <a href="https://en.wikipedia.org/wiki/Born_series">https://en.wikipedia.org/wiki/Born_series</a><br />
+<a id="ref-40"></a>40. 11.7 Levinson's Theorem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 278 11.8 Breit-Wigner Resonances . . . . - Jin Lei， <a href="https://jinlei.fewbody.com/teaching/qm1_12.pdf">https://jinlei.fewbody.com/teaching/qm1_12.pdf</a><br />
+<a id="ref-41"></a>41. Dyson series - Wikipedia， <a href="https://en.wikipedia.org/wiki/Dyson_series">https://en.wikipedia.org/wiki/Dyson_series</a><br />
+<a id="ref-42"></a>42. Self-consistent Dyson equation and self-energy functionals: An analysis and illustration on the example of the Hubbard atom | Phys. Rev. B， <a href="https://link.aps.org/doi/10.1103/PhysRevB.96.045124">https://link.aps.org/doi/10.1103/PhysRevB.96.045124</a><br />
+<a id="ref-43"></a>43. The Matrix Dyson Equation in random matrix theory， <a href="http://www.mat.uniroma3.it/users/giuliani/public_html/Ischia_Summer_School/contenuti_sito/slides/Erdos.pdf">http://www.mat.uniroma3.it/users/giuliani/public_html/Ischia_Summer_School/contenuti_sito/slides/Erdos.pdf</a><br />
+<a id="ref-44"></a>44. Neumann series of resolvent operator - Math Stack Exchange， <a href="https://math.stackexchange.com/questions/5053150/neumann-series-of-resolvent-operator">https://math.stackexchange.com/questions/5053150/neumann-series-of-resolvent-operator</a><br />
+<a id="ref-45"></a>45. Resolvent Operator Formulation of Stationary State Perturbation ...， <a href="https://pubs.aip.org/aip/jcp/article-pdf/40/7/1891/18832611/1891_1_online.pdf">https://pubs.aip.org/aip/jcp/article-pdf/40/7/1891/18832611/1891_1_online.pdf</a><br />
+<a id="ref-46"></a>46. First-order Perturbation Theory for Eigenvalues and Eigenvectors - arXiv， <a href="https://arxiv.org/pdf/1903.00785">https://arxiv.org/pdf/1903.00785</a><br />
+<a id="ref-47"></a>47. A general formula for Rayleigh-Schroedinger perturbation energy utilizing a power series expansion of the quantum mechanical Hamiltonian - UNT Digital Library， <a href="https://digital.library.unt.edu/ark:/67531/metadc679930/">https://digital.library.unt.edu/ark:/67531/metadc679930/</a><br />
+<a id="ref-48"></a>48. Perturbing scattering resonances in non-Hermitian systems: a， <a href="https://arxiv.org/html/2408.11360v1">https://arxiv.org/html/2408.11360v1</a><br />
+<a id="ref-49"></a>49. Resolvent operator approach to many-body perturbation theory. II ...， <a href="https://pubs.aip.org/aip/jcp/article-pdf/76/4/1979/18934698/1979_1_online.pdf">https://pubs.aip.org/aip/jcp/article-pdf/76/4/1979/18934698/1979_1_online.pdf</a><br />
+<a id="ref-50"></a>50. Rayleigh-Schr\"odinger many-body perturbation theory for density functionals: A unified treatment of one- and two-electron perturbations | Phys. Rev. A - Physical Review Link Manager， <a href="https://link.aps.org/doi/10.1103/PhysRevA.78.022510">https://link.aps.org/doi/10.1103/PhysRevA.78.022510</a><br />
+<a id="ref-51"></a>51. Given a perturbation of a symmetric matrix, find an expansion for the eigenvalues， <a href="https://math.stackexchange.com/questions/626425/given-a-perturbation-of-a-symmetric-matrix-find-an-expansion-for-the-eigenvalue">https://math.stackexchange.com/questions/626425/given-a-perturbation-of-a-symmetric-matrix-find-an-expansion-for-the-eigenvalue</a><br />
+<a id="ref-52"></a>52. Rayleigh-Schrödinger Perturbation Theory， <a href="https://www.chemistry.tcd.ie/assets/pdf/ss/DAMB/DAMB%20SS/PERTURBATION%20THEORY.pdf">https://www.chemistry.tcd.ie/assets/pdf/ss/DAMB/DAMB%20SS/PERTURBATION%20THEORY.pdf</a><br />
+<a id="ref-53"></a>53. NUMERICAL METHODS FOR LARGE EIGENVALUE PROBLEMS Second edition Yousef Saad - College of Science and Engineering， <a href="https://www-users.cse.umn.edu/~saad/eig_book_2ndEd.pdf">https://www-users.cse.umn.edu/~saad/eig_book_2ndEd.pdf</a><br />
+<a id="ref-54"></a>54. [2510.21947] Asymptotics for eigenvalues of one-dimensional Dirac operators in the weak coupling limit - arXiv， <a href="https://arxiv.org/abs/2510.21947">https://arxiv.org/abs/2510.21947</a><br />
+<a id="ref-55"></a>55. [1307.3368] Kato perturbation expansion in classical mechanics and an explicit expression for a Deprit generator - arXiv， <a href="https://arxiv.org/abs/1307.3368">https://arxiv.org/abs/1307.3368</a><br />
+<a id="ref-56"></a>56. Analytic properties of Resolvents - arXiv， <a href="https://arxiv.org/pdf/1907.01444">https://arxiv.org/pdf/1907.01444</a></p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月7日 06:07:36 UTC"><span class="timeago" datetime="2025-11-07T06:07:36+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月7日 06:07:36 UTC">2025-11-07</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月7日 06:07:36 UTC"><span class="timeago" datetime="2025-11-07T06:07:36+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月7日 06:07:36 UTC">2025-11-07</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="tianbaiting/tianbaiting.github.io"
+        data-repo-id="R_kgDOOB38lw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOOB38l84Comp4"
+        data-mapping="url"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+  <script>
+    if (document.querySelector("body").getAttribute("data-md-color-scheme") === "slate") {
+      var giscus = document.querySelector("script[src*=giscus]")
+      giscus.setAttribute("data-theme", "https://gcore.jsdelivr.net/gh/TonyCrane/note/docs/css/giscus.css") 
+    }
+  </script>
+
+                  
+                </article>
+              </div>
+            
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+          
+            <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+              回到页面顶部
+            </a>
+          
+        </main>
+        
+          <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+        
+      </div>
+      <div class="md-dialog" data-md-component="dialog">
+        <div class="md-dialog__inner md-typeset"></div>
+      </div>
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+      
+      
+        <script src="../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+        
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        
+          <script src="https://d3js.org/d3.v7.min.js"></script>
+        
+          <script src="../../../../js/scheme.js"></script>
+        
+          <script src="../../../../js/graph.js"></script>
+        
+      
+    </body>
+  </html>
+  
