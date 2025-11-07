@@ -371,8 +371,7 @@ $$E_n = \langle \psi_n^{(0)} \| (E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ G_Q(E
 
 利用 $P|\psi_n^{(0)}\rangle = |\psi_n^{(0)}\rangle$ 和 $Q|\psi_n^{(0)}\rangle = 0$：
 
-$  
-E_n = E_n^{(0)} + \lambda \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle + \lambda^2 \langle \psi_n^{(0)} | V Q G_Q(E, \lambda) Q V | \psi_n^{(0)} \rangle $
+$$E_n = E_n^{(0)} + \lambda \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle + \lambda^2 \langle \psi_n^{(0)} | V Q G_Q(E, \lambda) Q V | \psi_n^{(0)} \rangle $$
 
 1. 一阶能量 $E_n^{(1)}$ [27](#ref-27)：  
    比较 $\lambda^1$ 的系数：
