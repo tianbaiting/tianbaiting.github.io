@@ -6,7 +6,7 @@
 
 在数学物理中，一个物理系统的可观测量（如能量、动量）由一个复Hilbert空间 $H$ 上的线性算符 $T$ 来表示 [1](#ref-1)。这些算符，特别是像哈密顿算符 (Hamiltonian) 这样的能量算符，通常是无界的 (unbounded)，但它们满足一个关键的拓扑性质：它们是“闭算符” (closed operators) [2](#ref-2)。谱理论 (Spectral theory) 的研究必须在这个更广泛的闭算符框架内进行，而不仅仅局限于有界算符 (bounded operators) [3](#ref-3)。
 
-谱理论的核心是理解算符 $(T - \lambda I)$ 的可逆性，其中 $I$ 是恒等算符，$\\lambda$ 是一个复数。
+谱理论的核心是理解算符 $(T - \lambda I)$ 的可逆性，其中 $I$ 是恒等算符，$\lambda$ 是一个复数。
 
 定义 1.1 (预解集)  
 算符 $T$ 的预解集 (resolvent set)，记为 $\rho(T)$，是所有复数 $\lambda \in \mathbb{C}$ 的集合，满足以下条件：算符 $(T - \lambda I)$ 是一个双射（即单射且满射），并且其逆算符 $(T - \lambda I)^{-1}$ 是一个在 $H$ 上处处定义（defined everywhere）的有界线性算符 [1](#ref-1)。  
@@ -43,7 +43,8 @@
 定义 1.6 (预解式)  
 对于复参数 $z \in \rho(A)$（即 $z$ 位于预解集中），算符 $A$ 的预解式 (Resolvent)，记为 $R(z, A)$，定义为：
 
-$$R(z, A) = (A - zI)^{-1}$$  
+$R(z, A) = (A - zI)^{-1}$
+
 [9](#ref-9)。在物理文献中，特别是在微扰理论和格林函数 (Green's function) 理论中，更常见的约定是 $G(z, A) = (z - A)^{-1}$ [10](#ref-10)。这两种定义仅相差一个负号和 $z$ 的重新标记，但 $G(z)$ 的形式在Lippmann-Schwinger方程中更为自然。本报告将主要采用 $G(z) = (z - A)^{-1}$ 这一约定。
 
 预解式的最重要特性，也是使其成为连接物理与数学的桥梁的特性是：**$G(z, A)$ 是 $\rho(A)$ 上的一个全纯 (holomorphic) 或者说解析 (analytic) 的算符值函数** [8](#ref-8)。
@@ -68,7 +69,7 @@ $$R(z, A) = (A - zI)^{-1}$$
 假设 $E_n$ 是算符 $A$ 的谱 $\sigma(A)$ 中的一个孤立点。这意味着我们可以找到一个半径足够小的简单闭合围道 (contour) $C_n$，它在复平面上只包围 $E_n$，而将谱的其余所有部分都排除在外 [9](#ref-9)。  
 我们利用复分析中的柯西积分，定义一个算符 $P_n$，称为 Riesz 投影 (Riesz projection) [18](#ref-18)：
 
-$$P_n = \frac{1}{2\pi i} \oint_{C_n} G(z, A) dz = \frac{1}{2\pi i} \oint_{C_n} (z - A)^{-1} dz$$  
+$P_n = \frac{1}{2\pi i} \oint_{C_n} G(z, A) dz = \frac{1}{2\pi i} \oint_{C_n} (z - A)^{-1} dz$
 [9](#ref-9)。（注：使用 $G(z) = (z-A)^{-1}$ 约定，积分为正号。若使用 $R(z)=(A-zI)^{-1}$，则积分前需加负号 [9](#ref-9)。）
 
 证明 2.2 ( $P_n$ 是一个投影算符)  
@@ -78,21 +79,29 @@ $$P_n = \frac{1}{2\pi i} \oint_{C_n} G(z, A) dz = \frac{1}{2\pi i} \oint_{C_n} (
    $G(z) - G(w) = (z - A)^{-1} - (w - A)^{-1} = (z - A)^{-1} [ (w - A) - (z - A) ] (w - A)^{-1}$  
    $G(z) - G(w) = G(z) (w - z) G(w)$  
    或 $G(w) G(z) = \frac{G(w) - G(z)}{z - w}$ [8](#ref-8)。  
-2. 推导：我们取两个围道 $C_n$ 和 $C_n'$，它们都只包围 $E_n$，并且 $C_n$ 严格位于 $C_n'$ 内部 [18](#ref-18]。  
-   $$ P_n^2 = \left( \frac{1}{2\pi i} \oint_{C_n'} G(w) dw \right) \left( \frac{1}{2\pi i} \oint_{C_n} G(z) dz \right) = \frac{1}{(2\pi i)^2} \oint_{C_n'} \oint_{C_n} G(w) G(z) dz dw $$  
+2. 推导：我们取两个围道 $C_n$ 和 $C_n'$，它们都只包围 $E_n$，并且 $C_n$ 严格位于 $C_n'$ 内部 [18](#ref-18)。  
+
+   $P_n^2 = \left( \frac{1}{2\pi i} \oint_{C_n'} G(w) dw \right) \left( \frac{1}{2\pi i} \oint_{C_n} G(z) dz \right) = \frac{1}{(2\pi i)^2} \oint_{C_n'} \oint_{C_n} G(w) G(z) dz dw$
+
 3. 应用预解式恒等式：
 
-   $$P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} \oint_{C_n} \frac{G(w) - G(z)}{z - w} dz dw$$  
+   $P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} \oint_{C_n} \frac{G(w) - G(z)}{z - w} dz dw$
+
 4. 我们将积分分为两部分：  
-   $$ P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} G(w) \left( \oint_{C_n} \frac{dz}{z - w} \right) dw - \frac{1}{(2\pi i)^2} \oint_{C_n} G(z) \left( \oint_{C_n'} \frac{dw}{z - w} \right) dz $$  
+
+   $ P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} G(w) \left( \oint_{C_n} \frac{dz}{z - w} \right) dw - \frac{1}{(2\pi i)^2} \oint_{C_n} G(z) \left( \oint_{C_n'} \frac{dw}{z - w} \right) dz $  
+
 5. **计算内层积分**（利用柯西积分公式）：  
    * 在第一项中， $w$ 位于*外部*围道 $C_n'$ 上，而 $z$ 位于*内部*围道 $C_n$ 上。因此 $w$ 始终在 $C_n$ 的*外部*。根据柯西定理， $\oint_{C_n} \frac{dz}{z - w} = 0$。  
    * 在第二项中， $z$ 位于*内部*围道 $C_n$ 上，而 $w$ 位于*外部*围道 $C_n'$ 上。$z$ 始终在 $C_n'$ 的*内部*。根据柯西积分公式， $\oint_{C_n'} \frac{dw}{z - w} = - \oint_{C_n'} \frac{dw}{w - z} = - (2\pi i)$。  
+
 6. 将结果代回：  
  
-   $$ P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} G(w) (0) dw - \frac{1}{(2\pi i)^2} \oint_{C_n} G(z) (-2\pi i) dz $$ 
+   $P_n^2 = \frac{1}{(2 \pi i)^2} \oint_{C_n'} G(w) (0) dw - \frac{1}{(2\pi i)^2} \oint_{C_n} G(z) (-2 \pi i) dz $ 
+
    
-   $$ P_n^2 = 0 + \frac{1}{2\pi i} \oint_{C_n} G(z) dz = P_n $$  
+   $P_n^2 = 0 + \frac{1}{2\pi i} \oint_{C_n} G(z) dz = P_n$  
+
    证明 $P_n^2 = P_n$ 完毕 [18](#ref-18)。
 
 证明 2.3 ( $P_n$ 投影到本征子空间)  
@@ -115,7 +124,7 @@ $$P_n = \frac{1}{2\pi i} \oint_{C_n} G(z, A) dz = \frac{1}{2\pi i} \oint_{C_n} (
 一个孤立的极点 $G(z) \sim (z-E_n)^{-1}$ 对应一个离散能级。那么连续谱在复平面上对应什么呢？直观上，连续谱可以被想象为沿着一条线（例如实轴的 $[a, b]$ 段）连续地分布着无穷多个极点。  
 [21](#ref-21) 中的一个简单计算完美地展示了这一点：
 
-$$\int_a^b \frac{1}{z-u} du = \log(z-b) - \log(z-a) = \log\left(\frac{z-b}{z-a}\right)$$
+$\int_a^b \frac{1}{z-u} du = \log(z-b) - \log(z-a) = \log\left(\frac{z-b}{z-a}\right)$
 
 等式左边是一个“连续的极点之和”（在 $[a, b]$ 区间内的每个 $u$ 处，都有一个留数为 $du$ 的极点）。等式右边是一个具有 $[a, b]$ 分支割线的对数函数。这个例子表明，极点的连续分布在复分析中自然地产生了分支割线。因此，连续谱在 $G(z)$ 的解析结构中表现为分支割线 [21](#ref-21)。  
 
@@ -125,7 +134,7 @@ Stone 公式（或 Stone-von Neumann 公式）是上述直觉的严格数学表�
 
 Stone 公式指出，这个谱测量 $E(\Delta)$ 可以通过 $G(z)$ 在实轴上方和下方的极限来恢复 [24](#ref-24)。令 $G(\lambda \pm i0) = \lim_{\epsilon \to 0^+} G(\lambda \pm i\epsilon)$。对于任意区间 $(a, b)$，我们有：
 
-$$ \frac{E((a, b)) + E([a, b])}{2} = \lim_{\epsilon \to 0^+} \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda $$  
+$ \frac{E((a, b)) + E([a, b])}{2} = \lim_{\epsilon \to 0^+} \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda $  
 
 这个公式是复分析中 Sokhotski–Plemelj 定理的算符版本，它表明 $G(z)$ 跨越实轴的“跳跃” $\\text{Disc}[G(\lambda)] = G(\lambda+i0) - G(\lambda-i0)$（注意符号约定）与谱测量 $dE_\lambda$ 成正比。 
 
@@ -136,16 +145,16 @@ $$ \frac{E((a, b)) + E([a, b])}{2} = \lim_{\epsilon \to 0^+} \frac{1}{2\pi i} \i
    
 2. 我们只需分析对应的标量函数 $f_\epsilon(t)$（其中 $t$ 是实变量，代表 $A$ 的谱值）：  
    
-   $$ f_\epsilon(t) = \frac{1}{2\pi i} \int_a^b \left( \frac{1}{t - (\lambda - i\epsilon)} - \frac{1}{t - (\lambda + i\epsilon)} \right) d\lambda $$  
+   $ f_\epsilon(t) = \frac{1}{2\pi i} \int_a^b \left( \frac{1}{t - (\lambda - i\epsilon)} - \frac{1}{t - (\lambda + i\epsilon)} \right) d\lambda $  
 3. 合并分式： 
     
-   $$ f_\epsilon(t) = \frac{1}{2\pi i} \int_a^b \frac{(t - \lambda - i\epsilon) - (t - \lambda + i\epsilon)}{(t - \lambda)^2 + \epsilon^2} d\lambda = \frac{1}{2\pi i} \int_a^b \frac{-2i\epsilon}{(t - \lambda)^2 + \epsilon^2} d\lambda $$ $$ f_\epsilon(t) = \frac{1}{\pi} \int_a^b \frac{\epsilon}{(t - \lambda)^2 + \epsilon^2} d\lambda $$  
+   $ f_\epsilon(t) = \frac{1}{2\pi i} \int_a^b \frac{(t - \lambda - i\epsilon) - (t - \lambda + i\epsilon)}{(t - \lambda)^2 + \epsilon^2} d\lambda = \frac{1}{2\pi i} \int_a^b \frac{-2i\epsilon}{(t - \lambda)^2 + \epsilon^2} d\lambda $ $ f_\epsilon(t) = \frac{1}{\pi} \int_a^b \frac{\epsilon}{(t - \lambda)^2 + \epsilon^2} d\lambda $  
 4. 这是一个洛伦兹分布 (Lorentzian) 或柯西分布 (Cauchy distribution) 的积分，它是 $\\delta$-函数的一个表示。积分 $f_\epsilon(t)$ 可以被精确计算：  
    
-   $$ f_\epsilon(t) = \frac{1}{\pi} \left[ \arctan\left(\frac{b - t}{\epsilon}\right) - \arctan\left(\frac{a - t}{\epsilon}\right) \right] $$  
+   $ f_\epsilon(t) = \frac{1}{\pi} \left[ \arctan\left(\frac{b - t}{\epsilon}\right) - \arctan\left(\frac{a - t}{\epsilon}\right) \right] $  
 5. 在 $\epsilon \to 0^+$ 的极限下， $\arctan(x/\epsilon)$ 趋向于一个阶梯函数 $\frac{\pi}{2} \text{sgn}(x)$。因此：  
    
-   $$ \lim_{\epsilon \to 0^+} f_\epsilon(t) = \frac{1}{\pi} \left( \frac{\pi}{2} \text{sgn}(b-t) - \frac{\pi}{2} \text{sgn}(a-t) \right) = \begin{cases} 1 & \text{if } t \in (a,b) \\ 1/2 & \text{if } t = a \text{ or } t = b \\ 0 & \text{otherwise} \end{cases} $$  
+   $ \lim_{\epsilon \to 0^+} f_\epsilon(t) = \frac{1}{\pi} \left( \frac{\pi}{2} \text{sgn}(b-t) - \frac{\pi}{2} \text{sgn}(a-t) \right) = \begin{cases} 1 & \text{if } t \in (a,b) \\ 1/2 & \text{if } t = a \text{ or } t = b \\ 0 & \text{otherwise} \end{cases} $  
 6. 这个极限函数 $\chi_{(a,b)}(t)$ 正是区间 $(a,b)$ 的特征函数（在端点处取平均值）。  
 7. 根据泛函演算的谱映射定理，算符的极限 $\lim_{\epsilon \to 0^+} F_\epsilon(A)$ 就是 $\chi_{(a,b)}(A)$。根据谱定理， $\chi_{(a,b)}(A)$ *正是*谱投影 $E((a,b))$（加上端点贡献）。**证明完毕** [24](#ref-24)。
 
@@ -178,7 +187,7 @@ Stone 公式严格地证明了连续谱的信息被完整地编码在 $G(z)$ 的
 
 微扰理论的核心思想是将一个复杂（但“可解”）的系统的哈密顿算符 $H_0$ 加上一个“小”的微扰 $V$ [26](#ref-26)。总哈密顿算符为：
 
-$$H = H_0 + V$$
+$H = H_0 + V$
 
 我们的目标是，在已知 $H_0$ 的本征值 $E_n^{(0)}$ 和本征态 $|\psi_n^{(0)}\rangle$ 的情况下，近似求解 $H$ 的本征值 $E_n$ 和本征态 $|\psi_n\rangle$。  
 正如用户查询中所指出的，这一方法的历史脉络深刻地根植于物理学的发展：
@@ -206,7 +215,7 @@ $$H = H_0 + V$$
    $I \cdot G(z) - G_0(z) \cdot I = G_0(z) V G(z)$  
 6. 结果：
 
-   $$G(z) = G_0(z) + G_0(z) V G(z)$$  
+   $G(z) = G_0(z) + G_0(z) V G(z)$  
    [10](#ref-10)。这被称为第二预解式恒等式（或Dyson方程）。
 
 这个恒等式是整个微扰理论的基石。它以一种非微扰的、精确的形式，将复杂的 $G(z)$（我们想知道其极点）与已知的 $G_0(z)$ 和微扰 $V$ 联系起来。
@@ -228,7 +237,7 @@ Dyson方程 $G = G_0 + G_0 V G$ 是一个 $G(z)$ 的自洽方程。求解它的�
    $G = G_0 + G_0 V G_0 + G_0 V G_0 V (G_0 + G_0 V G)$  
 3. 无限次迭代下去，我们得到一个无穷级数：
 
-   $$G(z) = G_0(z) + G_0(z) V G_0(z) + G_0(z) V G_0(z) V G_0(z) + \dots$$  
+   $G(z) = G_0(z) + G_0(z) V G_0(z) + G_0(z) V G_0(z) V G_0(z) + \dots$  
    [11](#ref-11)。
 
 这个级数在数学上被称为 **Neumann 级数** (Neumann series) [7](#ref-7]，在物理学中被称为 **Born 级数** (Born series) [39](#ref-39)。如果截取到 $V$ 的一阶， $G \approx G_0 + G_0 V G_0$，这就对应于散射理论中的 Born 近似 [39](#ref-39)。
@@ -255,10 +264,10 @@ Kato-Rellich 理论 [32](#ref-32) 证明了一个深刻的定理：如果 $E_n^{
 
 这意味着我们可以写：
 
-$$E_n(\lambda) = E_n^{(0)} + \lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \dots$$  
+$E_n(\lambda) = E_n^{(0)} + \lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \dots$  
 [27](#ref-27)
 
-$$P_n(\lambda) = P_n^{(0)} + \lambda P_n^{(1)} + \lambda^2 P_n^{(2)} + \dots$$
+$P_n(\lambda) = P_n^{(0)} + \lambda P_n^{(1)} + \lambda^2 P_n^{(2)} + \dots$
 
 我们的任务就是求解这些展开式的系数 $E_n^{(k)}$ 和 $P_n^{(k)}$。这在复平面上的图像是：$G_0(z)$ 在 $z=E_n^{(0)}$ 处的极点，在微扰 $V$ 的作用下，“漂移” (shift) 到了 $G(z, \lambda)$ 在 $z=E_n(\lambda)$ 处的新极点 [48](#ref-48)。
 
@@ -282,18 +291,18 @@ $$P_n(\lambda) = P_n^{(0)} + \lambda P_n^{(1)} + \lambda^2 P_n^{(2)} + \dots$$
    $(Q H_0 Q + \lambda QVQ) Q\|\psi\rangle + \lambda QVP P\|\psi\rangle = E Q\|\psi\rangle$  
 6. 从 (b) 式中形式上解出 $Q\|\psi\rangle$：  
 
-   $$[ E - Q H_0 Q - \lambda QVQ ] Q\|\psi\rangle = \lambda QVP P\|\psi\rangle$$  
-   $$Q\|\psi\rangle = (E - H_0 - \lambda QVQ)^{-1} Q \cdot (\lambda QVP) P\|\psi\rangle$$  
+   $[ E - Q H_0 Q - \lambda QVQ ] Q\|\psi\rangle = \lambda QVP P\|\psi\rangle$  
+   $Q\|\psi\rangle = (E - H_0 - \lambda QVQ)^{-1} Q \cdot (\lambda QVP) P\|\psi\rangle$  
    （注意： $(E - H_0 - \lambda QVQ)^{-1}$ 的逆只在 $Q$ 空间中计算）  
 7. 将 $Q\|\psi\rangle$ 的这个精确表达式代回到 (a) 式中：  
    $(E_n^{(0)} P + \lambda PVP) P\|\psi\rangle + \lambda PVQ \left[ (E - H_0 - \lambda QVQ)^{-1} Q \cdot (\lambda QVP) \right] P\|\psi\rangle = E P\|\psi\rangle$  
 8. 这是一个只在 $P$ 空间中（在本例中是一维的）的精确本征方程：
 
-   $$H_{eff}(E, \lambda) P|\psi\rangle = E P|\psi\rangle$$
+   $H_{eff}(E, \lambda) P|\psi\rangle = E P|\psi\rangle$
 
    其中，有效哈密顿算符 (Effective Hamiltonian) $H_{eff}$ 为：
 
-   $$H_{eff}(E, \lambda) = E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ (E - H_0 - \lambda QVQ)^{-1} Q QVP$$
+   $H_{eff}(E, \lambda) = E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ (E - H_0 - \lambda QVQ)^{-1} Q QVP$
 
 这个方程是精确的，但 $H_{eff}$ 自身又依赖于 $E$（在分母中），这是一个隐式方程。
 
@@ -302,20 +311,20 @@ $$P_n(\lambda) = P_n^{(0)} + \lambda P_n^{(1)} + \lambda^2 P_n^{(2)} + \dots$$
 
 ### **4.3 约化预解式 (The Reduced Resolvent)**
 
-RSPT 的核心就是展开 $H_{eff}$ 中的那个逆算符。其 $\\lambda^0$ 阶近似为 $(E_n^{(0)} - H_0)^{-1} Q$。这个算符在 $Q$ 空间（即 $k \neq n$ 的子空间）上是良定义的，但在 $P$ 空间上是发散的。
+RSPT 的核心就是展开 $H_{eff}$ 中的那个逆算符。其 $\lambda^0$ 阶近似为 $(E_n^{(0)} - H_0)^{-1} Q$。这个算符在 $Q$ 空间（即 $k \neq n$ 的子空间）上是良定义的，但在 $P$ 空间上是发散的。
 
 定义 4.1 (约化预解式 $S_n$)  
 我们定义约化预解式 (Reduced Resolvent) $S_n$（在 Kato 的文献中常记为 $S$） [30](#ref-30) 为：
 
-$$S_n \equiv Q (E_n^{(0)} - H_0)^{-1} Q$$
+$S_n \equiv Q (E_n^{(0)} - H_0)^{-1} Q$
 
 这个算符 $S_n$ 完美地对应于标准 RSPT 教科书中的形式和：
 
-$$S_n = \sum_{k \neq n} \frac{|\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|}{E_n^{(0)} - E_k^{(0)}}$$
+$S_n = \sum_{k \neq n} \frac{|\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|}{E_n^{(0)} - E_k^{(0)}}$
 
 Kato 的关键贡献在于 [30](#ref-30)，他证明了 $G_0(z)$ 在 $z=E_n^{(0)}$ 附近的洛朗展开 (Laurent expansion) 总是可以（在算符范数下）分解为：
 
-$$G_0(z) = \frac{P_n^{(0)}}{z - E_n^{(0)}} + S(z)$$
+$G_0(z) = \frac{P_n^{(0)}}{z - E_n^{(0)}} + S(z)$
 
 其中 $S(z)$ 是在 $z=E_n^{(0)}$ 处全纯的部分。约化预解式 $S_n$ 就是这个全纯部分在该点的取值 $S_n = S(E_n^{(0)})$ [30](#ref-30)。它是一个严格定义的有界算符，它取代了所有非严谨的“除以 $(E_n - E_k)$” 的无穷求和 [45](#ref-45)。
 
@@ -325,56 +334,57 @@ $$G_0(z) = \frac{P_n^{(0)}}{z - E_n^{(0)}} + S(z)$$
 
 推导 4.2 ($G_Q$ 的展开)  
 
-$$ G_Q(E, \lambda) = \left( (E_n^{(0)} - H_0) + (\lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \dots) - \lambda QVQ \right)^{-1} Q $$  
-利用算符恒等式 $(A+B)^{-1} = (I + A^{-1}B)^{-1} A^{-1} \\approx (I - A^{-1}B) A^{-1}$，并只保留到 $\\lambda^0$ 阶（因为 $G_Q$ 总是与 $\\lambda^2$ 相乘）：
+$ G_Q(E, \lambda) = \left( (E_n^{(0)} - H_0) + (\lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \dots) - \lambda QVQ \right)^{-1} Q $  
+利用算符恒等式 $(A+B)^{-1} = (I + A^{-1}B)^{-1} A^{-1} \\approx (I - A^{-1}B) A^{-1}$，并只保留到 $\lambda^0$ 阶（因为 $G_Q$ 总是与 $\\lambda^2$ 相乘）：
 
-$$G_Q(E, \lambda) = (E_n^{(0)} - H_0)^{-1} Q + \mathcal{O}(\lambda)$$  
+$G_Q(E, \lambda) = (E_n^{(0)} - H_0)^{-1} Q + \mathcal{O}(\lambda)$  
 
-$$G_Q(E, \lambda) = S_n + \mathcal{O}(\lambda)$$
+$G_Q(E, \lambda) = S_n + \mathcal{O}(\lambda)$
 
 （因为 $Q$ 算符使得 $(E_n^{(0)} - H_0)^{-1}$ 的极点消失了）。  
 推导 4.3 (能量 $E_n^{(1)}, E_n^{(2)}$)  
 我们将 $H_{eff}$ 作用在 $|\psi_n^{(0)}\rangle$ 上并取内积（对于非简并情况，这给出了标量本征值 $E$）：
 
-$$E_n = \langle \psi_n^{(0)} | H_{eff}(E, \lambda) | \psi_n^{(0)} \rangle$$
+$E_n = \langle \psi_n^{(0)} | H_{eff}(E, \lambda) | \psi_n^{(0)} \rangle$
 
-$$E_n = \langle \psi_n^{(0)} \| (E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ G_Q(E, \lambda) QVP) \| \psi_n^{(0)} \rangle $$
+$E_n = \langle \psi_n^{(0)} \| (E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ G_Q(E, \lambda) QVP) \| \psi_n^{(0)} \rangle $
 
 利用 $P|\psi_n^{(0)}\rangle = |\psi_n^{(0)}\rangle$ 和 $Q|\psi_n^{(0)}\rangle = 0$：
 
-$$  
-E_n = E_n^{(0)} + \lambda \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle + \lambda^2 \langle \psi_n^{(0)} | V Q G_Q(E, \lambda) Q V | \psi_n^{(0)} \rangle $$
+$  
+E_n = E_n^{(0)} + \lambda \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle + \lambda^2 \langle \psi_n^{(0)} | V Q G_Q(E, \lambda) Q V | \psi_n^{(0)} \rangle $
 
 1. 一阶能量 $E_n^{(1)}$ [27](#ref-27)：  
    比较 $\lambda^1$ 的系数：
 
-   $$E_n^{(1)} = \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle$$  
+   $E_n^{(1)} = \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle$  
 2. 二阶能量 $E_n^{(2)}$ [27](#ref-27)：  
    比较 $\lambda^2$ 的系数。我们需要 $G_Q(E, \lambda)$ 的 $\lambda^0$ 阶近似，即 $S_n$：  
 
-   $$ E_n^{(2)} = \langle \psi_n^{(0)} | V Q (S_n) Q V | \psi_n^{(0)} \rangle = \langle \psi_n^{(0)} | V S_n V | \psi_n^{(0)} \rangle $$  
+   $ E_n^{(2)} = \langle \psi_n^{(0)} | V Q (S_n) Q V | \psi_n^{(0)} \rangle = \langle \psi_n^{(0)} | V S_n V | \psi_n^{(0)} \rangle $  
    （因为 $S_n = Q S_n Q$）。  
    代入 $S_n$ 的求和形式：
 
-   $$ E_n^{(2)} = \sum_{k \neq n} \langle \psi_n^{(0)} | V | \psi_k^{(0)} \rangle \frac{1}{E_n^{(0)} - E_k^{(0)}} \langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle $$  
+   $ E_n^{(2)} = \sum_{k \neq n} \langle \psi_n^{(0)} | V | \psi_k^{(0)} \rangle \frac{1}{E_n^{(0)} - E_k^{(0)}} \langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle $  
 
-   $$ E_n^{(2)} = \sum_{k \neq n} \frac{|\langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle|^2}{E_n^{(0)} - E_k^{(0)}} $$
+   $ E_n^{(2)} = \sum_{k \neq n} \frac{|\langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle|^2}{E_n^{(0)} - E_k^{(0)}} $
 
 推导 4.4 (波函数 $|\psi_n^{(1)}\rangle$)  
-完整的波函数是 $|\psi_n\rangle = P|\psi_n\rangle + Q|\psi_n\rangle$。我们使用“中间归一化” (intermediate normalization)，即 $P|\psi_n\rangle = |\psi_n^{(0)}\rangle$（所有 $\\lambda$ 阶的修正都在 $Q$ 空间中）。  
-我们需要 $Q|\psi_n\rangle$ 的 $\\lambda^1$ 阶项，记为 $|\psi_n^{(1)}\rangle = Q |\psi_n^{(1)}\rangle$ [50](#ref-50]。  
+完整的波函数是 $|\psi_n\rangle = P|\psi_n\rangle + Q|\psi_n\rangle$。我们使用“中间归一化” (intermediate normalization)，即 $P|\psi_n\rangle = |\psi_n^{(0)}\rangle$（所有 $\lambda$ 阶的修正都在 $Q$ 空间中）。  
+我们需要 $Q|\psi_n\rangle$ 的 $\lambda^1$ 阶项，记为 $|\psi_n^{(1)}\rangle = Q |\psi_n^{(1)}\rangle$ [50](#ref-50)。  
 从推导 4.1 的 (6) 式：
 
-$$Q|\\psi\\rangle = G\_Q(E, \\lambda) \\cdot (\\lambda QVP) P|\\psi\\rangle$$  
+$Q|\\psi\\rangle = G\_Q(E, \\lambda) \\cdot (\\lambda QVP) P|\\psi\\rangle$  
 
-$$Q|\\psi\\rangle = \\lambda G\_Q(E, \\lambda) V |\\psi\_n^{(0)}\\rangle$$
+$Q|\\psi\\rangle = \\lambda G\_Q(E, \\lambda) V |\\psi\_n^{(0)}\\rangle$
 
-我们需要 $\\lambda^1$ 阶的项。我们使用 $G\_Q$ 的 $\\lambda^0$ 阶近似 $S\_n$：
+我们需要 $\lambda^1$ 阶的项。我们使用 $G\_Q$ 的 $\lambda^0$ 阶近似 $S\_n$：
 
-$$ |\psi_n^{(1)}\rangle = \[ \lambda G_Q(E, \lambda) V |\psi_n^{(0)}\rangle \]{\mathcal{O}(\lambda^1)} = S_n V |\psi_n^{(0)}\rangle $$
+$\| \psi_n^{(1)}\rangle = [ \lambda G_Q(E, \lambda) V \| \psi_n^{(0)} \rangle ]{\mathcal{O}(\lambda^1)} = S_n V \|\psi_n^{(0)}\rangle $
 
-$$代入 S_n 的求和形式：$$
-|\psi_n^{(1)}\rangle = \sum_{k \neq n} |\psi_k^{(0)}\rangle \frac{\langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle}{E_n^{(0)} - E_k^{(0)}} $$
+$代入 S_n 的求和形式：
+
+$|\psi_n^{(1)}\rangle = \sum_{k \neq n} |\psi_k^{(0)}\rangle \frac{\langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle}{E_n^{(0)} - E_k^{(0)}} $
 
 这个过程（Kato-Rellich 理论的计算方面）是完全严谨的 [14](#ref-14)。它不仅*证明*了 RSPT 级数的存在性 [46](#ref-46)，而且还提供了一个*系统*的算法来计算任意阶的修正 [35](#ref-35)。
 
@@ -391,13 +401,13 @@ $$代入 S_n 的求和形式：$$
 
 我们来看一阶近似：
 
-$$H_{eff}(E, \lambda) \approx E_n^{(0)} P + \lambda PVP$$
+$H_{eff}(E, \lambda) \approx E_n^{(0)} P + \lambda PVP$
 
 $H_{eff}$ 的本征值 $E \approx E_n^{(0)} + \lambda E^{(1)}$ 必须满足：
 
-$$(E_n^{(0)} P + \lambda PVP) P|\psi\rangle = (E_n^{(0)} + \lambda E^{(1)}) P|\psi\rangle$$  
+$(E_n^{(0)} P + \lambda PVP) P|\psi\rangle = (E_n^{(0)} + \lambda E^{(1)}) P|\psi\rangle$  
 
-$$\lambda (PVP) P|\psi\rangle = \lambda E^{(1)} P|\psi\rangle$$
+$\lambda (PVP) P|\psi\rangle = \lambda E^{(1)} P|\psi\rangle$
 
 这等价于：在简并子空间 $P$ 中，求解 $PVP$ 算符的本征值 $E^{(1)}$。这正是标准教科书中“在简并子空间中对角化微扰 $V$”的步骤。  
 因此，简并情况只是 $H_{eff}$ 的 $P$ 空间维数 $m > 1$ 的情况。非简并情况是 $m=1$ 的平凡特例。Kato 的预解式方法 [37](#ref-37)（以及 [26](#ref-26) 中的划分方法）从一开始就统一处理了这两种情况。
