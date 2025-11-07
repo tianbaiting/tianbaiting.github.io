@@ -573,7 +573,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/resolvent.zh.md",
-      "size": 35785,
+      "size": 35783,
       "url": "/sci/minimal_theory/resolvent/"
     },
     {
@@ -1163,6 +1163,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-11-07 07:58:42.391706"
+    "generated_at": "2025-11-07 08:07:56.356749"
   }
 }

@@ -3150,7 +3150,10 @@
 Stone 公式（或 Stone-von Neumann 公式）是上述直觉的严格数学表述。它将 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 跨越实轴（割线）的不连续性（或“跳跃”）与谱测量 (Spectral Measure) <span class="arithmatex"><span class="MathJax_Preview">E(\lambda)</span><script type="math/tex">E(\lambda)</script></span> 直接联系起来 <a href="#ref-8">8</a>。<br />
 根据谱定理，对于自伴算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>，存在一个唯一的投影值谱测量 <span class="arithmatex"><span class="MathJax_Preview">E(\lambda)</span><script type="math/tex">E(\lambda)</script></span>，使得 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 可以被分解为 <span class="arithmatex"><span class="MathJax_Preview">A = \int_{-\infty}^\infty \lambda dE(\lambda)</span><script type="math/tex">A = \int_{-\infty}^\infty \lambda dE(\lambda)</script></span>。<span class="arithmatex"><span class="MathJax_Preview">E(\Delta)</span><script type="math/tex">E(\Delta)</script></span> 表示投影到谱位于区间 <span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span> 内的子空间上的投影算符。</p>
 <p>Stone 公式指出，这个谱测量 <span class="arithmatex"><span class="MathJax_Preview">E(\Delta)</span><script type="math/tex">E(\Delta)</script></span> 可以通过 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 在实轴上方和下方的极限来恢复 <a href="#ref-24">24</a>。令 <span class="arithmatex"><span class="MathJax_Preview">G(\lambda \pm i0) = \lim_{\epsilon \to 0^+} G(\lambda \pm i\epsilon)</span><script type="math/tex">G(\lambda \pm i0) = \lim_{\epsilon \to 0^+} G(\lambda \pm i\epsilon)</script></span>。对于任意区间 <span class="arithmatex"><span class="MathJax_Preview">(a, b)</span><script type="math/tex">(a, b)</script></span>，我们有：</p>
-<p>$ \frac{E((a, b)) + E([a, b])}{2} = \lim_{\epsilon \to 0^+} \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda $  </p>
+<div class="arithmatex">
+<div class="MathJax_Preview"> \frac{E((a, b)) + E([a, b])}{2} = \lim_{\epsilon \to 0^+} \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda </div>
+<script type="math/tex; mode=display"> \frac{E((a, b)) + E([a, b])}{2} = \lim_{\epsilon \to 0^+} \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda </script>
+</div>
 <p>这个公式是复分析中 Sokhotski–Plemelj 定理的算符版本，它表明 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 跨越实轴的“跳跃” <span class="arithmatex"><span class="MathJax_Preview">\text{Disc}[G(\lambda)] = G(\lambda+i0) - G(\lambda-i0)</span><script type="math/tex">\text{Disc}[G(\lambda)] = G(\lambda+i0) - G(\lambda-i0)</script></span>（注意符号约定）与谱测量 <span class="arithmatex"><span class="MathJax_Preview">dE_\lambda</span><script type="math/tex">dE_\lambda</script></span> 成正比。 </p>
 <p>证明 2.5 (Stone 公式的推导草图)<br />
 这个公式的推导可以优雅地通过泛函演算 (Functional Calculus) 完成 <a href="#ref-24">24</a>。</p>
@@ -3322,10 +3325,13 @@ Stone 公式严格地证明了连续谱的信息被完整地编码在 <span clas
 <li>定义投影算符 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span>：  </li>
 </ol>
 <div class="arithmatex">
-<div class="MathJax_Preview">P = P_n^{(0)} = |\psi_n^{(0)}\rangle\langle \psi_n^{(0)}|$$ （投影到我们关心的未微扰态）  
-$$Q = I - P = \sum_{k \neq n} |\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|</div>
-<script type="math/tex; mode=display">P = P_n^{(0)} = |\psi_n^{(0)}\rangle\langle \psi_n^{(0)}|$$ （投影到我们关心的未微扰态）  
-$$Q = I - P = \sum_{k \neq n} |\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|</script>
+<div class="MathJax_Preview">P = P_n^{(0)} = |\psi_n^{(0)}\rangle\langle \psi_n^{(0)}|</div>
+<script type="math/tex; mode=display">P = P_n^{(0)} = |\psi_n^{(0)}\rangle\langle \psi_n^{(0)}|</script>
+</div>
+<p>（投影到我们关心的未微扰态)</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">Q = I - P = \sum_{k \neq n} |\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|</div>
+<script type="math/tex; mode=display">Q = I - P = \sum_{k \neq n} |\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|</script>
 </div>
 <p>（投影到所有其他态的正交子空间）<a href="#ref-26">26</a>。  </p>
 <ol>
@@ -3509,7 +3515,7 @@ E_n = E_n^{(0)} + \lambda \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle + \lam
 <p><a id="ref-24"></a>24. functional analysis - Proving Stone's Formula for Constructively ...， <a href="https://math.stackexchange.com/questions/1009409/proving-stones-formula-for-constructively-obtaining-the-spectral-measure-for-a">https://math.stackexchange.com/questions/1009409/proving-stones-formula-for-constructively-obtaining-the-spectral-measure-for-a</a>  </p>
 <p><a id="ref-25"></a>25. fa.functional analysis - Spectral measure and Stone's theorem ...， <a href="https://mathoverflow.net/questions/150913/spectral-measure-and-stones-theorem">https://mathoverflow.net/questions/150913/spectral-measure-and-stones-theorem</a>  </p>
 <p><a id="ref-26"></a>26. Chapter 17. Time-Independent Perturbation Theory of Non ...， <a href="https://people.chem.ucsb.edu/metiu/horia/OldFiles/QM2015/Ch17QM.pdf">https://people.chem.ucsb.edu/metiu/horia/OldFiles/QM2015/Ch17QM.pdf</a>  </p>
-<p><a id="ref-27"></a>27. Perturbation theory (quantum mechanics) - Wikipedia， <a href="https://en.wikipedia.org/wiki/Perturbation_theory_quantum_mechanicsquantum_mechanics">https://en.wikipedia.org/wiki/Perturbation_theory_(quantum_mechanics)</a>  </p>
+<p><a id="ref-27"></a>27. Perturbation theory (quantum mechanics) - Wikipedia， <a href="https://en.wikipedia.org/wiki/Perturbation_theory_(quantum_mechanics)">https://en.wikipedia.org/wiki/Perturbation_theory_(quantum_mechanics)</a>  </p>
 <p><a id="ref-28"></a>28. RAYLEIGH-SCHR¨ODINGER PERTURBATION ... - Hikari Ltd， <a href="https://www.m-hikari.com/mccartin.pdf">https://www.m-hikari.com/mccartin.pdf</a>  </p>
 <p><a id="ref-29"></a>29. The pre-history of 20<sup>th</sup> century acoustics: the legacy of Lord Rayleigh， <a href="https://dael.euracoustics.org/confs/fa2023/data/articles/000143.pdf">https://dael.euracoustics.org/confs/fa2023/data/articles/000143.pdf</a>  </p>
 <p><a id="ref-30"></a>30. Tosio Kato's work on non-relativistic quantum mechanics: part 1， <a href="https://d-nb.info/1159765766/34">https://d-nb.info/1159765766/34</a>  </p>
@@ -3545,7 +3551,7 @@ E_n = E_n^{(0)} + \lambda \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle + \lam
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月7日 07:58:10 UTC"><span class="timeago" datetime="2025-11-07T07:58:10+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月7日 07:58:10 UTC">2025-11-07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月7日 08:07:15 UTC"><span class="timeago" datetime="2025-11-07T08:07:15+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月7日 08:07:15 UTC">2025-11-07</span>
       
         <br>
         创建日期:
