@@ -55,6 +55,15 @@
       "url": "/MickeyMiaoMiao/opvpn/"
     },
     {
+      "id": "MickeyMiaoMiao/adblock.zh",
+      "title": "adblock 元素",
+      "language": "zh",
+      "category": "category",
+      "path": "MickeyMiaoMiao/adblock.zh.md",
+      "size": 207,
+      "url": "/MickeyMiaoMiao/adblock/"
+    },
+    {
       "id": "life/z30_DeepSky.zh",
       "title": "器材",
       "language": "zh",
@@ -1146,15 +1155,15 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 127,
+    "total_nodes": 128,
     "total_links": 0,
     "languages": {
-      "zh": 102,
+      "zh": 103,
       "en": 25
     },
     "categories": {
       "main": 2,
-      "category": 20,
+      "category": 21,
       "page": 105
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
@@ -1163,6 +1172,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-11-07 08:10:41.146123"
+    "generated_at": "2025-11-17 23:05:24.490026"
   }
 }

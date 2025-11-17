@@ -1,6 +1,6 @@
 {
   "name": "Tian Baiting",
-  "affiliation": "Homepage",
+  "affiliation": "Tsinghua University",
   "metrics": {},
   "publications": [
     {
@@ -34,16 +34,16 @@
       "year": "2024"
     },
     {
-      "title": "The enhancement of neutron-rich particle emission from out-of-fission-plane in Fermi energy heavy ion reactions: Y.-J. Wang et al.",
-      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Wb4CcQ8AAAAJ&citation_for_view=Wb4CcQ8AAAAJ:aqlVkmm33-oC",
-      "year": "2025"
-    },
-    {
       "title": "Data analysis framework for silicon strip detector in compact spectrometer for heavy-ion experiments: X.-B. Wei et al.",
       "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Wb4CcQ8AAAAJ&citation_for_view=Wb4CcQ8AAAAJ:eQOLeE2rZwMC",
       "year": "2025"
+    },
+    {
+      "title": "The enhancement of neutron-rich particle emission from out-of-fission-plane in Fermi energy heavy ion reactions: Y.-J. Wang et al.",
+      "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Wb4CcQ8AAAAJ&citation_for_view=Wb4CcQ8AAAAJ:aqlVkmm33-oC",
+      "year": "2025"
     }
   ],
-  "_fetched_at": 1761639931,
+  "_fetched_at": 1762746748,
   "_source_url": "https://scholar.google.com/citations?user=Wb4CcQ8AAAAJ&hl=en"
 }
