@@ -280,6 +280,15 @@
       "url": "/sci/minimal_code/c++project/"
     },
     {
+      "id": "sci/minimal_code/project_structure.zh",
+      "title": "现代核物理模拟项目管理与目录结构教程",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/project_structure.zh.md",
+      "size": 5333,
+      "url": "/sci/minimal_code/project_structure/"
+    },
+    {
       "id": "sci/minimal_code/vim_neovim.zh",
       "title": "Vim Neovim",
       "language": "zh",
@@ -375,7 +384,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/cmake.zh.md",
-      "size": 8865,
+      "size": 8959,
       "url": "/sci/minimal_code/cmake/"
     },
     {
@@ -386,6 +395,15 @@
       "path": "sci/minimal_code/gemni_use_wen2cli.zh.md",
       "size": 2069,
       "url": "/sci/minimal_code/gemni_use_wen2cli/"
+    },
+    {
+      "id": "sci/minimal_code/rootFindLib.zh",
+      "title": "ROOT 库管理与单元测试",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/rootFindLib.zh.md",
+      "size": 8102,
+      "url": "/sci/minimal_code/rootFindLib/"
     },
     {
       "id": "sci/minimal_code/format_guidelines.zh",
@@ -467,6 +485,15 @@
       "path": "sci/minimal_code/server_clouddirve.zh.md",
       "size": 4500,
       "url": "/sci/minimal_code/server_clouddirve/"
+    },
+    {
+      "id": "sci/minimal_code/log.zh",
+      "title": "日志记录",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/log.zh.md",
+      "size": 178,
+      "url": "/sci/minimal_code/log/"
     },
     {
       "id": "sci/minimal_code/jupyternotebook.en",
@@ -1155,16 +1182,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 128,
+    "total_nodes": 131,
     "total_links": 0,
     "languages": {
-      "zh": 103,
+      "zh": 106,
       "en": 25
     },
     "categories": {
       "main": 2,
       "category": 21,
-      "page": 105
+      "page": 108
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1172,6 +1199,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-11-17 23:05:24.490026"
+    "generated_at": "2025-11-18 15:33:02.706714"
   }
 }
