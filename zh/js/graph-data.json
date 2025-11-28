@@ -253,6 +253,15 @@
       "url": "/sci/minimal_code/geant4_oop/"
     },
     {
+      "id": "sci/minimal_code/HighPerfomenceCompute.zh",
+      "title": "高效能计算",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/HighPerfomenceCompute.zh.md",
+      "size": 177,
+      "url": "/sci/minimal_code/HighPerfomenceCompute/"
+    },
+    {
       "id": "sci/minimal_code/待解决的小问题",
       "title": "to be solved",
       "language": "zh",
@@ -260,6 +269,15 @@
       "path": "sci/minimal_code/待解决的小问题.md",
       "size": 709,
       "url": "/sci/minimal_code/待解决的小问题/"
+    },
+    {
+      "id": "sci/minimal_code/env_manage.zh",
+      "title": "环境管理",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/env_manage.zh.md",
+      "size": 7957,
+      "url": "/sci/minimal_code/env_manage/"
     },
     {
       "id": "sci/minimal_code/format_guidelines.en",
@@ -1182,16 +1200,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 131,
+    "total_nodes": 133,
     "total_links": 0,
     "languages": {
-      "zh": 106,
+      "zh": 108,
       "en": 25
     },
     "categories": {
       "main": 2,
       "category": 21,
-      "page": 108
+      "page": 110
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1199,6 +1217,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-11-18 16:42:36.610278"
+    "generated_at": "2025-11-28 16:20:03.832461"
   }
 }
