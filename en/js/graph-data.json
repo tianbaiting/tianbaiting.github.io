@@ -442,6 +442,15 @@
       "url": "/sci/minimal_code/color_scheme/"
     },
     {
+      "id": "sci/minimal_code/getEnv.zh",
+      "title": "获取环境变量",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/getEnv.zh.md",
+      "size": 990,
+      "url": "/sci/minimal_code/getEnv/"
+    },
+    {
       "id": "sci/minimal_code/root_plot.zh",
       "title": "root_plot",
       "language": "zh",
@@ -1200,16 +1209,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 133,
+    "total_nodes": 134,
     "total_links": 0,
     "languages": {
-      "zh": 108,
+      "zh": 109,
       "en": 25
     },
     "categories": {
       "main": 2,
       "category": 21,
-      "page": 110
+      "page": 111
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1217,6 +1226,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-11-28 16:20:03.832461"
+    "generated_at": "2025-12-01 06:03:26.995455"
   }
 }
