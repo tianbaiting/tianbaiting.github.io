@@ -46,6 +46,15 @@
       "url": "/MickeyMiaoMiao/firefoxplug/"
     },
     {
+      "id": "MickeyMiaoMiao/linuxUseWin.zh",
+      "title": "linux下面使用win独占的软件",
+      "language": "zh",
+      "category": "category",
+      "path": "MickeyMiaoMiao/linuxUseWin.zh.md",
+      "size": 143,
+      "url": "/MickeyMiaoMiao/linuxUseWin/"
+    },
+    {
       "id": "MickeyMiaoMiao/opvpn",
       "title": "hide:",
       "language": "zh",
@@ -53,6 +62,15 @@
       "path": "MickeyMiaoMiao/opvpn.md",
       "size": 3237,
       "url": "/MickeyMiaoMiao/opvpn/"
+    },
+    {
+      "id": "MickeyMiaoMiao/gost.zh",
+      "title": "gost 代理",
+      "language": "zh",
+      "category": "category",
+      "path": "MickeyMiaoMiao/gost.zh.md",
+      "size": 1750,
+      "url": "/MickeyMiaoMiao/gost/"
     },
     {
       "id": "MickeyMiaoMiao/adblock.zh",
@@ -343,6 +361,15 @@
       "url": "/sci/minimal_code/git/"
     },
     {
+      "id": "sci/minimal_code/cernrootData.zh",
+      "title": "CERN ROOT 数据结构",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/cernrootData.zh.md",
+      "size": 6888,
+      "url": "/sci/minimal_code/cernrootData/"
+    },
+    {
       "id": "sci/minimal_code/termux.zh",
       "title": "在 Termux 中安装 Ubuntu 桌面环境并运行 VS Code 的终极指南",
       "language": "zh",
@@ -485,6 +512,15 @@
       "path": "sci/minimal_code/class_dataTransport.zh.md",
       "size": 5814,
       "url": "/sci/minimal_code/class_dataTransport/"
+    },
+    {
+      "id": "sci/minimal_code/cernrootDic.zh",
+      "title": "root 字典",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/cernrootDic.zh.md",
+      "size": 3084,
+      "url": "/sci/minimal_code/cernrootDic/"
     },
     {
       "id": "sci/minimal_code/fzf.zh",
@@ -1209,16 +1245,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 134,
+    "total_nodes": 138,
     "total_links": 0,
     "languages": {
-      "zh": 109,
+      "zh": 113,
       "en": 25
     },
     "categories": {
       "main": 2,
-      "category": 21,
-      "page": 111
+      "category": 23,
+      "page": 113
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1226,6 +1262,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-12-01 06:03:26.995455"
+    "generated_at": "2025-12-11 08:19:16.317279"
   }
 }
