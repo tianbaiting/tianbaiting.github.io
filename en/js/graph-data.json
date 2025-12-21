@@ -474,7 +474,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/getEnv.zh.md",
-      "size": 990,
+      "size": 2704,
       "url": "/sci/minimal_code/getEnv/"
     },
     {
@@ -802,6 +802,15 @@
       "url": "/sci/cheatshet/termux/"
     },
     {
+      "id": "sci/cheatshet/nuclear_source.zh",
+      "title": "Nuclear Source",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/cheatshet/nuclear_source.zh.md",
+      "size": 0,
+      "url": "/sci/cheatshet/nuclear_source/"
+    },
+    {
       "id": "sci/cheatshet/git.en",
       "title": "git cheatsheat",
       "language": "en",
@@ -827,6 +836,15 @@
       "path": "sci/cheatshet/bashrc.zh.md",
       "size": 4527,
       "url": "/sci/cheatshet/bashrc/"
+    },
+    {
+      "id": "sci/cheatshet/debian_printer_connection.zh",
+      "title": "Debian 系统连接网络打印机（Fuji Xerox DocuPrint C3360）",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/cheatshet/debian_printer_connection.zh.md",
+      "size": 1672,
+      "url": "/sci/cheatshet/debian_printer_connection/"
     },
     {
       "id": "sci/cheatshet/shell.zh",
@@ -1245,16 +1263,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 138,
+    "total_nodes": 140,
     "total_links": 0,
     "languages": {
-      "zh": 113,
+      "zh": 115,
       "en": 25
     },
     "categories": {
       "main": 2,
       "category": 23,
-      "page": 113
+      "page": 115
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1262,6 +1280,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-12-11 08:19:16.317279"
+    "generated_at": "2025-12-21 23:41:10.521924"
   }
 }
