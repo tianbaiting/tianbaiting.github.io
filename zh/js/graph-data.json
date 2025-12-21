@@ -803,11 +803,11 @@
     },
     {
       "id": "sci/cheatshet/nuclear_source.zh",
-      "title": "Nuclear Source",
+      "title": "☢ 精选核科学资源 ☢",
       "language": "zh",
       "category": "page",
       "path": "sci/cheatshet/nuclear_source.zh.md",
-      "size": 0,
+      "size": 6051,
       "url": "/sci/cheatshet/nuclear_source/"
     },
     {
@@ -1280,6 +1280,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-12-21 23:41:10.521924"
+    "generated_at": "2025-12-21 23:43:06.705552"
   }
 }
