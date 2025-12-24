@@ -1,8 +1,9 @@
 # ☢ 精选核科学资源 ☢
 
-[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
+https://sites.google.com/view/opticalpotentials/reaction-codes 这个页面主要是一个“核反应数值代码工具箱”的索引，收录了一批做光学势、转移反应、三体/多体反应等的程序
+
+# 核科学与核工程开源项目列表
 精选的开源项目列表，适用于核科学与核工程领域。
 
 ## 粒子输运
