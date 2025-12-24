@@ -1000,6 +1000,15 @@
       "url": "/sci/project/faddeev/construct_basis/"
     },
     {
+      "id": "sci/project/faddeev/PeopelTree.zh",
+      "title": "faddeev 学术谱系图",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/faddeev/PeopelTree.zh.md",
+      "size": 2294,
+      "url": "/sci/project/faddeev/PeopelTree/"
+    },
+    {
       "id": "sci/project/samurai/detector_samurai.zh",
       "title": "SAMURAI 光谱仪带电粒子探测器详细功能",
       "language": "zh",
@@ -1263,16 +1272,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 140,
+    "total_nodes": 141,
     "total_links": 0,
     "languages": {
-      "zh": 115,
+      "zh": 116,
       "en": 25
     },
     "categories": {
       "main": 2,
       "category": 23,
-      "page": 115
+      "page": 116
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1280,6 +1289,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-12-21 23:43:06.705552"
+    "generated_at": "2025-12-24 02:33:17.771932"
   }
 }
