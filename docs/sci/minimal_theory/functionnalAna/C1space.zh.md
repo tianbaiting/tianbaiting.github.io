@@ -78,3 +78,7 @@ def: 可数紧空间是指每个可数开覆盖都有有限子覆盖的的空间
 
 覆盖:def: 给定集合$X$，一个覆盖是$X$的子集的集合$\{A_\alpha\}_{\alpha \in A}$，使得$X = \bigcup_{\alpha \in A} A_\alpha$。
 开覆盖:def: 给定拓扑空间$(X, \tau)$，一个开覆盖是$X$的开子集的集合$\{U_\alpha\}_{\alpha \in A}$，使得$X = \bigcup_{\alpha \in A} U_\alpha$。
+
+
+## 各种特殊的性质
+
