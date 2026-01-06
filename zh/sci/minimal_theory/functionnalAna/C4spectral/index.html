@@ -3306,10 +3306,15 @@
 <h2 id="def">def<a class="headerlink" href="#def" title="Permanent link">#</a></h2>
 <h3 id="本征值与本征向量-eigenvalues-and-eigenvectors">本征值与本征向量 (Eigenvalues and Eigenvectors)<a class="headerlink" href="#本征值与本征向量-eigenvalues-and-eigenvectors" title="Permanent link">#</a></h3>
 <p>若存在复数 <span class="arithmatex"><span class="MathJax_Preview">\lambda\in\mathbb{C}</span><script type="math/tex">\lambda\in\mathbb{C}</script></span> 及非零向量 <span class="arithmatex"><span class="MathJax_Preview">x\in\mathcal{D}(A)</span><script type="math/tex">x\in\mathcal{D}(A)</script></span>，使得</p>
-<p>$$<br />
-Ax=\lambda x</p>
-<p>$$<br />
-则称 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 为算子 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的本征值 (eigenvalue)，称 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 为对应的本征向量 (eigenvector)。</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+Ax=\lambda x
+</div>
+<script type="math/tex; mode=display">
+Ax=\lambda x
+</script>
+</div>
+<p>则称 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 为算子 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的本征值 (eigenvalue)，称 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 为对应的本征向量 (eigenvector)。</p>
 <h3 id="本征空间-eigenspace">本征空间 (Eigenspace)<a class="headerlink" href="#本征空间-eigenspace" title="Permanent link">#</a></h3>
 <p>对应于本征值 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 的所有本征向量与零向量组成的集合，记作 <span class="arithmatex"><span class="MathJax_Preview">E_\lambda</span><script type="math/tex">E_\lambda</script></span>：<span class="arithmatex"><span class="MathJax_Preview">E_\lambda=\{x\in\mathcal{D}(A):(A-\lambda I)x=0\}=\ker(A-\lambda I)</span><script type="math/tex">E_\lambda=\{x\in\mathcal{D}(A):(A-\lambda I)x=0\}=\ker(A-\lambda I)</script></span><br />
 其维度称为该本征值的几何重数。</p>
@@ -3317,9 +3322,8 @@ Ax=\lambda x</p>
 <p>算子 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的预解集 <span class="arithmatex"><span class="MathJax_Preview">\rho(A)</span><script type="math/tex">\rho(A)</script></span> 定义为使得 <span class="arithmatex"><span class="MathJax_Preview">(A-\lambda I)</span><script type="math/tex">(A-\lambda I)</script></span> 存在有界逆算子的复数 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 的集合。即 <span class="arithmatex"><span class="MathJax_Preview">\lambda\in\rho(A)</span><script type="math/tex">\lambda\in\rho(A)</script></span> 当且仅当 <span class="arithmatex"><span class="MathJax_Preview">(A-\lambda I)</span><script type="math/tex">(A-\lambda I)</script></span> 是双射且其逆算子 <span class="arithmatex"><span class="MathJax_Preview">(A-\lambda I)^{-1}</span><script type="math/tex">(A-\lambda I)^{-1}</script></span> 有界。逆算子亦称预解式：<span class="arithmatex"><span class="MathJax_Preview">R_\lambda(A)=(A-\lambda I)^{-1}.</span><script type="math/tex">R_\lambda(A)=(A-\lambda I)^{-1}.</script></span></p>
 <p>由于<span class="arithmatex"><span class="MathJax_Preview">R_\lambda(A)</span><script type="math/tex">R_\lambda(A)</script></span>对解方程有帮助， “预解式”这一名称是合适的．</p>
 <h3 id="谱-spectrum">谱 (Spectrum)<a class="headerlink" href="#谱-spectrum" title="Permanent link">#</a></h3>
-<p>谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)</span><script type="math/tex">\sigma(A)</script></span> 定义为<br />
-$\sigma(A)=\mathbb{C}\setminus\rho(A) $ 有些地方有减号不用除号.</p>
-<p>或 者 <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)=\{\lambda\in\mathbb{C}:(A-\lambda I) \text{无界或不可逆}\}</span><script type="math/tex">\sigma(A)=\{\lambda\in\mathbb{C}:(A-\lambda I) \text{无界或不可逆}\}</script></span>.</p>
+<p>谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)</span><script type="math/tex">\sigma(A)</script></span> 定义为<span class="arithmatex"><span class="MathJax_Preview">\sigma(A)=\mathbb{C}\setminus\rho(A)</span><script type="math/tex">\sigma(A)=\mathbb{C}\setminus\rho(A)</script></span>    .   <span class="arithmatex"><span class="MathJax_Preview">\quad</span><script type="math/tex">\quad</script></span>有些地方用减号不用除号.</p>
+<p>或者 <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)=\{\lambda\in\mathbb{C}:(A-\lambda I) \text{无界或不可逆}\}</span><script type="math/tex">\sigma(A)=\{\lambda\in\mathbb{C}:(A-\lambda I) \text{无界或不可逆}\}</script></span>.</p>
 <p>在无限维空间中，谱通常分为：<br />
 - 点谱 (Point spectrum) <span class="arithmatex"><span class="MathJax_Preview">\sigma_p(A)</span><script type="math/tex">\sigma_p(A)</script></span>：包含所有本征值 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>（即 <span class="arithmatex"><span class="MathJax_Preview">(A-\lambda I)</span><script type="math/tex">(A-\lambda I)</script></span> 非可逆且存在非零解）。    也就是说(A-λI)不是单射. <span class="arithmatex"><span class="MathJax_Preview">(A-\lambda I)^-1</span><script type="math/tex">(A-\lambda I)^-1</script></span>不存在<br />
 - 连续谱 (Continuous spectrum) <span class="arithmatex"><span class="MathJax_Preview">\sigma_c(A)</span><script type="math/tex">\sigma_c(A)</script></span>：<span class="arithmatex"><span class="MathJax_Preview">(A-\lambda I)</span><script type="math/tex">(A-\lambda I)</script></span> 是单射且值域<span class="arithmatex"><span class="MathJax_Preview">R(A-\lambda I)</span><script type="math/tex">R(A-\lambda I)</script></span>稠密，但逆算子不有界。   也就是说(A-λI)是单射但不是满射. <span class="arithmatex"><span class="MathJax_Preview">(A-\lambda I)^-1</span><script type="math/tex">(A-\lambda I)^-1</script></span> 存在但无界.<br />
@@ -3371,7 +3375,7 @@ r(A)=\sup{|\lambda|:\lambda\in\sigma(A)}.</p>
 <span class="arithmatex"><span class="MathJax_Preview">f(T)=2\pi i \oint_\Gamma f(\lambda) R_\lambda(T) d\lambda</span><script type="math/tex">f(T)=2\pi i \oint_\Gamma f(\lambda) R_\lambda(T) d\lambda</script></span></p>
 <p>物理映射：这就是我们怎么计算算子函数的。比如时间演化算子 <span class="arithmatex"><span class="MathJax_Preview">U(t)=e^{-iHt}</span><script type="math/tex">U(t)=e^{-iHt}</script></span>，本质上就是对格林函数进行围道积分。</p>
 <p>需要理解如何用柯西积分公式把“函数”作用在“算子”上。</p>
-<p>一切都源于复变函数中最经典的**柯西积分公式**。</p>
+<p>一切都源于复变函数中最经典的柯西积分公式。</p>
 <h4 id="step-1-回忆标量情况">Step 1: 回忆标量情况<a class="headerlink" href="#step-1-回忆标量情况" title="Permanent link">#</a></h4>
 <p>设 <span class="arithmatex"><span class="MathJax_Preview">f(z)</span><script type="math/tex">f(z)</script></span> 是一个全纯函数（解析函数）。如果你想求它在某个点 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 的值 <span class="arithmatex"><span class="MathJax_Preview">f(a)</span><script type="math/tex">f(a)</script></span>，你不需要直接代入 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>，而是可以在 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 周围画一个圈 <span class="arithmatex"><span class="MathJax_Preview">\Gamma</span><script type="math/tex">\Gamma</script></span>，然后算积分：</p>
 <div class="arithmatex">
@@ -3399,12 +3403,12 @@ f(T) = \frac{1}{2\pi i} \oint_{\Gamma} f(\lambda) (\lambda I - T)^{-1} d\lambda
 f(T) = \frac{1}{2\pi i} \oint_{\Gamma} f(\lambda) (\lambda I - T)^{-1} d\lambda
 </script>
 </div>
-<p>这里的 <span class="arithmatex"><span class="MathJax_Preview">(\lambda I - T)^{-1}</span><script type="math/tex">(\lambda I - T)^{-1}</script></span> 正是我们在谱论中定义的**预解算子**（差一个负号，通常 <span class="arithmatex"><span class="MathJax_Preview">R_\lambda(T) = (T - \lambda I)^{-1}</span><script type="math/tex">R_\lambda(T) = (T - \lambda I)^{-1}</script></span>，所以符号会抵消，或者调整积分方向）。</p>
-<p><strong>核心思想：</strong><br />
-我们利用**预解算子**作为“内核”，把定义在复平面上的函数 <span class="arithmatex"><span class="MathJax_Preview">f(\lambda)</span><script type="math/tex">f(\lambda)</script></span> “投影”到了算子空间上。</p>
+<p>这里的 <span class="arithmatex"><span class="MathJax_Preview">(\lambda I - T)^{-1}</span><script type="math/tex">(\lambda I - T)^{-1}</script></span> 正是我们在谱论中定义的预解算子（差一个负号，通常 <span class="arithmatex"><span class="MathJax_Preview">R_\lambda(T) = (T - \lambda I)^{-1}</span><script type="math/tex">R_\lambda(T) = (T - \lambda I)^{-1}</script></span>，所以符号会抵消，或者调整积分方向）。</p>
+<p>核心思想：<br />
+我们利用预解算子作为“内核”，把定义在复平面上的函数 <span class="arithmatex"><span class="MathJax_Preview">f(\lambda)</span><script type="math/tex">f(\lambda)</script></span> “投影”到了算子空间上。</p>
 <hr />
 <h3 id="格林函数与极点">格林函数与极点<a class="headerlink" href="#格林函数与极点" title="Permanent link">#</a></h3>
-<p>对于物理学家来说，<strong>预解算子就是格林函数</strong>。</p>
+<p>对于物理学家来说，预解算子就是格林函数。</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
 G(\lambda) = \frac{1}{\lambda - H}
@@ -3425,9 +3429,9 @@ e^{-iHt} = \frac{1}{2\pi i} \oint_{\Gamma} e^{-i\lambda t} \frac{1}{\lambda - H}
 </script>
 </div>
 <p>这个积分在干什么？<br />
-1.  <strong>扫描能谱</strong>：积分围道 <span class="arithmatex"><span class="MathJax_Preview">\Gamma</span><script type="math/tex">\Gamma</script></span> 包围了哈密顿量 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 的所有**本征值（能级）<strong>。<br />
-2.  **提取留数</strong>：格林函数 <span class="arithmatex"><span class="MathJax_Preview">\frac{1}{\lambda - H}</span><script type="math/tex">\frac{1}{\lambda - H}</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 的本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> 处有**极点**。<br />
-3.  <strong>加权求和</strong>：柯西积分定理告诉我们，围道积分等于所有极点的留数之和。</p>
+1.  扫描能谱：积分围道 <span class="arithmatex"><span class="MathJax_Preview">\Gamma</span><script type="math/tex">\Gamma</script></span> 包围了哈密顿量 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 的所有本征值（能级）。<br />
+2.  提取留数：格林函数 <span class="arithmatex"><span class="MathJax_Preview">\frac{1}{\lambda - H}</span><script type="math/tex">\frac{1}{\lambda - H}</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 的本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> 处有极点。<br />
+3.  加权求和：柯西积分定理告诉我们，围道积分等于所有极点的留数之和。</p>
 <p>如果 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 有离散能级 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> 和本征态 <span class="arithmatex"><span class="MathJax_Preview">|n\rangle</span><script type="math/tex">|n\rangle</script></span>，格林函数可以写成谱分解形式：</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
@@ -3454,27 +3458,27 @@ f(H) &= \frac{1}{2\pi i} \oint_{\Gamma} f(\lambda) \left( \sum_n \frac{|n\rangle
 \end{aligned}
 </script>
 </div>
-<p><strong>结论：</strong><br />
-这正是我们熟悉的量子力学操作——<strong>在能量本征基下，算子函数直接作用在把本征值上</strong>（即 <span class="arithmatex"><span class="MathJax_Preview">e^{-iHt}|n\rangle = e^{-iE_n t}|n\rangle</span><script type="math/tex">e^{-iHt}|n\rangle = e^{-iE_n t}|n\rangle</script></span>）。</p>
-<p>但**全纯泛函演算的威力**在于：即使你解不出本征值（或者有连续谱），这个积分表达式依然成立！它提供了一种不依赖于对角化的、更本质的定义方式。</p>
+<p>结论：<br />
+这正是我们熟悉的量子力学操作——在能量本征基下，算子函数直接作用在把本征值上（即 <span class="arithmatex"><span class="MathJax_Preview">e^{-iHt}|n\rangle = e^{-iE_n t}|n\rangle</span><script type="math/tex">e^{-iHt}|n\rangle = e^{-iE_n t}|n\rangle</script></span>）。</p>
+<p>但全纯泛函演算的威力在于：即使你解不出本征值（或者有连续谱），这个积分表达式依然成立！它提供了一种不依赖于对角化的、更本质的定义方式。</p>
 <hr />
 <h3 id="3-一个具体的矩阵例子">3. 一个具体的矩阵例子<a class="headerlink" href="#3-一个具体的矩阵例子" title="Permanent link">#</a></h3>
 <p>为了彻底搞懂，我们算一个简单的 <span class="arithmatex"><span class="MathJax_Preview">2 \times 2</span><script type="math/tex">2 \times 2</script></span> 矩阵。<br />
 设 <span class="arithmatex"><span class="MathJax_Preview">T = \begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}</span><script type="math/tex">T = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}</script></span>。我们想算 <span class="arithmatex"><span class="MathJax_Preview">e^{tT}</span><script type="math/tex">e^{tT}</script></span>（即旋转矩阵）。</p>
 <ol>
 <li>
-<p><strong>求本征值（奇点位置）</strong>：<br />
+<p>求本征值（奇点位置）：<br />
 <span class="arithmatex"><span class="MathJax_Preview">\det(\lambda I - T) = \lambda^2 + 1 = 0 \implies \lambda = \pm i</span><script type="math/tex">\det(\lambda I - T) = \lambda^2 + 1 = 0 \implies \lambda = \pm i</script></span>。<br />
     谱是 <span class="arithmatex"><span class="MathJax_Preview">\sigma(T) = \{i, -i\}</span><script type="math/tex">\sigma(T) = \{i, -i\}</script></span>。</p>
 </li>
 <li>
-<p><strong>求预解算子（格林函数）</strong>：<br />
+<p>求预解算子（格林函数）：<br />
     $$<br />
     (\lambda I - T)^{-1} = \begin{pmatrix} \lambda &amp; -1 \ 1 &amp; \lambda \end{pmatrix}^{-1} = \frac{1}{\lambda^2 + 1} \begin{pmatrix} \lambda &amp; 1 \ -1 &amp; \lambda \end{pmatrix}<br />
     $$</p>
 </li>
 <li>
-<p><strong>应用公式</strong>：<br />
+<p>应用公式：<br />
     令 <span class="arithmatex"><span class="MathJax_Preview">f(\lambda) = e^{\lambda t}</span><script type="math/tex">f(\lambda) = e^{\lambda t}</script></span>。我们需要计算：<br />
     $$<br />
     e^{tT} = \frac{1}{2\pi i} \oint_{\Gamma} e^{\lambda t} \frac{1}{(\lambda - i)(\lambda + i)} \begin{pmatrix} \lambda &amp; 1 \ -1 &amp; \lambda \end{pmatrix} d\lambda<br />
@@ -3482,20 +3486,20 @@ f(H) &= \frac{1}{2\pi i} \oint_{\Gamma} f(\lambda) \left( \sum_n \frac{|n\rangle
     围道 <span class="arithmatex"><span class="MathJax_Preview">\Gamma</span><script type="math/tex">\Gamma</script></span> 包围 <span class="arithmatex"><span class="MathJax_Preview">\pm i</span><script type="math/tex">\pm i</script></span>。</p>
 </li>
 <li>
-<p><strong>计算留数</strong>：</p>
+<p>计算留数：</p>
 <ul>
-<li><strong>在 <span class="arithmatex"><span class="MathJax_Preview">\lambda = i</span><script type="math/tex">\lambda = i</script></span> 处</strong>：<br />
+<li>在 <span class="arithmatex"><span class="MathJax_Preview">\lambda = i</span><script type="math/tex">\lambda = i</script></span> 处：<br />
     $$<br />
     \text{Res}(i) = \lim_{\lambda \to i} (\lambda - i) [\dots] = e^{it} \frac{1}{2i} \begin{pmatrix} i &amp; 1 \ -1 &amp; i \end{pmatrix}<br />
     $$</li>
-<li><strong>在 <span class="arithmatex"><span class="MathJax_Preview">\lambda = -i</span><script type="math/tex">\lambda = -i</script></span> 处</strong>：<br />
+<li>在 <span class="arithmatex"><span class="MathJax_Preview">\lambda = -i</span><script type="math/tex">\lambda = -i</script></span> 处：<br />
     $$<br />
     \text{Res}(-i) = \lim_{\lambda \to -i} (\lambda + i) [\dots] = e^{-it} \frac{1}{-2i} \begin{pmatrix} -i &amp; 1 \ -1 &amp; -i \end{pmatrix}<br />
     $$</li>
 </ul>
 </li>
 <li>
-<p><strong>相加得到结果</strong>：<br />
+<p>相加得到结果：<br />
     利用欧拉公式 <span class="arithmatex"><span class="MathJax_Preview">\cos t = \frac{e^{it} + e^{-it}}{2}, \sin t = \frac{e^{it} - e^{-it}}{2i}</span><script type="math/tex">\cos t = \frac{e^{it} + e^{-it}}{2}, \sin t = \frac{e^{it} - e^{-it}}{2i}</script></span>：</p>
 <div class="arithmatex">
 <div class="MathJax_Preview">
@@ -3510,7 +3514,7 @@ e^{tT} = \text{Res}(i) + \text{Res}(-i) = \begin{pmatrix} \cos t & \sin t \\ -\s
 </ol>
 <h3 id="总结">总结<a class="headerlink" href="#总结" title="Permanent link">#</a></h3>
 <p>对于物理学家，全纯泛函演算就是：<br />
-<strong>利用格林函数 <span class="arithmatex"><span class="MathJax_Preview">(\lambda - H)^{-1}</span><script type="math/tex">(\lambda - H)^{-1}</script></span> 将算子转化为复平面上的函数，通过围道积分，“筛选”出物理系统的能级信息，从而定义算子的演化。</strong></p>
+利用格林函数 <span class="arithmatex"><span class="MathJax_Preview">(\lambda - H)^{-1}</span><script type="math/tex">(\lambda - H)^{-1}</script></span> 将算子转化为复平面上的函数，通过围道积分，“筛选”出物理系统的能级信息，从而定义算子的演化。</p>
 <p>它比泰勒展开（<span class="arithmatex"><span class="MathJax_Preview">e^X = 1 + X + \dots</span><script type="math/tex">e^X = 1 + X + \dots</script></span>）更强大，因为它可以处理算子无界的情况（只要积分收敛），这在量子场论中至关重要。</p>
 <h3 id="有界线性算子的谱性质">有界线性算子的谱性质<a class="headerlink" href="#有界线性算子的谱性质" title="Permanent link">#</a></h3>
 <p>谱半径 (Spectral Radius) <span class="arithmatex"><span class="MathJax_Preview">r_\sigma(T)</span><script type="math/tex">r_\sigma(T)</script></span>：</p>
@@ -3542,7 +3546,7 @@ r_\sigma(T) = \lim_{n \to \infty} |T<sup 1_n="1/n">n|</sup></p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年1月6日 11:21:13 UTC"><span class="timeago" datetime="2026-01-06T11:21:13+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年1月6日 11:21:13 UTC">2026-01-06</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年1月6日 11:27:59 UTC"><span class="timeago" datetime="2026-01-06T11:27:59+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年1月6日 11:27:59 UTC">2026-01-06</span>
       
         <br>
         创建日期:
