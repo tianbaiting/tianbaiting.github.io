@@ -865,6 +865,42 @@
       "url": "/sci/cheatshet/vimrc/"
     },
     {
+      "id": "sci/minimal_theory/functionnalAna/C3fourFundamentalTheo.zh",
+      "title": "泛函四大基石定理",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/functionnalAna/C3fourFundamentalTheo.zh.md",
+      "size": 91,
+      "url": "/sci/minimal_theory/functionnalAna/C3fourFundamentalTheo/"
+    },
+    {
+      "id": "sci/minimal_theory/functionnalAna/C2operatorFunctional.zh",
+      "title": "算子和泛函 -空间上的作用",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/functionnalAna/C2operatorFunctional.zh.md",
+      "size": 835,
+      "url": "/sci/minimal_theory/functionnalAna/C2operatorFunctional/"
+    },
+    {
+      "id": "sci/minimal_theory/functionnalAna/C4spectrum.zh",
+      "title": "谱理论",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/functionnalAna/C4spectrum.zh.md",
+      "size": 5,
+      "url": "/sci/minimal_theory/functionnalAna/C4spectrum/"
+    },
+    {
+      "id": "sci/minimal_theory/functionnalAna/C1space.zh",
+      "title": "空间",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/functionnalAna/C1space.zh.md",
+      "size": 2440,
+      "url": "/sci/minimal_theory/functionnalAna/C1space/"
+    },
+    {
       "id": "sci/project/D_polar_exp/scintillator.zh",
       "title": "Scintillator",
       "language": "zh",
@@ -1272,16 +1308,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 141,
+    "total_nodes": 145,
     "total_links": 0,
     "languages": {
-      "zh": 116,
+      "zh": 120,
       "en": 25
     },
     "categories": {
       "main": 2,
       "category": 23,
-      "page": 116
+      "page": 120
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1289,6 +1325,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2025-12-24 07:12:45.089873"
+    "generated_at": "2026-01-06 09:09:23.256493"
   }
 }
