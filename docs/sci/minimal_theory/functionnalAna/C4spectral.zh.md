@@ -8,8 +8,8 @@
 
 $$
 Ax=\lambda x
-
 $$
+
 则称 $\lambda$ 为算子 $A$ 的本征值 (eigenvalue)，称 $x$ 为对应的本征向量 (eigenvector)。
 
 ### 本征空间 (Eigenspace)  
@@ -24,10 +24,9 @@ $$
 由于$R_\lambda(A)$对解方程有帮助， “预解式”这一名称是合适的．
 
 ### 谱 (Spectrum)  
-谱 $\sigma(A)$ 定义为
-$\sigma(A)=\mathbb{C}\setminus\rho(A) $ 有些地方有减号不用除号.
+谱 $\sigma(A)$ 定义为$\sigma(A)=\mathbb{C}\setminus\rho(A)$    .   $\quad$有些地方用减号不用除号.
 
- 或 者 $\sigma(A)=\{\lambda\in\mathbb{C}:(A-\lambda I) \text{无界或不可逆}\}$.
+ 或者 $\sigma(A)=\{\lambda\in\mathbb{C}:(A-\lambda I) \text{无界或不可逆}\}$.
 
 
 在无限维空间中，谱通常分为：
@@ -130,7 +129,7 @@ $f(T)=2\pi i \oint_\Gamma f(\lambda) R_\lambda(T) d\lambda$
 
 需要理解如何用柯西积分公式把“函数”作用在“算子”上。
 
-一切都源于复变函数中最经典的**柯西积分公式**。
+一切都源于复变函数中最经典的柯西积分公式。
 
 #### Step 1: 回忆标量情况
 设 $f(z)$ 是一个全纯函数（解析函数）。如果你想求它在某个点 $a$ 的值 $f(a)$，你不需要直接代入 $a$，而是可以在 $a$ 周围画一个圈 $\Gamma$，然后算积分：
@@ -154,16 +153,16 @@ $$
 f(T) = \frac{1}{2\pi i} \oint_{\Gamma} f(\lambda) (\lambda I - T)^{-1} d\lambda
 $$
 
-这里的 $(\lambda I - T)^{-1}$ 正是我们在谱论中定义的**预解算子**（差一个负号，通常 $R_\lambda(T) = (T - \lambda I)^{-1}$，所以符号会抵消，或者调整积分方向）。
+这里的 $(\lambda I - T)^{-1}$ 正是我们在谱论中定义的预解算子（差一个负号，通常 $R_\lambda(T) = (T - \lambda I)^{-1}$，所以符号会抵消，或者调整积分方向）。
 
-**核心思想：**
-我们利用**预解算子**作为“内核”，把定义在复平面上的函数 $f(\lambda)$ “投影”到了算子空间上。
+核心思想：
+我们利用预解算子作为“内核”，把定义在复平面上的函数 $f(\lambda)$ “投影”到了算子空间上。
 
 ---
 
 ### 格林函数与极点
 
-对于物理学家来说，**预解算子就是格林函数**。
+对于物理学家来说，预解算子就是格林函数。
 
 $$
 G(\lambda) = \frac{1}{\lambda - H}
@@ -179,9 +178,9 @@ e^{-iHt} = \frac{1}{2\pi i} \oint_{\Gamma} e^{-i\lambda t} \frac{1}{\lambda - H}
 $$
 
 这个积分在干什么？
-1.  **扫描能谱**：积分围道 $\Gamma$ 包围了哈密顿量 $H$ 的所有**本征值（能级）**。
-2.  **提取留数**：格林函数 $\frac{1}{\lambda - H}$ 在 $H$ 的本征值 $E_n$ 处有**极点**。
-3.  **加权求和**：柯西积分定理告诉我们，围道积分等于所有极点的留数之和。
+1.  扫描能谱：积分围道 $\Gamma$ 包围了哈密顿量 $H$ 的所有本征值（能级）。
+2.  提取留数：格林函数 $\frac{1}{\lambda - H}$ 在 $H$ 的本征值 $E_n$ 处有极点。
+3.  加权求和：柯西积分定理告诉我们，围道积分等于所有极点的留数之和。
 
 如果 $H$ 有离散能级 $E_n$ 和本征态 $|n\rangle$，格林函数可以写成谱分解形式：
 
@@ -199,10 +198,10 @@ f(H) &= \frac{1}{2\pi i} \oint_{\Gamma} f(\lambda) \left( \sum_n \frac{|n\rangle
 \end{aligned}
 $$
 
-**结论：**
-这正是我们熟悉的量子力学操作——**在能量本征基下，算子函数直接作用在把本征值上**（即 $e^{-iHt}|n\rangle = e^{-iE_n t}|n\rangle$）。
+结论：
+这正是我们熟悉的量子力学操作——在能量本征基下，算子函数直接作用在把本征值上（即 $e^{-iHt}|n\rangle = e^{-iE_n t}|n\rangle$）。
 
-但**全纯泛函演算的威力**在于：即使你解不出本征值（或者有连续谱），这个积分表达式依然成立！它提供了一种不依赖于对角化的、更本质的定义方式。
+但全纯泛函演算的威力在于：即使你解不出本征值（或者有连续谱），这个积分表达式依然成立！它提供了一种不依赖于对角化的、更本质的定义方式。
 
 ---
 
@@ -211,33 +210,33 @@ $$
 为了彻底搞懂，我们算一个简单的 $2 \times 2$ 矩阵。
 设 $T = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$。我们想算 $e^{tT}$（即旋转矩阵）。
 
-1.  **求本征值（奇点位置）**：
+1.  求本征值（奇点位置）：
     $\det(\lambda I - T) = \lambda^2 + 1 = 0 \implies \lambda = \pm i$。
     谱是 $\sigma(T) = \{i, -i\}$。
 
-2.  **求预解算子（格林函数）**：
+2.  求预解算子（格林函数）：
     $$
     (\lambda I - T)^{-1} = \begin{pmatrix} \lambda & -1 \\ 1 & \lambda \end{pmatrix}^{-1} = \frac{1}{\lambda^2 + 1} \begin{pmatrix} \lambda & 1 \\ -1 & \lambda \end{pmatrix}
     $$
 
-3.  **应用公式**：
+3.  应用公式：
     令 $f(\lambda) = e^{\lambda t}$。我们需要计算：
     $$
     e^{tT} = \frac{1}{2\pi i} \oint_{\Gamma} e^{\lambda t} \frac{1}{(\lambda - i)(\lambda + i)} \begin{pmatrix} \lambda & 1 \\ -1 & \lambda \end{pmatrix} d\lambda
     $$
     围道 $\Gamma$ 包围 $\pm i$。
 
-4.  **计算留数**：
-    * **在 $\lambda = i$ 处**：
+4.  计算留数：
+    * 在 $\lambda = i$ 处：
         $$
         \text{Res}(i) = \lim_{\lambda \to i} (\lambda - i) [\dots] = e^{it} \frac{1}{2i} \begin{pmatrix} i & 1 \\ -1 & i \end{pmatrix}
         $$
-    * **在 $\lambda = -i$ 处**：
+    * 在 $\lambda = -i$ 处：
         $$
         \text{Res}(-i) = \lim_{\lambda \to -i} (\lambda + i) [\dots] = e^{-it} \frac{1}{-2i} \begin{pmatrix} -i & 1 \\ -1 & -i \end{pmatrix}
         $$
 
-5.  **相加得到结果**：
+5.  相加得到结果：
     利用欧拉公式 $\cos t = \frac{e^{it} + e^{-it}}{2}, \sin t = \frac{e^{it} - e^{-it}}{2i}$：
 
     $$
@@ -248,7 +247,7 @@ $$
 
 ### 总结
 对于物理学家，全纯泛函演算就是：
-**利用格林函数 $(\lambda - H)^{-1}$ 将算子转化为复平面上的函数，通过围道积分，“筛选”出物理系统的能级信息，从而定义算子的演化。**
+利用格林函数 $(\lambda - H)^{-1}$ 将算子转化为复平面上的函数，通过围道积分，“筛选”出物理系统的能级信息，从而定义算子的演化。
 
 它比泰勒展开（$e^X = 1 + X + \dots$）更强大，因为它可以处理算子无界的情况（只要积分收敛），这在量子场论中至关重要。
 
