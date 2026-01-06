@@ -1928,6 +1928,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_13" tabindex="0" aria-expanded="true">
@@ -1941,6 +1945,20 @@
           functionnalAna
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C0xu/" class="md-nav__link">
+        泛函序言
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -2009,13 +2027,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#紧算子" class="md-nav__link">
-    紧算子
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2045,8 +2056,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../C4spectrum/" class="md-nav__link">
+      <a href="../C4spectral/" class="md-nav__link">
         谱理论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C5infityPhysics/" class="md-nav__link">
+        无界算子和量子力学中的应用
       </a>
     </li>
   
@@ -3000,13 +3025,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#紧算子" class="md-nav__link">
-    紧算子
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -3033,24 +3051,28 @@
 <p>有界算子:def:如果存在一个常数C &gt;= 0，使得对于所有x属于X，有<span class="arithmatex"><span class="MathJax_Preview">||T(x)||_Y \leq C ||x||_X</span><script type="math/tex">||T(x)||_Y \leq C ||x||_X</script></span>，则称T为有界算子。</p>
 <p>注意有界算子的有界不是值域有界，而是指算子作用下的输出与输入之间存在一个线性界限。 有界不是D也不是R上的有界,是放大倍数的有界.</p>
 <p>注意有界与连续的等价性。</p>
-<p>算子的范数:def:设T:X-&gt;Y是一个有界线性算子，则T的范数定义为<br />
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">||T|| = sup_{x \neq 0} \frac{||T(x)||_Y}{||x||_X} = sup_{||x||_X = 1} ||T(x)||_Y</span><script type="math/tex">||T|| = sup_{x \neq 0} \frac{||T(x)||_Y}{||x||_X} = sup_{||x||_X = 1} ||T(x)||_Y</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">||T|| = sup_{x \neq 0} \frac{||T(x)||_Y}{||x||_X} = sup_{||x||_X = 1} ||T(x)||_Y</span><script type="math/tex">||T|| = sup_{x \neq 0} \frac{||T(x)||_Y}{||x||_X} = sup_{||x||_X = 1} ||T(x)||_Y</script></span></script></span></p>
+<p>算子的范数:def:设T:X-&gt;Y是一个有界线性算子，则T的范数定义为</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">||T|| = sup_{x \neq 0} \frac{||T(x)||_Y}{||x||_X} = sup_{||x||_X = 1} ||T(x)||_Y</span><script type="math/tex">||T|| = sup_{x \neq 0} \frac{||T(x)||_Y}{||x||_X} = sup_{||x||_X = 1} ||T(x)||_Y</script></span></p>
 <p>第二个=号成立是因为线性算子linear。</p>
+<!-- 准算子:def:如果T:X->Y是一个线性算子，且存在一个常数C >= 0，使得对于所有x属于X，有$||T(x)||_Y \leq C ||x||_X^p$，其中0 < p <= 1，则称T为准算子。 -->
+
+<p>紧线性算子(全连续算子):def:设T:X-&gt;Y是一个线性算子，如果对于X中任意有界子集B，T(B)在Y中是相对紧的（即其闭包是紧集），则称T为紧线性算子。</p>
+<p>相对紧集合:def:设Y是赋范空间，A是Y的子集，如果A的闭包是紧集，则称A为相对紧集合。</p>
 <h2 id="线性泛函">线性泛函<a class="headerlink" href="#线性泛函" title="Permanent link">#</a></h2>
 <p>def:设X是一个赋范空间，如果f:X-&gt;R(或C)是一个线性算子，则称f为X上的一个泛函。</p>
 <p>有界线性泛函:def:如果存在一个常数C &gt;= 0，使得对于所有x属于X，有<span class="arithmatex"><span class="MathJax_Preview">|f(x)| \leq C ||x||_X</span><script type="math/tex">|f(x)| \leq C ||x||_X</script></span>，则f为有界泛函。</p>
 <p>hilbert空间上的泛函:<br />
 Resizt定理(里斯表示定理):设H是一个希尔伯特空间，f:H-&gt;R(或C)是H上的一个有界线性泛函，则存在唯一的向量y属于H，使得对于所有x属于H，有<span class="arithmatex"><span class="MathJax_Preview">f(x) = &lt;x,y&gt;</span><script type="math/tex">f(x) = <x,y></script></span>，其中<span class="arithmatex"><span class="MathJax_Preview">&lt;.,.&gt;</span><script type="math/tex"><.,.></script></span>表示H上的内积。</p>
 <p>泛函的范数:def:设f:X-&gt;R(或C)是一个有界线性泛函，则f的范数定义为<br />
-<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">||f|| = sup_{x \neq 0} \frac{|f(x)|}{||x||_X} = sup_{||x||_X = 1} |f(x)|</span><script type="math/tex">||f|| = sup_{x \neq 0} \frac{|f(x)|}{||x||_X} = sup_{||x||_X = 1} |f(x)|</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">||f|| = sup_{x \neq 0} \frac{|f(x)|}{||x||_X} = sup_{||x||_X = 1} |f(x)|</span><script type="math/tex">||f|| = sup_{x \neq 0} \frac{|f(x)|}{||x||_X} = sup_{||x||_X = 1} |f(x)|</script></span></script></span>.</p>
-<h2 id="紧算子">紧算子<a class="headerlink" href="#紧算子" title="Permanent link">#</a></h2>
+<span class="arithmatex"><span class="MathJax_Preview">||f|| = sup_{x \neq 0} \frac{|f(x)|}{||x||_X} = sup_{||x||_X = 1} |f(x)|</span><script type="math/tex">||f|| = sup_{x \neq 0} \frac{|f(x)|}{||x||_X} = sup_{||x||_X = 1} |f(x)|</script></span>.</p>
+<p>准线性泛函:def:如果f:X-&gt;R(或C)是一个线性泛函，且存在一个常数C &gt;= 0，使得对于所有x属于X，有<span class="arithmatex"><span class="MathJax_Preview">|f(x)| \leq C ||x||_X^p</span><script type="math/tex">|f(x)| \leq C ||x||_X^p</script></span>，其中0 &lt; p &lt;= 1，则称f为准线性泛函。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年1月6日 09:08:50 UTC"><span class="timeago" datetime="2026-01-06T09:08:50+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年1月6日 09:08:50 UTC">2026-01-06</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年1月6日 11:21:13 UTC"><span class="timeago" datetime="2026-01-06T11:21:13+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年1月6日 11:21:13 UTC">2026-01-06</span>
       
         <br>
         创建日期:

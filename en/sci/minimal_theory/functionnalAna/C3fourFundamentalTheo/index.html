@@ -14,7 +14,7 @@
           <link rel="prev" href="../C2operatorFunctional/">
         
         
-          <link rel="next" href="../C4spectrum/">
+          <link rel="next" href="../C4spectral/">
         
         <link rel="icon" href="../../../../../assets/images/favicon.png">
         <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
@@ -1928,6 +1928,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_13" tabindex="0" aria-expanded="true">
@@ -1941,6 +1945,20 @@
           functionnalAna
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C0xu/" class="md-nav__link">
+        泛函序言
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -2017,8 +2035,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#一致有界原理" class="md-nav__link">
-    一致有界原理
+  <a href="#一致有界原理uniform-boundedness-principle--banach-steinhaus-theorem-共鸣定理" class="md-nav__link">
+    一致有界原理(Uniform Boundedness Principle / Banach-Steinhaus Theorem) 共鸣定理
   </a>
   
 </li>
@@ -2052,6 +2070,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#强收敛弱收敛-弱星收敛" class="md-nav__link">
+    强收敛弱收敛 弱星收敛
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2072,8 +2097,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../C4spectrum/" class="md-nav__link">
+      <a href="../C4spectral/" class="md-nav__link">
         谱理论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C5infityPhysics/" class="md-nav__link">
+        无界算子和量子力学中的应用
       </a>
     </li>
   
@@ -3021,8 +3060,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#一致有界原理" class="md-nav__link">
-    一致有界原理
+  <a href="#一致有界原理uniform-boundedness-principle--banach-steinhaus-theorem-共鸣定理" class="md-nav__link">
+    一致有界原理(Uniform Boundedness Principle / Banach-Steinhaus Theorem) 共鸣定理
   </a>
   
 </li>
@@ -3056,6 +3095,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#强收敛弱收敛-弱星收敛" class="md-nav__link">
+    强收敛弱收敛 弱星收敛
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3080,18 +3126,41 @@
 
 <h1 id="泛函四大基石定理">泛函四大基石定理<a class="headerlink" href="#泛函四大基石定理" title="Permanent link">#</a></h1>
 <h2 id="hahn-banach-定理">hahn-banach 定理<a class="headerlink" href="#hahn-banach-定理" title="Permanent link">#</a></h2>
-<h2 id="一致有界原理">一致有界原理<a class="headerlink" href="#一致有界原理" title="Permanent link">#</a></h2>
+<p>设 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是实线性空间，<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 上的次线性泛函。若 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 是定义在子空间 <span class="arithmatex"><span class="MathJax_Preview">Z \subset X</span><script type="math/tex">Z \subset X</script></span> 上的线性泛函，且满足 <span class="arithmatex"><span class="MathJax_Preview">|f(x)| \le p(x)</span><script type="math/tex">|f(x)| \le p(x)</script></span> , <span class="arithmatex"><span class="MathJax_Preview">\forall x \in Z</span><script type="math/tex">\forall x \in Z</script></span> ，则在整个空间 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 上存在线性泛函 <span class="arithmatex"><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span>，使得：</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">F|_Z = f</span><script type="math/tex">F|_Z = f</script></span> （延拓性）</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">|F(x)| \le p(x)</span><script type="math/tex">|F(x)| \le p(x)</script></span>  $ \forall x \in X$ 成立（保号/保范性）</p>
+<p>物理直观： 它保证了对偶空间 <span class="arithmatex"><span class="MathJax_Preview">X^*</span><script type="math/tex">X^*</script></span> 足够大。在量子力学中，这意味着对于任何态向量，我们都能找到足够的观测物理量（线性泛函）来描述它。</p>
+<h2 id="一致有界原理uniform-boundedness-principle--banach-steinhaus-theorem-共鸣定理">一致有界原理(Uniform Boundedness Principle / Banach-Steinhaus Theorem) 共鸣定理<a class="headerlink" href="#一致有界原理uniform-boundedness-principle--banach-steinhaus-theorem-共鸣定理" title="Permanent link">#</a></h2>
+<p>def： 设 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是 Banach 空间，<span class="arithmatex"><span class="MathJax_Preview">Y</span><script type="math/tex">Y</script></span> 是赋范线性空间。若算子族 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{T} \subset \mathcal{B}(X, Y)</span><script type="math/tex">\mathcal{T} \subset \mathcal{B}(X, Y)</script></span> 是逐点有界的，即对于每个 <span class="arithmatex"><span class="MathJax_Preview">x \in X</span><script type="math/tex">x \in X</script></span>，有 <span class="arithmatex"><span class="MathJax_Preview">\sup_{T \in \mathcal{T}} \|Tx\| &lt; \infty</span><script type="math/tex">\sup_{T \in \mathcal{T}} \|Tx\| < \infty</script></span>，则该算子族是一致有界的，即：<span class="arithmatex"><span class="MathJax_Preview">\sup_{T \in \mathcal{T}} \|T\| &lt; \infty</span><script type="math/tex">\sup_{T \in \mathcal{T}} \|T\| < \infty</script></span></p>
+<p>保证了在点态下的有界性可以推广到整个空间的有界性。</p>
 <h2 id="开映像定理">开映像定理<a class="headerlink" href="#开映像定理" title="Permanent link">#</a></h2>
+<p>def： 设 <span class="arithmatex"><span class="MathJax_Preview">X, Y</span><script type="math/tex">X, Y</script></span> 是 Banach 空间。若 <span class="arithmatex"><span class="MathJax_Preview">T: X \to Y</span><script type="math/tex">T: X \to Y</script></span> 是连续线性算子且是满射（Surjective），则 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 是一个开映射（即 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 将 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 中的开集映射为 <span class="arithmatex"><span class="MathJax_Preview">Y</span><script type="math/tex">Y</script></span> 中的开集）。</p>
+<p>保证了线性算子在满射情况下的“良好行为”，即它们不会将开集压缩成非开集。 保证了逆算子的存在性和连续性。</p>
 <h2 id="闭图像定理">闭图像定理<a class="headerlink" href="#闭图像定理" title="Permanent link">#</a></h2>
+<p>def:设 <span class="arithmatex"><span class="MathJax_Preview">X, Y</span><script type="math/tex">X, Y</script></span> 是 Banach 空间，<span class="arithmatex"><span class="MathJax_Preview">T: X \to Y</span><script type="math/tex">T: X \to Y</script></span> 是线性算子。若 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 的图像 <span class="arithmatex"><span class="MathJax_Preview">G(T) = \{(x, Tx) : x \in X\}</span><script type="math/tex">G(T) = \{(x, Tx) : x \in X\}</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">X \times Y</span><script type="math/tex">X \times Y</script></span> 中是闭集，则 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 是连续的（有界的）。</p>
+<p>保证了线性算子的连续性与其图像闭合性的等价性。这在分析线性算子的性质时非常有用。</p>
 <h2 id="逼近论的应用">逼近论的应用<a class="headerlink" href="#逼近论的应用" title="Permanent link">#</a></h2>
+<p>对中值定理的抽象.</p>
 <h3 id="banach不动点定理">banach不动点定理<a class="headerlink" href="#banach不动点定理" title="Permanent link">#</a></h3>
+<p>设 <span class="arithmatex"><span class="MathJax_Preview">(X, d)</span><script type="math/tex">(X, d)</script></span> 是一个非空的完备度量空间。若映射 <span class="arithmatex"><span class="MathJax_Preview">T: X \to X</span><script type="math/tex">T: X \to X</script></span> 是一个压缩映射，即存在常数 <span class="arithmatex"><span class="MathJax_Preview">0 \le k &lt; 1</span><script type="math/tex">0 \le k < 1</script></span>，使得对于所有 <span class="arithmatex"><span class="MathJax_Preview">x, y \in X</span><script type="math/tex">x, y \in X</script></span>：<span class="arithmatex"><span class="MathJax_Preview">d(Tx, Ty) \le k \cdot d(x, y)</span><script type="math/tex">d(Tx, Ty) \le k \cdot d(x, y)</script></span>则 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 中有且仅有一个不动点 <span class="arithmatex"><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span>（即 <span class="arithmatex"><span class="MathJax_Preview">Tx^* = x^*</span><script type="math/tex">Tx^* = x^*</script></span>）。</p>
+<p>应用： 这是微分方程和积分方程解的存在唯一性证明的核心，比如在计算散射振幅的 Lippmann-Schwinger 方程 迭代求解时，其本质就是寻找不动点。</p>
+<h3 id="强收敛弱收敛-弱星收敛">强收敛弱收敛 弱星收敛<a class="headerlink" href="#强收敛弱收敛-弱星收敛" title="Permanent link">#</a></h3>
+<p>对于赋范空间,</p>
+<p>序列<span class="arithmatex"><span class="MathJax_Preview">\{x_n\}</span><script type="math/tex">\{x_n\}</script></span> 强收敛到 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，如果 <span class="arithmatex"><span class="MathJax_Preview">\lim_{n \to \infty} \|x_n - x\| = 0</span><script type="math/tex">\lim_{n \to \infty} \|x_n - x\| = 0</script></span>。</p>
+<p>序列<span class="arithmatex"><span class="MathJax_Preview">\{x_n\}</span><script type="math/tex">\{x_n\}</script></span> 弱收敛到 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，如果对于每个 <span class="arithmatex"><span class="MathJax_Preview">f^* \in X^*</span><script type="math/tex">f^* \in X^*</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\lim_{n \to \infty} f^*(x_n) = f^*(x)</span><script type="math/tex">\lim_{n \to \infty} f^*(x_n) = f^*(x)</script></span>。</p>
+<p>对于算子序列<span class="arithmatex"><span class="MathJax_Preview">\{T_n\}</span><script type="math/tex">\{T_n\}</script></span>，</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\forall x \in X</span><script type="math/tex">\forall x \in X</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\lim_{n \to \infty} \|T_n x - Tx\| = 0</span><script type="math/tex">\lim_{n \to \infty} \|T_n x - Tx\| = 0</script></span>，则称 <span class="arithmatex"><span class="MathJax_Preview">\{T_n\}</span><script type="math/tex">\{T_n\}</script></span> 强收敛到 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>。</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\forall x \in X</span><script type="math/tex">\forall x \in X</script></span> 和每个 <span class="arithmatex"><span class="MathJax_Preview">f^* \in Y^*</span><script type="math/tex">f^* \in Y^*</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\lim_{n \to \infty} f^*(T_n x) = f^*(Tx)</span><script type="math/tex">\lim_{n \to \infty} f^*(T_n x) = f^*(Tx)</script></span>，则称 <span class="arithmatex"><span class="MathJax_Preview">\{T_n\}</span><script type="math/tex">\{T_n\}</script></span> 弱收敛到 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>。</p>
+<p>对于泛函序列<span class="arithmatex"><span class="MathJax_Preview">\{f_n\}</span><script type="math/tex">\{f_n\}</script></span>，</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\forall x \in X</span><script type="math/tex">\forall x \in X</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\lim_{n \to \infty} |f_n(x) - f(x)| = 0</span><script type="math/tex">\lim_{n \to \infty} |f_n(x) - f(x)| = 0</script></span>，则称 <span class="arithmatex"><span class="MathJax_Preview">\{f_n\}</span><script type="math/tex">\{f_n\}</script></span> 强收敛到 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>。</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\forall x \in X</span><script type="math/tex">\forall x \in X</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\lim_{n \to \infty} f_n(x) = f(x)</span><script type="math/tex">\lim_{n \to \infty} f_n(x) = f(x)</script></span>，则称 <span class="arithmatex"><span class="MathJax_Preview">\{f_n\}</span><script type="math/tex">\{f_n\}</script></span> 弱星收敛到 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年1月6日 09:08:50 UTC"><span class="timeago" datetime="2026-01-06T09:08:50+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年1月6日 09:08:50 UTC">2026-01-06</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年1月6日 11:21:13 UTC"><span class="timeago" datetime="2026-01-06T11:21:13+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年1月6日 11:21:13 UTC">2026-01-06</span>
       
         <br>
         创建日期:

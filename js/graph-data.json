@@ -870,8 +870,17 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/functionnalAna/C3fourFundamentalTheo.zh.md",
-      "size": 91,
+      "size": 1815,
       "url": "/sci/minimal_theory/functionnalAna/C3fourFundamentalTheo/"
+    },
+    {
+      "id": "sci/minimal_theory/functionnalAna/C5infityPhysics.zh",
+      "title": "无界算子和量子力学中的应用",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/functionnalAna/C5infityPhysics.zh.md",
+      "size": 17,
+      "url": "/sci/minimal_theory/functionnalAna/C5infityPhysics/"
     },
     {
       "id": "sci/minimal_theory/functionnalAna/C2operatorFunctional.zh",
@@ -879,17 +888,26 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/functionnalAna/C2operatorFunctional.zh.md",
-      "size": 835,
+      "size": 1176,
       "url": "/sci/minimal_theory/functionnalAna/C2operatorFunctional/"
     },
     {
-      "id": "sci/minimal_theory/functionnalAna/C4spectrum.zh",
+      "id": "sci/minimal_theory/functionnalAna/C4spectral.zh",
       "title": "谱理论",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/functionnalAna/C4spectrum.zh.md",
-      "size": 5,
-      "url": "/sci/minimal_theory/functionnalAna/C4spectrum/"
+      "path": "sci/minimal_theory/functionnalAna/C4spectral.zh.md",
+      "size": 7557,
+      "url": "/sci/minimal_theory/functionnalAna/C4spectral/"
+    },
+    {
+      "id": "sci/minimal_theory/functionnalAna/C0xu.zh",
+      "title": "泛函序言",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/functionnalAna/C0xu.zh.md",
+      "size": 85,
+      "url": "/sci/minimal_theory/functionnalAna/C0xu/"
     },
     {
       "id": "sci/minimal_theory/functionnalAna/C1space.zh",
@@ -897,7 +915,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/functionnalAna/C1space.zh.md",
-      "size": 2440,
+      "size": 2455,
       "url": "/sci/minimal_theory/functionnalAna/C1space/"
     },
     {
@@ -1308,16 +1326,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 145,
+    "total_nodes": 147,
     "total_links": 0,
     "languages": {
-      "zh": 120,
+      "zh": 122,
       "en": 25
     },
     "categories": {
       "main": 2,
       "category": 23,
-      "page": 120
+      "page": 122
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1325,6 +1343,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-01-06 09:09:23.256493"
+    "generated_at": "2026-01-06 11:21:47.846614"
   }
 }
