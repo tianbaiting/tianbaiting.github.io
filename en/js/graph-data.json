@@ -870,7 +870,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/functionnalAna/C3fourFundamentalTheo.zh.md",
-      "size": 1885,
+      "size": 2249,
       "url": "/sci/minimal_theory/functionnalAna/C3fourFundamentalTheo/"
     },
     {
@@ -1343,6 +1343,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-01-08 10:18:58.040368"
+    "generated_at": "2026-01-08 10:30:51.385650"
   }
 }

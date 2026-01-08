@@ -3141,10 +3141,18 @@
 <p>def:设 <span class="arithmatex"><span class="MathJax_Preview">X, Y</span><script type="math/tex">X, Y</script></span> 是 Banach 空间，<span class="arithmatex"><span class="MathJax_Preview">T: X \to Y</span><script type="math/tex">T: X \to Y</script></span> 是线性算子。若 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 的图像 <span class="arithmatex"><span class="MathJax_Preview">G(T) = \{(x, Tx) : x \in X\}</span><script type="math/tex">G(T) = \{(x, Tx) : x \in X\}</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">X \times Y</span><script type="math/tex">X \times Y</script></span> 中是闭集，则 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 是连续的（有界的）。</p>
 <p>保证了线性算子的连续性与其图像闭合性的等价性。这在分析线性算子的性质时非常有用。</p>
 <h2 id="逼近论的应用">逼近论的应用<a class="headerlink" href="#逼近论的应用" title="Permanent link">#</a></h2>
-<p>对闭区间套的抽象.</p>
-<p>布劳威尔不动点定理的推广.</p>
+<p>对闭区间套的抽象.或者是说对于Picard 迭代（Picard Iteration）Lipschitz 条件（压缩映射）的抽象.</p>
+<p>将微分方程转化为积分方程,</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">y(x) = y_0 + \int_{x_0}^x f(t, y(t)) \, dt</div>
+<script type="math/tex; mode=display">y(x) = y_0 + \int_{x_0}^x f(t, y(t)) \, dt</script>
+</div>
+<p>然后当迭代次数<span class="arithmatex"><span class="MathJax_Preview">n \to \infty</span><script type="math/tex">n \to \infty</script></span> 时，如果在某个邻域内 <span class="arithmatex"><span class="MathJax_Preview">f(x,y)</span><script type="math/tex">f(x,y)</script></span> 满足 Lipschitz 条件（保证算子是压缩的），那么序列 <span class="arithmatex"><span class="MathJax_Preview">\phi_n(x)</span><script type="math/tex">\phi_n(x)</script></span> 将一致收敛于方程的唯一精确解 <span class="arithmatex"><span class="MathJax_Preview">y(x)</span><script type="math/tex">y(x)</script></span>. </p>
+<p>布劳威尔不动点定理属于拓扑, 由于紧. 存在不一定唯一.</p>
+<p>banahach不动点定理是压缩. 结果唯一</p>
 <h3 id="banach不动点定理">banach不动点定理<a class="headerlink" href="#banach不动点定理" title="Permanent link">#</a></h3>
 <p>设 <span class="arithmatex"><span class="MathJax_Preview">(X, d)</span><script type="math/tex">(X, d)</script></span> 是一个非空的完备度量空间。若映射 <span class="arithmatex"><span class="MathJax_Preview">T: X \to X</span><script type="math/tex">T: X \to X</script></span> 是一个压缩映射，即存在常数 <span class="arithmatex"><span class="MathJax_Preview">0 \le k &lt; 1</span><script type="math/tex">0 \le k < 1</script></span>，使得对于所有 <span class="arithmatex"><span class="MathJax_Preview">x, y \in X</span><script type="math/tex">x, y \in X</script></span>：<span class="arithmatex"><span class="MathJax_Preview">d(Tx, Ty) \le k \cdot d(x, y)</span><script type="math/tex">d(Tx, Ty) \le k \cdot d(x, y)</script></span>则 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 中有且仅有一个不动点 <span class="arithmatex"><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span>（即 <span class="arithmatex"><span class="MathJax_Preview">Tx^* = x^*</span><script type="math/tex">Tx^* = x^*</script></span>）。</p>
+<p>压缩映射:def:设(X,d)是一个度量空间,映射T:X-&gt;X如果存在常数0&lt;=k&lt;1,使得对于所有x,y属于X,满足d(Tx,Ty)&lt;=k*d(x,y),则称T为X上的一个压缩映射.</p>
 <p>应用： 这是微分方程和积分方程解的存在唯一性证明的核心，比如在计算散射振幅的 Lippmann-Schwinger 方程 迭代求解时，其本质就是寻找不动点。</p>
 <h3 id="强收敛弱收敛-弱星收敛">强收敛弱收敛 弱星收敛<a class="headerlink" href="#强收敛弱收敛-弱星收敛" title="Permanent link">#</a></h3>
 <p>对于赋范空间,</p>
@@ -3162,7 +3170,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年1月8日 10:18:26 UTC"><span class="timeago" datetime="2026-01-08T10:18:26+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年1月8日 10:18:26 UTC">2026-01-08</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年1月8日 10:30:18 UTC"><span class="timeago" datetime="2026-01-08T10:30:18+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年1月8日 10:30:18 UTC">2026-01-08</span>
       
         <br>
         创建日期:
