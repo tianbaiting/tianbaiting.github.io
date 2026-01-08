@@ -1,6 +1,6 @@
 # 谱理论
 
-
+![alt text](assets/C4spectral.zh/spectral.JPG)
 ## def
 
 ### 本征值与本征向量 (Eigenvalues and Eigenvectors)  
@@ -301,3 +301,5 @@ $$
 本节主要讨论希尔伯特空间中的有界自伴线性算子的谱定理 (Spectral Theorem)。
 
 物理对应：厄米算符、投影测量、完备性关系。
+
+
