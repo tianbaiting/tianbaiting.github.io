@@ -870,17 +870,8 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/functionnalAna/C3fourFundamentalTheo.zh.md",
-      "size": 1815,
+      "size": 1870,
       "url": "/sci/minimal_theory/functionnalAna/C3fourFundamentalTheo/"
-    },
-    {
-      "id": "sci/minimal_theory/functionnalAna/C5infityPhysics.zh",
-      "title": "无界算子和量子力学中的应用",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/functionnalAna/C5infityPhysics.zh.md",
-      "size": 17,
-      "url": "/sci/minimal_theory/functionnalAna/C5infityPhysics/"
     },
     {
       "id": "sci/minimal_theory/functionnalAna/C2operatorFunctional.zh",
@@ -897,7 +888,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/functionnalAna/C4spectral.zh.md",
-      "size": 7484,
+      "size": 7532,
       "url": "/sci/minimal_theory/functionnalAna/C4spectral/"
     },
     {
@@ -908,6 +899,15 @@
       "path": "sci/minimal_theory/functionnalAna/C0xu.zh.md",
       "size": 85,
       "url": "/sci/minimal_theory/functionnalAna/C0xu/"
+    },
+    {
+      "id": "sci/minimal_theory/functionnalAna/C5unboudPhysics.zh",
+      "title": "无界算子和量子力学中的应用",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/functionnalAna/C5unboudPhysics.zh.md",
+      "size": 113,
+      "url": "/sci/minimal_theory/functionnalAna/C5unboudPhysics/"
     },
     {
       "id": "sci/minimal_theory/functionnalAna/C1space.zh",
@@ -1343,6 +1343,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-01-06 11:28:30.312375"
+    "generated_at": "2026-01-08 10:11:52.903771"
   }
 }
