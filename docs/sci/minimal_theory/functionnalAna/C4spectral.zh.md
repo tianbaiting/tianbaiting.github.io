@@ -43,7 +43,6 @@ residual spectrum 残余谱几乎不出现在物理应用中. 对于自伴算子
 
 $$
 r(A)=\sup\{|\lambda|:\lambda\in\sigma(A)\}.
-
 $$
 
 ### 谱分解 (Spectral Decomposition)  
