@@ -127,6 +127,15 @@
       "url": "/life/flavor/"
     },
     {
+      "id": "life/twist.zh",
+      "title": "手腕不适尺侧腕屈肌 与 肱桡肌",
+      "language": "zh",
+      "category": "category",
+      "path": "life/twist.zh.md",
+      "size": 1635,
+      "url": "/life/twist/"
+    },
+    {
       "id": "sci/todolist.zh",
       "title": "todo",
       "language": "zh",
@@ -577,6 +586,15 @@
       "url": "/en/sci/minimal_code/latex_graphics/"
     },
     {
+      "id": "sci/minimal_code/vscodevimPlug.zh",
+      "title": "vscode vim 插件",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/vscodevimPlug.zh.md",
+      "size": 28,
+      "url": "/sci/minimal_code/vscodevimPlug/"
+    },
+    {
       "id": "sci/minimal_code/root_opener",
       "title": "设置 ROOT 文件默认浏览器教程",
       "language": "zh",
@@ -888,7 +906,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/functionnalAna/C4spectral.zh.md",
-      "size": 7532,
+      "size": 7531,
       "url": "/sci/minimal_theory/functionnalAna/C4spectral/"
     },
     {
@@ -917,6 +935,15 @@
       "path": "sci/minimal_theory/functionnalAna/C1space.zh.md",
       "size": 2455,
       "url": "/sci/minimal_theory/functionnalAna/C1space/"
+    },
+    {
+      "id": "sci/minimal_theory/functionnalAna/RHS.zh",
+      "title": "装备希尔伯特空间",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/functionnalAna/RHS.zh.md",
+      "size": 92,
+      "url": "/sci/minimal_theory/functionnalAna/RHS/"
     },
     {
       "id": "sci/project/D_polar_exp/scintillator.zh",
@@ -1326,16 +1353,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 147,
+    "total_nodes": 150,
     "total_links": 0,
     "languages": {
-      "zh": 122,
+      "zh": 125,
       "en": 25
     },
     "categories": {
       "main": 2,
-      "category": 23,
-      "page": 122
+      "category": 24,
+      "page": 124
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1343,6 +1370,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-01-08 10:30:51.385650"
+    "generated_at": "2026-01-12 08:40:49.282441"
   }
 }
