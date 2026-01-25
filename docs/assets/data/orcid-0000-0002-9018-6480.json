@@ -14,7 +14,7 @@
       "value": 1676033008968
     },
     "last-modified-date": {
-      "value": 1761638921963
+      "value": 1763410838826
     },
     "claimed": true,
     "source": null,
@@ -77,7 +77,7 @@
   },
   "activities-summary": {
     "last-modified-date": {
-      "value": 1761591516986
+      "value": 1763410838889
     },
     "distinctions": {
       "last-modified-date": null,
@@ -190,9 +190,101 @@
     },
     "works": {
       "last-modified-date": {
-        "value": 1761591516986
+        "value": 1763410838889
       },
       "group": [
+        {
+          "last-modified-date": {
+            "value": 1763410838889
+          },
+          "external-ids": {
+            "external-id": [
+              {
+                "external-id-type": "doi",
+                "external-id-value": "10.1103/jw1p-36pb",
+                "external-id-normalized": {
+                  "value": "10.1103/jw1p-36pb",
+                  "transient": true
+                },
+                "external-id-normalized-error": null,
+                "external-id-url": {
+                  "value": "https://doi.org/10.1103/jw1p-36pb"
+                },
+                "external-id-relationship": "self"
+              }
+            ]
+          },
+          "work-summary": [
+            {
+              "put-code": 197197249,
+              "created-date": {
+                "value": 1763410838889
+              },
+              "last-modified-date": {
+                "value": 1763410838889
+              },
+              "source": {
+                "source-orcid": null,
+                "source-client-id": {
+                  "uri": "https://orcid.org/client/0000-0001-9884-1913",
+                  "path": "0000-0001-9884-1913",
+                  "host": "orcid.org"
+                },
+                "source-name": {
+                  "value": "Crossref"
+                },
+                "assertion-origin-orcid": null,
+                "assertion-origin-client-id": null,
+                "assertion-origin-name": null
+              },
+              "title": {
+                "title": {
+                  "value": "Precise measurement of short-range correlations in nuclei from bremsstrahlung gamma-ray emission in low-energy heavy-ion collisions"
+                },
+                "subtitle": null,
+                "translated-title": null
+              },
+              "external-ids": {
+                "external-id": [
+                  {
+                    "external-id-type": "doi",
+                    "external-id-value": "10.1103/jw1p-36pb",
+                    "external-id-normalized": {
+                      "value": "10.1103/jw1p-36pb",
+                      "transient": true
+                    },
+                    "external-id-normalized-error": null,
+                    "external-id-url": {
+                      "value": "https://doi.org/10.1103/jw1p-36pb"
+                    },
+                    "external-id-relationship": "self"
+                  }
+                ]
+              },
+              "url": {
+                "value": "https://doi.org/10.1103/jw1p-36pb"
+              },
+              "type": "journal-article",
+              "publication-date": {
+                "year": {
+                  "value": "2025"
+                },
+                "month": {
+                  "value": "11"
+                },
+                "day": {
+                  "value": "17"
+                }
+              },
+              "journal-title": {
+                "value": "Physical Review Research"
+              },
+              "visibility": "public",
+              "path": "/0000-0002-9018-6480/work/197197249",
+              "display-index": "1"
+            }
+          ]
+        },
         {
           "last-modified-date": {
             "value": 1761591516986

@@ -479,3 +479,11 @@ add_test(NAME BasicTest COMMAND hello)
 
 
 #### debug 和 测试
+
+
+
+## root 添加cmake方式  寻找 库
+
+
+https://root.cern/manual/integrate_root_into_my_cmake_project/
+
