@@ -100,6 +100,24 @@
       "url": "/life/食物安全温度/"
     },
     {
+      "id": "life/subtleSCI.zh",
+      "title": "subtle definition in sci",
+      "language": "zh",
+      "category": "category",
+      "path": "life/subtleSCI.zh.md",
+      "size": 1464,
+      "url": "/life/subtleSCI/"
+    },
+    {
+      "id": "life/schedule.zh",
+      "title": "作息时间表",
+      "language": "zh",
+      "category": "category",
+      "path": "life/schedule.zh.md",
+      "size": 516,
+      "url": "/life/schedule/"
+    },
+    {
       "id": "life/焦虑.zh",
       "title": "焦虑",
       "language": "zh",
@@ -1353,15 +1371,15 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 150,
+    "total_nodes": 152,
     "total_links": 0,
     "languages": {
-      "zh": 125,
+      "zh": 127,
       "en": 25
     },
     "categories": {
       "main": 2,
-      "category": 24,
+      "category": 26,
       "page": 124
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
@@ -1370,6 +1388,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-01-12 08:40:49.282441"
+    "generated_at": "2026-01-25 14:15:43.257777"
   }
 }
