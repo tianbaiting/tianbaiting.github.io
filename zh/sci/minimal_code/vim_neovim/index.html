@@ -1191,6 +1191,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="true">
@@ -1682,9 +1684,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lazyvim-自带的快捷键" class="md-nav__link">
-    lazyvim 自带的快捷键
+  <a href="#vim-基本操作-使用哲学" class="md-nav__link">
+    vim 基本操作, 使用哲学
   </a>
+  
+    <nav class="md-nav" aria-label="vim 基本操作, 使用哲学">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#移动" class="md-nav__link">
+    移动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#语法结构" class="md-nav__link">
+    语法结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#重复" class="md-nav__link">
+    重复
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1719,6 +1748,20 @@
     <li class="md-nav__item">
       <a href="../vscode_lsp/" class="md-nav__link">
         如何解决 VS Code 中的 C/C++ `include` 报错问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vscodetunnel/" class="md-nav__link">
+        VS Code Tunnel
       </a>
     </li>
   
@@ -3091,9 +3134,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#lazyvim-自带的快捷键" class="md-nav__link">
-    lazyvim 自带的快捷键
+  <a href="#vim-基本操作-使用哲学" class="md-nav__link">
+    vim 基本操作, 使用哲学
   </a>
+  
+    <nav class="md-nav" aria-label="vim 基本操作, 使用哲学">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#移动" class="md-nav__link">
+    移动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#语法结构" class="md-nav__link">
+    语法结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#重复" class="md-nav__link">
+    重复
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3150,14 +3220,77 @@
     启动 Neovim 后，LazyVim 会自动安装所需插件。等待安装完成即可开始使用。</p>
 </li>
 </ol>
-<h2 id="lazyvim-自带的快捷键">lazyvim 自带的快捷键<a class="headerlink" href="#lazyvim-自带的快捷键" title="Permanent link">#</a></h2>
+<h2 id="vim-基本操作-使用哲学">vim 基本操作, 使用哲学<a class="headerlink" href="#vim-基本操作-使用哲学" title="Permanent link">#</a></h2>
+<p>三大模式<br />
+normal, visual, edit(insert)</p>
+<h3 id="移动">移动<a class="headerlink" href="#移动" title="Permanent link">#</a></h3>
+<p>基础: hjkl  左下上右. j形状像是下箭头.</p>
+<p>h l 几乎不用, 而是用 f F 进行精准的行间查找  或者w b e 进行单词移动.</p>
+<p>/用于全文查找.  查找后n 继续下一个 N 上一个. 会一直显示高亮直到 :nohl.</p>
+<h3 id="语法结构">语法结构<a class="headerlink" href="#语法结构" title="Permanent link">#</a></h3>
+<p>动词+名词</p>
+<p>dw 删除一个词语</p>
+<p>dp 删除一段</p>
+<p>动词+介词+名词</p>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th>英文全称 / 助记</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f</td>
+<td>Find</td>
+<td>向后查找字符，停在上面</td>
+</tr>
+<tr>
+<td>t</td>
+<td>Till</td>
+<td>向后查找字符，停在前面（直到…）</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Find (back)</td>
+<td>向前查找字符</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Till (back)</td>
+<td>向前查找字符</td>
+</tr>
+<tr>
+<td>;</td>
+<td>(Repeat)</td>
+<td>重复上一次 f/t</td>
+</tr>
+<tr>
+<td>,</td>
+<td>(Reverse)</td>
+<td>反向重复上一次 f/t</td>
+</tr>
+</tbody>
+</table>
+<p>daw delete around word</p>
+<p>dfe f行内查找,删除到下一个e</p>
+<p>dte 删除直到下一个e()</p>
+<p>动词和名词前可以跟数量</p>
+<p>3dw 删除3个词语</p>
+<p>d3w 删除3个词语</p>
+<h3 id="重复">重复<a class="headerlink" href="#重复" title="Permanent link">#</a></h3>
+<p>. 重复上一个操作(编辑操作)</p>
+<p>n 重复上一个查找操作<br />
+N 反向重复上一个查找操作</p>
+<p>重复跳转操作</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年4月27日 17:19:02 UTC"><span class="timeago" datetime="2025-04-27T17:19:02+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年4月27日 17:19:02 UTC">2025-04-27</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年2月1日 16:20:42 UTC"><span class="timeago" datetime="2026-02-01T16:20:42+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年2月1日 16:20:42 UTC">2026-02-01</span>
       
         <br>
         创建日期:
