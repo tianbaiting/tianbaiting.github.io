@@ -3794,6 +3794,11 @@
 <p>安装：</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>jupytext
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li><code>python3 -m pip</code>：使用当前 Python 环境中的 <code>pip</code>，避免装到错误解释器。</li>
+<li><code>install jupytext</code>：安装 jupytext 主程序，后续 <code>jupytext --sync</code> 依赖它。</li>
+</ol>
 <p>如果项目使用 <code>requirements.txt</code> 或 <code>pyproject.toml</code>，请把 <code>jupytext</code> 作为开发依赖写入。</p>
 <h3 id="32-仓库目录约定推荐">3.2 仓库目录约定（推荐）<a class="headerlink" href="#32-仓库目录约定推荐" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>repo/
@@ -3808,11 +3813,12 @@
 │   └── post-rewrite
 └── .jupytext.toml
 </code></pre></div>
-<p>说明：</p>
+<p>代码解释：</p>
 <ol>
-<li><code>notebooks/</code> 不是强制目录，只要脚本里路径一致即可。</li>
-<li><code>tools/jupytext_sync.py</code> 负责统一同步逻辑。</li>
-<li><code>.githooks/</code> 用于自动化触发。</li>
+<li><code>notebooks/</code>：存放 notebook 及其配对 <code>.py</code>。</li>
+<li><code>tools/jupytext_sync.py</code>：统一同步入口，避免每个人手写命令。</li>
+<li><code>.githooks/</code>：仓库内共享 hooks，便于团队一致行为。</li>
+<li><code>.jupytext.toml</code>：定义全仓库 notebook 配对策略。</li>
 </ol>
 <h2 id="4-核心配置">4. 核心配置<a class="headerlink" href="#4-核心配置" title="Permanent link">#</a></h2>
 <h3 id="41-新建-jupytexttoml">4.1 新建 <code>.jupytext.toml</code><a class="headerlink" href="#41-新建-jupytexttoml" title="Permanent link">#</a></h3>
@@ -3820,24 +3826,22 @@
 <span class="n">notebook_metadata_filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kernelspec,language_info,jupytext&quot;</span>
 <span class="n">cell_metadata_filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;-all&quot;</span>
 </code></pre></div>
-<p>配置解释：</p>
+<p>代码解释：</p>
 <ol>
-<li><code>formats = "ipynb,py:percent"</code><br />
-   将 notebook 以双格式配对保存：<code>.ipynb</code> + <code>.py</code>（cell 用 <code># %%</code> 分块）。</li>
-<li><code>notebook_metadata_filter = "kernelspec,language_info,jupytext"</code><br />
-   只保留必要 notebook 元数据，降低无意义变更。</li>
-<li><code>cell_metadata_filter = "-all"</code><br />
-   去掉 cell 元数据，减少 diff 噪声。</li>
+<li><code>formats = "ipynb,py:percent"</code>：同一份 notebook 维护两种表示，前端编辑 <code>.ipynb</code>，版本管理看 <code>.py</code>。</li>
+<li><code>notebook_metadata_filter</code>：只保留内核和语言等必要元信息，减少 merge 冲突。</li>
+<li><code>cell_metadata_filter = "-all"</code>：去除 cell 级元数据，减少无效变更。</li>
 </ol>
 <h3 id="42-gitignore-建议">4.2 <code>.gitignore</code> 建议<a class="headerlink" href="#42-gitignore-建议" title="Permanent link">#</a></h3>
 <p>推荐加入：</p>
 <div class="highlight"><pre><span></span><code>*.ipynb
 </code></pre></div>
-<p>注意：</p>
+<p>代码解释：</p>
 <ol>
-<li>这是为了避免以后误把 <code>.ipynb</code> 重新提交到 Git。</li>
-<li><code>gitignore</code> 不会影响“已被 Git 追踪的历史文件”，迁移时仍需 <code>git rm --cached</code>。</li>
+<li>防止未来新增或同步出来的 <code>.ipynb</code> 被误提交。</li>
+<li>该规则只影响“未追踪文件”，不会自动取消已追踪 <code>.ipynb</code>。</li>
 </ol>
+<p>注意：迁移时仍需 <code>git rm --cached</code> 取消旧追踪。</p>
 <h2 id="5-同步脚本可复用">5. 同步脚本（可复用）<a class="headerlink" href="#5-同步脚本可复用" title="Permanent link">#</a></h2>
 <p>新建 <code>tools/jupytext_sync.py</code>：</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
@@ -3980,9 +3984,27 @@
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div>
+<p>代码解释（按功能块）：</p>
+<ol>
+<li><code>REPO_ROOT</code> 和 <code>NOTEBOOK_ROOT</code>：统一路径基准，保证脚本在任意目录调用都稳定。</li>
+<li><code>run()</code>：封装子进程执行，统一 <code>check=True</code>，出错时及时失败。</li>
+<li><code>is_notebook_py()</code>：判断 <code>.py</code> 是否为 notebook 脚本（通过 <code># %%</code> 或 jupytext 头信息）。</li>
+<li><code>staged_files()</code>：读取当前暂存区文件，用于增量同步模式（<code>--staged</code>）。</li>
+<li><code>all_targets()</code>：扫描 <code>notebooks/</code> 下所有可能要同步的 <code>.ipynb/.py</code>。</li>
+<li><code>normalize_targets()</code>：过滤无效路径、去重、限制目录范围，避免误处理非 notebook 代码。</li>
+<li><code>sync_one()</code>：核心同步逻辑。先 <code>--set-formats</code> 再 <code>--sync</code>，确保配对关系正确。</li>
+<li><code>stage()</code>：把同步更新后的 <code>.py</code> 自动 <code>git add</code>，防止提交遗漏。</li>
+<li><code>main()</code>：解析参数并调度三种工作模式：<code>--all</code>、<code>--staged</code>、指定路径。</li>
+<li>异常处理：捕获 <code>CalledProcessError</code> 并返回非 0，方便在 hooks/CI 中失败即中断。</li>
+</ol>
 <p>给执行权限：</p>
 <div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>tools/jupytext_sync.py
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li>给脚本添加可执行位，后续可直接被 hook 调用。</li>
+<li>不加可执行位时，部分环境会报 <code>Permission denied</code>。</li>
+</ol>
 <h2 id="6-git-hooks-自动同步">6. Git hooks 自动同步<a class="headerlink" href="#6-git-hooks-自动同步" title="Permanent link">#</a></h2>
 <h3 id="61-新建-githookspre-commit">6.1 新建 <code>.githooks/pre-commit</code><a class="headerlink" href="#61-新建-githookspre-commit" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
@@ -3993,6 +4015,12 @@
 
 python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--all<span class="w"> </span>--stage-updated
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li><code>set -euo pipefail</code>：脚本严格模式，任何错误立即中止提交。</li>
+<li><code>git rev-parse --show-toplevel</code>：确保在仓库根目录执行。</li>
+<li><code>--all --stage-updated</code>：提交前全量同步，并把更新后的 <code>.py</code> 自动加入暂存区。</li>
+</ol>
 <h3 id="62-新建-githookspost-merge">6.2 新建 <code>.githooks/post-merge</code><a class="headerlink" href="#62-新建-githookspost-merge" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 <span class="nb">set</span><span class="w"> </span>-euo<span class="w"> </span>pipefail
@@ -4002,6 +4030,12 @@ python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--a
 
 python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--all<span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li><code>post-merge</code> 在 <code>git pull</code> 后触发，保证拉取后 notebook 配对即时更新。</li>
+<li><code>&gt;/dev/null 2&gt;&amp;1</code>：隐藏噪声输出，避免干扰日常 pull。</li>
+<li><code>|| true</code>：即使同步失败也不阻断 merge 完成（避免仓库状态被 hook 卡死）。</li>
+</ol>
 <h3 id="63-新建-githookspost-checkout">6.3 新建 <code>.githooks/post-checkout</code><a class="headerlink" href="#63-新建-githookspost-checkout" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 <span class="nb">set</span><span class="w"> </span>-euo<span class="w"> </span>pipefail
@@ -4011,6 +4045,11 @@ python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--a
 
 python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--all<span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li>切换分支后自动同步，避免“分支 A/B 的 notebook 配对状态不一致”。</li>
+<li>其余逻辑与 <code>post-merge</code> 相同：静默执行且不阻断 checkout。</li>
+</ol>
 <h3 id="64-新建-githookspost-rewrite">6.4 新建 <code>.githooks/post-rewrite</code><a class="headerlink" href="#64-新建-githookspost-rewrite" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 <span class="nb">set</span><span class="w"> </span>-euo<span class="w"> </span>pipefail
@@ -4020,29 +4059,65 @@ python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--a
 
 python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--all<span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li><code>post-rewrite</code> 覆盖 <code>rebase</code>、<code>commit --amend</code> 等历史重写场景。</li>
+<li>历史重写后立即同步可避免“旧 <code>.py</code> 与新 <code>.ipynb</code> 错位”。</li>
+</ol>
 <h3 id="65-启用-hooks">6.5 启用 hooks<a class="headerlink" href="#65-启用-hooks" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>.githooks/pre-commit<span class="w"> </span>.githooks/post-merge<span class="w"> </span>.githooks/post-checkout<span class="w"> </span>.githooks/post-rewrite
 git<span class="w"> </span>config<span class="w"> </span>core.hooksPath<span class="w"> </span>.githooks
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li>第一行给所有 hook 增加执行权限。</li>
+<li>第二行告诉 Git 使用仓库内 <code>.githooks</code>，而不是默认 <code>.git/hooks</code>。</li>
+</ol>
 <p>校验是否生效：</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--get<span class="w"> </span>core.hooksPath
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li>该命令读取当前仓库 hook 目录配置。</li>
+<li>如果输出不是 <code>.githooks</code>，说明 hooks 尚未启用。</li>
+</ol>
 <p>输出应为：</p>
 <div class="highlight"><pre><span></span><code>.githooks
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li>这是预期值，表示后续 commit/pull/checkout 会触发你定义的脚本。</li>
+</ol>
 <h2 id="7-迁移已有仓库重点">7. 迁移已有仓库（重点）<a class="headerlink" href="#7-迁移已有仓库重点" title="Permanent link">#</a></h2>
 <p>假设你的仓库中已有大量 <code>.ipynb</code> 被追踪。</p>
 <h3 id="71-先为已有-notebook-生成-py">7.1 先为已有 notebook 生成 <code>.py</code><a class="headerlink" href="#71-先为已有-notebook-生成-py" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--all
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li>扫描 <code>notebooks/</code> 下所有目标并生成或更新配对 <code>.py</code>。</li>
+<li>这是迁移第一步，保证后续取消追踪 <code>.ipynb</code> 时不会丢可读源码。</li>
+</ol>
 <h3 id="72-取消-git-对-ipynb-的追踪保留本地文件">7.2 取消 Git 对 <code>.ipynb</code> 的追踪（保留本地文件）<a class="headerlink" href="#72-取消-git-对-ipynb-的追踪保留本地文件" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>ls-files<span class="w"> </span><span class="s1">&#39;*.ipynb&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-r<span class="w"> </span>git<span class="w"> </span>rm<span class="w"> </span>--cached
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li><code>git ls-files '*.ipynb'</code>：列出当前“已追踪”的 notebook。</li>
+<li><code>git rm --cached</code>：仅从索引删除，不删除工作区文件。</li>
+<li><code>xargs -r</code>：当列表为空时不执行命令，避免空参数报错。</li>
+</ol>
 <h3 id="73-添加新文件并提交">7.3 添加新文件并提交<a class="headerlink" href="#73-添加新文件并提交" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.jupytext.toml<span class="w"> </span>.githooks<span class="w"> </span>tools/jupytext_sync.py
 git<span class="w"> </span>add<span class="w"> </span>notebooks/**/*.py
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;migrate notebooks to jupytext py tracking&quot;</span>
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li>第一行提交配置与自动化脚本。</li>
+<li>第二行提交 notebook 对应 <code>.py</code>，作为后续唯一追踪对象。</li>
+<li>第三行形成迁移基线提交，便于回溯与团队同步。</li>
+</ol>
 <h2 id="8-日常工作流">8. 日常工作流<a class="headerlink" href="#8-日常工作流" title="Permanent link">#</a></h2>
 <h3 id="81-普通开发">8.1 普通开发<a class="headerlink" href="#81-普通开发" title="Permanent link">#</a></h3>
 <ol>
@@ -4057,10 +4132,20 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </ol>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--all
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li>这是“手动兜底”的全量同步命令。</li>
+<li>适合在 hook 未启用、CI 复现、或怀疑本地状态脏时执行。</li>
+</ol>
 <h2 id="9-新下载-py-如何生成-ipynb">9. 新下载 <code>.py</code> 如何生成 <code>.ipynb</code><a class="headerlink" href="#9-新下载-py-如何生成-ipynb" title="Permanent link">#</a></h2>
 <h3 id="91-单文件生成">9.1 单文件生成<a class="headerlink" href="#91-单文件生成" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>notebooks/xxx/downloaded.py
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li>传入单个 <code>.py</code> 路径时，脚本只处理该文件。</li>
+<li>如果该文件符合 notebook 识别规则，会自动生成配对 <code>.ipynb</code>。</li>
+</ol>
 <h3 id="92-推荐写法">9.2 推荐写法<a class="headerlink" href="#92-推荐写法" title="Permanent link">#</a></h3>
 <p>下载或新建的 <code>.py</code> 建议使用 <code># %%</code> 分块，例如：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># %%</span>
@@ -4069,20 +4154,31 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 <span class="c1"># %%</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li><code># %%</code> 是 jupytext/jupyter 常用 cell 分隔标记。</li>
+<li>转回 notebook 后，每个 <code># %%</code> 会成为独立代码单元。</li>
+</ol>
 <p>这样转回 notebook 后，单元结构清晰。</p>
 <h2 id="10-团队协作与-ci-建议">10. 团队协作与 CI 建议<a class="headerlink" href="#10-团队协作与-ci-建议" title="Permanent link">#</a></h2>
 <h3 id="101-团队要求每位开发者一次性执行">10.1 团队要求（每位开发者一次性执行）<a class="headerlink" href="#101-团队要求每位开发者一次性执行" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>core.hooksPath<span class="w"> </span>.githooks
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li>这是“每位成员本地初始化”的关键步骤。</li>
+<li>不执行这条命令，仓库内 hooks 文件不会被 Git 自动使用。</li>
+</ol>
 <h3 id="102-ci-一致性检查">10.2 CI 一致性检查<a class="headerlink" href="#102-ci-一致性检查" title="Permanent link">#</a></h3>
 <p>在 CI 中加入：</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--all
 git<span class="w"> </span>diff<span class="w"> </span>--exit-code
 </code></pre></div>
-<p>含义：</p>
+<p>代码解释：</p>
 <ol>
-<li>先尝试全量同步。</li>
-<li>若同步后出现未提交变更，CI 失败，提示开发者本地未同步。</li>
+<li>第一行强制在 CI 环境做一次全量同步。</li>
+<li>第二行检查同步后是否有未提交改动。</li>
+<li>若有改动，返回非 0，让 CI 失败，提醒开发者提交同步结果。</li>
 </ol>
 <h3 id="103-大仓库性能优化">10.3 大仓库性能优化<a class="headerlink" href="#103-大仓库性能优化" title="Permanent link">#</a></h3>
 <p>如果 notebook 很多、提交较慢，可把 <code>pre-commit</code> 从：</p>
@@ -4091,7 +4187,12 @@ git<span class="w"> </span>diff<span class="w"> </span>--exit-code
 <p>改为：</p>
 <div class="highlight"><pre><span></span><code>python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--staged<span class="w"> </span>--stage-updated
 </code></pre></div>
-<p>这样只同步当前暂存相关文件。</p>
+<p>代码解释：</p>
+<ol>
+<li><code>--all</code>：全仓扫描，稳定但慢。</li>
+<li><code>--staged</code>：只处理当前暂存相关文件，提交速度更快。</li>
+<li>适合 notebook 数量多、单次 commit 变更范围小的项目。</li>
+</ol>
 <h2 id="11-常见问题faq">11. 常见问题（FAQ）<a class="headerlink" href="#11-常见问题faq" title="Permanent link">#</a></h2>
 <h3 id="111-py-没被识别为-notebook-脚本">11.1 <code>.py</code> 没被识别为 notebook 脚本<a class="headerlink" href="#111-py-没被识别为-notebook-脚本" title="Permanent link">#</a></h3>
 <p>排查：</p>
@@ -4119,6 +4220,14 @@ git<span class="w"> </span>ls-files<span class="w"> </span><span class="s1">&#39
 git<span class="w"> </span>add<span class="w"> </span>.jupytext.toml<span class="w"> </span>.githooks<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>notebooks/**/*.py
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;migrate notebooks to jupytext py tracking&quot;</span>
 </code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li>前三行完成安装与可执行权限。</li>
+<li><code>core.hooksPath</code> 让 Git 使用仓库内 hooks。</li>
+<li><code>--all</code> 同步历史 notebook。</li>
+<li><code>git rm --cached</code> 取消 <code>.ipynb</code> 追踪但不删本地文件。</li>
+<li>最后 <code>git add + commit</code> 固化迁移结果。</li>
+</ol>
 <h2 id="13-迁移后的验收清单">13. 迁移后的验收清单<a class="headerlink" href="#13-迁移后的验收清单" title="Permanent link">#</a></h2>
 <p>提交前建议检查：</p>
 <ol>
@@ -4127,14 +4236,27 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 <li><code>git config --get core.hooksPath</code> 为 <code>.githooks</code>。</li>
 <li>手动执行 <code>python3 tools/jupytext_sync.py --all</code> 后 <code>git diff</code> 为空。</li>
 </ol>
-<p>完成以上四项，说明这套工作流已稳定可用。</p>
+<p>可直接执行：</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>ls-files<span class="w"> </span><span class="s1">&#39;*.ipynb&#39;</span>
+git<span class="w"> </span>config<span class="w"> </span>--get<span class="w"> </span>core.hooksPath
+python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--all
+git<span class="w"> </span>diff<span class="w"> </span>--name-only
+</code></pre></div>
+<p>代码解释：</p>
+<ol>
+<li>第 1 行验证是否仍有 <code>.ipynb</code> 被追踪。</li>
+<li>第 2 行验证 hooks 配置是否正确。</li>
+<li>第 3 行做一次全量同步自检。</li>
+<li>第 4 行确认同步后是否仍有未预期改动。</li>
+</ol>
+<p>完成以上检查，说明这套工作流已稳定可用。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年2月14日 14:12:37 UTC"><span class="timeago" datetime="2026-02-14T14:12:37+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年2月14日 14:12:37 UTC">2026-02-14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年2月15日 11:44:55 UTC"><span class="timeago" datetime="2026-02-15T11:44:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年2月15日 11:44:55 UTC">2026-02-15</span>
       
         <br>
         创建日期:

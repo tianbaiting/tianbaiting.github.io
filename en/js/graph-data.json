@@ -420,7 +420,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/jupytext.zh.md",
-      "size": 9114,
+      "size": 11772,
       "url": "/sci/minimal_code/jupytext/"
     },
     {
@@ -1406,6 +1406,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-02-14 14:13:10.367175"
+    "generated_at": "2026-02-15 11:45:27.155774"
   }
 }
