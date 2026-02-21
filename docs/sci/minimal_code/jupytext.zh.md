@@ -67,7 +67,6 @@ python3 -m pip install jupytext
 如果项目使用 `requirements.txt` 或 `pyproject.toml`，请把 `jupytext` 作为开发依赖写入。
 
 ### 3.2 仓库目录约定（推荐）
-
 ```text
 repo/
 ├── notebooks/
