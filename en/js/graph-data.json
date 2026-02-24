@@ -388,6 +388,15 @@
       "url": "/sci/minimal_code/git/"
     },
     {
+      "id": "sci/minimal_code/linux_swap.zh",
+      "title": "swap linux",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/linux_swap.zh.md",
+      "size": 2827,
+      "url": "/sci/minimal_code/linux_swap/"
+    },
+    {
       "id": "sci/minimal_code/cernrootData.zh",
       "title": "CERN ROOT 数据结构",
       "language": "zh",
@@ -429,7 +438,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/jupytext.zh.md",
-      "size": 11772,
+      "size": 11771,
       "url": "/sci/minimal_code/jupytext/"
     },
     {
@@ -566,6 +575,15 @@
       "path": "sci/minimal_code/fzf.zh.md",
       "size": 6169,
       "url": "/sci/minimal_code/fzf/"
+    },
+    {
+      "id": "sci/minimal_code/ctags.zh",
+      "title": "`ctags` 使用教程（C/C++）",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/ctags.zh.md",
+      "size": 3276,
+      "url": "/sci/minimal_code/ctags/"
     },
     {
       "id": "sci/minimal_code/yazi.zh",
@@ -1050,7 +1068,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/my_polarimeter.zh.md",
-      "size": 539,
+      "size": 532,
       "url": "/sci/project/D_polar_exp/my_polarimeter/"
     },
     {
@@ -1425,16 +1443,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 158,
+    "total_nodes": 160,
     "total_links": 0,
     "languages": {
-      "zh": 133,
+      "zh": 135,
       "en": 25
     },
     "categories": {
       "main": 2,
       "category": 26,
-      "page": 130
+      "page": 132
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1442,6 +1460,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-02-21 12:44:54.152096"
+    "generated_at": "2026-02-24 10:02:26.979631"
   }
 }
