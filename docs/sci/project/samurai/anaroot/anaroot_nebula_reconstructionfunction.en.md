@@ -1,4 +1,3 @@
-```c++
 This code implements the `TArtCalibNEBULA::ReconstructData()` method, whose main function is to reconstruct and calibrate physical quantities for each plastic scintillator (Pla) detector unit in the NEBULA detector.
 
 First, the function checks whether the raw data has been loaded (`fDataLoaded`); if not, it calls `LoadData()` to load it. Then, it defines three position offsets (`posxoff`, `posyoff`, `poszoff`), all currently set to 0, which can be adjusted later as needed for the experiment.

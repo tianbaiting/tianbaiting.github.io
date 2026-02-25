@@ -232,4 +232,3 @@ void recoNebulaTrack(const char* ridffile = "/home/s057/exp/exp2505_s057/anaroot
     // TArtSAMURAIParameters::Delete(); // If it's a singleton managed this way
 }
 ```
-```

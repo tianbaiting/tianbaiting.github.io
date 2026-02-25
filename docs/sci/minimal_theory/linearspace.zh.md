@@ -40,9 +40,7 @@
 ### 基底与坐标
 
 若有基 $\{e_i\}_{i=1}^n$，则任意 $v\in V$ 可写作
-$$
-v = v^i e_i.
-$$
+\( v = v^i e_i. \)
 分量 $v^i$ 为“逆变分量”，上标常用于表示它是向量在该基下的系数（爱因斯坦求和约定）。
 
 ---
@@ -52,21 +50,14 @@ $$
 ### 定义
 
 对偶空间 $V^*$ 是所有从 $V$ 到 $F$ 的线性泛函的集合：
-$$
-V^* = \{\alpha: V\to F \mid \alpha(a v + b w)=a\alpha(v)+b\alpha(w)\}.
-$$
+\( V^* = \{\alpha: V\to F \mid \alpha(a v + b w)=a\alpha(v)+b\alpha(w)\}. \)
 
 ### 对偶基
 
 若 $\{e_i\}$ 是 $V$ 的基，则存在唯一对偶基 $\{e^i\}\subset V^*$，满足
-$$
-e^i(e_j) = \delta^i_j.
-$$
+\( e^i(e_j) = \delta^i_j. \)
 于是
-$$
-\alpha = \alpha_i e^i,\quad v=v^i e_i,\quad
-\alpha(v)=\alpha_i v^i.
-$$
+\( \alpha = \alpha_i e^i,\quad v=v^i e_i,\quad \alpha(v)=\alpha_i v^i. \)
 
 记号约定：
 
@@ -80,23 +71,17 @@ $$
 ### 定义
 
 线性算符 $A:V\to W$ 满足
-$$
-A(av+bw)=aA(v)+bA(w).
-$$
+\( A(av+bw)=aA(v)+bA(w). \)
 
 ### 对偶映射（伴随映射）
 
 定义 $A^*:W^*\to V^*$，对任意 $\beta\in W^*$、$v\in V$，
-$$
-(A^*\beta)(v)=\beta(A v).
-$$
+\( (A^*\beta)(v)=\beta(A v). \)
 
 ### 矩阵形式
 
 若 $A(e_i)=f_a\,A^a{}_{i}$（$ \{f_a\}$ 为 $W$ 基），则
-$$
-A^*(f^a) = e^i A^a{}_{i}.
-$$
+\( A^*(f^a) = e^i A^a{}_{i}. \)
 即 $A^*$ 的矩阵为 $A$ 的转置（对复数域通常取共轭转置）。
 
 ---
@@ -106,17 +91,12 @@ $$
 ### 定义
 
 希尔伯特空间 $\mathcal H$ 是带有内积且完备的线性空间：
-$$
-\langle\phi|\psi\rangle \in \mathbb C,\qquad
-\langle a\phi+b\chi|\psi\rangle = a^*\langle\phi|\psi\rangle + b^*\langle\chi|\psi\rangle.
-$$
+\( \langle\phi|\psi\rangle \in \mathbb C,\qquad \langle a\phi+b\chi|\psi\rangle = a^*\langle\phi|\psi\rangle + b^*\langle\chi|\psi\rangle. \)
 
 ### Riesz 表示定理
 
 在希尔伯特空间中，每个连续线性泛函 $\alpha$ 对应唯一向量 $|u\rangle$，使得：
-$$
-\alpha(|\psi\rangle) = \langle u|\psi\rangle.
-$$
+\( \alpha(|\psi\rangle) = \langle u|\psi\rangle. \)
 因此 $\mathcal H \cong \mathcal H^*$。
 
 ### 物理诠释
@@ -149,9 +129,7 @@ $$
 ### 哈密顿量与谱分解
 
 给定 $H = H_0 + V$，其中 $H_0$ 是自由哈密顿量，$V$ 是势或相互作用。谱分解为：
-$$
-\mathcal H = \mathcal H_{\mathrm{bound}} \oplus \mathcal H_{\mathrm{scatt}}.
-$$
+\( \mathcal H = \mathcal H_{\mathrm{bound}} \oplus \mathcal H_{\mathrm{scatt}}. \)
 
 - 束缚态（Bound state）：离散本征值 $E_n$，对应归一化本征态 $|\psi_n\rangle\in\mathcal H_{\mathrm{bound}}$，满足 $\langle\psi_n|\psi_m\rangle=\delta_{nm}$。  
 - 散射态（Scattering state）：连续谱 $E>0$，形式归一化 $\langle \psi_E | \psi_{E'}\rangle = \delta(E-E')$。
@@ -159,9 +137,7 @@ $$
 ### 渐进自由态（Asymptotic Free States）
 
 在 $t\to\pm\infty$ 极限下，相互作用项 $V$ 的影响消失，系统表现如自由粒子。自由态生成的空间为：
-$$
-\mathcal H_{\mathrm{free}} = \operatorname{span}\{|\phi_p\rangle : H_0|\phi_p\rangle = E_p|\phi_p\rangle\}.
-$$
+\( \mathcal H_{\mathrm{free}} = \operatorname{span}\{|\phi_p\rangle : H_0|\phi_p\rangle = E_p|\phi_p\rangle\}. \)
 
 ---
 
@@ -169,28 +145,20 @@ $$
 
 ### 时间演化算符
 
-$$
-U(t,t_0)=e^{-\frac{i}{\hbar}H(t-t_0)}.
-$$
+\( U(t,t_0)=e^{-\frac{i}{\hbar}H(t-t_0)}. \)
 
 ### Møller 算符（Wave Operators）
 
-$$
-\Omega_\pm = \lim_{t\to\mp\infty} e^{iH_0 t} e^{-iHt},
-$$
+\( \Omega_\pm = \lim_{t\to\mp\infty} e^{iH_0 t} e^{-iHt}, \)
 
 其中 $\Omega_\pm:\mathcal H_{\mathrm{free}}\to\mathcal H_{\mathrm{int}}$，将自由态映射为“渐进相互作用态”。
 
 ### S 算符（Scattering Operator）
 
-$$
-S = \Omega_+^\dagger \Omega_-.
-$$
+\( S = \Omega_+^\dagger \Omega_-. \)
 
 作用在自由空间上：
-$$
-|\psi_{\mathrm{out}}\rangle = S |\psi_{\mathrm{in}}\rangle.
-$$
+\( |\psi_{\mathrm{out}}\rangle = S |\psi_{\mathrm{in}}\rangle. \)
 
 因此 $\mathcal H_{\mathrm{int}} \cong \mathcal H_{\mathrm{free}}$，同构映射由 $\Omega_\pm$ 给出。
 

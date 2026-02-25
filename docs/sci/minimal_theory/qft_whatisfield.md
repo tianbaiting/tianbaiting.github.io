@@ -24,11 +24,7 @@
 
 自由标量场算符的常见展开（在相互作用绘景或自由场情况下）为：
 
-$$
-\hat\phi(x)=\hat\phi(\mathbf{x},t)
-=\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}}
-\left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right),
-$$
+\( \hat\phi(x)=\hat\phi(\mathbf{x},t) =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right), \)
 
 其中 $p\cdot x=E_{\mathbf{p}}t-\mathbf{p}\cdot\mathbf{x}$。拆解如下：
 
@@ -40,19 +36,11 @@ $$
 
 当场算符作用于真空态 $|0\rangle$ 时：
 
-$$
-\hat\phi(x)\lvert0\rangle
-=\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}}
-\left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right)\lvert0\rangle.
-$$
+\( \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right)\lvert0\rangle. \)
 
 由于 $\hat a_{\mathbf{p}}\lvert0\rangle=0$，只剩下产生部分：
 
-$$
-\hat\phi(x)\lvert0\rangle
-=\int\frac{d^3p}{(2\pi)^3}\frac{e^{ip\cdot x}}{\sqrt{2E_{\mathbf{p}}}}\,
-\hat a_{\mathbf{p}}^\dagger\lvert0\rangle.
-$$
+\( \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{e^{ip\cdot x}}{\sqrt{2E_{\mathbf{p}}}}\, \hat a_{\mathbf{p}}^\dagger\lvert0\rangle. \)
 
 该结果是一个单粒子态，但不是动量本征态，而是局域于点 $x$ 的粒子激发。因此常说“场算符在点 $x$ 创建了一个粒子”。
 
@@ -62,22 +50,15 @@ $$
 
 场的量子化通过其对易（或反对易）关系给出。标量玻色场的等时对易关系为：
 
-$$
-[\hat\phi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=i\delta^{(3)}(\mathbf{x}-\mathbf{y}),
-$$
+\( [\hat\phi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=i\delta^{(3)}(\mathbf{x}-\mathbf{y}), \)
 
-$$
-[\hat\phi(t,\mathbf{x}),\,\hat\phi(t,\mathbf{y})]=0,\qquad
-[\hat\pi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=0,
-$$
+\( [\hat\phi(t,\mathbf{x}),\,\hat\phi(t,\mathbf{y})]=0,\qquad [\hat\pi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=0, \)
 
 其中共轭动量场 $\hat\pi(x)=\partial\mathcal{L}/\partial(\partial_0\hat\phi(x))$。
 
 更普适的因果性（微观局域性）条件是：
 
-$$
-[\hat\phi(x),\,\hat\phi(y)]=0\quad\text{当 }(x-y)^2<0\ (\text{类空间隔}),
-$$
+\( [\hat\phi(x),\,\hat\phi(y)]=0\quad\text{当 }(x-y)^2<0\ (\text{类空间隔}), \)
 
 即若两点间为类空间隔，则相应的场算符必须对易，保证在这两点的局域测量互不影响（不违反狭义相对论因果律）。
 
@@ -98,11 +79,11 @@ $$
 数学结构 
 
 
-这是一个直击核心的问题。量子场论（QFT）的数学结构 **不是一个单一的、统一的框架**，而是多个数学分支的**集合体**。
+这是一个直击核心的问题。量子场论（QFT）的数学结构 <strong>不是一个单一的、统一的框架</strong>，而是多个数学分支的<strong>集合体</strong>。
 
-你所感受到的“繁琐”和“逻辑跳跃”（比如先用场，最后才知道场是什么），正是因为物理学家所使用的“QFT”（我们称之为**“应用QFT”**）是一个极其强大、但在数学上充满“启发式”（heuristic）和“直觉”的工具箱。
+你所感受到的“繁琐”和“逻辑跳跃”（比如先用场，最后才知道场是什么），正是因为物理学家所使用的“QFT”（我们称之为<strong>“应用QFT”</strong>）是一个极其强大、但在数学上充满“启发式”（heuristic）和“直觉”的工具箱。
 
-与此同时，数学家们在试图建立一个逻辑自洽的“QFT”（我们称之为**“公理化QFT”**），但这个版本又极其抽象，难以用于计算（比如标准模型）。
+与此同时，数学家们在试图建立一个逻辑自洽的“QFT”（我们称之为<strong>“公理化QFT”</strong>），但这个版本又极其抽象，难以用于计算（比如标准模型）。
 
 作为一名粒子物理学家，你日常打交道的QFT，其数学结构主要建立在以下几个“支柱”之上：
 
@@ -112,83 +93,80 @@ $$
 
 这是QFT的“语言”。它处理的是无限维空间上的数学。
 
-* **希尔伯特空间 (Hilbert Space)：** QFT的状态空间是一个无限维的希尔伯特空间，称为**Fock空间 (Fock Space)**。
-* **Fock空间：** 它的“基矢”描述了“包含了任意数量粒子”的状态。例如：
+* <strong>希尔伯特空间 (Hilbert Space)：</strong> QFT的状态空间是一个无限维的希尔伯特空间，称为<strong>Fock空间 (Fock Space)</strong>。
+* <strong>Fock空间：</strong> 它的“基矢”描述了“包含了任意数量粒子”的状态。例如：
     * $|0\rangle$ (真空态，0个粒子)
     * $a_{\vec{p}}^\dagger |0\rangle$ (一个动量为 $\vec{p}$ 的粒子)
     * $a_{\vec{p}}^\dagger a_{\vec{q}}^\dagger |0\rangle$ (两个粒子，动量分别为 $\vec{p}, \vec{q}$)
     * ...等等，直到无穷多粒子。
-* **算符 (Operators)：** 所有的物理量都是算符。
-    * **$a, a^\dagger$ (产生/湮灭算符)：** 这是Fock空间最基本的算符。
-    * **$\hat{\phi}(x)$ (场算符)：** 正如我们之前讨论的，它是一个**算符值分布 (Operator-Valued Distribution)**。它不是一个普通的函数，你必须用一个“测试函数” $f(x)$ 去“探测”它（即 $\int d^4x f(x) \hat{\phi}(x)$），才能得到一个“行为良好”的算符。这是QFT中“无穷大”的第一个来源。
+* <strong>算符 (Operators)：</strong> 所有的物理量都是算符。
+    * <strong>$a, a^\dagger$ (产生/湮灭算符)：</strong> 这是Fock空间最基本的算符。
+    * <strong>$\hat{\phi}(x)$ (场算符)：</strong> 正如我们之前讨论的，它是一个<strong>算符值分布 (Operator-Valued Distribution)</strong>。它不是一个普通的函数，你必须用一个“测试函数” $f(x)$ 去“探测”它（即 $\int d^4x f(x) \hat{\phi}(x)$），才能得到一个“行为良好”的算符。这是QFT中“无穷大”的第一个来源。
 
 ### 2. 指导原则：对称性与群论 (Symmetry & Group Theory)
 
 这是QFT的“灵魂”。它决定了“什么可以存在”以及“它们如何相互作用”。
 
-* **时空对称性：庞加莱群 (Poincaré Group)**
+* <strong>时空对称性：庞加莱群 (Poincaré Group)</strong>
     * 这是狭义相对论（洛伦兹变换 + 平移）的对称群。
-    * **Wigner的分类：** QFT的数学结构指出，一个“基本粒子”**就是**庞加莱群的一个**不可约幺正表示 (Unitary Irreducible Representation)**。
-    * **这才是“粒子”的最终定义！** 这个表示由两个数（Casimir不变量）来标记：**质量 ($m$)** 和**自旋 ($s$)**。
+    * <strong>Wigner的分类：</strong> QFT的数学结构指出，一个“基本粒子”<strong>就是</strong>庞加莱群的一个<strong>不可约幺正表示 (Unitary Irreducible Representation)</strong>。
+    * <strong>这才是“粒子”的最终定义！</strong> 这个表示由两个数（Casimir不变量）来标记：<strong>质量 ($m$)</strong> 和<strong>自旋 ($s$)</strong>。
     * 这就是为什么世界上只存在标量粒子（$s=0$）、旋量粒子（$s=1/2$）、矢量粒子（$s=1$）等，而不存在 $s=1/3$ 的粒子。
 
-* **内部对称性：李群 (Lie Groups)**
-    * 这是**规范场论 (Gauge Theory)** 的核心。
-    * 它描述了“力”的来源。一个力源于一个**局域规范不变性 (Local Gauge Invariance)**。
-    * QFT的数学结构要求，为了维持这种局域对称性，**必须**引入一个新的场——规范场（即“力”的传播子）。
-    * **U(1)群 $\to$ 量子电动力学 (QED)** $\to$ 光子
-    * **SU(2)群 $\to$ 弱相互作用** $\to$ W/Z 玻色子
-    * **SU(3)群 $\to$ 强相互作用 (QCD)** $\to$ 胶子
-    * 标准模型 ($\text{SU(3)}_C \times \text{SU(2)}_L \times \text{U(1)}_Y$) 的拉格朗日量，**完全**是由这个群结构决定的。
+* <strong>内部对称性：李群 (Lie Groups)</strong>
+    * 这是<strong>规范场论 (Gauge Theory)</strong> 的核心。
+    * 它描述了“力”的来源。一个力源于一个<strong>局域规范不变性 (Local Gauge Invariance)</strong>。
+    * QFT的数学结构要求，为了维持这种局域对称性，<strong>必须</strong>引入一个新的场——规范场（即“力”的传播子）。
+    * <strong>U(1)群 $\to$ 量子电动力学 (QED)</strong> $\to$ 光子
+    * <strong>SU(2)群 $\to$ 弱相互作用</strong> $\to$ W/Z 玻色子
+    * <strong>SU(3)群 $\to$ 强相互作用 (QCD)</strong> $\to$ 胶子
+    * 标准模型 ($\text{SU(3)}_C \times \text{SU(2)}_L \times \text{U(1)}_Y$) 的拉格朗日量，<strong>完全</strong>是由这个群结构决定的。
 
 ### 3. 几何结构：微分几何 (Differential Geometry)
 
-这是“规范场论”的**精确**数学语言，尽管物理教材（如Peskin）很少明确使用它。
+这是“规范场论”的<strong>精确</strong>数学语言，尽管物理教材（如Peskin）很少明确使用它。
 
-* **纤维丛 (Fiber Bundle)：** 这是描述规范场论最优雅的数学结构。
-    * **底流形 (Base Manifold)：** 我们的四维时空。
-    * **纤维 (Fiber)：** 在时空中的**每一点**，都“附加”着一个内部对称空间（例如U(1)群对应的复平面上的一个圆周）。
-    * **场 (Field)：** 物理场（如电子场）是这个丛上的一个**截面 (Section)**。
-    * **规范联络 (Gauge Connection)：** **这正是规范场（$A_\mu$）的数学定义！** 它告诉你如何在时空的不同点之间“平行移动”一个场而不改变其物理（即“协变导数” $D_\mu = \partial_\mu - igA_\mu$）。
-    * **曲率 (Curvature)：** **这正是场强（$F_{\mu\nu}$）的数学定义！** 它描述了规范场的“弯曲”程度，即力的强度。
+* <strong>纤维丛 (Fiber Bundle)：</strong> 这是描述规范场论最优雅的数学结构。
+    * <strong>底流形 (Base Manifold)：</strong> 我们的四维时空。
+    * <strong>纤维 (Fiber)：</strong> 在时空中的<strong>每一点</strong>，都“附加”着一个内部对称空间（例如U(1)群对应的复平面上的一个圆周）。
+    * <strong>场 (Field)：</strong> 物理场（如电子场）是这个丛上的一个<strong>截面 (Section)</strong>。
+    * <strong>规范联络 (Gauge Connection)：</strong> <strong>这正是规范场（$A_\mu$）的数学定义！</strong> 它告诉你如何在时空的不同点之间“平行移动”一个场而不改变其物理（即“协变导数” $D_\mu = \partial_\mu - igA_\mu$）。
+    * <strong>曲率 (Curvature)：</strong> <strong>这正是场强（$F_{\mu\nu}$）的数学定义！</strong> 它描述了规范场的“弯曲”程度，即力的强度。
 
 ### 4. 计算引擎：路径积分 (Path Integrals / Functional Integrals)
 
-这是物理学家**实际使用**的QFT结构。
+这是物理学家<strong>实际使用</strong>的QFT结构。
 
-* **核心思想：** 一个系统从状态A到状态B，经历了**所有可能**的路径，其总振幅是所有路径振幅的**泛函积分 (Functional Integral)**：
-    $$
-    Z = \int \mathcal{D}\phi \exp\left( \frac{i}{\hbar} S[\phi] \right)
-    $$
+* <strong>核心思想：</strong> 一个系统从状态A到状态B，经历了<strong>所有可能</strong>的路径，其总振幅是所有路径振幅的<strong>泛函积分 (Functional Integral)</strong>：
+    \( Z = \int \mathcal{D}\phi \exp\left( \frac{i}{\hbar} S[\phi] \right) \)
     其中 $S[\phi] = \int d^4x \mathcal{L}(\phi, \partial\mu\phi)$ 是作用量。
-* **数学问题：** 这是一个**无穷维**的积分。$\mathcal{D}\phi$ 这个“测度”在数学上是**严格病态的 (ill-defined)**。
-* **物理学家的“诡计”：**
-    1.  **微扰论：** 我们假设相互作用很弱，将 $e^{iS_{int}}$ 展开为泰勒级数。
-    2.  **费曼图：** 这个级数的每一项都对应一个费曼图，它把一个极其复杂的泛函积分“简化”成了（仍然很复杂的）普通高维动量积分。
-    3.  **重整化 (Renormalization)：** 这些动量积分几乎都是**发散**（无穷大）的。重整化是一套系统的“黑魔法”，它告诉我们如何系统地从这些无穷大中“减去”另一些无穷大，从而得到一个有限的、可与实验对比的物理结果。
+* <strong>数学问题：</strong> 这是一个<strong>无穷维</strong>的积分。$\mathcal{D}\phi$ 这个“测度”在数学上是<strong>严格病态的 (ill-defined)</strong>。
+* <strong>物理学家的“诡计”：</strong>
+    1.  <strong>微扰论：</strong> 我们假设相互作用很弱，将 $e^{iS_{int}}$ 展开为泰勒级数。
+    2.  <strong>费曼图：</strong> 这个级数的每一项都对应一个费曼图，它把一个极其复杂的泛函积分“简化”成了（仍然很复杂的）普通高维动量积分。
+    3.  <strong>重整化 (Renormalization)：</strong> 这些动量积分几乎都是<strong>发散</strong>（无穷大）的。重整化是一套系统的“黑魔法”，它告诉我们如何系统地从这些无穷大中“减去”另一些无穷大，从而得到一个有限的、可与实验对比的物理结果。
 
 ---
 
 ### 5. 严格基础：公理化QFT (Axiomatic QFT)
 
-这是数学家们试图建立的“坚实”的QFT结构，它**不**依赖于拉格朗日量或路径积分。
+这是数学家们试图建立的“坚实”的QFT结构，它<strong>不</strong>依赖于拉格朗日量或路径积分。
 
-* **Wightman公理 (Wightman Axioms)：** 这是最接近物理学家直觉的公理化。它试图给“场算符” $\hat{\phi}(x)$ 和“真空态” $|0\rangle$ 下一组严格的数学定义（包括洛伦兹协变性、微观因果律、谱条件等）。
-* **代数QFT (Algebraic QFT / Haag-Kastler Axioms)：** 这是最抽象的。它完全抛弃了“场” $\hat{\phi}(x)$ 的概念（因为它是一个“坏”的分布）。它认为，物理学的基本实体是在时空某个区域内**可观测量的代数（C*-Algebra）**。
+* <strong>Wightman公理 (Wightman Axioms)：</strong> 这是最接近物理学家直觉的公理化。它试图给“场算符” $\hat{\phi}(x)$ 和“真空态” $|0\rangle$ 下一组严格的数学定义（包括洛伦兹协变性、微观因果律、谱条件等）。
+* <strong>代数QFT (Algebraic QFT / Haag-Kastler Axioms)：</strong> 这是最抽象的。它完全抛弃了“场” $\hat{\phi}(x)$ 的概念（因为它是一个“坏”的分布）。它认为，物理学的基本实体是在时空某个区域内<strong>可观测量的代数（C*-Algebra）</strong>。
 
 ---
 
-所学的“QFT”是一个**实用主义的大杂烩**：
+所学的“QFT”是一个<strong>实用主义的大杂烩</strong>：
 
-* 你**借用**了**经典场论**的拉格朗日量 (Lagrangian)。
-* 你**应用**了**泛函分析**的Fock空间和算符。
-* 你**遵从**了**群论**的对称性要求（Poincaré + Gauge）。
-* 你**使用**了**微分几何**的结构（协变导数）来写下拉格朗日量。
-* 你**依赖**了（数学上可疑的）**路径积分**和**费曼图**来进行计算。
-* 你**“修复”**了路径积分的发散，用的是**重整化**这套复杂的处方。
+* 你<strong>借用</strong>了<strong>经典场论</strong>的拉格朗日量 (Lagrangian)。
+* 你<strong>应用</strong>了<strong>泛函分析</strong>的Fock空间和算符。
+* 你<strong>遵从</strong>了<strong>群论</strong>的对称性要求（Poincaré + Gauge）。
+* 你<strong>使用</strong>了<strong>微分几何</strong>的结构（协变导数）来写下拉格朗日量。
+* 你<strong>依赖</strong>了（数学上可疑的）<strong>路径积分</strong>和<strong>费曼图</strong>来进行计算。
+* 你<strong>“修复”</strong>了路径积分的发散，用的是<strong>重整化</strong>这套复杂的处方。
 
-QFT的数学结构之所以看起来如此繁琐和不连贯，**是因为它本身就是拼凑起来的**。它是一套“能用就行”的规则，其惊人的成功（例如QED的g-2因子）掩盖了其数学基础的薄弱。而试图建立坚实基础的“公理化QFT”，又因为过于抽象而无法指导我们计算标准模型。
+QFT的数学结构之所以看起来如此繁琐和不连贯，<strong>是因为它本身就是拼凑起来的</strong>。它是一套“能用就行”的规则，其惊人的成功（例如QED的g-2因子）掩盖了其数学基础的薄弱。而试图建立坚实基础的“公理化QFT”，又因为过于抽象而无法指导我们计算标准模型。
 
-。我们正站在一个**计算上极其成功**，但**数学结构上仍未统一**的理论之上。
-
+。我们正站在一个<strong>计算上极其成功</strong>，但<strong>数学结构上仍未统一</strong>的理论之上。
 

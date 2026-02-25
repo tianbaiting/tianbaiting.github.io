@@ -6,9 +6,7 @@
 ### 本征值与本征向量 (Eigenvalues and Eigenvectors)  
 若存在复数 $\lambda\in\mathbb{C}$ 及非零向量 $x\in\mathcal{D}(A)$，使得
 
-$$
-Ax=\lambda x
-$$
+\( Ax=\lambda x \)
 
 则称 $\lambda$ 为算子 $A$ 的本征值 (eigenvalue)，称 $x$ 为对应的本征向量 (eigenvector)。
 
@@ -41,9 +39,7 @@ residual spectrum 残余谱几乎不出现在物理应用中. 对于自伴算子
 ### 谱半径 (Spectral Radius)  
 算子 $A$ 的谱半径定义为
 
-$$
-r(A)=\sup\{|\lambda|:\lambda\in\sigma(A)\}.
-$$
+\( r(A)=\sup\{|\lambda|:\lambda\in\sigma(A)\}. \)
 
 ### 谱分解 (Spectral Decomposition)  
 对于某些算子（例如自伴算子或正规算子），可由谱定理将其表示为谱测度或本征向量的“分解”，用于构造函数算子等。
@@ -133,9 +129,7 @@ $f(T)=2\pi i \oint_\Gamma f(\lambda) R_\lambda(T) d\lambda$
 #### Step 1: 回忆标量情况
 设 $f(z)$ 是一个全纯函数（解析函数）。如果你想求它在某个点 $a$ 的值 $f(a)$，你不需要直接代入 $a$，而是可以在 $a$ 周围画一个圈 $\Gamma$，然后算积分：
 
-$$
-f(a) = \frac{1}{2\pi i} \oint_{\Gamma} \frac{f(\lambda)}{\lambda - a} d\lambda
-$$
+\( f(a) = \frac{1}{2\pi i} \oint_{\Gamma} \frac{f(\lambda)}{\lambda - a} d\lambda \)
 
 这里 $\Gamma$ 必须包围点 $a$。
 
@@ -148,9 +142,7 @@ $$
 
 于是，公式变成了：
 
-$$
-f(T) = \frac{1}{2\pi i} \oint_{\Gamma} f(\lambda) (\lambda I - T)^{-1} d\lambda
-$$
+\( f(T) = \frac{1}{2\pi i} \oint_{\Gamma} f(\lambda) (\lambda I - T)^{-1} d\lambda \)
 
 这里的 $(\lambda I - T)^{-1}$ 正是我们在谱论中定义的预解算子（差一个负号，通常 $R_\lambda(T) = (T - \lambda I)^{-1}$，所以符号会抵消，或者调整积分方向）。
 
@@ -163,18 +155,14 @@ $$
 
 对于物理学家来说，预解算子就是格林函数。
 
-$$
-G(\lambda) = \frac{1}{\lambda - H}
-$$
+\( G(\lambda) = \frac{1}{\lambda - H} \)
 
 其中 $H$ 是哈密顿量，$\lambda$ 是能量参数（通常记为 $E$）。
 
 #### 公式的物理意义
 当我们计算算子函数 $f(H)$（例如时间演化算子 $U(t) = e^{-iHt}$）时，全纯泛函演算告诉我们：
 
-$$
-e^{-iHt} = \frac{1}{2\pi i} \oint_{\Gamma} e^{-i\lambda t} \frac{1}{\lambda - H} d\lambda
-$$
+\( e^{-iHt} = \frac{1}{2\pi i} \oint_{\Gamma} e^{-i\lambda t} \frac{1}{\lambda - H} d\lambda \)
 
 这个积分在干什么？
 1.  扫描能谱：积分围道 $\Gamma$ 包围了哈密顿量 $H$ 的所有本征值（能级）。
@@ -183,19 +171,11 @@ $$
 
 如果 $H$ 有离散能级 $E_n$ 和本征态 $|n\rangle$，格林函数可以写成谱分解形式：
 
-$$
-\frac{1}{\lambda - H} = \sum_n \frac{|n\rangle\langle n|}{\lambda - E_n}
-$$
+\( \frac{1}{\lambda - H} = \sum_n \frac{|n\rangle\langle n|}{\lambda - E_n} \)
 
 把它代入积分公式：
 
-$$
-\begin{aligned}
-f(H) &= \frac{1}{2\pi i} \oint_{\Gamma} f(\lambda) \left( \sum_n \frac{|n\rangle\langle n|}{\lambda - E_n} \right) d\lambda \\
-&= \sum_n |n\rangle\langle n| \underbrace{\left( \frac{1}{2\pi i} \oint_{\Gamma} \frac{f(\lambda)}{\lambda - E_n} d\lambda \right)}_{\text{柯西公式} \implies f(E_n)} \\
-&= \sum_n f(E_n) |n\rangle\langle n|
-\end{aligned}
-$$
+\( \begin{aligned} f(H) &= \frac{1}{2\pi i} \oint_{\Gamma} f(\lambda) \left( \sum_n \frac{|n\rangle\langle n|}{\lambda - E_n} \right) d\lambda \\ &= \sum_n |n\rangle\langle n| \underbrace{\left( \frac{1}{2\pi i} \oint_{\Gamma} \frac{f(\lambda)}{\lambda - E_n} d\lambda \right)}_{\text{柯西公式} \implies f(E_n)} \\ &= \sum_n f(E_n) |n\rangle\langle n| \end{aligned} \)
 
 结论：
 这正是我们熟悉的量子力学操作——在能量本征基下，算子函数直接作用在把本征值上（即 $e^{-iHt}|n\rangle = e^{-iE_n t}|n\rangle$）。
@@ -214,33 +194,23 @@ $$
     谱是 $\sigma(T) = \{i, -i\}$。
 
 2.  求预解算子（格林函数）：
-    $$
-    (\lambda I - T)^{-1} = \begin{pmatrix} \lambda & -1 \\ 1 & \lambda \end{pmatrix}^{-1} = \frac{1}{\lambda^2 + 1} \begin{pmatrix} \lambda & 1 \\ -1 & \lambda \end{pmatrix}
-    $$
+    \( (\lambda I - T)^{-1} = \begin{pmatrix} \lambda & -1 \\ 1 & \lambda \end{pmatrix}^{-1} = \frac{1}{\lambda^2 + 1} \begin{pmatrix} \lambda & 1 \\ -1 & \lambda \end{pmatrix} \)
 
 3.  应用公式：
     令 $f(\lambda) = e^{\lambda t}$。我们需要计算：
-    $$
-    e^{tT} = \frac{1}{2\pi i} \oint_{\Gamma} e^{\lambda t} \frac{1}{(\lambda - i)(\lambda + i)} \begin{pmatrix} \lambda & 1 \\ -1 & \lambda \end{pmatrix} d\lambda
-    $$
+    \( e^{tT} = \frac{1}{2\pi i} \oint_{\Gamma} e^{\lambda t} \frac{1}{(\lambda - i)(\lambda + i)} \begin{pmatrix} \lambda & 1 \\ -1 & \lambda \end{pmatrix} d\lambda \)
     围道 $\Gamma$ 包围 $\pm i$。
 
 4.  计算留数：
     * 在 $\lambda = i$ 处：
-        $$
-        \text{Res}(i) = \lim_{\lambda \to i} (\lambda - i) [\dots] = e^{it} \frac{1}{2i} \begin{pmatrix} i & 1 \\ -1 & i \end{pmatrix}
-        $$
+        \( \text{Res}(i) = \lim_{\lambda \to i} (\lambda - i) [\dots] = e^{it} \frac{1}{2i} \begin{pmatrix} i & 1 \\ -1 & i \end{pmatrix} \)
     * 在 $\lambda = -i$ 处：
-        $$
-        \text{Res}(-i) = \lim_{\lambda \to -i} (\lambda + i) [\dots] = e^{-it} \frac{1}{-2i} \begin{pmatrix} -i & 1 \\ -1 & -i \end{pmatrix}
-        $$
+        \( \text{Res}(-i) = \lim_{\lambda \to -i} (\lambda + i) [\dots] = e^{-it} \frac{1}{-2i} \begin{pmatrix} -i & 1 \\ -1 & -i \end{pmatrix} \)
 
 5.  相加得到结果：
     利用欧拉公式 $\cos t = \frac{e^{it} + e^{-it}}{2}, \sin t = \frac{e^{it} - e^{-it}}{2i}$：
 
-    $$
-    e^{tT} = \text{Res}(i) + \text{Res}(-i) = \begin{pmatrix} \cos t & \sin t \\ -\sin t & \cos t \end{pmatrix}
-    $$
+    \( e^{tT} = \text{Res}(i) + \text{Res}(-i) = \begin{pmatrix} \cos t & \sin t \\ -\sin t & \cos t \end{pmatrix} \)
     
     看！我们通过复积分，完美推导出了旋转矩阵。
 
@@ -255,10 +225,7 @@ $$
 
 谱半径 (Spectral Radius) $r_\sigma(T)$：
 
-$$
-r_\sigma(T) = \lim_{n \to \infty} \|T^n\|^{1/n}
-
-$$
+\( r_\sigma(T) = \lim_{n \to \infty} \|T^n\|^{1/n} \)
 
 物理映射：它决定了微扰级数（如纽曼级数 $\sum T^n$）是否收敛。如果物理系统的耦合常数太大，导致算子范数超过收敛半径，微扰论就失效了（非微扰物理）。
 
