@@ -24,7 +24,7 @@ title: 其他研究组的polarimeter
 ### 探测器参数
 
 
-![1750922000979](./polarmeter.zh/1750922000979.png)
+![1750922000979](assets/polarmeter.zh/1750922000979.png)
 
 闪烁体 BICRON 408
 

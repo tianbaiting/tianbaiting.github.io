@@ -31,7 +31,7 @@ Humans may experience color blindness or color deficiency due to genetic or heal
 
 In the natural world, there are animals with visual systems different from humans. For example, mantis shrimp have 16 types of cone cells (astonishingly complex) and can perceive a broader wavelength range, even detecting the polarization state of light.
 
-![pipixia](./img/human_pipixia.png)
+![pipixia](assets/img/human_pipixia.png)
 
 ## Color Schemes for Scientific Research
 

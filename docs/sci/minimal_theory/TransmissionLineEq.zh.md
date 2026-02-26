@@ -77,7 +77,7 @@ $$
 
 ### 电报方程（传输线方程）
 
-![电报方程图示](./TransmissionLineEq.zh/1755069973511.png)
+![电报方程图示](assets/TransmissionLineEq.zh/1755069973511.png)
 
 #### 方程推导
 
@@ -115,7 +115,7 @@ $$
 v = \frac{1}{\sqrt{LC}}
 $$
 
-![传输线图](./TransmissionLineEq.zh/1755071531442.png)
+![传输线图](assets/TransmissionLineEq.zh/1755071531442.png)
 
 ---
 
@@ -271,6 +271,6 @@ $$
 
 原图：
 
-![1755070142369](./TransmissionLineEq.zh/1755070142369.png)
-![1755070152228](./TransmissionLineEq.zh/1755070152228.png)
-![1755070158564](./TransmissionLineEq.zh/1755070158564.png)
+![1755070142369](assets/TransmissionLineEq.zh/1755070142369.png)
+![1755070152228](assets/TransmissionLineEq.zh/1755070152228.png)
+![1755070158564](assets/TransmissionLineEq.zh/1755070158564.png)

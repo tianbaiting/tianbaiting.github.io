@@ -158,7 +158,7 @@ $P_{yz} = P_{x'z'} \sin \phi + P_{y'z'} \cos \phi$
 
 ## spin polarization axis
 
-![alt text]({B150CA86-508C-4B79-A9CC-37638F82479D}.png)
+![alt text](assets/spherical_operator/{B150CA86-508C-4B79-A9CC-37638F82479D}.png)
 
 We can write the vector components of the beam polarization in the projectile helicity frame by resolving $\hat{S}$ into $x$, $y$ and $z$ components and multiplying by the
 

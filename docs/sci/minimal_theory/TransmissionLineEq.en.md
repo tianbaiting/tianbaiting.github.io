@@ -77,7 +77,7 @@ $$
 
 ### Telegraph Equations (Transmission Line Equations)
 
-![Telegraph equation illustration](./TransmissionLineEq.zh/1755069973511.png)
+![Telegraph equation illustration](assets/TransmissionLineEq.zh/1755069973511.png)
 
 #### Equation Derivation
 
@@ -115,7 +115,7 @@ $$
 v = \frac{1}{\sqrt{LC}}
 $$
 
-![Transmission line diagram](./TransmissionLineEq.zh/1755071531442.png)
+![Transmission line diagram](assets/TransmissionLineEq.zh/1755071531442.png)
 
 ---
 
@@ -271,6 +271,6 @@ As long as the characteristic impedance and load impedance are not matched, refl
 
 Original images:
 
-![1755070142369](./TransmissionLineEq.zh/1755070142369.png)
-![1755070152228](./TransmissionLineEq.zh/1755070152228.png)
-![1755070158564](./TransmissionLineEq.zh/1755070158564.png)
+![1755070142369](assets/TransmissionLineEq.zh/1755070142369.png)
+![1755070152228](assets/TransmissionLineEq.zh/1755070152228.png)
+![1755070158564](assets/TransmissionLineEq.zh/1755070158564.png)

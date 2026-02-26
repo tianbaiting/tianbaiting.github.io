@@ -34,7 +34,7 @@ comments: true  # 启用评论
 
 自然界种，也存在着和人不同的感光器官性能不同的动物。比如皮皮虾有16种视锥细胞（恐怖如斯），皮皮虾可见波长范围也比人类广，甚至可以探测到光的偏振状态。
 
-![pipixia](./img/human_pipixia.png)
+![pipixia](assets/img/human_pipixia.png)
 
 
 ## 科研配色原则
