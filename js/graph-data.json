@@ -1293,7 +1293,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/friedrichsModel.zh.md",
-      "size": 8494,
+      "size": 8501,
       "url": "/sci/minimal_theory/scatteringTheory/friedrichsModel/"
     },
     {
@@ -1469,6 +1469,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-02-26 10:25:14.421550"
+    "generated_at": "2026-02-26 10:29:34.731206"
   }
 }
