@@ -4,13 +4,13 @@
 
 ![handnote](./assets/friedrichsModel.zh/friedrichsHandnote.jpg)
 
-注意笔记里最后只写$u_pol$, 还有$u_cut$的影响,因为算生存振幅智能在x轴上方积分.
+注意笔记里最后只写$u_{pol}$, 还有$u_{cut}$的影响,因为算生存振幅智能在x轴上方积分.
 
 原始路径只能在x轴上方积分,这是物理因果性决定的(薛定谔方程规定了时间的流向 导致i -i 含义不一致).
 
 下压到第二张面后,只是为了好算,因为可以使用jordon lemma把路径闭合到下半平面,从而得到极点贡献. 但这并不意味着物理上真的存在第二张面,因为我们只能在x轴上方积分.
 
-所以 $u_{up} = u_{down} + discrete{\pm i}$, $u_{down}$等于下半面的极点贡献. 
+所以 $u_{up} = u_{down} + discrete{ (\pm i)}$, $u_{down}$等于下半面的极点贡献. 
 
 
 * **有效哈密顿量 / 自能 $\Sigma(z)$**
