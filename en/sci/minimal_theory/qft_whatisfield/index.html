@@ -1,6 +1,6 @@
 
   <!doctype html>
-  <html lang="zh" class="no-js">
+  <html lang="en" class="no-js">
     <head>
       
         <meta charset="utf-8">
@@ -17,7 +17,7 @@
           <link rel="next" href="../resolvent/">
         
         <link rel="icon" href="../../../../assets/images/favicon.png">
-        <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
+        <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.0.4">
       
       
         
@@ -43,6 +43,10 @@
           <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
         
       
+      
+        <link rel="stylesheet" href="../../../../css/timeago.css">
+      
+        <link rel="stylesheet" href="../../../../css/timeago.css">
       
         <link rel="stylesheet" href="../../../../css/counter.css">
       
@@ -78,7 +82,7 @@
         
           
           <a href="#1-核心定义一个时空依赖的算符" class="md-skip">
-            跳转至
+            Skip to content
           </a>
         
       </div>
@@ -90,7 +94,7 @@
         
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="页眉">
+  <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../../" title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
       
   
@@ -131,9 +135,9 @@
 
   <div class="md-header__button md-lang">
     
-      <a href="/" hreflang="zh">简体中文</a>
+      <a href="../../../../sci/minimal_theory/qft_whatisfield/" hreflang="zh">简体中文</a>
     
-      <a href="/en/" hreflang="en">English</a>
+      <a href="./" hreflang="en">English</a>
     
   </div>
 
@@ -146,18 +150,18 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="查找">
+      <nav class="md-search__options" aria-label="Search">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -167,7 +171,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            正在初始化搜索引擎
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -187,7 +191,7 @@
           
             
               
-<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -197,8 +201,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../howtomakewebsite/" class="md-tabs__link">
-      网站制作
+    <a href="../../../" class="md-tabs__link">
+      Index
     </a>
   </li>
 
@@ -209,8 +213,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../" class="md-tabs__link">
-      Index
+    <a href="../../../howtomakewebsite/" class="md-tabs__link">
+      网站制作
     </a>
   </li>
 
@@ -300,7 +304,7 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../../" title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
       
@@ -321,8 +325,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../howtomakewebsite/" class="md-nav__link">
-        网站制作
+      <a href="../../../" class="md-nav__link">
+        Index
       </a>
     </li>
   
@@ -336,8 +340,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
-        Index
+      <a href="../../../howtomakewebsite/" class="md-nav__link">
+        网站制作
       </a>
     </li>
   
@@ -636,7 +640,7 @@
   
     <li class="md-nav__item">
       <a href="../../../life/flavor/" class="md-nav__link">
-        **探索味型奥秘：以川菜为例的烹饪科学指南**
+        探索味型奥秘：以川菜为例的烹饪科学指南
       </a>
     </li>
   
@@ -881,7 +885,7 @@
   
     <li class="md-nav__item">
       <a href="../../../life/%E5%81%A5%E5%BA%B7/workout_diet/" class="md-nav__link">
-        **营养**
+        营养
       </a>
     </li>
   
@@ -895,7 +899,7 @@
   
     <li class="md-nav__item">
       <a href="../../../life/%E5%81%A5%E5%BA%B7/%E9%BC%BB%E7%82%8E/" class="md-nav__link">
-        **鼻炎综合管理临床报告：过敏性鼻炎与血管运动性鼻炎的深度解析**
+        鼻炎综合管理临床报告：过敏性鼻炎与血管运动性鼻炎的深度解析
       </a>
     </li>
   
@@ -986,6 +990,8 @@
       <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
       
       
+        
+          
         
           
         
@@ -1173,6 +1179,20 @@
     <li class="md-nav__item">
       <a href="../../cheatshet/termux/" class="md-nav__link">
         termux 运行ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/tmux/" class="md-nav__link">
+        tmux 常用命令与快捷键速查表
       </a>
     </li>
   
@@ -1446,7 +1466,7 @@
   
     <li class="md-nav__item">
       <a href="../../minimal_code/ctags/" class="md-nav__link">
-        `ctags` 使用教程（C/C++）
+        ctags 使用教程（C/C++）
       </a>
     </li>
   
@@ -1516,7 +1536,7 @@
   
     <li class="md-nav__item">
       <a href="../../minimal_code/geant4_oop/" class="md-nav__link">
-        **揭秘面向对象编程：Geant4工具包深度导览**
+        揭秘面向对象编程：Geant4工具包深度导览
       </a>
     </li>
   
@@ -1824,7 +1844,7 @@
   
     <li class="md-nav__item">
       <a href="../../minimal_code/vscode_lsp/" class="md-nav__link">
-        如何解决 VS Code 中的 C/C++ `include` 报错问题
+        如何解决 VS Code 中的 C/C++ include 报错问题
       </a>
     </li>
   
@@ -1971,20 +1991,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../ScateringINQMandQFT/" class="md-nav__link">
-        ScateringINQMandQFT
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../TransmissionLineEq/" class="md-nav__link">
         TransmissionLineEq
       </a>
@@ -2087,14 +2093,14 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      目录
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -2237,7 +2243,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_13" type="checkbox" id="__nav_5_4_13" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_12" type="checkbox" id="__nav_5_4_12" >
       
       
         
@@ -2257,13 +2263,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_5_4_13" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4_12" tabindex="0" aria-expanded="false">
           functionnalAna
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="functionnalAna" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_4_13">
+        <label class="md-nav__title" for="__nav_5_4_12">
           <span class="md-nav__icon md-icon"></span>
           functionnalAna
         </label>
@@ -2361,6 +2367,58 @@
     <li class="md-nav__item">
       <a href="../functionnalAna/RHS/" class="md-nav__link">
         装备希尔伯特空间
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_13" type="checkbox" id="__nav_5_4_13" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4_13" tabindex="0" aria-expanded="false">
+          scatteringTheory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="scatteringTheory" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_4_13">
+          <span class="md-nav__icon md-icon"></span>
+          scatteringTheory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/friedrichsModel/" class="md-nav__link">
+        Friedrichs 模型
       </a>
     </li>
   
@@ -2843,7 +2901,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/RIDF/" class="md-nav__link">
-        RIDF
+        Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Description
       </a>
     </li>
   
@@ -3205,7 +3263,7 @@
   
     <li class="md-nav__item">
       <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%97%A5%E7%89%88%E6%89%8B%E6%9C%BAfelica%E8%8A%AF%E7%89%87/" class="md-nav__link">
-        **日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析**
+        日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析
       </a>
     </li>
   
@@ -3287,14 +3345,14 @@
                     <div class="md-sidebar__inner">
                       
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      目录
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -3396,18 +3454,7 @@
 <hr />
 <h3 id="2-数学构造用产生与湮灭算符构建">2. 数学构造：用产生与湮灭算符构建<a class="headerlink" href="#2-数学构造用产生与湮灭算符构建" title="Permanent link">#</a></h3>
 <p>自由标量场算符的常见展开（在相互作用绘景或自由场情况下）为：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\hat\phi(x)=\hat\phi(\mathbf{x},t)
-=\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}}
-\left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right),
-</div>
-<script type="math/tex; mode=display">
-\hat\phi(x)=\hat\phi(\mathbf{x},t)
-=\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}}
-\left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right),
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> \hat\phi(x)=\hat\phi(\mathbf{x},t) =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right), </span><script type="math/tex"> \hat\phi(x)=\hat\phi(\mathbf{x},t) =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right), </script></span></p>
 <p>其中 <span class="arithmatex"><span class="MathJax_Preview">p\cdot x=E_{\mathbf{p}}t-\mathbf{p}\cdot\mathbf{x}</span><script type="math/tex">p\cdot x=E_{\mathbf{p}}t-\mathbf{p}\cdot\mathbf{x}</script></span>。拆解如下：</p>
 <ul>
 <li><span class="arithmatex"><span class="MathJax_Preview">\int\frac{d^3p}{(2\pi)^3}</span><script type="math/tex">\int\frac{d^3p}{(2\pi)^3}</script></span>：遍历所有三维动量模式 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{p}</span><script type="math/tex">\mathbf{p}</script></span>，对应“无限个谐振子”中的每个模式。  </li>
@@ -3417,63 +3464,18 @@
 <li><span class="arithmatex"><span class="MathJax_Preview">\frac{1}{\sqrt{2E_{\mathbf{p}}}}</span><script type="math/tex">\frac{1}{\sqrt{2E_{\mathbf{p}}}}</script></span>：洛伦兹不变的归一化因子（保证测度 <span class="arithmatex"><span class="MathJax_Preview">\frac{d^3p}{E_{\mathbf{p}}}</span><script type="math/tex">\frac{d^3p}{E_{\mathbf{p}}}</script></span> 的不变性）。</li>
 </ul>
 <p>当场算符作用于真空态 <span class="arithmatex"><span class="MathJax_Preview">|0\rangle</span><script type="math/tex">|0\rangle</script></span> 时：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\hat\phi(x)\lvert0\rangle
-=\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}}
-\left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right)\lvert0\rangle.
-</div>
-<script type="math/tex; mode=display">
-\hat\phi(x)\lvert0\rangle
-=\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}}
-\left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right)\lvert0\rangle.
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right)\lvert0\rangle. </span><script type="math/tex"> \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right)\lvert0\rangle. </script></span></p>
 <p>由于 <span class="arithmatex"><span class="MathJax_Preview">\hat a_{\mathbf{p}}\lvert0\rangle=0</span><script type="math/tex">\hat a_{\mathbf{p}}\lvert0\rangle=0</script></span>，只剩下产生部分：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\hat\phi(x)\lvert0\rangle
-=\int\frac{d^3p}{(2\pi)^3}\frac{e^{ip\cdot x}}{\sqrt{2E_{\mathbf{p}}}}\,
-\hat a_{\mathbf{p}}^\dagger\lvert0\rangle.
-</div>
-<script type="math/tex; mode=display">
-\hat\phi(x)\lvert0\rangle
-=\int\frac{d^3p}{(2\pi)^3}\frac{e^{ip\cdot x}}{\sqrt{2E_{\mathbf{p}}}}\,
-\hat a_{\mathbf{p}}^\dagger\lvert0\rangle.
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{e^{ip\cdot x}}{\sqrt{2E_{\mathbf{p}}}}\, \hat a_{\mathbf{p}}^\dagger\lvert0\rangle. </span><script type="math/tex"> \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{e^{ip\cdot x}}{\sqrt{2E_{\mathbf{p}}}}\, \hat a_{\mathbf{p}}^\dagger\lvert0\rangle. </script></span></p>
 <p>该结果是一个单粒子态，但不是动量本征态，而是局域于点 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 的粒子激发。因此常说“场算符在点 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 创建了一个粒子”。</p>
 <hr />
 <h3 id="3-定义特征量子化条件与因果性">3. 定义特征：量子化条件与因果性<a class="headerlink" href="#3-定义特征量子化条件与因果性" title="Permanent link">#</a></h3>
 <p>场的量子化通过其对易（或反对易）关系给出。标量玻色场的等时对易关系为：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-[\hat\phi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=i\delta^{(3)}(\mathbf{x}-\mathbf{y}),
-</div>
-<script type="math/tex; mode=display">
-[\hat\phi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=i\delta^{(3)}(\mathbf{x}-\mathbf{y}),
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-[\hat\phi(t,\mathbf{x}),\,\hat\phi(t,\mathbf{y})]=0,\qquad
-[\hat\pi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=0,
-</div>
-<script type="math/tex; mode=display">
-[\hat\phi(t,\mathbf{x}),\,\hat\phi(t,\mathbf{y})]=0,\qquad
-[\hat\pi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=0,
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> [\hat\phi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=i\delta^{(3)}(\mathbf{x}-\mathbf{y}), </span><script type="math/tex"> [\hat\phi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=i\delta^{(3)}(\mathbf{x}-\mathbf{y}), </script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview"> [\hat\phi(t,\mathbf{x}),\,\hat\phi(t,\mathbf{y})]=0,\qquad [\hat\pi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=0, </span><script type="math/tex"> [\hat\phi(t,\mathbf{x}),\,\hat\phi(t,\mathbf{y})]=0,\qquad [\hat\pi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=0, </script></span></p>
 <p>其中共轭动量场 <span class="arithmatex"><span class="MathJax_Preview">\hat\pi(x)=\partial\mathcal{L}/\partial(\partial_0\hat\phi(x))</span><script type="math/tex">\hat\pi(x)=\partial\mathcal{L}/\partial(\partial_0\hat\phi(x))</script></span>。</p>
 <p>更普适的因果性（微观局域性）条件是：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-[\hat\phi(x),\,\hat\phi(y)]=0\quad\text{当 }(x-y)^2&lt;0\ (\text{类空间隔}),
-</div>
-<script type="math/tex; mode=display">
-[\hat\phi(x),\,\hat\phi(y)]=0\quad\text{当 }(x-y)^2<0\ (\text{类空间隔}),
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> [\hat\phi(x),\,\hat\phi(y)]=0\quad\text{当 }(x-y)^2&lt;0\ (\text{类空间隔}), </span><script type="math/tex"> [\hat\phi(x),\,\hat\phi(y)]=0\quad\text{当 }(x-y)^2<0\ (\text{类空间隔}), </script></span></p>
 <p>即若两点间为类空间隔，则相应的场算符必须对易，保证在这两点的局域测量互不影响（不违反狭义相对论因果律）。</p>
 <hr />
 <h3 id="总结场算符的要点">总结：场算符的要点<a class="headerlink" href="#总结场算符的要点" title="Permanent link">#</a></h3>
@@ -3485,15 +3487,15 @@
 </ol>
 <p>对比量子力学：在 QM 中 <span class="arithmatex"><span class="MathJax_Preview">\hat x</span><script type="math/tex">\hat x</script></span> 是观测量，波函数 <span class="arithmatex"><span class="MathJax_Preview">\psi(x)</span><script type="math/tex">\psi(x)</script></span> 是态；在 QFT 中 <span class="arithmatex"><span class="MathJax_Preview">\hat\phi(x)</span><script type="math/tex">\hat\phi(x)</script></span> 是场算符，态是 Fock 空间中的矢量（例如 <span class="arithmatex"><span class="MathJax_Preview">\lvert0\rangle</span><script type="math/tex">\lvert0\rangle</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">\hat a_p^\dagger\hat a_q^\dagger\lvert0\rangle</span><script type="math/tex">\hat a_p^\dagger\hat a_q^\dagger\lvert0\rangle</script></span>）。所谓“第二次量子化”即将经典场升格为算符场的过程。</p>
 <p>数学结构 </p>
-<p>这是一个直击核心的问题。量子场论（QFT）的数学结构 <strong>不是一个单一的、统一的框架</strong>，而是多个数学分支的**集合体**。</p>
-<p>你所感受到的“繁琐”和“逻辑跳跃”（比如先用场，最后才知道场是什么），正是因为物理学家所使用的“QFT”（我们称之为**“应用QFT”**）是一个极其强大、但在数学上充满“启发式”（heuristic）和“直觉”的工具箱。</p>
-<p>与此同时，数学家们在试图建立一个逻辑自洽的“QFT”（我们称之为**“公理化QFT”**），但这个版本又极其抽象，难以用于计算（比如标准模型）。</p>
+<p>这是一个直击核心的问题。量子场论（QFT）的数学结构 <strong>不是一个单一的、统一的框架</strong>，而是多个数学分支的<strong>集合体</strong>。</p>
+<p>你所感受到的“繁琐”和“逻辑跳跃”（比如先用场，最后才知道场是什么），正是因为物理学家所使用的“QFT”（我们称之为<strong>“应用QFT”</strong>）是一个极其强大、但在数学上充满“启发式”（heuristic）和“直觉”的工具箱。</p>
+<p>与此同时，数学家们在试图建立一个逻辑自洽的“QFT”（我们称之为<strong>“公理化QFT”</strong>），但这个版本又极其抽象，难以用于计算（比如标准模型）。</p>
 <p>作为一名粒子物理学家，你日常打交道的QFT，其数学结构主要建立在以下几个“支柱”之上：</p>
 <hr />
 <h3 id="1-核心骨架泛函分析-functional-analysis">1. 核心骨架：泛函分析 (Functional Analysis)<a class="headerlink" href="#1-核心骨架泛函分析-functional-analysis" title="Permanent link">#</a></h3>
 <p>这是QFT的“语言”。它处理的是无限维空间上的数学。</p>
 <ul>
-<li><strong>希尔伯特空间 (Hilbert Space)：</strong> QFT的状态空间是一个无限维的希尔伯特空间，称为**Fock空间 (Fock Space)**。</li>
+<li><strong>希尔伯特空间 (Hilbert Space)：</strong> QFT的状态空间是一个无限维的希尔伯特空间，称为<strong>Fock空间 (Fock Space)</strong>。</li>
 <li><strong>Fock空间：</strong> 它的“基矢”描述了“包含了任意数量粒子”的状态。例如：<ul>
 <li><span class="arithmatex"><span class="MathJax_Preview">|0\rangle</span><script type="math/tex">|0\rangle</script></span> (真空态，0个粒子)</li>
 <li><span class="arithmatex"><span class="MathJax_Preview">a_{\vec{p}}^\dagger |0\rangle</span><script type="math/tex">a_{\vec{p}}^\dagger |0\rangle</script></span> (一个动量为 <span class="arithmatex"><span class="MathJax_Preview">\vec{p}</span><script type="math/tex">\vec{p}</script></span> 的粒子)</li>
@@ -3503,7 +3505,7 @@
 </li>
 <li><strong>算符 (Operators)：</strong> 所有的物理量都是算符。<ul>
 <li><strong><span class="arithmatex"><span class="MathJax_Preview">a, a^\dagger</span><script type="math/tex">a, a^\dagger</script></span> (产生/湮灭算符)：</strong> 这是Fock空间最基本的算符。</li>
-<li><strong><span class="arithmatex"><span class="MathJax_Preview">\hat{\phi}(x)</span><script type="math/tex">\hat{\phi}(x)</script></span> (场算符)：</strong> 正如我们之前讨论的，它是一个**算符值分布 (Operator-Valued Distribution)**。它不是一个普通的函数，你必须用一个“测试函数” <span class="arithmatex"><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span> 去“探测”它（即 <span class="arithmatex"><span class="MathJax_Preview">\int d^4x f(x) \hat{\phi}(x)</span><script type="math/tex">\int d^4x f(x) \hat{\phi}(x)</script></span>），才能得到一个“行为良好”的算符。这是QFT中“无穷大”的第一个来源。</li>
+<li><strong><span class="arithmatex"><span class="MathJax_Preview">\hat{\phi}(x)</span><script type="math/tex">\hat{\phi}(x)</script></span> (场算符)：</strong> 正如我们之前讨论的，它是一个<strong>算符值分布 (Operator-Valued Distribution)</strong>。它不是一个普通的函数，你必须用一个“测试函数” <span class="arithmatex"><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span> 去“探测”它（即 <span class="arithmatex"><span class="MathJax_Preview">\int d^4x f(x) \hat{\phi}(x)</span><script type="math/tex">\int d^4x f(x) \hat{\phi}(x)</script></span>），才能得到一个“行为良好”的算符。这是QFT中“无穷大”的第一个来源。</li>
 </ul>
 </li>
 </ul>
@@ -3514,81 +3516,79 @@
 <p><strong>时空对称性：庞加莱群 (Poincaré Group)</strong></p>
 <ul>
 <li>这是狭义相对论（洛伦兹变换 + 平移）的对称群。</li>
-<li><strong>Wigner的分类：</strong> QFT的数学结构指出，一个“基本粒子”<strong>就是**庞加莱群的一个**不可约幺正表示 (Unitary Irreducible Representation)</strong>。</li>
-<li><strong>这才是“粒子”的最终定义！</strong> 这个表示由两个数（Casimir不变量）来标记：<strong>质量 (<span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>)</strong> 和**自旋 (<span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>)**。</li>
+<li><strong>Wigner的分类：</strong> QFT的数学结构指出，一个“基本粒子”<strong>就是</strong>庞加莱群的一个<strong>不可约幺正表示 (Unitary Irreducible Representation)</strong>。</li>
+<li><strong>这才是“粒子”的最终定义！</strong> 这个表示由两个数（Casimir不变量）来标记：<strong>质量 (<span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>)</strong> 和<strong>自旋 (<span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>)</strong>。</li>
 <li>这就是为什么世界上只存在标量粒子（<span class="arithmatex"><span class="MathJax_Preview">s=0</span><script type="math/tex">s=0</script></span>）、旋量粒子（<span class="arithmatex"><span class="MathJax_Preview">s=1/2</span><script type="math/tex">s=1/2</script></span>）、矢量粒子（<span class="arithmatex"><span class="MathJax_Preview">s=1</span><script type="math/tex">s=1</script></span>）等，而不存在 <span class="arithmatex"><span class="MathJax_Preview">s=1/3</span><script type="math/tex">s=1/3</script></span> 的粒子。</li>
 </ul>
 </li>
 <li>
 <p><strong>内部对称性：李群 (Lie Groups)</strong></p>
 <ul>
-<li>这是**规范场论 (Gauge Theory)** 的核心。</li>
-<li>它描述了“力”的来源。一个力源于一个**局域规范不变性 (Local Gauge Invariance)**。</li>
-<li>QFT的数学结构要求，为了维持这种局域对称性，**必须**引入一个新的场——规范场（即“力”的传播子）。</li>
+<li>这是<strong>规范场论 (Gauge Theory)</strong> 的核心。</li>
+<li>它描述了“力”的来源。一个力源于一个<strong>局域规范不变性 (Local Gauge Invariance)</strong>。</li>
+<li>QFT的数学结构要求，为了维持这种局域对称性，<strong>必须</strong>引入一个新的场——规范场（即“力”的传播子）。</li>
 <li><strong>U(1)群 <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 量子电动力学 (QED)</strong> <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 光子</li>
 <li><strong>SU(2)群 <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 弱相互作用</strong> <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> W/Z 玻色子</li>
 <li><strong>SU(3)群 <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 强相互作用 (QCD)</strong> <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 胶子</li>
-<li>标准模型 (<span class="arithmatex"><span class="MathJax_Preview">\text{SU(3)}_C \times \text{SU(2)}_L \times \text{U(1)}_Y</span><script type="math/tex">\text{SU(3)}_C \times \text{SU(2)}_L \times \text{U(1)}_Y</script></span>) 的拉格朗日量，**完全**是由这个群结构决定的。</li>
+<li>标准模型 (<span class="arithmatex"><span class="MathJax_Preview">\text{SU(3)}_C \times \text{SU(2)}_L \times \text{U(1)}_Y</span><script type="math/tex">\text{SU(3)}_C \times \text{SU(2)}_L \times \text{U(1)}_Y</script></span>) 的拉格朗日量，<strong>完全</strong>是由这个群结构决定的。</li>
 </ul>
 </li>
 </ul>
 <h3 id="3-几何结构微分几何-differential-geometry">3. 几何结构：微分几何 (Differential Geometry)<a class="headerlink" href="#3-几何结构微分几何-differential-geometry" title="Permanent link">#</a></h3>
-<p>这是“规范场论”的**精确**数学语言，尽管物理教材（如Peskin）很少明确使用它。</p>
+<p>这是“规范场论”的<strong>精确</strong>数学语言，尽管物理教材（如Peskin）很少明确使用它。</p>
 <ul>
 <li><strong>纤维丛 (Fiber Bundle)：</strong> 这是描述规范场论最优雅的数学结构。<ul>
 <li><strong>底流形 (Base Manifold)：</strong> 我们的四维时空。</li>
-<li><strong>纤维 (Fiber)：</strong> 在时空中的**每一点**，都“附加”着一个内部对称空间（例如U(1)群对应的复平面上的一个圆周）。</li>
-<li><strong>场 (Field)：</strong> 物理场（如电子场）是这个丛上的一个**截面 (Section)**。</li>
+<li><strong>纤维 (Fiber)：</strong> 在时空中的<strong>每一点</strong>，都“附加”着一个内部对称空间（例如U(1)群对应的复平面上的一个圆周）。</li>
+<li><strong>场 (Field)：</strong> 物理场（如电子场）是这个丛上的一个<strong>截面 (Section)</strong>。</li>
 <li><strong>规范联络 (Gauge Connection)：</strong> <strong>这正是规范场（<span class="arithmatex"><span class="MathJax_Preview">A_\mu</span><script type="math/tex">A_\mu</script></span>）的数学定义！</strong> 它告诉你如何在时空的不同点之间“平行移动”一个场而不改变其物理（即“协变导数” <span class="arithmatex"><span class="MathJax_Preview">D_\mu = \partial_\mu - igA_\mu</span><script type="math/tex">D_\mu = \partial_\mu - igA_\mu</script></span>）。</li>
 <li><strong>曲率 (Curvature)：</strong> <strong>这正是场强（<span class="arithmatex"><span class="MathJax_Preview">F_{\mu\nu}</span><script type="math/tex">F_{\mu\nu}</script></span>）的数学定义！</strong> 它描述了规范场的“弯曲”程度，即力的强度。</li>
 </ul>
 </li>
 </ul>
 <h3 id="4-计算引擎路径积分-path-integrals--functional-integrals">4. 计算引擎：路径积分 (Path Integrals / Functional Integrals)<a class="headerlink" href="#4-计算引擎路径积分-path-integrals--functional-integrals" title="Permanent link">#</a></h3>
-<p>这是物理学家**实际使用**的QFT结构。</p>
+<p>这是物理学家<strong>实际使用</strong>的QFT结构。</p>
 <ul>
-<li><strong>核心思想：</strong> 一个系统从状态A到状态B，经历了**所有可能**的路径，其总振幅是所有路径振幅的**泛函积分 (Functional Integral)**：<br />
-    $$<br />
-    Z = \int \mathcal{D}\phi \exp\left( \frac{i}{\hbar} S[\phi] \right)<br />
-    $$<br />
+<li><strong>核心思想：</strong> 一个系统从状态A到状态B，经历了<strong>所有可能</strong>的路径，其总振幅是所有路径振幅的<strong>泛函积分 (Functional Integral)</strong>：<br />
+<span class="arithmatex"><span class="MathJax_Preview"> Z = \int \mathcal{D}\phi \exp\left( \frac{i}{\hbar} S[\phi] \right) </span><script type="math/tex"> Z = \int \mathcal{D}\phi \exp\left( \frac{i}{\hbar} S[\phi] \right) </script></span><br />
     其中 <span class="arithmatex"><span class="MathJax_Preview">S[\phi] = \int d^4x \mathcal{L}(\phi, \partial\mu\phi)</span><script type="math/tex">S[\phi] = \int d^4x \mathcal{L}(\phi, \partial\mu\phi)</script></span> 是作用量。</li>
-<li><strong>数学问题：</strong> 这是一个**无穷维**的积分。<span class="arithmatex"><span class="MathJax_Preview">\mathcal{D}\phi</span><script type="math/tex">\mathcal{D}\phi</script></span> 这个“测度”在数学上是**严格病态的 (ill-defined)**。</li>
+<li><strong>数学问题：</strong> 这是一个<strong>无穷维</strong>的积分。<span class="arithmatex"><span class="MathJax_Preview">\mathcal{D}\phi</span><script type="math/tex">\mathcal{D}\phi</script></span> 这个“测度”在数学上是<strong>严格病态的 (ill-defined)</strong>。</li>
 <li><strong>物理学家的“诡计”：</strong><ol>
 <li><strong>微扰论：</strong> 我们假设相互作用很弱，将 <span class="arithmatex"><span class="MathJax_Preview">e^{iS_{int}}</span><script type="math/tex">e^{iS_{int}}</script></span> 展开为泰勒级数。</li>
 <li><strong>费曼图：</strong> 这个级数的每一项都对应一个费曼图，它把一个极其复杂的泛函积分“简化”成了（仍然很复杂的）普通高维动量积分。</li>
-<li><strong>重整化 (Renormalization)：</strong> 这些动量积分几乎都是**发散**（无穷大）的。重整化是一套系统的“黑魔法”，它告诉我们如何系统地从这些无穷大中“减去”另一些无穷大，从而得到一个有限的、可与实验对比的物理结果。</li>
+<li><strong>重整化 (Renormalization)：</strong> 这些动量积分几乎都是<strong>发散</strong>（无穷大）的。重整化是一套系统的“黑魔法”，它告诉我们如何系统地从这些无穷大中“减去”另一些无穷大，从而得到一个有限的、可与实验对比的物理结果。</li>
 </ol>
 </li>
 </ul>
 <hr />
 <h3 id="5-严格基础公理化qft-axiomatic-qft">5. 严格基础：公理化QFT (Axiomatic QFT)<a class="headerlink" href="#5-严格基础公理化qft-axiomatic-qft" title="Permanent link">#</a></h3>
-<p>这是数学家们试图建立的“坚实”的QFT结构，它**不**依赖于拉格朗日量或路径积分。</p>
+<p>这是数学家们试图建立的“坚实”的QFT结构，它<strong>不</strong>依赖于拉格朗日量或路径积分。</p>
 <ul>
 <li><strong>Wightman公理 (Wightman Axioms)：</strong> 这是最接近物理学家直觉的公理化。它试图给“场算符” <span class="arithmatex"><span class="MathJax_Preview">\hat{\phi}(x)</span><script type="math/tex">\hat{\phi}(x)</script></span> 和“真空态” <span class="arithmatex"><span class="MathJax_Preview">|0\rangle</span><script type="math/tex">|0\rangle</script></span> 下一组严格的数学定义（包括洛伦兹协变性、微观因果律、谱条件等）。</li>
-<li><strong>代数QFT (Algebraic QFT / Haag-Kastler Axioms)：</strong> 这是最抽象的。它完全抛弃了“场” <span class="arithmatex"><span class="MathJax_Preview">\hat{\phi}(x)</span><script type="math/tex">\hat{\phi}(x)</script></span> 的概念（因为它是一个“坏”的分布）。它认为，物理学的基本实体是在时空某个区域内**可观测量的代数（C*-Algebra）**。</li>
+<li><strong>代数QFT (Algebraic QFT / Haag-Kastler Axioms)：</strong> 这是最抽象的。它完全抛弃了“场” <span class="arithmatex"><span class="MathJax_Preview">\hat{\phi}(x)</span><script type="math/tex">\hat{\phi}(x)</script></span> 的概念（因为它是一个“坏”的分布）。它认为，物理学的基本实体是在时空某个区域内<strong>可观测量的代数（C*-Algebra）</strong>。</li>
 </ul>
 <hr />
-<p>所学的“QFT”是一个**实用主义的大杂烩**：</p>
+<p>所学的“QFT”是一个<strong>实用主义的大杂烩</strong>：</p>
 <ul>
-<li>你**借用**了**经典场论**的拉格朗日量 (Lagrangian)。</li>
-<li>你**应用**了**泛函分析**的Fock空间和算符。</li>
-<li>你**遵从**了**群论**的对称性要求（Poincaré + Gauge）。</li>
-<li>你**使用**了**微分几何**的结构（协变导数）来写下拉格朗日量。</li>
-<li>你**依赖**了（数学上可疑的）**路径积分**和**费曼图**来进行计算。</li>
-<li>你**“修复”**了路径积分的发散，用的是**重整化**这套复杂的处方。</li>
+<li>你<strong>借用</strong>了<strong>经典场论</strong>的拉格朗日量 (Lagrangian)。</li>
+<li>你<strong>应用</strong>了<strong>泛函分析</strong>的Fock空间和算符。</li>
+<li>你<strong>遵从</strong>了<strong>群论</strong>的对称性要求（Poincaré + Gauge）。</li>
+<li>你<strong>使用</strong>了<strong>微分几何</strong>的结构（协变导数）来写下拉格朗日量。</li>
+<li>你<strong>依赖</strong>了（数学上可疑的）<strong>路径积分</strong>和<strong>费曼图</strong>来进行计算。</li>
+<li>你<strong>“修复”</strong>了路径积分的发散，用的是<strong>重整化</strong>这套复杂的处方。</li>
 </ul>
 <p>QFT的数学结构之所以看起来如此繁琐和不连贯，<strong>是因为它本身就是拼凑起来的</strong>。它是一套“能用就行”的规则，其惊人的成功（例如QED的g-2因子）掩盖了其数学基础的薄弱。而试图建立坚实基础的“公理化QFT”，又因为过于抽象而无法指导我们计算标准模型。</p>
-<p>。我们正站在一个**计算上极其成功**，但**数学结构上仍未统一**的理论之上。</p>
+<p>。我们正站在一个<strong>计算上极其成功</strong>，但<strong>数学结构上仍未统一</strong>的理论之上。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
-      最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月31日 08:08:30 UTC"><span class="timeago" datetime="2025-10-31T08:08:30+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月31日 08:08:30 UTC">2025-10-31</span>
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年2月25日 11:33:13 UTC"><span class="timeago" datetime="2026-02-25T11:33:13+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年2月25日 11:33:13 UTC">2026-02-25</span>
       
         <br>
-        创建日期:
+        Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月31日 08:08:30 UTC"><span class="timeago" datetime="2025-10-31T08:08:30+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月31日 08:08:30 UTC">2025-10-31</span>
       
     
@@ -3633,7 +3633,7 @@
           
             <a href="#" class="md-top md-icon" data-md-component="top" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-              回到页面顶部
+              Back to top
             </a>
           
         </main>
@@ -3661,10 +3661,18 @@
         <div class="md-dialog__inner md-typeset"></div>
       </div>
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
       
       
         <script src="../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+        
+          <script src="../../../../js/timeago.min.js"></script>
+        
+          <script src="../../../../js/timeago_mkdocs_material.js"></script>
+        
+          <script src="../../../../js/timeago.min.js"></script>
+        
+          <script src="../../../../js/timeago_mkdocs_material.js"></script>
         
           <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
         

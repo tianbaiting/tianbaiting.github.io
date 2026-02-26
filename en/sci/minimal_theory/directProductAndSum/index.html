@@ -1,6 +1,6 @@
 
   <!doctype html>
-  <html lang="zh" class="no-js">
+  <html lang="en" class="no-js">
     <head>
       
         <meta charset="utf-8">
@@ -17,7 +17,7 @@
           <link rel="next" href="../functionalAna_SpecThe/">
         
         <link rel="icon" href="../../../../assets/images/favicon.png">
-        <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.4">
+        <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.0.4">
       
       
         
@@ -43,6 +43,10 @@
           <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
         
       
+      
+        <link rel="stylesheet" href="../../../../css/timeago.css">
+      
+        <link rel="stylesheet" href="../../../../css/timeago.css">
       
         <link rel="stylesheet" href="../../../../css/counter.css">
       
@@ -78,7 +82,7 @@
         
           
           <a href="#直积--直和--张量积-辨析" class="md-skip">
-            跳转至
+            Skip to content
           </a>
         
       </div>
@@ -90,7 +94,7 @@
         
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="页眉">
+  <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../../" title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
       
   
@@ -131,9 +135,9 @@
 
   <div class="md-header__button md-lang">
     
-      <a href="/" hreflang="zh">简体中文</a>
+      <a href="../../../../sci/minimal_theory/directProductAndSum/" hreflang="zh">简体中文</a>
     
-      <a href="/en/" hreflang="en">English</a>
+      <a href="./" hreflang="en">English</a>
     
   </div>
 
@@ -146,18 +150,18 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="查找">
+      <nav class="md-search__options" aria-label="Search">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -167,7 +171,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            正在初始化搜索引擎
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -187,7 +191,7 @@
           
             
               
-<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
@@ -197,8 +201,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../howtomakewebsite/" class="md-tabs__link">
-      网站制作
+    <a href="../../../" class="md-tabs__link">
+      Index
     </a>
   </li>
 
@@ -209,8 +213,8 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../" class="md-tabs__link">
-      Index
+    <a href="../../../howtomakewebsite/" class="md-tabs__link">
+      网站制作
     </a>
   </li>
 
@@ -300,7 +304,7 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../../" title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
       
@@ -321,8 +325,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../howtomakewebsite/" class="md-nav__link">
-        网站制作
+      <a href="../../../" class="md-nav__link">
+        Index
       </a>
     </li>
   
@@ -336,8 +340,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
-        Index
+      <a href="../../../howtomakewebsite/" class="md-nav__link">
+        网站制作
       </a>
     </li>
   
@@ -636,7 +640,7 @@
   
     <li class="md-nav__item">
       <a href="../../../life/flavor/" class="md-nav__link">
-        **探索味型奥秘：以川菜为例的烹饪科学指南**
+        探索味型奥秘：以川菜为例的烹饪科学指南
       </a>
     </li>
   
@@ -881,7 +885,7 @@
   
     <li class="md-nav__item">
       <a href="../../../life/%E5%81%A5%E5%BA%B7/workout_diet/" class="md-nav__link">
-        **营养**
+        营养
       </a>
     </li>
   
@@ -895,7 +899,7 @@
   
     <li class="md-nav__item">
       <a href="../../../life/%E5%81%A5%E5%BA%B7/%E9%BC%BB%E7%82%8E/" class="md-nav__link">
-        **鼻炎综合管理临床报告：过敏性鼻炎与血管运动性鼻炎的深度解析**
+        鼻炎综合管理临床报告：过敏性鼻炎与血管运动性鼻炎的深度解析
       </a>
     </li>
   
@@ -986,6 +990,8 @@
       <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
       
       
+        
+          
         
           
         
@@ -1173,6 +1179,20 @@
     <li class="md-nav__item">
       <a href="../../cheatshet/termux/" class="md-nav__link">
         termux 运行ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/tmux/" class="md-nav__link">
+        tmux 常用命令与快捷键速查表
       </a>
     </li>
   
@@ -1446,7 +1466,7 @@
   
     <li class="md-nav__item">
       <a href="../../minimal_code/ctags/" class="md-nav__link">
-        `ctags` 使用教程（C/C++）
+        ctags 使用教程（C/C++）
       </a>
     </li>
   
@@ -1516,7 +1536,7 @@
   
     <li class="md-nav__item">
       <a href="../../minimal_code/geant4_oop/" class="md-nav__link">
-        **揭秘面向对象编程：Geant4工具包深度导览**
+        揭秘面向对象编程：Geant4工具包深度导览
       </a>
     </li>
   
@@ -1824,7 +1844,7 @@
   
     <li class="md-nav__item">
       <a href="../../minimal_code/vscode_lsp/" class="md-nav__link">
-        如何解决 VS Code 中的 C/C++ `include` 报错问题
+        如何解决 VS Code 中的 C/C++ include 报错问题
       </a>
     </li>
   
@@ -1971,20 +1991,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../ScateringINQMandQFT/" class="md-nav__link">
-        ScateringINQMandQFT
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../TransmissionLineEq/" class="md-nav__link">
         TransmissionLineEq
       </a>
@@ -2033,7 +2039,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -2042,7 +2048,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      目录
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -2192,8 +2198,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31-量子力学例子两个自旋-12-粒子系统" class="md-nav__link">
-    3.1 量子力学例子：两个自旋-1/2 粒子系统
+  <a href="#31-量子力学例子两个自旋-½-粒子系统" class="md-nav__link">
+    3.1 量子力学例子：两个自旋-&frac12; 粒子系统
   </a>
   
 </li>
@@ -2390,7 +2396,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_13" type="checkbox" id="__nav_5_4_13" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_12" type="checkbox" id="__nav_5_4_12" >
       
       
         
@@ -2410,13 +2416,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_5_4_13" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4_12" tabindex="0" aria-expanded="false">
           functionnalAna
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="functionnalAna" data-md-level="3">
-        <label class="md-nav__title" for="__nav_5_4_13">
+        <label class="md-nav__title" for="__nav_5_4_12">
           <span class="md-nav__icon md-icon"></span>
           functionnalAna
         </label>
@@ -2514,6 +2520,58 @@
     <li class="md-nav__item">
       <a href="../functionnalAna/RHS/" class="md-nav__link">
         装备希尔伯特空间
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_13" type="checkbox" id="__nav_5_4_13" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4_13" tabindex="0" aria-expanded="false">
+          scatteringTheory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="scatteringTheory" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_4_13">
+          <span class="md-nav__icon md-icon"></span>
+          scatteringTheory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/friedrichsModel/" class="md-nav__link">
+        Friedrichs 模型
       </a>
     </li>
   
@@ -2996,7 +3054,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/RIDF/" class="md-nav__link">
-        RIDF
+        Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Description
       </a>
     </li>
   
@@ -3358,7 +3416,7 @@
   
     <li class="md-nav__item">
       <a href="../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%97%A5%E7%89%88%E6%89%8B%E6%9C%BAfelica%E8%8A%AF%E7%89%87/" class="md-nav__link">
-        **日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析**
+        日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析
       </a>
     </li>
   
@@ -3440,7 +3498,7 @@
                     <div class="md-sidebar__inner">
                       
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -3449,7 +3507,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      目录
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -3599,8 +3657,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#31-量子力学例子两个自旋-12-粒子系统" class="md-nav__link">
-    3.1 量子力学例子：两个自旋-1/2 粒子系统
+  <a href="#31-量子力学例子两个自旋-½-粒子系统" class="md-nav__link">
+    3.1 量子力学例子：两个自旋-&frac12; 粒子系统
   </a>
   
 </li>
@@ -3768,10 +3826,8 @@
 <li>
 <p>对算符: 当一个算符（如哈密顿量 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span>）保持这些子空间不变时（即 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 不会把一个偶宇称态变成奇宇称态），这个算符就是块对角化的。</p>
 <ul>
-<li>例子: 这样的 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 可以写作 <span class="arithmatex"><span class="MathJax_Preview">H = H_{even} \oplus H_{odd}</span><script type="math/tex">H = H_{even} \oplus H_{odd}</script></span>。在矩阵形式上，它看起来像：$$  H = \begin{pmatrix}<br />
-H_{even} &amp; 0 \<br />
-0 &amp; H_{odd}<br />
-\end{pmatrix}$$</li>
+<li>例子: 这样的 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 可以写作 <span class="arithmatex"><span class="MathJax_Preview">H = H_{even} \oplus H_{odd}</span><script type="math/tex">H = H_{even} \oplus H_{odd}</script></span>。在矩阵形式上，它看起来像：<br />
+<span class="arithmatex"><span class="MathJax_Preview"> H = \begin{pmatrix} H_{even} &amp; 0 \\ 0 &amp; H_{odd} \end{pmatrix} </span><script type="math/tex"> H = \begin{pmatrix} H_{even} & 0 \\ 0 & H_{odd} \end{pmatrix} </script></span></li>
 </ul>
 </li>
 </ul>
@@ -3813,44 +3869,19 @@ H_{even} &amp; 0 \<br />
 <li>设 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 是一个 <span class="arithmatex"><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span> 上的向量空间。  </li>
 <li>
 <p>定义其对偶空间（dual space）：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-V^*=\{\,f:V\to F\mid f\ \text{为线性映射}\,\}.
-</div>
-<script type="math/tex; mode=display">
-V^*=\{\,f:V\to F\mid f\ \text{为线性映射}\,\}.
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> V^*=\{\,f:V\to F\mid f\ \text{为线性映射}\,\}. </span><script type="math/tex"> V^*=\{\,f:V\to F\mid f\ \text{为线性映射}\,\}. </script></span></p>
 </li>
 <li>
 <p>若 <span class="arithmatex"><span class="MathJax_Preview">\{e_i\}_{i=1}^n</span><script type="math/tex">\{e_i\}_{i=1}^n</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 的基底，则定义对偶基底 <span class="arithmatex"><span class="MathJax_Preview">\{e^i\}_{i=1}^n\subset V^*</span><script type="math/tex">\{e^i\}_{i=1}^n\subset V^*</script></span> 满足</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-e^i(e_j)=\delta^i_j.
-</div>
-<script type="math/tex; mode=display">
-e^i(e_j)=\delta^i_j.
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> e^i(e_j)=\delta^i_j. </span><script type="math/tex"> e^i(e_j)=\delta^i_j. </script></span></p>
 </li>
 <li>
 <p>任取矢量 <span class="arithmatex"><span class="MathJax_Preview">v\in V</span><script type="math/tex">v\in V</script></span>，可写为</p>
-<p>$$<br />
-v=v^i e_i,\qquad v^i\in F.<br />
-$$<br />
+<p><span class="arithmatex"><span class="MathJax_Preview"> v=v^i e_i,\qquad v^i\in F. </span><script type="math/tex"> v=v^i e_i,\qquad v^i\in F. </script></span><br />
 * 任取对偶矢量 <span class="arithmatex"><span class="MathJax_Preview">\alpha\in V^*</span><script type="math/tex">\alpha\in V^*</script></span>，可写为</p>
-<p>$$<br />
-\alpha=\alpha_j e^j,\qquad \alpha_j\in F.<br />
-$$<br />
+<p><span class="arithmatex"><span class="MathJax_Preview"> \alpha=\alpha_j e^j,\qquad \alpha_j\in F. </span><script type="math/tex"> \alpha=\alpha_j e^j,\qquad \alpha_j\in F. </script></span><br />
 * 它们的自然配对（evaluation）为</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\alpha(v)=\alpha_j v^i e^j(e_i)=\alpha_j v^i \delta^j_i=\alpha_i v^i.
-</div>
-<script type="math/tex; mode=display">
-\alpha(v)=\alpha_j v^i e^j(e_i)=\alpha_j v^i \delta^j_i=\alpha_i v^i.
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> \alpha(v)=\alpha_j v^i e^j(e_i)=\alpha_j v^i \delta^j_i=\alpha_i v^i. </span><script type="math/tex"> \alpha(v)=\alpha_j v^i e^j(e_i)=\alpha_j v^i \delta^j_i=\alpha_i v^i. </script></span></p>
 </li>
 </ul>
 <h3 id="12-指标写法">1.2 指标写法<a class="headerlink" href="#12-指标写法" title="Permanent link">#</a></h3>
@@ -3860,23 +3891,9 @@ $$<br />
 <li>配对写作 <span class="arithmatex"><span class="MathJax_Preview">\alpha_i v^i</span><script type="math/tex">\alpha_i v^i</script></span>（重复指标求和）。  </li>
 <li>
 <p>基底变换时，矢量分量“反变”：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-v'^i={M^i}_j v^j,
-</div>
-<script type="math/tex; mode=display">
-v'^i={M^i}_j v^j,
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> v'^i={M^i}_j v^j, </span><script type="math/tex"> v'^i={M^i}_j v^j, </script></span></p>
 <p>对偶矢量分量“协变”：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\alpha'_i=\alpha_j {(M^{-1})^j}_i,
-</div>
-<script type="math/tex; mode=display">
-\alpha'_i=\alpha_j {(M^{-1})^j}_i,
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> \alpha'_i=\alpha_j {(M^{-1})^j}_i, </span><script type="math/tex"> \alpha'_i=\alpha_j {(M^{-1})^j}_i, </script></span></p>
 <p>其中 <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> 为基变换矩阵。</p>
 </li>
 </ul>
@@ -3887,14 +3904,7 @@ v'^i={M^i}_j v^j,
 <li>配对写作 <span class="arithmatex"><span class="MathJax_Preview">\langle\phi|\psi\rangle</span><script type="math/tex">\langle\phi|\psi\rangle</script></span>，这是一个标量。  </li>
 <li>
 <p>若 <span class="arithmatex"><span class="MathJax_Preview">|\psi\rangle=v^i|e_i\rangle</span><script type="math/tex">|\psi\rangle=v^i|e_i\rangle</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">\langle\phi|=\overline{\alpha_i}\langle e^i|</span><script type="math/tex">\langle\phi|=\overline{\alpha_i}\langle e^i|</script></span>，那么</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\langle\phi|\psi\rangle=\overline{\alpha_i}\,v^i.
-</div>
-<script type="math/tex; mode=display">
-\langle\phi|\psi\rangle=\overline{\alpha_i}\,v^i.
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> \langle\phi|\psi\rangle=\overline{\alpha_i}\,v^i. </span><script type="math/tex"> \langle\phi|\psi\rangle=\overline{\alpha_i}\,v^i. </script></span></p>
 </li>
 </ul>
 <hr />
@@ -3903,67 +3913,26 @@ v'^i={M^i}_j v^j,
 <h3 id="21-形式化写法">2.1 形式化写法<a class="headerlink" href="#21-形式化写法" title="Permanent link">#</a></h3>
 <h4 id="211-直和">2.1.1 直和<a class="headerlink" href="#211-直和" title="Permanent link">#</a></h4>
 <p>设 <span class="arithmatex"><span class="MathJax_Preview">V_1</span><script type="math/tex">V_1</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">V_2</span><script type="math/tex">V_2</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span>-向量空间。定义</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-V_1\oplus V_2=\{(v_1,v_2)\mid v_1\in V_1,\ v_2\in V_2\},
-</div>
-<script type="math/tex; mode=display">
-V_1\oplus V_2=\{(v_1,v_2)\mid v_1\in V_1,\ v_2\in V_2\},
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> V_1\oplus V_2=\{(v_1,v_2)\mid v_1\in V_1,\ v_2\in V_2\}, </span><script type="math/tex"> V_1\oplus V_2=\{(v_1,v_2)\mid v_1\in V_1,\ v_2\in V_2\}, </script></span></p>
 <p>其加法与数乘按分量定义：</p>
-<p>$$<br />
-(v_1,v_2)+(v'_1,v'_2)=(v_1+v'_1, v_2+v'_2),\qquad<br />
-a\cdot(v_1,v_2)=(a v_1, a v_2).<br />
-$$<br />
+<p><span class="arithmatex"><span class="MathJax_Preview"> (v_1,v_2)+(v'_1,v'_2)=(v_1+v'_1,\ v_2+v'_2),\qquad a\cdot(v_1,v_2)=(a v_1,\ a v_2). </span><script type="math/tex"> (v_1,v_2)+(v'_1,v'_2)=(v_1+v'_1,\ v_2+v'_2),\qquad a\cdot(v_1,v_2)=(a v_1,\ a v_2). </script></span><br />
 若为有限维，<span class="arithmatex"><span class="MathJax_Preview">\dim(V_1\oplus V_2)=\dim V_1+\dim V_2</span><script type="math/tex">\dim(V_1\oplus V_2)=\dim V_1+\dim V_2</script></span>。</p>
 <h4 id="212-直乘笛卡尔积物理语境说明">2.1.2 直乘（笛卡尔积/物理语境说明）<a class="headerlink" href="#212-直乘笛卡尔积物理语境说明" title="Permanent link">#</a></h4>
 <p>“直乘”在不同语境下含义不同。若指集合意义上的笛卡尔积 <span class="arithmatex"><span class="MathJax_Preview">V_1\times V_2</span><script type="math/tex">V_1\times V_2</script></span>，并在其上赋予向量空间结构，它与 <span class="arithmatex"><span class="MathJax_Preview">V_1\oplus V_2</span><script type="math/tex">V_1\oplus V_2</script></span> 本质等价（作为向量空间）。但在物理文献中，有时说 “direct product” 实际上意指张量积。为避免歧义，本文中把“直乘”专指笛卡尔积/直和的集合并列结构（非张量耦合）。</p>
 <h4 id="213-张量积">2.1.3 张量积<a class="headerlink" href="#213-张量积" title="Permanent link">#</a></h4>
 <p>设 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">W</span><script type="math/tex">W</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span>-向量空间。张量积 <span class="arithmatex"><span class="MathJax_Preview">V\otimes W</span><script type="math/tex">V\otimes W</script></span> 具有泛性质：存在双线性映射</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\otimes:V\times W\to V\otimes W,\qquad (v,w)\mapsto v\otimes w,
-</div>
-<script type="math/tex; mode=display">
-\otimes:V\times W\to V\otimes W,\qquad (v,w)\mapsto v\otimes w,
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> \otimes:V\times W\to V\otimes W,\qquad (v,w)\mapsto v\otimes w, </span><script type="math/tex"> \otimes:V\times W\to V\otimes W,\qquad (v,w)\mapsto v\otimes w, </script></span></p>
 <p>使得对任意线性空间 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 与任意双线性映射 <span class="arithmatex"><span class="MathJax_Preview">b:V\times W\to X</span><script type="math/tex">b:V\times W\to X</script></span>，存在唯一线性映射 <span class="arithmatex"><span class="MathJax_Preview">\tilde b:V\otimes W\to X</span><script type="math/tex">\tilde b:V\otimes W\to X</script></span> 满足</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-b(v,w)=\tilde b(v\otimes w).
-</div>
-<script type="math/tex; mode=display">
-b(v,w)=\tilde b(v\otimes w).
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> b(v,w)=\tilde b(v\otimes w). </span><script type="math/tex"> b(v,w)=\tilde b(v\otimes w). </script></span></p>
 <p>若 <span class="arithmatex"><span class="MathJax_Preview">\{v_i\}</span><script type="math/tex">\{v_i\}</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 的基，<span class="arithmatex"><span class="MathJax_Preview">\{w_j\}</span><script type="math/tex">\{w_j\}</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">W</span><script type="math/tex">W</script></span> 的基，则 <span class="arithmatex"><span class="MathJax_Preview">\{v_i\otimes w_j\}_{i,j}</span><script type="math/tex">\{v_i\otimes w_j\}_{i,j}</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">V\otimes W</span><script type="math/tex">V\otimes W</script></span> 的基，故（有限维）</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\dim(V\otimes W)=\dim V\cdot\dim W.
-</div>
-<script type="math/tex; mode=display">
-\dim(V\otimes W)=\dim V\cdot\dim W.
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> \dim(V\otimes W)=\dim V\cdot\dim W. </span><script type="math/tex"> \dim(V\otimes W)=\dim V\cdot\dim W. </script></span></p>
 <p>一般元素可写为有限线性组合 <span class="arithmatex"><span class="MathJax_Preview">\sum_{i,j} c_{ij}\, (v_i\otimes w_j)</span><script type="math/tex">\sum_{i,j} c_{ij}\, (v_i\otimes w_j)</script></span>。</p>
 <h3 id="22-指标写法">2.2 指标写法<a class="headerlink" href="#22-指标写法" title="Permanent link">#</a></h3>
 <p>设 <span class="arithmatex"><span class="MathJax_Preview">\dim V=m,\ \dim W=n</span><script type="math/tex">\dim V=m,\ \dim W=n</script></span>，基分别为 <span class="arithmatex"><span class="MathJax_Preview">\{e_i\}_{i=1}^m,\ \{f_j\}_{j=1}^n</span><script type="math/tex">\{e_i\}_{i=1}^m,\ \{f_j\}_{j=1}^n</script></span>。</p>
 <ul>
 <li>在 <span class="arithmatex"><span class="MathJax_Preview">V\oplus W</span><script type="math/tex">V\oplus W</script></span> 中，一个元素可以写为 <span class="arithmatex"><span class="MathJax_Preview">(v^i e_i,\ w^j f_j)</span><script type="math/tex">(v^i e_i,\ w^j f_j)</script></span>.  </li>
-<li>在 <span class="arithmatex"><span class="MathJax_Preview">V\otimes W</span><script type="math/tex">V\otimes W</script></span> 中，一个纯张量写为<br />
-    $$<br />
-    (v^i e_i)\otimes(w^j f_j)=v^i w^j\,(e_i\otimes f_j),<br />
-    $$<br />
-    更一般的元素为 <span class="arithmatex"><span class="MathJax_Preview">\sum_{i,j}T^{ij}\,(e_i\otimes f_j)</span><script type="math/tex">\sum_{i,j}T^{ij}\,(e_i\otimes f_j)</script></span>.  </li>
-<li>
-<p>若引入对偶空间，则类型为 <span class="arithmatex"><span class="MathJax_Preview">(r,s)</span><script type="math/tex">(r,s)</script></span> 的张量可写为<br />
-    $$<br />
-    T^{i_1\ldots i_r}{}<em i_1="i_1">{j_1\ldots j_s}\, (e</em>\otimes\cdots\otimes e_{i_r}\otimes e^{j_1}\otimes\cdots\otimes e^{j_s}),</p>
-<p>$$<br />
-其中上标为“矢量方向”（逆变指数），下标为“对偶矢量方向”（协变指数）。</p>
-</li>
+<li>在 <span class="arithmatex"><span class="MathJax_Preview">V\otimes W</span><script type="math/tex">V\otimes W</script></span> 中，一个纯张量写为 <span class="arithmatex"><span class="MathJax_Preview">(v^i e_i)\otimes(w^j f_j)=v^i w^j\,(e_i\otimes f_j)</span><script type="math/tex">(v^i e_i)\otimes(w^j f_j)=v^i w^j\,(e_i\otimes f_j)</script></span>，更一般的元素为 <span class="arithmatex"><span class="MathJax_Preview">\sum_{i,j}T^{ij}\,(e_i\otimes f_j)</span><script type="math/tex">\sum_{i,j}T^{ij}\,(e_i\otimes f_j)</script></span>.  </li>
+<li>若引入对偶空间，则类型为 <span class="arithmatex"><span class="MathJax_Preview">(r,s)</span><script type="math/tex">(r,s)</script></span> 的张量可写为 <span class="arithmatex"><span class="MathJax_Preview">T^{i_1\ldots i_r}{}_{j_1\ldots j_s}\, (e_{i_1}\otimes\cdots\otimes e_{i_r}\otimes e^{j_1}\otimes\cdots\otimes e^{j_s})</span><script type="math/tex">T^{i_1\ldots i_r}{}_{j_1\ldots j_s}\, (e_{i_1}\otimes\cdots\otimes e_{i_r}\otimes e^{j_1}\otimes\cdots\otimes e^{j_s})</script></span>，其中上标为“矢量方向”（逆变指数），下标为“对偶矢量方向”（协变指数）。</li>
 </ul>
 <h3 id="23-braket-记法量子力学">2.3 braket 记法（量子力学）<a class="headerlink" href="#23-braket-记法量子力学" title="Permanent link">#</a></h3>
 <ul>
@@ -3971,14 +3940,7 @@ b(v,w)=\tilde b(v\otimes w).
 <li>直和通常表示“系统 A 或 系统 B”的选择性合并；张量积表示两个系统“同时”存在并可纠缠。  </li>
 <li>
 <p>若 <span class="arithmatex"><span class="MathJax_Preview">|\psi_A\rangle\in\mathcal H_A,\ |\phi_B\rangle\in\mathcal H_B</span><script type="math/tex">|\psi_A\rangle\in\mathcal H_A,\ |\phi_B\rangle\in\mathcal H_B</script></span>，合态可写为</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-|\psi_A\rangle\otimes|\phi_B\rangle\equiv|\psi_A,\phi_B\rangle.
-</div>
-<script type="math/tex; mode=display">
-|\psi_A\rangle\otimes|\phi_B\rangle\equiv|\psi_A,\phi_B\rangle.
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> |\psi_A\rangle\otimes|\phi_B\rangle\equiv|\psi_A,\phi_B\rangle. </span><script type="math/tex"> |\psi_A\rangle\otimes|\phi_B\rangle\equiv|\psi_A,\phi_B\rangle. </script></span></p>
 </li>
 <li>
 <p>合态的一般表示为 <span class="arithmatex"><span class="MathJax_Preview">\sum_{i,j}c_{ij}\,|e_i\rangle_A\otimes|f_j\rangle_B</span><script type="math/tex">\sum_{i,j}c_{ij}\,|e_i\rangle_A\otimes|f_j\rangle_B</script></span>，不总能写成单一纯张量（即存在纠缠态）。</p>
@@ -3991,43 +3953,23 @@ b(v,w)=\tilde b(v\otimes w).
 <li>张量积 <span class="arithmatex"><span class="MathJax_Preview">V\otimes W</span><script type="math/tex">V\otimes W</script></span>：表示两个空间同时参与的耦合结构，维度相乘，元素可为一般线性组合 <span class="arithmatex"><span class="MathJax_Preview">\sum_{i,j}T^{ij}(e_i\otimes f_j)</span><script type="math/tex">\sum_{i,j}T^{ij}(e_i\otimes f_j)</script></span>；许多元素不是纯张量 <span class="arithmatex"><span class="MathJax_Preview">v\otimes w</span><script type="math/tex">v\otimes w</script></span>，因此可表征纠缠等耦合现象。  </li>
 <li>
 <p>公式区别：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\dim(V_1\oplus V_2)=\dim V_1+\dim V_2,\qquad
-\dim(V\otimes W)=\dim V\cdot\dim W.
-</div>
-<script type="math/tex; mode=display">
-\dim(V_1\oplus V_2)=\dim V_1+\dim V_2,\qquad
-\dim(V\otimes W)=\dim V\cdot\dim W.
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> \dim(V_1\oplus V_2)=\dim V_1+\dim V_2,\qquad \dim(V\otimes W)=\dim V\cdot\dim W. </span><script type="math/tex"> \dim(V_1\oplus V_2)=\dim V_1+\dim V_2,\qquad \dim(V\otimes W)=\dim V\cdot\dim W. </script></span></p>
 </li>
 </ul>
 <hr />
 <h2 id="3-举例量子力学--广义相对论">3. 举例：量子力学 &amp; 广义相对论<a class="headerlink" href="#3-举例量子力学--广义相对论" title="Permanent link">#</a></h2>
-<h3 id="31-量子力学例子两个自旋-12-粒子系统">3.1 量子力学例子：两个自旋-&frac12; 粒子系统<a class="headerlink" href="#31-量子力学例子两个自旋-12-粒子系统" title="Permanent link">#</a></h3>
+<h3 id="31-量子力学例子两个自旋-½-粒子系统">3.1 量子力学例子：两个自旋-&frac12; 粒子系统<a class="headerlink" href="#31-量子力学例子两个自旋-½-粒子系统" title="Permanent link">#</a></h3>
 <ul>
 <li>单粒子状态空间 <span class="arithmatex"><span class="MathJax_Preview">\mathcal H_1\cong\mathbb{C}^2</span><script type="math/tex">\mathcal H_1\cong\mathbb{C}^2</script></span>，基为 <span class="arithmatex"><span class="MathJax_Preview">\{|+\rangle,|-\rangle\}</span><script type="math/tex">\{|+\rangle,|-\rangle\}</script></span>.  </li>
 <li>两粒子系统状态空间为 <span class="arithmatex"><span class="MathJax_Preview">\mathcal H=\mathcal H_1\otimes\mathcal H_2\cong\mathbb{C}^4</span><script type="math/tex">\mathcal H=\mathcal H_1\otimes\mathcal H_2\cong\mathbb{C}^4</script></span>。若误用直和 <span class="arithmatex"><span class="MathJax_Preview">\mathcal H_1\oplus\mathcal H_2</span><script type="math/tex">\mathcal H_1\oplus\mathcal H_2</script></span>，则表示“一个粒子在系统1 或 系统2”，而非“两个粒子同时存在且可能纠缠”。  </li>
 <li>
 <p>未纠缠态：</p>
-<p>$$<br />
-|\Psi\rangle=|+\rangle_1\otimes|-\rangle_2\equiv|+,-\rangle.<br />
-$$<br />
+<p><span class="arithmatex"><span class="MathJax_Preview"> |\Psi\rangle=|+\rangle_1\otimes|-\rangle_2\equiv|+,-\rangle. </span><script type="math/tex"> |\Psi\rangle=|+\rangle_1\otimes|-\rangle_2\equiv|+,-\rangle. </script></span><br />
 * 纠缠态示例（Bell 态）：</p>
-<p>$$<br />
-|\Phi^+\rangle=\frac{1}{\sqrt2}\big(|+\rangle_1\otimes|+\rangle_2+|-\rangle_1\otimes|-\rangle_2\big),<br />
-$$<br />
+<p><span class="arithmatex"><span class="MathJax_Preview"> |\Phi^+\rangle=\frac{1}{\sqrt2}\big(|+\rangle_1\otimes|+\rangle_2+|-\rangle_1\otimes|-\rangle_2\big), </span><script type="math/tex"> |\Phi^+\rangle=\frac{1}{\sqrt2}\big(|+\rangle_1\otimes|+\rangle_2+|-\rangle_1\otimes|-\rangle_2\big), </script></span><br />
 不能分解为單一的 <span class="arithmatex"><span class="MathJax_Preview">|v\rangle_1\otimes|w\rangle_2</span><script type="math/tex">|v\rangle_1\otimes|w\rangle_2</script></span>。<br />
 * 指标记法：若系统1基为 <span class="arithmatex"><span class="MathJax_Preview">e_i</span><script type="math/tex">e_i</script></span>，系统2基为 <span class="arithmatex"><span class="MathJax_Preview">f_j</span><script type="math/tex">f_j</script></span>，则</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-|\Psi\rangle=v^i w^j\,(e_i\otimes f_j).
-</div>
-<script type="math/tex; mode=display">
-|\Psi\rangle=v^i w^j\,(e_i\otimes f_j).
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> |\Psi\rangle=v^i w^j\,(e_i\otimes f_j). </span><script type="math/tex"> |\Psi\rangle=v^i w^j\,(e_i\otimes f_j). </script></span></p>
 </li>
 </ul>
 <h3 id="32-广义相对论例子应力-能量张量与矢量对偶矢量">3.2 广义相对论例子：应力-能量张量与矢量、对偶矢量<a class="headerlink" href="#32-广义相对论例子应力-能量张量与矢量对偶矢量" title="Permanent link">#</a></h3>
@@ -4036,25 +3978,11 @@ $$<br />
 <li>“直和”将两个切空间并列 <span class="arithmatex"><span class="MathJax_Preview">T_p(M)\oplus T_p(M)</span><script type="math/tex">T_p(M)\oplus T_p(M)</script></span> 在物理上不常用；常见的是张量结构。  </li>
 <li>
 <p>应力-能量张量 <span class="arithmatex"><span class="MathJax_Preview">T^{ab}</span><script type="math/tex">T^{ab}</script></span>（类型 <span class="arithmatex"><span class="MathJax_Preview">(2,0)</span><script type="math/tex">(2,0)</script></span>）或 <span class="arithmatex"><span class="MathJax_Preview">{T^a}_b</span><script type="math/tex">{T^a}_b</script></span>（类型 <span class="arithmatex"><span class="MathJax_Preview">(1,1)</span><script type="math/tex">(1,1)</script></span>）属于</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-T^{ab}\in V\otimes V,\qquad {T^a}_b\in V\otimes V^*.
-</div>
-<script type="math/tex; mode=display">
-T^{ab}\in V\otimes V,\qquad {T^a}_b\in V\otimes V^*.
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> T^{ab}\in V\otimes V,\qquad {T^a}_b\in V\otimes V^*. </span><script type="math/tex"> T^{ab}\in V\otimes V,\qquad {T^a}_b\in V\otimes V^*. </script></span></p>
 </li>
 <li>
 <p>指标表示（示例）：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-T^{ab}=\rho\,u^a u^b + p\,(g^{ab}+u^a u^b),
-</div>
-<script type="math/tex; mode=display">
-T^{ab}=\rho\,u^a u^b + p\,(g^{ab}+u^a u^b),
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> T^{ab}=\rho\,u^a u^b + p\,(g^{ab}+u^a u^b), </span><script type="math/tex"> T^{ab}=\rho\,u^a u^b + p\,(g^{ab}+u^a u^b), </script></span></p>
 <p>其中 <span class="arithmatex"><span class="MathJax_Preview">u^a</span><script type="math/tex">u^a</script></span> 为 4-速度，<span class="arithmatex"><span class="MathJax_Preview">\rho</span><script type="math/tex">\rho</script></span> 为密度，<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 为压强，<span class="arithmatex"><span class="MathJax_Preview">g^{ab}</span><script type="math/tex">g^{ab}</script></span> 为度规张量。<br />
 * 自然配对（标量）为 <span class="arithmatex"><span class="MathJax_Preview">w_b v^b</span><script type="math/tex">w_b v^b</script></span>。虽然 braket 在 GR 中不常用，但形式上可类比为 <span class="arithmatex"><span class="MathJax_Preview">\langle w|v\rangle=w_b v^b</span><script type="math/tex">\langle w|v\rangle=w_b v^b</script></span>。</p>
 </li>
@@ -4074,54 +4002,30 @@ T^{ab}=\rho\,u^a u^b + p\,(g^{ab}+u^a u^b),
 - <a href="https://cns.gatech.edu/~predrag/courses/PHYS-6124-12/StGoChap10.pdf">https://cns.gatech.edu/~predrag/courses/PHYS-6124-12/StGoChap10.pdf</a> "Vectors and Tensors (chapter)"<br />
 - <a href="https://quantum-abc.de/Tensor_products.pdf">https://quantum-abc.de/Tensor_products.pdf</a> "Tensor products (intro)"</p>
 <h3 id="一集合论层面笛卡尔积的定义">一、集合论层面：笛卡尔积的定义<a class="headerlink" href="#一集合论层面笛卡尔积的定义" title="Permanent link">#</a></h3>
-<p>设 A, B 是两个集合，则它们的**笛卡尔积**定义为：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-A \times B = \{(a,b)\mid a\in A,\; b\in B\}.
-</div>
-<script type="math/tex; mode=display">
-A \times B = \{(a,b)\mid a\in A,\; b\in B\}.
-</script>
-</div>
-<p>它的元素是**有序对 (a,b)**，表示“一个来自 A，一个来自 B”的组合。</p>
+<p>设 A, B 是两个集合，则它们的<strong>笛卡尔积</strong>定义为：</p>
+<p><span class="arithmatex"><span class="MathJax_Preview"> A \times B = \{(a,b)\mid a\in A,\; b\in B\}. </span><script type="math/tex"> A \times B = \{(a,b)\mid a\in A,\; b\in B\}. </script></span></p>
+<p>它的元素是<strong>有序对 (a,b)</strong>，表示“一个来自 A，一个来自 B”的组合。</p>
 <p>性质：</p>
 <ul>
 <li>是一个 <strong>集合</strong>；</li>
 <li>没有加法、乘法等代数运算；</li>
 <li>若 A 有 m 个元素，B 有 n 个元素，则</li>
 </ul>
-<p>$$ |A\times B| = mn; $$</p>
+<p><span class="arithmatex"><span class="MathJax_Preview"> |A\times B| = mn; </span><script type="math/tex"> |A\times B| = mn; </script></span></p>
 <ul>
 <li>常见于“定义函数域”或“关系”的场景，例如 <span class="arithmatex"><span class="MathJax_Preview">f: A\times B\to C</span><script type="math/tex">f: A\times B\to C</script></span>。</li>
 </ul>
 <p>例子：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\mathbb{R} \times \mathbb{R} = \{(x,y)\mid x,y\in\mathbb{R}\} = \mathbb{R}^2.</div>
-<script type="math/tex; mode=display">\mathbb{R} \times \mathbb{R} = \{(x,y)\mid x,y\in\mathbb{R}\} = \mathbb{R}^2.</script>
-</div>
-<p>这是一个平面上的点集（但此时还**只是集合**，尚未有向量结构）。</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\mathbb{R} \times \mathbb{R} = \{(x,y)\mid x,y\in\mathbb{R}\} = \mathbb{R}^2.</span><script type="math/tex">\mathbb{R} \times \mathbb{R} = \{(x,y)\mid x,y\in\mathbb{R}\} = \mathbb{R}^2.</script></span></p>
+<p>这是一个平面上的点集（但此时还<strong>只是集合</strong>，尚未有向量结构）。</p>
 <h3 id="二代数结构层面直积direct-product">二、代数结构层面：直积（direct product）<a class="headerlink" href="#二代数结构层面直积direct-product" title="Permanent link">#</a></h3>
-<p>当 A、B 各自拥有**代数结构**（如群、环、线性空间）时，我们可以在它们的笛卡尔积上**定义代数运算**。<br />
-这样得到的结构叫作**直积**。</p>
+<p>当 A、B 各自拥有<strong>代数结构</strong>（如群、环、线性空间）时，我们可以在它们的笛卡尔积上<strong>定义代数运算</strong>。<br />
+这样得到的结构叫作<strong>直积</strong>。</p>
 <p>群的直积</p>
-<p>设 <span class="arithmatex"><span class="MathJax_Preview">(G_1,\cdot)</span><script type="math/tex">(G_1,\cdot)</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">(G_2,\cdot)</span><script type="math/tex">(G_2,\cdot)</script></span> 是群，则它们的**直积群**定义为：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-G_1 \times G_2 = \{(g_1,g_2)\mid g_i\in G_i\},
-</div>
-<script type="math/tex; mode=display">
-G_1 \times G_2 = \{(g_1,g_2)\mid g_i\in G_i\},
-</script>
-</div>
+<p>设 <span class="arithmatex"><span class="MathJax_Preview">(G_1,\cdot)</span><script type="math/tex">(G_1,\cdot)</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">(G_2,\cdot)</span><script type="math/tex">(G_2,\cdot)</script></span> 是群，则它们的<strong>直积群</strong>定义为：</p>
+<p><span class="arithmatex"><span class="MathJax_Preview"> G_1 \times G_2 = \{(g_1,g_2)\mid g_i\in G_i\}, </span><script type="math/tex"> G_1 \times G_2 = \{(g_1,g_2)\mid g_i\in G_i\}, </script></span></p>
 <p>配上分量定义的群运算：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-(g_1,g_2)\cdot(h_1,h_2) = (g_1 h_1,\; g_2 h_2).
-</div>
-<script type="math/tex; mode=display">
-(g_1,g_2)\cdot(h_1,h_2) = (g_1 h_1,\; g_2 h_2).
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> (g_1,g_2)\cdot(h_1,h_2) = (g_1 h_1,\; g_2 h_2). </span><script type="math/tex"> (g_1,g_2)\cdot(h_1,h_2) = (g_1 h_1,\; g_2 h_2). </script></span></p>
 <p>性质：</p>
 <ul>
 <li>单位元为 <span class="arithmatex"><span class="MathJax_Preview">(e_1,e_2)</span><script type="math/tex">(e_1,e_2)</script></span>；</li>
@@ -4129,32 +4033,14 @@ G_1 \times G_2 = \{(g_1,g_2)\mid g_i\in G_i\},
 </ul>
 <h3 id="2-向量空间的直积或直和">2️ 向量空间的直积（或直和）<a class="headerlink" href="#2-向量空间的直积或直和" title="Permanent link">#</a></h3>
 <p>设 <span class="arithmatex"><span class="MathJax_Preview">V, W</span><script type="math/tex">V, W</script></span> 是定义在同一域 <span class="arithmatex"><span class="MathJax_Preview">\mathbb{F}</span><script type="math/tex">\mathbb{F}</script></span> 上的向量空间。定义：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-V \times W = \{(v,w)\mid v\in V,\; w\in W\},
-</div>
-<script type="math/tex; mode=display">
-V \times W = \{(v,w)\mid v\in V,\; w\in W\},
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> V \times W = \{(v,w)\mid v\in V,\; w\in W\}, </span><script type="math/tex"> V \times W = \{(v,w)\mid v\in V,\; w\in W\}, </script></span></p>
 <p>并规定：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-(v_1,w_1) + (v_2,w_2) = (v_1+v_2,\; w_1+w_2),\qquad
-a(v,w) = (av,\; aw).
-</div>
-<script type="math/tex; mode=display">
-(v_1,w_1) + (v_2,w_2) = (v_1+v_2,\; w_1+w_2),\qquad
-a(v,w) = (av,\; aw).
-</script>
-</div>
-<p>于是 <span class="arithmatex"><span class="MathJax_Preview">V\times W</span><script type="math/tex">V\times W</script></span> 成为一个**新的向量空间**。有时也记作 <span class="arithmatex"><span class="MathJax_Preview">V\oplus W</span><script type="math/tex">V\oplus W</script></span>，若维度有限时两者等价（即同构）。</p>
+<p><span class="arithmatex"><span class="MathJax_Preview"> (v_1,w_1) + (v_2,w_2) = (v_1+v_2,\; w_1+w_2),\qquad a(v,w) = (av,\; aw). </span><script type="math/tex"> (v_1,w_1) + (v_2,w_2) = (v_1+v_2,\; w_1+w_2),\qquad a(v,w) = (av,\; aw). </script></span></p>
+<p>于是 <span class="arithmatex"><span class="MathJax_Preview">V\times W</span><script type="math/tex">V\times W</script></span> 成为一个<strong>新的向量空间</strong>。有时也记作 <span class="arithmatex"><span class="MathJax_Preview">V\oplus W</span><script type="math/tex">V\oplus W</script></span>，若维度有限时两者等价（即同构）。</p>
 <h3 id="张量积">张量积<a class="headerlink" href="#张量积" title="Permanent link">#</a></h3>
 <p>虽然 <span class="arithmatex"><span class="MathJax_Preview">V\times W</span><script type="math/tex">V\times W</script></span> 是一个线性空间，但它的线性结构是：<br />
-$$<br />
-c\,(v,w) = (cv, cw),<br />
-$$<br />
-这意味着两个分量受到**同一个标量**作用。</p>
+<span class="arithmatex"><span class="MathJax_Preview"> c\,(v,w) = (cv, cw), </span><script type="math/tex"> c\,(v,w) = (cv, cw), </script></span><br />
+这意味着两个分量受到<strong>同一个标量</strong>作用。</p>
 <p>而双线性需要的是：一个标量作用在 <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>，另一个标量作用在 <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span>，并且二者乘积 <span class="arithmatex"><span class="MathJax_Preview">ab</span><script type="math/tex">ab</script></span> 出现在结果中。</p>
 <p>具体对比：</p>
 <table>
@@ -4179,38 +4065,17 @@ $$<br />
 </tbody>
 </table>
 <p>因此：</p>
-<p>在 <span class="arithmatex"><span class="MathJax_Preview">V \times W</span><script type="math/tex">V \times W</script></span>的结构中，标量只出现**一次**，<br />
-而在双线性结构中，标量出现**两次（相乘）**。</p>
+<p>在 <span class="arithmatex"><span class="MathJax_Preview">V \times W</span><script type="math/tex">V \times W</script></span>的结构中，标量只出现<strong>一次</strong>，<br />
+而在双线性结构中，标量出现<strong>两次（相乘）</strong>。</p>
 <p>这就是为什么“直积”不能表示双线性结构。</p>
 <h2 id="张量积如何修正这个问题">张量积如何修正这个问题<a class="headerlink" href="#张量积如何修正这个问题" title="Permanent link">#</a></h2>
 <p>张量积 <span class="arithmatex"><span class="MathJax_Preview">V\otimes W</span><script type="math/tex">V\otimes W</script></span> 是通过“强制”实现双线性关系而得的空间。我们定义等价关系：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-( a v_1 + b v_2, w ) \sim a(v_1,w) + b(v_2,w),
-</div>
-<script type="math/tex; mode=display">
-( a v_1 + b v_2, w ) \sim a(v_1,w) + b(v_2,w),
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-( v, a w_1 + b w_2 ) \sim a(v,w_1) + b(v,w_2).
-</div>
-<script type="math/tex; mode=display">
-( v, a w_1 + b w_2 ) \sim a(v,w_1) + b(v,w_2).
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> ( a v_1 + b v_2, w ) \sim a(v_1,w) + b(v_2,w), </span><script type="math/tex"> ( a v_1 + b v_2, w ) \sim a(v_1,w) + b(v_2,w), </script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview"> ( v, a w_1 + b w_2 ) \sim a(v,w_1) + b(v,w_2). </span><script type="math/tex"> ( v, a w_1 + b w_2 ) \sim a(v,w_1) + b(v,w_2). </script></span></p>
 <p>这一步把直积空间“线性化”到双线性世界。</p>
 <p>于是：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-(v,w) \mapsto v\otimes w
-</div>
-<script type="math/tex; mode=display">
-(v,w) \mapsto v\otimes w
-</script>
-</div>
-<p>就是**把单一标量线性**扩展为**双标量线性**的过程。</p>
+<p><span class="arithmatex"><span class="MathJax_Preview"> (v,w) \mapsto v\otimes w </span><script type="math/tex"> (v,w) \mapsto v\otimes w </script></span></p>
+<p>就是<strong>把单一标量线性</strong>扩展为<strong>双标量线性</strong>的过程。</p>
 <p>张量积 实现双线性结构的方法。</p>
 <p>为什么要用张量积？ </p>
 <p>因为我们希望研究双线性映射<span class="arithmatex"><span class="MathJax_Preview">B: V\times W\to X</span><script type="math/tex">B: V\times W\to X</script></span> .  </p>
@@ -4220,22 +4085,12 @@ $$<br />
 <p>所以实现了一个新的线性空间 <span class="arithmatex"><span class="MathJax_Preview">v \otimes w</span><script type="math/tex">v \otimes w</script></span>，使得这个空间 <span class="arithmatex"><span class="MathJax_Preview">v \otimes w</span><script type="math/tex">v \otimes w</script></span> 存在到X的线性映射。</p>
 <p>比较数学化的语言：</p>
 <p>张量积 <span class="arithmatex"><span class="MathJax_Preview">V\otimes W</span><script type="math/tex">V\otimes W</script></span> 是一个向量空间，配有一个双线性映射：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\otimes: V\times W \to V\otimes W,\quad (v,w)\mapsto v\otimes w,</div>
-<script type="math/tex; mode=display">\otimes: V\times W \to V\otimes W,\quad (v,w)\mapsto v\otimes w,</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview">\otimes: V\times W \to V\otimes W,\quad (v,w)\mapsto v\otimes w,</span><script type="math/tex">\otimes: V\times W \to V\otimes W,\quad (v,w)\mapsto v\otimes w,</script></span></p>
 <p>满足以下 <strong>“泛性质” (universal property)</strong>：</p>
 <blockquote>
 <p>对任意向量空间 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 和任意双线性映射 <span class="arithmatex"><span class="MathJax_Preview">B: V\times W\to X</span><script type="math/tex">B: V\times W\to X</script></span>，<br />
 存在唯一的线性映射 <span class="arithmatex"><span class="MathJax_Preview">\tilde{B}: V\otimes W \to X</span><script type="math/tex">\tilde{B}: V\otimes W \to X</script></span>，使得</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-B(v,w) = \tilde{B}(v\otimes w)\quad \forall v,w.
-</div>
-<script type="math/tex; mode=display">
-B(v,w) = \tilde{B}(v\otimes w)\quad \forall v,w.
-</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview"> B(v,w) = \tilde{B}(v\otimes w)\quad \forall v,w. </span><script type="math/tex"> B(v,w) = \tilde{B}(v\otimes w)\quad \forall v,w. </script></span></p>
 </blockquote>
 <p>这一性质使得我们可以把双线性映射「线性化」。</p>
 <p>构造方法（从直积到商空间）</p>
@@ -4243,40 +4098,17 @@ B(v,w) = \tilde{B}(v\otimes w)\quad \forall v,w.
 <li>
 <p>从直积空间出发</p>
 <p>我们从自由向量空间 <span class="arithmatex"><span class="MathJax_Preview">F(V\times W)</span><script type="math/tex">F(V\times W)</script></span> 开始，即以 <span class="arithmatex"><span class="MathJax_Preview">V\times W</span><script type="math/tex">V\times W</script></span> 为基的所有有限线性组合：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\sum_i a_i (v_i, w_i).</div>
-<script type="math/tex; mode=display">\sum_i a_i (v_i, w_i).</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview">\sum_i a_i (v_i, w_i).</span><script type="math/tex">\sum_i a_i (v_i, w_i).</script></span></p>
 </li>
 <li>
 <p>加上线性关系（生成等价关系）</p>
-<p>为了让 <span class="arithmatex"><span class="MathJax_Preview">(v,w)\mapsto v\otimes w</span><script type="math/tex">(v,w)\mapsto v\otimes w</script></span> 成为**双线性映射**，我们必须在这个自由空间中“强制”以下等式成立：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
-\begin{aligned}
-(v_1+v_2, w) &amp;\sim (v_1,w) + (v_2,w),\\
-(v, w_1+w_2) &amp;\sim (v,w_1) + (v,w_2),\\
-(a v, w) &amp;\sim a(v,w),\\
-(v, b w) &amp;\sim b(v,w).
-\end{aligned}
-</div>
-<script type="math/tex; mode=display">
-\begin{aligned}
-(v_1+v_2, w) &\sim (v_1,w) + (v_2,w),\\
-(v, w_1+w_2) &\sim (v,w_1) + (v,w_2),\\
-(a v, w) &\sim a(v,w),\\
-(v, b w) &\sim b(v,w).
-\end{aligned}
-</script>
-</div>
+<p>为了让 <span class="arithmatex"><span class="MathJax_Preview">(v,w)\mapsto v\otimes w</span><script type="math/tex">(v,w)\mapsto v\otimes w</script></span> 成为<strong>双线性映射</strong>，我们必须在这个自由空间中“强制”以下等式成立：</p>
+<p><span class="arithmatex"><span class="MathJax_Preview"> \begin{aligned} (v_1+v_2, w) &amp;\sim (v_1,w) + (v_2,w),\\ (v, w_1+w_2) &amp;\sim (v,w_1) + (v,w_2),\\ (a v, w) &amp;\sim a(v,w),\\ (v, b w) &amp;\sim b(v,w). \end{aligned} </span><script type="math/tex"> \begin{aligned} (v_1+v_2, w) &\sim (v_1,w) + (v_2,w),\\ (v, w_1+w_2) &\sim (v,w_1) + (v,w_2),\\ (a v, w) &\sim a(v,w),\\ (v, b w) &\sim b(v,w). \end{aligned} </script></span></p>
 </li>
 <li>
 <p>取商空间</p>
 <p>定义：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">V\otimes W = F(V\times W) / R,</div>
-<script type="math/tex; mode=display">V\otimes W = F(V\times W) / R,</script>
-</div>
+<p><span class="arithmatex"><span class="MathJax_Preview">V\otimes W = F(V\times W) / R,</span><script type="math/tex">V\otimes W = F(V\times W) / R,</script></span></p>
 <p>其中 <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> 是由上述所有关系生成的子空间。</p>
 <p>在这个商空间中，我们记等价类为 <span class="arithmatex"><span class="MathJax_Preview">v\otimes w = [(v,w)]</span><script type="math/tex">v\otimes w = [(v,w)]</script></span>。</p>
 <p>(物理的群论里常见错误， 讲述群的直积的时候就和张量积的符号混用， 在群表示论的时候，默认选取了矩阵的Kronecker product， 却没有意识到这是一个很强的条件。 导致学物理的一直以为群的直积就是张量积.  其实直和才和群的直积几乎是一个概念，没有加入另外的条件只需要保群的乘法。  而张量积有双线性的要求)</p>
@@ -4287,11 +4119,11 @@ B(v,w) = \tilde{B}(v\otimes w)\quad \forall v,w.
 <div class="md-source-file">
   <small>
     
-      最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月7日 06:59:07 UTC"><span class="timeago" datetime="2025-11-07T06:59:07+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月7日 06:59:07 UTC">2025-11-07</span>
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年2月25日 11:33:13 UTC"><span class="timeago" datetime="2026-02-25T11:33:13+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年2月25日 11:33:13 UTC">2026-02-25</span>
       
         <br>
-        创建日期:
+        Created:
         <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月6日 07:20:21 UTC"><span class="timeago" datetime="2025-11-06T07:20:21+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月6日 07:20:21 UTC">2025-11-06</span>
       
     
@@ -4336,7 +4168,7 @@ B(v,w) = \tilde{B}(v\otimes w)\quad \forall v,w.
           
             <a href="#" class="md-top md-icon" data-md-component="top" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-              回到页面顶部
+              Back to top
             </a>
           
         </main>
@@ -4364,10 +4196,18 @@ B(v,w) = \tilde{B}(v\otimes w)\quad \forall v,w.
         <div class="md-dialog__inner md-typeset"></div>
       </div>
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
       
       
         <script src="../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+        
+          <script src="../../../../js/timeago.min.js"></script>
+        
+          <script src="../../../../js/timeago_mkdocs_material.js"></script>
+        
+          <script src="../../../../js/timeago.min.js"></script>
+        
+          <script src="../../../../js/timeago_mkdocs_material.js"></script>
         
           <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
         
