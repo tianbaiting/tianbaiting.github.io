@@ -31,12 +31,7 @@ markdown_extensions:
       linenums: true  # 启用行号
   - attr_list
   - pymdownx.arithmatex:
-      inline_syntax:
-        - dollar
-        - round
-      block_syntax:
-        - dollar
-        - square
+      generic: true
   - pymdownx.tabbed
   - nl2br
   - toc:
@@ -94,7 +89,8 @@ plugins:
 
 
 extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
+  - js/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - https://d3js.org/d3.v7.min.js
   - js/scheme.js
   - js/graph.js
