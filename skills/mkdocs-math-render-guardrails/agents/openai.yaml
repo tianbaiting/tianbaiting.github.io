@@ -1,0 +1,4 @@
+interface:
+  display_name: "MkDocs Math Guardrails"
+  short_description: "Fix broken MkDocs math rendering deterministically"
+  default_prompt: "Use $mkdocs-math-render-guardrails to normalize Markdown equations and fix MkDocs math rendering failures."
