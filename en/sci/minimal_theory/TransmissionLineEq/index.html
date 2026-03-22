@@ -1319,6 +1319,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
@@ -1857,6 +1859,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../minimal_code/vscode_plug/" class="md-nav__link">
+        VS Code 插件开发指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../minimal_code/vscodetunnel/" class="md-nav__link">
         VS Code Tunnel
       </a>
@@ -2064,8 +2080,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lossless-line-r0-g0r0-g0" class="md-nav__link">
-    Lossless Line (R=0, G=0R=0, G=0)
+  <a href="#lossless-line-r0-g0" class="md-nav__link">
+    Lossless Line (\(R=0, G=0\))
   </a>
   
 </li>
@@ -2666,7 +2682,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/D_polar_exp/other_polarmeter/" class="md-nav__link">
-        其他研究组的polarimeter
+        Polarimeters in Other Research Groups
       </a>
     </li>
   
@@ -3446,8 +3462,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lossless-line-r0-g0r0-g0" class="md-nav__link">
-    Lossless Line (R=0, G=0R=0, G=0)
+  <a href="#lossless-line-r0-g0" class="md-nav__link">
+    Lossless Line (\(R=0, G=0\))
   </a>
   
 </li>
@@ -3532,317 +3548,140 @@
 
 <h2 id="electromagnetic-wave-transmission-equation-transmission-line-analogy">Electromagnetic Wave Transmission Equation (Transmission Line Analogy)<a class="headerlink" href="#electromagnetic-wave-transmission-equation-transmission-line-analogy" title="Permanent link">#</a></h2>
 <h3 id="maxwells-equations">Maxwell's Equations<a class="headerlink" href="#maxwells-equations" title="Permanent link">#</a></h3>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 \nabla \cdot E = \frac{\rho}{\varepsilon_0} = 0
-</div>
-<script type="math/tex; mode=display">
-\nabla \cdot E = \frac{\rho}{\varepsilon_0} = 0
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 \nabla \cdot B = 0
-</div>
-<script type="math/tex; mode=display">
-\nabla \cdot B = 0
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 \nabla \times E = -\frac{\partial B}{\partial t}
-</div>
-<script type="math/tex; mode=display">
-\nabla \times E = -\frac{\partial B}{\partial t}
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 \nabla \times B = \mu_0 \varepsilon_0 \frac{\partial E}{\partial t}
-</div>
-<script type="math/tex; mode=display">
-\nabla \times B = \mu_0 \varepsilon_0 \frac{\partial E}{\partial t}
-</script>
-</div>
+\]</div>
 <p>Derivation:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 \nabla \times (\nabla \times E) = -\frac{\partial}{\partial t}(\nabla \times B)
 = -\frac{\partial}{\partial t}(\mu_0 \varepsilon_0 \frac{\partial E}{\partial t})
 = -\mu_0 \varepsilon_0 \frac{\partial^2 E}{\partial t^2}
-</div>
-<script type="math/tex; mode=display">
-\nabla \times (\nabla \times E) = -\frac{\partial}{\partial t}(\nabla \times B)
-= -\frac{\partial}{\partial t}(\mu_0 \varepsilon_0 \frac{\partial E}{\partial t})
-= -\mu_0 \varepsilon_0 \frac{\partial^2 E}{\partial t^2}
-</script>
-</div>
+\]</div>
 <p>Tensor form:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 \nabla \times (\nabla \times E) = \varepsilon_{imn} \partial_m (\varepsilon_{njk} \partial_j E_k)
 = (\varepsilon_{imn} \varepsilon_{njk}) \partial_m \partial_j E_k
 = (\delta_{ij} \delta_{mk} - \delta_{ik} \delta_{mj}) \partial_m \partial_j E_k
 = \partial_j \partial_m E_m - (\nabla \cdot \nabla) E
-</div>
-<script type="math/tex; mode=display">
-\nabla \times (\nabla \times E) = \varepsilon_{imn} \partial_m (\varepsilon_{njk} \partial_j E_k)
-= (\varepsilon_{imn} \varepsilon_{njk}) \partial_m \partial_j E_k
-= (\delta_{ij} \delta_{mk} - \delta_{ik} \delta_{mj}) \partial_m \partial_j E_k
-= \partial_j \partial_m E_m - (\nabla \cdot \nabla) E
-</script>
-</div>
+\]</div>
 <p>Final wave equation:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 -(\nabla \cdot \nabla) E = -\mu_0 \varepsilon_0 \frac{\partial^2 E}{\partial t^2}
-</div>
-<script type="math/tex; mode=display">
--(\nabla \cdot \nabla) E = -\mu_0 \varepsilon_0 \frac{\partial^2 E}{\partial t^2}
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 \left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}\right) E = \mu_0 \varepsilon_0 \frac{\partial^2 E}{\partial t^2}
-</div>
-<script type="math/tex; mode=display">
-\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}\right) E = \mu_0 \varepsilon_0 \frac{\partial^2 E}{\partial t^2}
-</script>
-</div>
+\]</div>
 <p>Wave speed:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
-</div>
-<script type="math/tex; mode=display">
-c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
-</script>
-</div>
+\]</div>
 <p>Plane wave solution:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 E = E_0 e^{i\omega t - i\frac{\omega}{c} z}
-</div>
-<script type="math/tex; mode=display">
-E = E_0 e^{i\omega t - i\frac{\omega}{c} z}
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 B = B_0 e^{i\omega t - i\frac{\omega}{c} z}
-</div>
-<script type="math/tex; mode=display">
-B = B_0 e^{i\omega t - i\frac{\omega}{c} z}
-</script>
-</div>
-<p><span class="arithmatex"><span class="MathJax_Preview">E, B</span><script type="math/tex">E, B</script></span> are instantaneous quantities, <span class="arithmatex"><span class="MathJax_Preview">E_0, B_0</span><script type="math/tex">E_0, B_0</script></span> are perpendicular to each other.</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<p><span class="arithmatex">\(E, B\)</span> are instantaneous quantities, <span class="arithmatex">\(E_0, B_0\)</span> are perpendicular to each other.</p>
+<div class="arithmatex">\[
 -\frac{i\omega}{c} E_0 = -B_0 \cdot i\omega
-</div>
-<script type="math/tex; mode=display">
--\frac{i\omega}{c} E_0 = -B_0 \cdot i\omega
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 E_0 = cB_0
-</div>
-<script type="math/tex; mode=display">
-E_0 = cB_0
-</script>
-</div>
+\]</div>
 <hr />
 <h2 id="transmission-line">Transmission Line<a class="headerlink" href="#transmission-line" title="Permanent link">#</a></h2>
 <h3 id="telegraph-equations-transmission-line-equations">Telegraph Equations (Transmission Line Equations)<a class="headerlink" href="#telegraph-equations-transmission-line-equations" title="Permanent link">#</a></h3>
 <p><img alt="Telegraph equation illustration" src="../../../../sci/minimal_theory/assets/TransmissionLineEq.zh/1755069973511.png" /></p>
 <h4 id="equation-derivation">Equation Derivation<a class="headerlink" href="#equation-derivation" title="Permanent link">#</a></h4>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 u(t,x) = u(t,x+\Delta x) + L\Delta x\frac{\partial i(t,x)}{\partial t} + R\Delta x \cdot i(t,x)
-</div>
-<script type="math/tex; mode=display">
-u(t,x) = u(t,x+\Delta x) + L\Delta x\frac{\partial i(t,x)}{\partial t} + R\Delta x \cdot i(t,x)
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 i(t,x) = i(t,x+\Delta x) + C\Delta x \frac{\partial u(t,x+\Delta x)}{\partial t} + G\Delta x \cdot u(t,x+\Delta x)
-</div>
-<script type="math/tex; mode=display">
-i(t,x) = i(t,x+\Delta x) + C\Delta x \frac{\partial u(t,x+\Delta x)}{\partial t} + G\Delta x \cdot u(t,x+\Delta x)
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 \begin{cases}
 -\frac{\partial u}{\partial x} = Ri + L\frac{\partial i}{\partial t} \\
 -\frac{\partial i}{\partial x} = Gu + C\frac{\partial u}{\partial t}
 \end{cases}
-</div>
-<script type="math/tex; mode=display">
-\begin{cases}
--\frac{\partial u}{\partial x} = Ri + L\frac{\partial i}{\partial t} \\
--\frac{\partial i}{\partial x} = Gu + C\frac{\partial u}{\partial t}
-\end{cases}
-</script>
-</div>
-<h4 id="lossless-line-r0-g0r0-g0">Lossless Line (<span class="arithmatex"><span class="MathJax_Preview">R=0, G=0</span><script type="math/tex">R=0, G=0</script></span>)<a class="headerlink" href="#lossless-line-r0-g0r0-g0" title="Permanent link">#</a></h4>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<h4 id="lossless-line-r0-g0">Lossless Line (<span class="arithmatex">\(R=0, G=0\)</span>)<a class="headerlink" href="#lossless-line-r0-g0" title="Permanent link">#</a></h4>
+<div class="arithmatex">\[
 \begin{cases}
 -\frac{\partial u}{\partial x} = L\frac{\partial i}{\partial t} \\
 -\frac{\partial i}{\partial x} = C\frac{\partial u}{\partial t}
 \end{cases}
-</div>
-<script type="math/tex; mode=display">
-\begin{cases}
--\frac{\partial u}{\partial x} = L\frac{\partial i}{\partial t} \\
--\frac{\partial i}{\partial x} = C\frac{\partial u}{\partial t}
-\end{cases}
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 \frac{\partial^2 u}{\partial x^2} = LC\frac{\partial^2 u}{\partial t^2}
-</div>
-<script type="math/tex; mode=display">
-\frac{\partial^2 u}{\partial x^2} = LC\frac{\partial^2 u}{\partial t^2}
-</script>
-</div>
+\]</div>
 <p>Wave speed:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 v = \frac{1}{\sqrt{LC}}
-</div>
-<script type="math/tex; mode=display">
-v = \frac{1}{\sqrt{LC}}
-</script>
-</div>
+\]</div>
 <p><img alt="Transmission line diagram" src="../../../../sci/minimal_theory/assets/TransmissionLineEq.zh/1755071531442.png" /></p>
 <hr />
 <h3 id="boundary-conditions">Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permanent link">#</a></h3>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 \begin{cases}
 u(t,x) - i(t,x)Z_s = 0 \\
 u(t,L) = i(t,L)Z_L
 \end{cases}
-</div>
-<script type="math/tex; mode=display">
-\begin{cases}
-u(t,x) - i(t,x)Z_s = 0 \\
-u(t,L) = i(t,L)Z_L
-\end{cases}
-</script>
-</div>
+\]</div>
 <p>Initial values:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 u(t=0,x) = 0, \quad i(t=0,x) = 0
-</div>
-<script type="math/tex; mode=display">
-u(t=0,x) = 0, \quad i(t=0,x) = 0
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 \frac{\partial u}{\partial t}(t=0,x) = 0, \quad \frac{\partial i}{\partial t}(t=0,x) = 0
-</div>
-<script type="math/tex; mode=display">
-\frac{\partial u}{\partial t}(t=0,x) = 0, \quad \frac{\partial i}{\partial t}(t=0,x) = 0
-</script>
-</div>
+\]</div>
 <hr />
 <h3 id="laplace-transform">Laplace Transform<a class="headerlink" href="#laplace-transform" title="Permanent link">#</a></h3>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 \mathcal{L}[i(t,x)] = \tilde{I}(s,x)
-</div>
-<script type="math/tex; mode=display">
-\mathcal{L}[i(t,x)] = \tilde{I}(s,x)
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 \mathcal{L}[u(t,x)] = \tilde{U}(s,x)
-</div>
-<script type="math/tex; mode=display">
-\mathcal{L}[u(t,x)] = \tilde{U}(s,x)
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 \begin{cases}
 -\frac{\partial \tilde{U}}{\partial x} = sL\tilde{I} \\
 -\frac{\partial \tilde{I}}{\partial x} = sC\tilde{U}
 \end{cases}
-</div>
-<script type="math/tex; mode=display">
-\begin{cases}
--\frac{\partial \tilde{U}}{\partial x} = sL\tilde{I} \\
--\frac{\partial \tilde{I}}{\partial x} = sC\tilde{U}
-\end{cases}
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 \frac{\partial^2 \tilde{U}}{\partial x^2} = s^2LC\tilde{U}
-</div>
-<script type="math/tex; mode=display">
-\frac{\partial^2 \tilde{U}}{\partial x^2} = s^2LC\tilde{U}
-</script>
-</div>
+\]</div>
 <p>Solution:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 \tilde{U}(s,x) = Ae^{-s\sqrt{LC}x} + Be^{+s\sqrt{LC}x}
-</div>
-<script type="math/tex; mode=display">
-\tilde{U}(s,x) = Ae^{-s\sqrt{LC}x} + Be^{+s\sqrt{LC}x}
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 \tilde{I}(s,x) = \frac{1}{Z_c}(Ae^{-s\sqrt{LC}x} - Be^{+s\sqrt{LC}x})
-</div>
-<script type="math/tex; mode=display">
-\tilde{I}(s,x) = \frac{1}{Z_c}(Ae^{-s\sqrt{LC}x} - Be^{+s\sqrt{LC}x})
-</script>
-</div>
+\]</div>
 <p>Where:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 Z_c = \sqrt{\frac{L}{C}}
-</div>
-<script type="math/tex; mode=display">
-Z_c = \sqrt{\frac{L}{C}}
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 A_1 = \frac{Z_c}{Z_s+Z_c} \tilde{U}_0(s) + \frac{Z_s-Z_c}{Z_s+Z_c} B_1
-</div>
-<script type="math/tex; mode=display">
-A_1 = \frac{Z_c}{Z_s+Z_c} \tilde{U}_0(s) + \frac{Z_s-Z_c}{Z_s+Z_c} B_1
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 B_1 = \frac{Z_L-Z_c}{Z_L+Z_c} A_1 e^{-2\gamma l}
-</div>
-<script type="math/tex; mode=display">
-B_1 = \frac{Z_L-Z_c}{Z_L+Z_c} A_1 e^{-2\gamma l}
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 \gamma = s\sqrt{LC}
-</div>
-<script type="math/tex; mode=display">
-\gamma = s\sqrt{LC}
-</script>
-</div>
+\]</div>
 <!-- 
 ### If the source end is matched $Z_s = Z_c$
 
@@ -3856,74 +3695,38 @@ $\gamma = s\sqrt{LC}$
 <hr />
 <h3 id="laplace-inverse-transform">Laplace Inverse Transform<a class="headerlink" href="#laplace-inverse-transform" title="Permanent link">#</a></h3>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\tilde{U}_0(s) \rightarrow U_0(t)</span><script type="math/tex">\tilde{U}_0(s) \rightarrow U_0(t)</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\tilde{U}_0(s)e^{-\gamma x} \rightarrow U_0(t-\sqrt{LC}x)</span><script type="math/tex">\tilde{U}_0(s)e^{-\gamma x} \rightarrow U_0(t-\sqrt{LC}x)</script></span> (traveling wave)</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\tilde{U}_0(s)e^{+\gamma x} \rightarrow U_0(t+\sqrt{LC}x)</span><script type="math/tex">\tilde{U}_0(s)e^{+\gamma x} \rightarrow U_0(t+\sqrt{LC}x)</script></span> (reflected wave)</li>
+<li><span class="arithmatex">\(\tilde{U}_0(s) \rightarrow U_0(t)\)</span></li>
+<li><span class="arithmatex">\(\tilde{U}_0(s)e^{-\gamma x} \rightarrow U_0(t-\sqrt{LC}x)\)</span> (traveling wave)</li>
+<li><span class="arithmatex">\(\tilde{U}_0(s)e^{+\gamma x} \rightarrow U_0(t+\sqrt{LC}x)\)</span> (reflected wave)</li>
 </ul>
 <hr />
 <h3 id="source-end-matching">Source End Matching<a class="headerlink" href="#source-end-matching" title="Permanent link">#</a></h3>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 \quad Z_s = Z_c
-</div>
-<script type="math/tex; mode=display">
-\quad Z_s = Z_c
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 u(t,x) = \frac{1}{2} U_0(t-\frac{x}{v}) + \frac{1}{2}\rho U_0(t-(2l-x)/v)
-</div>
-<script type="math/tex; mode=display">
-u(t,x) = \frac{1}{2} U_0(t-\frac{x}{v}) + \frac{1}{2}\rho U_0(t-(2l-x)/v)
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 \rho = \frac{Z_L-Z_c}{Z_L+Z_c}
-</div>
-<script type="math/tex; mode=display">
-\rho = \frac{Z_L-Z_c}{Z_L+Z_c}
-</script>
-</div>
+\]</div>
 <hr />
 <h3 id="instantaneous-matching-example">Instantaneous Matching Example<a class="headerlink" href="#instantaneous-matching-example" title="Permanent link">#</a></h3>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 R_s = 100\Omega, \quad Z_c = 150\Omega, \quad Z_L = 1k\Omega, \quad
 V_{s} = 75V
-</div>
-<script type="math/tex; mode=display">
-R_s = 100\Omega, \quad Z_c = 150\Omega, \quad Z_L = 1k\Omega, \quad
-V_{s} = 75V
-</script>
-</div>
+\]</div>
 <p>Wire transmission to the terminal, reflection:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 I = \frac{V}{Z_c+Z_s}
-</div>
-<script type="math/tex; mode=display">
-I = \frac{V}{Z_c+Z_s}
-</script>
-</div>
-<p>At <span class="arithmatex"><span class="MathJax_Preview">t=0</span><script type="math/tex">t=0</script></span>, input terminal, wave <span class="arithmatex"><span class="MathJax_Preview">V_i</span><script type="math/tex">V_i</script></span>:</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<p>At <span class="arithmatex">\(t=0\)</span>, input terminal, wave <span class="arithmatex">\(V_i\)</span>:</p>
+<div class="arithmatex">\[
 V_i = \frac{Z_c}{Z_c+Z_s}V_s = 6V
-</div>
-<script type="math/tex; mode=display">
-V_i = \frac{Z_c}{Z_c+Z_s}V_s = 6V
-</script>
-</div>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+\]</div>
+<div class="arithmatex">\[
 I_i = \frac{1}{Z_c+Z_s}V_s = 40mA
-</div>
-<script type="math/tex; mode=display">
-I_i = \frac{1}{Z_c+Z_s}V_s = 40mA
-</script>
-</div>
+\]</div>
 <table>
 <thead>
 <tr>
@@ -3938,38 +3741,33 @@ I_i = \frac{1}{Z_c+Z_s}V_s = 40mA
 <tbody>
 <tr>
 <td>0 - 2τ</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">V_i = 6V</span><script type="math/tex">V_i = 6V</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">I_i = 40mA</span><script type="math/tex">I_i = 40mA</script></span></td>
+<td><span class="arithmatex">\(V_i = 6V\)</span></td>
+<td><span class="arithmatex">\(I_i = 40mA\)</span></td>
 <td>0 - 2τ</td>
 <td>0</td>
 <td>0</td>
 </tr>
 <tr>
 <td>2τ⁺ - 4τ</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">V_i + (V_{r1} + V_{r2}) = 9.5V</span><script type="math/tex">V_i + (V_{r1} + V_{r2}) = 9.5V</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">I_i + (I_{r1} + I_{r2}) = 4mA</span><script type="math/tex">I_i + (I_{r1} + I_{r2}) = 4mA</script></span></td>
+<td><span class="arithmatex">\(V_i + (V_{r1} + V_{r2}) = 9.5V\)</span></td>
+<td><span class="arithmatex">\(I_i + (I_{r1} + I_{r2}) = 4mA\)</span></td>
 <td>τ⁺ - 3τ</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">V_i + V_{r1} = 10.4V</span><script type="math/tex">V_i + V_{r1} = 10.4V</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">I_i + I_{r1} = 10mA</span><script type="math/tex">I_i + I_{r1} = 10mA</script></span></td>
+<td><span class="arithmatex">\(V_i + V_{r1} = 10.4V\)</span></td>
+<td><span class="arithmatex">\(I_i + I_{r1} = 10mA\)</span></td>
 </tr>
 <tr>
 <td>4τ⁺ - 6τ</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">V_i + (V_{r1} + V_{r2}) + (V_{r3} + V_{r4}) = 8.9V</span><script type="math/tex">V_i + (V_{r1} + V_{r2}) + (V_{r3} + V_{r4}) = 8.9V</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">I_i + (I_{r1} + I_{r2}) + (I_{r3} + I_{r4}) = 9.3mA</span><script type="math/tex">I_i + (I_{r1} + I_{r2}) + (I_{r3} + I_{r4}) = 9.3mA</script></span></td>
+<td><span class="arithmatex">\(V_i + (V_{r1} + V_{r2}) + (V_{r3} + V_{r4}) = 8.9V\)</span></td>
+<td><span class="arithmatex">\(I_i + (I_{r1} + I_{r2}) + (I_{r3} + I_{r4}) = 9.3mA\)</span></td>
 <td>3τ⁺ - 5τ</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">(V_i + V_{r1}) + (V_{r2} + V_{r3}) = 8.9V</span><script type="math/tex">(V_i + V_{r1}) + (V_{r2} + V_{r3}) = 8.9V</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">(I_i + I_{r1}) + (I_{r2} + I_{r3}) = 8.4mA</span><script type="math/tex">(I_i + I_{r1}) + (I_{r2} + I_{r3}) = 8.4mA</script></span></td>
+<td><span class="arithmatex">\((V_i + V_{r1}) + (V_{r2} + V_{r3}) = 8.9V\)</span></td>
+<td><span class="arithmatex">\((I_i + I_{r1}) + (I_{r2} + I_{r3}) = 8.4mA\)</span></td>
 </tr>
 </tbody>
 </table>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<div class="arithmatex">\[
 \rho_L = \frac{1000-150}{1000+150} = 0.74
-</div>
-<script type="math/tex; mode=display">
-\rho_L = \frac{1000-150}{1000+150} = 0.74
-</script>
-</div>
+\]</div>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
 <p>As long as the characteristic impedance and load impedance are not matched, reflection will occur. If both the source and load ends are mismatched, multiple reflections will occur.</p>
@@ -4074,7 +3872,9 @@ I_i = \frac{1}{Z_c+Z_s}V_s = 40mA
         
           <script src="../../../../js/timeago_mkdocs_material.js"></script>
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+          <script src="../../../../js/mathjax.js"></script>
+        
+          <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
         
           <script src="https://d3js.org/d3.v7.min.js"></script>
         

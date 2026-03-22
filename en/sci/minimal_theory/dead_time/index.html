@@ -1319,6 +1319,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
@@ -1845,6 +1847,20 @@
     <li class="md-nav__item">
       <a href="../../minimal_code/vscode_lsp/" class="md-nav__link">
         如何解决 VS Code 中的 C/C++ include 报错问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/vscode_plug/" class="md-nav__link">
+        VS Code 插件开发指南
       </a>
     </li>
   
@@ -2645,7 +2661,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/D_polar_exp/other_polarmeter/" class="md-nav__link">
-        其他研究组的polarimeter
+        Polarimeters in Other Research Groups
       </a>
     </li>
   
@@ -3503,7 +3519,7 @@
 <h3 id="12-基础概念死时间的两种类型">1.2 基础概念：死时间的两种类型<a class="headerlink" href="#12-基础概念死时间的两种类型" title="Permanent link">#</a></h3>
 <p>死时间主要分为两种，理解它们的区别至关重要。</p>
 <ul>
-<li><strong>非扩展型 (non-paralyzable)</strong>：探测器记录一个事件后，进入一个固定长度 <span class="arithmatex"><span class="MathJax_Preview">T_D</span><script type="math/tex">T_D</script></span> 的死时间。在此期间到达的任何新事件都会被<strong>完全忽略</strong>，且不会影响当前死时间窗口的结束时刻。</li>
+<li><strong>非扩展型 (non-paralyzable)</strong>：探测器记录一个事件后，进入一个固定长度 <span class="arithmatex">\(T_D\)</span> 的死时间。在此期间到达的任何新事件都会被<strong>完全忽略</strong>，且不会影响当前死时间窗口的结束时刻。</li>
 <li><strong>扩展型 (paralyzable)</strong>：探测器记录一个事件后，启动一个死时间窗口。如果在这个窗口<strong>内部</strong>又有新事件到达，死时间会从这个新事件的时刻点<strong>重新开始计算</strong>。</li>
 </ul>
 <p>这两种类型的区别可以参考论文中的图3.1。SK的电子学系统属于非扩展型死时间系统。</p>
@@ -3511,24 +3527,18 @@
 <h2 id="第二部分核心理论---非齐次泊松过程的死时间修正">第二部分：核心理论 - 非齐次泊松过程的死时间修正<a class="headerlink" href="#第二部分核心理论---非齐次泊松过程的死时间修正" title="Permanent link">#</a></h2>
 <p>本章的第一个主要贡献是将在齐次泊松过程上已经很成熟的死时间理论，推广到了非齐次泊松过程。</p>
 <h3 id="21-真实事件率与观测事件率的关系">2.1 真实事件率与观测事件率的关系<a class="headerlink" href="#21-真实事件率与观测事件率的关系" title="Permanent link">#</a></h3>
-<p>假设真实的事件发生率为 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{R}(t)</span><script type="math/tex">\mathcal{R}(t)</script></span>，观测到的事件发生率为 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{R}^m(t)</span><script type="math/tex">\mathcal{R}^m(t)</script></span>，死时间长度为 <span class="arithmatex"><span class="MathJax_Preview">T_D</span><script type="math/tex">T_D</script></span>。</p>
+<p>假设真实的事件发生率为 <span class="arithmatex">\(\mathcal{R}(t)\)</span>，观测到的事件发生率为 <span class="arithmatex">\(\mathcal{R}^m(t)\)</span>，死时间长度为 <span class="arithmatex">\(T_D\)</span>。</p>
 <ul>
 <li>
 <p><strong>对于扩展型死时间</strong>：<br />
-    一个事件在时刻 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 被观测到的条件是：1) 它在 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 时刻真实发生；2) 在它之前的 <span class="arithmatex"><span class="MathJax_Preview">(t-T_D, t)</span><script type="math/tex">(t-T_D, t)</script></span> 时间段内，<strong>没有其他真实事件</strong>发生。因此，观测率是真实率乘以一个存活概率。</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\mathcal{R}^{m,para}(t) = \mathcal{R}(t) e^{-\int_{t-T_{D}}^{t}\mathcal{R}(t')dt'}</div>
-<script type="math/tex; mode=display">\mathcal{R}^{m,para}(t) = \mathcal{R}(t) e^{-\int_{t-T_{D}}^{t}\mathcal{R}(t')dt'}</script>
-</div>
+    一个事件在时刻 <span class="arithmatex">\(t\)</span> 被观测到的条件是：1) 它在 <span class="arithmatex">\(t\)</span> 时刻真实发生；2) 在它之前的 <span class="arithmatex">\((t-T_D, t)\)</span> 时间段内，<strong>没有其他真实事件</strong>发生。因此，观测率是真实率乘以一个存活概率。</p>
+<div class="arithmatex">\[\mathcal{R}^{m,para}(t) = \mathcal{R}(t) e^{-\int_{t-T_{D}}^{t}\mathcal{R}(t')dt'}\]</div>
 </li>
 <li>
 <p><strong>对于非扩展型死时间</strong>：<br />
-    一个事件在时刻 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 被观测到的条件是：1) 它在 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 时刻真实发生；2) 在它之前的 <span class="arithmatex"><span class="MathJax_Preview">(t-T_D, t)</span><script type="math/tex">(t-T_D, t)</script></span> 时间段内，<strong>没有其他事件被观测到</strong>。这就导致了一个更复杂的关系：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">\mathcal{R}^{m,non}(t) = \mathcal{R}(t) \left( 1 - \int_{t-T_{D}}^{t}\mathcal{R}^{m,non}(t')dt' \right)</div>
-<script type="math/tex; mode=display">\mathcal{R}^{m,non}(t) = \mathcal{R}(t) \left( 1 - \int_{t-T_{D}}^{t}\mathcal{R}^{m,non}(t')dt' \right)</script>
-</div>
-<p>这个公式是一个迭代关系，<span class="arithmatex"><span class="MathJax_Preview">\mathcal{R}^{m,non}</span><script type="math/tex">\mathcal{R}^{m,non}</script></span> 出现在了等式的两边，求解起来非常困难。</p>
+    一个事件在时刻 <span class="arithmatex">\(t\)</span> 被观测到的条件是：1) 它在 <span class="arithmatex">\(t\)</span> 时刻真实发生；2) 在它之前的 <span class="arithmatex">\((t-T_D, t)\)</span> 时间段内，<strong>没有其他事件被观测到</strong>。这就导致了一个更复杂的关系：</p>
+<div class="arithmatex">\[\mathcal{R}^{m,non}(t) = \mathcal{R}(t) \left( 1 - \int_{t-T_{D}}^{t}\mathcal{R}^{m,non}(t')dt' \right)\]</div>
+<p>这个公式是一个迭代关系，<span class="arithmatex">\(\mathcal{R}^{m,non}\)</span> 出现在了等式的两边，求解起来非常困难。</p>
 </li>
 </ul>
 <h3 id="22-构建概率模型">2.2 构建概率模型<a class="headerlink" href="#22-构建概率模型" title="Permanent link">#</a></h3>
@@ -3544,37 +3554,37 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><strong>软件触发</strong></td>
-<td style="text-align: left;"><span class="arithmatex"><span class="MathJax_Preview">\mathcal{R}(t_i) dt e^{-\int \mathcal{R}(t) dt}</span><script type="math/tex">\mathcal{R}(t_i) dt e^{-\int \mathcal{R}(t) dt}</script></span></td>
-<td style="text-align: left;"><span class="arithmatex"><span class="MathJax_Preview">e^{-\int \mathcal{R}(t) dt}</span><script type="math/tex">e^{-\int \mathcal{R}(t) dt}</script></span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\mathcal{R}(t_i) dt e^{-\int \mathcal{R}(t) dt}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(e^{-\int \mathcal{R}(t) dt}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>扩展型死时间</strong></td>
-<td style="text-align: left;"><span class="arithmatex"><span class="MathJax_Preview">\mathcal{R}^m(t_i) dt = \mathcal{R}(t_i) dt e^{-\int_{t_i-T_D}^{t_i}\mathcal{R}(t)dt}</span><script type="math/tex">\mathcal{R}^m(t_i) dt = \mathcal{R}(t_i) dt e^{-\int_{t_i-T_D}^{t_i}\mathcal{R}(t)dt}</script></span></td>
-<td style="text-align: left;"><span class="arithmatex"><span class="MathJax_Preview">1 - \int_{T_L}^{T_R}\mathcal{R}^m(t)dt</span><script type="math/tex">1 - \int_{T_L}^{T_R}\mathcal{R}^m(t)dt</script></span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\mathcal{R}^m(t_i) dt = \mathcal{R}(t_i) dt e^{-\int_{t_i-T_D}^{t_i}\mathcal{R}(t)dt}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(1 - \int_{T_L}^{T_R}\mathcal{R}^m(t)dt\)</span></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>非扩展型死时间</strong></td>
-<td style="text-align: left;"><span class="arithmatex"><span class="MathJax_Preview">\mathcal{R}^m(t_i) dt = \mathcal{R}(t_i) dt (1 - \int_{t_i-T_D}^{t_i}\mathcal{R}^m(t)dt)</span><script type="math/tex">\mathcal{R}^m(t_i) dt = \mathcal{R}(t_i) dt (1 - \int_{t_i-T_D}^{t_i}\mathcal{R}^m(t)dt)</script></span></td>
-<td style="text-align: left;"><span class="arithmatex"><span class="MathJax_Preview">1 - \int_{T_L}^{T_R}\mathcal{R}^m(t)dt</span><script type="math/tex">1 - \int_{T_L}^{T_R}\mathcal{R}^m(t)dt</script></span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\mathcal{R}^m(t_i) dt = \mathcal{R}(t_i) dt (1 - \int_{t_i-T_D}^{t_i}\mathcal{R}^m(t)dt)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(1 - \int_{T_L}^{T_R}\mathcal{R}^m(t)dt\)</span></td>
 </tr>
 </tbody>
 </table>
 <p><em>注：此表是对论文中表3.1的简化解释</em>。</p>
 <hr />
 <h2 id="第三部分应用---信号强度推断">第三部分：应用 - 信号强度推断<a class="headerlink" href="#第三部分应用---信号强度推断" title="Permanent link">#</a></h2>
-<p>本章的第二个主要贡献是基于上述模型，开发了一套从受死时间影响的观测数据中推断真实信号强度 <span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> 的方法。</p>
+<p>本章的第二个主要贡献是基于上述模型，开发了一套从受死时间影响的观测数据中推断真实信号强度 <span class="arithmatex">\(\mu\)</span> 的方法。</p>
 <h3 id="31-极大似然法-maximum-likelihood-method">3.1 极大似然法 (Maximum Likelihood Method)<a class="headerlink" href="#31-极大似然法-maximum-likelihood-method" title="Permanent link">#</a></h3>
-<p>我们的模型是 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{R}_{j}(t) = \mu_{j}\hat{R}(t) + b_{j}</span><script type="math/tex">\mathcal{R}_{j}(t) = \mu_{j}\hat{R}(t) + b_{j}</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">\mu_j</span><script type="math/tex">\mu_j</script></span> 是我们想要求的信号强度，<span class="arithmatex"><span class="MathJax_Preview">\hat{R}(t)</span><script type="math/tex">\hat{R}(t)</script></span> 是已知的信号时间分布形状（模板），<span class="arithmatex"><span class="MathJax_Preview">b_j</span><script type="math/tex">b_j</script></span> 是已知的背景噪声率。</p>
+<p>我们的模型是 <span class="arithmatex">\(\mathcal{R}_{j}(t) = \mu_{j}\hat{R}(t) + b_{j}\)</span>，其中 <span class="arithmatex">\(\mu_j\)</span> 是我们想要求的信号强度，<span class="arithmatex">\(\hat{R}(t)\)</span> 是已知的信号时间分布形状（模板），<span class="arithmatex">\(b_j\)</span> 是已知的背景噪声率。</p>
 <ol>
-<li><strong>构造似然函数</strong>：对于探测器上的每一个通道 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>，根据它是否观测到hit以及观测到的时间，我们可以从上面的概率模型中写出其概率 <span class="arithmatex"><span class="MathJax_Preview">P_j</span><script type="math/tex">P_j</script></span>。将所有通道的概率相乘，就得到了总的似然函数 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{L}(\mu) = \prod_{j} P_j(\mu)</span><script type="math/tex">\mathcal{L}(\mu) = \prod_{j} P_j(\mu)</script></span>。</li>
-<li><strong>求解</strong>：通过数值优化的方法，找到一个 <span class="arithmatex"><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> 值，使得这个似然函数 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{L}</span><script type="math/tex">\mathcal{L}</script></span> 最大化。这个 <span class="arithmatex"><span class="MathJax_Preview">\mu_{best}</span><script type="math/tex">\mu_{best}</script></span> 就是我们对真实信号强度的最佳估计。</li>
+<li><strong>构造似然函数</strong>：对于探测器上的每一个通道 <span class="arithmatex">\(j\)</span>，根据它是否观测到hit以及观测到的时间，我们可以从上面的概率模型中写出其概率 <span class="arithmatex">\(P_j\)</span>。将所有通道的概率相乘，就得到了总的似然函数 <span class="arithmatex">\(\mathcal{L}(\mu) = \prod_{j} P_j(\mu)\)</span>。</li>
+<li><strong>求解</strong>：通过数值优化的方法，找到一个 <span class="arithmatex">\(\mu\)</span> 值，使得这个似然函数 <span class="arithmatex">\(\mathcal{L}\)</span> 最大化。这个 <span class="arithmatex">\(\mu_{best}\)</span> 就是我们对真实信号强度的最佳估计。</li>
 </ol>
 <h3 id="32-方法验证与结论">3.2 方法验证与结论<a class="headerlink" href="#32-方法验证与结论" title="Permanent link">#</a></h3>
 <p>作者通过蒙特卡洛模拟生成了带有死时间效应的伪数据，然后用新提出的极大似然法进行强度推断，并将结果与真实值进行比较。</p>
 <ul>
 <li><strong>结果</strong>：如图3.4所示，该方法能够非常准确地重构出真实的信号强度，即使在暗噪声率很高的情况下，其偏差（bias）也非常小。</li>
 <li><strong>对比</strong>：相比于不考虑死时间效应的简化模型（软件触发模型），新方法的精度显著提高，尤其是在暗噪声不可忽略时，例如在10kHz时，软件触发模型偏移大约为7%。</li>
-<li><strong>近似</strong>：模拟还表明，在信号强度较低时（<span class="arithmatex"><span class="MathJax_Preview">\mu &lt; 10</span><script type="math/tex">\mu < 10</script></span>）和暗噪声低于20kHz时，使用计算上更简单的“扩展型”模型来分析“非扩展型”系统的数据，其引入的偏差在1%以内，是一个可以接受的近似。</li>
+<li><strong>近似</strong>：模拟还表明，在信号强度较低时（<span class="arithmatex">\(\mu &lt; 10\)</span>）和暗噪声低于20kHz时，使用计算上更简单的“扩展型”模型来分析“非扩展型”系统的数据，其引入的偏差在1%以内，是一个可以接受的近似。</li>
 </ul>
 <p><img alt="1755138119163" src="../../../../sci/minimal_theory/assets/dead_time.zh/1755138119163.png" /></p>
 <hr />
@@ -3676,7 +3686,9 @@
         
           <script src="../../../../js/timeago_mkdocs_material.js"></script>
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+          <script src="../../../../js/mathjax.js"></script>
+        
+          <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
         
           <script src="https://d3js.org/d3.v7.min.js"></script>
         

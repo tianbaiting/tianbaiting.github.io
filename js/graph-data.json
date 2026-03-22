@@ -793,6 +793,15 @@
       "url": "/sci/minimal_code/git/"
     },
     {
+      "id": "sci/minimal_code/vscode_plug.zh",
+      "title": "VS Code 插件开发指南",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/vscode_plug.zh.md",
+      "size": 1103,
+      "url": "/sci/minimal_code/vscode_plug/"
+    },
+    {
       "id": "sci/cheatshet/linux.zh",
       "title": "Linux",
       "language": "zh",
@@ -1032,7 +1041,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/other_polarmeter.zh.md",
-      "size": 12129,
+      "size": 9435,
       "url": "/sci/project/D_polar_exp/other_polarmeter/"
     },
     {
@@ -1052,6 +1061,15 @@
       "path": "sci/project/D_polar_exp/caogao.md",
       "size": 3478,
       "url": "/sci/project/D_polar_exp/caogao/"
+    },
+    {
+      "id": "sci/project/D_polar_exp/other_polarmeter.en",
+      "title": "Other Polarmeter",
+      "language": "en",
+      "category": "page",
+      "path": "sci/project/D_polar_exp/other_polarmeter.en.md",
+      "size": 12510,
+      "url": "/en/sci/project/D_polar_exp/other_polarmeter/"
     },
     {
       "id": "sci/project/D_polar_exp/my_polarimeter.en",
@@ -1293,7 +1311,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/friedrichsModel.zh.md",
-      "size": 8501,
+      "size": 8653,
       "url": "/sci/minimal_theory/scatteringTheory/friedrichsModel/"
     },
     {
@@ -1452,16 +1470,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 161,
+    "total_nodes": 163,
     "total_links": 0,
     "languages": {
-      "en": 26,
-      "zh": 135
+      "en": 27,
+      "zh": 136
     },
     "categories": {
       "main": 2,
       "category": 26,
-      "page": 133
+      "page": 135
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1469,6 +1487,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-02-26 10:29:34.731206"
+    "generated_at": "2026-03-22 16:54:13.955509"
   }
 }

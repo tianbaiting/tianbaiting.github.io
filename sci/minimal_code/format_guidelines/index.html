@@ -1303,6 +1303,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="true">
@@ -1879,6 +1881,20 @@
     <li class="md-nav__item">
       <a href="../vscode_lsp/" class="md-nav__link">
         如何解决 VS Code 中的 C/C++ include 报错问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vscode_plug/" class="md-nav__link">
+        VS Code 插件开发指南
       </a>
     </li>
   
@@ -2559,7 +2575,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/D_polar_exp/other_polarmeter/" class="md-nav__link">
-        其他研究组的polarimeter
+        其他研究组的 polarimeter
       </a>
     </li>
   
@@ -3334,19 +3350,19 @@
 
   <h1>格式规范</h1>
 
-<p>常量应写作正体，但常量如 <span class="arithmatex"><span class="MathJax_Preview">c</span><script type="math/tex">c</script></span>（光速）、<span class="arithmatex"><span class="MathJax_Preview">h</span><script type="math/tex">h</script></span>（普朗克常数）、<span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span>（引力常数）都属于变量类符号，尽管它们数值不变，但仍视为物理量的符号，所以应使用斜体。其值不变的数学常数（例如 <span class="arithmatex"><span class="MathJax_Preview">\rm{e} = 2.7182818\ldots</span><script type="math/tex">\rm{e} = 2.7182818\ldots</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\rm{\pi} = 3.1415926\ldots</span><script type="math/tex">\rm{\pi} = 3.1415926\ldots</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\rm{i}^2 = -1</span><script type="math/tex">\rm{i}^2 = -1</script></span> 等）用正体字母表示。关于圆周率，中国物理 B 写作规范要求与国际标准 ISO 80000-2 相互冲突，笔者认为应该按照国际标准来写，使用正体。</p>
+<p>常量应写作正体，但常量如 <span class="arithmatex">\(c\)</span>（光速）、<span class="arithmatex">\(h\)</span>（普朗克常数）、<span class="arithmatex">\(G\)</span>（引力常数）都属于变量类符号，尽管它们数值不变，但仍视为物理量的符号，所以应使用斜体。其值不变的数学常数（例如 <span class="arithmatex">\(\rm{e} = 2.7182818\ldots\)</span>，<span class="arithmatex">\(\rm{\pi} = 3.1415926\ldots\)</span>，<span class="arithmatex">\(\rm{i}^2 = -1\)</span> 等）用正体字母表示。关于圆周率，中国物理 B 写作规范要求与国际标准 ISO 80000-2 相互冲突，笔者认为应该按照国际标准来写，使用正体。</p>
 <ul>
 <li><strong>变量</strong> 应该写斜体。</li>
 <li><strong>单位</strong> 应该写正体。</li>
-<li><strong>数学函数</strong> 要写正体。这里指的是特殊函数，如<span class="arithmatex"><span class="MathJax_Preview">\rm{sin}(x)</span><script type="math/tex">\rm{sin}(x)</script></span>，而非<span class="arithmatex"><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span>之类的。</li>
+<li><strong>数学函数</strong> 要写正体。这里指的是特殊函数，如<span class="arithmatex">\(\rm{sin}(x)\)</span>，而非<span class="arithmatex">\(f(x)\)</span>之类的。</li>
 </ul>
 <p>特别注意以下规则：</p>
 <ul>
-<li>中子质量 <span class="arithmatex"><span class="MathJax_Preview">m_n</span><script type="math/tex">m_n</script></span> 和质子质量 <span class="arithmatex"><span class="MathJax_Preview">m_p</span><script type="math/tex">m_p</script></span> 是斜体，但原子质量 <span class="arithmatex"><span class="MathJax_Preview">\rm{u}</span><script type="math/tex">\rm{u}</script></span> 是正体。</li>
-<li>电子电量 <span class="arithmatex"><span class="MathJax_Preview">e</span><script type="math/tex">e</script></span> 是斜体，但电子伏特 <span class="arithmatex"><span class="MathJax_Preview">\rm{eV}</span><script type="math/tex">\rm{eV}</script></span> 是正体。</li>
-<li>自然常数 <span class="arithmatex"><span class="MathJax_Preview">\rm{e}</span><script type="math/tex">\rm{e}</script></span> 是正体。</li>
-<li>微分算符 <span class="arithmatex"><span class="MathJax_Preview">\rm{d}</span><script type="math/tex">\rm{d}</script></span> 要写正体（根据 2019 年修改的国际标准 ISO 80000-2）。然而，在 AMS（美国数学会）等期刊中，微分符号大多采用 <span class="arithmatex"><span class="MathJax_Preview">d x</span><script type="math/tex">d x</script></span> 的形式，这也是一种传统。事实上，许多期刊或出版社并不严格遵循这些规则，而是保持作者的习惯。</li>
-<li>数学里面点(point)和线(line): point A, line AB用正体。坐标轴(axes)和面用斜体。坐标原点用正体<span class="arithmatex"><span class="MathJax_Preview">\rm{O}</span><script type="math/tex">\rm{O}</script></span>.  关于这点有诸多争议，感觉并未统一。</li>
+<li>中子质量 <span class="arithmatex">\(m_n\)</span> 和质子质量 <span class="arithmatex">\(m_p\)</span> 是斜体，但原子质量 <span class="arithmatex">\(\rm{u}\)</span> 是正体。</li>
+<li>电子电量 <span class="arithmatex">\(e\)</span> 是斜体，但电子伏特 <span class="arithmatex">\(\rm{eV}\)</span> 是正体。</li>
+<li>自然常数 <span class="arithmatex">\(\rm{e}\)</span> 是正体。</li>
+<li>微分算符 <span class="arithmatex">\(\rm{d}\)</span> 要写正体（根据 2019 年修改的国际标准 ISO 80000-2）。然而，在 AMS（美国数学会）等期刊中，微分符号大多采用 <span class="arithmatex">\(d x\)</span> 的形式，这也是一种传统。事实上，许多期刊或出版社并不严格遵循这些规则，而是保持作者的习惯。</li>
+<li>数学里面点(point)和线(line): point A, line AB用正体。坐标轴(axes)和面用斜体。坐标原点用正体<span class="arithmatex">\(\rm{O}\)</span>.  关于这点有诸多争议，感觉并未统一。</li>
 </ul>
 <p>此外：</p>
 <ul>
@@ -3452,7 +3468,9 @@
         
           <script src="../../../js/timeago_mkdocs_material.js"></script>
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+          <script src="../../../js/mathjax.js"></script>
+        
+          <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
         
           <script src="https://d3js.org/d3.v7.min.js"></script>
         

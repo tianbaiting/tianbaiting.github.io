@@ -1301,6 +1301,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
@@ -1827,6 +1829,20 @@
     <li class="md-nav__item">
       <a href="../../../minimal_code/vscode_lsp/" class="md-nav__link">
         如何解决 VS Code 中的 C/C++ include 报错问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vscode_plug/" class="md-nav__link">
+        VS Code 插件开发指南
       </a>
     </li>
   
@@ -2608,7 +2624,7 @@
   
     <li class="md-nav__item">
       <a href="../../../project/D_polar_exp/other_polarmeter/" class="md-nav__link">
-        其他研究组的polarimeter
+        其他研究组的 polarimeter
       </a>
     </li>
   
@@ -3427,51 +3443,51 @@
 
 
 <h1 id="空间">空间<a class="headerlink" href="#空间" title="Permanent link">#</a></h1>
-<p>人们对于空间的直观认识，往往来源于我们对二维平面和三维立体的感知。或者说是来源于欧式空间<span class="arithmatex"><span class="MathJax_Preview">R^n</span><script type="math/tex">R^n</script></span>的概念. 这些空间里有着拓扑结构，可以定义距离、邻域等基本概念。可以定义向量运算，可以进行线性代数的研究。我们可以将这些概念或者性质进行抽象化，从而得到更一般的概念(适用性更广即条件更弱).</p>
+<p>人们对于空间的直观认识，往往来源于我们对二维平面和三维立体的感知。或者说是来源于欧式空间<span class="arithmatex">\(R^n\)</span>的概念. 这些空间里有着拓扑结构，可以定义距离、邻域等基本概念。可以定义向量运算，可以进行线性代数的研究。我们可以将这些概念或者性质进行抽象化，从而得到更一般的概念(适用性更广即条件更弱).</p>
 <p>在这一章节中，我们将探讨函数分析中的各种空间类型，包括拓扑空间,赋范空间,内积空间和希尔伯特空间等。</p>
 <p><img alt="alt text" src="../assets/C1space.zh/space.JPG" /></p>
 <h2 id="集合">集合<a class="headerlink" href="#集合" title="Permanent link">#</a></h2>
 <p>集合（英语：set）简称集，是一个基本的数学模型，指若干不同对象（英语：object）形成的总体。集合里的对象称作元素或成员.</p>
-<p>笛卡尔积: 给定两个集合A和B,它们的笛卡尔积记作<span class="arithmatex"><span class="MathJax_Preview">A \times B</span><script type="math/tex">A \times B</script></span>,定义为所有有序对(a,b)的集合,其中<span class="arithmatex"><span class="MathJax_Preview">a\in A</span><script type="math/tex">a\in A</script></span>, <span class="arithmatex"><span class="MathJax_Preview">b \in B</span><script type="math/tex">b \in B</script></span>.</p>
+<p>笛卡尔积: 给定两个集合A和B,它们的笛卡尔积记作<span class="arithmatex">\(A \times B\)</span>,定义为所有有序对(a,b)的集合,其中<span class="arithmatex">\(a\in A\)</span>, <span class="arithmatex">\(b \in B\)</span>.</p>
 <h2 id="拓扑空间">拓扑空间<a class="headerlink" href="#拓扑空间" title="Permanent link">#</a></h2>
-<p>def: 拓扑空间是一个集合<span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span>，配备了一个拓扑<span class="arithmatex"><span class="MathJax_Preview">\tau</span><script type="math/tex">\tau</script></span>，即<span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span>的子集族，满足以下条件：<br />
-1. 空集和全集属于<span class="arithmatex"><span class="MathJax_Preview">\tau</span><script type="math/tex">\tau</script></span>，即<span class="arithmatex"><span class="MathJax_Preview">\emptyset \in \tau</span><script type="math/tex">\emptyset \in \tau</script></span>且<span class="arithmatex"><span class="MathJax_Preview">X \in \tau</span><script type="math/tex">X \in \tau</script></span>。<br />
-2. 任意多个<span class="arithmatex"><span class="MathJax_Preview">\tau</span><script type="math/tex">\tau</script></span>中的集合的并集仍然属于<span class="arithmatex"><span class="MathJax_Preview">\tau</span><script type="math/tex">\tau</script></span>。<br />
-3. 有限多个<span class="arithmatex"><span class="MathJax_Preview">\tau</span><script type="math/tex">\tau</script></span>中的集合的交集仍然属于<span class="arithmatex"><span class="MathJax_Preview">\tau</span><script type="math/tex">\tau</script></span>。</p>
+<p>def: 拓扑空间是一个集合<span class="arithmatex">\(X\)</span>，配备了一个拓扑<span class="arithmatex">\(\tau\)</span>，即<span class="arithmatex">\(X\)</span>的子集族，满足以下条件：<br />
+1. 空集和全集属于<span class="arithmatex">\(\tau\)</span>，即<span class="arithmatex">\(\emptyset \in \tau\)</span>且<span class="arithmatex">\(X \in \tau\)</span>。<br />
+2. 任意多个<span class="arithmatex">\(\tau\)</span>中的集合的并集仍然属于<span class="arithmatex">\(\tau\)</span>。<br />
+3. 有限多个<span class="arithmatex">\(\tau\)</span>中的集合的交集仍然属于<span class="arithmatex">\(\tau\)</span>。</p>
 <h2 id="度量空间">度量空间<a class="headerlink" href="#度量空间" title="Permanent link">#</a></h2>
-<p>def: 度量空间是一个集合<span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span>，配备了一个度量（距离函数）<span class="arithmatex"><span class="MathJax_Preview">d: M \times M \to \mathbb{R}</span><script type="math/tex">d: M \times M \to \mathbb{R}</script></span>，满足以下条件：<br />
-1. 非负性：对于所有<span class="arithmatex"><span class="MathJax_Preview">x, y \in M</span><script type="math/tex">x, y \in M</script></span>，有<span class="arithmatex"><span class="MathJax_Preview">d(x, y) \geq 0</span><script type="math/tex">d(x, y) \geq 0</script></span>，且<span class="arithmatex"><span class="MathJax_Preview">d(x, y) = 0</span><script type="math/tex">d(x, y) = 0</script></span>当且仅当<span class="arithmatex"><span class="MathJax_Preview">x = y</span><script type="math/tex">x = y</script></span>。<br />
-2. 对称性：对于所有<span class="arithmatex"><span class="MathJax_Preview">x, y \in M</span><script type="math/tex">x, y \in M</script></span>，有<span class="arithmatex"><span class="MathJax_Preview">d(x, y) = d(y, x)</span><script type="math/tex">d(x, y) = d(y, x)</script></span>。<br />
-3. 三角不等式：对于所有<span class="arithmatex"><span class="MathJax_Preview">x, y, z \in M</span><script type="math/tex">x, y, z \in M</script></span>，有<span class="arithmatex"><span class="MathJax_Preview">d(x, z) \leq d(x, y) + d(y, z)</span><script type="math/tex">d(x, z) \leq d(x, y) + d(y, z)</script></span>。    </p>
+<p>def: 度量空间是一个集合<span class="arithmatex">\(M\)</span>，配备了一个度量（距离函数）<span class="arithmatex">\(d: M \times M \to \mathbb{R}\)</span>，满足以下条件：<br />
+1. 非负性：对于所有<span class="arithmatex">\(x, y \in M\)</span>，有<span class="arithmatex">\(d(x, y) \geq 0\)</span>，且<span class="arithmatex">\(d(x, y) = 0\)</span>当且仅当<span class="arithmatex">\(x = y\)</span>。<br />
+2. 对称性：对于所有<span class="arithmatex">\(x, y \in M\)</span>，有<span class="arithmatex">\(d(x, y) = d(y, x)\)</span>。<br />
+3. 三角不等式：对于所有<span class="arithmatex">\(x, y, z \in M\)</span>，有<span class="arithmatex">\(d(x, z) \leq d(x, y) + d(y, z)\)</span>。    </p>
 <h2 id="向量空间">向量空间<a class="headerlink" href="#向量空间" title="Permanent link">#</a></h2>
-<p>def: 向量空间是一个集合<span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span>，配备了两个运算：向量加法和标量乘法，满足以下条件：<br />
+<p>def: 向量空间是一个集合<span class="arithmatex">\(V\)</span>，配备了两个运算：向量加法和标量乘法，满足以下条件：<br />
 1. 向量加法满足交换律和结合律，并存在零向量和负向量。<br />
 2. 标量乘法满足分配律、结合律，并存在单位元。   </p>
 <h2 id="赋范空间">赋范空间<a class="headerlink" href="#赋范空间" title="Permanent link">#</a></h2>
-<p>def: 赋范空间是一个向量空间<span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span>，配备了一个范数<span class="arithmatex"><span class="MathJax_Preview">\|\cdot\|: V \to \mathbb{R}</span><script type="math/tex">\|\cdot\|: V \to \mathbb{R}</script></span>，满足以下条件：<br />
-1. 非负性：对于所有<span class="arithmatex"><span class="MathJax_Preview">v \in V</span><script type="math/tex">v \in V</script></span>，有<span class="arithmatex"><span class="MathJax_Preview">\|v\| \geq 0</span><script type="math/tex">\|v\| \geq 0</script></span>，且<span class="arithmatex"><span class="MathJax_Preview">\|v\| = 0</span><script type="math/tex">\|v\| = 0</script></span>当且且<span class="arithmatex"><span class="MathJax_Preview">v = 0</span><script type="math/tex">v = 0</script></span>。<br />
-2. 齐次性：对于所有<span class="arithmatex"><span class="MathJax_Preview">v \in V</span><script type="math/tex">v \in V</script></span>和标量<span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>，有<span class="arithmatex"><span class="MathJax_Preview">\|\alpha v\| = |\alpha| \|v\|</span><script type="math/tex">\|\alpha v\| = |\alpha| \|v\|</script></span>。<br />
-3. 三角不等式：对于所有<span class="arithmatex"><span class="MathJax_Preview">v, w \in V</span><script type="math/tex">v, w \in V</script></span>，有<span class="arithmatex"><span class="MathJax_Preview">\|v + w\| \leq \|v\| + \|w\|</span><script type="math/tex">\|v + w\| \leq \|v\| + \|w\|</script></span>。 </p>
+<p>def: 赋范空间是一个向量空间<span class="arithmatex">\(V\)</span>，配备了一个范数<span class="arithmatex">\(\|\cdot\|: V \to \mathbb{R}\)</span>，满足以下条件：<br />
+1. 非负性：对于所有<span class="arithmatex">\(v \in V\)</span>，有<span class="arithmatex">\(\|v\| \geq 0\)</span>，且<span class="arithmatex">\(\|v\| = 0\)</span>当且且<span class="arithmatex">\(v = 0\)</span>。<br />
+2. 齐次性：对于所有<span class="arithmatex">\(v \in V\)</span>和标量<span class="arithmatex">\(\alpha\)</span>，有<span class="arithmatex">\(\|\alpha v\| = |\alpha| \|v\|\)</span>。<br />
+3. 三角不等式：对于所有<span class="arithmatex">\(v, w \in V\)</span>，有<span class="arithmatex">\(\|v + w\| \leq \|v\| + \|w\|\)</span>。 </p>
 <p>此外还有准范数空间，区别在于准范数不要求满足三角不等式(可以放宽为某个常数倍),可以凹。</p>
 <h2 id="内积空间">内积空间<a class="headerlink" href="#内积空间" title="Permanent link">#</a></h2>
-<p>def: 内积空间是一个向量空间<span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span>，配备了一个内积<span class="arithmatex"><span class="MathJax_Preview">\langle \cdot, \cdot \rangle: V \times V \to \mathbb{R}</span><script type="math/tex">\langle \cdot, \cdot \rangle: V \times V \to \mathbb{R}</script></span>（或<span class="arithmatex"><span class="MathJax_Preview">\mathbb{C}</span><script type="math/tex">\mathbb{C}</script></span>），满足以下条件：<br />
-1. 对称性：对于所有<span class="arithmatex"><span class="MathJax_Preview">v, w \in V</span><script type="math/tex">v, w \in V</script></span>，有<span class="arithmatex"><span class="MathJax_Preview">\langle v, w \rangle = \overline{\langle w, v \rangle}</span><script type="math/tex">\langle v, w \rangle = \overline{\langle w, v \rangle}</script></span>。<br />
-2. 线性性：对于所有<span class="arithmatex"><span class="MathJax_Preview">v, w, u \in V</span><script type="math/tex">v, w, u \in V</script></span>和标量<span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>，有<span class="arithmatex"><span class="MathJax_Preview">\langle \alpha v + w, u \rangle = \alpha \langle v, u \rangle + \langle w, u \rangle</span><script type="math/tex">\langle \alpha v + w, u \rangle = \alpha \langle v, u \rangle + \langle w, u \rangle</script></span>。<br />
-3. 正定性：对于所有<span class="arithmatex"><span class="MathJax_Preview">v \in V</span><script type="math/tex">v \in V</script></span>，有<span class="arithmatex"><span class="MathJax_Preview">\langle v, v \rangle \geq 0</span><script type="math/tex">\langle v, v \rangle \geq 0</script></span>，且<span class="arithmatex"><span class="MathJax_Preview">\langle v, v \rangle = 0</span><script type="math/tex">\langle v, v \rangle = 0</script></span>当且仅当<span class="arithmatex"><span class="MathJax_Preview">v = 0</span><script type="math/tex">v = 0</script></span>。    </p>
+<p>def: 内积空间是一个向量空间<span class="arithmatex">\(V\)</span>，配备了一个内积<span class="arithmatex">\(\langle \cdot, \cdot \rangle: V \times V \to \mathbb{R}\)</span>（或<span class="arithmatex">\(\mathbb{C}\)</span>），满足以下条件：<br />
+1. 对称性：对于所有<span class="arithmatex">\(v, w \in V\)</span>，有<span class="arithmatex">\(\langle v, w \rangle = \overline{\langle w, v \rangle}\)</span>。<br />
+2. 线性性：对于所有<span class="arithmatex">\(v, w, u \in V\)</span>和标量<span class="arithmatex">\(\alpha\)</span>，有<span class="arithmatex">\(\langle \alpha v + w, u \rangle = \alpha \langle v, u \rangle + \langle w, u \rangle\)</span>。<br />
+3. 正定性：对于所有<span class="arithmatex">\(v \in V\)</span>，有<span class="arithmatex">\(\langle v, v \rangle \geq 0\)</span>，且<span class="arithmatex">\(\langle v, v \rangle = 0\)</span>当且仅当<span class="arithmatex">\(v = 0\)</span>。    </p>
 <h2 id="空间的可分性和完备性">空间的可分性和完备性<a class="headerlink" href="#空间的可分性和完备性" title="Permanent link">#</a></h2>
 <p>def: 可分空间是指存在一个可数稠密子集的空间。</p>
 <p>def: 完备空间是指每个柯西序列都收敛于空间中的某个点的空间。</p>
-<p>柯西序列:def: 在度量空间<span class="arithmatex"><span class="MathJax_Preview">(M, d)</span><script type="math/tex">(M, d)</script></span>中，序列<span class="arithmatex"><span class="MathJax_Preview">(x_n)</span><script type="math/tex">(x_n)</script></span>称为柯西序列，如果对于每个<span class="arithmatex"><span class="MathJax_Preview">\epsilon &gt; 0</span><script type="math/tex">\epsilon > 0</script></span>，存在一个正整数<span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>，使得对于所有<span class="arithmatex"><span class="MathJax_Preview">m, n &gt; N</span><script type="math/tex">m, n > N</script></span>，都有<span class="arithmatex"><span class="MathJax_Preview">d(x_m, x_n) &lt; \epsilon</span><script type="math/tex">d(x_m, x_n) < \epsilon</script></span>。</p>
+<p>柯西序列:def: 在度量空间<span class="arithmatex">\((M, d)\)</span>中，序列<span class="arithmatex">\((x_n)\)</span>称为柯西序列，如果对于每个<span class="arithmatex">\(\epsilon &gt; 0\)</span>，存在一个正整数<span class="arithmatex">\(N\)</span>，使得对于所有<span class="arithmatex">\(m, n &gt; N\)</span>，都有<span class="arithmatex">\(d(x_m, x_n) &lt; \epsilon\)</span>。</p>
 <p>注意柯西序列不一定收敛于空间中的某个点，除非空间是完备的。但我们总可以完备一个空间，使得所有柯西序列都收敛于完备空间中的某个点。  所以柯西序列不一定收敛这句话是对的, 柯西序列也总可以收敛也是对的.</p>
-<p>例如，有理数集<span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span>在通常的距离下不是完备的，因为存在柯西序列（例如逼近<span class="arithmatex"><span class="MathJax_Preview">\sqrt{2}</span><script type="math/tex">\sqrt{2}</script></span>的有理数序列）在<span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span>中不收敛。然而，实数集<span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>是完备的，因为每个柯西序列都收敛于<span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>中的某个点。</p>
+<p>例如，有理数集<span class="arithmatex">\(Q\)</span>在通常的距离下不是完备的，因为存在柯西序列（例如逼近<span class="arithmatex">\(\sqrt{2}\)</span>的有理数序列）在<span class="arithmatex">\(Q\)</span>中不收敛。然而，实数集<span class="arithmatex">\(R\)</span>是完备的，因为每个柯西序列都收敛于<span class="arithmatex">\(R\)</span>中的某个点。</p>
 <p><img alt="alt text" src="../assets/C1space.zh/kefen.JPG" /></p>
 <h2 id="紧">紧<a class="headerlink" href="#紧" title="Permanent link">#</a></h2>
 <p>紧=列紧=可数紧</p>
 <p>def: 紧空间是指每个开覆盖都有有限子覆盖的空间。<br />
 def: 列紧空间是指每个序列都有收敛子序列的空间。<br />
 def: 可数紧空间是指每个可数开覆盖都有有限子覆盖的的空间。</p>
-<p>覆盖:def: 给定集合<span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span>，一个覆盖是<span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span>的子集的集合<span class="arithmatex"><span class="MathJax_Preview">\{A_\alpha\}_{\alpha \in A}</span><script type="math/tex">\{A_\alpha\}_{\alpha \in A}</script></span>，使得<span class="arithmatex"><span class="MathJax_Preview">X = \bigcup_{\alpha \in A} A_\alpha</span><script type="math/tex">X = \bigcup_{\alpha \in A} A_\alpha</script></span>。<br />
-开覆盖:def: 给定拓扑空间<span class="arithmatex"><span class="MathJax_Preview">(X, \tau)</span><script type="math/tex">(X, \tau)</script></span>，一个开覆盖是<span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span>的开子集的集合<span class="arithmatex"><span class="MathJax_Preview">\{U_\alpha\}_{\alpha \in A}</span><script type="math/tex">\{U_\alpha\}_{\alpha \in A}</script></span>，使得<span class="arithmatex"><span class="MathJax_Preview">X = \bigcup_{\alpha \in A} U_\alpha</span><script type="math/tex">X = \bigcup_{\alpha \in A} U_\alpha</script></span>。</p>
+<p>覆盖:def: 给定集合<span class="arithmatex">\(X\)</span>，一个覆盖是<span class="arithmatex">\(X\)</span>的子集的集合<span class="arithmatex">\(\{A_\alpha\}_{\alpha \in A}\)</span>，使得<span class="arithmatex">\(X = \bigcup_{\alpha \in A} A_\alpha\)</span>。<br />
+开覆盖:def: 给定拓扑空间<span class="arithmatex">\((X, \tau)\)</span>，一个开覆盖是<span class="arithmatex">\(X\)</span>的开子集的集合<span class="arithmatex">\(\{U_\alpha\}_{\alpha \in A}\)</span>，使得<span class="arithmatex">\(X = \bigcup_{\alpha \in A} U_\alpha\)</span>。</p>
 <h2 id="各种特殊的性质">各种特殊的性质<a class="headerlink" href="#各种特殊的性质" title="Permanent link">#</a></h2>
 
   <hr>
@@ -3564,7 +3580,9 @@ def: 可数紧空间是指每个可数开覆盖都有有限子覆盖的的空间
         
           <script src="../../../../js/timeago_mkdocs_material.js"></script>
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+          <script src="../../../../js/mathjax.js"></script>
+        
+          <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
         
           <script src="https://d3js.org/d3.v7.min.js"></script>
         

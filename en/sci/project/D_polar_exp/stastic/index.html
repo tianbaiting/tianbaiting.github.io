@@ -1319,6 +1319,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
@@ -1845,6 +1847,20 @@
     <li class="md-nav__item">
       <a href="../../../minimal_code/vscode_lsp/" class="md-nav__link">
         如何解决 VS Code 中的 C/C++ include 报错问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vscode_plug/" class="md-nav__link">
+        VS Code 插件开发指南
       </a>
     </li>
   
@@ -2529,7 +2545,7 @@
   
     <li class="md-nav__item">
       <a href="../other_polarmeter/" class="md-nav__link">
-        其他研究组的polarimeter
+        Polarimeters in Other Research Groups
       </a>
     </li>
   
@@ -3463,68 +3479,60 @@
   <h1>统计</h1>
 
 <h2 id="误差传递">误差传递<a class="headerlink" href="#误差传递" title="Permanent link">#</a></h2>
-<p>假设有 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 个随机变量 <span class="arithmatex"><span class="MathJax_Preview">\vec{x}</span><script type="math/tex">\vec{x}</script></span>，服从某联合概率分布。若定义一个函数 <span class="arithmatex"><span class="MathJax_Preview">y = f(\vec{x})</span><script type="math/tex">y = f(\vec{x})</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> 的误差可以通过以下公式传递：</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<p>假设有 <span class="arithmatex">\(n\)</span> 个随机变量 <span class="arithmatex">\(\vec{x}\)</span>，服从某联合概率分布。若定义一个函数 <span class="arithmatex">\(y = f(\vec{x})\)</span>，则 <span class="arithmatex">\(y\)</span> 的误差可以通过以下公式传递：</p>
+<div class="arithmatex">\[
 \sigma_y^2 = \sum_{i=1}^n \left( \frac{\partial f}{\partial x_i} \right)^2 \sigma_{x_i}^2 + 2 \sum_{i=1}^n \sum_{j=i+1}^n \frac{\partial f}{\partial x_i} \frac{\partial f}{\partial x_j} \text{Cov}(x_i, x_j)
-</div>
-<script type="math/tex; mode=display">
-\sigma_y^2 = \sum_{i=1}^n \left( \frac{\partial f}{\partial x_i} \right)^2 \sigma_{x_i}^2 + 2 \sum_{i=1}^n \sum_{j=i+1}^n \frac{\partial f}{\partial x_i} \frac{\partial f}{\partial x_j} \text{Cov}(x_i, x_j)
-</script>
-</div>
+\]</div>
 <p>其中：</p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\sigma_y^2</span><script type="math/tex">\sigma_y^2</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> 的方差；</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\sigma_{x_i}^2</span><script type="math/tex">\sigma_{x_i}^2</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span> 的方差；</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\text{Cov}(x_i, x_j)</span><script type="math/tex">\text{Cov}(x_i, x_j)</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">x_j</span><script type="math/tex">x_j</script></span> 的协方差；</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\frac{\partial f}{\partial x_i}</span><script type="math/tex">\frac{\partial f}{\partial x_i}</script></span> 是函数 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 对 <span class="arithmatex"><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span> 的偏导数。</li>
+<li><span class="arithmatex">\(\sigma_y^2\)</span> 是 <span class="arithmatex">\(y\)</span> 的方差；</li>
+<li><span class="arithmatex">\(\sigma_{x_i}^2\)</span> 是 <span class="arithmatex">\(x_i\)</span> 的方差；</li>
+<li><span class="arithmatex">\(\text{Cov}(x_i, x_j)\)</span> 是 <span class="arithmatex">\(x_i\)</span> 和 <span class="arithmatex">\(x_j\)</span> 的协方差；</li>
+<li><span class="arithmatex">\(\frac{\partial f}{\partial x_i}\)</span> 是函数 <span class="arithmatex">\(f\)</span> 对 <span class="arithmatex">\(x_i\)</span> 的偏导数。</li>
 </ul>
 <p>泰勒展开近似</p>
-<p>假设 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 是输入变量的平滑函数，可以对 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 进行一阶泰勒展开近似：</p>
+<p>假设 <span class="arithmatex">\(f\)</span> 是输入变量的平滑函数，可以对 <span class="arithmatex">\(f\)</span> 进行一阶泰勒展开近似：</p>
 <p>$$ f \approx f_0 + \sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - x_{i,0}) $$ </p>
 <p>其中：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">f_0</span><script type="math/tex">f_0</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 在点 <span class="arithmatex"><span class="MathJax_Preview">(x_{1,0}, x_{2,0}, ..., x_{n,0})</span><script type="math/tex">(x_{1,0}, x_{2,0}, ..., x_{n,0})</script></span> 的值；<br />
-<span class="arithmatex"><span class="MathJax_Preview">\frac{\partial f}{\partial x_i}</span><script type="math/tex">\frac{\partial f}{\partial x_i}</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 对 <span class="arithmatex"><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span> 的偏导数。</p>
+<p><span class="arithmatex">\(f_0\)</span> 是 <span class="arithmatex">\(f\)</span> 在点 <span class="arithmatex">\((x_{1,0}, x_{2,0}, ..., x_{n,0})\)</span> 的值；<br />
+<span class="arithmatex">\(\frac{\partial f}{\partial x_i}\)</span> 是 <span class="arithmatex">\(f\)</span> 对 <span class="arithmatex">\(x_i\)</span> 的偏导数。</p>
 <ol>
 <li>方差的定义</li>
 </ol>
 <p>方差的定义为：<br />
  $$ \text{Var}(f) = \mathbb{E}[(f - \mathbb{E}[f])^2] $$ <br />
- 将 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 的泰勒展开代入，忽略高阶项，得到： </p>
+ 将 <span class="arithmatex">\(f\)</span> 的泰勒展开代入，忽略高阶项，得到： </p>
 <p>$$ f - \mathbb{E}[f] \approx \sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - \mathbb{E}[x_i]) $$</p>
-<p>因此，<span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 的方差可以近似为： <br />
+<p>因此，<span class="arithmatex">\(f\)</span> 的方差可以近似为： <br />
 $$ \text{Var}(f) \approx \text{Var}\left(\sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - \mathbb{E}[x_i])\right) $$</p>
 <ol>
 <li>方差的性质</li>
 </ol>
 <p>根据方差的性质，对于随机变量的线性组合：<br />
  $$ \text{Var}\left(\sum_{i=1}^n a_i X_i\right) = \sum_{i=1}^n a_i^2 \text{Var}(X_i) + 2 \sum_{i=1}^n \sum_{j=i+1}^n a_i a_j \text{Cov}(X_i, X_j) $$ <br />
- 其中 <span class="arithmatex"><span class="MathJax_Preview">a_i</span><script type="math/tex">a_i</script></span> 是常数，<span class="arithmatex"><span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script></span> 是随机变量。</p>
-<p>在这里，令 <span class="arithmatex"><span class="MathJax_Preview">a_i = \frac{\partial f}{\partial x_i}</span><script type="math/tex">a_i = \frac{\partial f}{\partial x_i}</script></span>，<span class="arithmatex"><span class="MathJax_Preview">X_i = x_i - \mathbb{E}[x_i]</span><script type="math/tex">X_i = x_i - \mathbb{E}[x_i]</script></span>，代入后得到： </p>
-<div class="arithmatex">
-<div class="MathJax_Preview"> \text{Var}(f) \approx \sum_{i=1}^n \left( \frac{\partial f}{\partial x_i} \right)^2 \text{Var}(x_i) + 2 \sum_{i=1}^n \sum_{j=i+1}^n \frac{\partial f}{\partial x_i} \frac{\partial f}{\partial x_j} \text{Cov}(x_i, x_j) </div>
-<script type="math/tex; mode=display"> \text{Var}(f) \approx \sum_{i=1}^n \left( \frac{\partial f}{\partial x_i} \right)^2 \text{Var}(x_i) + 2 \sum_{i=1}^n \sum_{j=i+1}^n \frac{\partial f}{\partial x_i} \frac{\partial f}{\partial x_j} \text{Cov}(x_i, x_j) </script>
-</div>
+ 其中 <span class="arithmatex">\(a_i\)</span> 是常数，<span class="arithmatex">\(X_i\)</span> 是随机变量。</p>
+<p>在这里，令 <span class="arithmatex">\(a_i = \frac{\partial f}{\partial x_i}\)</span>，<span class="arithmatex">\(X_i = x_i - \mathbb{E}[x_i]\)</span>，代入后得到： </p>
+<div class="arithmatex">\[ \text{Var}(f) \approx \sum_{i=1}^n \left( \frac{\partial f}{\partial x_i} \right)^2 \text{Var}(x_i) + 2 \sum_{i=1}^n \sum_{j=i+1}^n \frac{\partial f}{\partial x_i} \frac{\partial f}{\partial x_j} \text{Cov}(x_i, x_j) \]</div>
 <h2 id="多项式分布的方差与协方差">多项式分布的方差与协方差<a class="headerlink" href="#多项式分布的方差与协方差" title="Permanent link">#</a></h2>
-<p>对于多项式分布，假设有 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 个类别，每个类别的概率为 <span class="arithmatex"><span class="MathJax_Preview">p_i</span><script type="math/tex">p_i</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">i = 1, 2, ..., n</span><script type="math/tex">i = 1, 2, ..., n</script></span>，且 <span class="arithmatex"><span class="MathJax_Preview">\sum_{i=1}^n p_i = 1</span><script type="math/tex">\sum_{i=1}^n p_i = 1</script></span>。若进行 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 次独立试验，记每个类别的计数为 <span class="arithmatex"><span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script></span>，则随机向量 <span class="arithmatex"><span class="MathJax_Preview">\vec{X} = (X_1, X_2, ..., X_n)</span><script type="math/tex">\vec{X} = (X_1, X_2, ..., X_n)</script></span> 服从多项式分布。</p>
+<p>对于多项式分布，假设有 <span class="arithmatex">\(n\)</span> 个类别，每个类别的概率为 <span class="arithmatex">\(p_i\)</span>，其中 <span class="arithmatex">\(i = 1, 2, ..., n\)</span>，且 <span class="arithmatex">\(\sum_{i=1}^n p_i = 1\)</span>。若进行 <span class="arithmatex">\(N\)</span> 次独立试验，记每个类别的计数为 <span class="arithmatex">\(X_i\)</span>，则随机向量 <span class="arithmatex">\(\vec{X} = (X_1, X_2, ..., X_n)\)</span> 服从多项式分布。</p>
 <h3 id="方差">方差<a class="headerlink" href="#方差" title="Permanent link">#</a></h3>
-<p>多项式分布中，每个类别的计数 <span class="arithmatex"><span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script></span> 的方差为：<br />
+<p>多项式分布中，每个类别的计数 <span class="arithmatex">\(X_i\)</span> 的方差为：<br />
 $$<br />
 \text{Var}(X_i) = N p_i (1 - p_i)<br />
 $$</p>
 <h3 id="协方差">协方差<a class="headerlink" href="#协方差" title="Permanent link">#</a></h3>
-<p>对于不同类别 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>，计数 <span class="arithmatex"><span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">X_j</span><script type="math/tex">X_j</script></span> 的协方差为：<br />
+<p>对于不同类别 <span class="arithmatex">\(i\)</span> 和 <span class="arithmatex">\(j\)</span>，计数 <span class="arithmatex">\(X_i\)</span> 和 <span class="arithmatex">\(X_j\)</span> 的协方差为：<br />
 $$<br />
 \text{Cov}(X_i, X_j) = -N p_i p_j \quad (i \neq j)<br />
 $$</p>
 <h2 id="多项式分布近似为泊松分布或高斯分布">多项式分布近似为泊松分布或高斯分布<a class="headerlink" href="#多项式分布近似为泊松分布或高斯分布" title="Permanent link">#</a></h2>
 <h3 id="泊松分布近似">泊松分布近似<a class="headerlink" href="#泊松分布近似" title="Permanent link">#</a></h3>
-<p>当试验次数 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 很大且每个类别的概率 <span class="arithmatex"><span class="MathJax_Preview">p_i</span><script type="math/tex">p_i</script></span> 很小（满足 <span class="arithmatex"><span class="MathJax_Preview">N p_i</span><script type="math/tex">N p_i</script></span> 为有限值）时，多项式分布中的每个类别计数 <span class="arithmatex"><span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script></span> 可以近似为泊松分布，其参数为 <span class="arithmatex"><span class="MathJax_Preview">\lambda_i = N p_i</span><script type="math/tex">\lambda_i = N p_i</script></span>。即：<br />
+<p>当试验次数 <span class="arithmatex">\(N\)</span> 很大且每个类别的概率 <span class="arithmatex">\(p_i\)</span> 很小（满足 <span class="arithmatex">\(N p_i\)</span> 为有限值）时，多项式分布中的每个类别计数 <span class="arithmatex">\(X_i\)</span> 可以近似为泊松分布，其参数为 <span class="arithmatex">\(\lambda_i = N p_i\)</span>。即：<br />
 $$<br />
 X_i \sim \text{Poisson}(\lambda_i)<br />
 $$</p>
 <h4 id="方差与标准差">方差与标准差<a class="headerlink" href="#方差与标准差" title="Permanent link">#</a></h4>
-<p>在泊松分布中，每个类别计数 <span class="arithmatex"><span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script></span> 的方差等于其均值 <span class="arithmatex"><span class="MathJax_Preview">\lambda_i</span><script type="math/tex">\lambda_i</script></span>，即：<br />
+<p>在泊松分布中，每个类别计数 <span class="arithmatex">\(X_i\)</span> 的方差等于其均值 <span class="arithmatex">\(\lambda_i\)</span>，即：<br />
 $$<br />
 \text{Var}(X_i) = \lambda_i<br />
 $$</p>
@@ -3533,11 +3541,11 @@ $$<br />
 \text{Std}(X_i) = \sqrt{\lambda_i}<br />
 $$</p>
 <p>其中：<br />
-- <span class="arithmatex"><span class="MathJax_Preview">\lambda_i = N p_i</span><script type="math/tex">\lambda_i = N p_i</script></span> 是泊松分布的参数；<br />
-- <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 是试验次数；<br />
-- <span class="arithmatex"><span class="MathJax_Preview">p_i</span><script type="math/tex">p_i</script></span> 是类别 <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> 的概率。</p>
+- <span class="arithmatex">\(\lambda_i = N p_i\)</span> 是泊松分布的参数；<br />
+- <span class="arithmatex">\(N\)</span> 是试验次数；<br />
+- <span class="arithmatex">\(p_i\)</span> 是类别 <span class="arithmatex">\(i\)</span> 的概率。</p>
 <h3 id="高斯分布近似">高斯分布近似<a class="headerlink" href="#高斯分布近似" title="Permanent link">#</a></h3>
-<p>当试验次数 <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> 很大且每个类别的概率 <span class="arithmatex"><span class="MathJax_Preview">p_i</span><script type="math/tex">p_i</script></span> 不太小（满足 <span class="arithmatex"><span class="MathJax_Preview">N p_i (1 - p_i)</span><script type="math/tex">N p_i (1 - p_i)</script></span> 较大）时，多项式分布可以近似为高斯分布。随机向量 <span class="arithmatex"><span class="MathJax_Preview">\vec{X} = (X_1, X_2, ..., X_n)</span><script type="math/tex">\vec{X} = (X_1, X_2, ..., X_n)</script></span> 的分布近似为多元高斯分布，其均值和协方差矩阵分别为：</p>
+<p>当试验次数 <span class="arithmatex">\(N\)</span> 很大且每个类别的概率 <span class="arithmatex">\(p_i\)</span> 不太小（满足 <span class="arithmatex">\(N p_i (1 - p_i)\)</span> 较大）时，多项式分布可以近似为高斯分布。随机向量 <span class="arithmatex">\(\vec{X} = (X_1, X_2, ..., X_n)\)</span> 的分布近似为多元高斯分布，其均值和协方差矩阵分别为：</p>
 <ul>
 <li>
 <p>均值向量：<br />
@@ -3558,7 +3566,7 @@ N p_1 (1 - p_1) &amp; -N p_1 p_2 &amp; \cdots &amp; -N p_1 p_n \<br />
 $$</p>
 </li>
 </ul>
-<p>这种高斯分布近似在类别数较多且每个类别的概率 <span class="arithmatex"><span class="MathJax_Preview">p_i</span><script type="math/tex">p_i</script></span> 不极端的情况下表现较好。</p>
+<p>这种高斯分布近似在类别数较多且每个类别的概率 <span class="arithmatex">\(p_i\)</span> 不极端的情况下表现较好。</p>
 
   <hr>
 <div class="md-source-file">
@@ -3654,7 +3662,9 @@ $$</p>
         
           <script src="../../../../../js/timeago_mkdocs_material.js"></script>
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+          <script src="../../../../../js/mathjax.js"></script>
+        
+          <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
         
           <script src="https://d3js.org/d3.v7.min.js"></script>
         

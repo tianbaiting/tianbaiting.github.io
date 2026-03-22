@@ -1301,6 +1301,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
@@ -1827,6 +1829,20 @@
     <li class="md-nav__item">
       <a href="../../../../minimal_code/vscode_lsp/" class="md-nav__link">
         如何解决 VS Code 中的 C/C++ include 报错问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../minimal_code/vscode_plug/" class="md-nav__link">
+        VS Code 插件开发指南
       </a>
     </li>
   
@@ -2509,7 +2525,7 @@
   
     <li class="md-nav__item">
       <a href="../../../D_polar_exp/other_polarmeter/" class="md-nav__link">
-        其他研究组的polarimeter
+        其他研究组的 polarimeter
       </a>
     </li>
   
@@ -4490,7 +4506,7 @@
 <li><strong><code>TArtDCTrack</code>:</strong> 此类对象代表通过一个或多个漂移室重建出来的带电粒子径迹 [5, 8]。它可能包含的数据成员有：</li>
 <li>径迹上的空间点坐标 (Track Points)</li>
 <li>径迹在特定参考平面的位置 (X, Y) 和角度 (AngleX, AngleY)</li>
-<li>径迹拟合的质量参数 (如 <span class="arithmatex"><span class="MathJax_Preview">\chi^2</span><script type="math/tex">\chi^2</script></span>/ndf)</li>
+<li>径迹拟合的质量参数 (如 <span class="arithmatex">\(\chi^2\)</span>/ndf)</li>
 <li>构成该径迹的 <code>TArtDCHit</code> 对象的索引或指针列表</li>
 <li>重建得到的粒子动量 (Momentum) 或磁刚度 (Bρ)</li>
 </ul>
@@ -4499,7 +4515,7 @@
 <p>漂移室的原始数据（主要是TDC值）必须经过仔细刻度才能用于精确的径迹重建。刻度过程通常包括以下几个关键步骤，其参数一般从XML文件中加载 [14]：</p>
 <ul>
 <li><strong>漂移时间到漂移距离的转换 (t-d关系):</strong> 这是漂移室刻度的核心。需要为每个漂移单元（或每种类型的漂移单元）确定从测量的漂移时间到粒子径迹与阳极丝之间最短距离（漂移距离）的精确关系。这个t-d关系通常是非线性的，依赖于漂移室的气体种类、压强、温度、电场强度等因素。它通常通过专门的刻度实验（例如，使用已知径迹的宇宙射线或特定束流，或者通过“自刻度”方法）并结合复杂的拟合程序来确定 [14]。刻度结果（如t-d函数的参数）会被存储起来供后续分析使用。</li>
-<li><strong>时间零点 (<span class="arithmatex"><span class="MathJax_Preview">t_0</span><script type="math/tex">t_0</script></span>) 的确定:</strong> 每个TDC通道都需要一个精确的时间零点，即粒子恰好穿过阳极丝（漂移时间为零）时对应的TDC读数。<span class="arithmatex"><span class="MathJax_Preview">t_0</span><script type="math/tex">t_0</script></span> 的不确定性会直接影响漂移距离的计算精度。</li>
+<li><strong>时间零点 (<span class="arithmatex">\(t_0\)</span>) 的确定:</strong> 每个TDC通道都需要一个精确的时间零点，即粒子恰好穿过阳极丝（漂移时间为零）时对应的TDC读数。<span class="arithmatex">\(t_0\)</span> 的不确定性会直接影响漂移距离的计算精度。</li>
 <li><strong>信号幅度处理 (ADC):</strong> 如果漂移室也记录了阳极丝信号的幅度（ADC值），这些信息可以用于区分不同电离能力的事例，或者通过电荷共享等方法辅助提高位置分辨率，甚至用于粒子鉴别（dE/dx）。ADC数据本身也需要刻度。</li>
 <li><strong>几何校准 (Alignment):</strong> 精确了解每根阳极丝在空间中的位置以及各个漂移室模块之间的相对位置和朝向（即所谓的“内禀对准”和“外部对准”）对于径迹重建至关重要。这些几何参数通常通过精密测量（如光学测量）和束流实验数据进行微调确定，并作为参数输入到分析软件中 [14]。</li>
 <li><strong>参数文件:</strong> 所有这些刻度常数、t-d关系参数、几何参数等，都通过ANAROOT的参数管理系统（通常是XML文件，由 <code>TArtSAMURAIParameters</code> 或其子类加载）提供给刻度和重建模块。</li>
@@ -4508,14 +4524,14 @@
 <p>在漂移室数据刻度完成之后，就可以进行径迹重建和动量分析。</p>
 <ul>
 <li><strong>径迹寻找算法 (Track Finding):</strong><br />
-  径迹寻找是从大量的 <code>TArtDCHit</code> 中识别出属于同一粒子穿径的那些击中点，并将它们组合成候选径迹的过程。对于具有多层不同朝向阳极丝的漂移室，这通常是一个复杂的组合问题。一种方法是，对于n个被击中的导线，每根导线都存在两种可能的粒子通过路径（左右模糊性），从而产生 <span class="arithmatex"><span class="MathJax_Preview">2^n</span><script type="math/tex">2^n</script></span> 种击中位置组合。每种组合都可以用一个线性函数（或更复杂的函数）进行拟合，其中拟合质量最好的组合被接受为候选径迹 [14]。其他更复杂的算法，如基于连路（road finding）、霍夫变换（Hough transform）或逐步建立径迹的方法（如卡尔曼滤波的初始阶段）也可能被使用。</li>
+  径迹寻找是从大量的 <code>TArtDCHit</code> 中识别出属于同一粒子穿径的那些击中点，并将它们组合成候选径迹的过程。对于具有多层不同朝向阳极丝的漂移室，这通常是一个复杂的组合问题。一种方法是，对于n个被击中的导线，每根导线都存在两种可能的粒子通过路径（左右模糊性），从而产生 <span class="arithmatex">\(2^n\)</span> 种击中位置组合。每种组合都可以用一个线性函数（或更复杂的函数）进行拟合，其中拟合质量最好的组合被接受为候选径迹 [14]。其他更复杂的算法，如基于连路（road finding）、霍夫变换（Hough transform）或逐步建立径迹的方法（如卡尔曼滤波的初始阶段）也可能被使用。</li>
 <li><strong>径迹拟合 (Track Fitting):</strong><br />
-  一旦找到了候选径迹（即一组属于同一径迹的击中点），就需要通过拟合算法来精确确定这条径迹的参数，如其在某个参考平面的位置和方向。简单的拟合可以使用直线或抛物线模型（尤其是在无磁场或弱磁场区域）。在强磁场中，通常需要考虑粒子径迹的弯曲，可能采用螺旋线模型或更复杂的数值积分方法。卡尔曼滤波方法是一种强大且广泛应用的径迹拟合技术，它能够迭代地更新径迹参数，并自然地处理多重散射等效应 [15]。拟合后得到的径迹参数，如位置、角度、曲率以及拟合的<span class="arithmatex"><span class="MathJax_Preview">\chi^2</span><script type="math/tex">\chi^2</script></span>值，都存储在 <code>TArtDCTrack</code> 对象中。</li>
+  一旦找到了候选径迹（即一组属于同一径迹的击中点），就需要通过拟合算法来精确确定这条径迹的参数，如其在某个参考平面的位置和方向。简单的拟合可以使用直线或抛物线模型（尤其是在无磁场或弱磁场区域）。在强磁场中，通常需要考虑粒子径迹的弯曲，可能采用螺旋线模型或更复杂的数值积分方法。卡尔曼滤波方法是一种强大且广泛应用的径迹拟合技术，它能够迭代地更新径迹参数，并自然地处理多重散射等效应 [15]。拟合后得到的径迹参数，如位置、角度、曲率以及拟合的<span class="arithmatex">\(\chi^2\)</span>值，都存储在 <code>TArtDCTrack</code> 对象中。</li>
 </ul>
 <p>为了提高分辨率，通常还会进行残差修正（residual correction）。残差定义为测量到的击中位置与重建径迹在该导线处预测位置之间的差异。通过分析残差与漂移距离等变量的依赖关系，可以进一步修正t-d关系或局部对准参数，从而优化径迹重建的精度 [14]。<br />
 - <strong>利用SAMURAI磁场进行动量重建:</strong><br />
-  SAMURAI超导磁体提供高达7 特斯拉·米 (Tm) 的弯曲能力 [12, 13]。带电粒子在磁场中运动时会受到洛伦兹力而发生偏转，其偏转半径与粒子的动量成正比，与电荷和磁场强度成反比。通过精确测量粒子在磁铁中（或磁铁前后）的径迹，可以确定其弯曲曲率，进而计算出其磁刚度Bρ。对于已知电荷Z的粒子，其动量p可以通过公式 <span class="arithmatex"><span class="MathJax_Preview">p = Z \cdot e \cdot B\rho</span><script type="math/tex">p = Z \cdot e \cdot B\rho</script></span> 计算得到（其中e是元电荷）[14]。</p>
-<p>一种被称为多维拟合 (Multi-Dimensional Fit, MDF) 的方法被用于SAMURAI的碎片追踪，该方法将已知的磁刚度 (Bρ) 和飞行长度 (<span class="arithmatex"><span class="MathJax_Preview">l_f</span><script type="math/tex">l_f</script></span>) 作为漂移室测量到的位置和角度的函数进行拟合。这些拟合函数（通常是多项式组合）的系数通过对大量GEANT4模拟事例进行训练得到。在分析真实数据时，将实验测量的漂移室数据代入这些拟合函数，即可得到该事例的Bρ和<span class="arithmatex"><span class="MathJax_Preview">l_f</span><script type="math/tex">l_f</script></span> [14]。这种方法依赖于精确的GEANT4模拟，包括磁场图谱、探测器几何和材料的准确描述。任何模拟与实际情况的偏差都可能引入系统误差，因此，验证和调整模拟参数（如磁场强度因子）是确保动量重建准确性的重要环节 [14]。</p>
+  SAMURAI超导磁体提供高达7 特斯拉·米 (Tm) 的弯曲能力 [12, 13]。带电粒子在磁场中运动时会受到洛伦兹力而发生偏转，其偏转半径与粒子的动量成正比，与电荷和磁场强度成反比。通过精确测量粒子在磁铁中（或磁铁前后）的径迹，可以确定其弯曲曲率，进而计算出其磁刚度Bρ。对于已知电荷Z的粒子，其动量p可以通过公式 <span class="arithmatex">\(p = Z \cdot e \cdot B\rho\)</span> 计算得到（其中e是元电荷）[14]。</p>
+<p>一种被称为多维拟合 (Multi-Dimensional Fit, MDF) 的方法被用于SAMURAI的碎片追踪，该方法将已知的磁刚度 (Bρ) 和飞行长度 (<span class="arithmatex">\(l_f\)</span>) 作为漂移室测量到的位置和角度的函数进行拟合。这些拟合函数（通常是多项式组合）的系数通过对大量GEANT4模拟事例进行训练得到。在分析真实数据时，将实验测量的漂移室数据代入这些拟合函数，即可得到该事例的Bρ和<span class="arithmatex">\(l_f\)</span> [14]。这种方法依赖于精确的GEANT4模拟，包括磁场图谱、探测器几何和材料的准确描述。任何模拟与实际情况的偏差都可能引入系统误差，因此，验证和调整模拟参数（如磁场强度因子）是确保动量重建准确性的重要环节 [14]。</p>
 <h4 id="55-实例pdc数据分析脚本宏示例">5.5 实例：PDC数据分析脚本/宏示例<a class="headerlink" href="#55-实例pdc数据分析脚本宏示例" title="Permanent link">#</a></h4>
 <p>以下是一个概念性的ANAROOT分析宏 (C++ ROOT宏) 的骨架，用于演示如何处理SAMURAI PDC数据。实际代码需要根据具体的ANAROOT版本和实验配置进行调整。</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// MyPDCAnalysis.C</span>
@@ -4688,43 +4704,43 @@
 <ul>
 <li><strong>时间刻度 (Timing Calibration):</strong></li>
 <li><strong>TDC转换:</strong> 将每个PMT的原始TDC道数转换为纳秒 (ns) 单位的时间。这通常通过已知时间间隔的脉冲信号（如电子学测试脉冲或宇宙射线事例）进行线性刻度 [14]。</li>
-<li><strong>Walk修正:</strong> PMT信号的渡越时间可能随信号幅度变化（即“Walk效应”），导致大信号的到达时间看起来更早。需要根据信号幅度（ADC/QDC值）对时间进行修正。常用的修正函数形式如 <span class="arithmatex"><span class="MathJax_Preview">t_{corr} = t_{raw} - (a/\sqrt{Q} + b)</span><script type="math/tex">t_{corr} = t_{raw} - (a/\sqrt{Q} + b)</script></span> 或类似形式，其中Q是电荷值，a和b是拟合参数 [14]。</li>
-<li><strong>棒内时间同步与绝对时间零点:</strong> 同步一根棒两端PMT的时间响应，并确定整个探测器相对于实验触发或束流信号的绝对时间零点。通常利用从靶产生的瞬发<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>射线事例进行。由于<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>射线以光速传播，其飞行时间已知，可以此为基准调整各PMT的时间偏移 [14]。</li>
+<li><strong>Walk修正:</strong> PMT信号的渡越时间可能随信号幅度变化（即“Walk效应”），导致大信号的到达时间看起来更早。需要根据信号幅度（ADC/QDC值）对时间进行修正。常用的修正函数形式如 <span class="arithmatex">\(t_{corr} = t_{raw} - (a/\sqrt{Q} + b)\)</span> 或类似形式，其中Q是电荷值，a和b是拟合参数 [14]。</li>
+<li><strong>棒内时间同步与绝对时间零点:</strong> 同步一根棒两端PMT的时间响应，并确定整个探测器相对于实验触发或束流信号的绝对时间零点。通常利用从靶产生的瞬发<span class="arithmatex">\(\gamma\)</span>射线事例进行。由于<span class="arithmatex">\(\gamma\)</span>射线以光速传播，其飞行时间已知，可以此为基准调整各PMT的时间偏移 [14]。</li>
 <li>
-<p><strong>运行期间时间漂移修正:</strong> 探测器和电子学系统的时间响应可能随实验运行时间发生缓慢漂移，需要监测并进行修正，例如利用宇宙射线或<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>-flash的平均时间作为参考 [14]。</p>
+<p><strong>运行期间时间漂移修正:</strong> 探测器和电子学系统的时间响应可能随实验运行时间发生缓慢漂移，需要监测并进行修正，例如利用宇宙射线或<span class="arithmatex">\(\gamma\)</span>-flash的平均时间作为参考 [14]。</p>
 </li>
 <li>
 <p><strong>位置刻度 (Position Calibration):</strong><br />
-  中子在闪烁体棒中相互作用的位置（沿棒长方向）可以通过测量光信号到达两端PMT的时间差 <span class="arithmatex"><span class="MathJax_Preview">\Delta t = t_L - t_R</span><script type="math/tex">\Delta t = t_L - t_R</script></span> 来确定。位置 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 与 <span class="arithmatex"><span class="MathJax_Preview">\Delta t</span><script type="math/tex">\Delta t</script></span> 近似成线性关系：<span class="arithmatex"><span class="MathJax_Preview">x \approx v_{eff} \cdot \Delta t / 2 + x_0</span><script type="math/tex">x \approx v_{eff} \cdot \Delta t / 2 + x_0</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">v_{eff}</span><script type="math/tex">v_{eff}</script></span> 是光在闪烁体中的有效传播速度，<span class="arithmatex"><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span> 是棒的中心位置或一端的位置。<span class="arithmatex"><span class="MathJax_Preview">v_{eff}</span><script type="math/tex">v_{eff}</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span> 需要通过刻度确定，例如利用已知位置的<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>源照射闪烁体棒的不同位置，或利用宇宙射线径迹穿过整根棒时在两端产生的信号 [14]。</p>
+  中子在闪烁体棒中相互作用的位置（沿棒长方向）可以通过测量光信号到达两端PMT的时间差 <span class="arithmatex">\(\Delta t = t_L - t_R\)</span> 来确定。位置 <span class="arithmatex">\(x\)</span> 与 <span class="arithmatex">\(\Delta t\)</span> 近似成线性关系：<span class="arithmatex">\(x \approx v_{eff} \cdot \Delta t / 2 + x_0\)</span>，其中 <span class="arithmatex">\(v_{eff}\)</span> 是光在闪烁体中的有效传播速度，<span class="arithmatex">\(x_0\)</span> 是棒的中心位置或一端的位置。<span class="arithmatex">\(v_{eff}\)</span> 和 <span class="arithmatex">\(x_0\)</span> 需要通过刻度确定，例如利用已知位置的<span class="arithmatex">\(\gamma\)</span>源照射闪烁体棒的不同位置，或利用宇宙射线径迹穿过整根棒时在两端产生的信号 [14]。</p>
 </li>
 <li>
 <p><strong>能量刻度 (Energy Deposition Calibration / Light Output):</strong><br />
-  PMT测得的电荷量 (ADC/QDC值) 需要转换为粒子在闪烁体中沉积的能量，通常以电子等效能量 MeVee (MeV electron equivalent) 为单位。对于中子探测，实际关心的是反冲质子沉积的能量。塑料闪烁体对不同类型粒子的光产额不同，且对质子等重带电粒子的光产额与其能量之间通常呈非线性关系，这可以用Birks定律等模型来描述 [14]。能量刻度通常使用已知能量的<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>源（如 <span class="arithmatex"><span class="MathJax_Preview">^{60}Co</span><script type="math/tex">^{60}Co</script></span>, <span class="arithmatex"><span class="MathJax_Preview">^{137}Cs</span><script type="math/tex">^{137}Cs</script></span> 等，利用其康普顿散射边缘）或宇宙μ子穿过时的能量损失来进行。</p>
+  PMT测得的电荷量 (ADC/QDC值) 需要转换为粒子在闪烁体中沉积的能量，通常以电子等效能量 MeVee (MeV electron equivalent) 为单位。对于中子探测，实际关心的是反冲质子沉积的能量。塑料闪烁体对不同类型粒子的光产额不同，且对质子等重带电粒子的光产额与其能量之间通常呈非线性关系，这可以用Birks定律等模型来描述 [14]。能量刻度通常使用已知能量的<span class="arithmatex">\(\gamma\)</span>源（如 <span class="arithmatex">\(^{60}Co\)</span>, <span class="arithmatex">\(^{137}Cs\)</span> 等，利用其康普顿散射边缘）或宇宙μ子穿过时的能量损失来进行。</p>
 </li>
 </ul>
 <p>所有这些刻度参数（TDC转换系数、Walk修正参数、时间偏移、位置刻度系数、能量刻度函数参数等）都应存储在XML参数文件中，由ANAROOT的参数管理系统加载。</p>
 <h4 id="64-nebula中子鉴别与分析技术">6.4 NEBULA中子鉴别与分析技术<a class="headerlink" href="#64-nebula中子鉴别与分析技术" title="Permanent link">#</a></h4>
 <ul>
 <li><strong>飞行时间法 (Time-of-Flight, TOF) 计算中子能量/动量:</strong><br />
-  中子不带电，无法直接通过磁场偏转测量其动量。其动能主要通过测量飞行时间 (TOF) 来确定 [14]。TOF是指中子从反应靶点产生到在NEBULA中发生首次相互作用所经过的时间。飞行路径长度 <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> 是从反应靶点到NEBULA中子相互作用点的直线距离。一旦TOF和 <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> 已知，中子的速度 <span class="arithmatex"><span class="MathJax_Preview">v = L/TOF</span><script type="math/tex">v = L/TOF</script></span> 即可算出。</li>
+  中子不带电，无法直接通过磁场偏转测量其动量。其动能主要通过测量飞行时间 (TOF) 来确定 [14]。TOF是指中子从反应靶点产生到在NEBULA中发生首次相互作用所经过的时间。飞行路径长度 <span class="arithmatex">\(L\)</span> 是从反应靶点到NEBULA中子相互作用点的直线距离。一旦TOF和 <span class="arithmatex">\(L\)</span> 已知，中子的速度 <span class="arithmatex">\(v = L/TOF\)</span> 即可算出。</li>
 </ul>
-<p>对于非相对论性中子，其动能 <span class="arithmatex"><span class="MathJax_Preview">KE = \frac{1}{2} m_n v^2</span><script type="math/tex">KE = \frac{1}{2} m_n v^2</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">m_n</span><script type="math/tex">m_n</script></span> 是中子质量。对于RIBF实验中可能产生的高能中子，需要使用相对论公式：<span class="arithmatex"><span class="MathJax_Preview">KE = (\gamma - 1)m_n c^2</span><script type="math/tex">KE = (\gamma - 1)m_n c^2</script></span>，其中洛伦兹因子 <span class="arithmatex"><span class="MathJax_Preview">\gamma = 1/\sqrt{1 - (v/c)^2}</span><script type="math/tex">\gamma = 1/\sqrt{1 - (v/c)^2}</script></span>。中子的动量 <span class="arithmatex"><span class="MathJax_Preview">p = \gamma m_n v</span><script type="math/tex">p = \gamma m_n v</script></span>。</p>
-<p>准确的TOF测量需要一个精确的“起始”时间信号（通常来自束流探测器信号、靶区瞬发<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>信号或实验主触发）和一个精确的“终止”时间信号（来自NEBULA PMT）。飞行路径 <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span> 的计算则依赖于反应顶点位置和NEBULA中子相互作用点位置的精确重建。<br />
+<p>对于非相对论性中子，其动能 <span class="arithmatex">\(KE = \frac{1}{2} m_n v^2\)</span>，其中 <span class="arithmatex">\(m_n\)</span> 是中子质量。对于RIBF实验中可能产生的高能中子，需要使用相对论公式：<span class="arithmatex">\(KE = (\gamma - 1)m_n c^2\)</span>，其中洛伦兹因子 <span class="arithmatex">\(\gamma = 1/\sqrt{1 - (v/c)^2}\)</span>。中子的动量 <span class="arithmatex">\(p = \gamma m_n v\)</span>。</p>
+<p>准确的TOF测量需要一个精确的“起始”时间信号（通常来自束流探测器信号、靶区瞬发<span class="arithmatex">\(\gamma\)</span>信号或实验主触发）和一个精确的“终止”时间信号（来自NEBULA PMT）。飞行路径 <span class="arithmatex">\(L\)</span> 的计算则依赖于反应顶点位置和NEBULA中子相互作用点位置的精确重建。<br />
 - <strong>脉冲形状甄别 (Pulse Shape Discrimination, PSD):</strong><br />
-  塑料闪烁体（尤其是某些特定类型或经过特殊处理的）对不同类型的入射粒子（如<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>射线和中子）产生的闪烁光脉冲形状会有细微差异。中子主要通过反冲质子产生光，而<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>射线主要通过康普顿散射产生电子。反冲质子通常比电子产生更多的慢衰减成分的光信号。利用这一特性，可以通过分析PMT输出脉冲的形状（例如，比较脉冲不同时间窗口内的电荷积分比例，即所谓的“长短门”法或“尾部/总量”法）来区分中子事例和<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>本底事例 [14, 18]。PSD是纯净中子测量的关键技术，尤其是在<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>本底较高的实验环境中。ANAROOT中可能通过 <code>TArtCalibNEBULA</code> 或用户在 <code>AnaLoop</code> 中实现的算法来进行PSD参数的计算和切口的设定。<br />
+  塑料闪烁体（尤其是某些特定类型或经过特殊处理的）对不同类型的入射粒子（如<span class="arithmatex">\(\gamma\)</span>射线和中子）产生的闪烁光脉冲形状会有细微差异。中子主要通过反冲质子产生光，而<span class="arithmatex">\(\gamma\)</span>射线主要通过康普顿散射产生电子。反冲质子通常比电子产生更多的慢衰减成分的光信号。利用这一特性，可以通过分析PMT输出脉冲的形状（例如，比较脉冲不同时间窗口内的电荷积分比例，即所谓的“长短门”法或“尾部/总量”法）来区分中子事例和<span class="arithmatex">\(\gamma\)</span>本底事例 [14, 18]。PSD是纯净中子测量的关键技术，尤其是在<span class="arithmatex">\(\gamma\)</span>本底较高的实验环境中。ANAROOT中可能通过 <code>TArtCalibNEBULA</code> 或用户在 <code>AnaLoop</code> 中实现的算法来进行PSD参数的计算和切口的设定。<br />
 - <strong>Cross-talk (串扰) 修正</strong> [14]:<br />
-  一个入射中子可能在NEBULA探测器阵列中发生多次散射，每次散射都可能在一个或多个闪烁体棒中产生信号，这就是所谓的“散射串扰”。此外，一个中子相互作用产生的次级粒子（如另一个中子或<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>射线）也可能击中其他棒，造成“次级粒子串扰”。这些串扰事例会使得对入射中子数目和能量的判断复杂化。</p>
+  一个入射中子可能在NEBULA探测器阵列中发生多次散射，每次散射都可能在一个或多个闪烁体棒中产生信号，这就是所谓的“散射串扰”。此外，一个中子相互作用产生的次级粒子（如另一个中子或<span class="arithmatex">\(\gamma\)</span>射线）也可能击中其他棒，造成“次级粒子串扰”。这些串扰事例会使得对入射中子数目和能量的判断复杂化。</p>
 <p>ANAROOT（或用户分析代码）需要采用算法来识别和剔除这些串扰信号，以正确重建真实的中子击中信息。[14]中提及的串扰排除步骤包括：<br />
   1.  <strong>TOF切割:</strong> 剔除TOF过小或过大的事例，这些通常对应于随机符合或加速器相关的背景。<br />
   2.  <strong>聚类 (Clustering):</strong> 将时间和空间上临近的击中组合成“簇 (cluster)”。这有助于排除由次级带电粒子引起的大部分串扰。<br />
-  3.  <strong>能量阈值切割 (Q-cut):</strong> 总能量沉积低于某个阈值（如5 MeVee）的簇被认为是串扰。簇的首个击中也需要有足够的能量沉积以保证良好的TOF分辨。这有助于排除低能<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>射线和散射中子引起的串扰。<br />
-  4.  <strong><span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>串扰排除:</strong> 通过比较簇对的特性（如相对速度接近光速且能量较小）来识别高能<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>射线引起的串扰。<br />
+  3.  <strong>能量阈值切割 (Q-cut):</strong> 总能量沉积低于某个阈值（如5 MeVee）的簇被认为是串扰。簇的首个击中也需要有足够的能量沉积以保证良好的TOF分辨。这有助于排除低能<span class="arithmatex">\(\gamma\)</span>射线和散射中子引起的串扰。<br />
+  4.  <strong><span class="arithmatex">\(\gamma\)</span>串扰排除:</strong> 通过比较簇对的特性（如相对速度接近光速且能量较小）来识别高能<span class="arithmatex">\(\gamma\)</span>射线引起的串扰。<br />
   5.  <strong>因果关系切割 (Causality cut):</strong> 利用散射中子能量损失后速度变慢的特性。如果一个簇可以被解释为由前一个簇中散射出的中子产生，则后者被认为是串扰。<br />
   6.  <strong>近距离串扰 (Nearby cross-talk):</strong> 特别是针对NeuLAND，对小距离簇之间可能由于分辨不足而存活下来的串扰，施加额外的空间距离切割。<br />
   7.  <strong>否决逻辑 (Veto condition):</strong> 利用NEBULA墙前方的带电粒子否决板信号，排除其后方探测器墙内由带电粒子引起的伪中子信号。</p>
 <ul>
 <li><strong>效率与接收度校正 (Efficiency and Acceptance Correction):</strong><br />
-  NEBULA探测器对中子的探测效率并非100%，且依赖于中子的能量。同时，由于几何尺寸的限制，探测器只能覆盖一部分立体角（即接收度）。为了得到真实的物理产额，测量的中子计数需要对探测效率和接收度进行修正。这些修正因子通常通过详细的蒙特卡罗模拟（如使用GEANT4软件包）得到 [14]。模拟需要精确描述探测器的几何结构、材料组分以及中子与物质相互作用的物理过程。模拟结果通常需要通过实验数据进行验证和调整，例如，利用已知产额和角分布的中子源（如<span class="arithmatex"><span class="MathJax_Preview">^{252}</span><script type="math/tex">^{252}</script></span>Cf自发裂变源）或特定核反应（如 <span class="arithmatex"><span class="MathJax_Preview">^7\text{Li}(p,n)^7\text{Be}</span><script type="math/tex">^7\text{Li}(p,n)^7\text{Be}</script></span> 反应 [17]）进行刻度和效率标定。[14]中提到，模拟的单中子探测效率会根据专门的实验结果进行一个全局因子的缩放。</li>
+  NEBULA探测器对中子的探测效率并非100%，且依赖于中子的能量。同时，由于几何尺寸的限制，探测器只能覆盖一部分立体角（即接收度）。为了得到真实的物理产额，测量的中子计数需要对探测效率和接收度进行修正。这些修正因子通常通过详细的蒙特卡罗模拟（如使用GEANT4软件包）得到 [14]。模拟需要精确描述探测器的几何结构、材料组分以及中子与物质相互作用的物理过程。模拟结果通常需要通过实验数据进行验证和调整，例如，利用已知产额和角分布的中子源（如<span class="arithmatex">\(^{252}\)</span>Cf自发裂变源）或特定核反应（如 <span class="arithmatex">\(^7\text{Li}(p,n)^7\text{Be}\)</span> 反应 [17]）进行刻度和效率标定。[14]中提到，模拟的单中子探测效率会根据专门的实验结果进行一个全局因子的缩放。</li>
 </ul>
 <h4 id="65-实例nebula数据分析脚本宏示例">6.5 实例：NEBULA数据分析脚本/宏示例<a class="headerlink" href="#65-实例nebula数据分析脚本宏示例" title="Permanent link">#</a></h4>
 <p>以下是一个概念性的ANAROOT分析宏 (C++ ROOT宏) 的骨架，用于演示如何处理NEBULA数据。</p>
@@ -5056,7 +5072,7 @@
 <p>[1, 23, 24, 19] ANAROOT中创建的直方图本质上是ROOT的 <code>TH1</code> (一维)、<code>TH2</code> (二维) 或 <code>TH3</code> (三维) 系列对象 [23, 24]。因此，所有ROOT提供的丰富的直方图绘制和操作功能均可直接应用于ANAROOT的分析结果。</p>
 <ul>
 <li><strong>直方图绘制：</strong> 在ANAROOT的CUI中，可以使用 <code>ht(id)</code>, <code>hn()</code>, <code>hb()</code>, <code>htp()</code> 等命令快速绘制已填充的直方图 [20]。在ROOT宏或编译型代码中，可以直接调用 <code>TH1::Draw()</code> 方法，并配合各种绘图选项（如 "COLZ" 绘制颜色填充的二维图，"SAME" 将多个直方图绘制在同一画布，"E" 绘制误差棒等）。</li>
-<li><strong>直方图操作：</strong> ROOT允许对直方图进行多种操作，如重划分bin (Rebin)、归一化 (Normalize)、加减乘除、投影 (ProjectionX, ProjectionY)、拟合 (Fit) 等。这些功能对于数据分析和结果提取非常有用。例如，可以从NEBULA的二维PSD参数 vs 能量沉积图中投影出特定能量区域的PSD分布，然后进行拟合以区分中子和<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>射线。</li>
+<li><strong>直方图操作：</strong> ROOT允许对直方图进行多种操作，如重划分bin (Rebin)、归一化 (Normalize)、加减乘除、投影 (ProjectionX, ProjectionY)、拟合 (Fit) 等。这些功能对于数据分析和结果提取非常有用。例如，可以从NEBULA的二维PSD参数 vs 能量沉积图中投影出特定能量区域的PSD分布，然后进行拟合以区分中子和<span class="arithmatex">\(\gamma\)</span>射线。</li>
 <li><strong>Ntuple/TTree可视化：</strong> ANAROOT分析中产生的Ntuple或TTree（例如由 <code>TAlRawDataExample</code> 创建的原始数据Ntuple [4]，或用户在自定义 <code>AnaLoop</code> 中创建的包含重建物理量的TTree）可以使用 <code>TTree::Draw()</code> 方法进行强大的可视化分析。该方法允许用户以灵活的表达式绘制任意变量之间的一维、二维、三维关系图，并可以施加复杂的切割条件。例如，<code>ntp-&gt;Draw("NEBULAPla.fTOF:NEBULAPla.fQ", "NEBULAPla.fPSD &gt; 0.5 &amp;&amp; SAMURAIDCTrack.fMomentum &gt; 1000")</code> 可以绘制NEBULA中满足特定PSD和PDC动量条件的击中的TOF vs Q的二维散点图。<code>TTree::Scan()</code> 方法可以列表形式打印出满足条件的Ntuple条目，<code>TTree::Print()</code> 可以显示Ntuple的结构。</li>
 <li><strong>ROOT图形界面：</strong> <code>TBrowser</code> 是ROOT提供的一个强大的图形化浏览器，用户可以通过它直观地浏览ROOT文件内容，查看和操作其中的直方图、Ntuple等对象，并进行交互式拟合、修改绘图属性等。</li>
 </ul>
@@ -5089,7 +5105,7 @@
 <li><strong>分析示例：</strong></li>
 <li><strong>门条件设置：</strong> 可以利用一个探测器的信息作为对另一个探测器数据进行筛选的门条件。例如，根据BigRIPS PPACs鉴别出的入射粒子种类，来选择性地分析NEBULA的中子数据；或者，根据SAMURAI PDC重建出的带电粒子径迹特征（如动量、散射角），来研究与之符合出射的中子的性质。</li>
 <li><strong>运动学重建：</strong> 在一些反应道中，通过测量所有末态粒子的动量矢量（例如，PDC测量带电粒子，NEBULA测量中子），可以进行完整的运动学重建，如计算反应的Q值、不变质量、丢失质量等。</li>
-<li><strong>符合测量：</strong> 研究不同粒子之间的符合关系，如质子-中子符合、<span class="arithmatex"><span class="MathJax_Preview">\gamma</span><script type="math/tex">\gamma</script></span>-中子符合等，对于理解反应机制和核结构特性非常重要。</li>
+<li><strong>符合测量：</strong> 研究不同粒子之间的符合关系，如质子-中子符合、<span class="arithmatex">\(\gamma\)</span>-中子符合等，对于理解反应机制和核结构特性非常重要。</li>
 </ul>
 <p>虽然本指南不深入探讨复杂的多探测器联合分析的具体实现细节（这通常高度依赖于具体的物理目标和实验设置），但用户应意识到ANAROOT的架构为这类分析提供了基础的数据访问和管理能力。</p>
 <h4 id="93-anaroot性能优化与调试技巧">9.3 ANAROOT性能优化与调试技巧<a class="headerlink" href="#93-anaroot性能优化与调试技巧" title="Permanent link">#</a></h4>
@@ -5370,7 +5386,9 @@
         
           <script src="../../../../../js/timeago_mkdocs_material.js"></script>
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+          <script src="../../../../../js/mathjax.js"></script>
+        
+          <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
         
           <script src="https://d3js.org/d3.v7.min.js"></script>
         

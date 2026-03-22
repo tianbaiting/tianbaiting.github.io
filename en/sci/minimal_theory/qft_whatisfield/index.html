@@ -1319,6 +1319,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
@@ -1845,6 +1847,20 @@
     <li class="md-nav__item">
       <a href="../../minimal_code/vscode_lsp/" class="md-nav__link">
         如何解决 VS Code 中的 C/C++ include 报错问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/vscode_plug/" class="md-nav__link">
+        VS Code 插件开发指南
       </a>
     </li>
   
@@ -2620,7 +2636,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/D_polar_exp/other_polarmeter/" class="md-nav__link">
-        其他研究组的polarimeter
+        Polarimeters in Other Research Groups
       </a>
     </li>
   
@@ -3439,53 +3455,53 @@
   <h1>Qft whatisfield</h1>
 
 <p>好的，让我们抛开比喻，直击数学和物理的核心。</p>
-<p>一个场算符（Field Operator），以最简单的自由标量场 <span class="arithmatex"><span class="MathJax_Preview">\hat\phi(x)</span><script type="math/tex">\hat\phi(x)</script></span> 为例，是一个精确的数学对象，它同时满足以下定义：</p>
+<p>一个场算符（Field Operator），以最简单的自由标量场 <span class="arithmatex">\(\hat\phi(x)\)</span> 为例，是一个精确的数学对象，它同时满足以下定义：</p>
 <hr />
 <h3 id="1-核心定义一个时空依赖的算符">1. 核心定义：一个时空依赖的算符<a class="headerlink" href="#1-核心定义一个时空依赖的算符" title="Permanent link">#</a></h3>
-<p>首先，场算符 <span class="arithmatex"><span class="MathJax_Preview">\hat\phi(x)</span><script type="math/tex">\hat\phi(x)</script></span> 不是一个数，也不是一个波函数。<br />
-它是一个算符（operator），类似量子力学中的位置算符 <span class="arithmatex"><span class="MathJax_Preview">\hat x</span><script type="math/tex">\hat x</script></span> 或动量算符 <span class="arithmatex"><span class="MathJax_Preview">\hat p</span><script type="math/tex">\hat p</script></span>，作用在希尔伯特空间（例如 Fock 空间）上的态矢 <span class="arithmatex"><span class="MathJax_Preview">|\Psi\rangle</span><script type="math/tex">|\Psi\rangle</script></span>。</p>
+<p>首先，场算符 <span class="arithmatex">\(\hat\phi(x)\)</span> 不是一个数，也不是一个波函数。<br />
+它是一个算符（operator），类似量子力学中的位置算符 <span class="arithmatex">\(\hat x\)</span> 或动量算符 <span class="arithmatex">\(\hat p\)</span>，作用在希尔伯特空间（例如 Fock 空间）上的态矢 <span class="arithmatex">\(|\Psi\rangle\)</span>。</p>
 <p>关键区别在于：</p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\hat x</span><script type="math/tex">\hat x</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">\hat p</span><script type="math/tex">\hat p</script></span> 是不依赖于空间坐标的算符（在海森堡绘景中可含时间依赖）。  </li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\hat\phi(x)</span><script type="math/tex">\hat\phi(x)</script></span> 是时空坐标 <span class="arithmatex"><span class="MathJax_Preview">x^\mu=(t,\mathbf{x})</span><script type="math/tex">x^\mu=(t,\mathbf{x})</script></span> 的函数。</li>
+<li><span class="arithmatex">\(\hat x\)</span> 和 <span class="arithmatex">\(\hat p\)</span> 是不依赖于空间坐标的算符（在海森堡绘景中可含时间依赖）。  </li>
+<li><span class="arithmatex">\(\hat\phi(x)\)</span> 是时空坐标 <span class="arithmatex">\(x^\mu=(t,\mathbf{x})\)</span> 的函数。</li>
 </ul>
-<p>因此，场算符是一个“算符值分布”（operator-valued distribution）：对时空中的每一点 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\hat\phi(x)</span><script type="math/tex">\hat\phi(x)</script></span> 都是定义在 Fock 空间上的一个算符。</p>
-<p>精确理解：场 <span class="arithmatex"><span class="MathJax_Preview">\hat\phi</span><script type="math/tex">\hat\phi</script></span> 是一个映射，把闵可夫斯基时空的每一点 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 关联到作用于 Fock 空间的算符 <span class="arithmatex"><span class="MathJax_Preview">\hat\phi(x)</span><script type="math/tex">\hat\phi(x)</script></span>。</p>
+<p>因此，场算符是一个“算符值分布”（operator-valued distribution）：对时空中的每一点 <span class="arithmatex">\(x\)</span>，<span class="arithmatex">\(\hat\phi(x)\)</span> 都是定义在 Fock 空间上的一个算符。</p>
+<p>精确理解：场 <span class="arithmatex">\(\hat\phi\)</span> 是一个映射，把闵可夫斯基时空的每一点 <span class="arithmatex">\(x\)</span> 关联到作用于 Fock 空间的算符 <span class="arithmatex">\(\hat\phi(x)\)</span>。</p>
 <hr />
 <h3 id="2-数学构造用产生与湮灭算符构建">2. 数学构造：用产生与湮灭算符构建<a class="headerlink" href="#2-数学构造用产生与湮灭算符构建" title="Permanent link">#</a></h3>
 <p>自由标量场算符的常见展开（在相互作用绘景或自由场情况下）为：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview"> \hat\phi(x)=\hat\phi(\mathbf{x},t) =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right), </span><script type="math/tex"> \hat\phi(x)=\hat\phi(\mathbf{x},t) =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right), </script></span></p>
-<p>其中 <span class="arithmatex"><span class="MathJax_Preview">p\cdot x=E_{\mathbf{p}}t-\mathbf{p}\cdot\mathbf{x}</span><script type="math/tex">p\cdot x=E_{\mathbf{p}}t-\mathbf{p}\cdot\mathbf{x}</script></span>。拆解如下：</p>
+<p><span class="arithmatex">\( \hat\phi(x)=\hat\phi(\mathbf{x},t) =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right), \)</span></p>
+<p>其中 <span class="arithmatex">\(p\cdot x=E_{\mathbf{p}}t-\mathbf{p}\cdot\mathbf{x}\)</span>。拆解如下：</p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\int\frac{d^3p}{(2\pi)^3}</span><script type="math/tex">\int\frac{d^3p}{(2\pi)^3}</script></span>：遍历所有三维动量模式 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{p}</span><script type="math/tex">\mathbf{p}</script></span>，对应“无限个谐振子”中的每个模式。  </li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\hat a_{\mathbf{p}}</span><script type="math/tex">\hat a_{\mathbf{p}}</script></span>：湮灭算符，作用时会移除一个动量为 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{p}</span><script type="math/tex">\mathbf{p}</script></span> 的粒子。  </li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\hat a_{\mathbf{p}}^\dagger</span><script type="math/tex">\hat a_{\mathbf{p}}^\dagger</script></span>：产生算符，作用时会创造一个动量为 <span class="arithmatex"><span class="MathJax_Preview">\mathbf{p}</span><script type="math/tex">\mathbf{p}</script></span> 的粒子。  </li>
-<li><span class="arithmatex"><span class="MathJax_Preview">e^{-ip\cdot x},\,e^{ip\cdot x}</span><script type="math/tex">e^{-ip\cdot x},\,e^{ip\cdot x}</script></span>：平面波因子，分别对应湮灭和产生部分的时空相位。  </li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\frac{1}{\sqrt{2E_{\mathbf{p}}}}</span><script type="math/tex">\frac{1}{\sqrt{2E_{\mathbf{p}}}}</script></span>：洛伦兹不变的归一化因子（保证测度 <span class="arithmatex"><span class="MathJax_Preview">\frac{d^3p}{E_{\mathbf{p}}}</span><script type="math/tex">\frac{d^3p}{E_{\mathbf{p}}}</script></span> 的不变性）。</li>
+<li><span class="arithmatex">\(\int\frac{d^3p}{(2\pi)^3}\)</span>：遍历所有三维动量模式 <span class="arithmatex">\(\mathbf{p}\)</span>，对应“无限个谐振子”中的每个模式。  </li>
+<li><span class="arithmatex">\(\hat a_{\mathbf{p}}\)</span>：湮灭算符，作用时会移除一个动量为 <span class="arithmatex">\(\mathbf{p}\)</span> 的粒子。  </li>
+<li><span class="arithmatex">\(\hat a_{\mathbf{p}}^\dagger\)</span>：产生算符，作用时会创造一个动量为 <span class="arithmatex">\(\mathbf{p}\)</span> 的粒子。  </li>
+<li><span class="arithmatex">\(e^{-ip\cdot x},\,e^{ip\cdot x}\)</span>：平面波因子，分别对应湮灭和产生部分的时空相位。  </li>
+<li><span class="arithmatex">\(\frac{1}{\sqrt{2E_{\mathbf{p}}}}\)</span>：洛伦兹不变的归一化因子（保证测度 <span class="arithmatex">\(\frac{d^3p}{E_{\mathbf{p}}}\)</span> 的不变性）。</li>
 </ul>
-<p>当场算符作用于真空态 <span class="arithmatex"><span class="MathJax_Preview">|0\rangle</span><script type="math/tex">|0\rangle</script></span> 时：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview"> \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right)\lvert0\rangle. </span><script type="math/tex"> \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right)\lvert0\rangle. </script></span></p>
-<p>由于 <span class="arithmatex"><span class="MathJax_Preview">\hat a_{\mathbf{p}}\lvert0\rangle=0</span><script type="math/tex">\hat a_{\mathbf{p}}\lvert0\rangle=0</script></span>，只剩下产生部分：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview"> \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{e^{ip\cdot x}}{\sqrt{2E_{\mathbf{p}}}}\, \hat a_{\mathbf{p}}^\dagger\lvert0\rangle. </span><script type="math/tex"> \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{e^{ip\cdot x}}{\sqrt{2E_{\mathbf{p}}}}\, \hat a_{\mathbf{p}}^\dagger\lvert0\rangle. </script></span></p>
-<p>该结果是一个单粒子态，但不是动量本征态，而是局域于点 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 的粒子激发。因此常说“场算符在点 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 创建了一个粒子”。</p>
+<p>当场算符作用于真空态 <span class="arithmatex">\(|0\rangle\)</span> 时：</p>
+<p><span class="arithmatex">\( \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right)\lvert0\rangle. \)</span></p>
+<p>由于 <span class="arithmatex">\(\hat a_{\mathbf{p}}\lvert0\rangle=0\)</span>，只剩下产生部分：</p>
+<p><span class="arithmatex">\( \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{e^{ip\cdot x}}{\sqrt{2E_{\mathbf{p}}}}\, \hat a_{\mathbf{p}}^\dagger\lvert0\rangle. \)</span></p>
+<p>该结果是一个单粒子态，但不是动量本征态，而是局域于点 <span class="arithmatex">\(x\)</span> 的粒子激发。因此常说“场算符在点 <span class="arithmatex">\(x\)</span> 创建了一个粒子”。</p>
 <hr />
 <h3 id="3-定义特征量子化条件与因果性">3. 定义特征：量子化条件与因果性<a class="headerlink" href="#3-定义特征量子化条件与因果性" title="Permanent link">#</a></h3>
 <p>场的量子化通过其对易（或反对易）关系给出。标量玻色场的等时对易关系为：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview"> [\hat\phi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=i\delta^{(3)}(\mathbf{x}-\mathbf{y}), </span><script type="math/tex"> [\hat\phi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=i\delta^{(3)}(\mathbf{x}-\mathbf{y}), </script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview"> [\hat\phi(t,\mathbf{x}),\,\hat\phi(t,\mathbf{y})]=0,\qquad [\hat\pi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=0, </span><script type="math/tex"> [\hat\phi(t,\mathbf{x}),\,\hat\phi(t,\mathbf{y})]=0,\qquad [\hat\pi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=0, </script></span></p>
-<p>其中共轭动量场 <span class="arithmatex"><span class="MathJax_Preview">\hat\pi(x)=\partial\mathcal{L}/\partial(\partial_0\hat\phi(x))</span><script type="math/tex">\hat\pi(x)=\partial\mathcal{L}/\partial(\partial_0\hat\phi(x))</script></span>。</p>
+<p><span class="arithmatex">\( [\hat\phi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=i\delta^{(3)}(\mathbf{x}-\mathbf{y}), \)</span></p>
+<p><span class="arithmatex">\( [\hat\phi(t,\mathbf{x}),\,\hat\phi(t,\mathbf{y})]=0,\qquad [\hat\pi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=0, \)</span></p>
+<p>其中共轭动量场 <span class="arithmatex">\(\hat\pi(x)=\partial\mathcal{L}/\partial(\partial_0\hat\phi(x))\)</span>。</p>
 <p>更普适的因果性（微观局域性）条件是：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview"> [\hat\phi(x),\,\hat\phi(y)]=0\quad\text{当 }(x-y)^2&lt;0\ (\text{类空间隔}), </span><script type="math/tex"> [\hat\phi(x),\,\hat\phi(y)]=0\quad\text{当 }(x-y)^2<0\ (\text{类空间隔}), </script></span></p>
+<p><span class="arithmatex">\( [\hat\phi(x),\,\hat\phi(y)]=0\quad\text{当 }(x-y)^2&lt;0\ (\text{类空间隔}), \)</span></p>
 <p>即若两点间为类空间隔，则相应的场算符必须对易，保证在这两点的局域测量互不影响（不违反狭义相对论因果律）。</p>
 <hr />
 <h3 id="总结场算符的要点">总结：场算符的要点<a class="headerlink" href="#总结场算符的要点" title="Permanent link">#</a></h3>
 <ol>
-<li>场算符 <span class="arithmatex"><span class="MathJax_Preview">\hat\phi(x)</span><script type="math/tex">\hat\phi(x)</script></span> 是一个算符值分布，把时空点 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 映射到作用于 Fock 空间的算符。  </li>
-<li>它由所有动量模式的产生算符 <span class="arithmatex"><span class="MathJax_Preview">\hat a^\dagger</span><script type="math/tex">\hat a^\dagger</script></span> 与湮灭算符 <span class="arithmatex"><span class="MathJax_Preview">\hat a</span><script type="math/tex">\hat a</script></span> 的线性组合构成（傅里叶展开）。  </li>
-<li>它在时空点 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 处创建或湮灭局域的粒子激发。  </li>
+<li>场算符 <span class="arithmatex">\(\hat\phi(x)\)</span> 是一个算符值分布，把时空点 <span class="arithmatex">\(x\)</span> 映射到作用于 Fock 空间的算符。  </li>
+<li>它由所有动量模式的产生算符 <span class="arithmatex">\(\hat a^\dagger\)</span> 与湮灭算符 <span class="arithmatex">\(\hat a\)</span> 的线性组合构成（傅里叶展开）。  </li>
+<li>它在时空点 <span class="arithmatex">\(x\)</span> 处创建或湮灭局域的粒子激发。  </li>
 <li>它满足（反）对易关系以同时兼容量子力学与狭义相对论的因果性。</li>
 </ol>
-<p>对比量子力学：在 QM 中 <span class="arithmatex"><span class="MathJax_Preview">\hat x</span><script type="math/tex">\hat x</script></span> 是观测量，波函数 <span class="arithmatex"><span class="MathJax_Preview">\psi(x)</span><script type="math/tex">\psi(x)</script></span> 是态；在 QFT 中 <span class="arithmatex"><span class="MathJax_Preview">\hat\phi(x)</span><script type="math/tex">\hat\phi(x)</script></span> 是场算符，态是 Fock 空间中的矢量（例如 <span class="arithmatex"><span class="MathJax_Preview">\lvert0\rangle</span><script type="math/tex">\lvert0\rangle</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">\hat a_p^\dagger\hat a_q^\dagger\lvert0\rangle</span><script type="math/tex">\hat a_p^\dagger\hat a_q^\dagger\lvert0\rangle</script></span>）。所谓“第二次量子化”即将经典场升格为算符场的过程。</p>
+<p>对比量子力学：在 QM 中 <span class="arithmatex">\(\hat x\)</span> 是观测量，波函数 <span class="arithmatex">\(\psi(x)\)</span> 是态；在 QFT 中 <span class="arithmatex">\(\hat\phi(x)\)</span> 是场算符，态是 Fock 空间中的矢量（例如 <span class="arithmatex">\(\lvert0\rangle\)</span> 或 <span class="arithmatex">\(\hat a_p^\dagger\hat a_q^\dagger\lvert0\rangle\)</span>）。所谓“第二次量子化”即将经典场升格为算符场的过程。</p>
 <p>数学结构 </p>
 <p>这是一个直击核心的问题。量子场论（QFT）的数学结构 <strong>不是一个单一的、统一的框架</strong>，而是多个数学分支的<strong>集合体</strong>。</p>
 <p>你所感受到的“繁琐”和“逻辑跳跃”（比如先用场，最后才知道场是什么），正是因为物理学家所使用的“QFT”（我们称之为<strong>“应用QFT”</strong>）是一个极其强大、但在数学上充满“启发式”（heuristic）和“直觉”的工具箱。</p>
@@ -3497,15 +3513,15 @@
 <ul>
 <li><strong>希尔伯特空间 (Hilbert Space)：</strong> QFT的状态空间是一个无限维的希尔伯特空间，称为<strong>Fock空间 (Fock Space)</strong>。</li>
 <li><strong>Fock空间：</strong> 它的“基矢”描述了“包含了任意数量粒子”的状态。例如：<ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">|0\rangle</span><script type="math/tex">|0\rangle</script></span> (真空态，0个粒子)</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">a_{\vec{p}}^\dagger |0\rangle</span><script type="math/tex">a_{\vec{p}}^\dagger |0\rangle</script></span> (一个动量为 <span class="arithmatex"><span class="MathJax_Preview">\vec{p}</span><script type="math/tex">\vec{p}</script></span> 的粒子)</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">a_{\vec{p}}^\dagger a_{\vec{q}}^\dagger |0\rangle</span><script type="math/tex">a_{\vec{p}}^\dagger a_{\vec{q}}^\dagger |0\rangle</script></span> (两个粒子，动量分别为 <span class="arithmatex"><span class="MathJax_Preview">\vec{p}, \vec{q}</span><script type="math/tex">\vec{p}, \vec{q}</script></span>)</li>
+<li><span class="arithmatex">\(|0\rangle\)</span> (真空态，0个粒子)</li>
+<li><span class="arithmatex">\(a_{\vec{p}}^\dagger |0\rangle\)</span> (一个动量为 <span class="arithmatex">\(\vec{p}\)</span> 的粒子)</li>
+<li><span class="arithmatex">\(a_{\vec{p}}^\dagger a_{\vec{q}}^\dagger |0\rangle\)</span> (两个粒子，动量分别为 <span class="arithmatex">\(\vec{p}, \vec{q}\)</span>)</li>
 <li>...等等，直到无穷多粒子。</li>
 </ul>
 </li>
 <li><strong>算符 (Operators)：</strong> 所有的物理量都是算符。<ul>
-<li><strong><span class="arithmatex"><span class="MathJax_Preview">a, a^\dagger</span><script type="math/tex">a, a^\dagger</script></span> (产生/湮灭算符)：</strong> 这是Fock空间最基本的算符。</li>
-<li><strong><span class="arithmatex"><span class="MathJax_Preview">\hat{\phi}(x)</span><script type="math/tex">\hat{\phi}(x)</script></span> (场算符)：</strong> 正如我们之前讨论的，它是一个<strong>算符值分布 (Operator-Valued Distribution)</strong>。它不是一个普通的函数，你必须用一个“测试函数” <span class="arithmatex"><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span> 去“探测”它（即 <span class="arithmatex"><span class="MathJax_Preview">\int d^4x f(x) \hat{\phi}(x)</span><script type="math/tex">\int d^4x f(x) \hat{\phi}(x)</script></span>），才能得到一个“行为良好”的算符。这是QFT中“无穷大”的第一个来源。</li>
+<li><strong><span class="arithmatex">\(a, a^\dagger\)</span> (产生/湮灭算符)：</strong> 这是Fock空间最基本的算符。</li>
+<li><strong><span class="arithmatex">\(\hat{\phi}(x)\)</span> (场算符)：</strong> 正如我们之前讨论的，它是一个<strong>算符值分布 (Operator-Valued Distribution)</strong>。它不是一个普通的函数，你必须用一个“测试函数” <span class="arithmatex">\(f(x)\)</span> 去“探测”它（即 <span class="arithmatex">\(\int d^4x f(x) \hat{\phi}(x)\)</span>），才能得到一个“行为良好”的算符。这是QFT中“无穷大”的第一个来源。</li>
 </ul>
 </li>
 </ul>
@@ -3517,8 +3533,8 @@
 <ul>
 <li>这是狭义相对论（洛伦兹变换 + 平移）的对称群。</li>
 <li><strong>Wigner的分类：</strong> QFT的数学结构指出，一个“基本粒子”<strong>就是</strong>庞加莱群的一个<strong>不可约幺正表示 (Unitary Irreducible Representation)</strong>。</li>
-<li><strong>这才是“粒子”的最终定义！</strong> 这个表示由两个数（Casimir不变量）来标记：<strong>质量 (<span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>)</strong> 和<strong>自旋 (<span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>)</strong>。</li>
-<li>这就是为什么世界上只存在标量粒子（<span class="arithmatex"><span class="MathJax_Preview">s=0</span><script type="math/tex">s=0</script></span>）、旋量粒子（<span class="arithmatex"><span class="MathJax_Preview">s=1/2</span><script type="math/tex">s=1/2</script></span>）、矢量粒子（<span class="arithmatex"><span class="MathJax_Preview">s=1</span><script type="math/tex">s=1</script></span>）等，而不存在 <span class="arithmatex"><span class="MathJax_Preview">s=1/3</span><script type="math/tex">s=1/3</script></span> 的粒子。</li>
+<li><strong>这才是“粒子”的最终定义！</strong> 这个表示由两个数（Casimir不变量）来标记：<strong>质量 (<span class="arithmatex">\(m\)</span>)</strong> 和<strong>自旋 (<span class="arithmatex">\(s\)</span>)</strong>。</li>
+<li>这就是为什么世界上只存在标量粒子（<span class="arithmatex">\(s=0\)</span>）、旋量粒子（<span class="arithmatex">\(s=1/2\)</span>）、矢量粒子（<span class="arithmatex">\(s=1\)</span>）等，而不存在 <span class="arithmatex">\(s=1/3\)</span> 的粒子。</li>
 </ul>
 </li>
 <li>
@@ -3527,10 +3543,10 @@
 <li>这是<strong>规范场论 (Gauge Theory)</strong> 的核心。</li>
 <li>它描述了“力”的来源。一个力源于一个<strong>局域规范不变性 (Local Gauge Invariance)</strong>。</li>
 <li>QFT的数学结构要求，为了维持这种局域对称性，<strong>必须</strong>引入一个新的场——规范场（即“力”的传播子）。</li>
-<li><strong>U(1)群 <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 量子电动力学 (QED)</strong> <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 光子</li>
-<li><strong>SU(2)群 <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 弱相互作用</strong> <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> W/Z 玻色子</li>
-<li><strong>SU(3)群 <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 强相互作用 (QCD)</strong> <span class="arithmatex"><span class="MathJax_Preview">\to</span><script type="math/tex">\to</script></span> 胶子</li>
-<li>标准模型 (<span class="arithmatex"><span class="MathJax_Preview">\text{SU(3)}_C \times \text{SU(2)}_L \times \text{U(1)}_Y</span><script type="math/tex">\text{SU(3)}_C \times \text{SU(2)}_L \times \text{U(1)}_Y</script></span>) 的拉格朗日量，<strong>完全</strong>是由这个群结构决定的。</li>
+<li><strong>U(1)群 <span class="arithmatex">\(\to\)</span> 量子电动力学 (QED)</strong> <span class="arithmatex">\(\to\)</span> 光子</li>
+<li><strong>SU(2)群 <span class="arithmatex">\(\to\)</span> 弱相互作用</strong> <span class="arithmatex">\(\to\)</span> W/Z 玻色子</li>
+<li><strong>SU(3)群 <span class="arithmatex">\(\to\)</span> 强相互作用 (QCD)</strong> <span class="arithmatex">\(\to\)</span> 胶子</li>
+<li>标准模型 (<span class="arithmatex">\(\text{SU(3)}_C \times \text{SU(2)}_L \times \text{U(1)}_Y\)</span>) 的拉格朗日量，<strong>完全</strong>是由这个群结构决定的。</li>
 </ul>
 </li>
 </ul>
@@ -3541,8 +3557,8 @@
 <li><strong>底流形 (Base Manifold)：</strong> 我们的四维时空。</li>
 <li><strong>纤维 (Fiber)：</strong> 在时空中的<strong>每一点</strong>，都“附加”着一个内部对称空间（例如U(1)群对应的复平面上的一个圆周）。</li>
 <li><strong>场 (Field)：</strong> 物理场（如电子场）是这个丛上的一个<strong>截面 (Section)</strong>。</li>
-<li><strong>规范联络 (Gauge Connection)：</strong> <strong>这正是规范场（<span class="arithmatex"><span class="MathJax_Preview">A_\mu</span><script type="math/tex">A_\mu</script></span>）的数学定义！</strong> 它告诉你如何在时空的不同点之间“平行移动”一个场而不改变其物理（即“协变导数” <span class="arithmatex"><span class="MathJax_Preview">D_\mu = \partial_\mu - igA_\mu</span><script type="math/tex">D_\mu = \partial_\mu - igA_\mu</script></span>）。</li>
-<li><strong>曲率 (Curvature)：</strong> <strong>这正是场强（<span class="arithmatex"><span class="MathJax_Preview">F_{\mu\nu}</span><script type="math/tex">F_{\mu\nu}</script></span>）的数学定义！</strong> 它描述了规范场的“弯曲”程度，即力的强度。</li>
+<li><strong>规范联络 (Gauge Connection)：</strong> <strong>这正是规范场（<span class="arithmatex">\(A_\mu\)</span>）的数学定义！</strong> 它告诉你如何在时空的不同点之间“平行移动”一个场而不改变其物理（即“协变导数” <span class="arithmatex">\(D_\mu = \partial_\mu - igA_\mu\)</span>）。</li>
+<li><strong>曲率 (Curvature)：</strong> <strong>这正是场强（<span class="arithmatex">\(F_{\mu\nu}\)</span>）的数学定义！</strong> 它描述了规范场的“弯曲”程度，即力的强度。</li>
 </ul>
 </li>
 </ul>
@@ -3550,11 +3566,11 @@
 <p>这是物理学家<strong>实际使用</strong>的QFT结构。</p>
 <ul>
 <li><strong>核心思想：</strong> 一个系统从状态A到状态B，经历了<strong>所有可能</strong>的路径，其总振幅是所有路径振幅的<strong>泛函积分 (Functional Integral)</strong>：<br />
-<span class="arithmatex"><span class="MathJax_Preview"> Z = \int \mathcal{D}\phi \exp\left( \frac{i}{\hbar} S[\phi] \right) </span><script type="math/tex"> Z = \int \mathcal{D}\phi \exp\left( \frac{i}{\hbar} S[\phi] \right) </script></span><br />
-    其中 <span class="arithmatex"><span class="MathJax_Preview">S[\phi] = \int d^4x \mathcal{L}(\phi, \partial\mu\phi)</span><script type="math/tex">S[\phi] = \int d^4x \mathcal{L}(\phi, \partial\mu\phi)</script></span> 是作用量。</li>
-<li><strong>数学问题：</strong> 这是一个<strong>无穷维</strong>的积分。<span class="arithmatex"><span class="MathJax_Preview">\mathcal{D}\phi</span><script type="math/tex">\mathcal{D}\phi</script></span> 这个“测度”在数学上是<strong>严格病态的 (ill-defined)</strong>。</li>
+<span class="arithmatex">\( Z = \int \mathcal{D}\phi \exp\left( \frac{i}{\hbar} S[\phi] \right) \)</span><br />
+    其中 <span class="arithmatex">\(S[\phi] = \int d^4x \mathcal{L}(\phi, \partial\mu\phi)\)</span> 是作用量。</li>
+<li><strong>数学问题：</strong> 这是一个<strong>无穷维</strong>的积分。<span class="arithmatex">\(\mathcal{D}\phi\)</span> 这个“测度”在数学上是<strong>严格病态的 (ill-defined)</strong>。</li>
 <li><strong>物理学家的“诡计”：</strong><ol>
-<li><strong>微扰论：</strong> 我们假设相互作用很弱，将 <span class="arithmatex"><span class="MathJax_Preview">e^{iS_{int}}</span><script type="math/tex">e^{iS_{int}}</script></span> 展开为泰勒级数。</li>
+<li><strong>微扰论：</strong> 我们假设相互作用很弱，将 <span class="arithmatex">\(e^{iS_{int}}\)</span> 展开为泰勒级数。</li>
 <li><strong>费曼图：</strong> 这个级数的每一项都对应一个费曼图，它把一个极其复杂的泛函积分“简化”成了（仍然很复杂的）普通高维动量积分。</li>
 <li><strong>重整化 (Renormalization)：</strong> 这些动量积分几乎都是<strong>发散</strong>（无穷大）的。重整化是一套系统的“黑魔法”，它告诉我们如何系统地从这些无穷大中“减去”另一些无穷大，从而得到一个有限的、可与实验对比的物理结果。</li>
 </ol>
@@ -3564,8 +3580,8 @@
 <h3 id="5-严格基础公理化qft-axiomatic-qft">5. 严格基础：公理化QFT (Axiomatic QFT)<a class="headerlink" href="#5-严格基础公理化qft-axiomatic-qft" title="Permanent link">#</a></h3>
 <p>这是数学家们试图建立的“坚实”的QFT结构，它<strong>不</strong>依赖于拉格朗日量或路径积分。</p>
 <ul>
-<li><strong>Wightman公理 (Wightman Axioms)：</strong> 这是最接近物理学家直觉的公理化。它试图给“场算符” <span class="arithmatex"><span class="MathJax_Preview">\hat{\phi}(x)</span><script type="math/tex">\hat{\phi}(x)</script></span> 和“真空态” <span class="arithmatex"><span class="MathJax_Preview">|0\rangle</span><script type="math/tex">|0\rangle</script></span> 下一组严格的数学定义（包括洛伦兹协变性、微观因果律、谱条件等）。</li>
-<li><strong>代数QFT (Algebraic QFT / Haag-Kastler Axioms)：</strong> 这是最抽象的。它完全抛弃了“场” <span class="arithmatex"><span class="MathJax_Preview">\hat{\phi}(x)</span><script type="math/tex">\hat{\phi}(x)</script></span> 的概念（因为它是一个“坏”的分布）。它认为，物理学的基本实体是在时空某个区域内<strong>可观测量的代数（C*-Algebra）</strong>。</li>
+<li><strong>Wightman公理 (Wightman Axioms)：</strong> 这是最接近物理学家直觉的公理化。它试图给“场算符” <span class="arithmatex">\(\hat{\phi}(x)\)</span> 和“真空态” <span class="arithmatex">\(|0\rangle\)</span> 下一组严格的数学定义（包括洛伦兹协变性、微观因果律、谱条件等）。</li>
+<li><strong>代数QFT (Algebraic QFT / Haag-Kastler Axioms)：</strong> 这是最抽象的。它完全抛弃了“场” <span class="arithmatex">\(\hat{\phi}(x)\)</span> 的概念（因为它是一个“坏”的分布）。它认为，物理学的基本实体是在时空某个区域内<strong>可观测量的代数（C*-Algebra）</strong>。</li>
 </ul>
 <hr />
 <p>所学的“QFT”是一个<strong>实用主义的大杂烩</strong>：</p>
@@ -3674,7 +3690,9 @@
         
           <script src="../../../../js/timeago_mkdocs_material.js"></script>
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+          <script src="../../../../js/mathjax.js"></script>
+        
+          <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
         
           <script src="https://d3js.org/d3.v7.min.js"></script>
         

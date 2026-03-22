@@ -1303,6 +1303,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="true">
@@ -1887,6 +1889,20 @@
     <li class="md-nav__item">
       <a href="../vscode_lsp/" class="md-nav__link">
         如何解决 VS Code 中的 C/C++ include 报错问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vscode_plug/" class="md-nav__link">
+        VS Code 插件开发指南
       </a>
     </li>
   
@@ -2567,7 +2583,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/D_polar_exp/other_polarmeter/" class="md-nav__link">
-        其他研究组的polarimeter
+        其他研究组的 polarimeter
       </a>
     </li>
   
@@ -3392,7 +3408,7 @@
 <p><strong>保存粒子径迹</strong>:</p>
 <ul>
 <li>在您的 <code>SteppingAction</code> 中，获取每一步（step）的位置信息 (<code>G4Step::GetPostStepPoint()-&gt;GetPosition()</code>)。</li>
-<li>将同一个 <code>TrackID</code> 的所有步点坐标 <span class="arithmatex"><span class="MathJax_Preview">(x, y, z)</span><script type="math/tex">(x, y, z)</script></span> 依次存入一个 <code>std::vector</code> 或类似容器中。</li>
+<li>将同一个 <code>TrackID</code> 的所有步点坐标 <span class="arithmatex">\((x, y, z)\)</span> 依次存入一个 <code>std::vector</code> 或类似容器中。</li>
 <li>当一个径迹结束时 (<code>G4Track::GetTrackStatus() == fStopAndKill</code>)，将这个径迹的所有坐标点作为一个整体写入 TTree 的一个分支（Branch）。您可能还需要保存粒子类型 (PDG ID)、初始动量等信息。</li>
 </ul>
 </li>
@@ -3587,7 +3603,9 @@
         
           <script src="../../../js/timeago_mkdocs_material.js"></script>
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+          <script src="../../../js/mathjax.js"></script>
+        
+          <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
         
           <script src="https://d3js.org/d3.v7.min.js"></script>
         

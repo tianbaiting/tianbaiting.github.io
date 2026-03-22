@@ -1301,6 +1301,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
@@ -1839,6 +1841,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../minimal_code/vscode_plug/" class="md-nav__link">
+        VS Code 插件开发指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../minimal_code/vscodetunnel/" class="md-nav__link">
         VS Code Tunnel
       </a>
@@ -2127,8 +2143,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#13-预解式算符-rz-arz-a-及其解析性质" class="md-nav__link">
-    1.3 预解式算符 R(z, A)R(z, A) 及其解析性质
+  <a href="#13-预解式算符-rz-a-及其解析性质" class="md-nav__link">
+    1.3 预解式算符 \(R(z, A)\) 及其解析性质
   </a>
   
 </li>
@@ -2202,8 +2218,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#33-born-neumann-级数gzgz-的迭代展开" class="md-nav__link">
-    3.3 Born-Neumann 级数：G(z)G(z) 的迭代展开
+  <a href="#33-born-neumann-级数gz-的迭代展开" class="md-nav__link">
+    3.3 Born-Neumann 级数：\(G(z)\) 的迭代展开
   </a>
   
 </li>
@@ -2740,7 +2756,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/D_polar_exp/other_polarmeter/" class="md-nav__link">
-        其他研究组的polarimeter
+        其他研究组的 polarimeter
       </a>
     </li>
   
@@ -3501,8 +3517,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#13-预解式算符-rz-arz-a-及其解析性质" class="md-nav__link">
-    1.3 预解式算符 R(z, A)R(z, A) 及其解析性质
+  <a href="#13-预解式算符-rz-a-及其解析性质" class="md-nav__link">
+    1.3 预解式算符 \(R(z, A)\) 及其解析性质
   </a>
   
 </li>
@@ -3576,8 +3592,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#33-born-neumann-级数gzgz-的迭代展开" class="md-nav__link">
-    3.3 Born-Neumann 级数：G(z)G(z) 的迭代展开
+  <a href="#33-born-neumann-级数gz-的迭代展开" class="md-nav__link">
+    3.3 Born-Neumann 级数：\(G(z)\) 的迭代展开
   </a>
   
 </li>
@@ -3695,131 +3711,131 @@
 <h1 id="resolvent">resolvent<a class="headerlink" href="#resolvent" title="Permanent link">#</a></h1>
 <h2 id="预解式算符的定义与谱理论基础"><strong>预解式算符的定义与谱理论基础</strong><a class="headerlink" href="#预解式算符的定义与谱理论基础" title="Permanent link">#</a></h2>
 <h3 id="11-算符谱与预解集泛函分析的观点"><strong>1.1 算符、谱与预解集：泛函分析的观点</strong><a class="headerlink" href="#11-算符谱与预解集泛函分析的观点" title="Permanent link">#</a></h3>
-<p>在数学物理中，一个物理系统的可观测量（如能量、动量）由一个复Hilbert空间 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 上的线性算符 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 来表示 <a href="#ref-1">1</a>。这些算符，特别是像哈密顿算符 (Hamiltonian) 这样的能量算符，通常是无界的 (unbounded)，但它们满足一个关键的拓扑性质：它们是“闭算符” (closed operators) <a href="#ref-2">2</a>。谱理论 (Spectral theory) 的研究必须在这个更广泛的闭算符框架内进行，而不仅仅局限于有界算符 (bounded operators) <a href="#ref-3">3</a>。</p>
-<p>谱理论的核心是理解算符 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> 的可逆性，其中 <span class="arithmatex"><span class="MathJax_Preview">I</span><script type="math/tex">I</script></span> 是恒等算符，<span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 是一个复数。</p>
+<p>在数学物理中，一个物理系统的可观测量（如能量、动量）由一个复Hilbert空间 <span class="arithmatex">\(H\)</span> 上的线性算符 <span class="arithmatex">\(T\)</span> 来表示 <a href="#ref-1">1</a>。这些算符，特别是像哈密顿算符 (Hamiltonian) 这样的能量算符，通常是无界的 (unbounded)，但它们满足一个关键的拓扑性质：它们是“闭算符” (closed operators) <a href="#ref-2">2</a>。谱理论 (Spectral theory) 的研究必须在这个更广泛的闭算符框架内进行，而不仅仅局限于有界算符 (bounded operators) <a href="#ref-3">3</a>。</p>
+<p>谱理论的核心是理解算符 <span class="arithmatex">\((T - \lambda I)\)</span> 的可逆性，其中 <span class="arithmatex">\(I\)</span> 是恒等算符，<span class="arithmatex">\(\lambda\)</span> 是一个复数。</p>
 <p>定义 1.1 (预解集)<br />
-算符 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 的预解集 (resolvent set)，记为 <span class="arithmatex"><span class="MathJax_Preview">\rho(T)</span><script type="math/tex">\rho(T)</script></span>，是所有复数 <span class="arithmatex"><span class="MathJax_Preview">\lambda \in \mathbb{C}</span><script type="math/tex">\lambda \in \mathbb{C}</script></span> 的集合，满足以下条件：算符 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> 是一个双射（即单射且满射），并且其逆算符 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)^{-1}</span><script type="math/tex">(T - \lambda I)^{-1}</script></span> 是一个在 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 上处处定义（defined everywhere）的有界线性算符 <a href="#ref-1">1</a>。  </p>
+算符 <span class="arithmatex">\(T\)</span> 的预解集 (resolvent set)，记为 <span class="arithmatex">\(\rho(T)\)</span>，是所有复数 <span class="arithmatex">\(\lambda \in \mathbb{C}\)</span> 的集合，满足以下条件：算符 <span class="arithmatex">\((T - \lambda I)\)</span> 是一个双射（即单射且满射），并且其逆算符 <span class="arithmatex">\((T - \lambda I)^{-1}\)</span> 是一个在 <span class="arithmatex">\(H\)</span> 上处处定义（defined everywhere）的有界线性算符 <a href="#ref-1">1</a>。  </p>
 <p>定义 1.2 (谱)<br />
-算符 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 的谱 (spectrum)，记为 <span class="arithmatex"><span class="MathJax_Preview">\sigma(T)</span><script type="math/tex">\sigma(T)</script></span>，是预解集 <span class="arithmatex"><span class="MathJax_Preview">\rho(T)</span><script type="math/tex">\rho(T)</script></span> 在复平面 <span class="arithmatex"><span class="MathJax_Preview">\mathbb{C}</span><script type="math/tex">\mathbb{C}</script></span> 上的补集，即 <span class="arithmatex"><span class="MathJax_Preview">\sigma(T) = \mathbb{C} \setminus \rho(T)</span><script type="math/tex">\sigma(T) = \mathbb{C} \setminus \rho(T)</script></span> <a href="#ref-1">1</a>。谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(T)</span><script type="math/tex">\sigma(T)</script></span> 总是复平面上的一个闭集 <a href="#ref-6">6</a>。  </p>
-<p>在有限维空间中（例如，<span class="arithmatex"><span class="MathJax_Preview">N \times N</span><script type="math/tex">N \times N</script></span> 矩阵），算符 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> 的可逆性仅仅取决于其行列式是否为零。因此，谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(T)</span><script type="math/tex">\sigma(T)</script></span> 精确地等于 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 的本征值 (eigenvalues) 的集合 <a href="#ref-4">4</a>。然而，在无限维空间中（例如，量子力学的波函数空间 <span class="arithmatex"><span class="MathJax_Preview">L^2(\mathbb{R})</span><script type="math/tex">L^2(\mathbb{R})</script></span>），这一图像被根本性地改变了。一个算符可能是单射的（即没有本征值），但仍然不可逆（例如，它不是满射的）<a href="#ref-4">4</a>。<a href="#ref-4">4</a> 中给出的右移算符 (right shift operator) 示例完美地说明了这一点：它没有本征值，但 0 仍然在谱中，因为它不是满射的。因此，谱是本征值概念在无限维空间中的必要推广 <a href="#ref-4">4</a>。</p>
-<p>对于物理学中重要的闭算符（这包括所有有界算符和自伴哈密顿算符），“有界逆算符定理” (Bounded Inverse Theorem) <a href="#ref-3">3</a> 和“闭图像定理” (Closed Graph Theorem) <a href="#ref-3">3</a> 极大地简化了定义 1.1。这些定理保证，如果一个闭算符 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 的逆 <span class="arithmatex"><span class="MathJax_Preview">T^{-1}</span><script type="math/tex">T^{-1}</script></span> <em>存在</em>（即 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 是双射的），那么 <span class="arithmatex"><span class="MathJax_Preview">T^{-1}</span><script type="math/tex">T^{-1}</script></span> <em>自动</em>是有界的。因此，对于我们关心的闭算符，谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(T)</span><script type="math/tex">\sigma(T)</script></span> <em>就是</em>使 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> <em>不是双射</em> (not bijective) 的 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 的集合 <a href="#ref-3">3</a>。</p>
+算符 <span class="arithmatex">\(T\)</span> 的谱 (spectrum)，记为 <span class="arithmatex">\(\sigma(T)\)</span>，是预解集 <span class="arithmatex">\(\rho(T)\)</span> 在复平面 <span class="arithmatex">\(\mathbb{C}\)</span> 上的补集，即 <span class="arithmatex">\(\sigma(T) = \mathbb{C} \setminus \rho(T)\)</span> <a href="#ref-1">1</a>。谱 <span class="arithmatex">\(\sigma(T)\)</span> 总是复平面上的一个闭集 <a href="#ref-6">6</a>。  </p>
+<p>在有限维空间中（例如，<span class="arithmatex">\(N \times N\)</span> 矩阵），算符 <span class="arithmatex">\((T - \lambda I)\)</span> 的可逆性仅仅取决于其行列式是否为零。因此，谱 <span class="arithmatex">\(\sigma(T)\)</span> 精确地等于 <span class="arithmatex">\(T\)</span> 的本征值 (eigenvalues) 的集合 <a href="#ref-4">4</a>。然而，在无限维空间中（例如，量子力学的波函数空间 <span class="arithmatex">\(L^2(\mathbb{R})\)</span>），这一图像被根本性地改变了。一个算符可能是单射的（即没有本征值），但仍然不可逆（例如，它不是满射的）<a href="#ref-4">4</a>。<a href="#ref-4">4</a> 中给出的右移算符 (right shift operator) 示例完美地说明了这一点：它没有本征值，但 0 仍然在谱中，因为它不是满射的。因此，谱是本征值概念在无限维空间中的必要推广 <a href="#ref-4">4</a>。</p>
+<p>对于物理学中重要的闭算符（这包括所有有界算符和自伴哈密顿算符），“有界逆算符定理” (Bounded Inverse Theorem) <a href="#ref-3">3</a> 和“闭图像定理” (Closed Graph Theorem) <a href="#ref-3">3</a> 极大地简化了定义 1.1。这些定理保证，如果一个闭算符 <span class="arithmatex">\(T\)</span> 的逆 <span class="arithmatex">\(T^{-1}\)</span> <em>存在</em>（即 <span class="arithmatex">\(T\)</span> 是双射的），那么 <span class="arithmatex">\(T^{-1}\)</span> <em>自动</em>是有界的。因此，对于我们关心的闭算符，谱 <span class="arithmatex">\(\sigma(T)\)</span> <em>就是</em>使 <span class="arithmatex">\((T - \lambda I)\)</span> <em>不是双射</em> (not bijective) 的 <span class="arithmatex">\(\lambda\)</span> 的集合 <a href="#ref-3">3</a>。</p>
 <h3 id="12-谱的精细结构逆算符失效的三种模式"><strong>1.2 谱的精细结构：逆算符失效的三种模式</strong><a class="headerlink" href="#12-谱的精细结构逆算符失效的三种模式" title="Permanent link">#</a></h3>
-<p>谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(T)</span><script type="math/tex">\sigma(T)</script></span> 之所以存在，是因为 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> 作为双射的条件（单射、满射、有界逆）至少有一条被破坏了。根据具体是哪条条件失效，谱可以被分解为三个互不相交的子集 <a href="#ref-2">2</a>。</p>
-<p>定义 1.3 (点谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_p(T)</span><script type="math/tex">\sigma_p(T)</script></span>)<br />
-点谱 (Point Spectrum) 是所有 <span class="arithmatex"><span class="MathJax_Preview">\lambda \in \mathbb{C}</span><script type="math/tex">\lambda \in \mathbb{C}</script></span> 的集合，使得 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> 不满足单射性 (not injective)。这意味着存在非零向量 <span class="arithmatex"><span class="MathJax_Preview">v \in H</span><script type="math/tex">v \in H</script></span> 使得 <span class="arithmatex"><span class="MathJax_Preview">T v = \lambda v</span><script type="math/tex">T v = \lambda v</script></span> <a href="#ref-5">5</a>。这些 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 正是传统的本征值。  </p>
-<p>定义 1.4 (连续谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_c(T)</span><script type="math/tex">\sigma_c(T)</script></span>)<br />
-连续谱 (Continuous Spectrum) 是所有 <span class="arithmatex"><span class="MathJax_Preview">\lambda \in \mathbb{C}</span><script type="math/tex">\lambda \in \mathbb{C}</script></span> 的集合，使得 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> 满足单射性，其值域 <span class="arithmatex"><span class="MathJax_Preview">R(T - \lambda I)</span><script type="math/tex">R(T - \lambda I)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 中是稠密的 (dense)，但其（在值域上定义的）逆算符是无界的 <a href="#ref-5">5</a>。  </p>
-<p>定义 1.5 (剩余谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_r(T)</span><script type="math/tex">\sigma_r(T)</script></span>)<br />
-剩余谱 (Residual Spectrum) 是所有 <span class="arithmatex"><span class="MathJax_Preview">\lambda \in \mathbb{C}</span><script type="math/tex">\lambda \in \mathbb{C}</script></span> 的集合，使得 <span class="arithmatex"><span class="MathJax_Preview">(T - \lambda I)</span><script type="math/tex">(T - \lambda I)</script></span> 满足单射性，但其值域 <span class="arithmatex"><span class="MathJax_Preview">R(T - \lambda I)</span><script type="math/tex">R(T - \lambda I)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 中不是稠密的 <a href="#ref-5">5</a>。  </p>
-<p><em>注：对于物理学中最重要的自伴算符 (self-adjoint operators)，可以证明其剩余谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_r(T)</span><script type="math/tex">\sigma_r(T)</script></span> 是空集。</em></p>
-<p>这种谱的分解在物理学上具有至关重要的意义。点谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_p(T)</span><script type="math/tex">\sigma_p(T)</script></span> 通常对应于系统的<strong>束缚态</strong> (Bound States)，例如氢原子中能量量子化的离散能级。连续谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_c(T)</span><script type="math/tex">\sigma_c(T)</script></span> 则对应于<strong>散射态</strong> (Scattering States)，例如能量可以取 <span class="arithmatex"><span class="MathJax_Preview">[0, \infty)</span><script type="math/tex">[0, \infty)</script></span> 区间内任意值的自由粒子，或从势阱中电离的电子 <a href="#ref-8">8</a>。</p>
-<h3 id="13-预解式算符-rz-arz-a-及其解析性质"><strong>1.3 预解式算符 <span class="arithmatex"><span class="MathJax_Preview">R(z, A)</span><script type="math/tex">R(z, A)</script></span> 及其解析性质</strong><a class="headerlink" href="#13-预解式算符-rz-arz-a-及其解析性质" title="Permanent link">#</a></h3>
+<p>谱 <span class="arithmatex">\(\sigma(T)\)</span> 之所以存在，是因为 <span class="arithmatex">\((T - \lambda I)\)</span> 作为双射的条件（单射、满射、有界逆）至少有一条被破坏了。根据具体是哪条条件失效，谱可以被分解为三个互不相交的子集 <a href="#ref-2">2</a>。</p>
+<p>定义 1.3 (点谱 <span class="arithmatex">\(\sigma_p(T)\)</span>)<br />
+点谱 (Point Spectrum) 是所有 <span class="arithmatex">\(\lambda \in \mathbb{C}\)</span> 的集合，使得 <span class="arithmatex">\((T - \lambda I)\)</span> 不满足单射性 (not injective)。这意味着存在非零向量 <span class="arithmatex">\(v \in H\)</span> 使得 <span class="arithmatex">\(T v = \lambda v\)</span> <a href="#ref-5">5</a>。这些 <span class="arithmatex">\(\lambda\)</span> 正是传统的本征值。  </p>
+<p>定义 1.4 (连续谱 <span class="arithmatex">\(\sigma_c(T)\)</span>)<br />
+连续谱 (Continuous Spectrum) 是所有 <span class="arithmatex">\(\lambda \in \mathbb{C}\)</span> 的集合，使得 <span class="arithmatex">\((T - \lambda I)\)</span> 满足单射性，其值域 <span class="arithmatex">\(R(T - \lambda I)\)</span> 在 <span class="arithmatex">\(H\)</span> 中是稠密的 (dense)，但其（在值域上定义的）逆算符是无界的 <a href="#ref-5">5</a>。  </p>
+<p>定义 1.5 (剩余谱 <span class="arithmatex">\(\sigma_r(T)\)</span>)<br />
+剩余谱 (Residual Spectrum) 是所有 <span class="arithmatex">\(\lambda \in \mathbb{C}\)</span> 的集合，使得 <span class="arithmatex">\((T - \lambda I)\)</span> 满足单射性，但其值域 <span class="arithmatex">\(R(T - \lambda I)\)</span> 在 <span class="arithmatex">\(H\)</span> 中不是稠密的 <a href="#ref-5">5</a>。  </p>
+<p><em>注：对于物理学中最重要的自伴算符 (self-adjoint operators)，可以证明其剩余谱 <span class="arithmatex">\(\sigma_r(T)\)</span> 是空集。</em></p>
+<p>这种谱的分解在物理学上具有至关重要的意义。点谱 <span class="arithmatex">\(\sigma_p(T)\)</span> 通常对应于系统的<strong>束缚态</strong> (Bound States)，例如氢原子中能量量子化的离散能级。连续谱 <span class="arithmatex">\(\sigma_c(T)\)</span> 则对应于<strong>散射态</strong> (Scattering States)，例如能量可以取 <span class="arithmatex">\([0, \infty)\)</span> 区间内任意值的自由粒子，或从势阱中电离的电子 <a href="#ref-8">8</a>。</p>
+<h3 id="13-预解式算符-rz-a-及其解析性质"><strong>1.3 预解式算符 <span class="arithmatex">\(R(z, A)\)</span> 及其解析性质</strong><a class="headerlink" href="#13-预解式算符-rz-a-及其解析性质" title="Permanent link">#</a></h3>
 <p>谱理论的核心工具——预解式算符——现在可以被定义。</p>
 <p>定义 1.6 (预解式)<br />
-对于复参数 <span class="arithmatex"><span class="MathJax_Preview">z \in \rho(A)</span><script type="math/tex">z \in \rho(A)</script></span>（即 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 位于预解集中），算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的预解式 (Resolvent)，记为 <span class="arithmatex"><span class="MathJax_Preview">R(z, A)</span><script type="math/tex">R(z, A)</script></span>，定义为：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">R(z, A) = (A - zI)^{-1}</span><script type="math/tex">R(z, A) = (A - zI)^{-1}</script></span></p>
-<p><a href="#ref-9">9</a>。在物理文献中，特别是在微扰理论和格林函数 (Green's function) 理论中，更常见的约定是 <span class="arithmatex"><span class="MathJax_Preview">G(z, A) = (z - A)^{-1}</span><script type="math/tex">G(z, A) = (z - A)^{-1}</script></span> <a href="#ref-10">10</a>。这两种定义仅相差一个负号和 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 的重新标记，但 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的形式在Lippmann-Schwinger方程中更为自然。本报告将主要采用 <span class="arithmatex"><span class="MathJax_Preview">G(z) = (z - A)^{-1}</span><script type="math/tex">G(z) = (z - A)^{-1}</script></span> 这一约定。</p>
-<p>预解式的最重要特性，也是使其成为连接物理与数学的桥梁的特性是：<strong><span class="arithmatex"><span class="MathJax_Preview">G(z, A)</span><script type="math/tex">G(z, A)</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">\rho(A)</span><script type="math/tex">\rho(A)</script></span> 上的一个全纯 (holomorphic) 或者说解析 (analytic) 的算符值函数</strong> <a href="#ref-8">8</a>。</p>
-<p>这实现了一个根本性的范式转移 (paradigm shift)。我们不再直接研究算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>（它可能是一个复杂的、无界的微分算符），而是转而研究一个*函数* <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span>。<span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 是一个以复数 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 为变量、以*有界算符*为值的解析函数。</p>
-<p>在这个新范式中，算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)</span><script type="math/tex">\sigma(A)</script></span>，即 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> *没有*定义的点集，就是 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 作为解析函数<strong>失去其解析性</strong>的地方。换言之，<strong>算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)</span><script type="math/tex">\sigma(A)</script></span> 就是其预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的奇点 (singularities) 的集合</strong> <a href="#ref-7">7</a>。</p>
-<p>这种将算符谱问题转化为复分析函数奇点问题的思想，就是“预解式形式主义” (Resolvent Formalism) 的精髓 [9](#ref-9]。它允许我们动用复分析中所有强大的工具——柯西积分、留数定理、Plemelj公式等——来“探测”算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱结构。</p>
+对于复参数 <span class="arithmatex">\(z \in \rho(A)\)</span>（即 <span class="arithmatex">\(z\)</span> 位于预解集中），算符 <span class="arithmatex">\(A\)</span> 的预解式 (Resolvent)，记为 <span class="arithmatex">\(R(z, A)\)</span>，定义为：</p>
+<p><span class="arithmatex">\(R(z, A) = (A - zI)^{-1}\)</span></p>
+<p><a href="#ref-9">9</a>。在物理文献中，特别是在微扰理论和格林函数 (Green's function) 理论中，更常见的约定是 <span class="arithmatex">\(G(z, A) = (z - A)^{-1}\)</span> <a href="#ref-10">10</a>。这两种定义仅相差一个负号和 <span class="arithmatex">\(z\)</span> 的重新标记，但 <span class="arithmatex">\(G(z)\)</span> 的形式在Lippmann-Schwinger方程中更为自然。本报告将主要采用 <span class="arithmatex">\(G(z) = (z - A)^{-1}\)</span> 这一约定。</p>
+<p>预解式的最重要特性，也是使其成为连接物理与数学的桥梁的特性是：<strong><span class="arithmatex">\(G(z, A)\)</span> 是 <span class="arithmatex">\(\rho(A)\)</span> 上的一个全纯 (holomorphic) 或者说解析 (analytic) 的算符值函数</strong> <a href="#ref-8">8</a>。</p>
+<p>这实现了一个根本性的范式转移 (paradigm shift)。我们不再直接研究算符 <span class="arithmatex">\(A\)</span>（它可能是一个复杂的、无界的微分算符），而是转而研究一个*函数* <span class="arithmatex">\(G(z)\)</span>。<span class="arithmatex">\(G(z)\)</span> 是一个以复数 <span class="arithmatex">\(z\)</span> 为变量、以*有界算符*为值的解析函数。</p>
+<p>在这个新范式中，算符 <span class="arithmatex">\(A\)</span> 的谱 <span class="arithmatex">\(\sigma(A)\)</span>，即 <span class="arithmatex">\(G(z)\)</span> *没有*定义的点集，就是 <span class="arithmatex">\(G(z)\)</span> 作为解析函数<strong>失去其解析性</strong>的地方。换言之，<strong>算符 <span class="arithmatex">\(A\)</span> 的谱 <span class="arithmatex">\(\sigma(A)\)</span> 就是其预解式 <span class="arithmatex">\(G(z)\)</span> 的奇点 (singularities) 的集合</strong> <a href="#ref-7">7</a>。</p>
+<p>这种将算符谱问题转化为复分析函数奇点问题的思想，就是“预解式形式主义” (Resolvent Formalism) 的精髓 [9](#ref-9]。它允许我们动用复分析中所有强大的工具——柯西积分、留数定理、Plemelj公式等——来“探测”算符 <span class="arithmatex">\(A\)</span> 的谱结构。</p>
 <h2 id="第二部分核心证明为什么预解式的奇点包含谱信息"><strong>第二部分：【核心证明】为什么预解式的奇点包含谱信息？</strong><a class="headerlink" href="#第二部分核心证明为什么预解式的奇点包含谱信息" title="Permanent link">#</a></h2>
-<p>本部分将严格证明预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的两种主要奇点类型（极点和割线）如何分别编码了算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的离散谱（本征值）和连续谱。</p>
+<p>本部分将严格证明预解式 <span class="arithmatex">\(G(z)\)</span> 的两种主要奇点类型（极点和割线）如何分别编码了算符 <span class="arithmatex">\(A\)</span> 的离散谱（本征值）和连续谱。</p>
 <h3 id="21-证明-i-离散谱-极点-与-riesz-投影"><strong>2.1 证明 (I): 离散谱 (极点) 与 Riesz 投影</strong><a class="headerlink" href="#21-证明-i-离散谱-极点-与-riesz-投影" title="Permanent link">#</a></h3>
-<p><strong>论点</strong>：谱的孤立点（即孤立的本征值）对应于预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的<strong>极点</strong> (Poles) <a href="#ref-12">12</a>。</p>
+<p><strong>论点</strong>：谱的孤立点（即孤立的本征值）对应于预解式 <span class="arithmatex">\(G(z)\)</span> 的<strong>极点</strong> (Poles) <a href="#ref-12">12</a>。</p>
 <p>对于许多物理系统，例如束缚在势阱中的粒子，其哈密顿算符具有“紧预解式” (compact resolvent)，这意味着它们的谱*只*由孤立的本征值构成 <a href="#ref-16">16</a>。</p>
 <p>证明 2.1 (Riesz 投影的定义)<br />
-假设 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> 是算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)</span><script type="math/tex">\sigma(A)</script></span> 中的一个孤立点。这意味着我们可以找到一个半径足够小的简单闭合围道 (contour) <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span>，它在复平面上只包围 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>，而将谱的其余所有部分都排除在外 <a href="#ref-9">9</a>。<br />
-我们利用复分析中的柯西积分，定义一个算符 <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span>，称为 Riesz 投影 (Riesz projection) <a href="#ref-18">18</a>：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">P_n = \frac{1}{2\pi i} \oint_{C_n} G(z, A) dz = \frac{1}{2\pi i} \oint_{C_n} (z - A)^{-1} dz</span><script type="math/tex">P_n = \frac{1}{2\pi i} \oint_{C_n} G(z, A) dz = \frac{1}{2\pi i} \oint_{C_n} (z - A)^{-1} dz</script></span><br />
-<a href="#ref-9">9</a>。（注：使用 <span class="arithmatex"><span class="MathJax_Preview">G(z) = (z-A)^{-1}</span><script type="math/tex">G(z) = (z-A)^{-1}</script></span> 约定，积分为正号。若使用 <span class="arithmatex"><span class="MathJax_Preview">R(z)=(A-zI)^{-1}</span><script type="math/tex">R(z)=(A-zI)^{-1}</script></span>，则积分前需加负号 <a href="#ref-9">9</a>。）</p>
-<p>证明 2.2 ( <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> 是一个投影算符)<br />
-我们现在必须证明 <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> 确实是一个投影算符，即它满足幂等性： <span class="arithmatex"><span class="MathJax_Preview">P_n^2 = P_n</span><script type="math/tex">P_n^2 = P_n</script></span>。</p>
+假设 <span class="arithmatex">\(E_n\)</span> 是算符 <span class="arithmatex">\(A\)</span> 的谱 <span class="arithmatex">\(\sigma(A)\)</span> 中的一个孤立点。这意味着我们可以找到一个半径足够小的简单闭合围道 (contour) <span class="arithmatex">\(C_n\)</span>，它在复平面上只包围 <span class="arithmatex">\(E_n\)</span>，而将谱的其余所有部分都排除在外 <a href="#ref-9">9</a>。<br />
+我们利用复分析中的柯西积分，定义一个算符 <span class="arithmatex">\(P_n\)</span>，称为 Riesz 投影 (Riesz projection) <a href="#ref-18">18</a>：</p>
+<p><span class="arithmatex">\(P_n = \frac{1}{2\pi i} \oint_{C_n} G(z, A) dz = \frac{1}{2\pi i} \oint_{C_n} (z - A)^{-1} dz\)</span><br />
+<a href="#ref-9">9</a>。（注：使用 <span class="arithmatex">\(G(z) = (z-A)^{-1}\)</span> 约定，积分为正号。若使用 <span class="arithmatex">\(R(z)=(A-zI)^{-1}\)</span>，则积分前需加负号 <a href="#ref-9">9</a>。）</p>
+<p>证明 2.2 ( <span class="arithmatex">\(P_n\)</span> 是一个投影算符)<br />
+我们现在必须证明 <span class="arithmatex">\(P_n\)</span> 确实是一个投影算符，即它满足幂等性： <span class="arithmatex">\(P_n^2 = P_n\)</span>。</p>
 <ol>
-<li>工具：证明的关键是“第一预解式恒等式”（或 Hilbert 恒等式）。对于任意 <span class="arithmatex"><span class="MathJax_Preview">z, w \in \rho(A)</span><script type="math/tex">z, w \in \rho(A)</script></span>：<br />
-<span class="arithmatex"><span class="MathJax_Preview">G(z) - G(w) = (z - A)^{-1} - (w - A)^{-1} = (z - A)^{-1} [ (w - A) - (z - A) ] (w - A)^{-1}</span><script type="math/tex">G(z) - G(w) = (z - A)^{-1} - (w - A)^{-1} = (z - A)^{-1} [ (w - A) - (z - A) ] (w - A)^{-1}</script></span><br />
-<span class="arithmatex"><span class="MathJax_Preview">G(z) - G(w) = G(z) (w - z) G(w)</span><script type="math/tex">G(z) - G(w) = G(z) (w - z) G(w)</script></span><br />
-   或 <span class="arithmatex"><span class="MathJax_Preview">G(w) G(z) = \frac{G(w) - G(z)}{z - w}</span><script type="math/tex">G(w) G(z) = \frac{G(w) - G(z)}{z - w}</script></span> <a href="#ref-8">8</a>。  </li>
-<li>推导：我们取两个围道 <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">C_n'</span><script type="math/tex">C_n'</script></span>，它们都只包围 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>，并且 <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span> 严格位于 <span class="arithmatex"><span class="MathJax_Preview">C_n'</span><script type="math/tex">C_n'</script></span> 内部 <a href="#ref-18">18</a>。  </li>
+<li>工具：证明的关键是“第一预解式恒等式”（或 Hilbert 恒等式）。对于任意 <span class="arithmatex">\(z, w \in \rho(A)\)</span>：<br />
+<span class="arithmatex">\(G(z) - G(w) = (z - A)^{-1} - (w - A)^{-1} = (z - A)^{-1} [ (w - A) - (z - A) ] (w - A)^{-1}\)</span><br />
+<span class="arithmatex">\(G(z) - G(w) = G(z) (w - z) G(w)\)</span><br />
+   或 <span class="arithmatex">\(G(w) G(z) = \frac{G(w) - G(z)}{z - w}\)</span> <a href="#ref-8">8</a>。  </li>
+<li>推导：我们取两个围道 <span class="arithmatex">\(C_n\)</span> 和 <span class="arithmatex">\(C_n'\)</span>，它们都只包围 <span class="arithmatex">\(E_n\)</span>，并且 <span class="arithmatex">\(C_n\)</span> 严格位于 <span class="arithmatex">\(C_n'\)</span> 内部 <a href="#ref-18">18</a>。  </li>
 </ol>
-<p><span class="arithmatex"><span class="MathJax_Preview">P_n^2 = \left( \frac{1}{2\pi i} \oint_{C_n'} G(w) dw \right) \left( \frac{1}{2\pi i} \oint_{C_n} G(z) dz \right) = \frac{1}{(2\pi i)^2} \oint_{C_n'} \oint_{C_n} G(w) G(z) dz dw</span><script type="math/tex">P_n^2 = \left( \frac{1}{2\pi i} \oint_{C_n'} G(w) dw \right) \left( \frac{1}{2\pi i} \oint_{C_n} G(z) dz \right) = \frac{1}{(2\pi i)^2} \oint_{C_n'} \oint_{C_n} G(w) G(z) dz dw</script></span></p>
+<p><span class="arithmatex">\(P_n^2 = \left( \frac{1}{2\pi i} \oint_{C_n'} G(w) dw \right) \left( \frac{1}{2\pi i} \oint_{C_n} G(z) dz \right) = \frac{1}{(2\pi i)^2} \oint_{C_n'} \oint_{C_n} G(w) G(z) dz dw\)</span></p>
 <ol>
 <li>应用预解式恒等式：</li>
 </ol>
-<p><span class="arithmatex"><span class="MathJax_Preview">P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} \oint_{C_n} \frac{G(w) - G(z)}{z - w} dz dw</span><script type="math/tex">P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} \oint_{C_n} \frac{G(w) - G(z)}{z - w} dz dw</script></span></p>
+<p><span class="arithmatex">\(P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} \oint_{C_n} \frac{G(w) - G(z)}{z - w} dz dw\)</span></p>
 <ol>
 <li>我们将积分分为两部分：</li>
 </ol>
-<p><span class="arithmatex"><span class="MathJax_Preview">P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} G(w) \left( \oint_{C_n} \frac{dz}{z - w} \right) dw - \frac{1}{(2\pi i)^2} \oint_{C_n} G(z) \left( \oint_{C_n'} \frac{dw}{z - w} \right) dz</span><script type="math/tex">P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} G(w) \left( \oint_{C_n} \frac{dz}{z - w} \right) dw - \frac{1}{(2\pi i)^2} \oint_{C_n} G(z) \left( \oint_{C_n'} \frac{dw}{z - w} \right) dz</script></span></p>
+<p><span class="arithmatex">\(P_n^2 = \frac{1}{(2\pi i)^2} \oint_{C_n'} G(w) \left( \oint_{C_n} \frac{dz}{z - w} \right) dw - \frac{1}{(2\pi i)^2} \oint_{C_n} G(z) \left( \oint_{C_n'} \frac{dw}{z - w} \right) dz\)</span></p>
 <ol>
 <li><strong>计算内层积分</strong>（利用柯西积分公式）：  </li>
-<li>在第一项中， <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> 位于*外部*围道 <span class="arithmatex"><span class="MathJax_Preview">C_n'</span><script type="math/tex">C_n'</script></span> 上，而 <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 位于*内部*围道 <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span> 上。因此 <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> 始终在 <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span> 的*外部*。根据柯西定理， <span class="arithmatex"><span class="MathJax_Preview">\oint_{C_n} \frac{dz}{z - w} = 0</span><script type="math/tex">\oint_{C_n} \frac{dz}{z - w} = 0</script></span>。  </li>
+<li>在第一项中， <span class="arithmatex">\(w\)</span> 位于*外部*围道 <span class="arithmatex">\(C_n'\)</span> 上，而 <span class="arithmatex">\(z\)</span> 位于*内部*围道 <span class="arithmatex">\(C_n\)</span> 上。因此 <span class="arithmatex">\(w\)</span> 始终在 <span class="arithmatex">\(C_n\)</span> 的*外部*。根据柯西定理， <span class="arithmatex">\(\oint_{C_n} \frac{dz}{z - w} = 0\)</span>。  </li>
 <li>
-<p>在第二项中， <span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 位于*内部*围道 <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span> 上，而 <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> 位于*外部*围道 <span class="arithmatex"><span class="MathJax_Preview">C_n'</span><script type="math/tex">C_n'</script></span> 上。<span class="arithmatex"><span class="MathJax_Preview">z</span><script type="math/tex">z</script></span> 始终在 <span class="arithmatex"><span class="MathJax_Preview">C_n'</span><script type="math/tex">C_n'</script></span> 的*内部*。根据柯西积分公式， <span class="arithmatex"><span class="MathJax_Preview">\oint_{C_n'} \frac{dw}{z - w} = - \oint_{C_n'} \frac{dw}{w - z} = - (2\pi i)</span><script type="math/tex">\oint_{C_n'} \frac{dw}{z - w} = - \oint_{C_n'} \frac{dw}{w - z} = - (2\pi i)</script></span>。  </p>
+<p>在第二项中， <span class="arithmatex">\(z\)</span> 位于*内部*围道 <span class="arithmatex">\(C_n\)</span> 上，而 <span class="arithmatex">\(w\)</span> 位于*外部*围道 <span class="arithmatex">\(C_n'\)</span> 上。<span class="arithmatex">\(z\)</span> 始终在 <span class="arithmatex">\(C_n'\)</span> 的*内部*。根据柯西积分公式， <span class="arithmatex">\(\oint_{C_n'} \frac{dw}{z - w} = - \oint_{C_n'} \frac{dw}{w - z} = - (2\pi i)\)</span>。  </p>
 </li>
 <li>
 <p>将结果代回：  </p>
 </li>
 </ol>
-<p><span class="arithmatex"><span class="MathJax_Preview">P_n^2 = \frac{1}{(2 \pi i)^2} \oint_{C_n'} G(w) (0) dw - \frac{1}{(2\pi i)^2} \oint_{C_n} G(z) (-2 \pi i) dz</span><script type="math/tex">P_n^2 = \frac{1}{(2 \pi i)^2} \oint_{C_n'} G(w) (0) dw - \frac{1}{(2\pi i)^2} \oint_{C_n} G(z) (-2 \pi i) dz</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">P_n^2 = 0 + \frac{1}{2\pi i} \oint_{C_n} G(z) dz = P_n</span><script type="math/tex">P_n^2 = 0 + \frac{1}{2\pi i} \oint_{C_n} G(z) dz = P_n</script></span></p>
-<p>证明 <span class="arithmatex"><span class="MathJax_Preview">P_n^2 = P_n</span><script type="math/tex">P_n^2 = P_n</script></span> 完毕 <a href="#ref-18">18</a>。</p>
-<p>证明 2.3 ( <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> 投影到本征子空间)<br />
-可以进一步证明，Riesz 投影 <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> 与算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 是对易的 (<span class="arithmatex"><span class="MathJax_Preview">AP_n = P_n A</span><script type="math/tex">AP_n = P_n A</script></span>) <a href="#ref-12">12</a>，并且 <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> 的值域 (Range) 恰好是对应于本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> 的（广义）本征子空间 <a href="#ref-18">18</a>。对于自伴算符，这就是本征子空间。如果 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> 是非简并的， <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> 就是 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n\rangle\langle \psi_n|</span><script type="math/tex">|\psi_n\rangle\langle \psi_n|</script></span>。  </p>
+<p><span class="arithmatex">\(P_n^2 = \frac{1}{(2 \pi i)^2} \oint_{C_n'} G(w) (0) dw - \frac{1}{(2\pi i)^2} \oint_{C_n} G(z) (-2 \pi i) dz\)</span></p>
+<p><span class="arithmatex">\(P_n^2 = 0 + \frac{1}{2\pi i} \oint_{C_n} G(z) dz = P_n\)</span></p>
+<p>证明 <span class="arithmatex">\(P_n^2 = P_n\)</span> 完毕 <a href="#ref-18">18</a>。</p>
+<p>证明 2.3 ( <span class="arithmatex">\(P_n\)</span> 投影到本征子空间)<br />
+可以进一步证明，Riesz 投影 <span class="arithmatex">\(P_n\)</span> 与算符 <span class="arithmatex">\(A\)</span> 是对易的 (<span class="arithmatex">\(AP_n = P_n A\)</span>) <a href="#ref-12">12</a>，并且 <span class="arithmatex">\(P_n\)</span> 的值域 (Range) 恰好是对应于本征值 <span class="arithmatex">\(E_n\)</span> 的（广义）本征子空间 <a href="#ref-18">18</a>。对于自伴算符，这就是本征子空间。如果 <span class="arithmatex">\(E_n\)</span> 是非简并的， <span class="arithmatex">\(P_n\)</span> 就是 <span class="arithmatex">\(|\psi_n\rangle\langle \psi_n|\)</span>。  </p>
 <p>核心结论 (I)：<br />
-上述证明揭示了预解式极点的深刻含义。我们想知道一个孤立本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> 及其本征态 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n\rangle</span><script type="math/tex">|\psi_n\rangle</script></span>。预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">z = E_n</span><script type="math/tex">z = E_n</script></span> 处有一个极点。通过围绕这个极点进行围道积分（即计算留数 (Residue)），我们严格地恢复了投影算符 <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span>。<br />
-因此，离散谱的信息被完整地编码在 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的极点中：</p>
+上述证明揭示了预解式极点的深刻含义。我们想知道一个孤立本征值 <span class="arithmatex">\(E_n\)</span> 及其本征态 <span class="arithmatex">\(|\psi_n\rangle\)</span>。预解式 <span class="arithmatex">\(G(z)\)</span> 在 <span class="arithmatex">\(z = E_n\)</span> 处有一个极点。通过围绕这个极点进行围道积分（即计算留数 (Residue)），我们严格地恢复了投影算符 <span class="arithmatex">\(P_n\)</span>。<br />
+因此，离散谱的信息被完整地编码在 <span class="arithmatex">\(G(z)\)</span> 的极点中：</p>
 <ul>
-<li><strong>极点的位置 (Location) <span class="arithmatex"><span class="MathJax_Preview">\implies</span><script type="math/tex">\implies</script></span> 本征值 (Eigenvalue) <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>。</strong>  </li>
-<li><strong>极点的留数 (Residue) <span class="arithmatex"><span class="MathJax_Preview">\implies</span><script type="math/tex">\implies</script></span> 到本征子空间的投影算符 (Projection) <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span></strong> <a href="#ref-15">15</a>。</li>
+<li><strong>极点的位置 (Location) <span class="arithmatex">\(\implies\)</span> 本征值 (Eigenvalue) <span class="arithmatex">\(E_n\)</span>。</strong>  </li>
+<li><strong>极点的留数 (Residue) <span class="arithmatex">\(\implies\)</span> 到本征子空间的投影算符 (Projection) <span class="arithmatex">\(P_n\)</span></strong> <a href="#ref-15">15</a>。</li>
 </ul>
 <h3 id="22-证明-ii-连续谱-割线-与-stone-公式"><strong>2.2 证明 (II): 连续谱 (割线) 与 Stone 公式</strong><a class="headerlink" href="#22-证明-ii-连续谱-割线-与-stone-公式" title="Permanent link">#</a></h3>
-<p><strong>论点</strong>：连续谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_c(A)</span><script type="math/tex">\sigma_c(A)</script></span> 对应于预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的<strong>分支割线</strong> (Branch Cut) <a href="#ref-8">8</a>。</p>
-<p>对于自伴算符（如哈密顿算符），谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma(A)</span><script type="math/tex">\sigma(A)</script></span> 完全位于实轴 <span class="arithmatex"><span class="MathJax_Preview">\mathbb{R}</span><script type="math/tex">\mathbb{R}</script></span> 上 <a href="#ref-8">8</a>。连续谱通常表现为实轴上的一个区间，例如自由粒子的 <span class="arithmatex"><span class="MathJax_Preview">[0, \infty)</span><script type="math/tex">[0, \infty)</script></span> <a href="#ref-8">8</a>。（尽管它也可以是更复杂的集合，如康托尔集 <a href="#ref-22">22</a>。）</p>
+<p><strong>论点</strong>：连续谱 <span class="arithmatex">\(\sigma_c(A)\)</span> 对应于预解式 <span class="arithmatex">\(G(z)\)</span> 的<strong>分支割线</strong> (Branch Cut) <a href="#ref-8">8</a>。</p>
+<p>对于自伴算符（如哈密顿算符），谱 <span class="arithmatex">\(\sigma(A)\)</span> 完全位于实轴 <span class="arithmatex">\(\mathbb{R}\)</span> 上 <a href="#ref-8">8</a>。连续谱通常表现为实轴上的一个区间，例如自由粒子的 <span class="arithmatex">\([0, \infty)\)</span> <a href="#ref-8">8</a>。（尽管它也可以是更复杂的集合，如康托尔集 <a href="#ref-22">22</a>。）</p>
 <p>直观理解 (连续的极点)：<br />
-一个孤立的极点 <span class="arithmatex"><span class="MathJax_Preview">G(z) \sim (z-E_n)^{-1}</span><script type="math/tex">G(z) \sim (z-E_n)^{-1}</script></span> 对应一个离散能级。那么连续谱在复平面上对应什么呢？直观上，连续谱可以被想象为沿着一条线（例如实轴的 <span class="arithmatex"><span class="MathJax_Preview">[a, b]</span><script type="math/tex">[a, b]</script></span> 段）连续地分布着无穷多个极点。<br />
+一个孤立的极点 <span class="arithmatex">\(G(z) \sim (z-E_n)^{-1}\)</span> 对应一个离散能级。那么连续谱在复平面上对应什么呢？直观上，连续谱可以被想象为沿着一条线（例如实轴的 <span class="arithmatex">\([a, b]\)</span> 段）连续地分布着无穷多个极点。<br />
 <a href="#ref-21">21</a> 中的一个简单计算完美地展示了这一点：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">\int_a^b \frac{1}{z-u} du = \log(z-b) - \log(z-a) = \log\left(\frac{z-b}{z-a}\right)</span><script type="math/tex">\int_a^b \frac{1}{z-u} du = \log(z-b) - \log(z-a) = \log\left(\frac{z-b}{z-a}\right)</script></span></p>
-<p>等式左边是一个“连续的极点之和”（在 <span class="arithmatex"><span class="MathJax_Preview">[a, b]</span><script type="math/tex">[a, b]</script></span> 区间内的每个 <span class="arithmatex"><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> 处，都有一个留数为 <span class="arithmatex"><span class="MathJax_Preview">du</span><script type="math/tex">du</script></span> 的极点）。等式右边是一个具有 <span class="arithmatex"><span class="MathJax_Preview">[a, b]</span><script type="math/tex">[a, b]</script></span> 分支割线的对数函数。这个例子表明，极点的连续分布在复分析中自然地产生了分支割线。因此，连续谱在 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的解析结构中表现为分支割线 <a href="#ref-21">21</a>。  </p>
+<p><span class="arithmatex">\(\int_a^b \frac{1}{z-u} du = \log(z-b) - \log(z-a) = \log\left(\frac{z-b}{z-a}\right)\)</span></p>
+<p>等式左边是一个“连续的极点之和”（在 <span class="arithmatex">\([a, b]\)</span> 区间内的每个 <span class="arithmatex">\(u\)</span> 处，都有一个留数为 <span class="arithmatex">\(du\)</span> 的极点）。等式右边是一个具有 <span class="arithmatex">\([a, b]\)</span> 分支割线的对数函数。这个例子表明，极点的连续分布在复分析中自然地产生了分支割线。因此，连续谱在 <span class="arithmatex">\(G(z)\)</span> 的解析结构中表现为分支割线 <a href="#ref-21">21</a>。  </p>
 <p>证明 2.4 (Stone 公式)<br />
-Stone 公式（或 Stone-von Neumann 公式）是上述直觉的严格数学表述。它将 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 跨越实轴（割线）的不连续性（或“跳跃”）与谱测量 (Spectral Measure) <span class="arithmatex"><span class="MathJax_Preview">E(\lambda)</span><script type="math/tex">E(\lambda)</script></span> 直接联系起来 <a href="#ref-8">8</a>。<br />
-根据谱定理，对于自伴算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>，存在一个唯一的投影值谱测量 <span class="arithmatex"><span class="MathJax_Preview">E(\lambda)</span><script type="math/tex">E(\lambda)</script></span>，使得 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 可以被分解为 <span class="arithmatex"><span class="MathJax_Preview">A = \int_{-\infty}^\infty \lambda dE(\lambda)</span><script type="math/tex">A = \int_{-\infty}^\infty \lambda dE(\lambda)</script></span>。<span class="arithmatex"><span class="MathJax_Preview">E(\Delta)</span><script type="math/tex">E(\Delta)</script></span> 表示投影到谱位于区间 <span class="arithmatex"><span class="MathJax_Preview">\Delta</span><script type="math/tex">\Delta</script></span> 内的子空间上的投影算符。</p>
-<p>Stone 公式指出，这个谱测量 <span class="arithmatex"><span class="MathJax_Preview">E(\Delta)</span><script type="math/tex">E(\Delta)</script></span> 可以通过 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 在实轴上方和下方的极限来恢复 <a href="#ref-24">24</a>。令 <span class="arithmatex"><span class="MathJax_Preview">G(\lambda \pm i0) = \lim_{\epsilon \to 0^+} G(\lambda \pm i\epsilon)</span><script type="math/tex">G(\lambda \pm i0) = \lim_{\epsilon \to 0^+} G(\lambda \pm i\epsilon)</script></span>。对于任意区间 <span class="arithmatex"><span class="MathJax_Preview">(a, b)</span><script type="math/tex">(a, b)</script></span>，我们有：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview"> \frac{E((a, b)) + E([a, b])}{2} = \lim_{\epsilon \to 0^+} \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda </span><script type="math/tex"> \frac{E((a, b)) + E([a, b])}{2} = \lim_{\epsilon \to 0^+} \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda </script></span></p>
-<p>这个公式是复分析中 Sokhotski–Plemelj 定理的算符版本，它表明 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 跨越实轴的“跳跃” <span class="arithmatex"><span class="MathJax_Preview">\text{Disc}[G(\lambda)] = G(\lambda+i0) - G(\lambda-i0)</span><script type="math/tex">\text{Disc}[G(\lambda)] = G(\lambda+i0) - G(\lambda-i0)</script></span>（注意符号约定）与谱测量 <span class="arithmatex"><span class="MathJax_Preview">dE_\lambda</span><script type="math/tex">dE_\lambda</script></span> 成正比。 </p>
+Stone 公式（或 Stone-von Neumann 公式）是上述直觉的严格数学表述。它将 <span class="arithmatex">\(G(z)\)</span> 跨越实轴（割线）的不连续性（或“跳跃”）与谱测量 (Spectral Measure) <span class="arithmatex">\(E(\lambda)\)</span> 直接联系起来 <a href="#ref-8">8</a>。<br />
+根据谱定理，对于自伴算符 <span class="arithmatex">\(A\)</span>，存在一个唯一的投影值谱测量 <span class="arithmatex">\(E(\lambda)\)</span>，使得 <span class="arithmatex">\(A\)</span> 可以被分解为 <span class="arithmatex">\(A = \int_{-\infty}^\infty \lambda dE(\lambda)\)</span>。<span class="arithmatex">\(E(\Delta)\)</span> 表示投影到谱位于区间 <span class="arithmatex">\(\Delta\)</span> 内的子空间上的投影算符。</p>
+<p>Stone 公式指出，这个谱测量 <span class="arithmatex">\(E(\Delta)\)</span> 可以通过 <span class="arithmatex">\(G(z)\)</span> 在实轴上方和下方的极限来恢复 <a href="#ref-24">24</a>。令 <span class="arithmatex">\(G(\lambda \pm i0) = \lim_{\epsilon \to 0^+} G(\lambda \pm i\epsilon)\)</span>。对于任意区间 <span class="arithmatex">\((a, b)\)</span>，我们有：</p>
+<p><span class="arithmatex">\( \frac{E((a, b)) + E([a, b])}{2} = \lim_{\epsilon \to 0^+} \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda \)</span></p>
+<p>这个公式是复分析中 Sokhotski–Plemelj 定理的算符版本，它表明 <span class="arithmatex">\(G(z)\)</span> 跨越实轴的“跳跃” <span class="arithmatex">\(\text{Disc}[G(\lambda)] = G(\lambda+i0) - G(\lambda-i0)\)</span>（注意符号约定）与谱测量 <span class="arithmatex">\(dE_\lambda\)</span> 成正比。 </p>
 <p>证明 2.5 (Stone 公式的推导草图)<br />
 这个公式的推导可以优雅地通过泛函演算 (Functional Calculus) 完成 <a href="#ref-24">24</a>。</p>
 <ol>
 <li>
-<p>我们希望计算的积分 <span class="arithmatex"><span class="MathJax_Preview">F_\epsilon(A) = \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda</span><script type="math/tex">F_\epsilon(A) = \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda</script></span> 实际上是 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的一个函数，<span class="arithmatex"><span class="MathJax_Preview">F_\epsilon(A) = f_\epsilon(A)</span><script type="math/tex">F_\epsilon(A) = f_\epsilon(A)</script></span>。  </p>
+<p>我们希望计算的积分 <span class="arithmatex">\(F_\epsilon(A) = \frac{1}{2\pi i} \int_a^b [G(\lambda - i\epsilon) - G(\lambda + i\epsilon)] d\lambda\)</span> 实际上是 <span class="arithmatex">\(A\)</span> 的一个函数，<span class="arithmatex">\(F_\epsilon(A) = f_\epsilon(A)\)</span>。  </p>
 </li>
 <li>
-<p>我们只需分析对应的标量函数 <span class="arithmatex"><span class="MathJax_Preview">f_\epsilon(t)</span><script type="math/tex">f_\epsilon(t)</script></span>（其中 <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> 是实变量，代表 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的谱值）：  </p>
+<p>我们只需分析对应的标量函数 <span class="arithmatex">\(f_\epsilon(t)\)</span>（其中 <span class="arithmatex">\(t\)</span> 是实变量，代表 <span class="arithmatex">\(A\)</span> 的谱值）：  </p>
 </li>
 </ol>
-<p><span class="arithmatex"><span class="MathJax_Preview">f_\epsilon(t) = \frac{1}{2\pi i} \int_a^b \left( \frac{1}{t - (\lambda - i\epsilon)} - \frac{1}{t - (\lambda + i\epsilon)} \right) d\lambda</span><script type="math/tex">f_\epsilon(t) = \frac{1}{2\pi i} \int_a^b \left( \frac{1}{t - (\lambda - i\epsilon)} - \frac{1}{t - (\lambda + i\epsilon)} \right) d\lambda</script></span></p>
+<p><span class="arithmatex">\(f_\epsilon(t) = \frac{1}{2\pi i} \int_a^b \left( \frac{1}{t - (\lambda - i\epsilon)} - \frac{1}{t - (\lambda + i\epsilon)} \right) d\lambda\)</span></p>
 <ol>
 <li>合并分式</li>
 </ol>
-<p><span class="arithmatex"><span class="MathJax_Preview">f_\epsilon(t) = \frac{1}{2\pi i} \int_a^b \frac{(t - \lambda - i\epsilon) - (t - \lambda + i\epsilon)}{(t - \lambda)^2 + \epsilon^2} d\lambda = \frac{1}{2\pi i} \int_a^b \frac{-2i\epsilon}{(t - \lambda)^2 + \epsilon^2} d\lambda </span><script type="math/tex">f_\epsilon(t) = \frac{1}{2\pi i} \int_a^b \frac{(t - \lambda - i\epsilon) - (t - \lambda + i\epsilon)}{(t - \lambda)^2 + \epsilon^2} d\lambda = \frac{1}{2\pi i} \int_a^b \frac{-2i\epsilon}{(t - \lambda)^2 + \epsilon^2} d\lambda </script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">f_\epsilon(t) = \frac{1}{\pi} \int_a^b \frac{\epsilon}{(t - \lambda)^2 + \epsilon^2} d\lambda</span><script type="math/tex">f_\epsilon(t) = \frac{1}{\pi} \int_a^b \frac{\epsilon}{(t - \lambda)^2 + \epsilon^2} d\lambda</script></span></p>
+<p><span class="arithmatex">\(f_\epsilon(t) = \frac{1}{2\pi i} \int_a^b \frac{(t - \lambda - i\epsilon) - (t - \lambda + i\epsilon)}{(t - \lambda)^2 + \epsilon^2} d\lambda = \frac{1}{2\pi i} \int_a^b \frac{-2i\epsilon}{(t - \lambda)^2 + \epsilon^2} d\lambda \)</span></p>
+<p><span class="arithmatex">\(f_\epsilon(t) = \frac{1}{\pi} \int_a^b \frac{\epsilon}{(t - \lambda)^2 + \epsilon^2} d\lambda\)</span></p>
 <ol>
-<li>这是一个洛伦兹分布 (Lorentzian) 或柯西分布 (Cauchy distribution) 的积分，它是 <span class="arithmatex"><span class="MathJax_Preview">\delta</span><script type="math/tex">\delta</script></span>-函数的一个表示。积分 <span class="arithmatex"><span class="MathJax_Preview">f_\epsilon(t)</span><script type="math/tex">f_\epsilon(t)</script></span> 可以被精确计算：  </li>
+<li>这是一个洛伦兹分布 (Lorentzian) 或柯西分布 (Cauchy distribution) 的积分，它是 <span class="arithmatex">\(\delta\)</span>-函数的一个表示。积分 <span class="arithmatex">\(f_\epsilon(t)\)</span> 可以被精确计算：  </li>
 </ol>
-<p><span class="arithmatex"><span class="MathJax_Preview">f_\epsilon(t) = \frac{1}{\pi} \left[ \arctan\left(\frac{b - t}{\epsilon}\right) - \arctan\left(\frac{a - t}{\epsilon}\right) \right]</span><script type="math/tex">f_\epsilon(t) = \frac{1}{\pi} \left[ \arctan\left(\frac{b - t}{\epsilon}\right) - \arctan\left(\frac{a - t}{\epsilon}\right) \right]</script></span></p>
+<p><span class="arithmatex">\(f_\epsilon(t) = \frac{1}{\pi} \left[ \arctan\left(\frac{b - t}{\epsilon}\right) - \arctan\left(\frac{a - t}{\epsilon}\right) \right]\)</span></p>
 <ol>
-<li>在 <span class="arithmatex"><span class="MathJax_Preview">\epsilon \to 0^+</span><script type="math/tex">\epsilon \to 0^+</script></span> 的极限下， <span class="arithmatex"><span class="MathJax_Preview">\arctan(x/\epsilon)</span><script type="math/tex">\arctan(x/\epsilon)</script></span> 趋向于一个阶梯函数 <span class="arithmatex"><span class="MathJax_Preview">\frac{\pi}{2} \text{sgn}(x)</span><script type="math/tex">\frac{\pi}{2} \text{sgn}(x)</script></span>。因此：  </li>
+<li>在 <span class="arithmatex">\(\epsilon \to 0^+\)</span> 的极限下， <span class="arithmatex">\(\arctan(x/\epsilon)\)</span> 趋向于一个阶梯函数 <span class="arithmatex">\(\frac{\pi}{2} \text{sgn}(x)\)</span>。因此：  </li>
 </ol>
-<p><span class="arithmatex"><span class="MathJax_Preview">\lim_{\epsilon \to 0^+} f_\epsilon(t) = \frac{1}{\pi} \left( \frac{\pi}{2} \text{sgn}(b-t) - \frac{\pi}{2} \text{sgn}(a-t) \right) = \begin{cases} 1 &amp; \text{if } t \in (a,b) \\ 1/2 &amp; \text{if } t = a \text{ or } t = b \\ 0 &amp; \text{otherwise} \end{cases}</span><script type="math/tex">\lim_{\epsilon \to 0^+} f_\epsilon(t) = \frac{1}{\pi} \left( \frac{\pi}{2} \text{sgn}(b-t) - \frac{\pi}{2} \text{sgn}(a-t) \right) = \begin{cases} 1 & \text{if } t \in (a,b) \\ 1/2 & \text{if } t = a \text{ or } t = b \\ 0 & \text{otherwise} \end{cases}</script></span></p>
+<p><span class="arithmatex">\(\lim_{\epsilon \to 0^+} f_\epsilon(t) = \frac{1}{\pi} \left( \frac{\pi}{2} \text{sgn}(b-t) - \frac{\pi}{2} \text{sgn}(a-t) \right) = \begin{cases} 1 &amp; \text{if } t \in (a,b) \\ 1/2 &amp; \text{if } t = a \text{ or } t = b \\ 0 &amp; \text{otherwise} \end{cases}\)</span></p>
 <ol>
-<li>这个极限函数 <span class="arithmatex"><span class="MathJax_Preview">\chi_{(a,b)}(t)</span><script type="math/tex">\chi_{(a,b)}(t)</script></span> 正是区间 <span class="arithmatex"><span class="MathJax_Preview">(a,b)</span><script type="math/tex">(a,b)</script></span> 的特征函数（在端点处取平均值）。  </li>
-<li>根据泛函演算的谱映射定理，算符的极限 <span class="arithmatex"><span class="MathJax_Preview">\lim_{\epsilon \to 0^+} F_\epsilon(A)</span><script type="math/tex">\lim_{\epsilon \to 0^+} F_\epsilon(A)</script></span> 就是 <span class="arithmatex"><span class="MathJax_Preview">\chi_{(a,b)}(A)</span><script type="math/tex">\chi_{(a,b)}(A)</script></span>。根据谱定理， <span class="arithmatex"><span class="MathJax_Preview">\chi_{(a,b)}(A)</span><script type="math/tex">\chi_{(a,b)}(A)</script></span> *正是*谱投影 <span class="arithmatex"><span class="MathJax_Preview">E((a,b))</span><script type="math/tex">E((a,b))</script></span>（加上端点贡献）。<strong>证明完毕</strong> <a href="#ref-24">24</a>。</li>
+<li>这个极限函数 <span class="arithmatex">\(\chi_{(a,b)}(t)\)</span> 正是区间 <span class="arithmatex">\((a,b)\)</span> 的特征函数（在端点处取平均值）。  </li>
+<li>根据泛函演算的谱映射定理，算符的极限 <span class="arithmatex">\(\lim_{\epsilon \to 0^+} F_\epsilon(A)\)</span> 就是 <span class="arithmatex">\(\chi_{(a,b)}(A)\)</span>。根据谱定理， <span class="arithmatex">\(\chi_{(a,b)}(A)\)</span> *正是*谱投影 <span class="arithmatex">\(E((a,b))\)</span>（加上端点贡献）。<strong>证明完毕</strong> <a href="#ref-24">24</a>。</li>
 </ol>
 <p>核心结论 (II)：<br />
-Stone 公式严格地证明了连续谱的信息被完整地编码在 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的分支割线中：</p>
+Stone 公式严格地证明了连续谱的信息被完整地编码在 <span class="arithmatex">\(G(z)\)</span> 的分支割线中：</p>
 <ul>
-<li><strong>割线的位置 (Location) <span class="arithmatex"><span class="MathJax_Preview">\implies</span><script type="math/tex">\implies</script></span> 连续谱 (Continuous Spectrum) <span class="arithmatex"><span class="MathJax_Preview">\sigma_c(A)</span><script type="math/tex">\sigma_c(A)</script></span>。</strong>  </li>
-<li><strong>割线上的不连续性 (Discontinuity) <span class="arithmatex"><span class="MathJax_Preview">\implies</span><script type="math/tex">\implies</script></span> 谱密度 (Spectral Density) <span class="arithmatex"><span class="MathJax_Preview">dE_\lambda / d\lambda</span><script type="math/tex">dE_\lambda / d\lambda</script></span></strong> <a href="#ref-24">24</a>。</li>
+<li><strong>割线的位置 (Location) <span class="arithmatex">\(\implies\)</span> 连续谱 (Continuous Spectrum) <span class="arithmatex">\(\sigma_c(A)\)</span>。</strong>  </li>
+<li><strong>割线上的不连续性 (Discontinuity) <span class="arithmatex">\(\implies\)</span> 谱密度 (Spectral Density) <span class="arithmatex">\(dE_\lambda / d\lambda\)</span></strong> <a href="#ref-24">24</a>。</li>
 </ul>
 <h3 id="证明共振态是什么">证明共振态是什么<a class="headerlink" href="#证明共振态是什么" title="Permanent link">#</a></h3>
 <h3 id="总结谱与奇点的对应关系"><strong>总结：谱与奇点的对应关系</strong><a class="headerlink" href="#总结谱与奇点的对应关系" title="Permanent link">#</a></h3>
@@ -3836,14 +3852,14 @@ Stone 公式严格地证明了连续谱的信息被完整地编码在 <span clas
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>点谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_p(A)</span><script type="math/tex">\sigma_p(A)</script></span></strong> (Discrete)</td>
+<td style="text-align: left;"><strong>点谱 <span class="arithmatex">\(\sigma_p(A)\)</span></strong> (Discrete)</td>
 <td style="text-align: left;">束缚态 (Bound States)</td>
 <td style="text-align: left;"><strong>极点 (Pole)</strong> <a href="#ref-12">12</a></td>
-<td style="text-align: left;"><strong>位置</strong>: 本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> <strong>留数</strong>: 投影算符 <span class="arithmatex"><span class="MathJax_Preview">P_n = \| \psi_n\rangle\langle \psi_n</span><script type="math/tex">P_n = \| \psi_n\rangle\langle \psi_n</script></span> |</td>
+<td style="text-align: left;"><strong>位置</strong>: 本征值 <span class="arithmatex">\(E_n\)</span> <strong>留数</strong>: 投影算符 <span class="arithmatex">\(P_n = \| \psi_n\rangle\langle \psi_n\)</span> |</td>
 <td style="text-align: left;"></td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>连续谱 <span class="arithmatex"><span class="MathJax_Preview">\sigma_c(A)</span><script type="math/tex">\sigma_c(A)</script></span></strong> (Continuous)</td>
+<td style="text-align: left;"><strong>连续谱 <span class="arithmatex">\(\sigma_c(A)\)</span></strong> (Continuous)</td>
 <td style="text-align: left;">散射态 (Scattering States)</td>
 <td style="text-align: left;"><strong>分支割线 (Branch Cut)</strong> <a href="#ref-8">8</a></td>
 <td style="text-align: left;"><strong>位置</strong>: 连续谱区间</td>
@@ -3854,191 +3870,191 @@ Stone 公式严格地证明了连续谱的信息被完整地编码在 <span clas
 <h2 id="第三部分微扰理论的预解式推导从恒等式到级数"><strong>第三部分：微扰理论的预解式推导：从恒等式到级数</strong><a class="headerlink" href="#第三部分微扰理论的预解式推导从恒等式到级数" title="Permanent link">#</a></h2>
 <p>现在我们转向用户的第二个问题：如何使用预解式理论进行微扰求解。我们将展示预解式形式主义如何为Rayleigh-Schrödinger微扰理论（RSPT）提供了最自然和最严谨的推导基础。</p>
 <h3 id="31-微扰设置与历史脉络"><strong>3.1 微扰设置与历史脉络</strong><a class="headerlink" href="#31-微扰设置与历史脉络" title="Permanent link">#</a></h3>
-<p>微扰理论的核心思想是将一个复杂（但“可解”）的系统的哈密顿算符 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 加上一个“小”的微扰 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> <a href="#ref-26">26</a>。总哈密顿算符为：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">H = H_0 + V</span><script type="math/tex">H = H_0 + V</script></span></p>
-<p>我们的目标是，在已知 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 的本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(0)}</span><script type="math/tex">E_n^{(0)}</script></span> 和本征态 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n^{(0)}\rangle</span><script type="math/tex">|\psi_n^{(0)}\rangle</script></span> 的情况下，近似求解 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 的本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> 和本征态 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n\rangle</span><script type="math/tex">|\psi_n\rangle</script></span>。<br />
+<p>微扰理论的核心思想是将一个复杂（但“可解”）的系统的哈密顿算符 <span class="arithmatex">\(H_0\)</span> 加上一个“小”的微扰 <span class="arithmatex">\(V\)</span> <a href="#ref-26">26</a>。总哈密顿算符为：</p>
+<p><span class="arithmatex">\(H = H_0 + V\)</span></p>
+<p>我们的目标是，在已知 <span class="arithmatex">\(H_0\)</span> 的本征值 <span class="arithmatex">\(E_n^{(0)}\)</span> 和本征态 <span class="arithmatex">\(|\psi_n^{(0)}\rangle\)</span> 的情况下，近似求解 <span class="arithmatex">\(H\)</span> 的本征值 <span class="arithmatex">\(E_n\)</span> 和本征态 <span class="arithmatex">\(|\psi_n\rangle\)</span>。<br />
 正如用户查询中所指出的，这一方法的历史脉络深刻地根植于物理学的发展：</p>
 <ol>
-<li><strong>Rayleigh (19世纪)</strong>: 约翰·斯特拉特，即瑞利勋爵 (Lord Rayleigh)，在其巨著《声学理论》(The Theory of Sound) 中，首次系统地研究了物理系统的微扰。他研究了振动弦（如小提琴弦）由于密度存在“轻微的不均匀性” (small inhomogeneities) <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 而引起的基频（本征值）的漂移 <a href="#ref-27">27</a>。  </li>
-<li><strong>Schrödinger (1926)</strong>: 埃尔温·薛定谔 (Erwin Schrödinger) 在其1926年奠定波动力学的系列论文中，明确引用了Rayleigh的工作 <a href="#ref-27">27</a>。他将Rayleigh的方法从经典声学推广到量子力学，用以计算（例如）外加电场（微扰 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span>）如何导致氢原子能级（本征值）发生移动，即著名的斯塔克效应 (Stark effect) <a href="#ref-27">27</a>。  </li>
+<li><strong>Rayleigh (19世纪)</strong>: 约翰·斯特拉特，即瑞利勋爵 (Lord Rayleigh)，在其巨著《声学理论》(The Theory of Sound) 中，首次系统地研究了物理系统的微扰。他研究了振动弦（如小提琴弦）由于密度存在“轻微的不均匀性” (small inhomogeneities) <span class="arithmatex">\(V\)</span> 而引起的基频（本征值）的漂移 <a href="#ref-27">27</a>。  </li>
+<li><strong>Schrödinger (1926)</strong>: 埃尔温·薛定谔 (Erwin Schrödinger) 在其1926年奠定波动力学的系列论文中，明确引用了Rayleigh的工作 <a href="#ref-27">27</a>。他将Rayleigh的方法从经典声学推广到量子力学，用以计算（例如）外加电场（微扰 <span class="arithmatex">\(V\)</span>）如何导致氢原子能级（本征值）发生移动，即著名的斯塔克效应 (Stark effect) <a href="#ref-27">27</a>。  </li>
 <li><strong>Kato (1949)</strong>: 尽管Rayleigh-Schrödinger (RS) 理论在物理学中取得了巨大成功，但在数学上，它在近半个世纪里都只是一个“形式级数” (formal series)，其收敛性和严谨性存疑 <a href="#ref-32">32</a>。直到1949年左右，加藤敏夫 (Tosio Kato) <a href="#ref-30">30</a> 和 Franz Rellich <a href="#ref-30">30</a> 才为其提供了坚实的数学基础。Kato在其划时代的著作《线性算符的微扰理论》(Perturbation Theory for Linear Operators) <a href="#ref-34">34</a> 中，系统地发展了基于预解式算符的微扰理论，彻底解决了这一问题 <a href="#ref-30">30</a>。</li>
 </ol>
 <h3 id="32-预解式恒等式-dyson方程"><strong>3.2 预解式恒等式 (Dyson方程)</strong><a class="headerlink" href="#32-预解式恒等式-dyson方程" title="Permanent link">#</a></h3>
-<p>预解式方法的核心是建立未微扰预解式 <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 和完整预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 之间的精确关系。<br />
-令 <span class="arithmatex"><span class="MathJax_Preview">G(z) = (z - H)^{-1}</span><script type="math/tex">G(z) = (z - H)^{-1}</script></span> 且 <span class="arithmatex"><span class="MathJax_Preview">G_0(z) = (z - H_0)^{-1}</span><script type="math/tex">G_0(z) = (z - H_0)^{-1}</script></span>。<br />
+<p>预解式方法的核心是建立未微扰预解式 <span class="arithmatex">\(G_0(z)\)</span> 和完整预解式 <span class="arithmatex">\(G(z)\)</span> 之间的精确关系。<br />
+令 <span class="arithmatex">\(G(z) = (z - H)^{-1}\)</span> 且 <span class="arithmatex">\(G_0(z) = (z - H_0)^{-1}\)</span>。<br />
 推导 3.1 (第二预解式恒等式)<br />
 该恒等式的推导是纯粹的算符代数：</p>
 <ol>
-<li>从 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 的定义开始：</li>
+<li>从 <span class="arithmatex">\(G(z)\)</span> 和 <span class="arithmatex">\(G_0(z)\)</span> 的定义开始：</li>
 </ol>
-<p><span class="arithmatex"><span class="MathJax_Preview">G_0^{-1}(z) = z - H_0</span><script type="math/tex">G_0^{-1}(z) = z - H_0</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">G^{-1}(z) = z - H = z - (H_0 + V) = (z - H_0) - V = G_0^{-1}(z) - V</span><script type="math/tex">G^{-1}(z) = z - H = z - (H_0 + V) = (z - H_0) - V = G_0^{-1}(z) - V</script></span></p>
+<p><span class="arithmatex">\(G_0^{-1}(z) = z - H_0\)</span></p>
+<p><span class="arithmatex">\(G^{-1}(z) = z - H = z - (H_0 + V) = (z - H_0) - V = G_0^{-1}(z) - V\)</span></p>
 <ol>
-<li>因此，我们得到 <span class="arithmatex"><span class="MathJax_Preview">G_0^{-1}(z) - G^{-1}(z) = V</span><script type="math/tex">G_0^{-1}(z) - G^{-1}(z) = V</script></span>。  </li>
-<li>在这条恒等式的左侧乘以 <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span>，右侧乘以 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span>：<br />
-<span class="arithmatex"><span class="MathJax_Preview">G_0(z) [ G_0^{-1}(z) - G^{-1}(z) ] G(z) = G_0(z) V G(z)</span><script type="math/tex">G_0(z) [ G_0^{-1}(z) - G^{-1}(z) ] G(z) = G_0(z) V G(z)</script></span>  </li>
+<li>因此，我们得到 <span class="arithmatex">\(G_0^{-1}(z) - G^{-1}(z) = V\)</span>。  </li>
+<li>在这条恒等式的左侧乘以 <span class="arithmatex">\(G_0(z)\)</span>，右侧乘以 <span class="arithmatex">\(G(z)\)</span>：<br />
+<span class="arithmatex">\(G_0(z) [ G_0^{-1}(z) - G^{-1}(z) ] G(z) = G_0(z) V G(z)\)</span>  </li>
 <li>展开左侧：<br />
-<span class="arithmatex"><span class="MathJax_Preview">G_0(z) G_0^{-1}(z) G(z) - G_0(z) G^{-1}(z) G(z) = G_0(z) V G(z)</span><script type="math/tex">G_0(z) G_0^{-1}(z) G(z) - G_0(z) G^{-1}(z) G(z) = G_0(z) V G(z)</script></span>  </li>
-<li>利用 <span class="arithmatex"><span class="MathJax_Preview">G_0 G_0^{-1} = I</span><script type="math/tex">G_0 G_0^{-1} = I</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">G^{-1} G = I</span><script type="math/tex">G^{-1} G = I</script></span>：<br />
-<span class="arithmatex"><span class="MathJax_Preview">I \cdot G(z) - G_0(z) \cdot I = G_0(z) V G(z)</span><script type="math/tex">I \cdot G(z) - G_0(z) \cdot I = G_0(z) V G(z)</script></span>  </li>
+<span class="arithmatex">\(G_0(z) G_0^{-1}(z) G(z) - G_0(z) G^{-1}(z) G(z) = G_0(z) V G(z)\)</span>  </li>
+<li>利用 <span class="arithmatex">\(G_0 G_0^{-1} = I\)</span> 和 <span class="arithmatex">\(G^{-1} G = I\)</span>：<br />
+<span class="arithmatex">\(I \cdot G(z) - G_0(z) \cdot I = G_0(z) V G(z)\)</span>  </li>
 <li>结果：</li>
 </ol>
-<p><span class="arithmatex"><span class="MathJax_Preview">G(z) = G_0(z) + G_0(z) V G(z)</span><script type="math/tex">G(z) = G_0(z) + G_0(z) V G(z)</script></span></p>
+<p><span class="arithmatex">\(G(z) = G_0(z) + G_0(z) V G(z)\)</span></p>
 <p><a href="#ref-10">10</a>。这被称为第二预解式恒等式（或Dyson方程）。</p>
-<p>这个恒等式是整个微扰理论的基石。它以一种非微扰的、精确的形式，将复杂的 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span>（我们想知道其极点）与已知的 <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 和微扰 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 联系起来。</p>
+<p>这个恒等式是整个微扰理论的基石。它以一种非微扰的、精确的形式，将复杂的 <span class="arithmatex">\(G(z)\)</span>（我们想知道其极点）与已知的 <span class="arithmatex">\(G_0(z)\)</span> 和微扰 <span class="arithmatex">\(V\)</span> 联系起来。</p>
 <p>这个恒等式在物理学的不同分支中以不同的名称出现，显示了其普适性：</p>
 <ul>
 <li>在量子散射理论中，它被称为 <strong>Lippmann-Schwinger 方程</strong> <a href="#ref-11">11</a>。  </li>
 <li>在量子场论和多体物理学中，它被称为 <strong>Dyson 方程</strong> <a href="#ref-41">41</a>。</li>
 </ul>
 <p>预解式形式主义提供了一个统一的语言，将束缚态微扰（RSPT）和散射问题（Born近似）无缝地联系在同一个数学框架下。</p>
-<h3 id="33-born-neumann-级数gzgz-的迭代展开"><strong>3.3 Born-Neumann 级数：<span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的迭代展开</strong><a class="headerlink" href="#33-born-neumann-级数gzgz-的迭代展开" title="Permanent link">#</a></h3>
-<p>Dyson方程 <span class="arithmatex"><span class="MathJax_Preview">G = G_0 + G_0 V G</span><script type="math/tex">G = G_0 + G_0 V G</script></span> 是一个 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的自洽方程。求解它的最直接方法是迭代法 <a href="#ref-11">11</a>：</p>
+<h3 id="33-born-neumann-级数gz-的迭代展开"><strong>3.3 Born-Neumann 级数：<span class="arithmatex">\(G(z)\)</span> 的迭代展开</strong><a class="headerlink" href="#33-born-neumann-级数gz-的迭代展开" title="Permanent link">#</a></h3>
+<p>Dyson方程 <span class="arithmatex">\(G = G_0 + G_0 V G\)</span> 是一个 <span class="arithmatex">\(G(z)\)</span> 的自洽方程。求解它的最直接方法是迭代法 <a href="#ref-11">11</a>：</p>
 <ol>
-<li>将右侧的 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 替换为整个方程：<br />
-<span class="arithmatex"><span class="MathJax_Preview">G = G_0 + G_0 V (G_0 + G_0 V G)</span><script type="math/tex">G = G_0 + G_0 V (G_0 + G_0 V G)</script></span>  </li>
+<li>将右侧的 <span class="arithmatex">\(G\)</span> 替换为整个方程：<br />
+<span class="arithmatex">\(G = G_0 + G_0 V (G_0 + G_0 V G)\)</span>  </li>
 <li>展开并再次迭代：<br />
-<span class="arithmatex"><span class="MathJax_Preview">G = G_0 + G_0 V G_0 + G_0 V G_0 V (G_0 + G_0 V G)</span><script type="math/tex">G = G_0 + G_0 V G_0 + G_0 V G_0 V (G_0 + G_0 V G)</script></span>  </li>
+<span class="arithmatex">\(G = G_0 + G_0 V G_0 + G_0 V G_0 V (G_0 + G_0 V G)\)</span>  </li>
 <li>无限次迭代下去，我们得到一个无穷级数：</li>
 </ol>
-<p><span class="arithmatex"><span class="MathJax_Preview">G(z) = G_0(z) + G_0(z) V G_0(z) + G_0(z) V G_0(z) V G_0(z) + \dots</span><script type="math/tex">G(z) = G_0(z) + G_0(z) V G_0(z) + G_0(z) V G_0(z) V G_0(z) + \dots</script></span><br />
+<p><span class="arithmatex">\(G(z) = G_0(z) + G_0(z) V G_0(z) + G_0(z) V G_0(z) V G_0(z) + \dots\)</span><br />
 <a href="#ref-11">11</a>。</p>
-<p>这个级数在数学上被称为 <strong>Neumann 级数</strong> (Neumann series) [7](#ref-7]，在物理学中被称为 <strong>Born 级数</strong> (Born series) <a href="#ref-39">39</a>。如果截取到 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 的一阶， <span class="arithmatex"><span class="MathJax_Preview">G \approx G_0 + G_0 V G_0</span><script type="math/tex">G \approx G_0 + G_0 V G_0</script></span>，这就对应于散射理论中的 Born 近似 <a href="#ref-39">39</a>。</p>
+<p>这个级数在数学上被称为 <strong>Neumann 级数</strong> (Neumann series) [7](#ref-7]，在物理学中被称为 <strong>Born 级数</strong> (Born series) <a href="#ref-39">39</a>。如果截取到 <span class="arithmatex">\(V\)</span> 的一阶， <span class="arithmatex">\(G \approx G_0 + G_0 V G_0\)</span>，这就对应于散射理论中的 Born 近似 <a href="#ref-39">39</a>。</p>
 <p>然而，这个级数在应用于束缚态微扰时，存在一个 <strong>灾难性的问题</strong>。</p>
-<p>Born 级数是一个几何级数，其收敛的充分条件是其“公比”的范数小于 1，即 <span class="arithmatex"><span class="MathJax_Preview">\|V G_0(z)\| &lt; 1</span><script type="math/tex">\|V G_0(z)\| < 1</script></span> <a href="#ref-7">7</a>。但是，我们使用预解式的*目的*是研究 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 的本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>。<span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span> 通常非常接近 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 的本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(0)}</span><script type="math/tex">E_n^{(0)}</script></span>。而 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(0)}</span><script type="math/tex">E_n^{(0)}</script></span> 恰好是 <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 的一个*极点*（根据第二部分）！</p>
-<p>这意味着，当我们让 <span class="arithmatex"><span class="MathJax_Preview">z \to E_n^{(0)}</span><script type="math/tex">z \to E_n^{(0)}</script></span> 时， <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 的范数会发散 <span class="arithmatex"><span class="MathJax_Preview">\|G_0(z)\| \to \infty</span><script type="math/tex">\|G_0(z)\| \to \infty</script></span> <a href="#ref-7">7</a>。因此，Born 级数 <span class="arithmatex"><span class="MathJax_Preview">G = \sum G_0 (V G_0)^n</span><script type="math/tex">G = \sum G_0 (V G_0)^n</script></span> 在我们最关心的点（即 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 的谱附近）是*灾难性发散*的。</p>
-<p><strong>结论</strong>：直接使用 Born 级数来寻找*新*极点（即 <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 的本征值）是行不通的。这正是 Rayleigh 和 Schrödinger 的形式推导中“除以零”问题的数学根源 <a href="#ref-45">45</a>。我们需要一个更精巧的工具来系统地处理 <span class="arithmatex"><span class="MathJax_Preview">z = E_n^{(0)}</span><script type="math/tex">z = E_n^{(0)}</script></span> 处的奇异性。这个工具正是 Kato 的严谨框架的核心。</p>
+<p>Born 级数是一个几何级数，其收敛的充分条件是其“公比”的范数小于 1，即 <span class="arithmatex">\(\|V G_0(z)\| &lt; 1\)</span> <a href="#ref-7">7</a>。但是，我们使用预解式的*目的*是研究 <span class="arithmatex">\(H\)</span> 的本征值 <span class="arithmatex">\(E_n\)</span>。<span class="arithmatex">\(E_n\)</span> 通常非常接近 <span class="arithmatex">\(H_0\)</span> 的本征值 <span class="arithmatex">\(E_n^{(0)}\)</span>。而 <span class="arithmatex">\(E_n^{(0)}\)</span> 恰好是 <span class="arithmatex">\(G_0(z)\)</span> 的一个*极点*（根据第二部分）！</p>
+<p>这意味着，当我们让 <span class="arithmatex">\(z \to E_n^{(0)}\)</span> 时， <span class="arithmatex">\(G_0(z)\)</span> 的范数会发散 <span class="arithmatex">\(\|G_0(z)\| \to \infty\)</span> <a href="#ref-7">7</a>。因此，Born 级数 <span class="arithmatex">\(G = \sum G_0 (V G_0)^n\)</span> 在我们最关心的点（即 <span class="arithmatex">\(H_0\)</span> 的谱附近）是*灾难性发散*的。</p>
+<p><strong>结论</strong>：直接使用 Born 级数来寻找*新*极点（即 <span class="arithmatex">\(H\)</span> 的本征值）是行不通的。这正是 Rayleigh 和 Schrödinger 的形式推导中“除以零”问题的数学根源 <a href="#ref-45">45</a>。我们需要一个更精巧的工具来系统地处理 <span class="arithmatex">\(z = E_n^{(0)}\)</span> 处的奇异性。这个工具正是 Kato 的严谨框架的核心。</p>
 <h2 id="第四部分完整推导rayleigh-schrödinger-微扰理论"><strong>第四部分：【完整推导】Rayleigh-Schrödinger 微扰理论</strong><a class="headerlink" href="#第四部分完整推导rayleigh-schrödinger-微扰理论" title="Permanent link">#</a></h2>
 <p>我们将展示如何利用预解式形式主义，特别是通过引入投影算符和约化预解式，来严格且系统地推导RSPT的完整级数。</p>
 <h3 id="41-kato-的严谨框架利用投影算符"><strong>4.1 Kato 的严谨框架：利用投影算符</strong><a class="headerlink" href="#41-kato-的严谨框架利用投影算符" title="Permanent link">#</a></h3>
-<p>Kato 和 Rellich 的核心思想是 <a href="#ref-30">30</a>，我们不应该直接展开 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 本身，因为 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 在我们关心的点附近是奇异的。相反，我们应该研究由 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的围道积分定义的*投影算符* <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> <a href="#ref-33">33</a>。</p>
-<p>我们引入一个微扰参数 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span>， <span class="arithmatex"><span class="MathJax_Preview">H(\lambda) = H_0 + \lambda V</span><script type="math/tex">H(\lambda) = H_0 + \lambda V</script></span>。我们想求解的是 <span class="arithmatex"><span class="MathJax_Preview">H(\lambda)</span><script type="math/tex">H(\lambda)</script></span> 的新本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n(\lambda)</span><script type="math/tex">E_n(\lambda)</script></span> 和新投影 <span class="arithmatex"><span class="MathJax_Preview">P_n(\lambda)</span><script type="math/tex">P_n(\lambda)</script></span>，它们都是 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 的函数。</p>
-<p>Kato-Rellich 理论 <a href="#ref-32">32</a> 证明了一个深刻的定理：如果 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(0)}</span><script type="math/tex">E_n^{(0)}</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 的一个孤立本征值，并且微扰 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 是（相对 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span>）“解析”的，那么 <span class="arithmatex"><span class="MathJax_Preview">E_n(\lambda)</span><script type="math/tex">E_n(\lambda)</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">P_n(\lambda)</span><script type="math/tex">P_n(\lambda)</script></span> <em>也是</em> <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 的<strong>解析函数</strong>（至少在 <span class="arithmatex"><span class="MathJax_Preview">\lambda=0</span><script type="math/tex">\lambda=0</script></span> 附近的一个邻域内是收敛的幂级数） <a href="#ref-14">14</a>。</p>
+<p>Kato 和 Rellich 的核心思想是 <a href="#ref-30">30</a>，我们不应该直接展开 <span class="arithmatex">\(G(z)\)</span> 本身，因为 <span class="arithmatex">\(G(z)\)</span> 在我们关心的点附近是奇异的。相反，我们应该研究由 <span class="arithmatex">\(G(z)\)</span> 的围道积分定义的*投影算符* <span class="arithmatex">\(P_n\)</span> <a href="#ref-33">33</a>。</p>
+<p>我们引入一个微扰参数 <span class="arithmatex">\(\lambda\)</span>， <span class="arithmatex">\(H(\lambda) = H_0 + \lambda V\)</span>。我们想求解的是 <span class="arithmatex">\(H(\lambda)\)</span> 的新本征值 <span class="arithmatex">\(E_n(\lambda)\)</span> 和新投影 <span class="arithmatex">\(P_n(\lambda)\)</span>，它们都是 <span class="arithmatex">\(\lambda\)</span> 的函数。</p>
+<p>Kato-Rellich 理论 <a href="#ref-32">32</a> 证明了一个深刻的定理：如果 <span class="arithmatex">\(E_n^{(0)}\)</span> 是 <span class="arithmatex">\(H_0\)</span> 的一个孤立本征值，并且微扰 <span class="arithmatex">\(V\)</span> 是（相对 <span class="arithmatex">\(H_0\)</span>）“解析”的，那么 <span class="arithmatex">\(E_n(\lambda)\)</span> 和 <span class="arithmatex">\(P_n(\lambda)\)</span> <em>也是</em> <span class="arithmatex">\(\lambda\)</span> 的<strong>解析函数</strong>（至少在 <span class="arithmatex">\(\lambda=0\)</span> 附近的一个邻域内是收敛的幂级数） <a href="#ref-14">14</a>。</p>
 <p>这意味着我们可以写：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">E_n(\lambda) = E_n^{(0)} + \lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \dots</span><script type="math/tex">E_n(\lambda) = E_n^{(0)} + \lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \dots</script></span></p>
+<p><span class="arithmatex">\(E_n(\lambda) = E_n^{(0)} + \lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \dots\)</span></p>
 <p><a href="#ref-27">27</a></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">P_n(\lambda) = P_n^{(0)} + \lambda P_n^{(1)} + \lambda^2 P_n^{(2)} + \dots</span><script type="math/tex">P_n(\lambda) = P_n^{(0)} + \lambda P_n^{(1)} + \lambda^2 P_n^{(2)} + \dots</script></span></p>
-<p>我们的任务就是求解这些展开式的系数 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(k)}</span><script type="math/tex">E_n^{(k)}</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">P_n^{(k)}</span><script type="math/tex">P_n^{(k)}</script></span>。这在复平面上的图像是：<span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">z=E_n^{(0)}</span><script type="math/tex">z=E_n^{(0)}</script></span> 处的极点，在微扰 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 的作用下，“漂移” (shift) 到了 <span class="arithmatex"><span class="MathJax_Preview">G(z, \lambda)</span><script type="math/tex">G(z, \lambda)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">z=E_n(\lambda)</span><script type="math/tex">z=E_n(\lambda)</script></span> 处的新极点 <a href="#ref-48">48</a>。</p>
+<p><span class="arithmatex">\(P_n(\lambda) = P_n^{(0)} + \lambda P_n^{(1)} + \lambda^2 P_n^{(2)} + \dots\)</span></p>
+<p>我们的任务就是求解这些展开式的系数 <span class="arithmatex">\(E_n^{(k)}\)</span> 和 <span class="arithmatex">\(P_n^{(k)}\)</span>。这在复平面上的图像是：<span class="arithmatex">\(G_0(z)\)</span> 在 <span class="arithmatex">\(z=E_n^{(0)}\)</span> 处的极点，在微扰 <span class="arithmatex">\(V\)</span> 的作用下，“漂移” (shift) 到了 <span class="arithmatex">\(G(z, \lambda)\)</span> 在 <span class="arithmatex">\(z=E_n(\lambda)\)</span> 处的新极点 <a href="#ref-48">48</a>。</p>
 <h3 id="42-划分-partitioning-方法"><strong>4.2 划分 (Partitioning) 方法</strong><a class="headerlink" href="#42-划分-partitioning-方法" title="Permanent link">#</a></h3>
 <p>推导 RSPT 最清晰、最有力的方法是 Feshbach-Löwdin 划分方法 <a href="#ref-26">26</a>。这种方法自然地引出了 Kato 的关键工具，并能统一处理简并和非简并情况。</p>
-<p>推导 4.1 (导出 <span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span>)<br />
-为简单起见，我们设 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(0)}</span><script type="math/tex">E_n^{(0)}</script></span> 是非简并的。</p>
+<p>推导 4.1 (导出 <span class="arithmatex">\(H_{eff}\)</span>)<br />
+为简单起见，我们设 <span class="arithmatex">\(E_n^{(0)}\)</span> 是非简并的。</p>
 <ol>
-<li>定义投影算符 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span>：  </li>
+<li>定义投影算符 <span class="arithmatex">\(P\)</span> 和 <span class="arithmatex">\(Q\)</span>：  </li>
 </ol>
-<p><span class="arithmatex"><span class="MathJax_Preview">P = P_n^{(0)} = |\psi_n^{(0)}\rangle\langle \psi_n^{(0)}|</span><script type="math/tex">P = P_n^{(0)} = |\psi_n^{(0)}\rangle\langle \psi_n^{(0)}|</script></span></p>
+<p><span class="arithmatex">\(P = P_n^{(0)} = |\psi_n^{(0)}\rangle\langle \psi_n^{(0)}|\)</span></p>
 <p>（投影到我们关心的未微扰态)</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">Q = I - P = \sum_{k \neq n} |\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|</span><script type="math/tex">Q = I - P = \sum_{k \neq n} |\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|</script></span></p>
+<p><span class="arithmatex">\(Q = I - P = \sum_{k \neq n} |\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|\)</span></p>
 <p>（投影到所有其他态的正交子空间）<a href="#ref-26">26</a>。  </p>
 <ol>
 <li>
-<p><span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span> 与 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 对易 (<span class="arithmatex"><span class="MathJax_Preview">PH_0 = H_0 P</span><script type="math/tex">PH_0 = H_0 P</script></span>)，但与 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 不对易。</p>
+<p><span class="arithmatex">\(P\)</span> 和 <span class="arithmatex">\(Q\)</span> 与 <span class="arithmatex">\(H_0\)</span> 对易 (<span class="arithmatex">\(PH_0 = H_0 P\)</span>)，但与 <span class="arithmatex">\(V\)</span> 不对易。</p>
 </li>
 <li>
-<p>我们将完整的薛定谔方程 <span class="arithmatex"><span class="MathJax_Preview">(H_0 + \lambda V) |\psi\rangle = E |\psi\rangle</span><script type="math/tex">(H_0 + \lambda V) |\psi\rangle = E |\psi\rangle</script></span> 插入一个 <span class="arithmatex"><span class="MathJax_Preview">I = P + Q</span><script type="math/tex">I = P + Q</script></span>，并分别用 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span> 作用于方程的左侧 <a href="#ref-26">26</a>：<br />
-   (a) <span class="arithmatex"><span class="MathJax_Preview">P (H_0 + \lambda V) (P + Q) |\psi\rangle = E P |\psi\rangle</span><script type="math/tex">P (H_0 + \lambda V) (P + Q) |\psi\rangle = E P |\psi\rangle</script></span><br />
-   (b) <span class="arithmatex"><span class="MathJax_Preview">Q (H_0 + \lambda V) (P + Q) |\psi\rangle = E Q |\psi\rangle</span><script type="math/tex">Q (H_0 + \lambda V) (P + Q) |\psi\rangle = E Q |\psi\rangle</script></span>  </p>
+<p>我们将完整的薛定谔方程 <span class="arithmatex">\((H_0 + \lambda V) |\psi\rangle = E |\psi\rangle\)</span> 插入一个 <span class="arithmatex">\(I = P + Q\)</span>，并分别用 <span class="arithmatex">\(P\)</span> 和 <span class="arithmatex">\(Q\)</span> 作用于方程的左侧 <a href="#ref-26">26</a>：<br />
+   (a) <span class="arithmatex">\(P (H_0 + \lambda V) (P + Q) |\psi\rangle = E P |\psi\rangle\)</span><br />
+   (b) <span class="arithmatex">\(Q (H_0 + \lambda V) (P + Q) |\psi\rangle = E Q |\psi\rangle\)</span>  </p>
 </li>
-<li>展开 (a) 式（利用 <span class="arithmatex"><span class="MathJax_Preview">PH_0 Q = 0</span><script type="math/tex">PH_0 Q = 0</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">PH_0 P = E_n^{(0)} P</span><script type="math/tex">PH_0 P = E_n^{(0)} P</script></span>）：<br />
-<span class="arithmatex"><span class="MathJax_Preview">(E_n^{(0)} P + \lambda PVP) P\|\psi\rangle + \lambda PVQ Q\|\psi\rangle = E P\|\psi\rangle</span><script type="math/tex">(E_n^{(0)} P + \lambda PVP) P\|\psi\rangle + \lambda PVQ Q\|\psi\rangle = E P\|\psi\rangle</script></span>  </li>
-<li>展开 (b) 式（利用 <span class="arithmatex"><span class="MathJax_Preview">QH_0 P = 0</span><script type="math/tex">QH_0 P = 0</script></span>）：<br />
-<span class="arithmatex"><span class="MathJax_Preview">(Q H_0 Q + \lambda QVQ) Q\|\psi\rangle + \lambda QVP P\|\psi\rangle = E Q\|\psi\rangle</span><script type="math/tex">(Q H_0 Q + \lambda QVQ) Q\|\psi\rangle + \lambda QVP P\|\psi\rangle = E Q\|\psi\rangle</script></span>  </li>
-<li>从 (b) 式中形式上解出 <span class="arithmatex"><span class="MathJax_Preview">Q\|\psi\rangle</span><script type="math/tex">Q\|\psi\rangle</script></span>：  </li>
+<li>展开 (a) 式（利用 <span class="arithmatex">\(PH_0 Q = 0\)</span> 和 <span class="arithmatex">\(PH_0 P = E_n^{(0)} P\)</span>）：<br />
+<span class="arithmatex">\((E_n^{(0)} P + \lambda PVP) P\|\psi\rangle + \lambda PVQ Q\|\psi\rangle = E P\|\psi\rangle\)</span>  </li>
+<li>展开 (b) 式（利用 <span class="arithmatex">\(QH_0 P = 0\)</span>）：<br />
+<span class="arithmatex">\((Q H_0 Q + \lambda QVQ) Q\|\psi\rangle + \lambda QVP P\|\psi\rangle = E Q\|\psi\rangle\)</span>  </li>
+<li>从 (b) 式中形式上解出 <span class="arithmatex">\(Q\|\psi\rangle\)</span>：  </li>
 </ol>
-<p><span class="arithmatex"><span class="MathJax_Preview">[ E - Q H_0 Q - \lambda QVQ ] Q\|\psi\rangle = \lambda QVP P\|\psi\rangle</span><script type="math/tex">[ E - Q H_0 Q - \lambda QVQ ] Q\|\psi\rangle = \lambda QVP P\|\psi\rangle</script></span><br />
-<span class="arithmatex"><span class="MathJax_Preview">Q\|\psi\rangle = (E - H_0 - \lambda QVQ)^{-1} Q \cdot (\lambda QVP) P\|\psi\rangle</span><script type="math/tex">Q\|\psi\rangle = (E - H_0 - \lambda QVQ)^{-1} Q \cdot (\lambda QVP) P\|\psi\rangle</script></span><br />
-   （注意： <span class="arithmatex"><span class="MathJax_Preview">(E - H_0 - \lambda QVQ)^{-1}</span><script type="math/tex">(E - H_0 - \lambda QVQ)^{-1}</script></span> 的逆只在 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span> 空间中计算）<br />
-7. 将 <span class="arithmatex"><span class="MathJax_Preview">Q\|\psi\rangle</span><script type="math/tex">Q\|\psi\rangle</script></span> 的这个精确表达式代回到 (a) 式中：<br />
-<span class="arithmatex"><span class="MathJax_Preview">(E_n^{(0)} P + \lambda PVP) P\|\psi\rangle + \lambda PVQ \left[ (E - H_0 - \lambda QVQ)^{-1} Q \cdot (\lambda QVP) \right] P\|\psi\rangle = E P\|\psi\rangle</span><script type="math/tex">(E_n^{(0)} P + \lambda PVP) P\|\psi\rangle + \lambda PVQ \left[ (E - H_0 - \lambda QVQ)^{-1} Q \cdot (\lambda QVP) \right] P\|\psi\rangle = E P\|\psi\rangle</script></span><br />
-8. 这是一个只在 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 空间中（在本例中是一维的）的精确本征方程：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">H_{eff}(E, \lambda) P|\psi\rangle = E P|\psi\rangle</span><script type="math/tex">H_{eff}(E, \lambda) P|\psi\rangle = E P|\psi\rangle</script></span></p>
-<p>其中，有效哈密顿算符 (Effective Hamiltonian) <span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span> 为：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">H_{eff}(E, \lambda) = E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ (E - H_0 - \lambda QVQ)^{-1} Q QVP</span><script type="math/tex">H_{eff}(E, \lambda) = E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ (E - H_0 - \lambda QVQ)^{-1} Q QVP</script></span></p>
-<p>这个方程是精确的，但 <span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span> 自身又依赖于 <span class="arithmatex"><span class="MathJax_Preview">E</span><script type="math/tex">E</script></span>（在分母中），这是一个隐式方程。</p>
+<p><span class="arithmatex">\([ E - Q H_0 Q - \lambda QVQ ] Q\|\psi\rangle = \lambda QVP P\|\psi\rangle\)</span><br />
+<span class="arithmatex">\(Q\|\psi\rangle = (E - H_0 - \lambda QVQ)^{-1} Q \cdot (\lambda QVP) P\|\psi\rangle\)</span><br />
+   （注意： <span class="arithmatex">\((E - H_0 - \lambda QVQ)^{-1}\)</span> 的逆只在 <span class="arithmatex">\(Q\)</span> 空间中计算）<br />
+7. 将 <span class="arithmatex">\(Q\|\psi\rangle\)</span> 的这个精确表达式代回到 (a) 式中：<br />
+<span class="arithmatex">\((E_n^{(0)} P + \lambda PVP) P\|\psi\rangle + \lambda PVQ \left[ (E - H_0 - \lambda QVQ)^{-1} Q \cdot (\lambda QVP) \right] P\|\psi\rangle = E P\|\psi\rangle\)</span><br />
+8. 这是一个只在 <span class="arithmatex">\(P\)</span> 空间中（在本例中是一维的）的精确本征方程：</p>
+<p><span class="arithmatex">\(H_{eff}(E, \lambda) P|\psi\rangle = E P|\psi\rangle\)</span></p>
+<p>其中，有效哈密顿算符 (Effective Hamiltonian) <span class="arithmatex">\(H_{eff}\)</span> 为：</p>
+<p><span class="arithmatex">\(H_{eff}(E, \lambda) = E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ (E - H_0 - \lambda QVQ)^{-1} Q QVP\)</span></p>
+<p>这个方程是精确的，但 <span class="arithmatex">\(H_{eff}\)</span> 自身又依赖于 <span class="arithmatex">\(E\)</span>（在分母中），这是一个隐式方程。</p>
 <ul>
-<li><strong>Brillouin-Wigner 理论</strong> <a href="#ref-49">49</a>：通过迭代求解这个隐式方程 <span class="arithmatex"><span class="MathJax_Preview">E = f(E)</span><script type="math/tex">E = f(E)</script></span>，得到 BW 级数。  </li>
-<li><strong>Rayleigh-Schrödinger 理论</strong> <a href="#ref-49">49</a>：通过在 <span class="arithmatex"><span class="MathJax_Preview">H_{eff}(E)</span><script type="math/tex">H_{eff}(E)</script></span> 的分母中*也*将 <span class="arithmatex"><span class="MathJax_Preview">E</span><script type="math/tex">E</script></span> 按 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 展开 (<span class="arithmatex"><span class="MathJax_Preview">E = E_n^{(0)} + \lambda E_n^{(1)} + \dots</span><script type="math/tex">E = E_n^{(0)} + \lambda E_n^{(1)} + \dots</script></span>)，然后逐阶收集 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 的幂，得到 RSPT 级数。这是我们接下来要做的。</li>
+<li><strong>Brillouin-Wigner 理论</strong> <a href="#ref-49">49</a>：通过迭代求解这个隐式方程 <span class="arithmatex">\(E = f(E)\)</span>，得到 BW 级数。  </li>
+<li><strong>Rayleigh-Schrödinger 理论</strong> <a href="#ref-49">49</a>：通过在 <span class="arithmatex">\(H_{eff}(E)\)</span> 的分母中*也*将 <span class="arithmatex">\(E\)</span> 按 <span class="arithmatex">\(\lambda\)</span> 展开 (<span class="arithmatex">\(E = E_n^{(0)} + \lambda E_n^{(1)} + \dots\)</span>)，然后逐阶收集 <span class="arithmatex">\(\lambda\)</span> 的幂，得到 RSPT 级数。这是我们接下来要做的。</li>
 </ul>
 <h3 id="43-约化预解式-the-reduced-resolvent"><strong>4.3 约化预解式 (The Reduced Resolvent)</strong><a class="headerlink" href="#43-约化预解式-the-reduced-resolvent" title="Permanent link">#</a></h3>
-<p>RSPT 的核心就是展开 <span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span> 中的那个逆算符。其 <span class="arithmatex"><span class="MathJax_Preview">\lambda^0</span><script type="math/tex">\lambda^0</script></span> 阶近似为 <span class="arithmatex"><span class="MathJax_Preview">(E_n^{(0)} - H_0)^{-1} Q</span><script type="math/tex">(E_n^{(0)} - H_0)^{-1} Q</script></span>。这个算符在 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span> 空间（即 <span class="arithmatex"><span class="MathJax_Preview">k \neq n</span><script type="math/tex">k \neq n</script></span> 的子空间）上是良定义的，但在 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 空间上是发散的。</p>
-<p>定义 4.1 (约化预解式 <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span>)<br />
-我们定义约化预解式 (Reduced Resolvent) <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span>（在 Kato 的文献中常记为 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>） <a href="#ref-30">30</a> 为：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">S_n \equiv Q (E_n^{(0)} - H_0)^{-1} Q</span><script type="math/tex">S_n \equiv Q (E_n^{(0)} - H_0)^{-1} Q</script></span></p>
-<p>这个算符 <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span> 完美地对应于标准 RSPT 教科书中的形式和：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">S_n = \sum_{k \neq n} \frac{|\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|}{E_n^{(0)} - E_k^{(0)}}</span><script type="math/tex">S_n = \sum_{k \neq n} \frac{|\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|}{E_n^{(0)} - E_k^{(0)}}</script></span></p>
-<p>Kato 的关键贡献在于 <a href="#ref-30">30</a>，他证明了 <span class="arithmatex"><span class="MathJax_Preview">G_0(z)</span><script type="math/tex">G_0(z)</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">z=E_n^{(0)}</span><script type="math/tex">z=E_n^{(0)}</script></span> 附近的洛朗展开 (Laurent expansion) 总是可以（在算符范数下）分解为：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">G_0(z) = \frac{P_n^{(0)}}{z - E_n^{(0)}} + S(z)</span><script type="math/tex">G_0(z) = \frac{P_n^{(0)}}{z - E_n^{(0)}} + S(z)</script></span></p>
-<p>其中 <span class="arithmatex"><span class="MathJax_Preview">S(z)</span><script type="math/tex">S(z)</script></span> 是在 <span class="arithmatex"><span class="MathJax_Preview">z=E_n^{(0)}</span><script type="math/tex">z=E_n^{(0)}</script></span> 处全纯的部分。约化预解式 <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span> 就是这个全纯部分在该点的取值 <span class="arithmatex"><span class="MathJax_Preview">S_n = S(E_n^{(0)})</span><script type="math/tex">S_n = S(E_n^{(0)})</script></span> <a href="#ref-30">30</a>。它是一个严格定义的有界算符，它取代了所有非严谨的“除以 <span class="arithmatex"><span class="MathJax_Preview">(E_n - E_k)</span><script type="math/tex">(E_n - E_k)</script></span>” 的无穷求和 <a href="#ref-45">45</a>。</p>
+<p>RSPT 的核心就是展开 <span class="arithmatex">\(H_{eff}\)</span> 中的那个逆算符。其 <span class="arithmatex">\(\lambda^0\)</span> 阶近似为 <span class="arithmatex">\((E_n^{(0)} - H_0)^{-1} Q\)</span>。这个算符在 <span class="arithmatex">\(Q\)</span> 空间（即 <span class="arithmatex">\(k \neq n\)</span> 的子空间）上是良定义的，但在 <span class="arithmatex">\(P\)</span> 空间上是发散的。</p>
+<p>定义 4.1 (约化预解式 <span class="arithmatex">\(S_n\)</span>)<br />
+我们定义约化预解式 (Reduced Resolvent) <span class="arithmatex">\(S_n\)</span>（在 Kato 的文献中常记为 <span class="arithmatex">\(S\)</span>） <a href="#ref-30">30</a> 为：</p>
+<p><span class="arithmatex">\(S_n \equiv Q (E_n^{(0)} - H_0)^{-1} Q\)</span></p>
+<p>这个算符 <span class="arithmatex">\(S_n\)</span> 完美地对应于标准 RSPT 教科书中的形式和：</p>
+<p><span class="arithmatex">\(S_n = \sum_{k \neq n} \frac{|\psi_k^{(0)}\rangle\langle \psi_k^{(0)}|}{E_n^{(0)} - E_k^{(0)}}\)</span></p>
+<p>Kato 的关键贡献在于 <a href="#ref-30">30</a>，他证明了 <span class="arithmatex">\(G_0(z)\)</span> 在 <span class="arithmatex">\(z=E_n^{(0)}\)</span> 附近的洛朗展开 (Laurent expansion) 总是可以（在算符范数下）分解为：</p>
+<p><span class="arithmatex">\(G_0(z) = \frac{P_n^{(0)}}{z - E_n^{(0)}} + S(z)\)</span></p>
+<p>其中 <span class="arithmatex">\(S(z)\)</span> 是在 <span class="arithmatex">\(z=E_n^{(0)}\)</span> 处全纯的部分。约化预解式 <span class="arithmatex">\(S_n\)</span> 就是这个全纯部分在该点的取值 <span class="arithmatex">\(S_n = S(E_n^{(0)})\)</span> <a href="#ref-30">30</a>。它是一个严格定义的有界算符，它取代了所有非严谨的“除以 <span class="arithmatex">\((E_n - E_k)\)</span>” 的无穷求和 <a href="#ref-45">45</a>。</p>
 <h3 id="44-能量与波函数的系统推导"><strong>4.4 能量与波函数的系统推导</strong><a class="headerlink" href="#44-能量与波函数的系统推导" title="Permanent link">#</a></h3>
-<p>现在我们准备收获成果。我们将 <span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span> 中的逆算符 <span class="arithmatex"><span class="MathJax_Preview">G_Q(E, \lambda) \equiv (E - H_0 - \lambda QVQ)^{-1} Q</span><script type="math/tex">G_Q(E, \lambda) \equiv (E - H_0 - \lambda QVQ)^{-1} Q</script></span> 展开。</p>
-<p>推导 4.2 (<span class="arithmatex"><span class="MathJax_Preview">G_Q</span><script type="math/tex">G_Q</script></span> 的展开)  </p>
-<p><span class="arithmatex"><span class="MathJax_Preview">G_Q(E, \lambda) = \left( (E_n^{(0)} - H_0) + (\lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \dots) - \lambda QVQ \right)^{-1} Q </span><script type="math/tex">G_Q(E, \lambda) = \left( (E_n^{(0)} - H_0) + (\lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \dots) - \lambda QVQ \right)^{-1} Q </script></span></p>
-<p>利用算符恒等式 <span class="arithmatex"><span class="MathJax_Preview">(A+B)^{-1} = (I + A^{-1}B)^{-1} A^{-1} approx (I - A^{-1}B) A^{-1}</span><script type="math/tex">(A+B)^{-1} = (I + A^{-1}B)^{-1} A^{-1} approx (I - A^{-1}B) A^{-1}</script></span>，并只保留到 <span class="arithmatex"><span class="MathJax_Preview">\lambda^0</span><script type="math/tex">\lambda^0</script></span> 阶（因为 <span class="arithmatex"><span class="MathJax_Preview">G_Q</span><script type="math/tex">G_Q</script></span> 总是与 <span class="arithmatex"><span class="MathJax_Preview">\lambda^2</span><script type="math/tex">\lambda^2</script></span> 相乘）：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">G_Q(E, \lambda) = (E_n^{(0)} - H_0)^{-1} Q + \mathcal{O}(\lambda)</span><script type="math/tex">G_Q(E, \lambda) = (E_n^{(0)} - H_0)^{-1} Q + \mathcal{O}(\lambda)</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">G_Q(E, \lambda) = S_n + \mathcal{O}(\lambda)</span><script type="math/tex">G_Q(E, \lambda) = S_n + \mathcal{O}(\lambda)</script></span></p>
-<p>（因为 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span> 算符使得 <span class="arithmatex"><span class="MathJax_Preview">(E_n^{(0)} - H_0)^{-1}</span><script type="math/tex">(E_n^{(0)} - H_0)^{-1}</script></span> 的极点消失了）。<br />
-推导 4.3 (能量 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(1)}, E_n^{(2)}</span><script type="math/tex">E_n^{(1)}, E_n^{(2)}</script></span>)<br />
-我们将 <span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span> 作用在 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n^{(0)}\rangle</span><script type="math/tex">|\psi_n^{(0)}\rangle</script></span> 上并取内积（对于非简并情况，这给出了标量本征值 <span class="arithmatex"><span class="MathJax_Preview">E</span><script type="math/tex">E</script></span>）：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">E_n = \langle \psi_n^{(0)} | H_{eff}(E, \lambda) | \psi_n^{(0)} \rangle</span><script type="math/tex">E_n = \langle \psi_n^{(0)} | H_{eff}(E, \lambda) | \psi_n^{(0)} \rangle</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">E_n = \langle \psi_n^{(0)} \| (E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ G_Q(E, \lambda) QVP) \| \psi_n^{(0)} \rangle </span><script type="math/tex">E_n = \langle \psi_n^{(0)} \| (E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ G_Q(E, \lambda) QVP) \| \psi_n^{(0)} \rangle </script></span></p>
-<p>利用 <span class="arithmatex"><span class="MathJax_Preview">P|\psi_n^{(0)}\rangle = |\psi_n^{(0)}\rangle</span><script type="math/tex">P|\psi_n^{(0)}\rangle = |\psi_n^{(0)}\rangle</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">Q|\psi_n^{(0)}\rangle = 0</span><script type="math/tex">Q|\psi_n^{(0)}\rangle = 0</script></span>：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">E_n = E_n^{(0)} + \lambda \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle + \lambda^2 \langle \psi_n^{(0)} | V Q G_Q(E, \lambda) Q V | \psi_n^{(0)} \rangle </span><script type="math/tex">E_n = E_n^{(0)} + \lambda \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle + \lambda^2 \langle \psi_n^{(0)} | V Q G_Q(E, \lambda) Q V | \psi_n^{(0)} \rangle </script></span></p>
+<p>现在我们准备收获成果。我们将 <span class="arithmatex">\(H_{eff}\)</span> 中的逆算符 <span class="arithmatex">\(G_Q(E, \lambda) \equiv (E - H_0 - \lambda QVQ)^{-1} Q\)</span> 展开。</p>
+<p>推导 4.2 (<span class="arithmatex">\(G_Q\)</span> 的展开)  </p>
+<p><span class="arithmatex">\(G_Q(E, \lambda) = \left( (E_n^{(0)} - H_0) + (\lambda E_n^{(1)} + \lambda^2 E_n^{(2)} + \dots) - \lambda QVQ \right)^{-1} Q \)</span></p>
+<p>利用算符恒等式 <span class="arithmatex">\((A+B)^{-1} = (I + A^{-1}B)^{-1} A^{-1} approx (I - A^{-1}B) A^{-1}\)</span>，并只保留到 <span class="arithmatex">\(\lambda^0\)</span> 阶（因为 <span class="arithmatex">\(G_Q\)</span> 总是与 <span class="arithmatex">\(\lambda^2\)</span> 相乘）：</p>
+<p><span class="arithmatex">\(G_Q(E, \lambda) = (E_n^{(0)} - H_0)^{-1} Q + \mathcal{O}(\lambda)\)</span></p>
+<p><span class="arithmatex">\(G_Q(E, \lambda) = S_n + \mathcal{O}(\lambda)\)</span></p>
+<p>（因为 <span class="arithmatex">\(Q\)</span> 算符使得 <span class="arithmatex">\((E_n^{(0)} - H_0)^{-1}\)</span> 的极点消失了）。<br />
+推导 4.3 (能量 <span class="arithmatex">\(E_n^{(1)}, E_n^{(2)}\)</span>)<br />
+我们将 <span class="arithmatex">\(H_{eff}\)</span> 作用在 <span class="arithmatex">\(|\psi_n^{(0)}\rangle\)</span> 上并取内积（对于非简并情况，这给出了标量本征值 <span class="arithmatex">\(E\)</span>）：</p>
+<p><span class="arithmatex">\(E_n = \langle \psi_n^{(0)} | H_{eff}(E, \lambda) | \psi_n^{(0)} \rangle\)</span></p>
+<p><span class="arithmatex">\(E_n = \langle \psi_n^{(0)} \| (E_n^{(0)} P + \lambda PVP + \lambda^2 PVQ G_Q(E, \lambda) QVP) \| \psi_n^{(0)} \rangle \)</span></p>
+<p>利用 <span class="arithmatex">\(P|\psi_n^{(0)}\rangle = |\psi_n^{(0)}\rangle\)</span> 和 <span class="arithmatex">\(Q|\psi_n^{(0)}\rangle = 0\)</span>：</p>
+<p><span class="arithmatex">\(E_n = E_n^{(0)} + \lambda \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle + \lambda^2 \langle \psi_n^{(0)} | V Q G_Q(E, \lambda) Q V | \psi_n^{(0)} \rangle \)</span></p>
 <ol>
-<li>一阶能量 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(1)}</span><script type="math/tex">E_n^{(1)}</script></span> <a href="#ref-27">27</a>：<br />
-   比较 <span class="arithmatex"><span class="MathJax_Preview">\lambda^1</span><script type="math/tex">\lambda^1</script></span> 的系数：</li>
+<li>一阶能量 <span class="arithmatex">\(E_n^{(1)}\)</span> <a href="#ref-27">27</a>：<br />
+   比较 <span class="arithmatex">\(\lambda^1\)</span> 的系数：</li>
 </ol>
-<p><span class="arithmatex"><span class="MathJax_Preview">E_n^{(1)} = \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle</span><script type="math/tex">E_n^{(1)} = \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle</script></span><br />
-2. 二阶能量 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(2)}</span><script type="math/tex">E_n^{(2)}</script></span> <a href="#ref-27">27</a>：<br />
-   比较 <span class="arithmatex"><span class="MathJax_Preview">\lambda^2</span><script type="math/tex">\lambda^2</script></span> 的系数。我们需要 <span class="arithmatex"><span class="MathJax_Preview">G_Q(E, \lambda)</span><script type="math/tex">G_Q(E, \lambda)</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">\lambda^0</span><script type="math/tex">\lambda^0</script></span> 阶近似，即 <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span>：  </p>
-<p><span class="arithmatex"><span class="MathJax_Preview"> E_n^{(2)} = \langle \psi_n^{(0)} | V Q (S_n) Q V | \psi_n^{(0)} \rangle = \langle \psi_n^{(0)} | V S_n V | \psi_n^{(0)} \rangle </span><script type="math/tex"> E_n^{(2)} = \langle \psi_n^{(0)} | V Q (S_n) Q V | \psi_n^{(0)} \rangle = \langle \psi_n^{(0)} | V S_n V | \psi_n^{(0)} \rangle </script></span><br />
-   （因为 <span class="arithmatex"><span class="MathJax_Preview">S_n = Q S_n Q</span><script type="math/tex">S_n = Q S_n Q</script></span>）。<br />
-   代入 <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span> 的求和形式：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview"> E_n^{(2)} = \sum_{k \neq n} \langle \psi_n^{(0)} | V | \psi_k^{(0)} \rangle \frac{1}{E_n^{(0)} - E_k^{(0)}} \langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle </span><script type="math/tex"> E_n^{(2)} = \sum_{k \neq n} \langle \psi_n^{(0)} | V | \psi_k^{(0)} \rangle \frac{1}{E_n^{(0)} - E_k^{(0)}} \langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle </script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview"> E_n^{(2)} = \sum_{k \neq n} \frac{|\langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle|^2}{E_n^{(0)} - E_k^{(0)}}</span><script type="math/tex"> E_n^{(2)} = \sum_{k \neq n} \frac{|\langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle|^2}{E_n^{(0)} - E_k^{(0)}}</script></span></p>
-<p>推导 4.4 (波函数 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n^{(1)}\rangle</span><script type="math/tex">|\psi_n^{(1)}\rangle</script></span>)<br />
-完整的波函数是 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n\rangle = P|\psi_n\rangle + Q|\psi_n\rangle</span><script type="math/tex">|\psi_n\rangle = P|\psi_n\rangle + Q|\psi_n\rangle</script></span>。我们使用“中间归一化” (intermediate normalization)，即 <span class="arithmatex"><span class="MathJax_Preview">P|\psi_n\rangle = |\psi_n^{(0)}\rangle</span><script type="math/tex">P|\psi_n\rangle = |\psi_n^{(0)}\rangle</script></span>（所有 <span class="arithmatex"><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> 阶的修正都在 <span class="arithmatex"><span class="MathJax_Preview">Q</span><script type="math/tex">Q</script></span> 空间中）。<br />
-我们需要 <span class="arithmatex"><span class="MathJax_Preview">Q|\psi_n\rangle</span><script type="math/tex">Q|\psi_n\rangle</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">\lambda^1</span><script type="math/tex">\lambda^1</script></span> 阶项，记为 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n^{(1)}\rangle = Q |\psi_n^{(1)}\rangle</span><script type="math/tex">|\psi_n^{(1)}\rangle = Q |\psi_n^{(1)}\rangle</script></span> <a href="#ref-50">50</a>。<br />
+<p><span class="arithmatex">\(E_n^{(1)} = \langle \psi_n^{(0)} | V | \psi_n^{(0)} \rangle\)</span><br />
+2. 二阶能量 <span class="arithmatex">\(E_n^{(2)}\)</span> <a href="#ref-27">27</a>：<br />
+   比较 <span class="arithmatex">\(\lambda^2\)</span> 的系数。我们需要 <span class="arithmatex">\(G_Q(E, \lambda)\)</span> 的 <span class="arithmatex">\(\lambda^0\)</span> 阶近似，即 <span class="arithmatex">\(S_n\)</span>：  </p>
+<p><span class="arithmatex">\( E_n^{(2)} = \langle \psi_n^{(0)} | V Q (S_n) Q V | \psi_n^{(0)} \rangle = \langle \psi_n^{(0)} | V S_n V | \psi_n^{(0)} \rangle \)</span><br />
+   （因为 <span class="arithmatex">\(S_n = Q S_n Q\)</span>）。<br />
+   代入 <span class="arithmatex">\(S_n\)</span> 的求和形式：</p>
+<p><span class="arithmatex">\( E_n^{(2)} = \sum_{k \neq n} \langle \psi_n^{(0)} | V | \psi_k^{(0)} \rangle \frac{1}{E_n^{(0)} - E_k^{(0)}} \langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle \)</span></p>
+<p><span class="arithmatex">\( E_n^{(2)} = \sum_{k \neq n} \frac{|\langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle|^2}{E_n^{(0)} - E_k^{(0)}}\)</span></p>
+<p>推导 4.4 (波函数 <span class="arithmatex">\(|\psi_n^{(1)}\rangle\)</span>)<br />
+完整的波函数是 <span class="arithmatex">\(|\psi_n\rangle = P|\psi_n\rangle + Q|\psi_n\rangle\)</span>。我们使用“中间归一化” (intermediate normalization)，即 <span class="arithmatex">\(P|\psi_n\rangle = |\psi_n^{(0)}\rangle\)</span>（所有 <span class="arithmatex">\(\lambda\)</span> 阶的修正都在 <span class="arithmatex">\(Q\)</span> 空间中）。<br />
+我们需要 <span class="arithmatex">\(Q|\psi_n\rangle\)</span> 的 <span class="arithmatex">\(\lambda^1\)</span> 阶项，记为 <span class="arithmatex">\(|\psi_n^{(1)}\rangle = Q |\psi_n^{(1)}\rangle\)</span> <a href="#ref-50">50</a>。<br />
 从推导 4.1 的 (6) 式：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">Q|\psi\rangle = G\_Q(E, \lambda) \cdot (\lambda QVP) P|\psi\rangle</span><script type="math/tex">Q|\psi\rangle = G\_Q(E, \lambda) \cdot (\lambda QVP) P|\psi\rangle</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">Q|\psi\rangle = \lambda G\_Q(E, \lambda) V |\psi\_n^{(0)}\rangle</span><script type="math/tex">Q|\psi\rangle = \lambda G\_Q(E, \lambda) V |\psi\_n^{(0)}\rangle</script></span></p>
-<p>我们需要 <span class="arithmatex"><span class="MathJax_Preview">\lambda^1</span><script type="math/tex">\lambda^1</script></span> 阶的项。我们使用 <span class="arithmatex"><span class="MathJax_Preview">G\_Q</span><script type="math/tex">G\_Q</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">\lambda^0</span><script type="math/tex">\lambda^0</script></span> 阶近似 <span class="arithmatex"><span class="MathJax_Preview">S\_n</span><script type="math/tex">S\_n</script></span>：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">\| \psi_n^{(1)}\rangle = [ \lambda G_Q(E, \lambda) V \| \psi_n^{(0)} \rangle ]{\mathcal{O}(\lambda^1)} = S_n V \|\psi_n^{(0)}\rangle </span><script type="math/tex">\| \psi_n^{(1)}\rangle = [ \lambda G_Q(E, \lambda) V \| \psi_n^{(0)} \rangle ]{\mathcal{O}(\lambda^1)} = S_n V \|\psi_n^{(0)}\rangle </script></span></p>
+<p><span class="arithmatex">\(Q|\psi\rangle = G\_Q(E, \lambda) \cdot (\lambda QVP) P|\psi\rangle\)</span></p>
+<p><span class="arithmatex">\(Q|\psi\rangle = \lambda G\_Q(E, \lambda) V |\psi\_n^{(0)}\rangle\)</span></p>
+<p>我们需要 <span class="arithmatex">\(\lambda^1\)</span> 阶的项。我们使用 <span class="arithmatex">\(G\_Q\)</span> 的 <span class="arithmatex">\(\lambda^0\)</span> 阶近似 <span class="arithmatex">\(S\_n\)</span>：</p>
+<p><span class="arithmatex">\(\| \psi_n^{(1)}\rangle = [ \lambda G_Q(E, \lambda) V \| \psi_n^{(0)} \rangle ]{\mathcal{O}(\lambda^1)} = S_n V \|\psi_n^{(0)}\rangle \)</span></p>
 <p>代入 S_n 的求和形式：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">|\psi_n^{(1)}\rangle = \sum_{k \neq n} |\psi_k^{(0)}\rangle \frac{\langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle}{E_n^{(0)} - E_k^{(0)}}</span><script type="math/tex">|\psi_n^{(1)}\rangle = \sum_{k \neq n} |\psi_k^{(0)}\rangle \frac{\langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle}{E_n^{(0)} - E_k^{(0)}}</script></span></p>
+<p><span class="arithmatex">\(|\psi_n^{(1)}\rangle = \sum_{k \neq n} |\psi_k^{(0)}\rangle \frac{\langle \psi_k^{(0)} | V | \psi_n^{(0)} \rangle}{E_n^{(0)} - E_k^{(0)}}\)</span></p>
 <p>这个过程（Kato-Rellich 理论的计算方面）是完全严谨的 <a href="#ref-14">14</a>。它不仅*证明*了 RSPT 级数的存在性 <a href="#ref-46">46</a>，而且还提供了一个*系统*的算法来计算任意阶的修正 <a href="#ref-35">35</a>。</p>
 <h3 id="45-简并情况的处理"><strong>4.5 简并情况的处理</strong><a class="headerlink" href="#45-简并情况的处理" title="Permanent link">#</a></h3>
 <p>标准 RSPT 教科书通常需要一个完全独立的章节来处理简并微扰理论 (degenerate perturbation theory) <a href="#ref-27">27</a>。</p>
 <p>预解式方法的真正威力在于，它<strong>统一</strong>了简并和非简并情况。</p>
-<p>在 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(0)}</span><script type="math/tex">E_n^{(0)}</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> 维简并的情况下，推导 4.1 和 4.2 <em>保持完全不变</em>。唯一的区别是：</p>
+<p>在 <span class="arithmatex">\(E_n^{(0)}\)</span> 是 <span class="arithmatex">\(m\)</span> 维简并的情况下，推导 4.1 和 4.2 <em>保持完全不变</em>。唯一的区别是：</p>
 <ol>
-<li><span class="arithmatex"><span class="MathJax_Preview">P = P_n^{(0)}</span><script type="math/tex">P = P_n^{(0)}</script></span> 不再是一维投影，而是投影到 <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> 维的简并子空间。  </li>
-<li><span class="arithmatex"><span class="MathJax_Preview">H_{eff}(E, \lambda) P\|\psi\rangle = E P\|\psi\rangle</span><script type="math/tex">H_{eff}(E, \lambda) P\|\psi\rangle = E P\|\psi\rangle</script></span> 不再是一个标量方程，而是一个 <span class="arithmatex"><span class="MathJax_Preview">m \times m</span><script type="math/tex">m \times m</script></span> 的<strong>矩阵本征值问题</strong>。</li>
+<li><span class="arithmatex">\(P = P_n^{(0)}\)</span> 不再是一维投影，而是投影到 <span class="arithmatex">\(m\)</span> 维的简并子空间。  </li>
+<li><span class="arithmatex">\(H_{eff}(E, \lambda) P\|\psi\rangle = E P\|\psi\rangle\)</span> 不再是一个标量方程，而是一个 <span class="arithmatex">\(m \times m\)</span> 的<strong>矩阵本征值问题</strong>。</li>
 </ol>
 <p>我们来看一阶近似：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">H_{eff}(E, \lambda) \approx E_n^{(0)} P + \lambda PVP</span><script type="math/tex">H_{eff}(E, \lambda) \approx E_n^{(0)} P + \lambda PVP</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span> 的本征值 <span class="arithmatex"><span class="MathJax_Preview">E \approx E_n^{(0)} + \lambda E^{(1)}</span><script type="math/tex">E \approx E_n^{(0)} + \lambda E^{(1)}</script></span> 必须满足：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">(E_n^{(0)} P + \lambda PVP) P|\psi\rangle = (E_n^{(0)} + \lambda E^{(1)}) P|\psi\rangle</span><script type="math/tex">(E_n^{(0)} P + \lambda PVP) P|\psi\rangle = (E_n^{(0)} + \lambda E^{(1)}) P|\psi\rangle</script></span></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">\lambda (PVP) P|\psi\rangle = \lambda E^{(1)} P|\psi\rangle</span><script type="math/tex">\lambda (PVP) P|\psi\rangle = \lambda E^{(1)} P|\psi\rangle</script></span></p>
-<p>这等价于：在简并子空间 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 中，求解 <span class="arithmatex"><span class="MathJax_Preview">PVP</span><script type="math/tex">PVP</script></span> 算符的本征值 <span class="arithmatex"><span class="MathJax_Preview">E^{(1)}</span><script type="math/tex">E^{(1)}</script></span>。这正是标准教科书中“在简并子空间中对角化微扰 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span>”的步骤。<br />
-因此，简并情况只是 <span class="arithmatex"><span class="MathJax_Preview">H_{eff}</span><script type="math/tex">H_{eff}</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 空间维数 <span class="arithmatex"><span class="MathJax_Preview">m &gt; 1</span><script type="math/tex">m > 1</script></span> 的情况。非简并情况是 <span class="arithmatex"><span class="MathJax_Preview">m=1</span><script type="math/tex">m=1</script></span> 的平凡特例。Kato 的预解式方法 <a href="#ref-37">37</a>（以及 <a href="#ref-26">26</a> 中的划分方法）从一开始就统一处理了这两种情况。</p>
+<p><span class="arithmatex">\(H_{eff}(E, \lambda) \approx E_n^{(0)} P + \lambda PVP\)</span></p>
+<p><span class="arithmatex">\(H_{eff}\)</span> 的本征值 <span class="arithmatex">\(E \approx E_n^{(0)} + \lambda E^{(1)}\)</span> 必须满足：</p>
+<p><span class="arithmatex">\((E_n^{(0)} P + \lambda PVP) P|\psi\rangle = (E_n^{(0)} + \lambda E^{(1)}) P|\psi\rangle\)</span></p>
+<p><span class="arithmatex">\(\lambda (PVP) P|\psi\rangle = \lambda E^{(1)} P|\psi\rangle\)</span></p>
+<p>这等价于：在简并子空间 <span class="arithmatex">\(P\)</span> 中，求解 <span class="arithmatex">\(PVP\)</span> 算符的本征值 <span class="arithmatex">\(E^{(1)}\)</span>。这正是标准教科书中“在简并子空间中对角化微扰 <span class="arithmatex">\(V\)</span>”的步骤。<br />
+因此，简并情况只是 <span class="arithmatex">\(H_{eff}\)</span> 的 <span class="arithmatex">\(P\)</span> 空间维数 <span class="arithmatex">\(m &gt; 1\)</span> 的情况。非简并情况是 <span class="arithmatex">\(m=1\)</span> 的平凡特例。Kato 的预解式方法 <a href="#ref-37">37</a>（以及 <a href="#ref-26">26</a> 中的划分方法）从一开始就统一处理了这两种情况。</p>
 <h2 id="第五部分结论与展望"><strong>第五部分：结论与展望</strong><a class="headerlink" href="#第五部分结论与展望" title="Permanent link">#</a></h2>
 <h3 id="51-总结预解式连接解析函数论与线性算符的桥梁"><strong>5.1 总结：预解式——连接解析函数论与线性算符的桥梁</strong><a class="headerlink" href="#51-总结预解式连接解析函数论与线性算符的桥梁" title="Permanent link">#</a></h3>
-<p>本报告从泛函分析的基础出发，系统地回答了用户关于预解式算符 <span class="arithmatex"><span class="MathJax_Preview">G(z, A) = (z - A)^{-1}</span><script type="math/tex">G(z, A) = (z - A)^{-1}</script></span> 的核心问题。预解式是现代数学物理的基石 <a href="#ref-8">8</a>，它将线性算符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的（通常很棘手的）谱理论问题，巧妙地转化为了复值函数 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的（相对易于处理的）解析性质问题。</p>
+<p>本报告从泛函分析的基础出发，系统地回答了用户关于预解式算符 <span class="arithmatex">\(G(z, A) = (z - A)^{-1}\)</span> 的核心问题。预解式是现代数学物理的基石 <a href="#ref-8">8</a>，它将线性算符 <span class="arithmatex">\(A\)</span> 的（通常很棘手的）谱理论问题，巧妙地转化为了复值函数 <span class="arithmatex">\(G(z)\)</span> 的（相对易于处理的）解析性质问题。</p>
 <p>我们已经严格证明了：</p>
 <ol>
 <li>“为什么预解式的极点...能给出那些信息？”<br />
-   答案：因为算符的孤立本征值（点谱）被定义为 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的极点。如 Riesz 投影（第二部分，证明 2.2）所示，通过留数定理，极点的位置给出了本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>，而极点的留数则严格地给出了到该本征子空间的投影算符 <span class="arithmatex"><span class="MathJax_Preview">P_n</span><script type="math/tex">P_n</script></span> <a href="#ref-14">14</a>，后者完整地编码了本征态的信息。  </li>
+   答案：因为算符的孤立本征值（点谱）被定义为 <span class="arithmatex">\(G(z)\)</span> 的极点。如 Riesz 投影（第二部分，证明 2.2）所示，通过留数定理，极点的位置给出了本征值 <span class="arithmatex">\(E_n\)</span>，而极点的留数则严格地给出了到该本征子空间的投影算符 <span class="arithmatex">\(P_n\)</span> <a href="#ref-14">14</a>，后者完整地编码了本征态的信息。  </li>
 <li>“为什么预解式的...割线能给出那些信息？”<br />
-   答案：因为算符的连续谱被定义为 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 的分支割线 <a href="#ref-8">8</a>。如 Stone 公式（第二部分，证明 2.5）所示，通过 Sokhotski–Plemelj 定理，预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 跨越这条割线的不连续性（“跳跃”）就是谱密度函数 <span class="arithmatex"><span class="MathJax_Preview">dE_\lambda / d\lambda</span><script type="math/tex">dE_\lambda / d\lambda</script></span> <a href="#ref-24">24</a>，它编码了连续谱“本征态”的分布。  </li>
+   答案：因为算符的连续谱被定义为 <span class="arithmatex">\(G(z)\)</span> 的分支割线 <a href="#ref-8">8</a>。如 Stone 公式（第二部分，证明 2.5）所示，通过 Sokhotski–Plemelj 定理，预解式 <span class="arithmatex">\(G(z)\)</span> 跨越这条割线的不连续性（“跳跃”）就是谱密度函数 <span class="arithmatex">\(dE_\lambda / d\lambda\)</span> <a href="#ref-24">24</a>，它编码了连续谱“本征态”的分布。  </li>
 <li>“如何使用预解式理论进行微扰求解？”<br />
-   答案：我们将 <span class="arithmatex"><span class="MathJax_Preview">H = H_0 + V</span><script type="math/tex">H = H_0 + V</script></span> 的微扰问题转化为 <span class="arithmatex"><span class="MathJax_Preview">G_0</span><script type="math/tex">G_0</script></span> 到 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 的微扰问题。通过 <span class="arithmatex"><span class="MathJax_Preview">P/Q</span><script type="math/tex">P/Q</script></span> 空间划分 <a href="#ref-26">26</a> 和 Kato 的约化预解式 <span class="arithmatex"><span class="MathJax_Preview">S_n</span><script type="math/tex">S_n</script></span> <a href="#ref-30">30</a>，我们绕过了 <span class="arithmatex"><span class="MathJax_Preview">G_0</span><script type="math/tex">G_0</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">E_n^{(0)}</span><script type="math/tex">E_n^{(0)}</script></span> 处的奇异性，从而严格且系统地推导了 Rayleigh-Schrödinger 微扰理论的所有标准公式（<span class="arithmatex"><span class="MathJax_Preview">E_n^{(1)}, E_n^{(2)}, |\psi_n^{(1)}\rangle</span><script type="math/tex">E_n^{(1)}, E_n^{(2)}, |\psi_n^{(1)}\rangle</script></span>），并统一了简并与非简并情况（第四部分）。</li>
+   答案：我们将 <span class="arithmatex">\(H = H_0 + V\)</span> 的微扰问题转化为 <span class="arithmatex">\(G_0\)</span> 到 <span class="arithmatex">\(G\)</span> 的微扰问题。通过 <span class="arithmatex">\(P/Q\)</span> 空间划分 <a href="#ref-26">26</a> 和 Kato 的约化预解式 <span class="arithmatex">\(S_n\)</span> <a href="#ref-30">30</a>，我们绕过了 <span class="arithmatex">\(G_0\)</span> 在 <span class="arithmatex">\(E_n^{(0)}\)</span> 处的奇异性，从而严格且系统地推导了 Rayleigh-Schrödinger 微扰理论的所有标准公式（<span class="arithmatex">\(E_n^{(1)}, E_n^{(2)}, |\psi_n^{(1)}\rangle\)</span>），并统一了简并与非简并情况（第四部分）。</li>
 </ol>
 <h3 id="52-超越微扰预解式在现代数学物理中的应用"><strong>5.2 超越微扰：预解式在现代数学物理中的应用</strong><a class="headerlink" href="#52-超越微扰预解式在现代数学物理中的应用" title="Permanent link">#</a></h3>
 <p>预解式形式主义的应用远不止于RSPT，它已渗透到数学物理的各个前沿领域：</p>
 <ul>
-<li><strong>散射理论 (Scattering Theory)</strong>: 预解式 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span> 在连续谱割线上的边界值（“跳跃”）与 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 矩阵和 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 矩阵（散射矩阵）直接相关，是计算散射截面的核心 <a href="#ref-10">10</a>。  </li>
-<li><strong>随机矩阵理论 (Random Matrix Theory)</strong>: 在混沌和无序系统中，人们研究的不是单个 <span class="arithmatex"><span class="MathJax_Preview">G(z)</span><script type="math/tex">G(z)</script></span>，而是预解式的系综平均 <span class="arithmatex"><span class="MathJax_Preview">\langle G(z) \rangle</span><script type="math/tex">\langle G(z) \rangle</script></span>。这个平均预解式满足的方程（Dyson方程的矩阵形式）决定了能级的普适统计分布 <a href="#ref-42">42</a>。  </li>
-<li><strong>谱几何与数论 (Spectral Geometry &amp; Number Theory)</strong>: 在黎曼曲面上，Laplace 算符的预解式（格林函数）及其谱行列式，与数论中的 <span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>-函数（如 Riemann Zeta 函数）深刻相关。<span class="arithmatex"><span class="MathJax_Preview">L</span><script type="math/tex">L</script></span>-函数的零点（“谱”）与预解式的极点（共振）之间存在着对应关系 <a href="#ref-8">8</a>。</li>
+<li><strong>散射理论 (Scattering Theory)</strong>: 预解式 <span class="arithmatex">\(G(z)\)</span> 在连续谱割线上的边界值（“跳跃”）与 <span class="arithmatex">\(T\)</span> 矩阵和 <span class="arithmatex">\(S\)</span> 矩阵（散射矩阵）直接相关，是计算散射截面的核心 <a href="#ref-10">10</a>。  </li>
+<li><strong>随机矩阵理论 (Random Matrix Theory)</strong>: 在混沌和无序系统中，人们研究的不是单个 <span class="arithmatex">\(G(z)\)</span>，而是预解式的系综平均 <span class="arithmatex">\(\langle G(z) \rangle\)</span>。这个平均预解式满足的方程（Dyson方程的矩阵形式）决定了能级的普适统计分布 <a href="#ref-42">42</a>。  </li>
+<li><strong>谱几何与数论 (Spectral Geometry &amp; Number Theory)</strong>: 在黎曼曲面上，Laplace 算符的预解式（格林函数）及其谱行列式，与数论中的 <span class="arithmatex">\(L\)</span>-函数（如 Riemann Zeta 函数）深刻相关。<span class="arithmatex">\(L\)</span>-函数的零点（“谱”）与预解式的极点（共振）之间存在着对应关系 <a href="#ref-8">8</a>。</li>
 </ul>
 <p>从19世纪 Rayleigh 对声波的经典研究 <a href="#ref-29">29</a>，到20世纪 Schrödinger 的量子论 <a href="#ref-27">27</a> 和 Kato 的泛函分析 <a href="#ref-30">30</a>，再到21世纪对量子混沌与数论的探索 <a href="#ref-8">8</a>，预解式形式主义始终是连接物理直觉与数学严谨性的最强大、最普适的工具之一。</p>
 <h4 id="引用的著作"><strong>引用的著作</strong><a class="headerlink" href="#引用的著作" title="Permanent link">#</a></h4>
@@ -4189,7 +4205,9 @@ Stone 公式严格地证明了连续谱的信息被完整地编码在 <span clas
         
           <script src="../../../js/timeago_mkdocs_material.js"></script>
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+          <script src="../../../js/mathjax.js"></script>
+        
+          <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
         
           <script src="https://d3js.org/d3.v7.min.js"></script>
         

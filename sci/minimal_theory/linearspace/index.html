@@ -1301,6 +1301,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
@@ -1827,6 +1829,20 @@
     <li class="md-nav__item">
       <a href="../../minimal_code/vscode_lsp/" class="md-nav__link">
         如何解决 VS Code 中的 C/C++ include 报错问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../minimal_code/vscode_plug/" class="md-nav__link">
+        VS Code 插件开发指南
       </a>
     </li>
   
@@ -2761,7 +2777,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/D_polar_exp/other_polarmeter/" class="md-nav__link">
-        其他研究组的polarimeter
+        其他研究组的 polarimeter
       </a>
     </li>
   
@@ -3749,68 +3765,68 @@
 <hr />
 <h2 id="1-线性空间vector-space">1. 线性空间（Vector Space）<a class="headerlink" href="#1-线性空间vector-space" title="Permanent link">#</a></h2>
 <h3 id="定义">定义<a class="headerlink" href="#定义" title="Permanent link">#</a></h3>
-<p>设 <span class="arithmatex"><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span> 为数域（通常为 <span class="arithmatex"><span class="MathJax_Preview">\mathbb{R}</span><script type="math/tex">\mathbb{R}</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">\mathbb{C}</span><script type="math/tex">\mathbb{C}</script></span>）。<br />
-线性空间（向量空间） <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 是带有加法 <span class="arithmatex"><span class="MathJax_Preview">+</span><script type="math/tex">+</script></span> 与数乘 <span class="arithmatex"><span class="MathJax_Preview">\cdot</span><script type="math/tex">\cdot</script></span> 的集合，满足：</p>
+<p>设 <span class="arithmatex">\(F\)</span> 为数域（通常为 <span class="arithmatex">\(\mathbb{R}\)</span> 或 <span class="arithmatex">\(\mathbb{C}\)</span>）。<br />
+线性空间（向量空间） <span class="arithmatex">\(V\)</span> 是带有加法 <span class="arithmatex">\(+\)</span> 与数乘 <span class="arithmatex">\(\cdot\)</span> 的集合，满足：</p>
 <ol>
-<li><span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 对加法封闭；  </li>
+<li><span class="arithmatex">\(V\)</span> 对加法封闭；  </li>
 <li>数乘对加法、数的乘法满足分配律；  </li>
 <li>存在零向量和加法逆元；  </li>
-<li>单位元 <span class="arithmatex"><span class="MathJax_Preview">1\in F</span><script type="math/tex">1\in F</script></span> 满足 <span class="arithmatex"><span class="MathJax_Preview">1\cdot v = v</span><script type="math/tex">1\cdot v = v</script></span>。</li>
+<li>单位元 <span class="arithmatex">\(1\in F\)</span> 满足 <span class="arithmatex">\(1\cdot v = v\)</span>。</li>
 </ol>
 <p>简言之：线性空间是可以“相加、缩放”的抽象空间。</p>
 <h3 id="例子">例子<a class="headerlink" href="#例子" title="Permanent link">#</a></h3>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">\mathbb{R}^n</span><script type="math/tex">\mathbb{R}^n</script></span>：实数 <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> 维向量。  </li>
-<li>函数空间 <span class="arithmatex"><span class="MathJax_Preview">V=\{f:\mathbb{R}\to\mathbb{C}\}</span><script type="math/tex">V=\{f:\mathbb{R}\to\mathbb{C}\}</script></span>。  </li>
-<li>波函数空间 <span class="arithmatex"><span class="MathJax_Preview">L^2(\mathbb{R}^3)</span><script type="math/tex">L^2(\mathbb{R}^3)</script></span>（平方可积复函数）。</li>
+<li><span class="arithmatex">\(\mathbb{R}^n\)</span>：实数 <span class="arithmatex">\(n\)</span> 维向量。  </li>
+<li>函数空间 <span class="arithmatex">\(V=\{f:\mathbb{R}\to\mathbb{C}\}\)</span>。  </li>
+<li>波函数空间 <span class="arithmatex">\(L^2(\mathbb{R}^3)\)</span>（平方可积复函数）。</li>
 </ul>
 <h3 id="基底与坐标">基底与坐标<a class="headerlink" href="#基底与坐标" title="Permanent link">#</a></h3>
-<p>若有基 <span class="arithmatex"><span class="MathJax_Preview">\{e_i\}_{i=1}^n</span><script type="math/tex">\{e_i\}_{i=1}^n</script></span>，则任意 <span class="arithmatex"><span class="MathJax_Preview">v\in V</span><script type="math/tex">v\in V</script></span> 可写作<br />
-<span class="arithmatex"><span class="MathJax_Preview"> v = v^i e_i. </span><script type="math/tex"> v = v^i e_i. </script></span><br />
-分量 <span class="arithmatex"><span class="MathJax_Preview">v^i</span><script type="math/tex">v^i</script></span> 为“逆变分量”，上标常用于表示它是向量在该基下的系数（爱因斯坦求和约定）。</p>
+<p>若有基 <span class="arithmatex">\(\{e_i\}_{i=1}^n\)</span>，则任意 <span class="arithmatex">\(v\in V\)</span> 可写作<br />
+<span class="arithmatex">\( v = v^i e_i. \)</span><br />
+分量 <span class="arithmatex">\(v^i\)</span> 为“逆变分量”，上标常用于表示它是向量在该基下的系数（爱因斯坦求和约定）。</p>
 <hr />
 <h2 id="2-对偶空间dual-space">2. 对偶空间（Dual Space）<a class="headerlink" href="#2-对偶空间dual-space" title="Permanent link">#</a></h2>
 <h3 id="定义_1">定义<a class="headerlink" href="#定义_1" title="Permanent link">#</a></h3>
-<p>对偶空间 <span class="arithmatex"><span class="MathJax_Preview">V^*</span><script type="math/tex">V^*</script></span> 是所有从 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 到 <span class="arithmatex"><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span> 的线性泛函的集合：<br />
-<span class="arithmatex"><span class="MathJax_Preview"> V^* = \{\alpha: V\to F \mid \alpha(a v + b w)=a\alpha(v)+b\alpha(w)\}. </span><script type="math/tex"> V^* = \{\alpha: V\to F \mid \alpha(a v + b w)=a\alpha(v)+b\alpha(w)\}. </script></span></p>
+<p>对偶空间 <span class="arithmatex">\(V^*\)</span> 是所有从 <span class="arithmatex">\(V\)</span> 到 <span class="arithmatex">\(F\)</span> 的线性泛函的集合：<br />
+<span class="arithmatex">\( V^* = \{\alpha: V\to F \mid \alpha(a v + b w)=a\alpha(v)+b\alpha(w)\}. \)</span></p>
 <h3 id="对偶基">对偶基<a class="headerlink" href="#对偶基" title="Permanent link">#</a></h3>
-<p>若 <span class="arithmatex"><span class="MathJax_Preview">\{e_i\}</span><script type="math/tex">\{e_i\}</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 的基，则存在唯一对偶基 <span class="arithmatex"><span class="MathJax_Preview">\{e^i\}\subset V^*</span><script type="math/tex">\{e^i\}\subset V^*</script></span>，满足<br />
-<span class="arithmatex"><span class="MathJax_Preview"> e^i(e_j) = \delta^i_j. </span><script type="math/tex"> e^i(e_j) = \delta^i_j. </script></span><br />
+<p>若 <span class="arithmatex">\(\{e_i\}\)</span> 是 <span class="arithmatex">\(V\)</span> 的基，则存在唯一对偶基 <span class="arithmatex">\(\{e^i\}\subset V^*\)</span>，满足<br />
+<span class="arithmatex">\( e^i(e_j) = \delta^i_j. \)</span><br />
 于是<br />
-<span class="arithmatex"><span class="MathJax_Preview"> \alpha = \alpha_i e^i,\quad v=v^i e_i,\quad \alpha(v)=\alpha_i v^i. </span><script type="math/tex"> \alpha = \alpha_i e^i,\quad v=v^i e_i,\quad \alpha(v)=\alpha_i v^i. </script></span></p>
+<span class="arithmatex">\( \alpha = \alpha_i e^i,\quad v=v^i e_i,\quad \alpha(v)=\alpha_i v^i. \)</span></p>
 <p>记号约定：</p>
 <ul>
-<li>向量分量 <span class="arithmatex"><span class="MathJax_Preview">v^i</span><script type="math/tex">v^i</script></span>：上标（反变）。  </li>
-<li>对偶分量 <span class="arithmatex"><span class="MathJax_Preview">\alpha_i</span><script type="math/tex">\alpha_i</script></span>：下标（协变）。</li>
+<li>向量分量 <span class="arithmatex">\(v^i\)</span>：上标（反变）。  </li>
+<li>对偶分量 <span class="arithmatex">\(\alpha_i\)</span>：下标（协变）。</li>
 </ul>
 <hr />
 <h2 id="3-线性算符与对偶映射">3. 线性算符与对偶映射<a class="headerlink" href="#3-线性算符与对偶映射" title="Permanent link">#</a></h2>
 <h3 id="定义_2">定义<a class="headerlink" href="#定义_2" title="Permanent link">#</a></h3>
-<p>线性算符 <span class="arithmatex"><span class="MathJax_Preview">A:V\to W</span><script type="math/tex">A:V\to W</script></span> 满足<br />
-<span class="arithmatex"><span class="MathJax_Preview"> A(av+bw)=aA(v)+bA(w). </span><script type="math/tex"> A(av+bw)=aA(v)+bA(w). </script></span></p>
+<p>线性算符 <span class="arithmatex">\(A:V\to W\)</span> 满足<br />
+<span class="arithmatex">\( A(av+bw)=aA(v)+bA(w). \)</span></p>
 <h3 id="对偶映射伴随映射">对偶映射（伴随映射）<a class="headerlink" href="#对偶映射伴随映射" title="Permanent link">#</a></h3>
-<p>定义 <span class="arithmatex"><span class="MathJax_Preview">A^*:W^*\to V^*</span><script type="math/tex">A^*:W^*\to V^*</script></span>，对任意 <span class="arithmatex"><span class="MathJax_Preview">\beta\in W^*</span><script type="math/tex">\beta\in W^*</script></span>、<span class="arithmatex"><span class="MathJax_Preview">v\in V</span><script type="math/tex">v\in V</script></span>，<br />
-<span class="arithmatex"><span class="MathJax_Preview"> (A^*\beta)(v)=\beta(A v). </span><script type="math/tex"> (A^*\beta)(v)=\beta(A v). </script></span></p>
+<p>定义 <span class="arithmatex">\(A^*:W^*\to V^*\)</span>，对任意 <span class="arithmatex">\(\beta\in W^*\)</span>、<span class="arithmatex">\(v\in V\)</span>，<br />
+<span class="arithmatex">\( (A^*\beta)(v)=\beta(A v). \)</span></p>
 <h3 id="矩阵形式">矩阵形式<a class="headerlink" href="#矩阵形式" title="Permanent link">#</a></h3>
-<p>若 <span class="arithmatex"><span class="MathJax_Preview">A(e_i)=f_a\,A^a{}_{i}</span><script type="math/tex">A(e_i)=f_a\,A^a{}_{i}</script></span>（$ {f_a}$ 为 <span class="arithmatex"><span class="MathJax_Preview">W</span><script type="math/tex">W</script></span> 基），则<br />
-<span class="arithmatex"><span class="MathJax_Preview"> A^*(f^a) = e^i A^a{}_{i}. </span><script type="math/tex"> A^*(f^a) = e^i A^a{}_{i}. </script></span><br />
-即 <span class="arithmatex"><span class="MathJax_Preview">A^*</span><script type="math/tex">A^*</script></span> 的矩阵为 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的转置（对复数域通常取共轭转置）。</p>
+<p>若 <span class="arithmatex">\(A(e_i)=f_a\,A^a{}_{i}\)</span>（$ {f_a}$ 为 <span class="arithmatex">\(W\)</span> 基），则<br />
+<span class="arithmatex">\( A^*(f^a) = e^i A^a{}_{i}. \)</span><br />
+即 <span class="arithmatex">\(A^*\)</span> 的矩阵为 <span class="arithmatex">\(A\)</span> 的转置（对复数域通常取共轭转置）。</p>
 <hr />
 <h2 id="4-希尔伯特空间hilbert-space与态矢state-vector">4. 希尔伯特空间（Hilbert Space）与态矢（State Vector）<a class="headerlink" href="#4-希尔伯特空间hilbert-space与态矢state-vector" title="Permanent link">#</a></h2>
 <h3 id="定义_3">定义<a class="headerlink" href="#定义_3" title="Permanent link">#</a></h3>
-<p>希尔伯特空间 <span class="arithmatex"><span class="MathJax_Preview">\mathcal H</span><script type="math/tex">\mathcal H</script></span> 是带有内积且完备的线性空间：<br />
-<span class="arithmatex"><span class="MathJax_Preview"> \langle\phi|\psi\rangle \in \mathbb C,\qquad \langle a\phi+b\chi|\psi\rangle = a^*\langle\phi|\psi\rangle + b^*\langle\chi|\psi\rangle. </span><script type="math/tex"> \langle\phi|\psi\rangle \in \mathbb C,\qquad \langle a\phi+b\chi|\psi\rangle = a^*\langle\phi|\psi\rangle + b^*\langle\chi|\psi\rangle. </script></span></p>
+<p>希尔伯特空间 <span class="arithmatex">\(\mathcal H\)</span> 是带有内积且完备的线性空间：<br />
+<span class="arithmatex">\( \langle\phi|\psi\rangle \in \mathbb C,\qquad \langle a\phi+b\chi|\psi\rangle = a^*\langle\phi|\psi\rangle + b^*\langle\chi|\psi\rangle. \)</span></p>
 <h3 id="riesz-表示定理">Riesz 表示定理<a class="headerlink" href="#riesz-表示定理" title="Permanent link">#</a></h3>
-<p>在希尔伯特空间中，每个连续线性泛函 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 对应唯一向量 <span class="arithmatex"><span class="MathJax_Preview">|u\rangle</span><script type="math/tex">|u\rangle</script></span>，使得：<br />
-<span class="arithmatex"><span class="MathJax_Preview"> \alpha(|\psi\rangle) = \langle u|\psi\rangle. </span><script type="math/tex"> \alpha(|\psi\rangle) = \langle u|\psi\rangle. </script></span><br />
-因此 <span class="arithmatex"><span class="MathJax_Preview">\mathcal H \cong \mathcal H^*</span><script type="math/tex">\mathcal H \cong \mathcal H^*</script></span>。</p>
+<p>在希尔伯特空间中，每个连续线性泛函 <span class="arithmatex">\(\alpha\)</span> 对应唯一向量 <span class="arithmatex">\(|u\rangle\)</span>，使得：<br />
+<span class="arithmatex">\( \alpha(|\psi\rangle) = \langle u|\psi\rangle. \)</span><br />
+因此 <span class="arithmatex">\(\mathcal H \cong \mathcal H^*\)</span>。</p>
 <h3 id="物理诠释">物理诠释<a class="headerlink" href="#物理诠释" title="Permanent link">#</a></h3>
 <p>在量子力学中：</p>
 <ul>
-<li>ket <span class="arithmatex"><span class="MathJax_Preview">|\psi\rangle\in\mathcal H</span><script type="math/tex">|\psi\rangle\in\mathcal H</script></span>：态矢；  </li>
-<li>bra <span class="arithmatex"><span class="MathJax_Preview">\langle\psi|\in\mathcal H^*</span><script type="math/tex">\langle\psi|\in\mathcal H^*</script></span>：其对偶；  </li>
-<li>内积 <span class="arithmatex"><span class="MathJax_Preview">\langle\phi|\psi\rangle</span><script type="math/tex">\langle\phi|\psi\rangle</script></span>：概率幅；  </li>
-<li>算符 <span class="arithmatex"><span class="MathJax_Preview">A:\mathcal H\to\mathcal H</span><script type="math/tex">A:\mathcal H\to\mathcal H</script></span>：物理可观测量的表示。</li>
+<li>ket <span class="arithmatex">\(|\psi\rangle\in\mathcal H\)</span>：态矢；  </li>
+<li>bra <span class="arithmatex">\(\langle\psi|\in\mathcal H^*\)</span>：其对偶；  </li>
+<li>内积 <span class="arithmatex">\(\langle\phi|\psi\rangle\)</span>：概率幅；  </li>
+<li>算符 <span class="arithmatex">\(A:\mathcal H\to\mathcal H\)</span>：物理可观测量的表示。</li>
 </ul>
 <hr />
 <h2 id="5-直和与张量积">5. 直和与张量积<a class="headerlink" href="#5-直和与张量积" title="Permanent link">#</a></h2>
@@ -3826,13 +3842,13 @@
 <tbody>
 <tr>
 <td style="text-align: right;">直和</td>
-<td style="text-align: center;"><span class="arithmatex"><span class="MathJax_Preview">\mathcal H_1\oplus\mathcal H_2</span><script type="math/tex">\mathcal H_1\oplus\mathcal H_2</script></span></td>
-<td style="text-align: left;">元素为 <span class="arithmatex"><span class="MathJax_Preview">(v_1,v_2)</span><script type="math/tex">(v_1,v_2)</script></span>，内积为两个分量内积之和</td>
-<td style="text-align: left;">系统只能处于 <span class="arithmatex"><span class="MathJax_Preview">\mathcal H_1</span><script type="math/tex">\mathcal H_1</script></span> 或 <span class="arithmatex"><span class="MathJax_Preview">\mathcal H_2</span><script type="math/tex">\mathcal H_2</script></span>（如散射态 vs 束缚态）</td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathcal H_1\oplus\mathcal H_2\)</span></td>
+<td style="text-align: left;">元素为 <span class="arithmatex">\((v_1,v_2)\)</span>，内积为两个分量内积之和</td>
+<td style="text-align: left;">系统只能处于 <span class="arithmatex">\(\mathcal H_1\)</span> 或 <span class="arithmatex">\(\mathcal H_2\)</span>（如散射态 vs 束缚态）</td>
 </tr>
 <tr>
 <td style="text-align: right;">张量积</td>
-<td style="text-align: center;"><span class="arithmatex"><span class="MathJax_Preview">\mathcal H_1\otimes\mathcal H_2</span><script type="math/tex">\mathcal H_1\otimes\mathcal H_2</script></span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathcal H_1\otimes\mathcal H_2\)</span></td>
 <td style="text-align: left;">双线性生成空间</td>
 <td style="text-align: left;">两个系统组合成一个复合系统</td>
 </tr>
@@ -3840,33 +3856,33 @@
 </table>
 <p>例子：</p>
 <ul>
-<li>自旋 + 轨道角动量：<span class="arithmatex"><span class="MathJax_Preview">\mathcal H = \mathcal H_L \otimes \mathcal H_S</span><script type="math/tex">\mathcal H = \mathcal H_L \otimes \mathcal H_S</script></span>。  </li>
-<li>散射 + 束缚态：<span class="arithmatex"><span class="MathJax_Preview">\mathcal H = \mathcal H_{\mathrm{bound}} \oplus \mathcal H_{\mathrm{scatt}}</span><script type="math/tex">\mathcal H = \mathcal H_{\mathrm{bound}} \oplus \mathcal H_{\mathrm{scatt}}</script></span>。</li>
+<li>自旋 + 轨道角动量：<span class="arithmatex">\(\mathcal H = \mathcal H_L \otimes \mathcal H_S\)</span>。  </li>
+<li>散射 + 束缚态：<span class="arithmatex">\(\mathcal H = \mathcal H_{\mathrm{bound}} \oplus \mathcal H_{\mathrm{scatt}}\)</span>。</li>
 </ul>
 <hr />
 <h2 id="6-散射态与束缚态的希尔伯特空间结构">6. 散射态与束缚态的希尔伯特空间结构<a class="headerlink" href="#6-散射态与束缚态的希尔伯特空间结构" title="Permanent link">#</a></h2>
 <h3 id="哈密顿量与谱分解">哈密顿量与谱分解<a class="headerlink" href="#哈密顿量与谱分解" title="Permanent link">#</a></h3>
-<p>给定 <span class="arithmatex"><span class="MathJax_Preview">H = H_0 + V</span><script type="math/tex">H = H_0 + V</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 是自由哈密顿量，<span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 是势或相互作用。谱分解为：<br />
-<span class="arithmatex"><span class="MathJax_Preview"> \mathcal H = \mathcal H_{\mathrm{bound}} \oplus \mathcal H_{\mathrm{scatt}}. </span><script type="math/tex"> \mathcal H = \mathcal H_{\mathrm{bound}} \oplus \mathcal H_{\mathrm{scatt}}. </script></span></p>
+<p>给定 <span class="arithmatex">\(H = H_0 + V\)</span>，其中 <span class="arithmatex">\(H_0\)</span> 是自由哈密顿量，<span class="arithmatex">\(V\)</span> 是势或相互作用。谱分解为：<br />
+<span class="arithmatex">\( \mathcal H = \mathcal H_{\mathrm{bound}} \oplus \mathcal H_{\mathrm{scatt}}. \)</span></p>
 <ul>
-<li>束缚态（Bound state）：离散本征值 <span class="arithmatex"><span class="MathJax_Preview">E_n</span><script type="math/tex">E_n</script></span>，对应归一化本征态 <span class="arithmatex"><span class="MathJax_Preview">|\psi_n\rangle\in\mathcal H_{\mathrm{bound}}</span><script type="math/tex">|\psi_n\rangle\in\mathcal H_{\mathrm{bound}}</script></span>，满足 <span class="arithmatex"><span class="MathJax_Preview">\langle\psi_n|\psi_m\rangle=\delta_{nm}</span><script type="math/tex">\langle\psi_n|\psi_m\rangle=\delta_{nm}</script></span>。  </li>
-<li>散射态（Scattering state）：连续谱 <span class="arithmatex"><span class="MathJax_Preview">E&gt;0</span><script type="math/tex">E>0</script></span>，形式归一化 <span class="arithmatex"><span class="MathJax_Preview">\langle \psi_E | \psi_{E'}\rangle = \delta(E-E')</span><script type="math/tex">\langle \psi_E | \psi_{E'}\rangle = \delta(E-E')</script></span>。</li>
+<li>束缚态（Bound state）：离散本征值 <span class="arithmatex">\(E_n\)</span>，对应归一化本征态 <span class="arithmatex">\(|\psi_n\rangle\in\mathcal H_{\mathrm{bound}}\)</span>，满足 <span class="arithmatex">\(\langle\psi_n|\psi_m\rangle=\delta_{nm}\)</span>。  </li>
+<li>散射态（Scattering state）：连续谱 <span class="arithmatex">\(E&gt;0\)</span>，形式归一化 <span class="arithmatex">\(\langle \psi_E | \psi_{E'}\rangle = \delta(E-E')\)</span>。</li>
 </ul>
 <h3 id="渐进自由态asymptotic-free-states">渐进自由态（Asymptotic Free States）<a class="headerlink" href="#渐进自由态asymptotic-free-states" title="Permanent link">#</a></h3>
-<p>在 <span class="arithmatex"><span class="MathJax_Preview">t\to\pm\infty</span><script type="math/tex">t\to\pm\infty</script></span> 极限下，相互作用项 <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> 的影响消失，系统表现如自由粒子。自由态生成的空间为：<br />
-<span class="arithmatex"><span class="MathJax_Preview"> \mathcal H_{\mathrm{free}} = \operatorname{span}\{|\phi_p\rangle : H_0|\phi_p\rangle = E_p|\phi_p\rangle\}. </span><script type="math/tex"> \mathcal H_{\mathrm{free}} = \operatorname{span}\{|\phi_p\rangle : H_0|\phi_p\rangle = E_p|\phi_p\rangle\}. </script></span></p>
+<p>在 <span class="arithmatex">\(t\to\pm\infty\)</span> 极限下，相互作用项 <span class="arithmatex">\(V\)</span> 的影响消失，系统表现如自由粒子。自由态生成的空间为：<br />
+<span class="arithmatex">\( \mathcal H_{\mathrm{free}} = \operatorname{span}\{|\phi_p\rangle : H_0|\phi_p\rangle = E_p|\phi_p\rangle\}. \)</span></p>
 <hr />
 <h2 id="7-møller-算符与-s-算符">7. Møller 算符与 S 算符<a class="headerlink" href="#7-møller-算符与-s-算符" title="Permanent link">#</a></h2>
 <h3 id="时间演化算符">时间演化算符<a class="headerlink" href="#时间演化算符" title="Permanent link">#</a></h3>
-<p><span class="arithmatex"><span class="MathJax_Preview"> U(t,t_0)=e^{-\frac{i}{\hbar}H(t-t_0)}. </span><script type="math/tex"> U(t,t_0)=e^{-\frac{i}{\hbar}H(t-t_0)}. </script></span></p>
+<p><span class="arithmatex">\( U(t,t_0)=e^{-\frac{i}{\hbar}H(t-t_0)}. \)</span></p>
 <h3 id="møller-算符wave-operators">Møller 算符（Wave Operators）<a class="headerlink" href="#møller-算符wave-operators" title="Permanent link">#</a></h3>
-<p><span class="arithmatex"><span class="MathJax_Preview"> \Omega_\pm = \lim_{t\to\mp\infty} e^{iH_0 t} e^{-iHt}, </span><script type="math/tex"> \Omega_\pm = \lim_{t\to\mp\infty} e^{iH_0 t} e^{-iHt}, </script></span></p>
-<p>其中 <span class="arithmatex"><span class="MathJax_Preview">\Omega_\pm:\mathcal H_{\mathrm{free}}\to\mathcal H_{\mathrm{int}}</span><script type="math/tex">\Omega_\pm:\mathcal H_{\mathrm{free}}\to\mathcal H_{\mathrm{int}}</script></span>，将自由态映射为“渐进相互作用态”。</p>
+<p><span class="arithmatex">\( \Omega_\pm = \lim_{t\to\mp\infty} e^{iH_0 t} e^{-iHt}, \)</span></p>
+<p>其中 <span class="arithmatex">\(\Omega_\pm:\mathcal H_{\mathrm{free}}\to\mathcal H_{\mathrm{int}}\)</span>，将自由态映射为“渐进相互作用态”。</p>
 <h3 id="s-算符scattering-operator">S 算符（Scattering Operator）<a class="headerlink" href="#s-算符scattering-operator" title="Permanent link">#</a></h3>
-<p><span class="arithmatex"><span class="MathJax_Preview"> S = \Omega_+^\dagger \Omega_-. </span><script type="math/tex"> S = \Omega_+^\dagger \Omega_-. </script></span></p>
+<p><span class="arithmatex">\( S = \Omega_+^\dagger \Omega_-. \)</span></p>
 <p>作用在自由空间上：<br />
-<span class="arithmatex"><span class="MathJax_Preview"> |\psi_{\mathrm{out}}\rangle = S |\psi_{\mathrm{in}}\rangle. </span><script type="math/tex"> |\psi_{\mathrm{out}}\rangle = S |\psi_{\mathrm{in}}\rangle. </script></span></p>
-<p>因此 <span class="arithmatex"><span class="MathJax_Preview">\mathcal H_{\mathrm{int}} \cong \mathcal H_{\mathrm{free}}</span><script type="math/tex">\mathcal H_{\mathrm{int}} \cong \mathcal H_{\mathrm{free}}</script></span>，同构映射由 <span class="arithmatex"><span class="MathJax_Preview">\Omega_\pm</span><script type="math/tex">\Omega_\pm</script></span> 给出。</p>
+<span class="arithmatex">\( |\psi_{\mathrm{out}}\rangle = S |\psi_{\mathrm{in}}\rangle. \)</span></p>
+<p>因此 <span class="arithmatex">\(\mathcal H_{\mathrm{int}} \cong \mathcal H_{\mathrm{free}}\)</span>，同构映射由 <span class="arithmatex">\(\Omega_\pm\)</span> 给出。</p>
 <hr />
 <h2 id="8-三种语言对照表">8. 三种语言对照表<a class="headerlink" href="#8-三种语言对照表" title="Permanent link">#</a></h2>
 <table>
@@ -3881,63 +3897,63 @@
 <tbody>
 <tr>
 <td>向量</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">v=v^i e_i</span><script type="math/tex">v=v^i e_i</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">(v^i)</span><script type="math/tex">(v^i)</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">\| v \rangle</span><script type="math/tex">\| v \rangle</script></span></td>
+<td><span class="arithmatex">\(v=v^i e_i\)</span></td>
+<td><span class="arithmatex">\((v^i)\)</span></td>
+<td><span class="arithmatex">\(\| v \rangle\)</span></td>
 </tr>
 <tr>
 <td>对偶向量</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">\alpha=\alpha_i e^i</span><script type="math/tex">\alpha=\alpha_i e^i</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">(\alpha_i)</span><script type="math/tex">(\alpha_i)</script></span> | $\langle\alpha</td>
+<td><span class="arithmatex">\(\alpha=\alpha_i e^i\)</span></td>
+<td><span class="arithmatex">\((\alpha_i)\)</span> | $\langle\alpha</td>
 <td>$</td>
 </tr>
 <tr>
 <td>配对</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">\alpha(v)=\alpha_i v^i</span><script type="math/tex">\alpha(v)=\alpha_i v^i</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">\alpha_i v^i</span><script type="math/tex">\alpha_i v^i</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">\langle\alpha\|v\rangle</span><script type="math/tex">\langle\alpha\|v\rangle</script></span></td>
+<td><span class="arithmatex">\(\alpha(v)=\alpha_i v^i\)</span></td>
+<td><span class="arithmatex">\(\alpha_i v^i\)</span></td>
+<td><span class="arithmatex">\(\langle\alpha\|v\rangle\)</span></td>
 </tr>
 <tr>
 <td>算符</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">A(e_i)=A^j{}_{i} e_j</span><script type="math/tex">A(e_i)=A^j{}_{i} e_j</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">(A^j{}_{i})</span><script type="math/tex">(A^j{}_{i})</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">A\|\psi\rangle</span><script type="math/tex">A\|\psi\rangle</script></span></td>
+<td><span class="arithmatex">\(A(e_i)=A^j{}_{i} e_j\)</span></td>
+<td><span class="arithmatex">\((A^j{}_{i})\)</span></td>
+<td><span class="arithmatex">\(A\|\psi\rangle\)</span></td>
 </tr>
 <tr>
 <td>伴随算符</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">\langle Av,w\rangle=\langle v,A^\dagger w\rangle</span><script type="math/tex">\langle Av,w\rangle=\langle v,A^\dagger w\rangle</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">A^{\dagger i}{}_{j}=(A^j{}_{i})^*</span><script type="math/tex">A^{\dagger i}{}_{j}=(A^j{}_{i})^*</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">\langle v\|A^\dagger\|w\rangle</span><script type="math/tex">\langle v\|A^\dagger\|w\rangle</script></span></td>
+<td><span class="arithmatex">\(\langle Av,w\rangle=\langle v,A^\dagger w\rangle\)</span></td>
+<td><span class="arithmatex">\(A^{\dagger i}{}_{j}=(A^j{}_{i})^*\)</span></td>
+<td><span class="arithmatex">\(\langle v\|A^\dagger\|w\rangle\)</span></td>
 </tr>
 <tr>
 <td>张量积</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">v_1\otimes v_2</span><script type="math/tex">v_1\otimes v_2</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">v_1^i v_2^j</span><script type="math/tex">v_1^i v_2^j</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">\|v_1\rangle\otimes\|v_2\rangle</span><script type="math/tex">\|v_1\rangle\otimes\|v_2\rangle</script></span></td>
+<td><span class="arithmatex">\(v_1\otimes v_2\)</span></td>
+<td><span class="arithmatex">\(v_1^i v_2^j\)</span></td>
+<td><span class="arithmatex">\(\|v_1\rangle\otimes\|v_2\rangle\)</span></td>
 </tr>
 <tr>
 <td>直和</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">(v_1,v_2)</span><script type="math/tex">(v_1,v_2)</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">(v_1^i,v_2^j)</span><script type="math/tex">(v_1^i,v_2^j)</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">\|v_1\rangle\oplus\|v_2\rangle</span><script type="math/tex">\|v_1\rangle\oplus\|v_2\rangle</script></span></td>
+<td><span class="arithmatex">\((v_1,v_2)\)</span></td>
+<td><span class="arithmatex">\((v_1^i,v_2^j)\)</span></td>
+<td><span class="arithmatex">\(\|v_1\rangle\oplus\|v_2\rangle\)</span></td>
 </tr>
 <tr>
 <td>自由态</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> 本征态</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">\phi_p</span><script type="math/tex">\phi_p</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">\|\phi_p\rangle</span><script type="math/tex">\|\phi_p\rangle</script></span>（例如波函数 <span class="arithmatex"><span class="MathJax_Preview">\psi_p(x)=e^{ipx}</span><script type="math/tex">\psi_p(x)=e^{ipx}</script></span>）</td>
+<td><span class="arithmatex">\(H_0\)</span> 本征态</td>
+<td><span class="arithmatex">\(\phi_p\)</span></td>
+<td><span class="arithmatex">\(\|\phi_p\rangle\)</span>（例如波函数 <span class="arithmatex">\(\psi_p(x)=e^{ipx}\)</span>）</td>
 </tr>
 <tr>
 <td>相互作用态</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> 本征态</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">\psi</span><script type="math/tex">\psi</script></span></td>
-<td><span class="arithmatex"><span class="MathJax_Preview">\|\psi\rangle</span><script type="math/tex">\|\psi\rangle</script></span>（波包或束缚波）</td>
+<td><span class="arithmatex">\(H\)</span> 本征态</td>
+<td><span class="arithmatex">\(\psi\)</span></td>
+<td><span class="arithmatex">\(\|\psi\rangle\)</span>（波包或束缚波）</td>
 </tr>
 <tr>
 <td>渐进关系</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">\psi_{\mathrm{in/out}}=\Omega_{\mp}\phi</span><script type="math/tex">\psi_{\mathrm{in/out}}=\Omega_{\mp}\phi</script></span></td>
+<td><span class="arithmatex">\(\psi_{\mathrm{in/out}}=\Omega_{\mp}\phi\)</span></td>
 <td>—</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">\psi(x,t\to\pm\infty)\sim e^{ipx}+\dots</span><script type="math/tex">\psi(x,t\to\pm\infty)\sim e^{ipx}+\dots</script></span></td>
+<td><span class="arithmatex">\(\psi(x,t\to\pm\infty)\sim e^{ipx}+\dots\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -3950,7 +3966,7 @@
 <li>希尔伯特空间：具有内积与完备性的线性空间，是物理态空间。  </li>
 <li>直和：表示系统状态空间的分块。  </li>
 <li>张量积：表示复合系统。  </li>
-<li>散射理论：<span class="arithmatex"><span class="MathJax_Preview">\mathcal H_{\mathrm{int}}</span><script type="math/tex">\mathcal H_{\mathrm{int}}</script></span> 与 <span class="arithmatex"><span class="MathJax_Preview">\mathcal H_{\mathrm{free}}</span><script type="math/tex">\mathcal H_{\mathrm{free}}</script></span> 通过 Møller 算符同构，S 算符描述输入输出映射。</li>
+<li>散射理论：<span class="arithmatex">\(\mathcal H_{\mathrm{int}}\)</span> 与 <span class="arithmatex">\(\mathcal H_{\mathrm{free}}\)</span> 通过 Møller 算符同构，S 算符描述输入输出映射。</li>
 </ul>
 
   <hr>
@@ -4043,7 +4059,9 @@
         
           <script src="../../../js/timeago_mkdocs_material.js"></script>
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+          <script src="../../../js/mathjax.js"></script>
+        
+          <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
         
           <script src="https://d3js.org/d3.v7.min.js"></script>
         

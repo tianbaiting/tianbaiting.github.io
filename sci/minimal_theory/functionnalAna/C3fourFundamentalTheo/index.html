@@ -1301,6 +1301,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
@@ -1827,6 +1829,20 @@
     <li class="md-nav__item">
       <a href="../../../minimal_code/vscode_lsp/" class="md-nav__link">
         如何解决 VS Code 中的 C/C++ include 报错问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vscode_plug/" class="md-nav__link">
+        VS Code 插件开发指南
       </a>
     </li>
   
@@ -2600,7 +2616,7 @@
   
     <li class="md-nav__item">
       <a href="../../../project/D_polar_exp/other_polarmeter/" class="md-nav__link">
-        其他研究组的polarimeter
+        其他研究组的 polarimeter
       </a>
     </li>
   
@@ -3413,43 +3429,40 @@
 <h1 id="泛函四大基石定理">泛函四大基石定理<a class="headerlink" href="#泛函四大基石定理" title="Permanent link">#</a></h1>
 <p><img alt="alt text" src="../assets/C3fourFundamentalTheo.zh/sida.JPG" /></p>
 <h2 id="hahn-banach-定理">hahn-banach 定理<a class="headerlink" href="#hahn-banach-定理" title="Permanent link">#</a></h2>
-<p>设 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是实线性空间，<span class="arithmatex"><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 上的次线性泛函。若 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span> 是定义在子空间 <span class="arithmatex"><span class="MathJax_Preview">Z \subset X</span><script type="math/tex">Z \subset X</script></span> 上的线性泛函，且满足 <span class="arithmatex"><span class="MathJax_Preview">|f(x)| \le p(x)</span><script type="math/tex">|f(x)| \le p(x)</script></span> , <span class="arithmatex"><span class="MathJax_Preview">\forall x \in Z</span><script type="math/tex">\forall x \in Z</script></span> ，则在整个空间 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 上存在线性泛函 <span class="arithmatex"><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span>，使得：</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">F|_Z = f</span><script type="math/tex">F|_Z = f</script></span> （延拓性）</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">|F(x)| \le p(x)</span><script type="math/tex">|F(x)| \le p(x)</script></span>  $ \forall x \in X$ 成立（保号/保范性）</p>
-<p>物理直观： 它保证了对偶空间 <span class="arithmatex"><span class="MathJax_Preview">X^*</span><script type="math/tex">X^*</script></span> 足够大。在量子力学中，这意味着对于任何态向量，我们都能找到足够的观测物理量（线性泛函）来描述它。</p>
+<p>设 <span class="arithmatex">\(X\)</span> 是实线性空间，<span class="arithmatex">\(p\)</span> 是 <span class="arithmatex">\(X\)</span> 上的次线性泛函。若 <span class="arithmatex">\(f\)</span> 是定义在子空间 <span class="arithmatex">\(Z \subset X\)</span> 上的线性泛函，且满足 <span class="arithmatex">\(|f(x)| \le p(x)\)</span> , <span class="arithmatex">\(\forall x \in Z\)</span> ，则在整个空间 <span class="arithmatex">\(X\)</span> 上存在线性泛函 <span class="arithmatex">\(F\)</span>，使得：</p>
+<p><span class="arithmatex">\(F|_Z = f\)</span> （延拓性）</p>
+<p><span class="arithmatex">\(|F(x)| \le p(x)\)</span>  $ \forall x \in X$ 成立（保号/保范性）</p>
+<p>物理直观： 它保证了对偶空间 <span class="arithmatex">\(X^*\)</span> 足够大。在量子力学中，这意味着对于任何态向量，我们都能找到足够的观测物理量（线性泛函）来描述它。</p>
 <h2 id="一致有界原理uniform-boundedness-principle--banach-steinhaus-theorem-共鸣定理">一致有界原理(Uniform Boundedness Principle / Banach-Steinhaus Theorem) 共鸣定理<a class="headerlink" href="#一致有界原理uniform-boundedness-principle--banach-steinhaus-theorem-共鸣定理" title="Permanent link">#</a></h2>
-<p>def： 设 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是 Banach 空间，<span class="arithmatex"><span class="MathJax_Preview">Y</span><script type="math/tex">Y</script></span> 是赋范线性空间。若算子族 <span class="arithmatex"><span class="MathJax_Preview">\mathcal{T} \subset \mathcal{B}(X, Y)</span><script type="math/tex">\mathcal{T} \subset \mathcal{B}(X, Y)</script></span> 是逐点有界的，即对于每个 <span class="arithmatex"><span class="MathJax_Preview">x \in X</span><script type="math/tex">x \in X</script></span>，有 <span class="arithmatex"><span class="MathJax_Preview">\sup_{T \in \mathcal{T}} \|Tx\| &lt; \infty</span><script type="math/tex">\sup_{T \in \mathcal{T}} \|Tx\| < \infty</script></span>，则该算子族是一致有界的，即：<span class="arithmatex"><span class="MathJax_Preview">\sup_{T \in \mathcal{T}} \|T\| &lt; \infty</span><script type="math/tex">\sup_{T \in \mathcal{T}} \|T\| < \infty</script></span></p>
+<p>def： 设 <span class="arithmatex">\(X\)</span> 是 Banach 空间，<span class="arithmatex">\(Y\)</span> 是赋范线性空间。若算子族 <span class="arithmatex">\(\mathcal{T} \subset \mathcal{B}(X, Y)\)</span> 是逐点有界的，即对于每个 <span class="arithmatex">\(x \in X\)</span>，有 <span class="arithmatex">\(\sup_{T \in \mathcal{T}} \|Tx\| &lt; \infty\)</span>，则该算子族是一致有界的，即：<span class="arithmatex">\(\sup_{T \in \mathcal{T}} \|T\| &lt; \infty\)</span></p>
 <p>保证了在点态下的有界性可以推广到整个空间的有界性。</p>
 <h2 id="开映像定理">开映像定理<a class="headerlink" href="#开映像定理" title="Permanent link">#</a></h2>
-<p>def： 设 <span class="arithmatex"><span class="MathJax_Preview">X, Y</span><script type="math/tex">X, Y</script></span> 是 Banach 空间。若 <span class="arithmatex"><span class="MathJax_Preview">T: X \to Y</span><script type="math/tex">T: X \to Y</script></span> 是连续线性算子且是满射（Surjective），则 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 是一个开映射（即 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 将 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 中的开集映射为 <span class="arithmatex"><span class="MathJax_Preview">Y</span><script type="math/tex">Y</script></span> 中的开集）。</p>
+<p>def： 设 <span class="arithmatex">\(X, Y\)</span> 是 Banach 空间。若 <span class="arithmatex">\(T: X \to Y\)</span> 是连续线性算子且是满射（Surjective），则 <span class="arithmatex">\(T\)</span> 是一个开映射（即 <span class="arithmatex">\(T\)</span> 将 <span class="arithmatex">\(X\)</span> 中的开集映射为 <span class="arithmatex">\(Y\)</span> 中的开集）。</p>
 <p>保证了线性算子在满射情况下的“良好行为”，即它们不会将开集压缩成非开集。 保证了逆算子的存在性和连续性。</p>
 <h2 id="闭图像定理">闭图像定理<a class="headerlink" href="#闭图像定理" title="Permanent link">#</a></h2>
-<p>def:设 <span class="arithmatex"><span class="MathJax_Preview">X, Y</span><script type="math/tex">X, Y</script></span> 是 Banach 空间，<span class="arithmatex"><span class="MathJax_Preview">T: X \to Y</span><script type="math/tex">T: X \to Y</script></span> 是线性算子。若 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 的图像 <span class="arithmatex"><span class="MathJax_Preview">G(T) = \{(x, Tx) : x \in X\}</span><script type="math/tex">G(T) = \{(x, Tx) : x \in X\}</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">X \times Y</span><script type="math/tex">X \times Y</script></span> 中是闭集，则 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 是连续的（有界的）。</p>
+<p>def:设 <span class="arithmatex">\(X, Y\)</span> 是 Banach 空间，<span class="arithmatex">\(T: X \to Y\)</span> 是线性算子。若 <span class="arithmatex">\(T\)</span> 的图像 <span class="arithmatex">\(G(T) = \{(x, Tx) : x \in X\}\)</span> 在 <span class="arithmatex">\(X \times Y\)</span> 中是闭集，则 <span class="arithmatex">\(T\)</span> 是连续的（有界的）。</p>
 <p>保证了线性算子的连续性与其图像闭合性的等价性。这在分析线性算子的性质时非常有用。</p>
 <h2 id="逼近论的应用">逼近论的应用<a class="headerlink" href="#逼近论的应用" title="Permanent link">#</a></h2>
 <p>对闭区间套的抽象.或者是说对于Picard 迭代（Picard Iteration）Lipschitz 条件（压缩映射）的抽象.</p>
 <p>将微分方程转化为积分方程,</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">y(x) = y_0 + \int_{x_0}^x f(t, y(t)) \, dt</div>
-<script type="math/tex; mode=display">y(x) = y_0 + \int_{x_0}^x f(t, y(t)) \, dt</script>
-</div>
-<p>然后当迭代次数<span class="arithmatex"><span class="MathJax_Preview">n \to \infty</span><script type="math/tex">n \to \infty</script></span> 时，如果在某个邻域内 <span class="arithmatex"><span class="MathJax_Preview">f(x,y)</span><script type="math/tex">f(x,y)</script></span> 满足 Lipschitz 条件（保证算子是压缩的），那么序列 <span class="arithmatex"><span class="MathJax_Preview">\phi_n(x)</span><script type="math/tex">\phi_n(x)</script></span> 将一致收敛于方程的唯一精确解 <span class="arithmatex"><span class="MathJax_Preview">y(x)</span><script type="math/tex">y(x)</script></span>. </p>
+<div class="arithmatex">\[y(x) = y_0 + \int_{x_0}^x f(t, y(t)) \, dt\]</div>
+<p>然后当迭代次数<span class="arithmatex">\(n \to \infty\)</span> 时，如果在某个邻域内 <span class="arithmatex">\(f(x,y)\)</span> 满足 Lipschitz 条件（保证算子是压缩的），那么序列 <span class="arithmatex">\(\phi_n(x)\)</span> 将一致收敛于方程的唯一精确解 <span class="arithmatex">\(y(x)\)</span>. </p>
 <p>布劳威尔不动点定理属于拓扑, 由于紧. 存在不一定唯一.</p>
 <p>banahach不动点定理是压缩. 结果唯一</p>
 <h3 id="banach不动点定理">banach不动点定理<a class="headerlink" href="#banach不动点定理" title="Permanent link">#</a></h3>
-<p>设 <span class="arithmatex"><span class="MathJax_Preview">(X, d)</span><script type="math/tex">(X, d)</script></span> 是一个非空的完备度量空间。若映射 <span class="arithmatex"><span class="MathJax_Preview">T: X \to X</span><script type="math/tex">T: X \to X</script></span> 是一个压缩映射，即存在常数 <span class="arithmatex"><span class="MathJax_Preview">0 \le k &lt; 1</span><script type="math/tex">0 \le k < 1</script></span>，使得对于所有 <span class="arithmatex"><span class="MathJax_Preview">x, y \in X</span><script type="math/tex">x, y \in X</script></span>：<span class="arithmatex"><span class="MathJax_Preview">d(Tx, Ty) \le k \cdot d(x, y)</span><script type="math/tex">d(Tx, Ty) \le k \cdot d(x, y)</script></span>则 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 中有且仅有一个不动点 <span class="arithmatex"><span class="MathJax_Preview">x^*</span><script type="math/tex">x^*</script></span>（即 <span class="arithmatex"><span class="MathJax_Preview">Tx^* = x^*</span><script type="math/tex">Tx^* = x^*</script></span>）。</p>
+<p>设 <span class="arithmatex">\((X, d)\)</span> 是一个非空的完备度量空间。若映射 <span class="arithmatex">\(T: X \to X\)</span> 是一个压缩映射，即存在常数 <span class="arithmatex">\(0 \le k &lt; 1\)</span>，使得对于所有 <span class="arithmatex">\(x, y \in X\)</span>：<span class="arithmatex">\(d(Tx, Ty) \le k \cdot d(x, y)\)</span>则 <span class="arithmatex">\(T\)</span> 在 <span class="arithmatex">\(X\)</span> 中有且仅有一个不动点 <span class="arithmatex">\(x^*\)</span>（即 <span class="arithmatex">\(Tx^* = x^*\)</span>）。</p>
 <p>压缩映射:def:设(X,d)是一个度量空间,映射T:X-&gt;X如果存在常数0&lt;=k&lt;1,使得对于所有x,y属于X,满足d(Tx,Ty)&lt;=k*d(x,y),则称T为X上的一个压缩映射.</p>
 <p>应用： 这是微分方程和积分方程解的存在唯一性证明的核心，比如在计算散射振幅的 Lippmann-Schwinger 方程 迭代求解时，其本质就是寻找不动点。</p>
 <h3 id="强收敛弱收敛-弱星收敛">强收敛弱收敛 弱星收敛<a class="headerlink" href="#强收敛弱收敛-弱星收敛" title="Permanent link">#</a></h3>
 <p>对于赋范空间,</p>
-<p>序列<span class="arithmatex"><span class="MathJax_Preview">\{x_n\}</span><script type="math/tex">\{x_n\}</script></span> 强收敛到 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，如果 <span class="arithmatex"><span class="MathJax_Preview">\lim_{n \to \infty} \|x_n - x\| = 0</span><script type="math/tex">\lim_{n \to \infty} \|x_n - x\| = 0</script></span>。</p>
-<p>序列<span class="arithmatex"><span class="MathJax_Preview">\{x_n\}</span><script type="math/tex">\{x_n\}</script></span> 弱收敛到 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，如果对于每个 <span class="arithmatex"><span class="MathJax_Preview">f^* \in X^*</span><script type="math/tex">f^* \in X^*</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\lim_{n \to \infty} f^*(x_n) = f^*(x)</span><script type="math/tex">\lim_{n \to \infty} f^*(x_n) = f^*(x)</script></span>。</p>
-<p>对于算子序列<span class="arithmatex"><span class="MathJax_Preview">\{T_n\}</span><script type="math/tex">\{T_n\}</script></span>，</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">\forall x \in X</span><script type="math/tex">\forall x \in X</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\lim_{n \to \infty} \|T_n x - Tx\| = 0</span><script type="math/tex">\lim_{n \to \infty} \|T_n x - Tx\| = 0</script></span>，则称 <span class="arithmatex"><span class="MathJax_Preview">\{T_n\}</span><script type="math/tex">\{T_n\}</script></span> 强收敛到 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>。</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">\forall x \in X</span><script type="math/tex">\forall x \in X</script></span> 和每个 <span class="arithmatex"><span class="MathJax_Preview">f^* \in Y^*</span><script type="math/tex">f^* \in Y^*</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\lim_{n \to \infty} f^*(T_n x) = f^*(Tx)</span><script type="math/tex">\lim_{n \to \infty} f^*(T_n x) = f^*(Tx)</script></span>，则称 <span class="arithmatex"><span class="MathJax_Preview">\{T_n\}</span><script type="math/tex">\{T_n\}</script></span> 弱收敛到 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>。</p>
-<p>对于泛函序列<span class="arithmatex"><span class="MathJax_Preview">\{f_n\}</span><script type="math/tex">\{f_n\}</script></span>，</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">\forall x \in X</span><script type="math/tex">\forall x \in X</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\lim_{n \to \infty} |f_n(x) - f(x)| = 0</span><script type="math/tex">\lim_{n \to \infty} |f_n(x) - f(x)| = 0</script></span>，则称 <span class="arithmatex"><span class="MathJax_Preview">\{f_n\}</span><script type="math/tex">\{f_n\}</script></span> 强收敛到 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>。</p>
-<p><span class="arithmatex"><span class="MathJax_Preview">\forall x \in X</span><script type="math/tex">\forall x \in X</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\lim_{n \to \infty} f_n(x) = f(x)</span><script type="math/tex">\lim_{n \to \infty} f_n(x) = f(x)</script></span>，则称 <span class="arithmatex"><span class="MathJax_Preview">\{f_n\}</span><script type="math/tex">\{f_n\}</script></span> 弱星收敛到 <span class="arithmatex"><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span>。</p>
+<p>序列<span class="arithmatex">\(\{x_n\}\)</span> 强收敛到 <span class="arithmatex">\(x\)</span>，如果 <span class="arithmatex">\(\lim_{n \to \infty} \|x_n - x\| = 0\)</span>。</p>
+<p>序列<span class="arithmatex">\(\{x_n\}\)</span> 弱收敛到 <span class="arithmatex">\(x\)</span>，如果对于每个 <span class="arithmatex">\(f^* \in X^*\)</span>，<span class="arithmatex">\(\lim_{n \to \infty} f^*(x_n) = f^*(x)\)</span>。</p>
+<p>对于算子序列<span class="arithmatex">\(\{T_n\}\)</span>，</p>
+<p><span class="arithmatex">\(\forall x \in X\)</span>，<span class="arithmatex">\(\lim_{n \to \infty} \|T_n x - Tx\| = 0\)</span>，则称 <span class="arithmatex">\(\{T_n\}\)</span> 强收敛到 <span class="arithmatex">\(T\)</span>。</p>
+<p><span class="arithmatex">\(\forall x \in X\)</span> 和每个 <span class="arithmatex">\(f^* \in Y^*\)</span>，<span class="arithmatex">\(\lim_{n \to \infty} f^*(T_n x) = f^*(Tx)\)</span>，则称 <span class="arithmatex">\(\{T_n\}\)</span> 弱收敛到 <span class="arithmatex">\(T\)</span>。</p>
+<p>对于泛函序列<span class="arithmatex">\(\{f_n\}\)</span>，</p>
+<p><span class="arithmatex">\(\forall x \in X\)</span>，<span class="arithmatex">\(\lim_{n \to \infty} |f_n(x) - f(x)| = 0\)</span>，则称 <span class="arithmatex">\(\{f_n\}\)</span> 强收敛到 <span class="arithmatex">\(f\)</span>。</p>
+<p><span class="arithmatex">\(\forall x \in X\)</span>，<span class="arithmatex">\(\lim_{n \to \infty} f_n(x) = f(x)\)</span>，则称 <span class="arithmatex">\(\{f_n\}\)</span> 弱星收敛到 <span class="arithmatex">\(f\)</span>。</p>
 
   <hr>
 <div class="md-source-file">
@@ -3541,7 +3554,9 @@
         
           <script src="../../../../js/timeago_mkdocs_material.js"></script>
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+          <script src="../../../../js/mathjax.js"></script>
+        
+          <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
         
           <script src="https://d3js.org/d3.v7.min.js"></script>
         
