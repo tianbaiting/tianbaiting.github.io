@@ -1072,6 +1072,15 @@
       "url": "/sci/minimal_theory/scatteringTheory/friedrichsModel/"
     },
     {
+      "id": "sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym",
+      "title": "Woods-Saxon 光学势的 EST Separable 化及其与对称能的联系",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym.md",
+      "size": 8582,
+      "url": "/sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym/"
+    },
+    {
       "id": "sci/project/faddeev/construct_basis.zh",
       "title": "Construct Basis",
       "language": "zh",
@@ -1524,16 +1533,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 169,
+    "total_nodes": 170,
     "total_links": 0,
     "languages": {
-      "zh": 142,
+      "zh": 143,
       "en": 27
     },
     "categories": {
       "category": 26,
       "main": 2,
-      "page": 141
+      "page": 142
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1541,6 +1550,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-04-15 10:47:12.693175"
+    "generated_at": "2026-04-17 00:45:58.918243"
   }
 }
