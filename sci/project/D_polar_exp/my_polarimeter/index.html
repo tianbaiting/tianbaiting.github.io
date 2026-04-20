@@ -3454,18 +3454,19 @@
 
 <h2 id="time-resolution-require">Time resolution require<a class="headerlink" href="#time-resolution-require" title="Permanent link">#</a></h2>
 <p><img alt="alt text" src="../assets/my_polarimeter.en/image-2.png" /></p>
-<p>Harmonic number = 6</p>
-<div class="codehilite"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>束流包之间的间隔时间 $\Delta t$ 实际上是射频电场的周期 $T_{RF}$，即：
-$$\Delta t = T_{RF} = \frac{1}{f_{RF}} = \frac{1}{h \times f_{rev}}$$
-根据，谐波数 $h=6$。
-$$\Delta t = \frac{1}{6 \times 11.91 \times 10^3 \text{ Hz}} = \frac{1}{71.46 \times 10^3 \text{ Hz}} \approx 1.4 \times 10^{-5} \text{ s}$$
-换算成微秒为 14 $\mu$s。
-</code></pre></div></td></tr></table></div>
-
+<p>Harmonic number <span class="arithmatex">\(h = 6\)</span>，SRC 导出轨道半径 <span class="arithmatex">\(R_{ext} = 5.36\ \mathrm{m}\)</span>，束流动能 <span class="arithmatex">\(T_u = 190\ \mathrm{MeV}/u\)</span>。</p>
+<p>束流包之间的间隔时间 <span class="arithmatex">\(\Delta t\)</span> 实际上是射频电场的周期 <span class="arithmatex">\(T_{RF}\)</span>，即：<br />
+$<span class="arithmatex">\(\Delta t = T_{RF} = \frac{1}{f_{RF}} = \frac{1}{h \times f_{rev}}\)</span>$</p>
+<p>先由 <span class="arithmatex">\(T_u = 190\ \mathrm{MeV}/u\)</span> 求相对论因子（取 <span class="arithmatex">\(m_u c^2 = 931.494\ \mathrm{MeV}\)</span>）：<br />
+$<span class="arithmatex">\(\gamma = 1 + \frac{T_u}{m_u c^2} = 1 + \frac{190}{931.494} = 1.20397\)</span>$<br />
+$<span class="arithmatex">\(\beta = \sqrt{1 - \gamma^{-2}} = 0.55689\)</span>$<br />
+$<span class="arithmatex">\(v = \beta c = 1.6695 \times 10^{8}\ \mathrm{m/s}\)</span>$</p>
+<p>再由导出半径 <span class="arithmatex">\(R_{ext} = 5.36\ \mathrm{m}\)</span> 计算导出轨道圆周与回旋频率：<br />
+$<span class="arithmatex">\(C = 2\pi R_{ext} = 33.678\ \mathrm{m}\)</span>$<br />
+$<span class="arithmatex">\(f_{rev} = \frac{v}{C} = 4.9573\ \mathrm{MHz}\)</span>$</p>
+<p>于是 bucket 频率与束团间隔为：<br />
+$<span class="arithmatex">\(f_{bucket} = h \times f_{rev} = 6 \times 4.9573\ \mathrm{MHz} = 29.7441\ \mathrm{MHz}\)</span>$<br />
+$<span class="arithmatex">\(\Delta t = \frac{1}{f_{bucket}} \approx 33.62\ \mathrm{ns}\)</span>$</p>
 <h2 id="energy-deposit">Energy deposit<a class="headerlink" href="#energy-deposit" title="Permanent link">#</a></h2>
 <p><img alt="alt text" src="../assets/my_polarimeter.en/image.png" /></p>
 <p>![alt text](assets/my_polarimeter.en/image-1.png</p>
@@ -3475,7 +3476,7 @@ $$\Delta t = \frac{1}{6 \times 11.91 \times 10^3 \text{ Hz}} = \frac{1}{71.46 \t
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年2月24日 10:01:51 UTC"><span class="timeago" datetime="2026-02-24T10:01:51+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年2月24日 10:01:51 UTC">2026-02-24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:29:38 UTC"><span class="timeago" datetime="2026-04-20T10:29:38+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:29:38 UTC">2026-04-20</span>
       
         <br>
         创建日期:

@@ -1050,7 +1050,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section.zh.md",
-      "size": 13745,
+      "size": 16540,
       "url": "/sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section/"
     },
     {
@@ -1122,7 +1122,7 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/D_polar_exp/my_polarimeter.en.md",
-      "size": 615,
+      "size": 1349,
       "url": "/en/sci/project/D_polar_exp/my_polarimeter/"
     },
     {
@@ -1131,7 +1131,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/my_polarimeter.zh.md",
-      "size": 532,
+      "size": 982,
       "url": "/sci/project/D_polar_exp/my_polarimeter/"
     },
     {
@@ -1241,6 +1241,15 @@
       "path": "sci/project/samurai/detector_samurai.zh.md",
       "size": 1508,
       "url": "/sci/project/samurai/detector_samurai/"
+    },
+    {
+      "id": "sci/project/samurai/pdc.en",
+      "title": "Pdc",
+      "language": "en",
+      "category": "page",
+      "path": "sci/project/samurai/pdc.en.md",
+      "size": 0,
+      "url": "/en/sci/project/samurai/pdc/"
     },
     {
       "id": "sci/project/samurai/detector_samurai.en",
@@ -1533,16 +1542,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 170,
+    "total_nodes": 171,
     "total_links": 0,
     "languages": {
       "zh": 143,
-      "en": 27
+      "en": 28
     },
     "categories": {
       "category": 26,
       "main": 2,
-      "page": 142
+      "page": 143
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1550,6 +1559,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-04-17 00:45:58.918243"
+    "generated_at": "2026-04-20 10:30:25.236422"
   }
 }
