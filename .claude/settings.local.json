@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdftotext -layout -f 1 -l 20 \"/home/tian/workspace/nutstore/physics/ScatteringTheory/Scattering theory quantum theory of nonrelativistic collisions \\(Taylor J.R.\\) \\(z-lib.org\\).pdf\" -)",
+      "Bash(pdfinfo \"/home/tian/workspace/nutstore/physics/ScatteringTheory/02-CrossSection.pdf\")"
+    ]
+  }
+}
