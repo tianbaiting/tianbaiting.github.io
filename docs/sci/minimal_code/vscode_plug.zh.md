@@ -41,10 +41,10 @@ git push -u origin main
 
 发布插件需要使用 `vsce` (Visual Studio Code Extensions) 命令行工具。
 
-1. **安装 vsce**: `npm install -g vsce`
-2. **获取 PAT**: 登录 [Azure DevOps](https://dev.azure.com/) 并创建一个 Personal Access Token，权限需选择 `Marketplace (Publish)`。
-3. **创建发布者**: 在 [Marketplace 管理页面](https://marketplace.visualstudio.com/manage/publishers) 创建发布者账号。
-4. **执行发布**:
+1. 安装 vsce: `npm install -g vsce`
+2. 获取 PAT: 登录 [Azure DevOps](https://dev.azure.com/) 并创建一个 Personal Access Token，权限需选择 `Marketplace (Publish)`。
+3. 创建发布者: 在 [Marketplace 管理页面](https://marketplace.visualstudio.com/manage/publishers) 创建发布者账号。
+4. 执行发布:
 
 ```bash
 # 登录发布者账号

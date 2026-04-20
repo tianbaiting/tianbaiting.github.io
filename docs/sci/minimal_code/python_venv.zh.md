@@ -23,11 +23,11 @@ summary: 在 Python 中使用虚拟环境来隔离项目依赖。
 ## 激活虚拟环境
 在创建虚拟环境后，你需要激活它。激活方式取决于你的操作系统：
 
-- **Windows:**
+- Windows:
   ```
   venv\Scripts\activate
   ```
-- **macOS/Linux:**
+- macOS/Linux:
   ```
   source venv/bin/activate
   ```

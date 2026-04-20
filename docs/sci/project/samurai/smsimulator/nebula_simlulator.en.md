@@ -3,76 +3,76 @@
 ### 1. Parameter Management
 
 #### TNEBULASimParameter
-- **Files**: `TNEBULASimParameter.hh / .cc`
-- **Function**: Stores all NEBULA parameters, including the number, type, and geometry of detectors, for use by simulation and data conversion modules.
+- Files: `TNEBULASimParameter.hh / .cc`
+- Function: Stores all NEBULA parameters, including the number, type, and geometry of detectors, for use by simulation and data conversion modules.
 
 #### NEBULASimParameterReader
-- **Files**: `NEBULASimParameterReader.hh / .cc`
-- **Function**: Reads NEBULA parameter files (e.g., `NEBULA_Dayone.csv`, `NEBULA_Detectors_Dayone.csv`) and loads parameters into the simulation environment, including detector count, position, and size.
+- Files: `NEBULASimParameterReader.hh / .cc`
+- Function: Reads NEBULA parameter files (e.g., `NEBULA_Dayone.csv`, `NEBULA_Detectors_Dayone.csv`) and loads parameters into the simulation environment, including detector count, position, and size.
 
 #### Related Data Files
-- **Files**: `NEBULA_Dayone.csv` / `NEBULA_Detectors_Dayone.csv`
-- **Function**: These files contain specific parameters for the NEBULA array, such as the position, size, and ID of each detector, which are read by `NEBULASimParameterReader` during simulation.
+- Files: `NEBULA_Dayone.csv` / `NEBULA_Detectors_Dayone.csv`
+- Function: These files contain specific parameters for the NEBULA array, such as the position, size, and ID of each detector, which are read by `NEBULASimParameterReader` during simulation.
 
 ### 2. Geometry Construction
 
 #### NEBULAConstruction & NEBULAConstructionMessenger
-- **Files**: `NEBULAConstruction.hh / .cc`
-- **Function**: Defines the geometry of NEBULA neutron detectors, including array size, position, materials, etc. Responsible for building the NEBULA physical model in Geant4 simulation.
-- **Files**: `NEBULAConstructionMessenger.hh / .cc`
-- **Function**: Provides command interfaces, allowing users to dynamically set NEBULA parameters (such as array parameter files, detector parameter files) via macro files or command line.
+- Files: `NEBULAConstruction.hh / .cc`
+- Function: Defines the geometry of NEBULA neutron detectors, including array size, position, materials, etc. Responsible for building the NEBULA physical model in Geant4 simulation.
+- Files: `NEBULAConstructionMessenger.hh / .cc`
+- Function: Provides command interfaces, allowing users to dynamically set NEBULA parameters (such as array parameter files, detector parameter files) via macro files or command line.
 
 ### 3. Simulation Core
 
 #### NEBULASD
-- **Files**: `NEBULASD.hh / .cc`
-- **Function**: Defines the sensitive detector for NEBULA, used to record energy deposition, position, time, and other information of particles in NEBULA detectors during simulation.
+- Files: `NEBULASD.hh / .cc`
+- Function: Defines the sensitive detector for NEBULA, used to record energy deposition, position, time, and other information of particles in NEBULA detectors during simulation.
 
 ### 4. Data Handling
 
 #### NEBULASimDataInitializer
-- **Files**: `NEBULASimDataInitializer.hh / .cc`
-- **Function**: Initializes NEBULA simulation data structures, allocates data storage space for each detector, and prepares for subsequent data acquisition and analysis.
+- Files: `NEBULASimDataInitializer.hh / .cc`
+- Function: Initializes NEBULA simulation data structures, allocates data storage space for each detector, and prepares for subsequent data acquisition and analysis.
 
 #### NEBULASimDataConverter_TArtNEBULAPla
-- **Files**: `NEBULASimDataConverter_TArtNEBULAPla.hh / .cc`
-- **Function**: Converts raw data generated during simulation (such as energy deposition, detector response) into the data format required for experimental analysis (e.g., TArtNEBULAPla), and writes to ROOT files. Implements energy conversion, resolution processing, and other physical models.
+- Files: `NEBULASimDataConverter_TArtNEBULAPla.hh / .cc`
+- Function: Converts raw data generated during simulation (such as energy deposition, detector response) into the data format required for experimental analysis (e.g., TArtNEBULAPla), and writes to ROOT files. Implements energy conversion, resolution processing, and other physical models.
 
 ## NEBULA Output in Geant4
 
 ### 1. Simulation Output Information
-- **Energy Deposit**: Each NEBULA detector module records the energy deposited by particles (mainly neutrons) in the detector.
-- **Detector Response**: Simulates the signal output of the detector in actual experiments (e.g., PMT response) based on energy deposit, detector resolution, and other physical models.
-- **Position and Time Information**: Records the hit position and incident time of particles in the detector, used for subsequent TOF and spatial distribution analysis.
-- **Particle Type and ID**: Distinguishes different particles (e.g., neutron, fake neutron, fake gamma) and their corresponding detector IDs for event selection and physics analysis.
+- Energy Deposit: Each NEBULA detector module records the energy deposited by particles (mainly neutrons) in the detector.
+- Detector Response: Simulates the signal output of the detector in actual experiments (e.g., PMT response) based on energy deposit, detector resolution, and other physical models.
+- Position and Time Information: Records the hit position and incident time of particles in the detector, used for subsequent TOF and spatial distribution analysis.
+- Particle Type and ID: Distinguishes different particles (e.g., neutron, fake neutron, fake gamma) and their corresponding detector IDs for event selection and physics analysis.
 
 ### 2. Generated ROOT Files
-- **Data Structure**: NEBULA simulation data is converted to ROOT files, usually containing one or more TTrees (e.g., `NEBULAPla`), each entry corresponding to an event or detector response.
-- **Example Content**:
+- Data Structure: NEBULA simulation data is converted to ROOT files, usually containing one or more TTrees (e.g., `NEBULAPla`), each entry corresponding to an event or detector response.
+- Example Content:
     - Under each event, the `NEBULAPla` branch stores response data (such as energy, position, time) for all hit NEBULA detector modules.
     - Other branches may contain global event information, initial particle parameters, etc.
-- **Usage**:
-    - **Experimental Data Comparison**: The structure of the simulated ROOT file matches the experimental data and can be directly used for comparative analysis.
-    - **Physics Analysis**: ROOT scripts or analysis frameworks can be used for statistics, plotting, efficiency calculation, energy spectrum analysis, etc.
-    - **Detector Performance Evaluation**: Analyze the response distribution, resolution, detection efficiency, etc., to support experiment design and data interpretation.
-    - **Event Selection**: Select interesting physics events based on particle type, energy, position, etc.
+- Usage:
+    - Experimental Data Comparison: The structure of the simulated ROOT file matches the experimental data and can be directly used for comparative analysis.
+    - Physics Analysis: ROOT scripts or analysis frameworks can be used for statistics, plotting, efficiency calculation, energy spectrum analysis, etc.
+    - Detector Performance Evaluation: Analyze the response distribution, resolution, detection efficiency, etc., to support experiment design and data interpretation.
+    - Event Selection: Select interesting physics events based on particle type, energy, position, etc.
 
 ### 3. Related Code Modules
-- **`NEBULASimDataConverter_TArtNEBULAPla`**: Responsible for converting simulation data to `TArtNEBULAPla` format and writing to ROOT files.
-- **`NEBULASD`**: Implements the sensitive detector, responsible for collecting particle hit information during simulation.
-- **`NEBULASimParameterReader`**: Reads detector parameters and determines the output data structure and content.
+- `NEBULASimDataConverter_TArtNEBULAPla`: Responsible for converting simulation data to `TArtNEBULAPla` format and writing to ROOT files.
+- `NEBULASD`: Implements the sensitive detector, responsible for collecting particle hit information during simulation.
+- `NEBULASimParameterReader`: Reads detector parameters and determines the output data structure and content.
 
 ## TArtNEBULAPla Data Structure
 
 `TArtNEBULAPla` is a data structure class in the ANAROOT framework used to describe a single NEBULA detector module (Plastic Scintillator). Its main function is to store and manage the experimental or simulated response information of each NEBULA plastic bar for subsequent physics analysis and data processing.
 
 ### 1. Main Member Variables (Common Fields)
-- **Detector ID**: Unique identifier for each NEBULA plastic bar, for positioning and distinction.
-- **Energy**: Records the energy deposited by particles in the plastic bar (usually in MeV), used for spectrum analysis and event selection.
-- **Time**: Records the time information when particles hit the plastic bar (e.g., TOF), used for time resolution and event reconstruction.
-- **Position**: Spatial coordinates of the plastic bar in the array, for spatial distribution analysis and geometry reconstruction.
-- **Particle Type (ParticleID)**: Records the type of particle hitting the plastic bar (e.g., neutron, gamma, heavy ion), for physics process distinction.
-- **Resolution/Signal Processing Variables**: May include resolution, signal amplitude, PMT response, etc., in simulation or experiment.
+- Detector ID: Unique identifier for each NEBULA plastic bar, for positioning and distinction.
+- Energy: Records the energy deposited by particles in the plastic bar (usually in MeV), used for spectrum analysis and event selection.
+- Time: Records the time information when particles hit the plastic bar (e.g., TOF), used for time resolution and event reconstruction.
+- Position: Spatial coordinates of the plastic bar in the array, for spatial distribution analysis and geometry reconstruction.
+- Particle Type (ParticleID): Records the type of particle hitting the plastic bar (e.g., neutron, gamma, heavy ion), for physics process distinction.
+- Resolution/Signal Processing Variables: May include resolution, signal amplitude, PMT response, etc., in simulation or experiment.
 
 ### 2. TArtNEBULAPla.h
 ```cpp

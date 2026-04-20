@@ -1,69 +1,69 @@
 TArtCalibNEBULAHPC *nebulahpc_calib = new TArtCalibNEBULAHPC();
 
-**Function**: This object (nebulahpc_calib) is responsible for calibrating the NEBULA High Pressure Chamber (HPC) data. The HPC is mainly used as a veto detector for neutron detection in NEBULA, to distinguish neutrons from charged particles (such as electrons or protons produced by gamma-ray conversion).
+Function: This object (nebulahpc_calib) is responsible for calibrating the NEBULA High Pressure Chamber (HPC) data. The HPC is mainly used as a veto detector for neutron detection in NEBULA, to distinguish neutrons from charged particles (such as electrons or protons produced by gamma-ray conversion).
 
-- **Input**: Reads raw data from the HPC detector (e.g., TDC timing information) from TArtEventStore.
-- **Processing**:
+- Input: Reads raw data from the HPC detector (e.g., TDC timing information) from TArtEventStore.
+- Processing:
   - Applies time calibration parameters (managed by TArtSAMURAIParameters).
   - Converts raw TDC values to physical time.
   - Performs basic hit identification.
-- **Output**: Calibrated TArtNEBULAHPC objects, each containing calibrated information for an HPC hit (such as time, detector ID, etc.), stored in a "NEBULAHPC" TClonesArray in TArtStoreManager.
+- Output: Calibrated TArtNEBULAHPC objects, each containing calibrated information for an HPC hit (such as time, detector ID, etc.), stored in a "NEBULAHPC" TClonesArray in TArtStoreManager.
 
 ---
 
 TArtCalibNEBULA *nebulapla_calib = new TArtCalibNEBULA();
 
-**Function**: This object (nebulapla_calib) is responsible for calibrating the NEBULA plastic scintillator (Pla) data, which is the main component of the NEBULA neutron detector.
+Function: This object (nebulapla_calib) is responsible for calibrating the NEBULA plastic scintillator (Pla) data, which is the main component of the NEBULA neutron detector.
 
-- **Input**: Reads raw data from both ends of the plastic scintillator PMTs (TDC timing and QDC charge) from TArtEventStore.
-- **Processing**:
+- Input: Reads raw data from both ends of the plastic scintillator PMTs (TDC timing and QDC charge) from TArtEventStore.
+- Processing:
   - Applies time and charge calibration parameters.
   - Calculates the average time, time difference (for position reconstruction), and average charge for each hit.
   - Calculates the hit position.
   - Converts calibrated time and charge to physical units (ns, MeVee).
-- **Output**: Calibrated TArtNEBULAPla objects, each containing detailed calibration information for a hit (ID, Layer, SubLayer, QUAveCal, TAveCal, PosCal, etc.), stored in a "NEBULAPla" TClonesArray in TArtStoreManager.
+- Output: Calibrated TArtNEBULAPla objects, each containing detailed calibration information for a hit (ID, Layer, SubLayer, QUAveCal, TAveCal, PosCal, etc.), stored in a "NEBULAPla" TClonesArray in TArtStoreManager.
 
 ---
 
 TArtRecoNeutron *reco_neutron = new TArtRecoNeutron();
 
-**Function**: This object (reco_neutron) is responsible for reconstructing neutron events from the calibrated neutron detector data. This is a higher-level reconstruction step.
+Function: This object (reco_neutron) is responsible for reconstructing neutron events from the calibrated neutron detector data. This is a higher-level reconstruction step.
 
-- **Input**:
+- Input:
   - Mainly relies on the collection of TArtNEBULAPla objects produced by TArtCalibNEBULA (plastic scintillator hit information).
   - May use the output of TArtCalibNEBULAHPC (TArtNEBULAHPC objects) as a charged particle veto signal to improve neutron identification purity.
   - May also require information from other detectors (such as beam detector timing as a TOF reference).
-- **Processing**:
+- Processing:
   - Clustering: Groups TArtNEBULAPla hits that are close in space and time into potential neutron clusters.
   - Particle identification (PID): Uses charge information (dE/dx) and time-of-flight (TOF) to distinguish neutrons from other particles.
   - Time-of-flight calculation: Calculates the neutron TOF from the target (or reference detector) to NEBULA.
   - Energy reconstruction: Calculates neutron kinetic energy based on TOF and flight path length.
   - Position reconstruction: Determines the neutron interaction position.
-- **Output**: Reconstructed TArtNeutron objects (or similar classes), each containing the physical properties of a neutron (energy, time, position, angle, etc.), stored in a "Neutron" TClonesArray in TArtStoreManager.
+- Output: Reconstructed TArtNeutron objects (or similar classes), each containing the physical properties of a neutron (energy, time, position, angle, etc.), stored in a "Neutron" TClonesArray in TArtStoreManager.
 
 ## NEBULA Reconstruction Procedure (Sample Code Workflow)
 
-- **Initialization and Parameter Loading**
+- Initialization and Parameter Loading
   - Load necessary libraries and headers, set include paths.
   - Obtain and load the `TArtSAMURAIParameters` parameter file.
   - Open the RIDF data file.
 
-- **Reconstruction Class Initialization**
+- Reconstruction Class Initialization
   - Create objects for `TArtCalibNEBULAHPC`, `TArtCalibNEBULA`, and `TArtRecoNeutron`.
 
-- **Event Loop Processing**
+- Event Loop Processing
   - For each event (e.g., the first 10 events), perform the following:
     - Clear data from the previous event (`ClearData()`).
     - Call `ReconstructData()` to perform hit and neutron reconstruction.
     - Retrieve and output HPC hits, Pla hits, and neutron reconstruction results.
     - Clear raw event data in preparation for the next event.
 
-- **Output Content**
+- Output Content
   - Output the number of HPC hits and details for each event (ID, Layer, SubLayer, TRaw, TCal, etc.).
   - Output the number of Pla hits and details (ID, Layer, SubLayer, QUAveCal, TAveCal, PosCal, etc.).
   - Output the number of reconstructed neutrons and their physical quantities (Time, MeVee, PosX, PosY, PosZ, etc.).
 
-- **Cleanup and Resource Release**
+- Cleanup and Resource Release
   - After the event loop, release all allocated objects and resources.
 
 > For the specific code implementation, see the example integrated in the latter part of this file.

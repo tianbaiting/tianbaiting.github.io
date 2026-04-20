@@ -14,7 +14,7 @@
 
 该脚本被保存在 `~/.local/bin/root-browser`。`~/.local/bin` 是存放用户自定义脚本的标准目录，通常已包含在系统的`PATH`环境变量中。
 
-**脚本内容:**
+脚本内容:
 ```bash
 #!/bin/bash
 # Script to open a ROOT file in a TBrowser
@@ -41,7 +41,7 @@ root -l -e "new TBrowser()" "$1"
 
 为了让系统能够运行这个脚本，我们必须为其添加可执行权限。
 
-**执行的命令:**
+执行的命令:
 ```sh
 chmod +x /home/tbt/.local/bin/root-browser
 ```
@@ -54,9 +54,9 @@ chmod +x /home/tbt/.local/bin/root-browser
 
 这通过在 `~/.local/share/mime/packages/` 目录下创建一个XML文件来完成。
 
-**文件路径:** `/home/tbt/.local/share/mime/packages/application-x-root.xml`
+文件路径: `/home/tbt/.local/share/mime/packages/application-x-root.xml`
 
-**文件内容:**
+文件内容:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
@@ -73,7 +73,7 @@ chmod +x /home/tbt/.local/bin/root-browser
 
 创建了MIME定义文件后，需要更新系统的MIME数据库来注册这个新类型。
 
-**执行的命令:**
+执行的命令:
 ```sh
 update-mime-database ~/.local/share/mime
 ```
@@ -84,9 +84,9 @@ update-mime-database ~/.local/share/mime
 
 `.desktop` 文件是Linux桌面环境用来定义应用程序快捷方式和文件关联的标准。我们创建一个文件来描述我们的`root-browser`程序。
 
-**文件路径:** `/home/tbt/.local/share/applications/root-browser.desktop`
+文件路径: `/home/tbt/.local/share/applications/root-browser.desktop`
 
-**文件内容:**
+文件内容:
 ```ini
 [Desktop Entry]
 Type=Application
@@ -104,7 +104,7 @@ Terminal=false
 
 最后一步是告诉系统，所有`application/x-root`类型的文件都应该默认使用我们刚刚定义的`root-browser.desktop`来打开。
 
-**执行的命令:**
+执行的命令:
 ```sh
 xdg-mime default root-browser.desktop application/x-root
 ```

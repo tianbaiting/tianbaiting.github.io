@@ -348,7 +348,7 @@ $$
 V_l(k', k) = \frac{2}{\pi} \int_0^\infty dr\, r^2\; j_l(k'r)\, V(r)\, j_l(kr)
 $$
 
-关键在于：**原本是三维矢量积分方程，经过分波投影后变成了以 $k$、$k'$ 为自变量的一维积分方程。** 对每个 $l$，方程独立。数值上只需对 $q$ 积分做离散化（如 Gauss 求积），就得到线性代数方程组。
+关键在于：原本是三维矢量积分方程，经过分波投影后变成了以 $k$、$k'$ 为自变量的一维积分方程。 对每个 $l$，方程独立。数值上只需对 $q$ 积分做离散化（如 Gauss 求积），就得到线性代数方程组。
 
 积分核中 $q^2/(2\mu) = E + i0$ 处的奇异点需要特别处理：通常用主值积分加余项的方法，或沿复平面做围道变形。
 
@@ -404,12 +404,12 @@ $$
 
 三个粒子质量 $m_1, m_2, m_3$，总质量 $M = m_1 + m_2 + m_3$。质心系中有两组独立的相对动量。对每个粒子标号 $\alpha = 1, 2, 3$，定义 Jacobi 集 $\alpha$：
 
-**Jacobi 集 1**（对 $(23)$，旁观者 1）：
+Jacobi 集 1（对 $(23)$，旁观者 1）：
 
 - $\mathbf{p}_1$：粒子 2 和 3 之间的相对动量，约化质量 $\mu_1 = \dfrac{m_2 m_3}{m_2 + m_3}$
 - $\mathbf{q}_1$：粒子 1 相对于 $(23)$ 质心的动量，约化质量 $\nu_1 = \dfrac{m_1(m_2 + m_3)}{M}$
 
-**Jacobi 集 2**（对 $(31)$，旁观者 2）和**集 3**（对 $(12)$，旁观者 3）完全类比，循环置换 $1 \to 2 \to 3$。
+Jacobi 集 2（对 $(31)$，旁观者 2）和集 3（对 $(12)$，旁观者 3）完全类比，循环置换 $1 \to 2 \to 3$。
 
 一般地：$\mu_\alpha$ 是不含粒子 $\alpha$ 的那对粒子的约化质量，$\nu_\alpha$ 是粒子 $\alpha$ 相对该对质心的约化质量。
 
@@ -558,15 +558,15 @@ $$
 
 - $Z^{J}_{\mathcal{L}_\beta \mathcal{L}_\gamma}$ 是 Born 项（driving term），包含 Jacobi 坐标变换和角动量重耦合，下一小节展开。
 
-注意方程的结构：每个 $J$ 块独立，但 $\mathcal{L}$ 通道之间耦合。自变量是两组径向动量 $(p, q)$，所以这是**二维积分方程**——比两体的一维方程复杂得多，但已经从原始的六维（两个三维矢量）降到了二维。
+注意方程的结构：每个 $J$ 块独立，但 $\mathcal{L}$ 通道之间耦合。自变量是两组径向动量 $(p, q)$，所以这是二维积分方程——比两体的一维方程复杂得多，但已经从原始的六维（两个三维矢量）降到了二维。
 
 ### 6.4 Jacobi 坐标变换的分波矩阵元
 
 AGS 方程核心的技术难题是计算从集 $\gamma$ 到集 $\beta$ 的变换在分波基中的矩阵元。这一矩阵元分成两步：
 
-**第一步：运动学变换。** 由 $\text{(JT)}$，在质量标度动量空间中，集间变换是二维旋转。对于给定的 $(\tilde{p}_\gamma, \tilde{q}_\gamma)$ 和 $(\tilde{p}_\beta, \tilde{q}_\beta)$，两组矢量之间的关系由旋转角 $\phi_{\beta\gamma}$ 和一个方位角（$\hat{\mathbf{p}}_\gamma$ 与 $\hat{\mathbf{q}}_\gamma$ 之间的夹角 $x = \hat{\mathbf{p}}_\gamma \cdot \hat{\mathbf{q}}_\gamma$）确定。运动学部分归结为对这个角度 $x$ 的一维积分。
+第一步：运动学变换。 由 $\text{(JT)}$，在质量标度动量空间中，集间变换是二维旋转。对于给定的 $(\tilde{p}_\gamma, \tilde{q}_\gamma)$ 和 $(\tilde{p}_\beta, \tilde{q}_\beta)$，两组矢量之间的关系由旋转角 $\phi_{\beta\gamma}$ 和一个方位角（$\hat{\mathbf{p}}_\gamma$ 与 $\hat{\mathbf{q}}_\gamma$ 之间的夹角 $x = \hat{\mathbf{p}}_\gamma \cdot \hat{\mathbf{q}}_\gamma$）确定。运动学部分归结为对这个角度 $x$ 的一维积分。
 
-**第二步：角动量重耦合。** 从 $\{l_\gamma, \lambda_\gamma, j_\gamma\}$ 变换到 $\{l_\beta, \lambda_\beta, j_\beta\}$ 涉及重耦合系数。具体地，Born 项中的角动量部分为：
+第二步：角动量重耦合。 从 $\{l_\gamma, \lambda_\gamma, j_\gamma\}$ 变换到 $\{l_\beta, \lambda_\beta, j_\beta\}$ 涉及重耦合系数。具体地，Born 项中的角动量部分为：
 
 $$
 \mathcal{G}^{J}_{\mathcal{L}_\beta \mathcal{L}_\gamma}(x) = \sum \text{(依赖于 $x$ 的 Legendre 多项式)} \times \text{(6j 符号)}
@@ -610,7 +610,7 @@ $$
 
 ### 7.2 数值方程的结构
 
-**两体：** 对 $\text{(LS-pw)}$，将 $q$ 积分用 $N$ 点 Gauss 求积离散化：
+两体： 对 $\text{(LS-pw)}$，将 $q$ 积分用 $N$ 点 Gauss 求积离散化：
 
 $$
 T_l(k_i, k; E) = V_l(k_i, k) + \sum_{j=1}^{N} w_j\, q_j^2\; \frac{V_l(k_i, q_j)\, T_l(q_j, k; E)}{E - q_j^2/(2\mu) + i0}
@@ -621,7 +621,7 @@ $$
 - 主值-余项（subtraction）方法：将被积函数减去奇异点处的值再积分，奇异贡献解析处理
 - 围道旋转（contour rotation）：将 $q$ 积分路径从实轴旋转到复平面，避开奇异点
 
-**三体：** 对 $\text{(AGS-pw)}$，两个连续变量 $(p, q)$ 各用 $N_p$、$N_q$ 点离散化，得到 $(N_p \times N_q \times N_{\mathcal{L}})$ 维矩阵方程。典型计算中 $N_p, N_q \sim 30\text{-}60$，$N_{\mathcal{L}}$ 取决于截断的分波数目。
+三体： 对 $\text{(AGS-pw)}$，两个连续变量 $(p, q)$ 各用 $N_p$、$N_q$ 点离散化，得到 $(N_p \times N_q \times N_{\mathcal{L}})$ 维矩阵方程。典型计算中 $N_p, N_q \sim 30\text{-}60$，$N_{\mathcal{L}}$ 取决于截断的分波数目。
 
 ### 7.3 完整链条
 

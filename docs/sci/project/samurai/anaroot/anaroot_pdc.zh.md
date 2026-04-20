@@ -7,18 +7,18 @@ tag:
 # 重建与校准相关的C++类库
 
 ## TArtCalibPDCHit
-- **位置**：anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCHit.hh、TArtCalibPDCHit.cc  
-- **作用**：对PDC原始数据（如TDC、QDC等）进行hit级别的校准和重建，生成每根丝的打点（TArtDCHit）。
-- **典型用法**：
+- 位置：anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCHit.hh、TArtCalibPDCHit.cc  
+- 作用：对PDC原始数据（如TDC、QDC等）进行hit级别的校准和重建，生成每根丝的打点（TArtDCHit）。
+- 典型用法：
 ```cpp
 TArtCalibPDCHit *pdchitcalib = new TArtCalibPDCHit();
 pdchitcalib->ReconstructData();
 TClonesArray *pdc_hit_array = (TClonesArray *)sman->FindDataContainer("SAMURAIPDCHit");
 ```
 ## TArtCalibPDCTrack
-- **位置**：anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCTrack.hh、TArtCalibPDCTrack.cc  
-- **作用**：基于TArtCalibPDCHit的输出，对所有hit进行径迹（track）重建，输出为TArtDCTrack对象。
-- **典型用法**：
+- 位置：anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCTrack.hh、TArtCalibPDCTrack.cc  
+- 作用：基于TArtCalibPDCHit的输出，对所有hit进行径迹（track）重建，输出为TArtDCTrack对象。
+- 典型用法：
 ```cpp
 TArtCalibPDCTrack *pdctrackcalib = new TArtCalibPDCTrack();
 pdctrackcalib->ReconstructData();
@@ -26,54 +26,54 @@ TClonesArray *pdc_trk_array = (TClonesArray *)sman->FindDataContainer("SAMURAIPD
 ```
 
 ## TArtDCHit 和 TArtDCTrack
-- **TArtDCHit**：保存单个PDC丝的打点信息（位置、TDC、QDC等）。
-- **TArtDCTrack**：保存一条重建出来的PDC径迹（位置、角度、chi2等）。
+- TArtDCHit：保存单个PDC丝的打点信息（位置、TDC、QDC等）。
+- TArtDCTrack：保存一条重建出来的PDC径迹（位置、角度、chi2等）。
 
 # PDC参数库
 
 ## SAMURAIPDC.xml
-- **位置**：SAMURAIPDC.xml  
-- **作用**：保存PDC每根丝的参数（如geo、ch、wireid、位置等），供重建时查找和校准。
+- 位置：SAMURAIPDC.xml  
+- 作用：保存PDC每根丝的参数（如geo、ch、wireid、位置等），供重建时查找和校准。
 
 
-- **ID**：该丝的唯一编号（通常与 wireid 一致）。
-- **NAME**：该丝的名称，格式如 `PDC_0_0`，表示第 0 层第 0 根丝。
-- **FPL**：焦面编号（Focal Plane），如 13 表示 F13。
-- **layer**：所在的层号（如 0、1、2 等）。
-- **id_plane**：平面编号（plane id），如 81、82、83 等。
-- **anodedir**：阳极丝方向（U/X/V），表示该层的测量方向。
-- **wireid**：该层内的丝编号。
-- **wirepos**：该丝在本层的物理位置（单位通常为 mm）。
-- **wirez**：该丝在 Z 方向的位置（单位通常为 mm）。
-- **tzero_offset**：时间零点修正（一般为 0）。
-- **det**：探测器编号（如 37）。
-- **geo**：电子学几何编号（如 0、1、2 等）。
-- **ch**：电子学通道号（channel），用于数据解码。
+- ID：该丝的唯一编号（通常与 wireid 一致）。
+- NAME：该丝的名称，格式如 `PDC_0_0`，表示第 0 层第 0 根丝。
+- FPL：焦面编号（Focal Plane），如 13 表示 F13。
+- layer：所在的层号（如 0、1、2 等）。
+- id_plane：平面编号（plane id），如 81、82、83 等。
+- anodedir：阳极丝方向（U/X/V），表示该层的测量方向。
+- wireid：该层内的丝编号。
+- wirepos：该丝在本层的物理位置（单位通常为 mm）。
+- wirez：该丝在 Z 方向的位置（单位通常为 mm）。
+- tzero_offset：时间零点修正（一般为 0）。
+- det：探测器编号（如 37）。
+- geo：电子学几何编号（如 0、1、2 等）。
+- ch：电子学通道号（channel），用于数据解码。
   
   
 # 宏与脚本
 
 <!-- ## recoPDCTrack.C
-- **位置**：users/tbt/tbt_try/recoPDCTrack.C  
-- **作用**：典型的PDC重建宏。流程为：加载参数→打开RIDF→PDC hit重建→PDC track重建→输出track参数。
-- **功能**：用于批量处理数据文件，输出每个事件的PDC径迹参数。 -->
+- 位置：users/tbt/tbt_try/recoPDCTrack.C  
+- 作用：典型的PDC重建宏。流程为：加载参数→打开RIDF→PDC hit重建→PDC track重建→输出track参数。
+- 功能：用于批量处理数据文件，输出每个事件的PDC径迹参数。 -->
 
 ## RIDF2Tree.C
-- **位置**：users/tbt/tbt_try/RIDF2Tree.C  
-- **作用**：将RIDF原始数据解码并保存为ROOT TTree格式，便于后续分析。可包含PDC数据分支。
+- 位置：users/tbt/tbt_try/RIDF2Tree.C  
+- 作用：将RIDF原始数据解码并保存为ROOT TTree格式，便于后续分析。可包含PDC数据分支。
 
 ## RecoSAMURAI.C、RecoTrack_wSks.C
-- **位置**：Macros/SAMURAI/Analysis/RecoSAMURAI.C、Macros/SAMURAI/RKtrace/RecoTrack_wSks.C  
-- **作用**：主要用于SAMURAI谱仪碎片动量和轨迹的重建，默认用FDC/BDC，但可根据需要修改为用PDC track进行外推和动量重建。
+- 位置：Macros/SAMURAI/Analysis/RecoSAMURAI.C、Macros/SAMURAI/RKtrace/RecoTrack_wSks.C  
+- 作用：主要用于SAMURAI谱仪碎片动量和轨迹的重建，默认用FDC/BDC，但可根据需要修改为用PDC track进行外推和动量重建。
 
 ## OnlineMonitor.cc
-- **位置**：OnlineMonitor.cc  
-- **作用**：在线监视宏，支持PDC数据的在线重建和可视化（只要fUsePDC为true）。
+- 位置：OnlineMonitor.cc  
+- 作用：在线监视宏，支持PDC数据的在线重建和可视化（只要fUsePDC为true）。
 
 # 其它相关
 
 ## SAMURAIPDC.xml参数文件
-- **注意**：你必须保证所有实际用到的PDC通道（geo/ch）都在此文件中有定义，否则重建时会报错。
+- 注意：你必须保证所有实际用到的PDC通道（geo/ch）都在此文件中有定义，否则重建时会报错。
 
 # 总结与建议
 
@@ -91,37 +91,37 @@ TClonesArray *pdc_trk_array = (TClonesArray *)sman->FindDataContainer("SAMURAIPD
 
 ## 如何选择和使用？
 
-- **只做PDC重建**：TArtCalibPDCHit、TArtCalibPDCTrack。
-- **做全链路物理分析**：可在RecoSAMURAI.C、RecoTrack_wSks.C等宏中，将FDC/BDC部分替换为PDC track，实现用PDC track外推到靶点并重建动量。
-- **在线监视**：用OnlineMonitor.s024，设置fUsePDC=true即可。
+- 只做PDC重建：TArtCalibPDCHit、TArtCalibPDCTrack。
+- 做全链路物理分析：可在RecoSAMURAI.C、RecoTrack_wSks.C等宏中，将FDC/BDC部分替换为PDC track，实现用PDC track外推到靶点并重建动量。
+- 在线监视：用OnlineMonitor.s024，设置fUsePDC=true即可。
 
 ---
 
 ## PDC径迹重建的数据流与算法实现流程
 
 ### 数据流简述
-- **输入**：PDC的所有 hit（TArtDCHit），每个 hit 有空间位置（x/y/z）、漂移时间等。
-- **处理**：在 `TArtCalibPDCTrack::ReconstructData()` 中，先将 hit 分类（按层、方向），然后用几何方法（如加权重心、直线拟合等）重建出径迹的空间参数。
-- **输出**：重建出的径迹参数（位置、角度、chi2等）通过 `SetAngle`、`SetPosition` 等接口写入 TArtDCTrack 对象。
+- 输入：PDC的所有 hit（TArtDCHit），每个 hit 有空间位置（x/y/z）、漂移时间等。
+- 处理：在 `TArtCalibPDCTrack::ReconstructData()` 中，先将 hit 分类（按层、方向），然后用几何方法（如加权重心、直线拟合等）重建出径迹的空间参数。
+- 输出：重建出的径迹参数（位置、角度、chi2等）通过 `SetAngle`、`SetPosition` 等接口写入 TArtDCTrack 对象。
 
 ### 典型实现流程（以加权重心法为例）
 
-1. **hit 分类**  
+1. hit 分类  
    按照丝的方向（u/x/v/y）将所有 hit 分类，分别存入不同的缓冲区。
 
-2. **计算每个方向的加权重心**  
+2. 计算每个方向的加权重心  
    对每一层的 hit，计算加权平均位置（权重通常为漂移时间差或信号强度）。
 
-3. **拟合直线，得到角度**  
+3. 拟合直线，得到角度  
    用加权重心点进行直线拟合，得到斜率（即角度）：  
    - X方向：a = (x2 - x1)/(z2 - z1)
    - Y方向：b = (y2 - y1)/(z2 - z1)  
    或者用多点最小二乘法拟合。
 
-4. **写入 TArtDCTrack**  
+4. 写入 TArtDCTrack  
    用 `SetAngle(a, 0)` 和 `SetAngle(b, 1)` 把拟合得到的角度存入 TArtDCTrack 的 ca[0] 和 ca[1]。
 
-5. **后续访问**  
+5. 后续访问  
    通过 `GetAngle(0)` 和 `GetAngle(1)` 读取 X、Y 方向的角度。
 
 

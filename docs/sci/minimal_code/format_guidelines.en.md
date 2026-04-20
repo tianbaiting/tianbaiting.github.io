@@ -8,9 +8,9 @@ comments: true  # Enable comments
 
 Constants should be written in upright font. However, constants such as $c$ (speed of light), $h$ (Planck constant), and $G$ (gravitational constant) are considered variable symbols. Despite their unchanging values, they are treated as physical quantities and should be written in italic font. Mathematical constants with fixed values (e.g., $\rm{e} = 2.7182818\ldots$, $\rm{\pi} = 3.1415926\ldots$, $\rm{i}^2 = -1$, etc.) should be written in upright font. Regarding $\pi$, the writing guidelines of Chinese Physics B conflict with the international standard ISO 80000-2. The author believes the international standard should be followed, using upright font.
 
-- **Variables** should be written in italic font.
-- **Units** should be written in upright font.
-- **Mathematical functions** should be written in upright font. This refers to special functions like $\rm{sin}(x)$, not general functions like $f(x)$.
+- Variables should be written in italic font.
+- Units should be written in upright font.
+- Mathematical functions should be written in upright font. This refers to special functions like $\rm{sin}(x)$, not general functions like $f(x)$.
 
 Pay special attention to the following rules:
 

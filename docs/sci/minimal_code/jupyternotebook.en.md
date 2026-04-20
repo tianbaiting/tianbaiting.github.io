@@ -48,10 +48,10 @@ root --notebook
 
 To add a new kernel in Jupyter Notebook, follow these steps:
 
-1. **Install the Required Programming Language Environment**  
+1. Install the Required Programming Language Environment  
    Ensure the runtime environment for the target programming language is installed, such as Python, R, or Julia.
 
-2. **Install the Jupyter Kernel**  
+2. Install the Jupyter Kernel  
    Install the corresponding Jupyter kernel for the target language. For example:  
    - For Python, use `ipykernel`:  
      ```bash
@@ -78,13 +78,13 @@ To add a new kernel in Jupyter Notebook, follow these steps:
      clingkernel install --sys-prefix
      ```
 
-3. **Register the Kernel**  
+3. Register the Kernel  
    After installation, the kernel should automatically register with Jupyter Notebook. If not, you can manually register it using a command like:
    ```bash
    python -m ipykernel install --user --name=my_kernel_name
    ```
 
-4. **Launch Jupyter Notebook**  
+4. Launch Jupyter Notebook  
    Start Jupyter Notebook and select the newly added kernel when creating a new file.
 
 By following these steps, you can add and use new kernels in Jupyter Notebook to support additional programming languages.
@@ -93,20 +93,20 @@ By following these steps, you can add and use new kernels in Jupyter Notebook to
 
 You can run Bash scripts in Jupyter Notebook using the following methods:
 
-1. **Using the `!` Command**  
+1. Using the `!` Command  
    Run Bash commands or scripts directly in a code cell using `!`. For example:
    ```bash
    !sh script.sh
    ```
 
-2. **Using the `subprocess` Module**  
+2. Using the `subprocess` Module  
    Use the `subprocess` module in Python to run Bash scripts. For example:
    ```python
    import subprocess
    subprocess.run(['sh', 'script.sh'])
    ```
 
-3. **Using the `%%bash` Magic Command**  
+3. Using the `%%bash` Magic Command  
    Use the `%%bash` magic command in a code cell to run Bash scripts. For example:
    ```bash
    %%bash
@@ -162,7 +162,7 @@ Example:
 c = ROOT.TCanvas("c")
 h = ROOT.TH1F("h","ROOT Histo;X;Y",64,-4,4)
 ```
-You can also mix Python and C++ in the same notebook using the **%%cpp** magic:
+You can also mix Python and C++ in the same notebook using the %%cpp magic:
 ```cpp
 %%cpp
 h->FillRandom("gaus");

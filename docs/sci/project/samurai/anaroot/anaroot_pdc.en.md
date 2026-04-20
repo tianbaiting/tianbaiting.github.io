@@ -7,9 +7,9 @@ tag:
 # C++ Libraries for PDC Reconstruction and Calibration
 
 ## TArtCalibPDCHit
-- **Location:** anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCHit.hh, TArtCalibPDCHit.cc  
-- **Function:** Performs hit-level calibration and reconstruction for PDC raw data (such as TDC, QDC), generating a TArtDCHit object for each wire.
-- **Typical usage:**
+- Location: anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCHit.hh, TArtCalibPDCHit.cc  
+- Function: Performs hit-level calibration and reconstruction for PDC raw data (such as TDC, QDC), generating a TArtDCHit object for each wire.
+- Typical usage:
 ```cpp
 TArtCalibPDCHit *pdchitcalib = new TArtCalibPDCHit();
 pdchitcalib->ReconstructData();
@@ -17,9 +17,9 @@ TClonesArray *pdc_hit_array = (TClonesArray *)sman->FindDataContainer("SAMURAIPD
 ```
 
 ## TArtCalibPDCTrack
-- **Location:** anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCTrack.hh, TArtCalibPDCTrack.cc  
-- **Function:** Based on the output of TArtCalibPDCHit, reconstructs tracks from all hits and outputs TArtDCTrack objects.
-- **Typical usage:**
+- Location: anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCTrack.hh, TArtCalibPDCTrack.cc  
+- Function: Based on the output of TArtCalibPDCHit, reconstructs tracks from all hits and outputs TArtDCTrack objects.
+- Typical usage:
 ```cpp
 TArtCalibPDCTrack *pdctrackcalib = new TArtCalibPDCTrack();
 pdctrackcalib->ReconstructData();
@@ -27,53 +27,53 @@ TClonesArray *pdc_trk_array = (TClonesArray *)sman->FindDataContainer("SAMURAIPD
 ```
 
 ## TArtDCHit and TArtDCTrack
-- **TArtDCHit:** Stores information for a single PDC wire hit (position, TDC, QDC, etc.).
-- **TArtDCTrack:** Stores a reconstructed PDC track (position, angle, chi2, etc.).
+- TArtDCHit: Stores information for a single PDC wire hit (position, TDC, QDC, etc.).
+- TArtDCTrack: Stores a reconstructed PDC track (position, angle, chi2, etc.).
 
 # PDC Parameter Database
 
 ## SAMURAIPDC.xml
-- **Location:** SAMURAIPDC.xml  
-- **Function:** Stores parameters for each PDC wire (geo, ch, wireid, position, etc.), used for lookup and calibration during reconstruction.
+- Location: SAMURAIPDC.xml  
+- Function: Stores parameters for each PDC wire (geo, ch, wireid, position, etc.), used for lookup and calibration during reconstruction.
 
 # Macros and Scripts
 
 ## recoPDCTrack.C
-- **Location:** users/tbt/tbt_try/recoPDCTrack.C  
-- **Function:** Typical macro for PDC reconstruction. Workflow: load parameters → open RIDF → PDC hit reconstruction → PDC track reconstruction → output track parameters.
-- **Usage:** Batch processing of data files, outputting PDC track parameters for each event.
+- Location: users/tbt/tbt_try/recoPDCTrack.C  
+- Function: Typical macro for PDC reconstruction. Workflow: load parameters → open RIDF → PDC hit reconstruction → PDC track reconstruction → output track parameters.
+- Usage: Batch processing of data files, outputting PDC track parameters for each event.
 
 ## RIDF2Tree.C
-- **Location:** users/tbt/tbt_try/RIDF2Tree.C  
-- **Function:** Decodes RIDF raw data and saves as ROOT TTree format for further analysis. Can include PDC data branches.
+- Location: users/tbt/tbt_try/RIDF2Tree.C  
+- Function: Decodes RIDF raw data and saves as ROOT TTree format for further analysis. Can include PDC data branches.
 
 ## RecoSAMURAI.C, RecoTrack_wSks.C
-- **Location:** Macros/SAMURAI/Analysis/RecoSAMURAI.C, Macros/SAMURAI/RKtrace/RecoTrack_wSks.C  
-- **Function:** Used for fragment momentum and track reconstruction in the SAMURAI spectrometer. By default uses FDC/BDC, but can be modified to use PDC tracks for extrapolation and momentum reconstruction.
+- Location: Macros/SAMURAI/Analysis/RecoSAMURAI.C, Macros/SAMURAI/RKtrace/RecoTrack_wSks.C  
+- Function: Used for fragment momentum and track reconstruction in the SAMURAI spectrometer. By default uses FDC/BDC, but can be modified to use PDC tracks for extrapolation and momentum reconstruction.
 
 ## OnlineMonitor.cc
-- **Location:** OnlineMonitor.cc  
-- **Function:** Online monitoring macro, supports online reconstruction and visualization of PDC data (set fUsePDC=true).
+- Location: OnlineMonitor.cc  
+- Function: Online monitoring macro, supports online reconstruction and visualization of PDC data (set fUsePDC=true).
 
 # Other Notes
 
 ## SAMURAIPDC.xml Parameter File
-- **Note:** All PDC channels (geo/ch) actually used must be defined in this file, otherwise reconstruction will fail.
+- Note: All PDC channels (geo/ch) actually used must be defined in this file, otherwise reconstruction will fail.
 
 
-- **ID**: Unique identifier for the wire (usually the same as wireid).
-- **NAME**: Name of the wire, e.g. `PDC_0_0` means layer 0, wire 0.
-- **FPL**: Focal plane number, e.g. 13 means F13.
-- **layer**: Layer number (e.g. 0, 1, 2, etc.).
-- **id_plane**: Plane ID (e.g. 81, 82, 83, etc.).
-- **anodedir**: Anode wire direction (U/X/V), indicates the measurement direction of the layer.
-- **wireid**: Wire number within the layer.
-- **wirepos**: Physical position of the wire in this layer (usually in mm).
-- **wirez**: Z position of the wire (usually in mm).
-- **tzero_offset**: Time zero offset (usually 0).
-- **det**: Detector ID (e.g. 37).
-- **geo**: Electronics geometry number (e.g. 0, 1, 2, etc.).
-- **ch**: Electronics channel number, used for data decoding.
+- ID: Unique identifier for the wire (usually the same as wireid).
+- NAME: Name of the wire, e.g. `PDC_0_0` means layer 0, wire 0.
+- FPL: Focal plane number, e.g. 13 means F13.
+- layer: Layer number (e.g. 0, 1, 2, etc.).
+- id_plane: Plane ID (e.g. 81, 82, 83, etc.).
+- anodedir: Anode wire direction (U/X/V), indicates the measurement direction of the layer.
+- wireid: Wire number within the layer.
+- wirepos: Physical position of the wire in this layer (usually in mm).
+- wirez: Z position of the wire (usually in mm).
+- tzero_offset: Time zero offset (usually 0).
+- det: Detector ID (e.g. 37).
+- geo: Electronics geometry number (e.g. 0, 1, 2, etc.).
+- ch: Electronics channel number, used for data decoding.
 
 # Summary and Recommendations
 
@@ -91,37 +91,37 @@ TClonesArray *pdc_trk_array = (TClonesArray *)sman->FindDataContainer("SAMURAIPD
 
 ## How to Choose and Use
 
-- **Only PDC reconstruction:** Use TArtCalibPDCHit, TArtCalibPDCTrack.
-- **Full-chain physics analysis:** In macros like RecoSAMURAI.C or RecoTrack_wSks.C, replace FDC/BDC with PDC track for extrapolation to the target and momentum reconstruction.
-- **Online monitoring:** Use OnlineMonitor.s024 and set fUsePDC=true.
+- Only PDC reconstruction: Use TArtCalibPDCHit, TArtCalibPDCTrack.
+- Full-chain physics analysis: In macros like RecoSAMURAI.C or RecoTrack_wSks.C, replace FDC/BDC with PDC track for extrapolation to the target and momentum reconstruction.
+- Online monitoring: Use OnlineMonitor.s024 and set fUsePDC=true.
 
 ---
 
 ## Data Flow and Algorithm for PDC Track Reconstruction
 
 ### Data Flow Overview
-- **Input:** All PDC hits (TArtDCHit), each with spatial position (x/y/z), drift time, etc.
-- **Processing:** In `TArtCalibPDCTrack::ReconstructData()`, hits are first classified (by layer/direction), then geometric methods (e.g., weighted centroid, line fitting) are used to reconstruct track parameters.
-- **Output:** Reconstructed track parameters (position, angle, chi2, etc.) are written to TArtDCTrack objects via `SetAngle`, `SetPosition`, etc.
+- Input: All PDC hits (TArtDCHit), each with spatial position (x/y/z), drift time, etc.
+- Processing: In `TArtCalibPDCTrack::ReconstructData()`, hits are first classified (by layer/direction), then geometric methods (e.g., weighted centroid, line fitting) are used to reconstruct track parameters.
+- Output: Reconstructed track parameters (position, angle, chi2, etc.) are written to TArtDCTrack objects via `SetAngle`, `SetPosition`, etc.
 
 ### Typical Implementation (Weighted Centroid Example)
 
-1. **Hit Classification**  
+1. Hit Classification  
    Classify all hits by wire direction (u/x/v/y), store in separate buffers.
 
-2. **Calculate Weighted Centroid for Each Direction**  
+2. Calculate Weighted Centroid for Each Direction  
    For each layer, calculate the weighted average position (weight is usually drift time difference or signal strength).
 
-3. **Line Fitting to Obtain Angles**  
+3. Line Fitting to Obtain Angles  
    Fit a straight line to the centroid points to get the slope (angle):  
    - X direction: a = (x2 - x1)/(z2 - z1)
    - Y direction: b = (y2 - y1)/(z2 - z1)  
    Or use least squares fitting with multiple points.
 
-4. **Write to TArtDCTrack**  
+4. Write to TArtDCTrack  
    Use `SetAngle(a, 0)` and `SetAngle(b, 1)` to store the fitted angles in TArtDCTrack's ca[0] and ca[1].
 
-5. **Access Later**  
+5. Access Later  
    Use `GetAngle(0)` and `GetAngle(1)` to retrieve the X and Y angles.
 
 ---

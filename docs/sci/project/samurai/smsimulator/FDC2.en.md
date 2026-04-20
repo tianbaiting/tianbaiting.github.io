@@ -32,14 +32,14 @@ smsimulator
 
 ### 1. Detector Geometry & Construction
 
-- **Path**: `sources/smg4lib/detectors/FDC2/`
-- **Files**: `FDC2Construction.hh` / `.cc`
-- **Function**: Defines the geometry, materials, position, and orientation of FDC2.
+- Path: `sources/smg4lib/detectors/FDC2/`
+- Files: `FDC2Construction.hh` / `.cc`
+- Function: Defines the geometry, materials, position, and orientation of FDC2.
 
 ### 2. Sensitive Detector & Data Acquisition
 
-- **Path**: `sources/smg4lib/data/`
-- **Files**:
+- Path: `sources/smg4lib/data/`
+- Files:
     - `FragmentSD.hh` / `.cc`: Mounted to the active volume of FDC2, responsible for collecting physical information when particles pass through.
     - `TSimData.hh` / `.cc`: Stores physical data for each event, including the `detectorName` field to distinguish FDC2.
     - `TFragSimParameter.hh` / `.cc`: Configuration parameters for FDC2.
@@ -48,46 +48,46 @@ smsimulator
 #### Data Acquisition Process and Content
 
 - The active volume of FDC2 mounts the sensitive detector (`FragmentSD`). When a particle passes through FDC2, the `FragmentSD::ProcessHits` method is automatically called to collect and store physical information.
-- **Stored Data Content** (in `TSimData` or `TFragSimData` objects):
-    - **Detector Name**: `fDetectorName` (e.g., "FDC2"), used to identify the data source.
-    - **Particle Information**:
+- Stored Data Content (in `TSimData` or `TFragSimData` objects):
+    - Detector Name: `fDetectorName` (e.g., "FDC2"), used to identify the data source.
+    - Particle Information:
         - `fPDGCode`: PDG code
         - `fParticleName`: Particle name
         - `fZ`, `fA`: Atomic number and mass number
         - `fCharge`: Charge
         - `fMass`: Mass
-    - **Track Information**:
+    - Track Information:
         - `fParentID`: Parent particle ID
         - `fTrackID`: Track ID
-    - **Position and Momentum**:
+    - Position and Momentum:
         - `fPrePosition`, `fPostPosition`: Position before and after the step (x, y, z, in mm)
         - `fPreMomentum`, `fPostMomentum`: Momentum before and after the step (in MeV)
-    - **Time Information**:
+    - Time Information:
         - `fPreTime`, `fPostTime`: Global time before and after the step (in ns)
-    - **Flight Length**: `fFlightLength` (total path length to this point, in mm)
-    - **Accepted**: `fIsAccepted` (used to filter valid physical events)
-- **Data Output**:
+    - Flight Length: `fFlightLength` (total path length to this point, in mm)
+    - Accepted: `fIsAccepted` (used to filter valid physical events)
+- Data Output:
     - All the above data are stored in a ROOT file TTree branch (e.g., "fragment").
     - Each event contains a data array, with each element corresponding to a valid step (usually when the primary particle hits FDC2).
     - Analysis scripts (e.g., `work/macros/examples/analysis_example.cc`) read these branches and filter data with `fDetectorName == "FDC2"` for physics analysis.
 
 ### 3. Main Detector Construction & Integration
 
-- **Path**: `sources/projects/sim_samurai21/`
-- **Files**:
+- Path: `sources/projects/sim_samurai21/`
+- Files:
     - `sim_samurai21.cc`: Main program entry.
     - `src/SAMURAI21DetectorConstruction.cc`: Main detector construction class, responsible for instantiating FDC2 and mounting the sensitive detector.
 
 ### 4. Data Analysis
 
-- **Path**: `work/macros/examples/`
-- **Files**: `analysis_example.cc`, `analysis_crosstalk_example.cc`
-- **Function**: Reads and analyzes data collected by FDC2.
+- Path: `work/macros/examples/`
+- Files: `analysis_example.cc`, `analysis_crosstalk_example.cc`
+- Function: Reads and analyzes data collected by FDC2.
 
 ### 5. Other Helper Libraries
 
-- **Path**: `sources/smg4lib/action/`
-- **Function**: Includes event, run, and tracking action classes, which indirectly affect the data acquisition process of FDC2.
+- Path: `sources/smg4lib/action/`
+- Function: Includes event, run, and tracking action classes, which indirectly affect the data acquisition process of FDC2.
 
 ### Summary
 

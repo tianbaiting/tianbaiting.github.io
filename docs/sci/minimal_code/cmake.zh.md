@@ -343,7 +343,7 @@ clean:
 用于生成makefile。
 
 
-简单的 add_executable(hello main.cpp b.cpp) 写法在项目变大后难以维护。现代CMake的核心思想是**“万物皆目标 (Target)”**，我们将属性（如头文件路径、链接库、编译选项）精确地附加到具体的目标上。
+简单的 add_executable(hello main.cpp b.cpp) 写法在项目变大后难以维护。现代CMake的核心思想是“万物皆目标 (Target)”，我们将属性（如头文件路径、链接库、编译选项）精确地附加到具体的目标上。
 
 
 

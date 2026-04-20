@@ -129,15 +129,15 @@ echo "===================================="
 ## 安装组件说明
 
 ### 核心组件
-- **Zsh**: 强大的命令行shell
-- **Oh My Zsh**: Zsh配置框架
-- **Starship**: 跨shell的现代化提示符
+- Zsh: 强大的命令行shell
+- Oh My Zsh: Zsh配置框架
+- Starship: 跨shell的现代化提示符
 
 ### 插件功能
-- **git**: Git命令别名和状态显示
-- **zsh-autosuggestions**: 基于历史的命令自动建议
-- **zsh-syntax-highlighting**: 命令语法高亮
-- **fzf**: 模糊搜索工具
+- git: Git命令别名和状态显示
+- zsh-autosuggestions: 基于历史的命令自动建议
+- zsh-syntax-highlighting: 命令语法高亮
+- fzf: 模糊搜索工具
 
 ## 使用技巧
 
