@@ -3056,7 +3056,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3577,27 +3577,27 @@
 <hr />
 <h2 id="目录">目录<a class="headerlink" href="#目录" title="Permanent link">#</a></h2>
 <ol>
-<li><a href="#part1"><strong>第一部分：准备工作</strong></a></li>
-<li><a href="#part2"><strong>第二部分：安装 Ubuntu 和 XFCE 桌面环境</strong></a></li>
-<li><a href="#part3"><strong>第三部分：配置并启动 VNC 图形界面</strong></a></li>
-<li><a href="#part4"><strong>第四部分：连接到 Ubuntu 桌面</strong></a></li>
-<li><a href="#part5"><strong>第五部分：安装并配置 Visual Studio Code</strong></a></li>
-<li><a href="#part6"><strong>第六部分：安卓系统稳定性设置 (防后台查杀)</strong></a></li>
-<li><a href="#part7"><strong>第七部分：日常使用流程备忘录</strong></a></li>
+<li><a href="#part1">第一部分：准备工作</a></li>
+<li><a href="#part2">第二部分：安装 Ubuntu 和 XFCE 桌面环境</a></li>
+<li><a href="#part3">第三部分：配置并启动 VNC 图形界面</a></li>
+<li><a href="#part4">第四部分：连接到 Ubuntu 桌面</a></li>
+<li><a href="#part5">第五部分：安装并配置 Visual Studio Code</a></li>
+<li><a href="#part6">第六部分：安卓系统稳定性设置 (防后台查杀)</a></li>
+<li><a href="#part7">第七部分：日常使用流程备忘录</a></li>
 </ol>
 <hr />
 <p><a name="part1"></a></p>
 <h2 id="第一部分准备工作">第一部分：准备工作<a class="headerlink" href="#第一部分准备工作" title="Permanent link">#</a></h2>
 <ol>
 <li>
-<p><strong>安装 Termux</strong>: 从 F-Droid 或 GitHub 安装最新版的 Termux。<br />
-    &gt; <strong>注意</strong>: Google Play 版本的 Termux 已停止更新，不推荐使用。</p>
+<p>安装 Termux: 从 F-Droid 或 GitHub 安装最新版的 Termux。<br />
+    &gt; 注意: Google Play 版本的 Termux 已停止更新，不推荐使用。</p>
 </li>
 <li>
-<p><strong>安装 AnLinux</strong>: 从 Google Play 商店安装 AnLinux 应用。它能为我们方便地生成安装脚本。</p>
+<p>安装 AnLinux: 从 Google Play 商店安装 AnLinux 应用。它能为我们方便地生成安装脚本。</p>
 </li>
 <li>
-<p><strong>更换 Termux 软件源 (可选但推荐)</strong>:<br />
+<p>更换 Termux 软件源 (可选但推荐):<br />
     为了提高下载速度，建议更换为国内镜像源。<br />
     <div class="highlight"><pre><span></span><code>termux-change-repo
 </code></pre></div></p>
@@ -3608,7 +3608,7 @@
 <h2 id="第二部分安装-ubuntu-和-xfce-桌面环境">第二部分：安装 Ubuntu 和 XFCE 桌面环境<a class="headerlink" href="#第二部分安装-ubuntu-和-xfce-桌面环境" title="Permanent link">#</a></h2>
 <ol>
 <li>
-<p><strong>生成并运行 Ubuntu 安装脚本</strong>:</p>
+<p>生成并运行 Ubuntu 安装脚本:</p>
 <ul>
 <li>打开 AnLinux 应用，选择 Ubuntu。</li>
 <li>点击“复制”按钮，复制安装命令。</li>
@@ -3619,16 +3619,16 @@ pkg<span class="w"> </span>install<span class="w"> </span>wget<span class="w"> <
 </ul>
 </li>
 <li>
-<p><strong>启动 Ubuntu</strong>:<br />
+<p>启动 Ubuntu:<br />
     安装完成后，使用以下命令进入 Ubuntu 环境。<br />
     <div class="highlight"><pre><span></span><code>./start-ubuntu.sh
 </code></pre></div></p>
 </li>
 <li>
-<p><strong>安装 XFCE 桌面环境及必要工具</strong>:</p>
+<p>安装 XFCE 桌面环境及必要工具:</p>
 <ul>
 <li>仍在 AnLinux 中，选择 <code>Desktop Environment -&gt; XFCE</code>，复制其安装命令。</li>
-<li>粘贴到 <strong>Ubuntu 的 shell</strong> 中（提示符为 <code>root@localhost:~#</code>）并运行。<br />
+<li>粘贴到 Ubuntu 的 shell 中（提示符为 <code>root@localhost:~#</code>）并运行。<br />
 <div class="highlight"><pre><span></span><code><span class="c1"># 进入 Ubuntu 环境后运行</span>
 apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>xfce4<span class="w"> </span>xfce4-goodies
 </code></pre></div></li>
@@ -3644,18 +3644,18 @@ apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&am
 <p>这是最关键的一步，我们将直接写入正确的配置，以避免“黑白网格”和“无法启动”等问题。</p>
 <ol>
 <li>
-<p><strong>安装 VNC 服务器</strong>:<br />
+<p>安装 VNC 服务器:<br />
     <div class="highlight"><pre><span></span><code>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>tigervnc-standalone-server
 </code></pre></div></p>
 </li>
 <li>
-<p><strong>首次运行 VNC 服务器以生成配置文件</strong>:<br />
+<p>首次运行 VNC 服务器以生成配置文件:<br />
     <div class="highlight"><pre><span></span><code>vncserver<span class="w"> </span>:1
 </code></pre></div><br />
     &gt; 系统会提示您设置一个 VNC 连接密码（至少6位）。请设置并记住它。当询问是否设置 view-only 密码时，输入 <code>n</code>。</p>
 </li>
 <li>
-<p><strong>修复 VNC 启动脚本 (<code>xstartup</code>)</strong>:<br />
+<p>修复 VNC 启动脚本 (<code>xstartup</code>):<br />
     默认的 VNC 启动脚本是空的，会导致显示异常。我们需要写入正确的 XFCE 启动命令。<br />
     <div class="highlight"><pre><span></span><code><span class="c1"># 先杀死刚才测试启动的 VNC 服务</span>
 vncserver<span class="w"> </span>-kill<span class="w"> </span>:1
@@ -3673,7 +3673,7 @@ chmod<span class="w"> </span>+x<span class="w"> </span>/root/.vnc/xstartup
 </code></pre></div></p>
 </li>
 <li>
-<p><strong>正式启动 VNC 服务器</strong>:<br />
+<p>正式启动 VNC 服务器:<br />
     <div class="highlight"><pre><span></span><code>vncserver<span class="w"> </span>:1
 </code></pre></div><br />
     &gt; 看到 <code>New 'X' desktop is localhost:1</code> 等字样即表示成功。</p>
@@ -3684,24 +3684,24 @@ chmod<span class="w"> </span>+x<span class="w"> </span>/root/.vnc/xstartup
 <h2 id="第四部分连接到-ubuntu-桌面">第四部分：连接到 Ubuntu 桌面<a class="headerlink" href="#第四部分连接到-ubuntu-桌面" title="Permanent link">#</a></h2>
 <ol>
 <li>
-<p><strong>在安卓手机上安装 VNC 客户端</strong>:</p>
+<p>在安卓手机上安装 VNC 客户端:</p>
 <ul>
-<li>推荐应用: <strong>VNC Viewer</strong> (by RealVNC)，可在各大应用商店下载。</li>
+<li>推荐应用: VNC Viewer (by RealVNC)，可在各大应用商店下载。</li>
 </ul>
 </li>
 <li>
-<p><strong>创建新连接</strong>:</p>
+<p>创建新连接:</p>
 <ul>
 <li>打开 VNC Viewer 应用，点击 <code>+</code> 创建新连接。</li>
-<li><strong>Address (地址)</strong>: <code>localhost:1</code> 或 <code>127.0.0.1:1</code></li>
-<li><strong>Name (名称)</strong>: 任意填写，如 <code>MyUbuntu</code></li>
+<li>Address (地址): <code>localhost:1</code> 或 <code>127.0.0.1:1</code></li>
+<li>Name (名称): 任意填写，如 <code>MyUbuntu</code></li>
 <li>保存并点击连接。</li>
 </ul>
 </li>
 <li>
-<p><strong>处理警告并输入密码</strong>:</p>
+<p>处理警告并输入密码:</p>
 <ul>
-<li>VNC Viewer 会提示“Unencrypted connection”（未加密连接），这是正常的，因为连接在手机内部进行，非常安全。点击 <strong>Continue (继续)</strong>。</li>
+<li>VNC Viewer 会提示“Unencrypted connection”（未加密连接），这是正常的，因为连接在手机内部进行，非常安全。点击 Continue (继续)。</li>
 <li>输入您在第三部分设置的 VNC 密码。</li>
 </ul>
 </li>
@@ -3714,8 +3714,8 @@ chmod<span class="w"> </span>+x<span class="w"> </span>/root/.vnc/xstartup
 <h2 id="第五部分安装并配置-visual-studio-code">第五部分：安装并配置 Visual Studio Code<a class="headerlink" href="#第五部分安装并配置-visual-studio-code" title="Permanent link">#</a></h2>
 <ol>
 <li>
-<p><strong>添加 VS Code 官方软件源</strong>:<br />
-    在 <strong>Ubuntu 的 VNC 桌面终端</strong> 中，执行以下命令。<br />
+<p>添加 VS Code 官方软件源:<br />
+    在 Ubuntu 的 VNC 桌面终端 中，执行以下命令。<br />
     <div class="highlight"><pre><span></span><code><span class="c1"># 安装依赖</span>
 apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>wget<span class="w"> </span>gpg<span class="w"> </span>apt-transport-https
 
@@ -3728,13 +3728,13 @@ install<span class="w"> </span>-D<span class="w"> </span>-o<span class="w"> </sp
 </code></pre></div></p>
 </li>
 <li>
-<p><strong>安装 VS Code</strong>:<br />
+<p>安装 VS Code:<br />
     <div class="highlight"><pre><span></span><code>apt-get<span class="w"> </span>update
 apt-get<span class="w"> </span>install<span class="w"> </span>code<span class="w"> </span>-y
 </code></pre></div></p>
 </li>
 <li>
-<p><strong>配置永久运行环境 (最关键)</strong>:<br />
+<p>配置永久运行环境 (最关键):<br />
     为了解决 <code>DISPLAY</code> 环境变量丢失和每次输入长命令的问题，我们将所有配置写入 <code>bash</code> 配置文件。<br />
     <div class="highlight"><pre><span></span><code><span class="c1"># 写入 DISPLAY 环境变量，确保图形程序能找到屏幕</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export DISPLAY=:1&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.bashrc
@@ -3747,7 +3747,7 @@ apt-get<span class="w"> </span>install<span class="w"> </span>code<span class="w
 </code></pre></div></p>
 </li>
 <li>
-<p><strong>运行 VS Code</strong>:<br />
+<p>运行 VS Code:<br />
     完成以上配置后，在 VNC 桌面的终端里，只需输入我们创建的别名即可：<br />
     <div class="highlight"><pre><span></span><code>vscode
 </code></pre></div><br />
@@ -3760,31 +3760,31 @@ apt-get<span class="w"> </span>install<span class="w"> </span>code<span class="w
 <p>为了防止 Termux 在运行重度任务时被安卓系统（特别是三星）强制杀死，请务必进行以下设置。</p>
 <ol>
 <li>
-<p><strong>锁定 Termux 应用</strong>:</p>
+<p>锁定 Termux 应用:</p>
 <ul>
 <li>打开安卓的“最近应用”界面。</li>
 <li>找到 Termux 卡片，点击上方的图标。</li>
-<li>选择 <strong>“锁定此应用” (Lock this app) 或 "Keep open"</strong>。</li>
+<li>选择 “锁定此应用” (Lock this app) 或 "Keep open"。</li>
 </ul>
 </li>
 <li>
-<p><strong>关闭电池优化</strong>:</p>
+<p>关闭电池优化:</p>
 <ul>
-<li>长按 Termux 应用图标 -&gt; <strong>(i) (应用信息)</strong>。</li>
-<li>进入 <strong>“电池”</strong> -&gt; 设置为 <strong>“不受限制” (Unrestricted)</strong>。</li>
+<li>长按 Termux 应用图标 -&gt; (i) (应用信息)。</li>
+<li>进入 “电池” -&gt; 设置为 “不受限制” (Unrestricted)。</li>
 </ul>
 </li>
 <li>
-<p><strong>设为永不休眠</strong>:</p>
+<p>设为永不休眠:</p>
 <ul>
 <li>进入手机“设置” -&gt; “电池和设备维护” -&gt; “电池” -&gt; “后台使用限制”。</li>
-<li>将 <strong>Termux</strong> 添加到 <strong>“从不休眠的应用”</strong> 列表中。</li>
+<li>将 Termux 添加到 “从不休眠的应用” 列表中。</li>
 </ul>
 </li>
 <li>
-<p><strong>使用 Termux 唤醒锁</strong>:</p>
+<p>使用 Termux 唤醒锁:</p>
 <ul>
-<li>在执行 <code>./start-ubuntu.sh</code> <strong>之前</strong>，在 Termux 原始 shell 中运行：<br />
+<li>在执行 <code>./start-ubuntu.sh</code> 之前，在 Termux 原始 shell 中运行：<br />
 <div class="highlight"><pre><span></span><code>termux-wake-lock
 </code></pre></div></li>
 </ul>
@@ -3795,7 +3795,7 @@ apt-get<span class="w"> </span>install<span class="w"> </span>code<span class="w
 <h2 id="第七部分日常使用流程备忘录">第七部分：日常使用流程备忘录<a class="headerlink" href="#第七部分日常使用流程备忘录" title="Permanent link">#</a></h2>
 <ol>
 <li>
-<p><strong>启动</strong>:</p>
+<p>启动:</p>
 <ul>
 <li>关闭手机上其他无关应用。</li>
 <li>打开 Termux。</li>
@@ -3806,14 +3806,14 @@ apt-get<span class="w"> </span>install<span class="w"> </span>code<span class="w
 </ul>
 </li>
 <li>
-<p><strong>工作</strong>:</p>
+<p>工作:</p>
 <ul>
 <li>在 VNC 桌面的终端里，直接使用 <code>vscode</code> 命令启动 VS Code。</li>
 <li>...进行您的开发工作...</li>
 </ul>
 </li>
 <li>
-<p><strong>关闭</strong>:</p>
+<p>关闭:</p>
 <ul>
 <li>在 VNC 桌面的终端里，运行 <code>vncserver -kill :1</code> 关闭图形服务。</li>
 <li>运行 <code>exit</code> 退出 Ubuntu。</li>
@@ -3830,7 +3830,7 @@ apt-get<span class="w"> </span>install<span class="w"> </span>code<span class="w
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年9月3日 15:29:05 UTC"><span class="timeago" datetime="2025-09-03T15:29:05+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月3日 15:29:05 UTC">2025-09-03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         Created:

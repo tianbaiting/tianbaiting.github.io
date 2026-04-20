@@ -2970,7 +2970,7 @@
   
     <li class="md-nav__item">
       <a href="../anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3475,59 +3475,59 @@
   <h1>Anaroot nebula</h1>
 
 <p>TArtCalibNEBULAHPC *nebulahpc_calib = new TArtCalibNEBULAHPC();</p>
-<p><strong>Function</strong>: This object (nebulahpc_calib) is responsible for calibrating the NEBULA High Pressure Chamber (HPC) data. The HPC is mainly used as a veto detector for neutron detection in NEBULA, to distinguish neutrons from charged particles (such as electrons or protons produced by gamma-ray conversion).</p>
+<p>Function: This object (nebulahpc_calib) is responsible for calibrating the NEBULA High Pressure Chamber (HPC) data. The HPC is mainly used as a veto detector for neutron detection in NEBULA, to distinguish neutrons from charged particles (such as electrons or protons produced by gamma-ray conversion).</p>
 <ul>
-<li><strong>Input</strong>: Reads raw data from the HPC detector (e.g., TDC timing information) from TArtEventStore.</li>
-<li><strong>Processing</strong>:</li>
+<li>Input: Reads raw data from the HPC detector (e.g., TDC timing information) from TArtEventStore.</li>
+<li>Processing:</li>
 <li>Applies time calibration parameters (managed by TArtSAMURAIParameters).</li>
 <li>Converts raw TDC values to physical time.</li>
 <li>Performs basic hit identification.</li>
-<li><strong>Output</strong>: Calibrated TArtNEBULAHPC objects, each containing calibrated information for an HPC hit (such as time, detector ID, etc.), stored in a "NEBULAHPC" TClonesArray in TArtStoreManager.</li>
+<li>Output: Calibrated TArtNEBULAHPC objects, each containing calibrated information for an HPC hit (such as time, detector ID, etc.), stored in a "NEBULAHPC" TClonesArray in TArtStoreManager.</li>
 </ul>
 <hr />
 <p>TArtCalibNEBULA *nebulapla_calib = new TArtCalibNEBULA();</p>
-<p><strong>Function</strong>: This object (nebulapla_calib) is responsible for calibrating the NEBULA plastic scintillator (Pla) data, which is the main component of the NEBULA neutron detector.</p>
+<p>Function: This object (nebulapla_calib) is responsible for calibrating the NEBULA plastic scintillator (Pla) data, which is the main component of the NEBULA neutron detector.</p>
 <ul>
-<li><strong>Input</strong>: Reads raw data from both ends of the plastic scintillator PMTs (TDC timing and QDC charge) from TArtEventStore.</li>
-<li><strong>Processing</strong>:</li>
+<li>Input: Reads raw data from both ends of the plastic scintillator PMTs (TDC timing and QDC charge) from TArtEventStore.</li>
+<li>Processing:</li>
 <li>Applies time and charge calibration parameters.</li>
 <li>Calculates the average time, time difference (for position reconstruction), and average charge for each hit.</li>
 <li>Calculates the hit position.</li>
 <li>Converts calibrated time and charge to physical units (ns, MeVee).</li>
-<li><strong>Output</strong>: Calibrated TArtNEBULAPla objects, each containing detailed calibration information for a hit (ID, Layer, SubLayer, QUAveCal, TAveCal, PosCal, etc.), stored in a "NEBULAPla" TClonesArray in TArtStoreManager.</li>
+<li>Output: Calibrated TArtNEBULAPla objects, each containing detailed calibration information for a hit (ID, Layer, SubLayer, QUAveCal, TAveCal, PosCal, etc.), stored in a "NEBULAPla" TClonesArray in TArtStoreManager.</li>
 </ul>
 <hr />
 <p>TArtRecoNeutron *reco_neutron = new TArtRecoNeutron();</p>
-<p><strong>Function</strong>: This object (reco_neutron) is responsible for reconstructing neutron events from the calibrated neutron detector data. This is a higher-level reconstruction step.</p>
+<p>Function: This object (reco_neutron) is responsible for reconstructing neutron events from the calibrated neutron detector data. This is a higher-level reconstruction step.</p>
 <ul>
-<li><strong>Input</strong>:</li>
+<li>Input:</li>
 <li>Mainly relies on the collection of TArtNEBULAPla objects produced by TArtCalibNEBULA (plastic scintillator hit information).</li>
 <li>May use the output of TArtCalibNEBULAHPC (TArtNEBULAHPC objects) as a charged particle veto signal to improve neutron identification purity.</li>
 <li>May also require information from other detectors (such as beam detector timing as a TOF reference).</li>
-<li><strong>Processing</strong>:</li>
+<li>Processing:</li>
 <li>Clustering: Groups TArtNEBULAPla hits that are close in space and time into potential neutron clusters.</li>
 <li>Particle identification (PID): Uses charge information (dE/dx) and time-of-flight (TOF) to distinguish neutrons from other particles.</li>
 <li>Time-of-flight calculation: Calculates the neutron TOF from the target (or reference detector) to NEBULA.</li>
 <li>Energy reconstruction: Calculates neutron kinetic energy based on TOF and flight path length.</li>
 <li>Position reconstruction: Determines the neutron interaction position.</li>
-<li><strong>Output</strong>: Reconstructed TArtNeutron objects (or similar classes), each containing the physical properties of a neutron (energy, time, position, angle, etc.), stored in a "Neutron" TClonesArray in TArtStoreManager.</li>
+<li>Output: Reconstructed TArtNeutron objects (or similar classes), each containing the physical properties of a neutron (energy, time, position, angle, etc.), stored in a "Neutron" TClonesArray in TArtStoreManager.</li>
 </ul>
 <h2 id="nebula-reconstruction-procedure-sample-code-workflow">NEBULA Reconstruction Procedure (Sample Code Workflow)<a class="headerlink" href="#nebula-reconstruction-procedure-sample-code-workflow" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Initialization and Parameter Loading</strong></li>
+<li>Initialization and Parameter Loading</li>
 <li>Load necessary libraries and headers, set include paths.</li>
 <li>Obtain and load the <code>TArtSAMURAIParameters</code> parameter file.</li>
 <li>
 <p>Open the RIDF data file.</p>
 </li>
 <li>
-<p><strong>Reconstruction Class Initialization</strong></p>
+<p>Reconstruction Class Initialization</p>
 </li>
 <li>
 <p>Create objects for <code>TArtCalibNEBULAHPC</code>, <code>TArtCalibNEBULA</code>, and <code>TArtRecoNeutron</code>.</p>
 </li>
 <li>
-<p><strong>Event Loop Processing</strong></p>
+<p>Event Loop Processing</p>
 </li>
 <li>
 <p>For each event (e.g., the first 10 events), perform the following:</p>
@@ -3539,7 +3539,7 @@
 </ul>
 </li>
 <li>
-<p><strong>Output Content</strong></p>
+<p>Output Content</p>
 </li>
 <li>Output the number of HPC hits and details for each event (ID, Layer, SubLayer, TRaw, TCal, etc.).</li>
 <li>Output the number of Pla hits and details (ID, Layer, SubLayer, QUAveCal, TAveCal, PosCal, etc.).</li>
@@ -3547,7 +3547,7 @@
 <p>Output the number of reconstructed neutrons and their physical quantities (Time, MeVee, PosX, PosY, PosZ, etc.).</p>
 </li>
 <li>
-<p><strong>Cleanup and Resource Release</strong></p>
+<p>Cleanup and Resource Release</p>
 </li>
 <li>After the event loop, release all allocated objects and resources.</li>
 </ul>
@@ -3681,7 +3681,7 @@ void recoNebulaTrack(const char* ridffile = &quot;/home/s057/exp/exp2505_s057/an
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 30, 2025 09:03:06 UTC"><span class="timeago" datetime="2025-05-30T09:03:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 30, 2025 09:03:06 UTC">2025-05-30</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 20, 2026 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 20, 2026 10:56:55 UTC">2026-04-20</span>
       
         <br>
         Created:

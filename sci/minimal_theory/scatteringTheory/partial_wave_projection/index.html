@@ -3262,7 +3262,7 @@
   
     <li class="md-nav__item">
       <a href="../../../project/samurai/anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -4248,7 +4248,7 @@ T_l(k', k; E) = V_l(k', k) + \int_0^\infty dq\, q^2\; \frac{V_l(k', q)\, T_l(q, 
 <div class="arithmatex">\[
 V_l(k', k) = \frac{2}{\pi} \int_0^\infty dr\, r^2\; j_l(k'r)\, V(r)\, j_l(kr)
 \]</div>
-<p>关键在于：<strong>原本是三维矢量积分方程，经过分波投影后变成了以 <span class="arithmatex">\(k\)</span>、<span class="arithmatex">\(k'\)</span> 为自变量的一维积分方程。</strong> 对每个 <span class="arithmatex">\(l\)</span>，方程独立。数值上只需对 <span class="arithmatex">\(q\)</span> 积分做离散化（如 Gauss 求积），就得到线性代数方程组。</p>
+<p>关键在于：原本是三维矢量积分方程，经过分波投影后变成了以 <span class="arithmatex">\(k\)</span>、<span class="arithmatex">\(k'\)</span> 为自变量的一维积分方程。 对每个 <span class="arithmatex">\(l\)</span>，方程独立。数值上只需对 <span class="arithmatex">\(q\)</span> 积分做离散化（如 Gauss 求积），就得到线性代数方程组。</p>
 <p>积分核中 <span class="arithmatex">\(q^2/(2\mu) = E + i0\)</span> 处的奇异点需要特别处理：通常用主值积分加余项的方法，或沿复平面做围道变形。</p>
 <h3 id="44-on-shell-t-矩阵元相移与-s-矩阵">4.4 On-shell <span class="arithmatex">\(T\)</span> 矩阵元、相移与 <span class="arithmatex">\(S\)</span> 矩阵<a class="headerlink" href="#44-on-shell-t-矩阵元相移与-s-矩阵" title="Permanent link">#</a></h3>
 <p>在能壳上 <span class="arithmatex">\(k' = k\)</span>，<span class="arithmatex">\(E = k^2/(2\mu)\)</span>。散射振幅的分波展开为</p>
@@ -4282,12 +4282,12 @@ T^J_{l'l}(k', k; E) = V^J_{l'l}(k', k) + \sum_{l''} \int_0^\infty dq\, q^2\; \fr
 <h2 id="5-三体-jacobi-坐标系">5. 三体 Jacobi 坐标系<a class="headerlink" href="#5-三体-jacobi-坐标系" title="Permanent link">#</a></h2>
 <h3 id="51-三个-jacobi-集的定义">5.1 三个 Jacobi 集的定义<a class="headerlink" href="#51-三个-jacobi-集的定义" title="Permanent link">#</a></h3>
 <p>三个粒子质量 <span class="arithmatex">\(m_1, m_2, m_3\)</span>，总质量 <span class="arithmatex">\(M = m_1 + m_2 + m_3\)</span>。质心系中有两组独立的相对动量。对每个粒子标号 <span class="arithmatex">\(\alpha = 1, 2, 3\)</span>，定义 Jacobi 集 <span class="arithmatex">\(\alpha\)</span>：</p>
-<p><strong>Jacobi 集 1</strong>（对 <span class="arithmatex">\((23)\)</span>，旁观者 1）：</p>
+<p>Jacobi 集 1（对 <span class="arithmatex">\((23)\)</span>，旁观者 1）：</p>
 <ul>
 <li><span class="arithmatex">\(\mathbf{p}_1\)</span>：粒子 2 和 3 之间的相对动量，约化质量 <span class="arithmatex">\(\mu_1 = \dfrac{m_2 m_3}{m_2 + m_3}\)</span></li>
 <li><span class="arithmatex">\(\mathbf{q}_1\)</span>：粒子 1 相对于 <span class="arithmatex">\((23)\)</span> 质心的动量，约化质量 <span class="arithmatex">\(\nu_1 = \dfrac{m_1(m_2 + m_3)}{M}\)</span></li>
 </ul>
-<p><strong>Jacobi 集 2</strong>（对 <span class="arithmatex">\((31)\)</span>，旁观者 2）和**集 3**（对 <span class="arithmatex">\((12)\)</span>，旁观者 3）完全类比，循环置换 <span class="arithmatex">\(1 \to 2 \to 3\)</span>。</p>
+<p>Jacobi 集 2（对 <span class="arithmatex">\((31)\)</span>，旁观者 2）和集 3（对 <span class="arithmatex">\((12)\)</span>，旁观者 3）完全类比，循环置换 <span class="arithmatex">\(1 \to 2 \to 3\)</span>。</p>
 <p>一般地：<span class="arithmatex">\(\mu_\alpha\)</span> 是不含粒子 <span class="arithmatex">\(\alpha\)</span> 的那对粒子的约化质量，<span class="arithmatex">\(\nu_\alpha\)</span> 是粒子 <span class="arithmatex">\(\alpha\)</span> 相对该对质心的约化质量。</p>
 <p>动能在每个 Jacobi 集中都是对角的：</p>
 <div class="arithmatex">\[
@@ -4392,11 +4392,11 @@ U^{J}_{\mathcal{L}_\gamma \mathcal{L}_\alpha}(p_\gamma, q_\gamma;\, p_\alpha, q_
 <ul>
 <li><span class="arithmatex">\(Z^{J}_{\mathcal{L}_\beta \mathcal{L}_\gamma}\)</span> 是 Born 项（driving term），包含 Jacobi 坐标变换和角动量重耦合，下一小节展开。</li>
 </ul>
-<p>注意方程的结构：每个 <span class="arithmatex">\(J\)</span> 块独立，但 <span class="arithmatex">\(\mathcal{L}\)</span> 通道之间耦合。自变量是两组径向动量 <span class="arithmatex">\((p, q)\)</span>，所以这是**二维积分方程**——比两体的一维方程复杂得多，但已经从原始的六维（两个三维矢量）降到了二维。</p>
+<p>注意方程的结构：每个 <span class="arithmatex">\(J\)</span> 块独立，但 <span class="arithmatex">\(\mathcal{L}\)</span> 通道之间耦合。自变量是两组径向动量 <span class="arithmatex">\((p, q)\)</span>，所以这是二维积分方程——比两体的一维方程复杂得多，但已经从原始的六维（两个三维矢量）降到了二维。</p>
 <h3 id="64-jacobi-坐标变换的分波矩阵元">6.4 Jacobi 坐标变换的分波矩阵元<a class="headerlink" href="#64-jacobi-坐标变换的分波矩阵元" title="Permanent link">#</a></h3>
 <p>AGS 方程核心的技术难题是计算从集 <span class="arithmatex">\(\gamma\)</span> 到集 <span class="arithmatex">\(\beta\)</span> 的变换在分波基中的矩阵元。这一矩阵元分成两步：</p>
-<p><strong>第一步：运动学变换。</strong> 由 <span class="arithmatex">\(\text{(JT)}\)</span>，在质量标度动量空间中，集间变换是二维旋转。对于给定的 <span class="arithmatex">\((\tilde{p}_\gamma, \tilde{q}_\gamma)\)</span> 和 <span class="arithmatex">\((\tilde{p}_\beta, \tilde{q}_\beta)\)</span>，两组矢量之间的关系由旋转角 <span class="arithmatex">\(\phi_{\beta\gamma}\)</span> 和一个方位角（<span class="arithmatex">\(\hat{\mathbf{p}}_\gamma\)</span> 与 <span class="arithmatex">\(\hat{\mathbf{q}}_\gamma\)</span> 之间的夹角 <span class="arithmatex">\(x = \hat{\mathbf{p}}_\gamma \cdot \hat{\mathbf{q}}_\gamma\)</span>）确定。运动学部分归结为对这个角度 <span class="arithmatex">\(x\)</span> 的一维积分。</p>
-<p><strong>第二步：角动量重耦合。</strong> 从 <span class="arithmatex">\(\{l_\gamma, \lambda_\gamma, j_\gamma\}\)</span> 变换到 <span class="arithmatex">\(\{l_\beta, \lambda_\beta, j_\beta\}\)</span> 涉及重耦合系数。具体地，Born 项中的角动量部分为：</p>
+<p>第一步：运动学变换。 由 <span class="arithmatex">\(\text{(JT)}\)</span>，在质量标度动量空间中，集间变换是二维旋转。对于给定的 <span class="arithmatex">\((\tilde{p}_\gamma, \tilde{q}_\gamma)\)</span> 和 <span class="arithmatex">\((\tilde{p}_\beta, \tilde{q}_\beta)\)</span>，两组矢量之间的关系由旋转角 <span class="arithmatex">\(\phi_{\beta\gamma}\)</span> 和一个方位角（<span class="arithmatex">\(\hat{\mathbf{p}}_\gamma\)</span> 与 <span class="arithmatex">\(\hat{\mathbf{q}}_\gamma\)</span> 之间的夹角 <span class="arithmatex">\(x = \hat{\mathbf{p}}_\gamma \cdot \hat{\mathbf{q}}_\gamma\)</span>）确定。运动学部分归结为对这个角度 <span class="arithmatex">\(x\)</span> 的一维积分。</p>
+<p>第二步：角动量重耦合。 从 <span class="arithmatex">\(\{l_\gamma, \lambda_\gamma, j_\gamma\}\)</span> 变换到 <span class="arithmatex">\(\{l_\beta, \lambda_\beta, j_\beta\}\)</span> 涉及重耦合系数。具体地，Born 项中的角动量部分为：</p>
 <div class="arithmatex">\[
 \mathcal{G}^{J}_{\mathcal{L}_\beta \mathcal{L}_\gamma}(x) = \sum \text{(依赖于 $x$ 的 Legendre 多项式)} \times \text{(6j 符号)}
 \]</div>
@@ -4425,7 +4425,7 @@ Z^{J}_{\mathcal{L}_\beta \mathcal{L}_\gamma}(p_\beta, q_\beta;\, p_\gamma, q_\ga
 </ul>
 <p>在低能散射中，高分波的贡献因离心位垒而被压低。实际计算中只需截断到 <span class="arithmatex">\(l_{\max}\)</span>、<span class="arithmatex">\(\lambda_{\max}\)</span> 有限值。</p>
 <h3 id="72-数值方程的结构">7.2 数值方程的结构<a class="headerlink" href="#72-数值方程的结构" title="Permanent link">#</a></h3>
-<p><strong>两体：</strong> 对 <span class="arithmatex">\(\text{(LS-pw)}\)</span>，将 <span class="arithmatex">\(q\)</span> 积分用 <span class="arithmatex">\(N\)</span> 点 Gauss 求积离散化：</p>
+<p>两体： 对 <span class="arithmatex">\(\text{(LS-pw)}\)</span>，将 <span class="arithmatex">\(q\)</span> 积分用 <span class="arithmatex">\(N\)</span> 点 Gauss 求积离散化：</p>
 <div class="arithmatex">\[
 T_l(k_i, k; E) = V_l(k_i, k) + \sum_{j=1}^{N} w_j\, q_j^2\; \frac{V_l(k_i, q_j)\, T_l(q_j, k; E)}{E - q_j^2/(2\mu) + i0}
 \]</div>
@@ -4434,7 +4434,7 @@ T_l(k_i, k; E) = V_l(k_i, k) + \sum_{j=1}^{N} w_j\, q_j^2\; \frac{V_l(k_i, q_j)\
 <li>主值-余项（subtraction）方法：将被积函数减去奇异点处的值再积分，奇异贡献解析处理</li>
 <li>围道旋转（contour rotation）：将 <span class="arithmatex">\(q\)</span> 积分路径从实轴旋转到复平面，避开奇异点</li>
 </ul>
-<p><strong>三体：</strong> 对 <span class="arithmatex">\(\text{(AGS-pw)}\)</span>，两个连续变量 <span class="arithmatex">\((p, q)\)</span> 各用 <span class="arithmatex">\(N_p\)</span>、<span class="arithmatex">\(N_q\)</span> 点离散化，得到 <span class="arithmatex">\((N_p \times N_q \times N_{\mathcal{L}})\)</span> 维矩阵方程。典型计算中 <span class="arithmatex">\(N_p, N_q \sim 30\text{-}60\)</span>，<span class="arithmatex">\(N_{\mathcal{L}}\)</span> 取决于截断的分波数目。</p>
+<p>三体： 对 <span class="arithmatex">\(\text{(AGS-pw)}\)</span>，两个连续变量 <span class="arithmatex">\((p, q)\)</span> 各用 <span class="arithmatex">\(N_p\)</span>、<span class="arithmatex">\(N_q\)</span> 点离散化，得到 <span class="arithmatex">\((N_p \times N_q \times N_{\mathcal{L}})\)</span> 维矩阵方程。典型计算中 <span class="arithmatex">\(N_p, N_q \sim 30\text{-}60\)</span>，<span class="arithmatex">\(N_{\mathcal{L}}\)</span> 取决于截断的分波数目。</p>
 <h3 id="73-完整链条">7.3 完整链条<a class="headerlink" href="#73-完整链条" title="Permanent link">#</a></h3>
 <p>把从抽象算符到数值计算的全部步骤压缩成一条链：</p>
 <div class="arithmatex">\[
@@ -4459,7 +4459,7 @@ T_l(k_i, k; E) = V_l(k_i, k) + \sum_{j=1}^{N} w_j\, q_j^2\; \frac{V_l(k_i, q_j)\
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月15日 02:30:55 UTC"><span class="timeago" datetime="2026-04-15T02:30:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月15日 02:30:55 UTC">2026-04-15</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         创建日期:

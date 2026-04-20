@@ -3028,7 +3028,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3558,7 +3558,7 @@
 <h3 id="步骤-1-创建执行脚本">步骤 1: 创建执行脚本<a class="headerlink" href="#步骤-1-创建执行脚本" title="Permanent link">#</a></h3>
 <p>首先，我们创建一个简单的shell脚本，它会调用ROOT来打开指定的文件。</p>
 <p>该脚本被保存在 <code>~/.local/bin/root-browser</code>。<code>~/.local/bin</code> 是存放用户自定义脚本的标准目录，通常已包含在系统的<code>PATH</code>环境变量中。</p>
-<p><strong>脚本内容:</strong><br />
+<p>脚本内容:<br />
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1"># Script to open a ROOT file in a TBrowser</span>
 
@@ -3580,15 +3580,15 @@ root<span class="w"> </span>-l<span class="w"> </span>-e<span class="w"> </span>
 <hr />
 <h3 id="步骤-2-授予脚本执行权限">步骤 2: 授予脚本执行权限<a class="headerlink" href="#步骤-2-授予脚本执行权限" title="Permanent link">#</a></h3>
 <p>为了让系统能够运行这个脚本，我们必须为其添加可执行权限。</p>
-<p><strong>执行的命令:</strong><br />
+<p>执行的命令:<br />
 <div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>/home/tbt/.local/bin/root-browser
 </code></pre></div></p>
 <hr />
 <h3 id="步骤-3-定义新的mime类型">步骤 3: 定义新的MIME类型<a class="headerlink" href="#步骤-3-定义新的mime类型" title="Permanent link">#</a></h3>
 <p>为了让桌面环境知道<code>.root</code>文件是什么，我们为它定义一个自定义的MIME类型：<code>application/x-root</code>。</p>
 <p>这通过在 <code>~/.local/share/mime/packages/</code> 目录下创建一个XML文件来完成。</p>
-<p><strong>文件路径:</strong> <code>/home/tbt/.local/share/mime/packages/application-x-root.xml</code></p>
-<p><strong>文件内容:</strong><br />
+<p>文件路径: <code>/home/tbt/.local/share/mime/packages/application-x-root.xml</code></p>
+<p>文件内容:<br />
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;mime-info</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.freedesktop.org/standards/shared-mime-info&quot;</span><span class="nt">&gt;</span>
 <span class="w">  </span><span class="nt">&lt;mime-type</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;application/x-root&quot;</span><span class="nt">&gt;</span>
@@ -3600,14 +3600,14 @@ root<span class="w"> </span>-l<span class="w"> </span>-e<span class="w"> </span>
 <hr />
 <h3 id="步骤-4-更新mime数据库">步骤 4: 更新MIME数据库<a class="headerlink" href="#步骤-4-更新mime数据库" title="Permanent link">#</a></h3>
 <p>创建了MIME定义文件后，需要更新系统的MIME数据库来注册这个新类型。</p>
-<p><strong>执行的命令:</strong><br />
+<p>执行的命令:<br />
 <div class="highlight"><pre><span></span><code>update-mime-database<span class="w"> </span>~/.local/share/mime
 </code></pre></div></p>
 <hr />
 <h3 id="步骤-5-创建-desktop-入口文件">步骤 5: 创建 .desktop 入口文件<a class="headerlink" href="#步骤-5-创建-desktop-入口文件" title="Permanent link">#</a></h3>
 <p><code>.desktop</code> 文件是Linux桌面环境用来定义应用程序快捷方式和文件关联的标准。我们创建一个文件来描述我们的<code>root-browser</code>程序。</p>
-<p><strong>文件路径:</strong> <code>/home/tbt/.local/share/applications/root-browser.desktop</code></p>
-<p><strong>文件内容:</strong><br />
+<p>文件路径: <code>/home/tbt/.local/share/applications/root-browser.desktop</code></p>
+<p>文件内容:<br />
 <div class="highlight"><pre><span></span><code><span class="k">[Desktop Entry]</span>
 <span class="na">Type</span><span class="o">=</span><span class="s">Application</span>
 <span class="na">Name</span><span class="o">=</span><span class="s">ROOT Browser</span>
@@ -3620,7 +3620,7 @@ root<span class="w"> </span>-l<span class="w"> </span>-e<span class="w"> </span>
 <hr />
 <h3 id="步骤-6-设置为默认应用程序">步骤 6: 设置为默认应用程序<a class="headerlink" href="#步骤-6-设置为默认应用程序" title="Permanent link">#</a></h3>
 <p>最后一步是告诉系统，所有<code>application/x-root</code>类型的文件都应该默认使用我们刚刚定义的<code>root-browser.desktop</code>来打开。</p>
-<p><strong>执行的命令:</strong><br />
+<p>执行的命令:<br />
 <div class="highlight"><pre><span></span><code>xdg-mime<span class="w"> </span>default<span class="w"> </span>root-browser.desktop<span class="w"> </span>application/x-root
 </code></pre></div></p>
 <hr />
@@ -3632,7 +3632,7 @@ root<span class="w"> </span>-l<span class="w"> </span>-e<span class="w"> </span>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年9月17日 14:33:36 UTC"><span class="timeago" datetime="2025-09-17T14:33:36+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月17日 14:33:36 UTC">2025-09-17</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         创建日期:

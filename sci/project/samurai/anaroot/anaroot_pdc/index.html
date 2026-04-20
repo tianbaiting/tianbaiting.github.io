@@ -2936,7 +2936,7 @@
   
     <li class="md-nav__item">
       <a href="../anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3475,9 +3475,9 @@
 <h1 id="重建与校准相关的c类库">重建与校准相关的C++类库<a class="headerlink" href="#重建与校准相关的c类库" title="Permanent link">#</a></h1>
 <h2 id="tartcalibpdchit">TArtCalibPDCHit<a class="headerlink" href="#tartcalibpdchit" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>位置</strong>：anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCHit.hh、TArtCalibPDCHit.cc  </li>
-<li><strong>作用</strong>：对PDC原始数据（如TDC、QDC等）进行hit级别的校准和重建，生成每根丝的打点（TArtDCHit）。</li>
-<li><strong>典型用法</strong>：<br />
+<li>位置：anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCHit.hh、TArtCalibPDCHit.cc  </li>
+<li>作用：对PDC原始数据（如TDC、QDC等）进行hit级别的校准和重建，生成每根丝的打点（TArtDCHit）。</li>
+<li>典型用法：<br />
 <div class="highlight"><pre><span></span><code><span class="n">TArtCalibPDCHit</span><span class="w"> </span><span class="o">*</span><span class="n">pdchitcalib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TArtCalibPDCHit</span><span class="p">();</span>
 <span class="n">pdchitcalib</span><span class="o">-&gt;</span><span class="n">ReconstructData</span><span class="p">();</span>
 <span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">pdc_hit_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">&quot;SAMURAIPDCHit&quot;</span><span class="p">);</span>
@@ -3485,9 +3485,9 @@
 </ul>
 <h2 id="tartcalibpdctrack">TArtCalibPDCTrack<a class="headerlink" href="#tartcalibpdctrack" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>位置</strong>：anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCTrack.hh、TArtCalibPDCTrack.cc  </li>
-<li><strong>作用</strong>：基于TArtCalibPDCHit的输出，对所有hit进行径迹（track）重建，输出为TArtDCTrack对象。</li>
-<li><strong>典型用法</strong>：<br />
+<li>位置：anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCTrack.hh、TArtCalibPDCTrack.cc  </li>
+<li>作用：基于TArtCalibPDCHit的输出，对所有hit进行径迹（track）重建，输出为TArtDCTrack对象。</li>
+<li>典型用法：<br />
 <div class="highlight"><pre><span></span><code><span class="n">TArtCalibPDCTrack</span><span class="w"> </span><span class="o">*</span><span class="n">pdctrackcalib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TArtCalibPDCTrack</span><span class="p">();</span>
 <span class="n">pdctrackcalib</span><span class="o">-&gt;</span><span class="n">ReconstructData</span><span class="p">();</span>
 <span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">pdc_trk_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">&quot;SAMURAIPDCTrack&quot;</span><span class="p">);</span>
@@ -3495,57 +3495,57 @@
 </ul>
 <h2 id="tartdchit-和-tartdctrack">TArtDCHit 和 TArtDCTrack<a class="headerlink" href="#tartdchit-和-tartdctrack" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>TArtDCHit</strong>：保存单个PDC丝的打点信息（位置、TDC、QDC等）。</li>
-<li><strong>TArtDCTrack</strong>：保存一条重建出来的PDC径迹（位置、角度、chi2等）。</li>
+<li>TArtDCHit：保存单个PDC丝的打点信息（位置、TDC、QDC等）。</li>
+<li>TArtDCTrack：保存一条重建出来的PDC径迹（位置、角度、chi2等）。</li>
 </ul>
 <h1 id="pdc参数库">PDC参数库<a class="headerlink" href="#pdc参数库" title="Permanent link">#</a></h1>
 <h2 id="samuraipdcxml">SAMURAIPDC.xml<a class="headerlink" href="#samuraipdcxml" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>位置</strong>：SAMURAIPDC.xml  </li>
+<li>位置：SAMURAIPDC.xml  </li>
 <li>
-<p><strong>作用</strong>：保存PDC每根丝的参数（如geo、ch、wireid、位置等），供重建时查找和校准。</p>
+<p>作用：保存PDC每根丝的参数（如geo、ch、wireid、位置等），供重建时查找和校准。</p>
 </li>
 <li>
-<p><strong>ID</strong>：该丝的唯一编号（通常与 wireid 一致）。</p>
+<p>ID：该丝的唯一编号（通常与 wireid 一致）。</p>
 </li>
-<li><strong>NAME</strong>：该丝的名称，格式如 <code>PDC_0_0</code>，表示第 0 层第 0 根丝。</li>
-<li><strong>FPL</strong>：焦面编号（Focal Plane），如 13 表示 F13。</li>
-<li><strong>layer</strong>：所在的层号（如 0、1、2 等）。</li>
-<li><strong>id_plane</strong>：平面编号（plane id），如 81、82、83 等。</li>
-<li><strong>anodedir</strong>：阳极丝方向（U/X/V），表示该层的测量方向。</li>
-<li><strong>wireid</strong>：该层内的丝编号。</li>
-<li><strong>wirepos</strong>：该丝在本层的物理位置（单位通常为 mm）。</li>
-<li><strong>wirez</strong>：该丝在 Z 方向的位置（单位通常为 mm）。</li>
-<li><strong>tzero_offset</strong>：时间零点修正（一般为 0）。</li>
-<li><strong>det</strong>：探测器编号（如 37）。</li>
-<li><strong>geo</strong>：电子学几何编号（如 0、1、2 等）。</li>
-<li><strong>ch</strong>：电子学通道号（channel），用于数据解码。</li>
+<li>NAME：该丝的名称，格式如 <code>PDC_0_0</code>，表示第 0 层第 0 根丝。</li>
+<li>FPL：焦面编号（Focal Plane），如 13 表示 F13。</li>
+<li>layer：所在的层号（如 0、1、2 等）。</li>
+<li>id_plane：平面编号（plane id），如 81、82、83 等。</li>
+<li>anodedir：阳极丝方向（U/X/V），表示该层的测量方向。</li>
+<li>wireid：该层内的丝编号。</li>
+<li>wirepos：该丝在本层的物理位置（单位通常为 mm）。</li>
+<li>wirez：该丝在 Z 方向的位置（单位通常为 mm）。</li>
+<li>tzero_offset：时间零点修正（一般为 0）。</li>
+<li>det：探测器编号（如 37）。</li>
+<li>geo：电子学几何编号（如 0、1、2 等）。</li>
+<li>ch：电子学通道号（channel），用于数据解码。</li>
 </ul>
 <h1 id="宏与脚本">宏与脚本<a class="headerlink" href="#宏与脚本" title="Permanent link">#</a></h1>
 <!-- ## recoPDCTrack.C
-- **位置**：users/tbt/tbt_try/recoPDCTrack.C  
-- **作用**：典型的PDC重建宏。流程为：加载参数→打开RIDF→PDC hit重建→PDC track重建→输出track参数。
-- **功能**：用于批量处理数据文件，输出每个事件的PDC径迹参数。 -->
+- 位置：users/tbt/tbt_try/recoPDCTrack.C  
+- 作用：典型的PDC重建宏。流程为：加载参数→打开RIDF→PDC hit重建→PDC track重建→输出track参数。
+- 功能：用于批量处理数据文件，输出每个事件的PDC径迹参数。 -->
 
 <h2 id="ridf2treec">RIDF2Tree.C<a class="headerlink" href="#ridf2treec" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>位置</strong>：users/tbt/tbt_try/RIDF2Tree.C  </li>
-<li><strong>作用</strong>：将RIDF原始数据解码并保存为ROOT TTree格式，便于后续分析。可包含PDC数据分支。</li>
+<li>位置：users/tbt/tbt_try/RIDF2Tree.C  </li>
+<li>作用：将RIDF原始数据解码并保存为ROOT TTree格式，便于后续分析。可包含PDC数据分支。</li>
 </ul>
 <h2 id="recosamuraicrecotrack_wsksc">RecoSAMURAI.C、RecoTrack_wSks.C<a class="headerlink" href="#recosamuraicrecotrack_wsksc" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>位置</strong>：Macros/SAMURAI/Analysis/RecoSAMURAI.C、Macros/SAMURAI/RKtrace/RecoTrack_wSks.C  </li>
-<li><strong>作用</strong>：主要用于SAMURAI谱仪碎片动量和轨迹的重建，默认用FDC/BDC，但可根据需要修改为用PDC track进行外推和动量重建。</li>
+<li>位置：Macros/SAMURAI/Analysis/RecoSAMURAI.C、Macros/SAMURAI/RKtrace/RecoTrack_wSks.C  </li>
+<li>作用：主要用于SAMURAI谱仪碎片动量和轨迹的重建，默认用FDC/BDC，但可根据需要修改为用PDC track进行外推和动量重建。</li>
 </ul>
 <h2 id="onlinemonitorcc">OnlineMonitor.cc<a class="headerlink" href="#onlinemonitorcc" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>位置</strong>：OnlineMonitor.cc  </li>
-<li><strong>作用</strong>：在线监视宏，支持PDC数据的在线重建和可视化（只要fUsePDC为true）。</li>
+<li>位置：OnlineMonitor.cc  </li>
+<li>作用：在线监视宏，支持PDC数据的在线重建和可视化（只要fUsePDC为true）。</li>
 </ul>
 <h1 id="其它相关">其它相关<a class="headerlink" href="#其它相关" title="Permanent link">#</a></h1>
 <h2 id="samuraipdcxml参数文件">SAMURAIPDC.xml参数文件<a class="headerlink" href="#samuraipdcxml参数文件" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>注意</strong>：你必须保证所有实际用到的PDC通道（geo/ch）都在此文件中有定义，否则重建时会报错。</li>
+<li>注意：你必须保证所有实际用到的PDC通道（geo/ch）都在此文件中有定义，否则重建时会报错。</li>
 </ul>
 <h1 id="总结与建议">总结与建议<a class="headerlink" href="#总结与建议" title="Permanent link">#</a></h1>
 <table>
@@ -3606,30 +3606,30 @@
 </table>
 <h2 id="如何选择和使用">如何选择和使用？<a class="headerlink" href="#如何选择和使用" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>只做PDC重建</strong>：TArtCalibPDCHit、TArtCalibPDCTrack。</li>
-<li><strong>做全链路物理分析</strong>：可在RecoSAMURAI.C、RecoTrack_wSks.C等宏中，将FDC/BDC部分替换为PDC track，实现用PDC track外推到靶点并重建动量。</li>
-<li><strong>在线监视</strong>：用OnlineMonitor.s024，设置fUsePDC=true即可。</li>
+<li>只做PDC重建：TArtCalibPDCHit、TArtCalibPDCTrack。</li>
+<li>做全链路物理分析：可在RecoSAMURAI.C、RecoTrack_wSks.C等宏中，将FDC/BDC部分替换为PDC track，实现用PDC track外推到靶点并重建动量。</li>
+<li>在线监视：用OnlineMonitor.s024，设置fUsePDC=true即可。</li>
 </ul>
 <hr />
 <h2 id="pdc径迹重建的数据流与算法实现流程">PDC径迹重建的数据流与算法实现流程<a class="headerlink" href="#pdc径迹重建的数据流与算法实现流程" title="Permanent link">#</a></h2>
 <h3 id="数据流简述">数据流简述<a class="headerlink" href="#数据流简述" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>输入</strong>：PDC的所有 hit（TArtDCHit），每个 hit 有空间位置（x/y/z）、漂移时间等。</li>
-<li><strong>处理</strong>：在 <code>TArtCalibPDCTrack::ReconstructData()</code> 中，先将 hit 分类（按层、方向），然后用几何方法（如加权重心、直线拟合等）重建出径迹的空间参数。</li>
-<li><strong>输出</strong>：重建出的径迹参数（位置、角度、chi2等）通过 <code>SetAngle</code>、<code>SetPosition</code> 等接口写入 TArtDCTrack 对象。</li>
+<li>输入：PDC的所有 hit（TArtDCHit），每个 hit 有空间位置（x/y/z）、漂移时间等。</li>
+<li>处理：在 <code>TArtCalibPDCTrack::ReconstructData()</code> 中，先将 hit 分类（按层、方向），然后用几何方法（如加权重心、直线拟合等）重建出径迹的空间参数。</li>
+<li>输出：重建出的径迹参数（位置、角度、chi2等）通过 <code>SetAngle</code>、<code>SetPosition</code> 等接口写入 TArtDCTrack 对象。</li>
 </ul>
 <h3 id="典型实现流程以加权重心法为例">典型实现流程（以加权重心法为例）<a class="headerlink" href="#典型实现流程以加权重心法为例" title="Permanent link">#</a></h3>
 <ol>
 <li>
-<p><strong>hit 分类</strong><br />
+<p>hit 分类<br />
    按照丝的方向（u/x/v/y）将所有 hit 分类，分别存入不同的缓冲区。</p>
 </li>
 <li>
-<p><strong>计算每个方向的加权重心</strong><br />
+<p>计算每个方向的加权重心<br />
    对每一层的 hit，计算加权平均位置（权重通常为漂移时间差或信号强度）。</p>
 </li>
 <li>
-<p><strong>拟合直线，得到角度</strong><br />
+<p>拟合直线，得到角度<br />
    用加权重心点进行直线拟合，得到斜率（即角度）：  </p>
 </li>
 <li>X方向：a = (x2 - x1)/(z2 - z1)</li>
@@ -3638,11 +3638,11 @@
    或者用多点最小二乘法拟合。</p>
 </li>
 <li>
-<p><strong>写入 TArtDCTrack</strong><br />
+<p>写入 TArtDCTrack<br />
    用 <code>SetAngle(a, 0)</code> 和 <code>SetAngle(b, 1)</code> 把拟合得到的角度存入 TArtDCTrack 的 ca[0] 和 ca[1]。</p>
 </li>
 <li>
-<p><strong>后续访问</strong><br />
+<p>后续访问<br />
    通过 <code>GetAngle(0)</code> 和 <code>GetAngle(1)</code> 读取 X、Y 方向的角度。</p>
 </li>
 </ol>
@@ -3749,7 +3749,7 @@ void recoPDCTrack(const char* ridffile = &quot;/home/s057/exp/exp2505_s057/anaro
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年6月26日 11:36:55 UTC"><span class="timeago" datetime="2025-06-26T11:36:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年6月26日 11:36:55 UTC">2025-06-26</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         创建日期:

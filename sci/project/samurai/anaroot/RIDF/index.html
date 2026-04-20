@@ -2991,7 +2991,7 @@
   
     <li class="md-nav__item">
       <a href="../anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3473,80 +3473,80 @@
 
 
 <h1 id="riken-ridf-文件构成详解数据块-block-说明">RIKEN RIDF 文件构成详解：数据块 (Block) 说明<a class="headerlink" href="#riken-ridf-文件构成详解数据块-block-说明" title="Permanent link">#</a></h1>
-<p>RIKEN的RIDF（RIBF数据格式）文件是一种**二进制文件**，其基本构成单元是**数据块（Block）**。整个文件就是由一系列这样的数据块串行组成的。每个数据块都描述了一部分特定的信息，例如原始探测器数据、事件信息、计数器数据、注释或状态信息等。</p>
+<p>RIKEN的RIDF（RIBF数据格式）文件是一种二进制文件，其基本构成单元是数据块（Block）。整个文件就是由一系列这样的数据块串行组成的。每个数据块都描述了一部分特定的信息，例如原始探测器数据、事件信息、计数器数据、注释或状态信息等。</p>
 <p>[block[segment[data point]]]的嵌套结构</p>
 <p>[事件 [[事件头], [数据段1 [[段头1], [数据点集合1]]], [数据段2 [[段头2], [数据点集合2]]], ...]]</p>
 <hr />
 <h2 id="通用数据块结构-general-block-structure">通用数据块结构 (General Block Structure)<a class="headerlink" href="#通用数据块结构-general-block-structure" title="Permanent link">#</a></h2>
-<p>每个数据块都以一个或多个**头部字（Header Word(s)）**开始，这些头部字定义了这个数据块的属性和类型。最核心的是第一个头部字，通常为32位（4字节），其结构如下：</p>
+<p>每个数据块都以一个或多个头部字（Header Word(s)）开始，这些头部字定义了这个数据块的属性和类型。最核心的是第一个头部字，通常为32位（4字节），其结构如下：</p>
 <ol>
 <li>
-<p><strong>第一个头部字 (First Header Word - 32 bits)</strong>:</p>
+<p>第一个头部字 (First Header Word - 32 bits):</p>
 <ul>
-<li><strong><code>Revision</code> (2 bits)</strong>: 块格式的版本号。通常为 <code>0b00</code> (即十进制0)，代表版本1。</li>
-<li><strong><code>Layer</code> (2 bits)</strong>: 定义了该数据块在层级结构中的深度。例如，顶层块可能是Layer 0，它包含的子块可能是Layer 1，以此类推。</li>
-<li><strong><code>Class ID</code> (6 bits)</strong>: <strong>这是区分数据块类型的关键字段</strong>。不同的 <code>Class ID</code> 代表了不同种类的数据块，例如事件数据、原始数据段、注释等。下面我们会详细介绍一些常见的 <code>Class ID</code>。</li>
-<li><strong><code>Block Size</code> (22 bits)</strong>: 定义了**整个数据块的总大小**，单位是**短字（short words, 即2字节）**。这个大小包括了头部字本身以及后续的所有数据。通过这个字段，读取程序知道需要读取多少数据才能完整地获取当前块，并找到下一个块的起始位置。</li>
+<li><code>Revision</code> (2 bits): 块格式的版本号。通常为 <code>0b00</code> (即十进制0)，代表版本1。</li>
+<li><code>Layer</code> (2 bits): 定义了该数据块在层级结构中的深度。例如，顶层块可能是Layer 0，它包含的子块可能是Layer 1，以此类推。</li>
+<li><code>Class ID</code> (6 bits): 这是区分数据块类型的关键字段。不同的 <code>Class ID</code> 代表了不同种类的数据块，例如事件数据、原始数据段、注释等。下面我们会详细介绍一些常见的 <code>Class ID</code>。</li>
+<li><code>Block Size</code> (22 bits): 定义了整个数据块的总大小，单位是短字（short words, 即2字节）。这个大小包括了头部字本身以及后续的所有数据。通过这个字段，读取程序知道需要读取多少数据才能完整地获取当前块，并找到下一个块的起始位置。</li>
 </ul>
 </li>
 <li>
-<p><strong>地址字 (Address Word - 32 bits) (通常紧随第一个头部字之后)</strong>:</p>
+<p>地址字 (Address Word - 32 bits) (通常紧随第一个头部字之后):</p>
 <ul>
-<li>这个32位的字通常用于标识数据的来源。对于由前端电子学模块（如VME模块）产生的数据块（例如事件片段），这个地址字通常是**事件片段ID (Event Fragment ID)**，有时也可能是产生该数据的前端计算机的IP地址或其他标识符。</li>
+<li>这个32位的字通常用于标识数据的来源。对于由前端电子学模块（如VME模块）产生的数据块（例如事件片段），这个地址字通常是事件片段ID (Event Fragment ID)，有时也可能是产生该数据的前端计算机的IP地址或其他标识符。</li>
 </ul>
 </li>
 </ol>
-<p><strong>因此，一个典型的数据块通常至少包含 8 字节的头部信息（第一个头部字 + 地址字）。</strong> 之后的内容则完全由 <code>Class ID</code> 来决定。</p>
+<p>因此，一个典型的数据块通常至少包含 8 字节的头部信息（第一个头部字 + 地址字）。 之后的内容则完全由 <code>Class ID</code> 来决定。</p>
 <hr />
 <h2 id="class-id-决定的数据块内容---每块block是什么"><code>Class ID</code> 决定的数据块内容 - “每块block是什么”<a class="headerlink" href="#class-id-决定的数据块内容---每块block是什么" title="Permanent link">#</a></h2>
 <p><code>Class ID</code> 告诉我们这个数据块里装的是什么样的数据。以下是一些在RIDF中常见且重要的 <code>Class ID</code> 及其对应的数据块含义：</p>
 <ul>
 <li>
-<p><strong><code>Class ID = 0</code>: 事件片段 (Event Fragment)</strong></p>
+<p><code>Class ID = 0</code>: 事件片段 (Event Fragment)</p>
 <ul>
-<li><strong>用途</strong>: 代表从一个独立的数据源（例如一个采集卡、一个前端计算机或一个子系统）发送过来的关于一个“事件”的数据包。</li>
-<li><strong>典型内容</strong>:<ul>
+<li>用途: 代表从一个独立的数据源（例如一个采集卡、一个前端计算机或一个子系统）发送过来的关于一个“事件”的数据包。</li>
+<li>典型内容:<ul>
 <li>标准的头部字和地址字（地址字通常是此片段的唯一ID）。</li>
 <li>可能包含一个此片段特有的头部，例如包含时间戳或触发信息。</li>
-<li><strong>核心内容</strong>: 通常包含一个或多个**数据段块 (Segment Block, <code>Class ID = 4</code>)**，这些数据段块里装着来自不同探测器或电子学模块的原始数据。</li>
+<li>核心内容: 通常包含一个或多个数据段块 (Segment Block, <code>Class ID = 4</code>)，这些数据段块里装着来自不同探测器或电子学模块的原始数据。</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p><strong><code>Class ID = 1</code>: 事件汇编 (Event Assembly)</strong></p>
+<p><code>Class ID = 1</code>: 事件汇编 (Event Assembly)</p>
 <ul>
-<li><strong>用途</strong>: 将来自不同数据源（即多个不同的事件片段，<code>Class ID = 0</code>）的、属于同一个物理事件的数据组合在一起。这是事件重建（event building）过程的产物。</li>
-<li><strong>典型内容</strong>:<ul>
+<li>用途: 将来自不同数据源（即多个不同的事件片段，<code>Class ID = 0</code>）的、属于同一个物理事件的数据组合在一起。这是事件重建（event building）过程的产物。</li>
+<li>典型内容:<ul>
 <li>标准的头部字和地址字。</li>
 <li>可能包含一个全局事件头部，例如全局事件号、全局时间戳等。</li>
-<li>包含多个之前描述的**事件片段块 (Event Fragment)**。</li>
+<li>包含多个之前描述的事件片段块 (Event Fragment)。</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p><strong><code>Class ID = 4</code>: 数据段 (Segment)</strong></p>
+<p><code>Class ID = 4</code>: 数据段 (Segment)</p>
 <ul>
-<li><strong>用途</strong>: <strong>这是包含实际原始探测器数据的最基本单位，非常重要！</strong></li>
-<li><strong>典型内容</strong>:<ul>
+<li>用途: 这是包含实际原始探测器数据的最基本单位，非常重要！</li>
+<li>典型内容:<ul>
 <li>标准的头部字和地址字（地址字可能在此层级有特定含义，或继承自父块）。</li>
-<li><strong>段头部 (Segment Header)</strong>: 这是一个此数据段特有的头部，通常包含：<ul>
-<li><strong><code>Segment ID</code> (段标识符)</strong>: 一个整数，唯一标识了这个数据段的来源（例如，哪个探测器、哪个模块）。<code>Segment ID</code> 本身常常又被结构化地定义，包含设备、焦平面、探测器类型和模块号等信息。</li>
+<li>段头部 (Segment Header): 这是一个此数据段特有的头部，通常包含：<ul>
+<li><code>Segment ID</code> (段标识符): 一个整数，唯一标识了这个数据段的来源（例如，哪个探测器、哪个模块）。<code>Segment ID</code> 本身常常又被结构化地定义，包含设备、焦平面、探测器类型和模块号等信息。</li>
 <li>数据类型指示符：指明后续数据的具体格式（例如，是ADC数据、TDC数据、模式字等）。</li>
 <li>通道数或数据字计数等。</li>
 </ul>
 </li>
-<li><strong>数据负载 (Data Payload)</strong>: 实际的原始数据值（例如，ADC的转换结果列表、TDC的时间测量值列表等）。</li>
+<li>数据负载 (Data Payload): 实际的原始数据值（例如，ADC的转换结果列表、TDC的时间测量值列表等）。</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p><strong><code>Class ID = 5</code>: 注释块 (Comment Block)</strong></p>
+<p><code>Class ID = 5</code>: 注释块 (Comment Block)</p>
 <ul>
-<li><strong>用途</strong>: 用于在数据文件中嵌入文本注释，例如运行编号、实验条件、操作员笔记等。</li>
-<li><strong>典型内容</strong>:<ul>
+<li>用途: 用于在数据文件中嵌入文本注释，例如运行编号、实验条件、操作员笔记等。</li>
+<li>典型内容:<ul>
 <li>标准的头部字和地址字。</li>
 <li>一个指定注释长度的字段。</li>
 <li>实际的ASCII或UTF-8文本字符串。</li>
@@ -3555,13 +3555,13 @@
 </ul>
 </li>
 <li>
-<p><strong><code>Class ID = 11, 12, 13</code>: 计数器块 (Scaler Block)</strong></p>
+<p><code>Class ID = 11, 12, 13</code>: 计数器块 (Scaler Block)</p>
 <ul>
-<li><strong>用途</strong>: 存储各种计数器的值（例如，束流强度计数、触发率计数等）。</li>
+<li>用途: 存储各种计数器的值（例如，束流强度计数、触发率计数等）。</li>
 <li><code>Class ID = 11</code>: 非清零计数器 (24位)</li>
 <li><code>Class ID = 12</code>: 清零计数器 (24位)</li>
 <li><code>Class ID = 13</code>: 非清零计数器 (32位)</li>
-<li><strong>典型内容</strong>:<ul>
+<li>典型内容:<ul>
 <li>标准的头部字和地址字。</li>
 <li>通常包含一个指示计数器通道数量的字段。</li>
 <li>一系列计数器的值。</li>
@@ -3570,10 +3570,10 @@
 </ul>
 </li>
 <li>
-<p><strong><code>Class ID = 16</code>: 时间戳块 (Timestamp Block)</strong></p>
+<p><code>Class ID = 16</code>: 时间戳块 (Timestamp Block)</p>
 <ul>
-<li><strong>用途</strong>: 记录时间戳信息，常用于事件同步、死时间计算等。</li>
-<li><strong>典型内容</strong>:<ul>
+<li>用途: 记录时间戳信息，常用于事件同步、死时间计算等。</li>
+<li>典型内容:<ul>
 <li>标准的头部字和地址字。</li>
 <li>一个或多个高精度的时间戳值。</li>
 </ul>
@@ -3581,14 +3581,14 @@
 </ul>
 </li>
 <li>
-<p><strong><code>Class ID = 21</code>: 状态块 (Status Block)</strong></p>
+<p><code>Class ID = 21</code>: 状态块 (Status Block)</p>
 <ul>
-<li><strong>用途</strong>: 记录DAQ系统或实验的状态信息。</li>
-<li><strong>典型内容</strong>:<ul>
+<li>用途: 记录DAQ系统或实验的状态信息。</li>
+<li>典型内容:<ul>
 <li>标准的头部字和地址字。</li>
-<li><strong><code>Status ID</code></strong>: 进一步细分状态类型。<ul>
-<li><code>Status ID = 11</code>: 运行开始状态 (Run start status)，其内容通常是**XML格式的文本**，描述了运行开始时的各种配置和参数。</li>
-<li><code>Status ID = 12</code>: 运行结束状态 (Run end status)，内容也是**XML格式的文本**，记录运行结束时的信息。</li>
+<li><code>Status ID</code>: 进一步细分状态类型。<ul>
+<li><code>Status ID = 11</code>: 运行开始状态 (Run start status)，其内容通常是XML格式的文本，描述了运行开始时的各种配置和参数。</li>
+<li><code>Status ID = 12</code>: 运行结束状态 (Run end status)，内容也是XML格式的文本，记录运行结束时的信息。</li>
 </ul>
 </li>
 <li>状态数据本身（例如，XML文本内容）。</li>
@@ -3680,7 +3680,7 @@ void convertRIDFtoReadable(const char* ridfFile = &quot;/home/s057/exp/exp2505_s
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年5月30日 07:43:55 UTC"><span class="timeago" datetime="2025-05-30T07:43:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年5月30日 07:43:55 UTC">2025-05-30</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         创建日期:

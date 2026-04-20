@@ -2936,7 +2936,7 @@
   
     <li class="md-nav__item">
       <a href="../anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -4237,7 +4237,7 @@
 <p>本报告旨在为RIKEN RIBF的用户提供一份关于ANAROOT软件框架的详尽中文指南。ANAROOT是RIBF实验中进行在线和离线数据分析的核心工具，基于ROOT开发。本文档将从ANAROOT的基础知识、安装配置讲起，逐步深入到其核心概念、数据处理流程以及脚本编写。</p>
 <p>特别地，本文将重点阐述如何使用ANAROOT分析SAMURAI实验中的漂移室 (DC, 即用户所称的质子漂移室PDC) 和NEBULA中子探测器的数据，包括数据刻度、径迹重建、中子鉴别等关键步骤。此外，文档将明确澄清先前存在的关于BigRIPS焦平面PPACs被误认为PDC的情况，并详细区分两者在实验中的功能和数据分析方法。</p>
 <p>通过本指南，用户有望从ANAROOT的初学者成长为能够独立进行复杂数据分析的熟练使用者。</p>
-<p><strong>关键词:</strong> ANAROOT, RIKEN, RIBF, SAMURAI, PDC, DC, NEBULA, ROOT, 数据分析, 核物理实验</p>
+<p>关键词: ANAROOT, RIKEN, RIBF, SAMURAI, PDC, DC, NEBULA, ROOT, 数据分析, 核物理实验</p>
 <hr />
 <h2 id="第一部分anaroot基础">第一部分：ANAROOT基础<a class="headerlink" href="#第一部分anaroot基础" title="Permanent link">#</a></h2>
 <h3 id="1-anaroot简介">1. ANAROOT简介<a class="headerlink" href="#1-anaroot简介" title="Permanent link">#</a></h3>
@@ -4254,24 +4254,24 @@
 <h4 id="13-anaroot的主要功能与核心组件">1.3 ANAROOT的主要功能与核心组件<a class="headerlink" href="#13-anaroot的主要功能与核心组件" title="Permanent link">#</a></h4>
 <p>ANAROOT提供了一整套面向RIBF实验数据分析的功能，其核心组件涵盖了从原始数据处理到物理结果提取的完整流程：</p>
 <ul>
-<li><strong>RIDF原始数据解码:</strong> 这是ANAROOT的基础功能，能够解析RIBF DAQ系统产生的RIDF格式数据 [1]。</li>
-<li><strong>多样化的数据输入接口:</strong> 支持从RIDF文件、在线共享内存以及数据流等多种来源读取数据，满足离线分析和在线监控的需求 [1, 4]。</li>
-<li><strong>RIBF探测器重建库:</strong> 包含了针对RIBF主要探测器系统的重建程序库，如BigRIPS（用于次级束流的粒子鉴别）、SAMURAI谱仪（用于反应产物的动量分析和中子探测）以及EURICA阵列（用于伽马射线探测和基于时间戳的事例重建）[2, 5]。</li>
-<li><strong>刻度功能:</strong> 提供针对特定探测器或物理量的刻度模块，例如总动能 (TKE) 刻度、SAMURAI-TED（靶区能量损失探测器）和SAMURAI-ICF（离子室）的刻度 [2]。</li>
-<li><strong>数据处理与管理:</strong> 包含从RIDF数据头获取运行信息 (RunInfo)、处理射频信号 (RF signal) 的Plastic类、以及管理FADC原始数据容器等功能 [2]。</li>
-<li><strong>在线监控:</strong> <code>AnaLoop</code> 例程主要用于在线监控实验数据质量和探测器状态 [2]。</li>
-<li><strong>命令行用户界面 (CUI):</strong> 提供基于文本的交互界面，包括类似ANAPAW的命令行（通过Nadeko库实现）以及用户可自定义的 <code>AnaLoop</code> 分析例程 [1]。</li>
+<li>RIDF原始数据解码: 这是ANAROOT的基础功能，能够解析RIBF DAQ系统产生的RIDF格式数据 [1]。</li>
+<li>多样化的数据输入接口: 支持从RIDF文件、在线共享内存以及数据流等多种来源读取数据，满足离线分析和在线监控的需求 [1, 4]。</li>
+<li>RIBF探测器重建库: 包含了针对RIBF主要探测器系统的重建程序库，如BigRIPS（用于次级束流的粒子鉴别）、SAMURAI谱仪（用于反应产物的动量分析和中子探测）以及EURICA阵列（用于伽马射线探测和基于时间戳的事例重建）[2, 5]。</li>
+<li>刻度功能: 提供针对特定探测器或物理量的刻度模块，例如总动能 (TKE) 刻度、SAMURAI-TED（靶区能量损失探测器）和SAMURAI-ICF（离子室）的刻度 [2]。</li>
+<li>数据处理与管理: 包含从RIDF数据头获取运行信息 (RunInfo)、处理射频信号 (RF signal) 的Plastic类、以及管理FADC原始数据容器等功能 [2]。</li>
+<li>在线监控: <code>AnaLoop</code> 例程主要用于在线监控实验数据质量和探测器状态 [2]。</li>
+<li>命令行用户界面 (CUI): 提供基于文本的交互界面，包括类似ANAPAW的命令行（通过Nadeko库实现）以及用户可自定义的 <code>AnaLoop</code> 分析例程 [1]。</li>
 </ul>
 <p>提及“类似ANAPAW的命令行” [1] 表明ANAROOT在设计时考虑到了用户习惯的平稳过渡。PAW (Physics Analysis Workstation) 是在ROOT广泛应用之前，由CERN等实验室普遍使用的一款数据分析软件，拥有其独特的命令行语法。ANAROOT提供这种熟悉的界面，旨在降低那些有PAW使用经验的物理学家的学习门槛，使他们能够更快地适应新系统，特别是在进行在线监控或执行简单的交互式分析任务时。尽管ROOT是底层的核心框架，ANAROOT的这一特性为部分用户提供了更为直观的操作方式。</p>
 <h3 id="2-anaroot的安装与环境配置">2. ANAROOT的安装与环境配置<a class="headerlink" href="#2-anaroot的安装与环境配置" title="Permanent link">#</a></h3>
 <h4 id="21-linux环境下的安装步骤">2.1 Linux环境下的安装步骤<a class="headerlink" href="#21-linux环境下的安装步骤" title="Permanent link">#</a></h4>
 <p>在Linux环境下安装ANAROOT，首先需要确保ROOT环境已正确安装和配置，随后根据ANAROOT的版本选择相应的安装方法。</p>
 <ul>
-<li><strong>前提：ROOT的安装与配置</strong></li>
+<li>前提：ROOT的安装与配置</li>
 </ul>
 <p>ANAROOT的运行完全依赖于ROOT库，因此必须首先安装ROOT。用户可以从ROOT的官方网站 (<code>root.cern.ch</code>) 下载所需版本的ROOT软件包 [2]。安装完成后，需要正确设置ROOT相关的环境变量，通常通过在shell中执行 <code>$ROOTSYS/bin/thisroot.sh</code> 脚本来完成，其中 <code>$ROOTSYS</code> 指向ROOT的安装路径 [2]。</p>
 <ul>
-<li><strong>依赖项</strong></li>
+<li>依赖项</li>
 </ul>
 <p>安装ANAROOT（尤其是v4.5及更早版本）需要一系列第三方开发库 [2]。这些库为ANAROOT的编译和运行提供必要支持。</p>
 <p>对于ANAROOT v4.5及更早版本，主要的依赖项包括：</p>
@@ -4284,11 +4284,11 @@
 </ul>
 <p>若需要使用MINOS（一种时间投影室）相关的分析模块，还需要额外安装 <code>minos-fem</code> 库 [2]。<code>libxml2-devel</code> 的明确列出，突显了XML在ANAROOT参数管理中的核心地位。这意味着用户在自定义分析流程时，对XML结构的理解将大有裨益，因为探测器参数、刻度常数和分析设置等都可能通过XML文件进行配置。</p>
 <ul>
-<li><strong>获取ANAROOT源码</strong></li>
+<li>获取ANAROOT源码</li>
 </ul>
 <p>ANAROOT的官方源码包通常以 <code>.tgz</code> 压缩文件的形式发布，可从RIKEN RIBFDAQ的官方网站获取，例如 <code>anaroot_v4.6.1.tgz</code> 或 <code>anaroot_v4.5.40.tgz</code> [2]。虽然GitHub等代码托管平台也提供源码存档功能 [6, 7]，但针对ANAROOT，RIKEN的官方发布渠道应视为最权威的来源。</p>
 <ul>
-<li><strong>CMake编译 (v4.6.1及更新版本)</strong></li>
+<li>CMake编译 (v4.6.1及更新版本)</li>
 </ul>
 <p>对于较新版本的ANAROOT (v4.6.1及以后)，推荐使用CMake进行编译和安装 [2]：</p>
 <ol>
@@ -4305,7 +4305,7 @@
 </ol>
 <p>这种基于CMake的构建方式是现代软件项目中更为主流和推荐的做法，具有良好的跨平台性和灵活性。</p>
 <ul>
-<li><strong>autogen.sh配置 (v4.5及更早版本)</strong></li>
+<li>autogen.sh配置 (v4.5及更早版本)</li>
 </ul>
 <p>对于v4.5及更早版本的ANAROOT，安装过程依赖于autotools构建系统 [2]：</p>
 <ol>
@@ -4320,7 +4320,7 @@
 <p>编译并安装：<code>make install</code></p>
 </li>
 <li>
-<p><strong>表 1: ANAROOT Linux环境安装依赖项</strong></p>
+<p>表 1: ANAROOT Linux环境安装依赖项</p>
 </li>
 </ol>
 <table>
@@ -4391,57 +4391,57 @@
 <h4 id="23-常见安装问题与故障排除">2.3 常见安装问题与故障排除<a class="headerlink" href="#23-常见安装问题与故障排除" title="Permanent link">#</a></h4>
 <p>安装过程中可能会遇到一些问题。根据现有资料，以下是一些已知的特定问题及其解决方法：</p>
 <ul>
-<li><strong>v4.5及更早版本，从其他PC复制文件后启动ROOT出错：</strong> 尝试在执行 <code>./autogen.sh</code> 之前运行 <code>make distclean</code> 命令。此命令会清除之前编译生成的所有文件，确保一个干净的编译环境 [2]。</li>
-<li><strong>MAC OS X 特定问题：</strong></li>
+<li>v4.5及更早版本，从其他PC复制文件后启动ROOT出错： 尝试在执行 <code>./autogen.sh</code> 之前运行 <code>make distclean</code> 命令。此命令会清除之前编译生成的所有文件，确保一个干净的编译环境 [2]。</li>
+<li>MAC OS X 特定问题：</li>
 <li><code>libtoolize</code> 命令可能未安装，此时应使用 <code>glibtoolize</code> 代替，并相应修改 <code>autogen.sh</code> 脚本 [2]。</li>
 <li>MAC OS X 上的共享库文件后缀为 <code>.dylib</code>，而ROOT的 <code>gSystem-&gt;Load("...")</code> 函数可能期望 <code>.so</code> 后缀。此时需要将 <code>.dylib</code> 文件重命名或创建符号链接为 <code>.so</code> 文件 [2]。</li>
-<li><strong>独立加载 <code>analoop</code> 库：</strong> 如果需要单独加载 <code>analoop</code> 相关的库，可能需要修改 <code>rootlogon.C</code> 文件，确保加载的是 <code>libanaloop.so</code>, <code>libanaloopexample.so</code>, 和 <code>libanaloopencexample.so</code> 而非 <code>libanaanaloop.so</code> [2]。</li>
+<li>独立加载 <code>analoop</code> 库： 如果需要单独加载 <code>analoop</code> 相关的库，可能需要修改 <code>rootlogon.C</code> 文件，确保加载的是 <code>libanaloop.so</code>, <code>libanaloopexample.so</code>, 和 <code>libanaloopencexample.so</code> 而非 <code>libanaanaloop.so</code> [2]。</li>
 </ul>
 <p>由于公开的故障排除信息相对有限 [2]，主要集中在上述几个特定场景。对于更复杂的安装问题，用户可能需要查阅ANAROOT的邮件列表（若有）、RIKEN内部的文档，或直接联系ANAROOT的开发者（如T. Isobe曾被提及为联系人 [3]）寻求帮助。因此，在安装过程中严格遵循官方步骤，并确保所有依赖项均已正确安装，是避免问题的关键。</p>
 <h3 id="3-anaroot核心概念与软件架构">3. ANAROOT核心概念与软件架构<a class="headerlink" href="#3-anaroot核心概念与软件架构" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>3.1 数据处理流程：从RIDF到物理结果</strong> [1, 5]</li>
+<li>3.1 数据处理流程：从RIDF到物理结果 [1, 5]</li>
 </ul>
 <p>ANAROOT的数据处理遵循一个典型的实验数据分析流程，从原始数据输入开始，经过解码、刻度、重建，最终到用户进行物理分析。</p>
 <ul>
 <li>
-<p><strong>RIDF原始数据 (Raw Data)</strong></p>
+<p>RIDF原始数据 (Raw Data)</p>
 <p>分析的起点是RIDF格式的原始数据。这些数据由RIBF的Babirl数据采集系统生成，可以存储为离线文件，也可以通过在线共享内存或数据流的形式获取 [1]。</p>
 </li>
 <li>
-<p><strong>解码 (Decoding) - <code>TArtEventStore</code></strong></p>
+<p>解码 (Decoding) - <code>TArtEventStore</code></p>
 <p>原始的二进制数据对用户而言是不可直接解读的。<code>TArtEventStore</code> 类负责读取并解码RIDF原始数据 [1]。解码后的数据以 <code>TArtRawEventObject</code> 对象的形式存在，该对象包含了诸如运行号、事例号、时间戳等事件信息，以及一个由 <code>TArtRawSegmentObject</code> 构成的数组 [5, 8]。每个 <code>TArtRawSegmentObject</code> 对应于数据采集系统中的一个数据段（segment），它内部又包含了设备标识符（如探测器ID）和一系列 <code>TArtRawDataObject</code> [5, 8]。<code>TArtRawDataObject</code> 则是最基本的数据单元，存储了单个通道的原始测量值（如ADC、TDC值）。</p>
 <p>用户可以通过 <code>TArtEventStore::Open()</code> 方法打开RIDF文件或连接到在线数据源 [1, 4]，并通过 <code>TArtEventStore::GetNextEvent()</code> 遍历事例。若使用了映射文件（通过 <code>TArtEventStore::LoadMapConfig()</code> 加载），还可以利用 <code>TArtRawDataObject</code> 的 <code>GetCategoryID()</code>、<code>GetDetectorID()</code> 和 <code>GetDatatypeID()</code> 等方法，以类似ANAPAW的方式获取与探测器通道相关的标识信息 [5, 8]。</p>
 </li>
 <li>
-<p><strong>刻度 (Calibration) - <code>TArtCalibXXX</code>系列类</strong></p>
+<p>刻度 (Calibration) - <code>TArtCalibXXX</code>系列类</p>
 <p>解码后的原始数据（如ADC道数、TDC计数）需要转换为具有物理意义的量（如能量、时间、位置）。这一过程由 <code>TArtCalibXXX</code> 系列的刻度类完成 [1, 5]。例如，<code>TArtCalibPPAC</code> 用于刻度PPAC探测器的数据，<code>TArtCalibPID</code> 用于进行粒子鉴别相关的整体刻度 [1]。对于SAMURAI实验中的探测器，如漂移室 (BDC, FDC)、塑料闪烁体阵列 (HODF/P)、离子室 (ICF) 和NEBULA中子探测器，ANAROOT也提供了相应的刻度类（例如 <code>TArtCalibSAMURAI</code> 下的子模块或独立的 <code>TArtCalibNEBULA</code> 等）[5, 8]。</p>
 </li>
 <li>
-<p><strong>重建 (Reconstruction) - <code>TArtRecoXXX</code>系列类</strong></p>
+<p>重建 (Reconstruction) - <code>TArtRecoXXX</code>系列类</p>
 <p>在数据刻度完成之后，重建步骤利用刻度后的数据、探测器的几何信息以及物理学算法来重建物理事例的完整信息 [1, 5]。例如，<code>TArtRecoTOF</code> 类用于重建飞行时间，而SAMURAI的漂移室数据则通过 <code>TArtDCTrack</code> 等类进行径迹重建，从而得到带电粒子的运动轨迹和动量等信息 [5, 8]。</p>
 </li>
 <li>
-<p><strong>用户分析 (User Analysis)</strong></p>
+<p>用户分析 (User Analysis)</p>
 <p>最后阶段是用户分析，物理学家在这一层面利用重建好的物理量，通过设置选择条件（“切口”）、拟合数据分布、构建物理模型等手段，提取感兴趣的物理结果 [1]。<code>AnaLoop</code> 框架是用户进行自定义分析的主要工具。</p>
 </li>
 </ul>
 <p>ANAROOT所采用的这种“解码 -&gt; 刻度 -&gt; 重建”的三步分析架构 [5, 8] 是高能物理和核物理实验数据处理中的一个标准范式。这种模块化的设计使得各个处理阶段的任务明确分离，不仅便于并行开发和分工协作，也使得代码的维护和调试更为容易。用户可以根据自己的需求，在不同的处理阶段介入，获取所需的数据对象。</p>
 <ul>
-<li><strong>3.2 关键数据结构与类库</strong> [5, 8]</li>
+<li>3.2 关键数据结构与类库 [5, 8]</li>
 </ul>
 <p>ANAROOT提供了一系列核心类来组织和管理数据流。</p>
 <ul>
 <li>
-<p><strong><code>TArtStoreManager</code>:</strong></p>
+<p><code>TArtStoreManager</code>:</p>
 <p>该类是ANAROOT中数据和参数管理的“神经中枢” [5, 8]。它负责管理各种数据容器（data container）的输入输出，以及分析参数的存取。所有的数据容器（通常是 <code>TClonesArray</code> 对象，这是ROOT中用于高效存储同类对象集合的标准类）在创建后会注册到 <code>TArtStoreManager</code> 中，用户分析代码可以通过它提供的接口（如 <code>FindDataContainer&lt;Type&gt;("name")</code>）来获取指向特定数据容器的指针 [5, 8]。<code>TArtStoreManager.hh</code> 头文件中有其功能的详细说明。可以认为 <code>TArtStoreManager</code> 是一个单例（Singleton）模式或全局访问点，为用户代码提供了一个统一的、便捷的途径来访问当前事例中所有探测器的原始数据、刻度后数据以及重建结果，还有全局的分析参数。这极大地简化了在复杂分析代码中传递大量数据对象指针的繁琐工作。</p>
 </li>
 <li>
-<p><strong><code>TArtRawDataObject</code>, <code>TArtRawSegmentObject</code>, <code>TArtRawEventObject</code>:</strong></p>
+<p><code>TArtRawDataObject</code>, <code>TArtRawSegmentObject</code>, <code>TArtRawEventObject</code>:</p>
 <p>这三个类构成了对已解码原始数据的底层访问接口 [5, 8]。<code>TArtRawEventObject</code> 封装了一个完整事例的原始信息，包括运行号、事例号、时间戳以及一个 <code>TArtRawSegmentObject</code> 的数组。每个 <code>TArtRawSegmentObject</code> 对应于DAQ系统中的一个数据段（segment），包含了设备ID（如探测器编号）和一组 <code>TArtRawDataObject</code>。<code>TArtRawDataObject</code> 则是最小的数据单元，存储了单个电子学通道的原始值（如ADC或TDC值）。详细的数据格式定义可以参考RIBF DAQ手册中的Dataformat部分 [5, 8]。理解这些类的结构对于进行底层数据校验或开发新的解码/刻度模块至关重要。</p>
 </li>
 <li>
-<p><strong>探测器数据容器 (Detector Data Containers):</strong></p>
+<p>探测器数据容器 (Detector Data Containers):</p>
 <p>ANAROOT为各种探测器和物理量定义了专门的数据容器类，用于存储刻度后或重建后的信息。这些容器通常以 <code>TClonesArray</code> 的形式由 <code>TArtStoreManager</code> 管理 [5, 8]。</p>
 <p>例如：</p>
 <ul>
@@ -4453,7 +4453,7 @@
 <p>用户在分析特定探测器数据时，就需要从 <code>TArtStoreManager</code> 中获取相应类型的这些数据容器。</p>
 </li>
 <li>
-<p><strong>3.3 参数管理：XML文件的使用</strong> [1, 8, 9]</p>
+<p>3.3 参数管理：XML文件的使用 [1, 8, 9]</p>
 </li>
 </ul>
 <p>ANAROOT广泛采用XML (Extensible Markup Language) 文件来管理实验中的各种参数，如探测器几何位置、刻度常数、分析阈值（切口参数）等 [5, 8]。这种做法将参数配置与分析代码本身分离，使得修改参数无需重新编译代码，极大地提高了分析工作的灵活性和效率。</p>
@@ -4468,7 +4468,7 @@
 </code></pre></div>
 <p>这种结构化的参数管理方式，特别是引入如 <code>TArtUserParameters</code> 和 <code>TArtSAMURAIParameters</code> 等专用参数类，表明ANAROOT在参数处理上采取了有组织的方法。用户需要理解其分析所涉及的探测器或参数集所对应的XML文件格式，以便正确配置或修改实验参数。这些参数在加载后，通常也会被注册到 <code>TArtStoreManager</code> 中，供后续的刻度和重建模块调用。</p>
 <ul>
-<li><strong>表 2: ANAROOT核心关键类及其功能</strong></li>
+<li>表 2: ANAROOT核心关键类及其功能</li>
 </ul>
 <table>
 <thead>
@@ -4580,17 +4580,17 @@
 <p>这些漂移室的主要功能是在SAMURAI磁场区域内或其后，精确测量核反应产生的带电粒子（如质子、氘核或其他重离子碎片）的运动轨迹。通过分析粒子在磁场中的弯曲程度，可以重建其动量 [12, 13]。这对于研究核结构、核反应机制以及天体核过程等都至关重要。</p>
 <h4 id="43-pdc--sppac">4.3 PDC &amp; SPPAC<a class="headerlink" href="#43-pdc--sppac" title="Permanent link">#</a></h4>
 <ol>
-<li><strong>探测器技术原理：</strong><ul>
-<li><strong>PPACs (平行板雪崩计数器):</strong> 是一种气体探测器，通常设计用于提供快速的时间响应和较好的二维位置分辨。其结构相对简单，依赖于平行电极板间的气体雪崩来放大信号。</li>
-<li><strong>DCs (漂移室):</strong> 也是气体探测器，但其设计更为复杂，旨在通过精确测量电离电子在特定电场中漂移到阳极丝的时间（漂移时间）来实现高精度的三维径迹点重建。这通常需要更精细的电极结构和气体控制。</li>
+<li>探测器技术原理：<ul>
+<li>PPACs (平行板雪崩计数器): 是一种气体探测器，通常设计用于提供快速的时间响应和较好的二维位置分辨。其结构相对简单，依赖于平行电极板间的气体雪崩来放大信号。</li>
+<li>DCs (漂移室): 也是气体探测器，但其设计更为复杂，旨在通过精确测量电离电子在特定电场中漂移到阳极丝的时间（漂移时间）来实现高精度的三维径迹点重建。这通常需要更精细的电极结构和气体控制。</li>
 </ul>
 </li>
-<li><strong>位置与核心功能：</strong><ul>
-<li><strong>BigRIPS PPACs:</strong> 安装在SAMURAI靶区的上游，是BigRIPS次级束流分离器的一部分。其核心功能是为进入SAMURAI靶区的每一个束流粒子提供精确的身份识别（通过TOF-Bρ-ΔE方法）和初始运动学参数（如位置、角度）。</li>
-<li><strong>SAMURAI DCs (PDCs):</strong> 安装在SAMURAI靶区周围及SAMURAI超导磁铁之后。其核心功能是追踪从靶上发生的核反应中出射的带电粒子，并通过它们在磁场中的偏转来精确重建其动量。</li>
+<li>位置与核心功能：<ul>
+<li>BigRIPS PPACs: 安装在SAMURAI靶区的上游，是BigRIPS次级束流分离器的一部分。其核心功能是为进入SAMURAI靶区的每一个束流粒子提供精确的身份识别（通过TOF-Bρ-ΔE方法）和初始运动学参数（如位置、角度）。</li>
+<li>SAMURAI DCs (PDCs): 安装在SAMURAI靶区周围及SAMURAI超导磁铁之后。其核心功能是追踪从靶上发生的核反应中出射的带电粒子，并通过它们在磁场中的偏转来精确重建其动量。</li>
 </ul>
 </li>
-<li><strong>ANAROOT中的处理类：</strong><ul>
+<li>ANAROOT中的处理类：<ul>
 <li>BigRIPS PPACs的数据通常由 <code>TArtPPAC</code>, <code>TArtCalibPPAC</code> 等类处理。</li>
 <li>SAMURAI DCs的数据则由 <code>TArtDCHit</code>, <code>TArtDCTrack</code>, <code>TArtCalibDC</code> (或更具体的如 <code>TArtCalibBDC</code>, <code>TArtCalibFDC</code>) 等类处理。</li>
 </ul>
@@ -4601,21 +4601,21 @@
 <h4 id="51-samurai-pdc探测器简介">5.1 SAMURAI PDC探测器简介<a class="headerlink" href="#51-samurai-pdc探测器简介" title="Permanent link">#</a></h4>
 <p>SAMURAI谱仪配备了多套漂移室，用于在不同位置精确测量带电粒子的径迹 [12, 13]。关键的漂移室组件通常包括：</p>
 <ul>
-<li><strong>BDCs (Beam Drift Chambers):</strong> 通常指位于SAMURAI实验靶上游的漂移室，用于精确测定入射束流粒子击中靶的位置和角度。这对于确定反应顶点和入射粒子的运动学参数至关重要。</li>
-<li><strong>FDCs (Forward Drift Chambers):</strong> 通常指位于SAMURAI超导磁铁下游的漂移室，如FDC0（可能在磁铁内或紧邻磁铁入口）、FDC1、FDC2等 [8, 14]。这些探测器用于测量经过磁场偏转后的带电反应产物的径迹。FDC0可能用于提供磁铁入射点的信息，而FDC2则在粒子飞行一段距离后再次测量其位置和角度，从而精确确定其在磁场中的弯曲情况。</li>
+<li>BDCs (Beam Drift Chambers): 通常指位于SAMURAI实验靶上游的漂移室，用于精确测定入射束流粒子击中靶的位置和角度。这对于确定反应顶点和入射粒子的运动学参数至关重要。</li>
+<li>FDCs (Forward Drift Chambers): 通常指位于SAMURAI超导磁铁下游的漂移室，如FDC0（可能在磁铁内或紧邻磁铁入口）、FDC1、FDC2等 [8, 14]。这些探测器用于测量经过磁场偏转后的带电反应产物的径迹。FDC0可能用于提供磁铁入射点的信息，而FDC2则在粒子飞行一段距离后再次测量其位置和角度，从而精确确定其在磁场中的弯曲情况。</li>
 </ul>
 <p>这些漂移室由多层具有特定排布方式的阳极丝和阴极平面构成，当带电粒子穿过漂移室气体时，会产生电离电子，这些电子在电场作用下向最近的阳极丝漂移，通过测量漂移时间即可推算出粒子径迹到阳极丝的距离。</p>
 <h4 id="52-pdc数据特点与anaroot中的表示">5.2 PDC数据特点与ANAROOT中的表示<a class="headerlink" href="#52-pdc数据特点与anaroot中的表示" title="Permanent link">#</a></h4>
 <p>在ANAROOT中，漂移室的数据主要通过以下几个类来表示和处理：</p>
 <ul>
-<li><strong><code>TArtDCHit</code>:</strong> 此类对象通常代表漂移室中单个阳极丝的击中信息 [5, 8]。它可能包含的数据成员有：</li>
+<li><code>TArtDCHit</code>: 此类对象通常代表漂移室中单个阳极丝的击中信息 [5, 8]。它可能包含的数据成员有：</li>
 <li>阳极丝的唯一标识符 (Wire ID)</li>
 <li>层号 (Layer ID)</li>
 <li>原始TDC值 (Raw TDC value)，对应漂移时间</li>
 <li>经过刻度后的漂移时间 (Calibrated Drift Time)</li>
 <li>计算得到的漂移距离 (Calculated Drift Length)</li>
 <li>可能还包括ADC值（如果阳极丝也测量电荷信号，可用于dE/dx信息或提高位置分辨）</li>
-<li><strong><code>TArtDCTrack</code>:</strong> 此类对象代表通过一个或多个漂移室重建出来的带电粒子径迹 [5, 8]。它可能包含的数据成员有：</li>
+<li><code>TArtDCTrack</code>: 此类对象代表通过一个或多个漂移室重建出来的带电粒子径迹 [5, 8]。它可能包含的数据成员有：</li>
 <li>径迹上的空间点坐标 (Track Points)</li>
 <li>径迹在特定参考平面的位置 (X, Y) 和角度 (AngleX, AngleY)</li>
 <li>径迹拟合的质量参数 (如 <span class="arithmatex">\(\chi^2\)</span>/ndf)</li>
@@ -4626,22 +4626,22 @@
 <h4 id="53-pdc数据刻度-tartcalibdc-或类似">5.3 PDC数据刻度 (<code>TArtCalibDC</code> 或类似)<a class="headerlink" href="#53-pdc数据刻度-tartcalibdc-或类似" title="Permanent link">#</a></h4>
 <p>漂移室的原始数据（主要是TDC值）必须经过仔细刻度才能用于精确的径迹重建。刻度过程通常包括以下几个关键步骤，其参数一般从XML文件中加载 [14]：</p>
 <ul>
-<li><strong>漂移时间到漂移距离的转换 (t-d关系):</strong> 这是漂移室刻度的核心。需要为每个漂移单元（或每种类型的漂移单元）确定从测量的漂移时间到粒子径迹与阳极丝之间最短距离（漂移距离）的精确关系。这个t-d关系通常是非线性的，依赖于漂移室的气体种类、压强、温度、电场强度等因素。它通常通过专门的刻度实验（例如，使用已知径迹的宇宙射线或特定束流，或者通过“自刻度”方法）并结合复杂的拟合程序来确定 [14]。刻度结果（如t-d函数的参数）会被存储起来供后续分析使用。</li>
-<li><strong>时间零点 (<span class="arithmatex">\(t_0\)</span>) 的确定:</strong> 每个TDC通道都需要一个精确的时间零点，即粒子恰好穿过阳极丝（漂移时间为零）时对应的TDC读数。<span class="arithmatex">\(t_0\)</span> 的不确定性会直接影响漂移距离的计算精度。</li>
-<li><strong>信号幅度处理 (ADC):</strong> 如果漂移室也记录了阳极丝信号的幅度（ADC值），这些信息可以用于区分不同电离能力的事例，或者通过电荷共享等方法辅助提高位置分辨率，甚至用于粒子鉴别（dE/dx）。ADC数据本身也需要刻度。</li>
-<li><strong>几何校准 (Alignment):</strong> 精确了解每根阳极丝在空间中的位置以及各个漂移室模块之间的相对位置和朝向（即所谓的“内禀对准”和“外部对准”）对于径迹重建至关重要。这些几何参数通常通过精密测量（如光学测量）和束流实验数据进行微调确定，并作为参数输入到分析软件中 [14]。</li>
-<li><strong>参数文件:</strong> 所有这些刻度常数、t-d关系参数、几何参数等，都通过ANAROOT的参数管理系统（通常是XML文件，由 <code>TArtSAMURAIParameters</code> 或其子类加载）提供给刻度和重建模块。</li>
+<li>漂移时间到漂移距离的转换 (t-d关系): 这是漂移室刻度的核心。需要为每个漂移单元（或每种类型的漂移单元）确定从测量的漂移时间到粒子径迹与阳极丝之间最短距离（漂移距离）的精确关系。这个t-d关系通常是非线性的，依赖于漂移室的气体种类、压强、温度、电场强度等因素。它通常通过专门的刻度实验（例如，使用已知径迹的宇宙射线或特定束流，或者通过“自刻度”方法）并结合复杂的拟合程序来确定 [14]。刻度结果（如t-d函数的参数）会被存储起来供后续分析使用。</li>
+<li>时间零点 (<span class="arithmatex">\(t_0\)</span>) 的确定: 每个TDC通道都需要一个精确的时间零点，即粒子恰好穿过阳极丝（漂移时间为零）时对应的TDC读数。<span class="arithmatex">\(t_0\)</span> 的不确定性会直接影响漂移距离的计算精度。</li>
+<li>信号幅度处理 (ADC): 如果漂移室也记录了阳极丝信号的幅度（ADC值），这些信息可以用于区分不同电离能力的事例，或者通过电荷共享等方法辅助提高位置分辨率，甚至用于粒子鉴别（dE/dx）。ADC数据本身也需要刻度。</li>
+<li>几何校准 (Alignment): 精确了解每根阳极丝在空间中的位置以及各个漂移室模块之间的相对位置和朝向（即所谓的“内禀对准”和“外部对准”）对于径迹重建至关重要。这些几何参数通常通过精密测量（如光学测量）和束流实验数据进行微调确定，并作为参数输入到分析软件中 [14]。</li>
+<li>参数文件: 所有这些刻度常数、t-d关系参数、几何参数等，都通过ANAROOT的参数管理系统（通常是XML文件，由 <code>TArtSAMURAIParameters</code> 或其子类加载）提供给刻度和重建模块。</li>
 </ul>
 <h4 id="54-pdc径迹重建与动量分析">5.4 PDC径迹重建与动量分析<a class="headerlink" href="#54-pdc径迹重建与动量分析" title="Permanent link">#</a></h4>
 <p>在漂移室数据刻度完成之后，就可以进行径迹重建和动量分析。</p>
 <ul>
-<li><strong>径迹寻找算法 (Track Finding):</strong><br />
+<li>径迹寻找算法 (Track Finding):<br />
   径迹寻找是从大量的 <code>TArtDCHit</code> 中识别出属于同一粒子穿径的那些击中点，并将它们组合成候选径迹的过程。对于具有多层不同朝向阳极丝的漂移室，这通常是一个复杂的组合问题。一种方法是，对于n个被击中的导线，每根导线都存在两种可能的粒子通过路径（左右模糊性），从而产生 <span class="arithmatex">\(2^n\)</span> 种击中位置组合。每种组合都可以用一个线性函数（或更复杂的函数）进行拟合，其中拟合质量最好的组合被接受为候选径迹 [14]。其他更复杂的算法，如基于连路（road finding）、霍夫变换（Hough transform）或逐步建立径迹的方法（如卡尔曼滤波的初始阶段）也可能被使用。</li>
-<li><strong>径迹拟合 (Track Fitting):</strong><br />
+<li>径迹拟合 (Track Fitting):<br />
   一旦找到了候选径迹（即一组属于同一径迹的击中点），就需要通过拟合算法来精确确定这条径迹的参数，如其在某个参考平面的位置和方向。简单的拟合可以使用直线或抛物线模型（尤其是在无磁场或弱磁场区域）。在强磁场中，通常需要考虑粒子径迹的弯曲，可能采用螺旋线模型或更复杂的数值积分方法。卡尔曼滤波方法是一种强大且广泛应用的径迹拟合技术，它能够迭代地更新径迹参数，并自然地处理多重散射等效应 [15]。拟合后得到的径迹参数，如位置、角度、曲率以及拟合的<span class="arithmatex">\(\chi^2\)</span>值，都存储在 <code>TArtDCTrack</code> 对象中。</li>
 </ul>
 <p>为了提高分辨率，通常还会进行残差修正（residual correction）。残差定义为测量到的击中位置与重建径迹在该导线处预测位置之间的差异。通过分析残差与漂移距离等变量的依赖关系，可以进一步修正t-d关系或局部对准参数，从而优化径迹重建的精度 [14]。<br />
-- <strong>利用SAMURAI磁场进行动量重建:</strong><br />
+- 利用SAMURAI磁场进行动量重建:<br />
   SAMURAI超导磁体提供高达7 特斯拉·米 (Tm) 的弯曲能力 [12, 13]。带电粒子在磁场中运动时会受到洛伦兹力而发生偏转，其偏转半径与粒子的动量成正比，与电荷和磁场强度成反比。通过精确测量粒子在磁铁中（或磁铁前后）的径迹，可以确定其弯曲曲率，进而计算出其磁刚度Bρ。对于已知电荷Z的粒子，其动量p可以通过公式 <span class="arithmatex">\(p = Z \cdot e \cdot B\rho\)</span> 计算得到（其中e是元电荷）[14]。</p>
 <p>一种被称为多维拟合 (Multi-Dimensional Fit, MDF) 的方法被用于SAMURAI的碎片追踪，该方法将已知的磁刚度 (Bρ) 和飞行长度 (<span class="arithmatex">\(l_f\)</span>) 作为漂移室测量到的位置和角度的函数进行拟合。这些拟合函数（通常是多项式组合）的系数通过对大量GEANT4模拟事例进行训练得到。在分析真实数据时，将实验测量的漂移室数据代入这些拟合函数，即可得到该事例的Bρ和<span class="arithmatex">\(l_f\)</span> [14]。这种方法依赖于精确的GEANT4模拟，包括磁场图谱、探测器几何和材料的准确描述。任何模拟与实际情况的偏差都可能引入系统误差，因此，验证和调整模拟参数（如磁场强度因子）是确保动量重建准确性的重要环节 [14]。</p>
 <h4 id="55-实例pdc数据分析脚本宏示例">5.5 实例：PDC数据分析脚本/宏示例<a class="headerlink" href="#55-实例pdc数据分析脚本宏示例" title="Permanent link">#</a></h4>
@@ -4713,9 +4713,9 @@
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Analysis finished. Output saved to &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">outRootFile</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>注意：</strong> 上述代码是一个高度简化的示例框架。实际的ANAROOT分析通常会使用 <code>TArtAnaLoop</code> 的派生类来组织分析逻辑，其中对象的创建和配置在 <code>Construct()</code> 方法中，事件处理在 <code>Calculate()</code> 方法中，清理工作在 <code>Destruct()</code> 方法中。数据容器的确切名称 (<code>"SAMURAIFDCTrack"</code>) 和 <code>TArtDCTrack</code> 类的方法名 (<code>GetPositionX</code>, <code>GetMomentum</code>) 需要参考具体的ANAROOT版本和SAMURAI分析模块的实现。</p>
+<p>注意： 上述代码是一个高度简化的示例框架。实际的ANAROOT分析通常会使用 <code>TArtAnaLoop</code> 的派生类来组织分析逻辑，其中对象的创建和配置在 <code>Construct()</code> 方法中，事件处理在 <code>Calculate()</code> 方法中，清理工作在 <code>Destruct()</code> 方法中。数据容器的确切名称 (<code>"SAMURAIFDCTrack"</code>) 和 <code>TArtDCTrack</code> 类的方法名 (<code>GetPositionX</code>, <code>GetMomentum</code>) 需要参考具体的ANAROOT版本和SAMURAI分析模块的实现。</p>
 <ul>
-<li><strong>表 3: SAMURAI PDC (漂移室) 数据参数示例 (ANAROOT中)</strong></li>
+<li>表 3: SAMURAI PDC (漂移室) 数据参数示例 (ANAROOT中)</li>
 </ul>
 <table>
 <thead>
@@ -4814,44 +4814,44 @@
 <h4 id="63-nebula数据刻度-tartcalibnebula-或类似-14">6.3 NEBULA数据刻度 (<code>TArtCalibNEBULA</code> 或类似) [14]<a class="headerlink" href="#63-nebula数据刻度-tartcalibnebula-或类似-14" title="Permanent link">#</a></h4>
 <p>NEBULA数据的精确刻度对于后续的中子鉴别和物理分析至关重要。</p>
 <ul>
-<li><strong>时间刻度 (Timing Calibration):</strong></li>
-<li><strong>TDC转换:</strong> 将每个PMT的原始TDC道数转换为纳秒 (ns) 单位的时间。这通常通过已知时间间隔的脉冲信号（如电子学测试脉冲或宇宙射线事例）进行线性刻度 [14]。</li>
-<li><strong>Walk修正:</strong> PMT信号的渡越时间可能随信号幅度变化（即“Walk效应”），导致大信号的到达时间看起来更早。需要根据信号幅度（ADC/QDC值）对时间进行修正。常用的修正函数形式如 <span class="arithmatex">\(t_{corr} = t_{raw} - (a/\sqrt{Q} + b)\)</span> 或类似形式，其中Q是电荷值，a和b是拟合参数 [14]。</li>
-<li><strong>棒内时间同步与绝对时间零点:</strong> 同步一根棒两端PMT的时间响应，并确定整个探测器相对于实验触发或束流信号的绝对时间零点。通常利用从靶产生的瞬发<span class="arithmatex">\(\gamma\)</span>射线事例进行。由于<span class="arithmatex">\(\gamma\)</span>射线以光速传播，其飞行时间已知，可以此为基准调整各PMT的时间偏移 [14]。</li>
+<li>时间刻度 (Timing Calibration):</li>
+<li>TDC转换: 将每个PMT的原始TDC道数转换为纳秒 (ns) 单位的时间。这通常通过已知时间间隔的脉冲信号（如电子学测试脉冲或宇宙射线事例）进行线性刻度 [14]。</li>
+<li>Walk修正: PMT信号的渡越时间可能随信号幅度变化（即“Walk效应”），导致大信号的到达时间看起来更早。需要根据信号幅度（ADC/QDC值）对时间进行修正。常用的修正函数形式如 <span class="arithmatex">\(t_{corr} = t_{raw} - (a/\sqrt{Q} + b)\)</span> 或类似形式，其中Q是电荷值，a和b是拟合参数 [14]。</li>
+<li>棒内时间同步与绝对时间零点: 同步一根棒两端PMT的时间响应，并确定整个探测器相对于实验触发或束流信号的绝对时间零点。通常利用从靶产生的瞬发<span class="arithmatex">\(\gamma\)</span>射线事例进行。由于<span class="arithmatex">\(\gamma\)</span>射线以光速传播，其飞行时间已知，可以此为基准调整各PMT的时间偏移 [14]。</li>
 <li>
-<p><strong>运行期间时间漂移修正:</strong> 探测器和电子学系统的时间响应可能随实验运行时间发生缓慢漂移，需要监测并进行修正，例如利用宇宙射线或<span class="arithmatex">\(\gamma\)</span>-flash的平均时间作为参考 [14]。</p>
+<p>运行期间时间漂移修正: 探测器和电子学系统的时间响应可能随实验运行时间发生缓慢漂移，需要监测并进行修正，例如利用宇宙射线或<span class="arithmatex">\(\gamma\)</span>-flash的平均时间作为参考 [14]。</p>
 </li>
 <li>
-<p><strong>位置刻度 (Position Calibration):</strong><br />
+<p>位置刻度 (Position Calibration):<br />
   中子在闪烁体棒中相互作用的位置（沿棒长方向）可以通过测量光信号到达两端PMT的时间差 <span class="arithmatex">\(\Delta t = t_L - t_R\)</span> 来确定。位置 <span class="arithmatex">\(x\)</span> 与 <span class="arithmatex">\(\Delta t\)</span> 近似成线性关系：<span class="arithmatex">\(x \approx v_{eff} \cdot \Delta t / 2 + x_0\)</span>，其中 <span class="arithmatex">\(v_{eff}\)</span> 是光在闪烁体中的有效传播速度，<span class="arithmatex">\(x_0\)</span> 是棒的中心位置或一端的位置。<span class="arithmatex">\(v_{eff}\)</span> 和 <span class="arithmatex">\(x_0\)</span> 需要通过刻度确定，例如利用已知位置的<span class="arithmatex">\(\gamma\)</span>源照射闪烁体棒的不同位置，或利用宇宙射线径迹穿过整根棒时在两端产生的信号 [14]。</p>
 </li>
 <li>
-<p><strong>能量刻度 (Energy Deposition Calibration / Light Output):</strong><br />
+<p>能量刻度 (Energy Deposition Calibration / Light Output):<br />
   PMT测得的电荷量 (ADC/QDC值) 需要转换为粒子在闪烁体中沉积的能量，通常以电子等效能量 MeVee (MeV electron equivalent) 为单位。对于中子探测，实际关心的是反冲质子沉积的能量。塑料闪烁体对不同类型粒子的光产额不同，且对质子等重带电粒子的光产额与其能量之间通常呈非线性关系，这可以用Birks定律等模型来描述 [14]。能量刻度通常使用已知能量的<span class="arithmatex">\(\gamma\)</span>源（如 <span class="arithmatex">\(^{60}Co\)</span>, <span class="arithmatex">\(^{137}Cs\)</span> 等，利用其康普顿散射边缘）或宇宙μ子穿过时的能量损失来进行。</p>
 </li>
 </ul>
 <p>所有这些刻度参数（TDC转换系数、Walk修正参数、时间偏移、位置刻度系数、能量刻度函数参数等）都应存储在XML参数文件中，由ANAROOT的参数管理系统加载。</p>
 <h4 id="64-nebula中子鉴别与分析技术">6.4 NEBULA中子鉴别与分析技术<a class="headerlink" href="#64-nebula中子鉴别与分析技术" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>飞行时间法 (Time-of-Flight, TOF) 计算中子能量/动量:</strong><br />
+<li>飞行时间法 (Time-of-Flight, TOF) 计算中子能量/动量:<br />
   中子不带电，无法直接通过磁场偏转测量其动量。其动能主要通过测量飞行时间 (TOF) 来确定 [14]。TOF是指中子从反应靶点产生到在NEBULA中发生首次相互作用所经过的时间。飞行路径长度 <span class="arithmatex">\(L\)</span> 是从反应靶点到NEBULA中子相互作用点的直线距离。一旦TOF和 <span class="arithmatex">\(L\)</span> 已知，中子的速度 <span class="arithmatex">\(v = L/TOF\)</span> 即可算出。</li>
 </ul>
 <p>对于非相对论性中子，其动能 <span class="arithmatex">\(KE = \frac{1}{2} m_n v^2\)</span>，其中 <span class="arithmatex">\(m_n\)</span> 是中子质量。对于RIBF实验中可能产生的高能中子，需要使用相对论公式：<span class="arithmatex">\(KE = (\gamma - 1)m_n c^2\)</span>，其中洛伦兹因子 <span class="arithmatex">\(\gamma = 1/\sqrt{1 - (v/c)^2}\)</span>。中子的动量 <span class="arithmatex">\(p = \gamma m_n v\)</span>。</p>
 <p>准确的TOF测量需要一个精确的“起始”时间信号（通常来自束流探测器信号、靶区瞬发<span class="arithmatex">\(\gamma\)</span>信号或实验主触发）和一个精确的“终止”时间信号（来自NEBULA PMT）。飞行路径 <span class="arithmatex">\(L\)</span> 的计算则依赖于反应顶点位置和NEBULA中子相互作用点位置的精确重建。<br />
-- <strong>脉冲形状甄别 (Pulse Shape Discrimination, PSD):</strong><br />
+- 脉冲形状甄别 (Pulse Shape Discrimination, PSD):<br />
   塑料闪烁体（尤其是某些特定类型或经过特殊处理的）对不同类型的入射粒子（如<span class="arithmatex">\(\gamma\)</span>射线和中子）产生的闪烁光脉冲形状会有细微差异。中子主要通过反冲质子产生光，而<span class="arithmatex">\(\gamma\)</span>射线主要通过康普顿散射产生电子。反冲质子通常比电子产生更多的慢衰减成分的光信号。利用这一特性，可以通过分析PMT输出脉冲的形状（例如，比较脉冲不同时间窗口内的电荷积分比例，即所谓的“长短门”法或“尾部/总量”法）来区分中子事例和<span class="arithmatex">\(\gamma\)</span>本底事例 [14, 18]。PSD是纯净中子测量的关键技术，尤其是在<span class="arithmatex">\(\gamma\)</span>本底较高的实验环境中。ANAROOT中可能通过 <code>TArtCalibNEBULA</code> 或用户在 <code>AnaLoop</code> 中实现的算法来进行PSD参数的计算和切口的设定。<br />
-- <strong>Cross-talk (串扰) 修正</strong> [14]:<br />
+- Cross-talk (串扰) 修正 [14]:<br />
   一个入射中子可能在NEBULA探测器阵列中发生多次散射，每次散射都可能在一个或多个闪烁体棒中产生信号，这就是所谓的“散射串扰”。此外，一个中子相互作用产生的次级粒子（如另一个中子或<span class="arithmatex">\(\gamma\)</span>射线）也可能击中其他棒，造成“次级粒子串扰”。这些串扰事例会使得对入射中子数目和能量的判断复杂化。</p>
 <p>ANAROOT（或用户分析代码）需要采用算法来识别和剔除这些串扰信号，以正确重建真实的中子击中信息。[14]中提及的串扰排除步骤包括：<br />
-  1.  <strong>TOF切割:</strong> 剔除TOF过小或过大的事例，这些通常对应于随机符合或加速器相关的背景。<br />
-  2.  <strong>聚类 (Clustering):</strong> 将时间和空间上临近的击中组合成“簇 (cluster)”。这有助于排除由次级带电粒子引起的大部分串扰。<br />
-  3.  <strong>能量阈值切割 (Q-cut):</strong> 总能量沉积低于某个阈值（如5 MeVee）的簇被认为是串扰。簇的首个击中也需要有足够的能量沉积以保证良好的TOF分辨。这有助于排除低能<span class="arithmatex">\(\gamma\)</span>射线和散射中子引起的串扰。<br />
-  4.  <strong><span class="arithmatex">\(\gamma\)</span>串扰排除:</strong> 通过比较簇对的特性（如相对速度接近光速且能量较小）来识别高能<span class="arithmatex">\(\gamma\)</span>射线引起的串扰。<br />
-  5.  <strong>因果关系切割 (Causality cut):</strong> 利用散射中子能量损失后速度变慢的特性。如果一个簇可以被解释为由前一个簇中散射出的中子产生，则后者被认为是串扰。<br />
-  6.  <strong>近距离串扰 (Nearby cross-talk):</strong> 特别是针对NeuLAND，对小距离簇之间可能由于分辨不足而存活下来的串扰，施加额外的空间距离切割。<br />
-  7.  <strong>否决逻辑 (Veto condition):</strong> 利用NEBULA墙前方的带电粒子否决板信号，排除其后方探测器墙内由带电粒子引起的伪中子信号。</p>
+  1.  TOF切割: 剔除TOF过小或过大的事例，这些通常对应于随机符合或加速器相关的背景。<br />
+  2.  聚类 (Clustering): 将时间和空间上临近的击中组合成“簇 (cluster)”。这有助于排除由次级带电粒子引起的大部分串扰。<br />
+  3.  能量阈值切割 (Q-cut): 总能量沉积低于某个阈值（如5 MeVee）的簇被认为是串扰。簇的首个击中也需要有足够的能量沉积以保证良好的TOF分辨。这有助于排除低能<span class="arithmatex">\(\gamma\)</span>射线和散射中子引起的串扰。<br />
+  4.  <span class="arithmatex">\(\gamma\)</span>串扰排除: 通过比较簇对的特性（如相对速度接近光速且能量较小）来识别高能<span class="arithmatex">\(\gamma\)</span>射线引起的串扰。<br />
+  5.  因果关系切割 (Causality cut): 利用散射中子能量损失后速度变慢的特性。如果一个簇可以被解释为由前一个簇中散射出的中子产生，则后者被认为是串扰。<br />
+  6.  近距离串扰 (Nearby cross-talk): 特别是针对NeuLAND，对小距离簇之间可能由于分辨不足而存活下来的串扰，施加额外的空间距离切割。<br />
+  7.  否决逻辑 (Veto condition): 利用NEBULA墙前方的带电粒子否决板信号，排除其后方探测器墙内由带电粒子引起的伪中子信号。</p>
 <ul>
-<li><strong>效率与接收度校正 (Efficiency and Acceptance Correction):</strong><br />
+<li>效率与接收度校正 (Efficiency and Acceptance Correction):<br />
   NEBULA探测器对中子的探测效率并非100%，且依赖于中子的能量。同时，由于几何尺寸的限制，探测器只能覆盖一部分立体角（即接收度）。为了得到真实的物理产额，测量的中子计数需要对探测效率和接收度进行修正。这些修正因子通常通过详细的蒙特卡罗模拟（如使用GEANT4软件包）得到 [14]。模拟需要精确描述探测器的几何结构、材料组分以及中子与物质相互作用的物理过程。模拟结果通常需要通过实验数据进行验证和调整，例如，利用已知产额和角分布的中子源（如<span class="arithmatex">\(^{252}\)</span>Cf自发裂变源）或特定核反应（如 <span class="arithmatex">\(^7\text{Li}(p,n)^7\text{Be}\)</span> 反应 [17]）进行刻度和效率标定。[14]中提到，模拟的单中子探测效率会根据专门的实验结果进行一个全局因子的缩放。</li>
 </ul>
 <h4 id="65-实例nebula数据分析脚本宏示例">6.5 实例：NEBULA数据分析脚本/宏示例<a class="headerlink" href="#65-实例nebula数据分析脚本宏示例" title="Permanent link">#</a></h4>
@@ -4921,9 +4921,9 @@
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;NEBULA analysis finished. Output saved to &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">outRootFile</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>注意：</strong> 与PDC示例类似，这是一个概念性框架。实际使用中应通过派生 <code>TArtAnaLoop</code> 来实现。<code>TArtCalibNEBULA</code> 的具体方法和 <code>TArtNEBULAPla</code> 的成员函数（如 <code>GetTOF()</code>, <code>GetQ()</code>, <code>GetPSD()</code>）需要依据ANAROOT的实际定义。TOF的计算通常需要一个起始时间参考（如靶信号或束流塑料闪烁体信号），这可能需要在 <code>AnaLoop</code> 中额外处理。</p>
+<p>注意： 与PDC示例类似，这是一个概念性框架。实际使用中应通过派生 <code>TArtAnaLoop</code> 来实现。<code>TArtCalibNEBULA</code> 的具体方法和 <code>TArtNEBULAPla</code> 的成员函数（如 <code>GetTOF()</code>, <code>GetQ()</code>, <code>GetPSD()</code>）需要依据ANAROOT的实际定义。TOF的计算通常需要一个起始时间参考（如靶信号或束流塑料闪烁体信号），这可能需要在 <code>AnaLoop</code> 中额外处理。</p>
 <ul>
-<li><strong>表 4: NEBULA 数据参数示例 (ANAROOT中)</strong></li>
+<li>表 4: NEBULA 数据参数示例 (ANAROOT中)</li>
 </ul>
 <table>
 <thead>
@@ -5001,42 +5001,42 @@
 <h4 id="71-analoop-tartanaloop-详解">7.1 <code>AnaLoop</code> (<code>TArtAnaLoop</code>) 详解<a class="headerlink" href="#71-analoop-tartanaloop-详解" title="Permanent link">#</a></h4>
 <p><code>AnaLoop</code>（其确切的基类名为 <code>TArtAnaLoop</code>）是ANAROOT中用于控制用户自定义分析流程的核心抽象类 [10]。用户通过继承 <code>TArtAnaLoop</code> 并重写其特定的虚函数，来构建自己的分析模块。主要需要实现的成员函数包括：</p>
 <ul>
-<li><strong><code>Construct()</code></strong>: 此函数在分析开始时（当调用 <code>start()</code> 命令后）被调用一次 [20]。其主要用途是进行分析前的初始化工作，例如创建和配置刻度器 (<code>TArtCalibXXX</code>) 和重建器 (<code>TArtRecoXXX</code>) 对象实例（如 <code>new TArtCalibNEBULA()</code>），以及预定（booking）用户需要的直方图 (<code>TH1</code>, <code>TH2</code>) 和N元组 (<code>TNtuple</code> 或 <code>TTree</code>) [10]。</li>
-<li><strong><code>Calculate()</code></strong>: 此函数在事件循环中为每个事件调用一次 [10]。这是执行主要分析逻辑的地方，包括：</li>
+<li><code>Construct()</code>: 此函数在分析开始时（当调用 <code>start()</code> 命令后）被调用一次 [20]。其主要用途是进行分析前的初始化工作，例如创建和配置刻度器 (<code>TArtCalibXXX</code>) 和重建器 (<code>TArtRecoXXX</code>) 对象实例（如 <code>new TArtCalibNEBULA()</code>），以及预定（booking）用户需要的直方图 (<code>TH1</code>, <code>TH2</code>) 和N元组 (<code>TNtuple</code> 或 <code>TTree</code>) [10]。</li>
+<li><code>Calculate()</code>: 此函数在事件循环中为每个事件调用一次 [10]。这是执行主要分析逻辑的地方，包括：</li>
 <li>从 <code>TArtStoreManager</code> 中获取当前事件的各种数据容器（如 <code>TArtDCHit</code>, <code>TArtNEBULAPla</code> 等）。</li>
 <li>对获取的数据进行筛选、应用物理判选条件（切口）。</li>
 <li>计算派生物理量。</li>
 <li>填充在 <code>Construct()</code> 中预定的直方图和N元组。</li>
-<li><strong><code>Destruct()</code></strong>: 此函数在分析结束时（当调用 <code>end()</code> 命令后，或分析流程正常终止时）被调用一次 [20]。其主要用途是释放在 <code>Construct()</code> 中创建的对象，进行必要的清理工作，防止内存泄漏 [10]。</li>
-<li><strong><code>ClassName()</code></strong>: 一个简单的辅助函数，返回当前 <code>AnaLoop</code> 派生类的名称，主要用于在 <code>status()</code> 命令的输出中显示信息 [10]。</li>
+<li><code>Destruct()</code>: 此函数在分析结束时（当调用 <code>end()</code> 命令后，或分析流程正常终止时）被调用一次 [20]。其主要用途是释放在 <code>Construct()</code> 中创建的对象，进行必要的清理工作，防止内存泄漏 [10]。</li>
+<li><code>ClassName()</code>: 一个简单的辅助函数，返回当前 <code>AnaLoop</code> 派生类的名称，主要用于在 <code>status()</code> 命令的输出中显示信息 [10]。</li>
 </ul>
 <p>用户可以通过两种主要方式使用自定义的 <code>AnaLoop</code>：<br />
-1.  <strong>编译进库 (Built-in to library):</strong> 将派生类源文件（<code>.hh</code> 和 <code>.cc</code>）放置在ANAROOT源码的特定目录下（如 <code>$TARTSYS/source/AnaLoop/include</code> 和 <code>$TARTSYS/source/AnaLoop/src</code>），然后重新编译整个ANAROOT库。这种方式适合提供给不希望深入代码细节的用户，形成一个“黑盒”分析模块 [10]。<br />
-2.  <strong>动态加载宏 (Load dynamically as a macro):</strong> 在用户的工作目录下创建派生类的源文件（例如 <code>MyAnaLoop.C</code>），然后在ROOT/ANAROOT的交互式会话中通过 <code>.L MyAnaLoop.C+</code> 命令进行编译和加载（注意末尾的 <code>+</code> 号表示编译）[10, 4]。这种方式非常适合需要频繁修改和测试分析逻辑的用户，因为它避免了重新编译整个ANAROOT库的耗时过程。</p>
+1.  编译进库 (Built-in to library): 将派生类源文件（<code>.hh</code> 和 <code>.cc</code>）放置在ANAROOT源码的特定目录下（如 <code>$TARTSYS/source/AnaLoop/include</code> 和 <code>$TARTSYS/source/AnaLoop/src</code>），然后重新编译整个ANAROOT库。这种方式适合提供给不希望深入代码细节的用户，形成一个“黑盒”分析模块 [10]。<br />
+2.  动态加载宏 (Load dynamically as a macro): 在用户的工作目录下创建派生类的源文件（例如 <code>MyAnaLoop.C</code>），然后在ROOT/ANAROOT的交互式会话中通过 <code>.L MyAnaLoop.C+</code> 命令进行编译和加载（注意末尾的 <code>+</code> 号表示编译）[10, 4]。这种方式非常适合需要频繁修改和测试分析逻辑的用户，因为它避免了重新编译整个ANAROOT库的耗时过程。</p>
 <p><code>TArtAnaLoop</code> 是ANAROOT中实现定制化分析的核心。它提供了一个清晰的结构来管理分析对象的生命周期和处理事件数据流。特别是动态加载 <code>AnaLoop</code> 宏的功能，为快速开发和调试分析代码提供了极大的便利。</p>
 <p>一个特殊的 <code>AnaLoop</code> 派生类是 <code>TAlEncExample</code>。当用户希望结合使用 <code>Anafile</code>（见7.2节）进行分析时，通常会用到这个类。<code>TAlEncExample</code> 内部会注册一系列继承自 <code>TAlEncSub</code> 的子分析模块（如 <code>TAlEncSAMURAIExample</code>, <code>TAlEncDALIExample</code>, <code>TAlEncNEBULAExample</code>），并按照 <code>Anafile</code> 中 <code>&lt;analys&gt;</code> 标签指定的顺序依次调用这些子模块进行分析 [10]。</p>
 <h4 id="72-anafile-的使用定义直方图切割条件与ntuple">7.2 <code>Anafile</code> 的使用：定义直方图、切割条件与Ntuple<a class="headerlink" href="#72-anafile-的使用定义直方图切割条件与ntuple" title="Permanent link">#</a></h4>
 <p><code>Anafile</code> 是一种文本格式的配置文件，主要用于在线分析或快速离线分析时，以非编程的方式定义直方图、设置数据选择条件（“门”或“切口”）以及定义N元组的结构 [1, 4]。当使用如 <code>TAlEncExample</code> 这样的 <code>AnaLoop</code> 时，可以通过 <code>book(new TAlEncExample, "myconfig.ana")</code> 命令将 <code>Anafile</code> 与分析流程关联起来 [4]。</p>
 <p><code>Anafile</code> 的语法包含一系列特定的标签和参数 [1]：<br />
-- <strong><code>&lt;analys&gt; id1,id2,...&lt;/analys&gt;</code></strong>: 指定分析模块的执行顺序。这里的ID对应于在 <code>TAlEncExample</code> 中注册的 <code>TAlEncSub</code> 模块的枚举类型 <code>EAnalyser</code>。<br />
-- <strong><code>&lt;include&gt; "path/to/another.ana"&lt;/include&gt;</code></strong>: 包含另一个 <code>Anafile</code>，便于模块化管理配置。<br />
-- <strong><code>&lt;gate&gt; gate_id, {analyser_id,start_id,end_id,wnum}, low_val, high_val, "title"&lt;/gate&gt;</code></strong>: 定义一个一维门（切割条件）。<br />
+- <code>&lt;analys&gt; id1,id2,...&lt;/analys&gt;</code>: 指定分析模块的执行顺序。这里的ID对应于在 <code>TAlEncExample</code> 中注册的 <code>TAlEncSub</code> 模块的枚举类型 <code>EAnalyser</code>。<br />
+- <code>&lt;include&gt; "path/to/another.ana"&lt;/include&gt;</code>: 包含另一个 <code>Anafile</code>，便于模块化管理配置。<br />
+- <code>&lt;gate&gt; gate_id, {analyser_id,start_id,end_id,wnum}, low_val, high_val, "title"&lt;/gate&gt;</code>: 定义一个一维门（切割条件）。<br />
   - <code>gate_id</code>: 门的唯一标识。<br />
   - <code>{analyser_id,start_id,end_id,wnum}</code>: 指定门作用的物理量。<code>analyser_id</code> 是 <code>EAnalyser</code> 值，<code>start_id</code> 和 <code>end_id</code> 定义了探测器或通道的范围，<code>wnum</code> 是 <code>EWNum</code> 值，代表具体的物理量（如TOF、能量沉积等）[10]。<br />
   - <code>low_val</code>, <code>high_val</code>: 门的上下限。<br />
   - <code>"title"</code>: 门的描述性标题。<br />
-- <strong><code>&lt;and&gt; new_gate_id, gate_id1, gate_id2,..., "title"&lt;/and&gt;</code></strong>: 将多个已定义的门通过逻辑“与”操作组合成一个新的门。<br />
-- <strong><code>&lt;or&gt; new_gate_id, gate_id1, gate_id2,..., "title"&lt;/or&gt;</code></strong>: 将多个已定义的门通过逻辑“或”操作组合成一个新的门。<br />
-- <strong>1D直方图定义</strong>: <code>gate_id, analyser_id,start_id,end_id,wnum, nbins, xlow, xhigh, "title"</code><br />
+- <code>&lt;and&gt; new_gate_id, gate_id1, gate_id2,..., "title"&lt;/and&gt;</code>: 将多个已定义的门通过逻辑“与”操作组合成一个新的门。<br />
+- <code>&lt;or&gt; new_gate_id, gate_id1, gate_id2,..., "title"&lt;/or&gt;</code>: 将多个已定义的门通过逻辑“或”操作组合成一个新的门。<br />
+- 1D直方图定义: <code>gate_id, analyser_id,start_id,end_id,wnum, nbins, xlow, xhigh, "title"</code><br />
   - <code>gate_id</code>: 应用于此直方图的门ID（0表示无门）。<br />
   - 其他参数与门定义中的类似，<code>nbins</code>, <code>xlow</code>, <code>xhigh</code> 定义直方图的X轴。<br />
-- <strong>2D直方图定义</strong>: <code>gate_id, analyser_id_X,start_id_X,end_id_X,wnum_X, nbinsX, xlow, xhigh, analyser_id_Y,start_id_Y,end_id_Y,wnum_Y, nbinsY, ylow, yhigh, "title"</code><br />
+- 2D直方图定义: <code>gate_id, analyser_id_X,start_id_X,end_id_X,wnum_X, nbinsX, xlow, xhigh, analyser_id_Y,start_id_Y,end_id_Y,wnum_Y, nbinsY, ylow, yhigh, "title"</code><br />
   - 分别定义X轴和Y轴的物理量和范围。</p>
 <p><code>EAnalyser</code> 和 <code>EWNum</code> 是在ANAROOT内部定义的枚举类型（通常在如 <code>EAnalyser.hh</code> 和 <code>EWNum.hh</code> 文件中），用于唯一标识不同的分析模块（探测器系统）和它们产生的物理量 [10]。用户可以通过 <code>lv()</code> 命令在ANAROOT的CUI中查看这些枚举的列表。</p>
 <p><code>Anafile</code> 提供了一种相对简单、基于文本的配置方式，尤其适合在线监控和快速的数据探索性分析，降低了那些不熟悉C++编程的用户进行基本分析设置的门槛。</p>
 <h4 id="73-命令行界面-cui-与常用命令">7.3 命令行界面 (CUI) 与常用命令<a class="headerlink" href="#73-命令行界面-cui-与常用命令" title="Permanent link">#</a></h4>
 <p>ANAROOT提供了一个基于命令行的用户界面 (CUI)，其风格借鉴了早期的ANAPAW分析软件，并使用了Nadeko库来实现 [1]。这个CUI允许用户以交互方式控制分析流程、管理直方图等。以下是一些常用的CUI命令及其功能 [20]：</p>
-<p><strong>分析管理命令:</strong><br />
+<p>分析管理命令:<br />
 - <code>book(TArtAnaLoop* analoop, const char* anafilename = 0)</code>: 注册一个 <code>AnaLoop</code> 对象，并可选地关联一个 <code>Anafile</code>。这是启动分析前必须执行的步骤。示例：<code>book(new TAlRawDataExample, "rawdata.ana")</code> [20, 4]。<br />
 - <code>push(const char* filename, int eventnumber = -1)</code>: 将一个RIDF数据文件添加到待处理的文件栈中。<code>eventnumber</code> 参数可以限制处理该文件中的事件数目（-1表示处理所有事件）。示例：<code>push("run0007.ridf")</code> [20, 4]。<br />
 - <code>push(int sid = 0, int eventnumber = -1)</code>: 连接到在线共享内存数据源。<code>sid</code> 是共享内存ID。示例：<code>push(0)</code> 连接到ID为0的共享内存 [20, 4]。<br />
@@ -5049,7 +5049,7 @@
 - <code>end()</code>: 终止当前分析。<code>AnaLoop</code> 的 <code>Destruct()</code> 方法会被调用 [20]。<br />
 - <code>clear()</code>: 清除所有已预定的直方图，并销毁 <code>TArtAnaLoopManager</code> 对象，重置分析环境 [20]。<br />
 - <code>status()</code>: 打印当前分析的状态信息，如已处理事件数、文件栈内容、当前 <code>AnaLoop</code> 类名等 [20]。</p>
-<p><strong>直方图管理命令:</strong><br />
+<p>直方图管理命令:<br />
 - <code>fetch(char* filename)</code>: 从指定的ROOT文件中读取所有 <code>TH1</code> 对象到当前的ROOT目录中 [20]。<br />
 - <code>hstore(char* filename)</code>: 将当前ROOT目录中所有 <code>TH1</code> 对象保存到指定的ROOT文件中 [20]。<br />
 - <code>hdel(int id_start = -1, int id_end = -1)</code>: 删除指定ID范围内的直方图（若不指定参数则删除所有）[20]。<br />
@@ -5085,7 +5085,7 @@
 9.  分析结束后，保存结果到ROOT文件或其他格式。</p>
 <p>例如，<code>RecoPID.C</code> 宏就展示了如何加载BigRIPS相关的参数，循环处理事件，进行PID重建，并最终输出包含PID相关直方图和N元组的ROOT文件 [2, 4]。用户可以参照这种结构，编写针对SAMURAI PDC和NEBULA数据分析的专用宏。</p>
 <ul>
-<li><strong>表 5: 常用ANAROOT CUI命令及其用法</strong></li>
+<li>表 5: 常用ANAROOT CUI命令及其用法</li>
 </ul>
 <table>
 <thead>
@@ -5183,21 +5183,21 @@
 <h4 id="81-使用root进行直方图和ntuple可视化">8.1 使用ROOT进行直方图和Ntuple可视化<a class="headerlink" href="#81-使用root进行直方图和ntuple可视化" title="Permanent link">#</a></h4>
 <p>[1, 23, 24, 19] ANAROOT中创建的直方图本质上是ROOT的 <code>TH1</code> (一维)、<code>TH2</code> (二维) 或 <code>TH3</code> (三维) 系列对象 [23, 24]。因此，所有ROOT提供的丰富的直方图绘制和操作功能均可直接应用于ANAROOT的分析结果。</p>
 <ul>
-<li><strong>直方图绘制：</strong> 在ANAROOT的CUI中，可以使用 <code>ht(id)</code>, <code>hn()</code>, <code>hb()</code>, <code>htp()</code> 等命令快速绘制已填充的直方图 [20]。在ROOT宏或编译型代码中，可以直接调用 <code>TH1::Draw()</code> 方法，并配合各种绘图选项（如 "COLZ" 绘制颜色填充的二维图，"SAME" 将多个直方图绘制在同一画布，"E" 绘制误差棒等）。</li>
-<li><strong>直方图操作：</strong> ROOT允许对直方图进行多种操作，如重划分bin (Rebin)、归一化 (Normalize)、加减乘除、投影 (ProjectionX, ProjectionY)、拟合 (Fit) 等。这些功能对于数据分析和结果提取非常有用。例如，可以从NEBULA的二维PSD参数 vs 能量沉积图中投影出特定能量区域的PSD分布，然后进行拟合以区分中子和<span class="arithmatex">\(\gamma\)</span>射线。</li>
-<li><strong>Ntuple/TTree可视化：</strong> ANAROOT分析中产生的Ntuple或TTree（例如由 <code>TAlRawDataExample</code> 创建的原始数据Ntuple [4]，或用户在自定义 <code>AnaLoop</code> 中创建的包含重建物理量的TTree）可以使用 <code>TTree::Draw()</code> 方法进行强大的可视化分析。该方法允许用户以灵活的表达式绘制任意变量之间的一维、二维、三维关系图，并可以施加复杂的切割条件。例如，<code>ntp-&gt;Draw("NEBULAPla.fTOF:NEBULAPla.fQ", "NEBULAPla.fPSD &gt; 0.5 &amp;&amp; SAMURAIDCTrack.fMomentum &gt; 1000")</code> 可以绘制NEBULA中满足特定PSD和PDC动量条件的击中的TOF vs Q的二维散点图。<code>TTree::Scan()</code> 方法可以列表形式打印出满足条件的Ntuple条目，<code>TTree::Print()</code> 可以显示Ntuple的结构。</li>
-<li><strong>ROOT图形界面：</strong> <code>TBrowser</code> 是ROOT提供的一个强大的图形化浏览器，用户可以通过它直观地浏览ROOT文件内容，查看和操作其中的直方图、Ntuple等对象，并进行交互式拟合、修改绘图属性等。</li>
+<li>直方图绘制： 在ANAROOT的CUI中，可以使用 <code>ht(id)</code>, <code>hn()</code>, <code>hb()</code>, <code>htp()</code> 等命令快速绘制已填充的直方图 [20]。在ROOT宏或编译型代码中，可以直接调用 <code>TH1::Draw()</code> 方法，并配合各种绘图选项（如 "COLZ" 绘制颜色填充的二维图，"SAME" 将多个直方图绘制在同一画布，"E" 绘制误差棒等）。</li>
+<li>直方图操作： ROOT允许对直方图进行多种操作，如重划分bin (Rebin)、归一化 (Normalize)、加减乘除、投影 (ProjectionX, ProjectionY)、拟合 (Fit) 等。这些功能对于数据分析和结果提取非常有用。例如，可以从NEBULA的二维PSD参数 vs 能量沉积图中投影出特定能量区域的PSD分布，然后进行拟合以区分中子和<span class="arithmatex">\(\gamma\)</span>射线。</li>
+<li>Ntuple/TTree可视化： ANAROOT分析中产生的Ntuple或TTree（例如由 <code>TAlRawDataExample</code> 创建的原始数据Ntuple [4]，或用户在自定义 <code>AnaLoop</code> 中创建的包含重建物理量的TTree）可以使用 <code>TTree::Draw()</code> 方法进行强大的可视化分析。该方法允许用户以灵活的表达式绘制任意变量之间的一维、二维、三维关系图，并可以施加复杂的切割条件。例如，<code>ntp-&gt;Draw("NEBULAPla.fTOF:NEBULAPla.fQ", "NEBULAPla.fPSD &gt; 0.5 &amp;&amp; SAMURAIDCTrack.fMomentum &gt; 1000")</code> 可以绘制NEBULA中满足特定PSD和PDC动量条件的击中的TOF vs Q的二维散点图。<code>TTree::Scan()</code> 方法可以列表形式打印出满足条件的Ntuple条目，<code>TTree::Print()</code> 可以显示Ntuple的结构。</li>
+<li>ROOT图形界面： <code>TBrowser</code> 是ROOT提供的一个强大的图形化浏览器，用户可以通过它直观地浏览ROOT文件内容，查看和操作其中的直方图、Ntuple等对象，并进行交互式拟合、修改绘图属性等。</li>
 </ul>
 <h4 id="82-保存分析结果-root文件-文本文件等">8.2 保存分析结果 (ROOT文件, 文本文件等)<a class="headerlink" href="#82-保存分析结果-root文件-文本文件等" title="Permanent link">#</a></h4>
 <p>分析过程中产生的直方图、Ntuple/TTree以及其他重要的结果对象，需要被妥善保存以供后续查阅、进一步分析或文章发表。</p>
 <ul>
-<li><strong>保存到ROOT文件：</strong></li>
+<li>保存到ROOT文件：</li>
 <li>使用CUI命令 <code>hstore("filename.root")</code> 可以将当前ANAROOT会话内存中（即ROOT的 <code>gDirectory</code> 中）的所有 <code>TH1</code> 对象（包括 <code>TH2</code>, <code>TH3</code>）保存到一个新的或已存在的ROOT文件中 [20]。</li>
 <li>在ROOT宏或编译型代码中，可以创建一个 <code>TFile</code> 对象（以 "RECREATE", "UPDATE", "READ" 等模式打开），然后调用各个对象（如 <code>TH1</code>, <code>TTree</code>）的 <code>Write()</code> 方法将其写入文件，最后关闭 <code>TFile</code> 对象。例如，<code>example/Macros/RIDF2Tree.C</code> 宏就演示了如何将解码后的数据填充到TTree中并保存到ROOT文件 [4]。</li>
-<li><strong>保存为其他格式：</strong></li>
-<li><strong>文本文件：</strong> 对于一些简单的列表数据、参数设置、拟合结果等，可以直接使用C++的文件输出流（<code>std::ofstream</code>）将其保存为文本文件（如 <code>.txt</code>, <code>.csv</code>）。这对于与其他非ROOT基础的软件交换数据，或者进行简单的表格处理可能更为方便。</li>
-<li><strong>图像文件：</strong> ROOT画布 (<code>TCanvas</code>) 上的图像可以直接保存为多种格式的图像文件（如 <code>.png</code>, <code>.jpg</code>, <code>.pdf</code>, <code>.eps</code>），通过画布菜单的 "File -&gt; Save As..." 选项，或在代码中调用 <code>TCanvas::SaveAs("filename.png")</code> 等方法。</li>
-<li><strong>自定义对象：</strong> 如果用户在分析中创建了自定义的C++类对象，并且这些类继承自 <code>TObject</code> 并正确实现了相关的I/O方法（通常通过ROOT的 <code>ClassDef</code> 和 <code>ClassImp</code> 宏以及字典生成来辅助完成），那么这些自定义对象也可以像标准ROOT对象一样被保存到ROOT文件中。</li>
+<li>保存为其他格式：</li>
+<li>文本文件： 对于一些简单的列表数据、参数设置、拟合结果等，可以直接使用C++的文件输出流（<code>std::ofstream</code>）将其保存为文本文件（如 <code>.txt</code>, <code>.csv</code>）。这对于与其他非ROOT基础的软件交换数据，或者进行简单的表格处理可能更为方便。</li>
+<li>图像文件： ROOT画布 (<code>TCanvas</code>) 上的图像可以直接保存为多种格式的图像文件（如 <code>.png</code>, <code>.jpg</code>, <code>.pdf</code>, <code>.eps</code>），通过画布菜单的 "File -&gt; Save As..." 选项，或在代码中调用 <code>TCanvas::SaveAs("filename.png")</code> 等方法。</li>
+<li>自定义对象： 如果用户在分析中创建了自定义的C++类对象，并且这些类继承自 <code>TObject</code> 并正确实现了相关的I/O方法（通常通过ROOT的 <code>ClassDef</code> 和 <code>ClassImp</code> 宏以及字典生成来辅助完成），那么这些自定义对象也可以像标准ROOT对象一样被保存到ROOT文件中。</li>
 </ul>
 <p>选择合适的保存格式取决于结果的类型和后续用途。ROOT文件格式由于其对复杂数据结构和大量数据的良好支持，是高能物理和核物理实验数据分析中最常用的归档格式。</p>
 <h3 id="9-高级话题与技巧">9. 高级话题与技巧<a class="headerlink" href="#9-高级话题与技巧" title="Permanent link">#</a></h3>
@@ -5205,39 +5205,39 @@
 <h4 id="91-在线数据分析">9.1 在线数据分析<a class="headerlink" href="#91-在线数据分析" title="Permanent link">#</a></h4>
 <p>[1, 4] ANAROOT 不仅支持离线数据处理，还具备强大的在线数据分析能力，这对于实验过程中的实时监控、数据质量检查和快速物理反馈至关重要。</p>
 <ul>
-<li><strong>数据源：</strong> ANAROOT 可以直接连接到RIBF DAQ系统产生的在线数据流。这通常通过两种方式实现：读取共享内存 (shared memory) 中的数据，或者从数据流服务器 (data streaming server) 获取数据 [1, 4]。在CUI中，使用 <code>push(0)</code> (或其他共享内存ID) 命令即可连接到共享内存数据源 [4]。</li>
-<li><strong><code>AnaLoop</code> 的应用：</strong> <code>AnaLoop</code> 框架是实现在线监控的核心。用户可以在 <code>AnaLoop</code> 的 <code>Calculate()</code> 方法中实现对每个在线事例的快速处理，例如填充关键物理量的直方图、检查探测器计数率、监控触发条件等 [2]。这些直方图可以在分析过程中动态更新显示，为实验人员提供实时的可视化反馈。</li>
-<li><strong>分布式在线计算：</strong> 对于数据率较高或在线分析任务较重的实验，RIBF采用了分布式在线计算架构 [1]。该架构通常包括 <code>babild</code> (事件构建服务器，Event Building Server) 和 <code>babian</code> (在线分析服务器，Online analysis Server)。多个桌面PC可以运行ANAROOT实例，分别连接到 <code>babian</code> 服务器获取数据并进行并行处理。这种分布式设计不仅提高了在线分析的处理能力，也增强了系统的稳定性，单个分析节点的故障不会影响到主DAQ系统或其他分析节点 [1]。这种架构对于大型实验而言，是保障有效在线监控和数据质量控制的关键。</li>
+<li>数据源： ANAROOT 可以直接连接到RIBF DAQ系统产生的在线数据流。这通常通过两种方式实现：读取共享内存 (shared memory) 中的数据，或者从数据流服务器 (data streaming server) 获取数据 [1, 4]。在CUI中，使用 <code>push(0)</code> (或其他共享内存ID) 命令即可连接到共享内存数据源 [4]。</li>
+<li><code>AnaLoop</code> 的应用： <code>AnaLoop</code> 框架是实现在线监控的核心。用户可以在 <code>AnaLoop</code> 的 <code>Calculate()</code> 方法中实现对每个在线事例的快速处理，例如填充关键物理量的直方图、检查探测器计数率、监控触发条件等 [2]。这些直方图可以在分析过程中动态更新显示，为实验人员提供实时的可视化反馈。</li>
+<li>分布式在线计算： 对于数据率较高或在线分析任务较重的实验，RIBF采用了分布式在线计算架构 [1]。该架构通常包括 <code>babild</code> (事件构建服务器，Event Building Server) 和 <code>babian</code> (在线分析服务器，Online analysis Server)。多个桌面PC可以运行ANAROOT实例，分别连接到 <code>babian</code> 服务器获取数据并进行并行处理。这种分布式设计不仅提高了在线分析的处理能力，也增强了系统的稳定性，单个分析节点的故障不会影响到主DAQ系统或其他分析节点 [1]。这种架构对于大型实验而言，是保障有效在线监控和数据质量控制的关键。</li>
 </ul>
 <h4 id="92-多探测器联合分析初步">9.2 多探测器联合分析初步<a class="headerlink" href="#92-多探测器联合分析初步" title="Permanent link">#</a></h4>
 <p>现代核物理实验通常涉及多个子探测器系统，它们从不同角度和层面记录同一个物理事例的信息。要完整地理解和重构物理事例，往往需要将来自不同探测器的信息关联起来进行联合分析。</p>
 <ul>
-<li><strong>数据整合基础：</strong> ANAROOT的 <code>TArtStoreManager</code> 在此扮演了关键角色。在一个事例的处理周期内（例如在 <code>TArtAnaLoop::Calculate()</code> 方法中），<code>TArtStoreManager</code> 允许用户获取当前事例中所有已注册探测器的数据容器 [5, 8]。这意味着分析代码可以同时访问来自SAMURAI PDC的径迹信息、来自NEBULA的中子信息、来自BigRIPS的入射粒子鉴别信息（如果相关数据流已合并或可关联）等。</li>
-<li><strong>事例匹配与关联：</strong> 进行联合分析的前提是能够正确匹配属于同一物理事例的不同探测器的信号。这通常基于事件号 (event number) 或高精度的时间戳 (timestamp) 来实现。ANAROOT的事件构建机制（尤其是在线分析中的 <code>babild</code>）会处理原始数据的事例对齐问题。</li>
-<li><strong>分析示例：</strong></li>
-<li><strong>门条件设置：</strong> 可以利用一个探测器的信息作为对另一个探测器数据进行筛选的门条件。例如，根据BigRIPS PPACs鉴别出的入射粒子种类，来选择性地分析NEBULA的中子数据；或者，根据SAMURAI PDC重建出的带电粒子径迹特征（如动量、散射角），来研究与之符合出射的中子的性质。</li>
-<li><strong>运动学重建：</strong> 在一些反应道中，通过测量所有末态粒子的动量矢量（例如，PDC测量带电粒子，NEBULA测量中子），可以进行完整的运动学重建，如计算反应的Q值、不变质量、丢失质量等。</li>
-<li><strong>符合测量：</strong> 研究不同粒子之间的符合关系，如质子-中子符合、<span class="arithmatex">\(\gamma\)</span>-中子符合等，对于理解反应机制和核结构特性非常重要。</li>
+<li>数据整合基础： ANAROOT的 <code>TArtStoreManager</code> 在此扮演了关键角色。在一个事例的处理周期内（例如在 <code>TArtAnaLoop::Calculate()</code> 方法中），<code>TArtStoreManager</code> 允许用户获取当前事例中所有已注册探测器的数据容器 [5, 8]。这意味着分析代码可以同时访问来自SAMURAI PDC的径迹信息、来自NEBULA的中子信息、来自BigRIPS的入射粒子鉴别信息（如果相关数据流已合并或可关联）等。</li>
+<li>事例匹配与关联： 进行联合分析的前提是能够正确匹配属于同一物理事例的不同探测器的信号。这通常基于事件号 (event number) 或高精度的时间戳 (timestamp) 来实现。ANAROOT的事件构建机制（尤其是在线分析中的 <code>babild</code>）会处理原始数据的事例对齐问题。</li>
+<li>分析示例：</li>
+<li>门条件设置： 可以利用一个探测器的信息作为对另一个探测器数据进行筛选的门条件。例如，根据BigRIPS PPACs鉴别出的入射粒子种类，来选择性地分析NEBULA的中子数据；或者，根据SAMURAI PDC重建出的带电粒子径迹特征（如动量、散射角），来研究与之符合出射的中子的性质。</li>
+<li>运动学重建： 在一些反应道中，通过测量所有末态粒子的动量矢量（例如，PDC测量带电粒子，NEBULA测量中子），可以进行完整的运动学重建，如计算反应的Q值、不变质量、丢失质量等。</li>
+<li>符合测量： 研究不同粒子之间的符合关系，如质子-中子符合、<span class="arithmatex">\(\gamma\)</span>-中子符合等，对于理解反应机制和核结构特性非常重要。</li>
 </ul>
 <p>虽然本指南不深入探讨复杂的多探测器联合分析的具体实现细节（这通常高度依赖于具体的物理目标和实验设置），但用户应意识到ANAROOT的架构为这类分析提供了基础的数据访问和管理能力。</p>
 <h4 id="93-anaroot性能优化与调试技巧">9.3 ANAROOT性能优化与调试技巧<a class="headerlink" href="#93-anaroot性能优化与调试技巧" title="Permanent link">#</a></h4>
 <p>在处理大量实验数据时，分析代码的执行效率和正确性至关重要。</p>
 <ul>
-<li><strong>性能优化建议：</strong></li>
-<li><strong>避免在事件循环 (Calculate() 方法) 中频繁创建和销毁对象：</strong> 对象的构造和析构是相对耗时的操作。应尽量在 <code>Construct()</code> 方法中创建所需的对象（如直方图、辅助计算类实例），在 <code>Calculate()</code> 中复用它们。</li>
-<li><strong>高效使用ROOT容器：</strong> 对于 <code>TClonesArray</code> 等容器，使用 <code>GetEntriesFast()</code> 而非 <code>GetEntries()</code>（如果不需要严格的对象有效性检查），并直接通过 <code>At(i)</code> 获取对象指针，避免不必要的拷贝。</li>
-<li><strong>减少不必要的计算：</strong> 仔细审视分析逻辑，避免在循环中重复计算不随事件变化的量。</li>
-<li><strong>合理选择数据结构：</strong> 根据访问模式选择合适的数据结构（如 <code>std::vector</code> vs <code>std::map</code>）。</li>
-<li><strong>编译优化：</strong> 在编译用户 <code>AnaLoop</code> 宏或整个ANAROOT时，使用编译器提供的优化选项（如 <code>-O2</code> 或 <code>-O3</code>），但这可能会增加编译时间并使得调试更困难。</li>
-<li><strong>关注I/O瓶颈：</strong> 如果分析速度受限于数据读取，考虑使用更快的存储设备，或优化数据读取模式（如调整TTree的缓存大小）。RIBF在某些场景下甚至探索使用FPGA进行硬件加速以提升特定分析任务（如PID）的吞吐率 [11]，这反映了对高性能处理的需求。</li>
-<li><strong>调试技巧：</strong></li>
-<li><strong>打印信息：</strong> 在代码关键位置插入打印语句（<code>std::cout</code>, <code>printf</code>, 或ANAROOT提供的日志工具如 <code>TArtCore::Info</code>, <code>TArtCore::Warning</code>, <code>TArtCore::Error</code>）输出变量值或程序流程信息，是简单有效的调试手段。</li>
-<li><strong>使用调试器：</strong> 利用GDB (GNU Debugger) 或ROOT内置的CINT/Cling调试功能来单步执行代码、检查变量、设置断点。</li>
-<li><strong>模块化测试：</strong> 将复杂的分析逻辑分解为小的、可独立测试的模块或函数，分别验证其正确性。</li>
-<li><strong>检查参数文件：</strong> 许多问题源于参数文件 (XML) 的配置错误。仔细核对参数名称、数值和类型是否正确。</li>
-<li><strong>小数据集测试：</strong> 首先在小规模的、特征明确的数据集上测试和调试分析代码，确认基本逻辑无误后，再扩展到完整数据集。</li>
-<li><strong>利用ANAROOT的诊断信息：</strong> 注意ANAROOT在运行过程中输出的警告和错误信息，它们往往能指示问题的所在。</li>
-<li><strong>版本控制：</strong> 使用Git等版本控制系统管理分析代码，便于追踪修改、回溯问题和协同工作。</li>
+<li>性能优化建议：</li>
+<li>避免在事件循环 (Calculate() 方法) 中频繁创建和销毁对象： 对象的构造和析构是相对耗时的操作。应尽量在 <code>Construct()</code> 方法中创建所需的对象（如直方图、辅助计算类实例），在 <code>Calculate()</code> 中复用它们。</li>
+<li>高效使用ROOT容器： 对于 <code>TClonesArray</code> 等容器，使用 <code>GetEntriesFast()</code> 而非 <code>GetEntries()</code>（如果不需要严格的对象有效性检查），并直接通过 <code>At(i)</code> 获取对象指针，避免不必要的拷贝。</li>
+<li>减少不必要的计算： 仔细审视分析逻辑，避免在循环中重复计算不随事件变化的量。</li>
+<li>合理选择数据结构： 根据访问模式选择合适的数据结构（如 <code>std::vector</code> vs <code>std::map</code>）。</li>
+<li>编译优化： 在编译用户 <code>AnaLoop</code> 宏或整个ANAROOT时，使用编译器提供的优化选项（如 <code>-O2</code> 或 <code>-O3</code>），但这可能会增加编译时间并使得调试更困难。</li>
+<li>关注I/O瓶颈： 如果分析速度受限于数据读取，考虑使用更快的存储设备，或优化数据读取模式（如调整TTree的缓存大小）。RIBF在某些场景下甚至探索使用FPGA进行硬件加速以提升特定分析任务（如PID）的吞吐率 [11]，这反映了对高性能处理的需求。</li>
+<li>调试技巧：</li>
+<li>打印信息： 在代码关键位置插入打印语句（<code>std::cout</code>, <code>printf</code>, 或ANAROOT提供的日志工具如 <code>TArtCore::Info</code>, <code>TArtCore::Warning</code>, <code>TArtCore::Error</code>）输出变量值或程序流程信息，是简单有效的调试手段。</li>
+<li>使用调试器： 利用GDB (GNU Debugger) 或ROOT内置的CINT/Cling调试功能来单步执行代码、检查变量、设置断点。</li>
+<li>模块化测试： 将复杂的分析逻辑分解为小的、可独立测试的模块或函数，分别验证其正确性。</li>
+<li>检查参数文件： 许多问题源于参数文件 (XML) 的配置错误。仔细核对参数名称、数值和类型是否正确。</li>
+<li>小数据集测试： 首先在小规模的、特征明确的数据集上测试和调试分析代码，确认基本逻辑无误后，再扩展到完整数据集。</li>
+<li>利用ANAROOT的诊断信息： 注意ANAROOT在运行过程中输出的警告和错误信息，它们往往能指示问题的所在。</li>
+<li>版本控制： 使用Git等版本控制系统管理分析代码，便于追踪修改、回溯问题和协同工作。</li>
 </ul>
 <p>对于复杂的性能问题或难以定位的bug，可能需要更专业的性能分析工具 (profilers) 或更深入地理解ANAROOT和ROOT的内部工作机制。</p>
 <hr />
@@ -5245,9 +5245,9 @@
 <h3 id="a-anaroot常用类库参考摘要">A. ANAROOT常用类库参考摘要<a class="headerlink" href="#a-anaroot常用类库参考摘要" title="Permanent link">#</a></h3>
 <p>本附录旨在提供一个ANAROOT核心类的快速参考，总结其主要功能和常用方法。详细信息请查阅ANAROOT官方文档或相关头文件。</p>
 <ul>
-<li><strong><code>TArtStoreManager</code>:</strong></li>
-<li><strong>功能:</strong> 数据和参数的中央管理器。</li>
-<li><strong>常用方法:</strong><ul>
+<li><code>TArtStoreManager</code>:</li>
+<li>功能: 数据和参数的中央管理器。</li>
+<li>常用方法:<ul>
 <li><code>static TArtStoreManager* Instance()</code>: 获取全局唯一的 <code>TArtStoreManager</code> 实例。</li>
 <li><code>TClonesArray* FindDataContainer(const char* name)</code>: 根据名称查找并返回数据容器 (通常是 <code>TClonesArray</code>)。</li>
 <li><code>TArtRawSegmentObject* FindSegment(Int_t dev, Int_t fp, Int_t det)</code>: (可能存在) 查找特定的原始数据段。</li>
@@ -5255,9 +5255,9 @@
 <li><code>TArtParam* FindParameter(const char* name)</code>: 查找参数对象。</li>
 </ul>
 </li>
-<li><strong><code>TArtEventStore</code>:</strong></li>
-<li><strong>功能:</strong> RIDF数据解码与事件循环控制。</li>
-<li><strong>常用方法:</strong><ul>
+<li><code>TArtEventStore</code>:</li>
+<li>功能: RIDF数据解码与事件循环控制。</li>
+<li>常用方法:<ul>
 <li><code>Bool_t Open(const char* filename)</code>: 打开RIDF文件。</li>
 <li><code>Bool_t Open(Int_t shm_id)</code>: 连接到共享内存。</li>
 <li><code>Bool_t GetNextEvent()</code>: 读取并解码下一个事件。</li>
@@ -5266,40 +5266,40 @@
 <li><code>void LoadMapConfig(const char* mapfilename)</code>: 加载ANAPAW风格的映射文件。</li>
 </ul>
 </li>
-<li><strong><code>TArtRawEventObject</code>:</strong></li>
-<li><strong>功能:</strong> 存储解码后的整个事件的原始数据。</li>
-<li><strong>常用方法:</strong><ul>
+<li><code>TArtRawEventObject</code>:</li>
+<li>功能: 存储解码后的整个事件的原始数据。</li>
+<li>常用方法:<ul>
 <li><code>Int_t GetNumSegment()</code>: 获取数据段 (Segment) 的数量。</li>
 <li><code>TArtRawSegmentObject* GetSegment(Int_t i)</code>: 获取指定索引的数据段。</li>
 <li><code>Int_t GetRunNumber()</code>, <code>Int_t GetEventNumber()</code>: 获取运行号和事件号。</li>
 </ul>
 </li>
-<li><strong><code>TArtRawSegmentObject</code>:</strong></li>
-<li><strong>功能:</strong> 存储特定设备分段的原始数据。</li>
-<li><strong>常用方法:</strong><ul>
+<li><code>TArtRawSegmentObject</code>:</li>
+<li>功能: 存储特定设备分段的原始数据。</li>
+<li>常用方法:<ul>
 <li><code>Int_t GetNumData()</code>: 获取数据对象 (DataObject) 的数量。</li>
 <li><code>TArtRawDataObject* GetData(Int_t i)</code>: 获取指定索引的数据对象。</li>
 <li><code>Int_t GetDevice()</code>, <code>Int_t GetFocalPlane()</code>, <code>Int_t GetDetector()</code>: 获取设备、焦平面、探测器ID。</li>
 </ul>
 </li>
-<li><strong><code>TArtRawDataObject</code>:</strong></li>
-<li><strong>功能:</strong> 存储最底层的原始数据单元 (如单个ADC/TDC值)。</li>
-<li><strong>常用方法:</strong><ul>
+<li><code>TArtRawDataObject</code>:</li>
+<li>功能: 存储最底层的原始数据单元 (如单个ADC/TDC值)。</li>
+<li>常用方法:<ul>
 <li><code>Int_t GetValue()</code>: 获取原始值。</li>
 <li><code>Int_t GetGeo()</code>, <code>Int_t GetCh()</code>: 获取地理地址和通道号。</li>
 <li><code>Int_t GetCategoryID()</code>, <code>Int_t GetDetectorID()</code>, <code>Int_t GetDatatypeID()</code>: (配合MapConfig使用) 获取类别、探测器、数据类型ID。</li>
 </ul>
 </li>
-<li><strong><code>TArtAnaLoop</code> (基类):</strong></li>
-<li><strong>功能:</strong> 用户分析循环的基类。</li>
-<li><strong>需重写的方法:</strong> <code>Construct()</code>, <code>Calculate()</code>, <code>Destruct()</code>, <code>ClassName()</code>。</li>
-<li><strong>探测器数据类 (如 <code>TArtPPAC</code>, <code>TArtDCHit</code>, <code>TArtDCTrack</code>, <code>TArtNEBULAPla</code>):</strong></li>
-<li><strong>功能:</strong> 存储特定探测器的刻度后或重建后的数据。</li>
-<li><strong>常用方法:</strong> 通常包含一系列 <code>GetXXX()</code> 方法用于访问具体的物理量 (如位置、时间、能量、角度、动量等)，具体方法名需查阅相应类的头文件。例如，<code>TArtPPAC::GetX()</code>, <code>TArtNEBULAPla::GetTime()</code>, <code>TArtDCTrack::GetMomentum()</code> (这些是基于通用命名习惯的推测，实际名称可能不同)。</li>
+<li><code>TArtAnaLoop</code> (基类):</li>
+<li>功能: 用户分析循环的基类。</li>
+<li>需重写的方法: <code>Construct()</code>, <code>Calculate()</code>, <code>Destruct()</code>, <code>ClassName()</code>。</li>
+<li>探测器数据类 (如 <code>TArtPPAC</code>, <code>TArtDCHit</code>, <code>TArtDCTrack</code>, <code>TArtNEBULAPla</code>):</li>
+<li>功能: 存储特定探测器的刻度后或重建后的数据。</li>
+<li>常用方法: 通常包含一系列 <code>GetXXX()</code> 方法用于访问具体的物理量 (如位置、时间、能量、角度、动量等)，具体方法名需查阅相应类的头文件。例如，<code>TArtPPAC::GetX()</code>, <code>TArtNEBULAPla::GetTime()</code>, <code>TArtDCTrack::GetMomentum()</code> (这些是基于通用命名习惯的推测，实际名称可能不同)。</li>
 </ul>
 <h3 id="b-xml参数文件示例-pdc-nebula">B. XML参数文件示例 (PDC, NEBULA)<a class="headerlink" href="#b-xml参数文件示例-pdc-nebula" title="Permanent link">#</a></h3>
 <p>ANAROOT使用XML文件管理参数。以下是PDC (漂移室) 和NEBULA参数文件结构的示意性示例，具体标签和层级需参考实际ANAROOT模块的定义。</p>
-<p><strong>PDC (Drift Chamber) 参数文件示例 (<code>SAMURAIFDC.xml</code> - 概念性)</strong></p>
+<p>PDC (Drift Chamber) 参数文件示例 (<code>SAMURAIFDC.xml</code> - 概念性)</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;SAMURAIFDCParameters&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Detector</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;FDC1&quot;</span><span class="nt">&gt;</span>
 <span class="w">        </span><span class="nt">&lt;Layer</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
@@ -5314,7 +5314,7 @@
 <span class="w">    </span><span class="nt">&lt;/Detector&gt;</span>
 <span class="nt">&lt;/SAMURAIFDCParameters&gt;</span>
 </code></pre></div>
-<p><strong>NEBULA 参数文件示例 (<code>NEBULA.xml</code> - 概念性)</strong></p>
+<p>NEBULA 参数文件示例 (<code>NEBULA.xml</code> - 概念性)</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;NEBULAParameters&gt;</span>
 <span class="w">    </span><span class="nt">&lt;Global&gt;</span>
 <span class="w">        </span><span class="nt">&lt;TimeZeroOffsetGlobal&gt;</span>-5.6<span class="nt">&lt;/TimeZeroOffsetGlobal&gt;</span>
@@ -5333,23 +5333,23 @@
 <span class="w">    </span><span class="nt">&lt;/Bar&gt;</span>
 <span class="nt">&lt;/NEBULAParameters&gt;</span>
 </code></pre></div>
-<p><strong>注意：</strong> 以上XML结构纯属示例，实际ANAROOT中使用的XML标签和层级结构可能有所不同。用户需要参考其使用的ANAROOT版本和具体分析模块所期望的参数文件格式。[9]中提供了一个更通用的 <code>TArtUserParameters</code> 的XML解析代码片段，显示了 <code>&lt;parameter&gt;&lt;NAME&gt;...&lt;/NAME&gt;&lt;val&gt;...&lt;/val&gt;&lt;type&gt;...&lt;/type&gt;&lt;/parameter&gt;</code> 这样的结构。</p>
+<p>注意： 以上XML结构纯属示例，实际ANAROOT中使用的XML标签和层级结构可能有所不同。用户需要参考其使用的ANAROOT版本和具体分析模块所期望的参数文件格式。[9]中提供了一个更通用的 <code>TArtUserParameters</code> 的XML解析代码片段，显示了 <code>&lt;parameter&gt;&lt;NAME&gt;...&lt;/NAME&gt;&lt;val&gt;...&lt;/val&gt;&lt;type&gt;...&lt;/type&gt;&lt;/parameter&gt;</code> 这样的结构。</p>
 <h3 id="c-常见问题-faq-与解答">C. 常见问题 (FAQ) 与解答<a class="headerlink" href="#c-常见问题-faq-与解答" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Q1: 安装ANAROOT时提示找不到ROOT相关的头文件或库怎么办？</strong><br />
+<li>Q1: 安装ANAROOT时提示找不到ROOT相关的头文件或库怎么办？<br />
   A1: 请确保已正确安装ROOT，并且正确设置了 <code>$ROOTSYS</code> 环境变量，并通过 <code>source $ROOTSYS/bin/thisroot.sh</code> (或 <code>thisroot.csh</code> 等) 初始化了ROOT环境。检查ANAROOT版本与ROOT版本的兼容性。</li>
-<li><strong>Q2: 如何知道我的探测器数据在ANAROOT中对应的类名和数据容器名？</strong><br />
+<li>Q2: 如何知道我的探测器数据在ANAROOT中对应的类名和数据容器名？<br />
   A2: 查阅ANAROOT的官方文档、教程或示例代码 (如 <code>example/Macros</code> 目录下的宏)。<code>TArtStoreManager.hh</code> 和相关探测器的 <code>TArtCalibXXX.hh</code> 或 <code>TArtRecoXXX.hh</code> 头文件也会包含这些信息。在ANAROOT的CUI中使用 <code>sman-&gt;Print()</code> (如果 <code>sman</code> 是 <code>TArtStoreManager</code> 的指针) 可能可以列出已注册的数据容器。</li>
-<li><strong>Q3: 我的<code>AnaLoop</code>代码修改后，为什么分析结果没有变化？</strong><br />
+<li>Q3: 我的<code>AnaLoop</code>代码修改后，为什么分析结果没有变化？<br />
   A3: 如果您将 <code>AnaLoop</code> 作为动态加载的宏 (<code>.L MyAnaLoop.C+</code>) 使用，请确保每次修改后都重新执行了 <code>.L MyAnaLoop.C+</code> 命令以重新编译和加载。如果 <code>AnaLoop</code> 是编译进库的，则需要重新编译整个ANAROOT库并重启ROOT会话。</li>
-<li><strong>Q4: 如何查看<code>Anafile</code>中定义的门和直方图是否正确生效？</strong><br />
+<li>Q4: 如何查看<code>Anafile</code>中定义的门和直方图是否正确生效？<br />
   A4: 在CUI中使用 <code>lc()</code> (list cuts/gates) 和 <code>ls()</code> (list histograms) 命令查看已定义的门和直方图。通过绘制相关直方图并检查其内容和统计量来验证门的效果。</li>
-<li><strong>Q5: 分析速度很慢，如何优化？</strong><br />
+<li>Q5: 分析速度很慢，如何优化？<br />
   A5: 参考本文档9.3节的性能优化建议。首先确定瓶颈是在I/O、CPU计算还是内存使用。避免在事件循环中进行耗时操作，优化算法，合理使用ROOT的数据结构。</li>
 </ul>
 <h3 id="d-推荐学习资源与链接">D. 推荐学习资源与链接<a class="headerlink" href="#d-推荐学习资源与链接" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>ANAROOT官方文档 (RIBFDAQ Wiki):</strong></li>
+<li>ANAROOT官方文档 (RIBFDAQ Wiki):</li>
 <li>ANAROOT主页: <code>https://ribf.riken.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT</code> [3]</li>
 <li>安装指南: <code>https://ribf.riken.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT%2FInstallation</code> [2]</li>
 <li>概要 (Abstract): <code>https://ribf.riken.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT%2FAbstract</code> [5]</li>
@@ -5358,17 +5358,17 @@
 <li><code>http://be.nucl.ap.titech.ac.jp/~kondo/moin/moin.cgi/ANAROOT/Manual</code> [20, 19] (包含 <code>analoop</code>, <code>reference</code> 等子页面)</li>
 </ul>
 </li>
-<li><strong>ROOT框架官方网站:</strong></li>
+<li>ROOT框架官方网站:</li>
 <li>主页与文档: <code>https://root.cern/</code> [2]</li>
 <li>ROOT初学者指南: <code>https://root.cern.ch/root/htmldoc/guides/primer/ROOTPrimer.html</code> [21, 22]</li>
 <li>直方图教程: <code>https://root.cern/doc/master/group__tutorial__hist.html</code> [23, 24]</li>
-<li><strong>相关出版物与学位论文:</strong></li>
+<li>相关出版物与学位论文:</li>
 <li>提及ANAROOT或其组件用于数据分析的RIBF实验相关的博士论文或会议文集，例如涉及SAMURAI和NEBULA的实验 [14, 16, 15, 25, 26]。这些文献通常会包含特定分析步骤的细节。</li>
-<li><strong>RIBF内部资源与联系人:</strong></li>
+<li>RIBF内部资源与联系人:</li>
 <li>对于在RIKEN工作的用户，可以咨询有经验的同事、导师或ANAROOT开发/维护团队成员 (如T. Isobe [3])。</li>
 </ul>
 <hr />
-<p><strong>结论</strong></p>
+<p>结论</p>
 <p>ANAROOT作为RIKEN RIBF实验数据分析的核心软件框架，为用户提供了从原始数据解码到最终物理结果提取的完整工具链。它基于成熟的ROOT框架构建，并针对RIBF特有的数据格式 (RIDF) 和复杂的探测器系统（如BigRIPS, SAMURAI, NEBULA, EURICA等）进行了深度优化和功能扩展。</p>
 <p>本指南详细介绍了ANAROOT的背景、安装配置、核心概念、数据处理流程、关键类库以及脚本编写方法。特别强调了SAMURAI实验中漂移室 (PDC/DC) 和NEBULA中子探测器的数据分析流程，包括必要的刻度步骤（如漂移室的t-d关系、NEBULA的时间、位置和能量刻度、脉冲形状甄别、串扰修正等）、数据对象的访问、以及重建物理量（如径迹、动量、中子能量）的方法。同时，本指南明确澄清了BigRIPS焦平面PPACs与SAMURAI PDC/DC在功能和分析方法上的区别，前者主要用于入射束流的粒子鉴别，后者则用于反应产物的动量分析。</p>
 <p>通过学习和实践本指南提供的内容，用户应能：<br />
@@ -5380,7 +5380,7 @@
 6.  利用ROOT工具对分析结果进行可视化和保存。</p>
 <p>ANAROOT是一个持续发展的项目，其功能和模块会随着RIBF实验的进展而不断完善和更新。建议用户关注RIBFDAQ网站发布的最新信息和文档，并积极参与用户社区的交流，以便更高效地利用ANAROOT进行前沿的核物理研究。从入门到精通ANAROOT需要理论学习和大量的实践操作，希望本指南能为用户在这一过程中提供坚实的基础和有力的支持。</p>
 <hr />
-<p><strong>参考文献</strong> </p>
+<p>参考文献 </p>
 <p>[1] ANAROOT相关网页，例如教程、概述页面。<a href="https://ribf.riken.jp/RIBFDAQ/index.php?plugin=attach&amp;refer=Tools%2FAnalysis%2FANAROOT&amp;openfile=anaroot_ribfusermeeting2013.pdf">https://ribf.riken.jp/RIBFDAQ/index.php?plugin=attach&amp;refer=Tools%2FAnalysis%2FANAROOT&amp;openfile=anaroot_ribfusermeeting2013.pdf</a></p>
 <p>[2] ANAROOT安装指南页面。<a href="https://ribf.riken.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT%2FInstallation">https://ribf.riken.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT%2FInstallation</a></p>
 <p>[3] ANAROOT主页或开发者信息。<a href="https://ribf.riken.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT">https://ribf.riken.jp/RIBFDAQ/index.php?Tools%2FAnalysis%2FANAROOT</a></p>
@@ -5413,7 +5413,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年5月27日 06:30:41 UTC"><span class="timeago" datetime="2025-05-27T06:30:41+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年5月27日 06:30:41 UTC">2025-05-27</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         创建日期:

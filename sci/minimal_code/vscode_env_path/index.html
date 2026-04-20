@@ -2976,7 +2976,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3451,17 +3451,17 @@
   <h1>Vscode env path</h1>
 
 <p>需要通过 <code>source</code> 命令来配置 ROOT、Geant4 等软件的编译环境非常熟悉。</p>
-<p>你遇到的核心问题是：<strong>VSCode 及其 CMake Tools 插件在一个“干净”的、独立的环境中运行 <code>cmake</code> 命令，这个环境并没有加载你终端里通过 <code>source your_script.sh</code> 设置的环境变量</strong>。因此，当 CMake 试图读取 <code>$TARTSYS</code> 这个变量时，它发现这个变量没有被定义，从而导致配置失败并报错。</p>
+<p>你遇到的核心问题是：VSCode 及其 CMake Tools 插件在一个“干净”的、独立的环境中运行 <code>cmake</code> 命令，这个环境并没有加载你终端里通过 <code>source your_script.sh</code> 设置的环境变量。因此，当 CMake 试图读取 <code>$TARTSYS</code> 这个变量时，它发现这个变量没有被定义，从而导致配置失败并报错。</p>
 <p>下面我将为你提供几种解决方案，从最简单快捷到最规范、一劳永逸的方法。</p>
 <h3 id="解决方案-1最快最简单的临时方法">解决方案 1：最快最简单的临时方法<a class="headerlink" href="#解决方案-1最快最简单的临时方法" title="Permanent link">#</a></h3>
 <p>这是解决当前问题的最快方法，但每次打开项目可能都需要重复操作。</p>
 <ol>
-<li><strong>打开一个常规的Linux终端</strong> (而不是VSCode内置的终端)。</li>
-<li><strong>首先，<code>source</code> 你的环境设置脚本</strong>，加载所有必要的环境变量：<br />
+<li>打开一个常规的Linux终端 (而不是VSCode内置的终端)。</li>
+<li>首先，<code>source</code> 你的环境设置脚本，加载所有必要的环境变量：<br />
     <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>/path/to/your/setup_script.sh<span class="w"> </span>
 </code></pre></div><br />
     (请将 <code>/path/to/your/setup_script.sh</code> 替换为你提供的那个脚本的实际路径)。</li>
-<li><strong>从这个已经配置好环境的终端里启动 VSCode</strong>，并打开你的项目文件夹：<br />
+<li>从这个已经配置好环境的终端里启动 VSCode，并打开你的项目文件夹：<br />
     <div class="highlight"><pre><span></span><code>code<span class="w"> </span>/home/tbt/workspace/kondo-smsimulator
 </code></pre></div></li>
 </ol>
@@ -3470,7 +3470,7 @@
 <p>这个方法是将项目所需的环境变量作为项目配置的一部分，这样无论你如何启动VSCode，该项目总能找到正确的环境。这对于管理多个具有不同环境依赖的项目来说是最佳实践。</p>
 <ol>
 <li>
-<p><strong>获取环境变量的最终值</strong>:<br />
+<p>获取环境变量的最终值:<br />
     首先，你需要知道在 <code>source</code> 了你的设置脚本后，那些关键环境变量的最终值是什么。打开一个终端，运行以下命令：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 先加载你的环境</span>
 <span class="nb">source</span><span class="w"> </span>/path/to/your/setup_script.sh
@@ -3484,14 +3484,14 @@
 <p>你会得到几行输出，请将这些输出的字符串复制下来，后续步骤会用到。</p>
 </li>
 <li>
-<p><strong>在VSCode项目中创建配置文件</strong>:</p>
+<p>在VSCode项目中创建配置文件:</p>
 <ul>
 <li>在你的项目根目录 <code>/home/tbt/workspace/kondo-smsimulator</code> 下，创建一个名为 <code>.vscode</code> 的文件夹 (如果尚不存在)。</li>
 <li>在 <code>.vscode</code> 文件夹内，创建一个名为 <code>settings.json</code> 的文件。</li>
 </ul>
 </li>
 <li>
-<p><strong>编辑 <code>settings.json</code> 文件</strong>:<br />
+<p>编辑 <code>settings.json</code> 文件:<br />
     将以下内容粘贴到 <code>settings.json</code> 文件中，并把你第一步中复制的那些环境变量的值填入相应位置：</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;cmake.configureEnvironment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -3502,7 +3502,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>示例：</strong><br />
+<p>示例：<br />
 假设你运行 <code>echo $TARTSYS</code> 得到 <code>/home/tbt/Software/anaroot/install</code>，那么你的 <code>settings.json</code> 文件看起来会是这样：</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;cmake.configureEnvironment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -3516,7 +3516,7 @@
 <p><em>注意：<code>LD_LIBRARY_PATH</code> 和 <code>PATH</code> 的值通常很长，请确保完整复制。</em></p>
 </li>
 <li>
-<p><strong>清理并重新配置CMake</strong>:</p>
+<p>清理并重新配置CMake:</p>
 <ul>
 <li>保存 <code>settings.json</code> 文件。</li>
 <li>在VSCode中，按 <code>Ctrl+Shift+P</code> 打开命令面板。</li>
@@ -3537,7 +3537,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月18日 18:08:08 UTC"><span class="timeago" datetime="2025-10-18T18:08:08+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月18日 18:08:08 UTC">2025-10-18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         创建日期:

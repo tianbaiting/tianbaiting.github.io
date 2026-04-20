@@ -2934,7 +2934,7 @@
   
     <li class="md-nav__item">
       <a href="../../anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3590,14 +3590,14 @@
 </code></pre></div>
 <h3 id="1-探测器几何与构建-detector-geometry--construction">1. 探测器几何与构建 (Detector Geometry &amp; Construction)<a class="headerlink" href="#1-探测器几何与构建-detector-geometry--construction" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>路径</strong>: <code>sources/smg4lib/detectors/FDC2/</code></li>
-<li><strong>文件</strong>: <code>FDC2Construction.hh</code> / <code>.cc</code></li>
-<li><strong>功能</strong>: 负责 FDC2 的几何结构、材料、位置、角度等定义。</li>
+<li>路径: <code>sources/smg4lib/detectors/FDC2/</code></li>
+<li>文件: <code>FDC2Construction.hh</code> / <code>.cc</code></li>
+<li>功能: 负责 FDC2 的几何结构、材料、位置、角度等定义。</li>
 </ul>
 <h3 id="2-敏感探测器与数据采集-sensitive-detector--data-acquisition">2. 敏感探测器与数据采集 (Sensitive Detector &amp; Data Acquisition)<a class="headerlink" href="#2-敏感探测器与数据采集-sensitive-detector--data-acquisition" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>路径</strong>: <code>sources/smg4lib/data/</code></li>
-<li><strong>文件</strong>:<ul>
+<li>路径: <code>sources/smg4lib/data/</code></li>
+<li>文件:<ul>
 <li><code>FragmentSD.hh</code> / <code>.cc</code>：挂载到 FDC2 的活跃体积上，负责采集粒子穿越时的物理信息。</li>
 <li><code>TSimData.hh</code> / <code>.cc</code>：存储每个事件的物理数据，包括 <code>detectorName</code> 字段用于区分 FDC2。</li>
 <li><code>TFragSimParameter.hh</code> / <code>.cc</code>：FDC2 的参数配置相关。</li>
@@ -3608,9 +3608,9 @@
 <h4 id="数据采集流程与内容">数据采集流程与内容<a class="headerlink" href="#数据采集流程与内容" title="Permanent link">#</a></h4>
 <ul>
 <li>FDC2 的活跃体积会挂载敏感探测器（<code>FragmentSD</code>）。当粒子穿越 FDC2 时，<code>FragmentSD::ProcessHits</code> 方法会被自动调用，采集并存储物理信息。</li>
-<li><strong>存储的数据内容</strong>（在 <code>TSimData</code> 或 <code>TFragSimData</code> 对象中）:<ul>
-<li><strong>探测器名称</strong>：<code>fDetectorName</code>（如 "FDC2"），用于区分数据来源。</li>
-<li><strong>粒子信息</strong>:<ul>
+<li>存储的数据内容（在 <code>TSimData</code> 或 <code>TFragSimData</code> 对象中）:<ul>
+<li>探测器名称：<code>fDetectorName</code>（如 "FDC2"），用于区分数据来源。</li>
+<li>粒子信息:<ul>
 <li><code>fPDGCode</code>：PDG 编码</li>
 <li><code>fParticleName</code>：粒子名称</li>
 <li><code>fZ</code>, <code>fA</code>：原子序数和质量数</li>
@@ -3618,25 +3618,25 @@
 <li><code>fMass</code>：质量</li>
 </ul>
 </li>
-<li><strong>轨迹信息</strong>:<ul>
+<li>轨迹信息:<ul>
 <li><code>fParentID</code>：父粒子编号</li>
 <li><code>fTrackID</code>：轨迹编号</li>
 </ul>
 </li>
-<li><strong>位置与动量</strong>:<ul>
+<li>位置与动量:<ul>
 <li><code>fPrePosition</code>, <code>fPostPosition</code>：步进前后的位置（x, y, z，单位 mm）</li>
 <li><code>fPreMomentum</code>, <code>fPostMomentum</code>：步进前后动量（单位 MeV）</li>
 </ul>
 </li>
-<li><strong>时间信息</strong>:<ul>
+<li>时间信息:<ul>
 <li><code>fPreTime</code>, <code>fPostTime</code>：步进前后全局时间（单位 ns）</li>
 </ul>
 </li>
-<li><strong>飞行长度</strong>：<code>fFlightLength</code>（粒子到达该点的总路径长度，单位 mm）</li>
-<li><strong>是否被接受</strong>：<code>fIsAccepted</code>（用于筛选有效物理事件）</li>
+<li>飞行长度：<code>fFlightLength</code>（粒子到达该点的总路径长度，单位 mm）</li>
+<li>是否被接受：<code>fIsAccepted</code>（用于筛选有效物理事件）</li>
 </ul>
 </li>
-<li><strong>数据输出方式</strong>:<ul>
+<li>数据输出方式:<ul>
 <li>所有上述数据会被存入 ROOT 文件的 TTree 分支（如 "fragment"）。</li>
 <li>每个事件包含一个数据数组，数组中的每个元素对应一次有效的 step（通常是主粒子击中 FDC2 的 step）。</li>
 <li>后续分析脚本（如 <code>work/macros/examples/analysis_example.cc</code>）会读取这些分支，筛选 <code>fDetectorName == "FDC2"</code> 的数据进行物理分析。</li>
@@ -3645,8 +3645,8 @@
 </ul>
 <h3 id="3-主探测器构建与集成-main-detector-construction--integration">3. 主探测器构建与集成 (Main Detector Construction &amp; Integration)<a class="headerlink" href="#3-主探测器构建与集成-main-detector-construction--integration" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>路径</strong>: <code>sources/projects/sim_samurai21/</code></li>
-<li><strong>文件</strong>:<ul>
+<li>路径: <code>sources/projects/sim_samurai21/</code></li>
+<li>文件:<ul>
 <li><code>sim_samurai21.cc</code>：主程序入口。</li>
 <li><code>src/SAMURAI21DetectorConstruction.cc</code>：主探测器构建类，负责实例化 FDC2 并挂载敏感探测器。</li>
 </ul>
@@ -3654,14 +3654,14 @@
 </ul>
 <h3 id="4-数据分析-data-analysis">4. 数据分析 (Data Analysis)<a class="headerlink" href="#4-数据分析-data-analysis" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>路径</strong>: <code>work/macros/examples/</code></li>
-<li><strong>文件</strong>: <code>analysis_example.cc</code>, <code>analysis_crosstalk_example.cc</code></li>
-<li><strong>功能</strong>: 读取和分析 FDC2 采集的数据。</li>
+<li>路径: <code>work/macros/examples/</code></li>
+<li>文件: <code>analysis_example.cc</code>, <code>analysis_crosstalk_example.cc</code></li>
+<li>功能: 读取和分析 FDC2 采集的数据。</li>
 </ul>
 <h3 id="5-其他辅助库-other-helper-libraries">5. 其他辅助库 (Other Helper Libraries)<a class="headerlink" href="#5-其他辅助库-other-helper-libraries" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>路径</strong>: <code>sources/smg4lib/action/</code></li>
-<li><strong>功能</strong>: 包含事件、运行、跟踪等动作类，这些类间接影响 FDC2 的数据采集流程。<br />
+<li>路径: <code>sources/smg4lib/action/</code></li>
+<li>功能: 包含事件、运行、跟踪等动作类，这些类间接影响 FDC2 的数据采集流程。<br />
 当粒子穿越 FDC2 时，FragmentSD::ProcessHits 方法会被自动调用，采集并存储物理信息。</li>
 <li>具体存储的数据内容<br />
 在 FragmentSD::ProcessHits 里，主要存储到 TSimData 或 TFragSimData 对象的数据包括：</li>
@@ -3705,7 +3705,7 @@ FDC2 的输出数据由敏感探测器自动采集，封装为数据对象并存
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月23日 06:33:48 UTC"><span class="timeago" datetime="2025-08-23T06:33:48+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月23日 06:33:48 UTC">2025-08-23</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         创建日期:

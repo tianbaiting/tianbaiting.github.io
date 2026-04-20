@@ -2968,7 +2968,7 @@
   
     <li class="md-nav__item">
       <a href="../../anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3924,84 +3924,84 @@
 <h3 id="1-parameter-management">1. Parameter Management<a class="headerlink" href="#1-parameter-management" title="Permanent link">#</a></h3>
 <h4 id="tnebulasimparameter">TNEBULASimParameter<a class="headerlink" href="#tnebulasimparameter" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>Files</strong>: <code>TNEBULASimParameter.hh / .cc</code></li>
-<li><strong>Function</strong>: Stores all NEBULA parameters, including the number, type, and geometry of detectors, for use by simulation and data conversion modules.</li>
+<li>Files: <code>TNEBULASimParameter.hh / .cc</code></li>
+<li>Function: Stores all NEBULA parameters, including the number, type, and geometry of detectors, for use by simulation and data conversion modules.</li>
 </ul>
 <h4 id="nebulasimparameterreader">NEBULASimParameterReader<a class="headerlink" href="#nebulasimparameterreader" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>Files</strong>: <code>NEBULASimParameterReader.hh / .cc</code></li>
-<li><strong>Function</strong>: Reads NEBULA parameter files (e.g., <code>NEBULA_Dayone.csv</code>, <code>NEBULA_Detectors_Dayone.csv</code>) and loads parameters into the simulation environment, including detector count, position, and size.</li>
+<li>Files: <code>NEBULASimParameterReader.hh / .cc</code></li>
+<li>Function: Reads NEBULA parameter files (e.g., <code>NEBULA_Dayone.csv</code>, <code>NEBULA_Detectors_Dayone.csv</code>) and loads parameters into the simulation environment, including detector count, position, and size.</li>
 </ul>
 <h4 id="related-data-files">Related Data Files<a class="headerlink" href="#related-data-files" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>Files</strong>: <code>NEBULA_Dayone.csv</code> / <code>NEBULA_Detectors_Dayone.csv</code></li>
-<li><strong>Function</strong>: These files contain specific parameters for the NEBULA array, such as the position, size, and ID of each detector, which are read by <code>NEBULASimParameterReader</code> during simulation.</li>
+<li>Files: <code>NEBULA_Dayone.csv</code> / <code>NEBULA_Detectors_Dayone.csv</code></li>
+<li>Function: These files contain specific parameters for the NEBULA array, such as the position, size, and ID of each detector, which are read by <code>NEBULASimParameterReader</code> during simulation.</li>
 </ul>
 <h3 id="2-geometry-construction">2. Geometry Construction<a class="headerlink" href="#2-geometry-construction" title="Permanent link">#</a></h3>
 <h4 id="nebulaconstruction--nebulaconstructionmessenger">NEBULAConstruction &amp; NEBULAConstructionMessenger<a class="headerlink" href="#nebulaconstruction--nebulaconstructionmessenger" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>Files</strong>: <code>NEBULAConstruction.hh / .cc</code></li>
-<li><strong>Function</strong>: Defines the geometry of NEBULA neutron detectors, including array size, position, materials, etc. Responsible for building the NEBULA physical model in Geant4 simulation.</li>
-<li><strong>Files</strong>: <code>NEBULAConstructionMessenger.hh / .cc</code></li>
-<li><strong>Function</strong>: Provides command interfaces, allowing users to dynamically set NEBULA parameters (such as array parameter files, detector parameter files) via macro files or command line.</li>
+<li>Files: <code>NEBULAConstruction.hh / .cc</code></li>
+<li>Function: Defines the geometry of NEBULA neutron detectors, including array size, position, materials, etc. Responsible for building the NEBULA physical model in Geant4 simulation.</li>
+<li>Files: <code>NEBULAConstructionMessenger.hh / .cc</code></li>
+<li>Function: Provides command interfaces, allowing users to dynamically set NEBULA parameters (such as array parameter files, detector parameter files) via macro files or command line.</li>
 </ul>
 <h3 id="3-simulation-core">3. Simulation Core<a class="headerlink" href="#3-simulation-core" title="Permanent link">#</a></h3>
 <h4 id="nebulasd">NEBULASD<a class="headerlink" href="#nebulasd" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>Files</strong>: <code>NEBULASD.hh / .cc</code></li>
-<li><strong>Function</strong>: Defines the sensitive detector for NEBULA, used to record energy deposition, position, time, and other information of particles in NEBULA detectors during simulation.</li>
+<li>Files: <code>NEBULASD.hh / .cc</code></li>
+<li>Function: Defines the sensitive detector for NEBULA, used to record energy deposition, position, time, and other information of particles in NEBULA detectors during simulation.</li>
 </ul>
 <h3 id="4-data-handling">4. Data Handling<a class="headerlink" href="#4-data-handling" title="Permanent link">#</a></h3>
 <h4 id="nebulasimdatainitializer">NEBULASimDataInitializer<a class="headerlink" href="#nebulasimdatainitializer" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>Files</strong>: <code>NEBULASimDataInitializer.hh / .cc</code></li>
-<li><strong>Function</strong>: Initializes NEBULA simulation data structures, allocates data storage space for each detector, and prepares for subsequent data acquisition and analysis.</li>
+<li>Files: <code>NEBULASimDataInitializer.hh / .cc</code></li>
+<li>Function: Initializes NEBULA simulation data structures, allocates data storage space for each detector, and prepares for subsequent data acquisition and analysis.</li>
 </ul>
 <h4 id="nebulasimdataconverter_tartnebulapla">NEBULASimDataConverter_TArtNEBULAPla<a class="headerlink" href="#nebulasimdataconverter_tartnebulapla" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>Files</strong>: <code>NEBULASimDataConverter_TArtNEBULAPla.hh / .cc</code></li>
-<li><strong>Function</strong>: Converts raw data generated during simulation (such as energy deposition, detector response) into the data format required for experimental analysis (e.g., TArtNEBULAPla), and writes to ROOT files. Implements energy conversion, resolution processing, and other physical models.</li>
+<li>Files: <code>NEBULASimDataConverter_TArtNEBULAPla.hh / .cc</code></li>
+<li>Function: Converts raw data generated during simulation (such as energy deposition, detector response) into the data format required for experimental analysis (e.g., TArtNEBULAPla), and writes to ROOT files. Implements energy conversion, resolution processing, and other physical models.</li>
 </ul>
 <h2 id="nebula-output-in-geant4">NEBULA Output in Geant4<a class="headerlink" href="#nebula-output-in-geant4" title="Permanent link">#</a></h2>
 <h3 id="1-simulation-output-information">1. Simulation Output Information<a class="headerlink" href="#1-simulation-output-information" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Energy Deposit</strong>: Each NEBULA detector module records the energy deposited by particles (mainly neutrons) in the detector.</li>
-<li><strong>Detector Response</strong>: Simulates the signal output of the detector in actual experiments (e.g., PMT response) based on energy deposit, detector resolution, and other physical models.</li>
-<li><strong>Position and Time Information</strong>: Records the hit position and incident time of particles in the detector, used for subsequent TOF and spatial distribution analysis.</li>
-<li><strong>Particle Type and ID</strong>: Distinguishes different particles (e.g., neutron, fake neutron, fake gamma) and their corresponding detector IDs for event selection and physics analysis.</li>
+<li>Energy Deposit: Each NEBULA detector module records the energy deposited by particles (mainly neutrons) in the detector.</li>
+<li>Detector Response: Simulates the signal output of the detector in actual experiments (e.g., PMT response) based on energy deposit, detector resolution, and other physical models.</li>
+<li>Position and Time Information: Records the hit position and incident time of particles in the detector, used for subsequent TOF and spatial distribution analysis.</li>
+<li>Particle Type and ID: Distinguishes different particles (e.g., neutron, fake neutron, fake gamma) and their corresponding detector IDs for event selection and physics analysis.</li>
 </ul>
 <h3 id="2-generated-root-files">2. Generated ROOT Files<a class="headerlink" href="#2-generated-root-files" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Data Structure</strong>: NEBULA simulation data is converted to ROOT files, usually containing one or more TTrees (e.g., <code>NEBULAPla</code>), each entry corresponding to an event or detector response.</li>
-<li><strong>Example Content</strong>:<ul>
+<li>Data Structure: NEBULA simulation data is converted to ROOT files, usually containing one or more TTrees (e.g., <code>NEBULAPla</code>), each entry corresponding to an event or detector response.</li>
+<li>Example Content:<ul>
 <li>Under each event, the <code>NEBULAPla</code> branch stores response data (such as energy, position, time) for all hit NEBULA detector modules.</li>
 <li>Other branches may contain global event information, initial particle parameters, etc.</li>
 </ul>
 </li>
-<li><strong>Usage</strong>:<ul>
-<li><strong>Experimental Data Comparison</strong>: The structure of the simulated ROOT file matches the experimental data and can be directly used for comparative analysis.</li>
-<li><strong>Physics Analysis</strong>: ROOT scripts or analysis frameworks can be used for statistics, plotting, efficiency calculation, energy spectrum analysis, etc.</li>
-<li><strong>Detector Performance Evaluation</strong>: Analyze the response distribution, resolution, detection efficiency, etc., to support experiment design and data interpretation.</li>
-<li><strong>Event Selection</strong>: Select interesting physics events based on particle type, energy, position, etc.</li>
+<li>Usage:<ul>
+<li>Experimental Data Comparison: The structure of the simulated ROOT file matches the experimental data and can be directly used for comparative analysis.</li>
+<li>Physics Analysis: ROOT scripts or analysis frameworks can be used for statistics, plotting, efficiency calculation, energy spectrum analysis, etc.</li>
+<li>Detector Performance Evaluation: Analyze the response distribution, resolution, detection efficiency, etc., to support experiment design and data interpretation.</li>
+<li>Event Selection: Select interesting physics events based on particle type, energy, position, etc.</li>
 </ul>
 </li>
 </ul>
 <h3 id="3-related-code-modules">3. Related Code Modules<a class="headerlink" href="#3-related-code-modules" title="Permanent link">#</a></h3>
 <ul>
-<li><strong><code>NEBULASimDataConverter_TArtNEBULAPla</code></strong>: Responsible for converting simulation data to <code>TArtNEBULAPla</code> format and writing to ROOT files.</li>
-<li><strong><code>NEBULASD</code></strong>: Implements the sensitive detector, responsible for collecting particle hit information during simulation.</li>
-<li><strong><code>NEBULASimParameterReader</code></strong>: Reads detector parameters and determines the output data structure and content.</li>
+<li><code>NEBULASimDataConverter_TArtNEBULAPla</code>: Responsible for converting simulation data to <code>TArtNEBULAPla</code> format and writing to ROOT files.</li>
+<li><code>NEBULASD</code>: Implements the sensitive detector, responsible for collecting particle hit information during simulation.</li>
+<li><code>NEBULASimParameterReader</code>: Reads detector parameters and determines the output data structure and content.</li>
 </ul>
 <h2 id="tartnebulapla-data-structure">TArtNEBULAPla Data Structure<a class="headerlink" href="#tartnebulapla-data-structure" title="Permanent link">#</a></h2>
 <p><code>TArtNEBULAPla</code> is a data structure class in the ANAROOT framework used to describe a single NEBULA detector module (Plastic Scintillator). Its main function is to store and manage the experimental or simulated response information of each NEBULA plastic bar for subsequent physics analysis and data processing.</p>
 <h3 id="1-main-member-variables-common-fields">1. Main Member Variables (Common Fields)<a class="headerlink" href="#1-main-member-variables-common-fields" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Detector ID</strong>: Unique identifier for each NEBULA plastic bar, for positioning and distinction.</li>
-<li><strong>Energy</strong>: Records the energy deposited by particles in the plastic bar (usually in MeV), used for spectrum analysis and event selection.</li>
-<li><strong>Time</strong>: Records the time information when particles hit the plastic bar (e.g., TOF), used for time resolution and event reconstruction.</li>
-<li><strong>Position</strong>: Spatial coordinates of the plastic bar in the array, for spatial distribution analysis and geometry reconstruction.</li>
-<li><strong>Particle Type (ParticleID)</strong>: Records the type of particle hitting the plastic bar (e.g., neutron, gamma, heavy ion), for physics process distinction.</li>
-<li><strong>Resolution/Signal Processing Variables</strong>: May include resolution, signal amplitude, PMT response, etc., in simulation or experiment.</li>
+<li>Detector ID: Unique identifier for each NEBULA plastic bar, for positioning and distinction.</li>
+<li>Energy: Records the energy deposited by particles in the plastic bar (usually in MeV), used for spectrum analysis and event selection.</li>
+<li>Time: Records the time information when particles hit the plastic bar (e.g., TOF), used for time resolution and event reconstruction.</li>
+<li>Position: Spatial coordinates of the plastic bar in the array, for spatial distribution analysis and geometry reconstruction.</li>
+<li>Particle Type (ParticleID): Records the type of particle hitting the plastic bar (e.g., neutron, gamma, heavy ion), for physics process distinction.</li>
+<li>Resolution/Signal Processing Variables: May include resolution, signal amplitude, PMT response, etc., in simulation or experiment.</li>
 </ul>
 <h3 id="2-tartnebulaplah">2. TArtNEBULAPla.h<a class="headerlink" href="#2-tartnebulaplah" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#ifndef _TARTNEBULAPLA_H_</span>
@@ -4274,7 +4274,7 @@ fHit：是否被击中（0/1），用于事件筛选。<br />
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="August 24, 2025 14:30:31 UTC"><span class="timeago" datetime="2025-08-24T14:30:31+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="August 24, 2025 14:30:31 UTC">2025-08-24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 20, 2026 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 20, 2026 10:56:55 UTC">2026-04-20</span>
       
         <br>
         Created:

@@ -2934,7 +2934,7 @@
   
     <li class="md-nav__item">
       <a href="../../anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3699,18 +3699,18 @@
 <h3 id="1-设计与用途">1. 设计与用途<a class="headerlink" href="#1-设计与用途" title="Permanent link">#</a></h3>
 <p>PDC探测器（质子漂移室）用于测量与束流速度相近（projectile-rapidity）的质子的动量，放置在SAMURAI磁铁下游。为减少探测器平面数量，PDC采用阴极读出法获取位置信息，阳极平面使用Walenta型漂移室，8毫米漂移长度设计减少阳极线数量。为探测多粒子事件，阴极线采用三种方向：0度、+45度和-45度。</p>
 <blockquote>
-<p><strong>注</strong>：PDC采用阴极读出（cathode readout）。当电离产生的电子向阳极丝漂移并引发雪崩时，会在附近的阴极条上产生感应电荷，通过读取这些感应电荷来确定粒子的位置。</p>
+<p>注：PDC采用阴极读出（cathode readout）。当电离产生的电子向阳极丝漂移并引发雪崩时，会在附近的阴极条上产生感应电荷，通过读取这些感应电荷来确定粒子的位置。</p>
 </blockquote>
 <h3 id="2-主要参数">2. 主要参数<a class="headerlink" href="#2-主要参数" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>有效面积</strong>：1700mm × 800mm</li>
-<li><strong>阳极线</strong>：金-钨/铼合金，30μm直径，间距16mm，漂移长度8mm</li>
-<li><strong>阴极线</strong>：金-铝合金，80μm直径，间距3mm</li>
-<li><strong>阳极-阴极间隙</strong>：8mm</li>
-<li><strong>阴极条宽度</strong>：12mm（每4根阴极线合并成一个条）</li>
-<li><strong>供电</strong>：阳极线施加正高压，势线施加轻微负高压</li>
-<li><strong>配置</strong>：阴极(U)-阳极(V)-阴极(X)-阳极(U)-阴极(V)</li>
-<li><strong>运行气体</strong>：Ar+25% i-C4H10 或 Ar+50% C2H6</li>
+<li>有效面积：1700mm × 800mm</li>
+<li>阳极线：金-钨/铼合金，30μm直径，间距16mm，漂移长度8mm</li>
+<li>阴极线：金-铝合金，80μm直径，间距3mm</li>
+<li>阳极-阴极间隙：8mm</li>
+<li>阴极条宽度：12mm（每4根阴极线合并成一个条）</li>
+<li>供电：阳极线施加正高压，势线施加轻微负高压</li>
+<li>配置：阴极(U)-阳极(V)-阴极(X)-阳极(U)-阴极(V)</li>
+<li>运行气体：Ar+25% i-C4H10 或 Ar+50% C2H6</li>
 </ul>
 <p><img alt="PDC结构示意图" src="../assets/PDC.zh/image.png" /><br />
 <em>PDC结构示意图</em></p>
@@ -3721,8 +3721,8 @@
 <p>代码在https://github.com/tianbaiting/Dpol_smsimulator/blob/main/sim_deuteron/forunderstanding/plot_pdc_wires.py</p>
 <h3 id="3-读出方案与发展">3. 读出方案与发展<a class="headerlink" href="#3-读出方案与发展" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>初始方案（已测试）</strong>：为减少读出通道，曾测试电荷分割读出法，将阴极条通过电阻串联，每8个条通过一个电荷灵敏前置放大器读出。原型探测器（600mm × 480mm）对X射线取得1mm（rms）位置分辨率，但无法正确处理两个质子事件。</li>
-<li><strong>新方案（开发中）</strong>：为解决多粒子问题并提高分辨率，开发新读出电路。每个阴极信号直接连接到前置放大器、整形器和采样保持电路，在前端板（FEB）数字化。预计位置分辨率提升约5倍，需约810个读出通道。</li>
+<li>初始方案（已测试）：为减少读出通道，曾测试电荷分割读出法，将阴极条通过电阻串联，每8个条通过一个电荷灵敏前置放大器读出。原型探测器（600mm × 480mm）对X射线取得1mm（rms）位置分辨率，但无法正确处理两个质子事件。</li>
+<li>新方案（开发中）：为解决多粒子问题并提高分辨率，开发新读出电路。每个阴极信号直接连接到前置放大器、整形器和采样保持电路，在前端板（FEB）数字化。预计位置分辨率提升约5倍，需约810个读出通道。</li>
 </ul>
 <hr />
 <h2 id="模拟方案概述">模拟方案概述<a class="headerlink" href="#模拟方案概述" title="Permanent link">#</a></h2>
@@ -3735,9 +3735,9 @@
 </ol>
 <h2 id="方法局限">方法局限<a class="headerlink" href="#方法局限" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>忽略电子漂移</strong>：实际电离产生的电子会沿电场线漂移，而不是简单地朝最近的丝线移动。在高电场区，电子会产生雪崩，这是“点火”过程。此方法无法模拟这一点。</li>
-<li><strong>无法模拟信号形状和时间</strong>：未考虑漂移时间，无法得到信号的精确时间信息和波形。</li>
-<li><strong>无法模拟增益</strong>：Geant4 本身不模拟雪崩过程，无法得到每个“点火”事件的信号增益。</li>
+<li>忽略电子漂移：实际电离产生的电子会沿电场线漂移，而不是简单地朝最近的丝线移动。在高电场区，电子会产生雪崩，这是“点火”过程。此方法无法模拟这一点。</li>
+<li>无法模拟信号形状和时间：未考虑漂移时间，无法得到信号的精确时间信息和波形。</li>
+<li>无法模拟增益：Geant4 本身不模拟雪崩过程，无法得到每个“点火”事件的信号增益。</li>
 </ul>
 <hr />
 <h2 id="1-物理模型简述">1. 物理模型简述<a class="headerlink" href="#1-物理模型简述" title="Permanent link">#</a></h2>
@@ -3749,9 +3749,9 @@
 </ul>
 <h2 id="2-几何与材料构建">2. 几何与材料构建<a class="headerlink" href="#2-几何与材料构建" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>定义气体混合物</strong>：如 75% Ar + 25% i-C4H10，1 atm。</li>
-<li><strong>构建漂移室盒体</strong>：用 G4Box 或 G4Trap 表示气体体积。</li>
-<li><strong>构建丝阵列</strong>：用 G4Cylinder 或 G4Tubs 表示阳极丝，按实际位置排布。</li>
+<li>定义气体混合物：如 75% Ar + 25% i-C4H10，1 atm。</li>
+<li>构建漂移室盒体：用 G4Box 或 G4Trap 表示气体体积。</li>
+<li>构建丝阵列：用 G4Cylinder 或 G4Tubs 表示阳极丝，按实际位置排布。</li>
 </ul>
 <h2 id="3-敏感体设置">3. 敏感体设置<a class="headerlink" href="#3-敏感体设置" title="Permanent link">#</a></h2>
 <ul>
@@ -3846,7 +3846,7 @@ fPDCConstruction-&gt;fLayerV-&gt;SetSensitiveDetector(fPDCSD_V);</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月31日 17:53:28 UTC"><span class="timeago" datetime="2025-08-31T17:53:28+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月31日 17:53:28 UTC">2025-08-31</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         创建日期:

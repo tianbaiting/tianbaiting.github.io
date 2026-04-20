@@ -3136,7 +3136,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3774,20 +3774,20 @@
 <h3 id="git-的核心对象">Git 的核心对象<a class="headerlink" href="#git-的核心对象" title="Permanent link">#</a></h3>
 <p>在 Git 的世界里，一切皆对象。主要有三种核心对象类型，它们是构成历史图谱的基本节点：</p>
 <ol>
-<li><strong>Blob (Binary Large Object)</strong>: 存储文件内容的快照，不包含文件名等元数据。</li>
-<li><strong>Tree</strong>: 类似于文件夹，存储文件名、类型（文件或子目录）及其对应的 Blob 或子 Tree 的引用。Tree 对象构建了文件系统的层次结构。</li>
-<li><strong>Commit</strong>: 代表一次提交，包含指向一个 Tree 对象的引用（表示该提交时的文件状态）、作者信息、提交信息以及指向父 Commit 的引用（支持多父以实现合并）。</li>
+<li>Blob (Binary Large Object): 存储文件内容的快照，不包含文件名等元数据。</li>
+<li>Tree: 类似于文件夹，存储文件名、类型（文件或子目录）及其对应的 Blob 或子 Tree 的引用。Tree 对象构建了文件系统的层次结构。</li>
+<li>Commit: 代表一次提交，包含指向一个 Tree 对象的引用（表示该提交时的文件状态）、作者信息、提交信息以及指向父 Commit 的引用（支持多父以实现合并）。</li>
 </ol>
 <h3 id="git-的指针">Git 的指针<a class="headerlink" href="#git-的指针" title="Permanent link">#</a></h3>
 <ol>
-<li><strong>分支 (Branch)</strong>: 可移动的指针，指向图中的某个 Commit 节点。当你创建一个新的 Commit 时，你所在分支的指针会自动向前移动到这个新的 Commit 上。这就是为什么创建和切换分支如此之快的原因——Git 只是在修改一个指向40位哈希值的小文件。</li>
-<li><strong>标签 (Tag)</strong>: 基本不可移动的指针，通常用于标记重要里程碑。，如版本发布（v1.0）。</li>
-<li><strong>HEAD</strong>:  一个特殊的指针的指针。它通常指向你当前所在的分支。例如，当你在 main 分支上工作时，HEAD 会指向 main，且 main 再指向最新的 commit。HEAD 决定下一次提交的父节点，也决定工作目录应处于哪个快照状态。</li>
+<li>分支 (Branch): 可移动的指针，指向图中的某个 Commit 节点。当你创建一个新的 Commit 时，你所在分支的指针会自动向前移动到这个新的 Commit 上。这就是为什么创建和切换分支如此之快的原因——Git 只是在修改一个指向40位哈希值的小文件。</li>
+<li>标签 (Tag): 基本不可移动的指针，通常用于标记重要里程碑。，如版本发布（v1.0）。</li>
+<li>HEAD:  一个特殊的指针的指针。它通常指向你当前所在的分支。例如，当你在 main 分支上工作时，HEAD 会指向 main，且 main 再指向最新的 commit。HEAD 决定下一次提交的父节点，也决定工作目录应处于哪个快照状态。</li>
 </ol>
 <h2 id="git-命令的本质图的操作">Git 命令的本质（图的操作）<a class="headerlink" href="#git-命令的本质图的操作" title="Permanent link">#</a></h2>
 <p>理解了上述模型后，我们就可以用“图操作”的视角来重新解读那些令人困惑的命令了。</p>
 <h3 id="创建新节点">创建新节点<a class="headerlink" href="#创建新节点" title="Permanent link">#</a></h3>
-<p><strong><code>git commit</code></strong>: 在历史图谱中创建一个新的 Commit 节点。<br />
+<p><code>git commit</code>: 在历史图谱中创建一个新的 Commit 节点。<br />
 流程：<br />
 - 根据暂存区创建 Tree 对象。<br />
 - 创建 Commit 对象，指向 Tree，并将父指针指向当前 HEAD。<br />
@@ -3795,7 +3795,7 @@
 <h3 id="移动与修改指针">移动与修改指针<a class="headerlink" href="#移动与修改指针" title="Permanent link">#</a></h3>
 <ol>
 <li>
-<p><strong><code>git reset &lt;commit&gt;</code></strong>: 强制移动当前分支（如 main）的指针。这是最纯粹的指针操作命令。</p>
+<p><code>git reset &lt;commit&gt;</code>: 强制移动当前分支（如 main）的指针。这是最纯粹的指针操作命令。</p>
 </li>
 <li>
 <p><code>--soft</code>: 只移动 main 分支的指针到指定的 <commit>，工作目录和暂存区保持不变。</p>
@@ -3806,10 +3806,10 @@
 <p><commit> 可以是分支名（如 main）、标签名（如 v1.0）、HEAD~n（表示当前 HEAD 的第 n 个祖先），hash值</p>
 <ol>
 <li>
-<p><strong><code>git revert &lt;commit&gt;</code></strong>: 创建一个反向操作的新 Commit，而不是移动指针。</p>
+<p><code>git revert &lt;commit&gt;</code>: 创建一个反向操作的新 Commit，而不是移动指针。</p>
 </li>
 <li>
-<p><strong><code>git checkout</code> / <code>git switch</code></strong>: 本质: 移动 HEAD 指针。</p>
+<p><code>git checkout</code> / <code>git switch</code>: 本质: 移动 HEAD 指针。</p>
 </li>
 <li><code>git switch &lt;branch&gt;</code>: 将 HEAD 指针从指向当前分支，改为指向另一个分支。</li>
 <li><code>git checkout &lt;commit&gt;</code>: 让 HEAD 直接指向一个具体的 Commit 节点，而不是一个分支。这会使你进入 "detached HEAD"（分离头指针）状态。</li>
@@ -3817,7 +3817,7 @@
 <p>git branch -f <branch> <commit>: 强制将某个分支指针移动到指定的 Commit。</p>
 <p>git checkout <commit></p>
 <h3 id="重写历史">重写历史<a class="headerlink" href="#重写历史" title="Permanent link">#</a></h3>
-<p><strong><code>git rebase</code></strong>: 复制一系列节点并嫁接到另一个位置。<br />
+<p><code>git rebase</code>: 复制一系列节点并嫁接到另一个位置。<br />
 注意：会改变历史，谨慎在共享分支上使用。</p>
 <h2 id="reflog-终极安全网">Reflog: 终极安全网<a class="headerlink" href="#reflog-终极安全网" title="Permanent link">#</a></h2>
 <p>Reflog 记录了 HEAD 指针的移动轨迹。即使节点从分支上“消失”，也可以通过 Reflog 找回。</p>
@@ -3829,7 +3829,7 @@
 <li>修改代码并使用 <code>git add</code> 和 <code>git commit</code> 提交。</li>
 <li><code>git push origin your-branch</code> 推送到远程分支。</li>
 </ol>
-<p><strong>处理远程更新</strong>:<br />
+<p>处理远程更新:<br />
 1. 切换到 <code>main</code> 分支并 <code>git pull</code> 更新。<br />
 2. 切换回工作分支并 <code>git rebase main</code>。<br />
 3. 解决冲突后 <code>git push -f origin your-branch</code>。</p>
@@ -3840,7 +3840,7 @@
 <li>修改代码并提交。</li>
 <li><code>git push origin xxx</code> 推送到远程分支。</li>
 </ol>
-<p><strong>处理远程更新</strong>:<br />
+<p>处理远程更新:<br />
 1. 切换到 <code>main</code> 分支并 <code>git pull</code> 更新。<br />
 2. 切换回工作分支并 <code>git merge main</code>。<br />
 3. 解决冲突后 <code>git push origin xxx</code>。</p>
@@ -3989,7 +3989,7 @@ git<span class="w"> </span>stash<span class="w"> </span>pop
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月18日 18:08:08 UTC"><span class="timeago" datetime="2025-10-18T18:08:08+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月18日 18:08:08 UTC">2025-10-18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         创建日期:

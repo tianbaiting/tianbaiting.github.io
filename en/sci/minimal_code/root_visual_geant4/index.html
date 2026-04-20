@@ -3024,7 +3024,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3512,33 +3512,33 @@
 
   <h1>Root visual geant4</h1>
 
-<p>好的，作为一名粒子物理学家，您在使用 Geant4 和 ROOT 进行模拟和数据分析，这是一个非常标准的组合。对于您希望在 ROOT 中实现粒子径迹（track）重建和探测器几何的可视化，最好的工具是 <strong>ROOT 的 EVE (Event Visualization Environment)</strong>。</p>
-<p>EVE 是一个功能强大的 3D 事件显示框架，专门为高能物理实验的复杂几何与事件数据可视化而设计。它与 ROOT 的几何包 <strong>TGeo</strong> 紧密集成。</p>
+<p>好的，作为一名粒子物理学家，您在使用 Geant4 和 ROOT 进行模拟和数据分析，这是一个非常标准的组合。对于您希望在 ROOT 中实现粒子径迹（track）重建和探测器几何的可视化，最好的工具是 ROOT 的 EVE (Event Visualization Environment)。</p>
+<p>EVE 是一个功能强大的 3D 事件显示框架，专门为高能物理实验的复杂几何与事件数据可视化而设计。它与 ROOT 的几何包 TGeo 紧密集成。</p>
 <p>下面我将详细解释为什么 EVE 是最佳选择，以及实现这一目标的工作流程和建议。</p>
 <hr />
 <h3 id="推荐的可视化工具eve--tgeo">推荐的可视化工具：EVE + TGeo<a class="headerlink" href="#推荐的可视化工具eve--tgeo" title="Permanent link">#</a></h3>
 <ol>
 <li>
-<p><strong>TGeo：探测器几何显示的基础</strong></p>
+<p>TGeo：探测器几何显示的基础</p>
 <ul>
-<li><strong>功能</strong>: <code>TGeo</code> 是 ROOT 中用于构建、浏览和可视化三维几何的包。几乎所有现代的高能物理实验都使用它来描述探测器。</li>
-<li><strong>如何使用</strong>:<ul>
-<li><strong>从 Geant4 导出</strong>: 最标准的方法是在您的 Geant4 程序中，将探测器几何导出为 GDML (Geometry Description Markup Language) 文件。</li>
-<li><strong>在 ROOT 中导入</strong>: 在 ROOT 中，您可以使用 <code>TGeoManager::Import("your_geometry.gdml")</code> 这条命令轻松地将整个探测器几何加载进来。</li>
+<li>功能: <code>TGeo</code> 是 ROOT 中用于构建、浏览和可视化三维几何的包。几乎所有现代的高能物理实验都使用它来描述探测器。</li>
+<li>如何使用:<ul>
+<li>从 Geant4 导出: 最标准的方法是在您的 Geant4 程序中，将探测器几何导出为 GDML (Geometry Description Markup Language) 文件。</li>
+<li>在 ROOT 中导入: 在 ROOT 中，您可以使用 <code>TGeoManager::Import("your_geometry.gdml")</code> 这条命令轻松地将整个探测器几何加载进来。</li>
 </ul>
 </li>
-<li><strong>优点</strong>: 这种方法将几何定义与可视化代码完全分离，非常灵活。您无需在 ROOT 中重新手动构建几何。</li>
+<li>优点: 这种方法将几何定义与可视化代码完全分离，非常灵活。您无需在 ROOT 中重新手动构建几何。</li>
 </ul>
 </li>
 <li>
-<p><strong>EVE：粒子径迹与“命中”(Hits) 可视化</strong></p>
+<p>EVE：粒子径迹与“命中”(Hits) 可视化</p>
 <ul>
-<li><strong>功能</strong>: EVE 是一个高级框架，它允许您在 <code>TGeo</code> 构建的几何上，叠加显示各种事件数据，例如粒子径迹、探测器中的能量沉积点（Hits）、重建的团簇（Clusters）等。</li>
-<li><strong>核心优势</strong>:<ul>
-<li><strong>高性能</strong>: EVE 使用 OpenGL 进行渲染，即使对于非常复杂的事件和几何，也能保持流畅的交互体验。</li>
-<li><strong>丰富的显示对象</strong>: 它提供了专门用于显示物理数据的类，如 <code>TEveTrack</code> (用于径迹), <code>TEvePointSet</code> (用于命中点), <code>TEveBoxSet</code> (用于显示单元格能量) 等。</li>
-<li><strong>交互性强</strong>: 您可以方便地进行缩放、平移、旋转、选择特定对象、隐藏部分几何结构以查看内部细节。</li>
-<li><strong>多视图支持</strong>: EVE 支持 3D 视图、2D 投影（如 R-Phi, Rho-Z 视图）等，这对于分析复杂事件至关重要。</li>
+<li>功能: EVE 是一个高级框架，它允许您在 <code>TGeo</code> 构建的几何上，叠加显示各种事件数据，例如粒子径迹、探测器中的能量沉积点（Hits）、重建的团簇（Clusters）等。</li>
+<li>核心优势:<ul>
+<li>高性能: EVE 使用 OpenGL 进行渲染，即使对于非常复杂的事件和几何，也能保持流畅的交互体验。</li>
+<li>丰富的显示对象: 它提供了专门用于显示物理数据的类，如 <code>TEveTrack</code> (用于径迹), <code>TEvePointSet</code> (用于命中点), <code>TEveBoxSet</code> (用于显示单元格能量) 等。</li>
+<li>交互性强: 您可以方便地进行缩放、平移、旋转、选择特定对象、隐藏部分几何结构以查看内部细节。</li>
+<li>多视图支持: EVE 支持 3D 视图、2D 投影（如 R-Phi, Rho-Z 视图）等，这对于分析复杂事件至关重要。</li>
 </ul>
 </li>
 </ul>
@@ -3547,11 +3547,11 @@
 <hr />
 <h3 id="工作流程从-geant4-到-root-eve-可视化">工作流程：从 Geant4 到 ROOT EVE 可视化<a class="headerlink" href="#工作流程从-geant4-到-root-eve-可视化" title="Permanent link">#</a></h3>
 <p>这是一个典型的实现步骤：</p>
-<p><strong>步骤一：在 Geant4 模拟中保存必要信息</strong></p>
+<p>步骤一：在 Geant4 模拟中保存必要信息</p>
 <p>为了在 ROOT 中重建可视化，您需要在 Geant4 运行期间，将关键信息保存到 ROOT 文件（通常是 TTree）中。</p>
 <ol>
 <li>
-<p><strong>保存粒子径迹</strong>:</p>
+<p>保存粒子径迹:</p>
 <ul>
 <li>在您的 <code>SteppingAction</code> 中，获取每一步（step）的位置信息 (<code>G4Step::GetPostStepPoint()-&gt;GetPosition()</code>)。</li>
 <li>将同一个 <code>TrackID</code> 的所有步点坐标 <span class="arithmatex">\((x, y, z)\)</span> 依次存入一个 <code>std::vector</code> 或类似容器中。</li>
@@ -3559,23 +3559,23 @@
 </ul>
 </li>
 <li>
-<p><strong>保存探测器“命中”信息</strong>:</p>
+<p>保存探测器“命中”信息:</p>
 <ul>
 <li>在您的敏感探测器（Sensitive Detector）的 <code>ProcessHits()</code> 方法中，获取“命中”的位置、能量沉积等信息。</li>
 <li>将这些信息存入 TTree 的另一个分支中。</li>
 </ul>
 </li>
 <li>
-<p><strong>导出几何</strong>:</p>
+<p>导出几何:</p>
 <ul>
 <li>在您的 Geant4 主程序中，使用 <code>G4GDMLParser</code> 将构建好的几何导出为 <code>.gdml</code> 文件。这通常只需要几行代码。</li>
 </ul>
 </li>
 </ol>
-<p><strong>步骤二：在 ROOT 中编写可视化脚本</strong></p>
+<p>步骤二：在 ROOT 中编写可视化脚本</p>
 <ol>
 <li>
-<p><strong>初始化 EVE 和 TGeo</strong>:</p>
+<p>初始化 EVE 和 TGeo:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TEveManager.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TGeoManager.h&quot;</span>
 
@@ -3588,14 +3588,14 @@
 </code></pre></div>
 </li>
 <li>
-<p><strong>读取 TTree 数据</strong>:</p>
+<p>读取 TTree 数据:</p>
 <ul>
 <li>使用 <code>TFile</code> 和 <code>TTree</code> 打开您的 Geant4 输出文件。</li>
 <li>设置好分支地址（<code>SetBranchAddress</code>），以便读取每个事件的径迹坐标和命中信息。</li>
 </ul>
 </li>
 <li>
-<p><strong>创建 EVE 可视化对象</strong>:</p>
+<p>创建 EVE 可视化对象:</p>
 <ul>
 <li>遍历 TTree 中的事件（<code>for (int i = 0; i &lt; tree-&gt;GetEntries(); ++i)</code>）。</li>
 <li>在事件循环中，为每一条径迹创建一个 <code>TEvePolyLine3D</code> 对象。<code>TEvePolyLine3D</code> 非常适合用来表示由一系列点连接成的线。<br />
@@ -3621,7 +3621,7 @@
 </ul>
 </li>
 <li>
-<p><strong>绘制和刷新视图</strong>:</p>
+<p>绘制和刷新视图:</p>
 <div class="highlight"><pre><span></span><code><span class="n">gEve</span><span class="o">-&gt;</span><span class="n">Redraw3D</span><span class="p">(</span><span class="n">kTRUE</span><span class="p">);</span><span class="w"> </span><span class="c1">// 重绘3D视图</span>
 </code></pre></div>
 </li>
@@ -3630,33 +3630,33 @@
 <h3 id="其他工具的比较">其他工具的比较<a class="headerlink" href="#其他工具的比较" title="Permanent link">#</a></h3>
 <ul>
 <li>
-<p><strong>Geant4 内置可视化工具 (OpenGL/Qt, OGL)</strong>:</p>
+<p>Geant4 内置可视化工具 (OpenGL/Qt, OGL):</p>
 <ul>
-<li><strong>优点</strong>: 非常方便，无需额外编程，可以在 Geant4 运行时**实时**显示事件。非常适合在开发和调试阶段快速检查几何是否正确、粒子是否按预期行为。</li>
-<li><strong>缺点</strong>: 功能相对简单，交互性和定制性不如 EVE。主要用于“在线”调试，不适合做高质量的“离线”事件分析和展示。</li>
+<li>优点: 非常方便，无需额外编程，可以在 Geant4 运行时实时显示事件。非常适合在开发和调试阶段快速检查几何是否正确、粒子是否按预期行为。</li>
+<li>缺点: 功能相对简单，交互性和定制性不如 EVE。主要用于“在线”调试，不适合做高质量的“离线”事件分析和展示。</li>
 </ul>
 </li>
 <li>
-<p><strong>简单的 ROOT 图形对象 (TGraph, TPolyLine3D)</strong>:</p>
+<p>简单的 ROOT 图形对象 (TGraph, TPolyLine3D):</p>
 <ul>
-<li><strong>优点</strong>: 对于非常简单的二维投影或单一径迹的显示，可以直接使用这些基础图形对象画在 <code>TCanvas</code> 上，代码简单。</li>
-<li><strong>缺点</strong>: 缺乏真正的 3D 交互能力，无法方便地与复杂的探测器几何结合。它们不是一个“事件显示系统”，而只是绘图工具。</li>
+<li>优点: 对于非常简单的二维投影或单一径迹的显示，可以直接使用这些基础图形对象画在 <code>TCanvas</code> 上，代码简单。</li>
+<li>缺点: 缺乏真正的 3D 交互能力，无法方便地与复杂的探测器几何结合。它们不是一个“事件显示系统”，而只是绘图工具。</li>
 </ul>
 </li>
 </ul>
 <h3 id="结论与建议">结论与建议<a class="headerlink" href="#结论与建议" title="Permanent link">#</a></h3>
-<p><strong>用 ROOT 进行粒子 track 重建的可视化以及探测器位置显示</strong>——毫无疑问，<strong>EVE 是最专业、功能最强大的选择</strong>。</p>
+<p>用 ROOT 进行粒子 track 重建的可视化以及探测器位置显示——毫无疑问，EVE 是最专业、功能最强大的选择。</p>
 <ul>
-<li><strong>对于最终的分析和展示</strong>: 学习并使用 <strong>EVE</strong>。它能提供物理学家所期望的专业事件显示效果。</li>
-<li><strong>对于开发过程中的快速调试</strong>: 继续使用 <strong>Geant4 内置的 Qt/OGL 可视化</strong>。</li>
+<li>对于最终的分析和展示: 学习并使用 EVE。它能提供物理学家所期望的专业事件显示效果。</li>
+<li>对于开发过程中的快速调试: 继续使用 Geant4 内置的 Qt/OGL 可视化。</li>
 </ul>
 <p>这个组合可以覆盖从开发、调试到最终分析展示的全过程。</p>
-<p><strong>参考资料</strong>:</p>
+<p>参考资料:</p>
 <ul>
-<li><strong>ROOT EVE 教程和文档</strong>: <a href="https://www.google.com/search?q=https://root.cern/docs/master/classTEveManager.html">ROOT: EVE - Event Visualization Environment</a></li>
-<li><strong>一个很好的 EVE 教程 (包含代码示例)</strong>: <a href="https://www.google.com/search?q=https://root.cern.ch/doc/master/group__EVE__Primer.html">ROOT EVE Primer</a></li>
-<li><strong>关于 TGeo 的文档</strong>: <a href="https://www.google.com/search?q=https://root.cern.ch/root-geometry-package">ROOT: TGeo - A new ROOT geometry package</a></li>
-<li><strong>Geant4 中将数据写入 ROOT 的示例</strong>: Geant4 源码中附带的 <code>extended/analysis/B5</code> 或 <code>A01</code> 示例展示了如何将数据保存为 n-tuple (TTree)。</li>
+<li>ROOT EVE 教程和文档: <a href="https://www.google.com/search?q=https://root.cern/docs/master/classTEveManager.html">ROOT: EVE - Event Visualization Environment</a></li>
+<li>一个很好的 EVE 教程 (包含代码示例): <a href="https://www.google.com/search?q=https://root.cern.ch/doc/master/group__EVE__Primer.html">ROOT EVE Primer</a></li>
+<li>关于 TGeo 的文档: <a href="https://www.google.com/search?q=https://root.cern.ch/root-geometry-package">ROOT: TGeo - A new ROOT geometry package</a></li>
+<li>Geant4 中将数据写入 ROOT 的示例: Geant4 源码中附带的 <code>extended/analysis/B5</code> 或 <code>A01</code> 示例展示了如何将数据保存为 n-tuple (TTree)。</li>
 </ul>
 
   <hr>
@@ -3664,7 +3664,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年9月23日 11:10:59 UTC"><span class="timeago" datetime="2025-09-23T11:10:59+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年9月23日 11:10:59 UTC">2025-09-23</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         Created:

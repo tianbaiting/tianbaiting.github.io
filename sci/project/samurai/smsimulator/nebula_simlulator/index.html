@@ -2934,7 +2934,7 @@
   
     <li class="md-nav__item">
       <a href="../../anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3904,84 +3904,84 @@
 <h3 id="1-参数管理-parameter-management">1. 参数管理 (Parameter Management)<a class="headerlink" href="#1-参数管理-parameter-management" title="Permanent link">#</a></h3>
 <h4 id="tnebulasimparameter">TNEBULASimParameter<a class="headerlink" href="#tnebulasimparameter" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>文件</strong>: <code>TNEBULASimParameter.hh / .cc</code></li>
-<li><strong>功能</strong>: 存储 NEBULA 的所有参数，包括探测器数量、类型、几何参数等，供仿真和数据转换模块调用。</li>
+<li>文件: <code>TNEBULASimParameter.hh / .cc</code></li>
+<li>功能: 存储 NEBULA 的所有参数，包括探测器数量、类型、几何参数等，供仿真和数据转换模块调用。</li>
 </ul>
 <h4 id="nebulasimparameterreader">NEBULASimParameterReader<a class="headerlink" href="#nebulasimparameterreader" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>文件</strong>: <code>NEBULASimParameterReader.hh / .cc</code></li>
-<li><strong>功能</strong>: 负责读取 NEBULA 的参数文件（如 <code>NEBULA_Dayone.csv</code>、<code>NEBULA_Detectors_Dayone.csv</code>），并将参数加载到仿真环境中。包括探测器数量、位置、尺寸等信息。</li>
+<li>文件: <code>NEBULASimParameterReader.hh / .cc</code></li>
+<li>功能: 负责读取 NEBULA 的参数文件（如 <code>NEBULA_Dayone.csv</code>、<code>NEBULA_Detectors_Dayone.csv</code>），并将参数加载到仿真环境中。包括探测器数量、位置、尺寸等信息。</li>
 </ul>
 <h4 id="相关数据文件">相关数据文件<a class="headerlink" href="#相关数据文件" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>文件</strong>: <code>NEBULA_Dayone.csv</code> / <code>NEBULA_Detectors_Dayone.csv</code></li>
-<li><strong>功能</strong>: 这些文件包含 NEBULA 阵列的具体参数，如每个探测器的位置、尺寸、编号等，仿真时会被 <code>NEBULASimParameterReader</code> 读取。</li>
+<li>文件: <code>NEBULA_Dayone.csv</code> / <code>NEBULA_Detectors_Dayone.csv</code></li>
+<li>功能: 这些文件包含 NEBULA 阵列的具体参数，如每个探测器的位置、尺寸、编号等，仿真时会被 <code>NEBULASimParameterReader</code> 读取。</li>
 </ul>
 <h3 id="2-几何构建-geometry-construction">2. 几何构建 (Geometry Construction)<a class="headerlink" href="#2-几何构建-geometry-construction" title="Permanent link">#</a></h3>
 <h4 id="nebulaconstruction--nebulaconstructionmessenger">NEBULAConstruction &amp; NEBULAConstructionMessenger<a class="headerlink" href="#nebulaconstruction--nebulaconstructionmessenger" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>文件</strong>: <code>NEBULAConstruction.hh / .cc</code></li>
-<li><strong>功能</strong>: 定义 NEBULA 中子探测器的几何结构，包括探测器阵列的尺寸、位置、材料等。负责在 Geant4 仿真中构建 NEBULA 的物理模型。</li>
-<li><strong>文件</strong>: <code>NEBULAConstructionMessenger.hh / .cc</code></li>
-<li><strong>功能</strong>: 提供命令接口，允许用户通过宏文件或命令行动态设置 NEBULA 的参数（如阵列参数文件、探测器参数文件等）。</li>
+<li>文件: <code>NEBULAConstruction.hh / .cc</code></li>
+<li>功能: 定义 NEBULA 中子探测器的几何结构，包括探测器阵列的尺寸、位置、材料等。负责在 Geant4 仿真中构建 NEBULA 的物理模型。</li>
+<li>文件: <code>NEBULAConstructionMessenger.hh / .cc</code></li>
+<li>功能: 提供命令接口，允许用户通过宏文件或命令行动态设置 NEBULA 的参数（如阵列参数文件、探测器参数文件等）。</li>
 </ul>
 <h3 id="3-仿真核心-simulation-core">3. 仿真核心 (Simulation Core)<a class="headerlink" href="#3-仿真核心-simulation-core" title="Permanent link">#</a></h3>
 <h4 id="nebulasd">NEBULASD<a class="headerlink" href="#nebulasd" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>文件</strong>: <code>NEBULASD.hh / .cc</code></li>
-<li><strong>功能</strong>: 定义 NEBULA 探测器的敏感体（Sensitive Detector），用于在仿真过程中记录粒子在 NEBULA 探测器中的能量沉积、位置、时间等信息。</li>
+<li>文件: <code>NEBULASD.hh / .cc</code></li>
+<li>功能: 定义 NEBULA 探测器的敏感体（Sensitive Detector），用于在仿真过程中记录粒子在 NEBULA 探测器中的能量沉积、位置、时间等信息。</li>
 </ul>
 <h3 id="4-数据处理-data-handling">4. 数据处理 (Data Handling)<a class="headerlink" href="#4-数据处理-data-handling" title="Permanent link">#</a></h3>
 <h4 id="nebulasimdatainitializer">NEBULASimDataInitializer<a class="headerlink" href="#nebulasimdatainitializer" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>文件</strong>: <code>NEBULASimDataInitializer.hh / .cc</code></li>
-<li><strong>功能</strong>: 初始化 NEBULA 仿真数据结构，为每个探测器分配数据存储空间，准备后续的数据采集和分析。</li>
+<li>文件: <code>NEBULASimDataInitializer.hh / .cc</code></li>
+<li>功能: 初始化 NEBULA 仿真数据结构，为每个探测器分配数据存储空间，准备后续的数据采集和分析。</li>
 </ul>
 <h4 id="nebulasimdataconverter_tartnebulapla">NEBULASimDataConverter_TArtNEBULAPla<a class="headerlink" href="#nebulasimdataconverter_tartnebulapla" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>文件</strong>: <code>NEBULASimDataConverter_TArtNEBULAPla.hh / .cc</code></li>
-<li><strong>功能</strong>: 将仿真过程中产生的原始数据（如能量沉积、探测器响应等）转换为实验分析所需的数据格式（如 TArtNEBULAPla），并写入 ROOT 文件。实现了能量转换、分辨率处理等物理模型。</li>
+<li>文件: <code>NEBULASimDataConverter_TArtNEBULAPla.hh / .cc</code></li>
+<li>功能: 将仿真过程中产生的原始数据（如能量沉积、探测器响应等）转换为实验分析所需的数据格式（如 TArtNEBULAPla），并写入 ROOT 文件。实现了能量转换、分辨率处理等物理模型。</li>
 </ul>
 <h2 id="geant4-中的-nebula-输出">Geant4 中的 NEBULA 输出<a class="headerlink" href="#geant4-中的-nebula-输出" title="Permanent link">#</a></h2>
 <h3 id="1-仿真输出信息">1. 仿真输出信息<a class="headerlink" href="#1-仿真输出信息" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>能量沉积 (Energy Deposit)</strong>：每个中子探测器模块（NEBULA单元）记录粒子（主要是中子）在探测器中的能量沉积。</li>
-<li><strong>探测器响应 (Detector Response)</strong>：根据能量沉积、探测器分辨率等物理模型，模拟实际实验中探测器的信号输出（如光电倍增管响应）。</li>
-<li><strong>位置与时间信息 (Position and Time Information)</strong>：记录粒子在探测器中的击中位置、入射时间等，用于后续飞行时间（TOF）、空间分布等分析。</li>
-<li><strong>粒子类型与编号 (Particle Type and ID)</strong>：区分不同粒子（如中子、伪中子、伪γ等）及其对应的探测器编号，便于事件筛选和物理分析。</li>
+<li>能量沉积 (Energy Deposit)：每个中子探测器模块（NEBULA单元）记录粒子（主要是中子）在探测器中的能量沉积。</li>
+<li>探测器响应 (Detector Response)：根据能量沉积、探测器分辨率等物理模型，模拟实际实验中探测器的信号输出（如光电倍增管响应）。</li>
+<li>位置与时间信息 (Position and Time Information)：记录粒子在探测器中的击中位置、入射时间等，用于后续飞行时间（TOF）、空间分布等分析。</li>
+<li>粒子类型与编号 (Particle Type and ID)：区分不同粒子（如中子、伪中子、伪γ等）及其对应的探测器编号，便于事件筛选和物理分析。</li>
 </ul>
 <h3 id="2-生成的-root-文件">2. 生成的 ROOT 文件<a class="headerlink" href="#2-生成的-root-文件" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>数据结构</strong>：NEBULA 的仿真数据会被转换为 ROOT 文件，通常包含一个或多个 TTree（如 <code>NEBULAPla</code>），每个条目对应一次事件或一次探测器响应。</li>
-<li><strong>内容举例</strong>：<ul>
+<li>数据结构：NEBULA 的仿真数据会被转换为 ROOT 文件，通常包含一个或多个 TTree（如 <code>NEBULAPla</code>），每个条目对应一次事件或一次探测器响应。</li>
+<li>内容举例：<ul>
 <li>每个事件下，<code>NEBULAPla</code> 分支存储所有被击中的 NEBULA 探测器单元的响应数据（如能量、位置、时间等）。</li>
 <li>其他分支可能包含全局事件信息、粒子初始参数等。</li>
 </ul>
 </li>
-<li><strong>用途</strong>：<ul>
-<li><strong>实验数据对比</strong>：仿真输出的 ROOT 文件结构和实验数据一致，可直接用于与真实实验数据进行对比分析。</li>
-<li><strong>物理分析</strong>：可用 ROOT 脚本或分析框架对仿真数据进行统计、绘图、效率计算、能谱分析等。</li>
-<li><strong>探测器性能评估</strong>：分析探测器的响应分布、分辨率、探测效率等，为实验设计和数据解释提供依据。</li>
-<li><strong>事件筛选</strong>：可根据粒子类型、能量、位置等条件筛选感兴趣的物理事件。</li>
+<li>用途：<ul>
+<li>实验数据对比：仿真输出的 ROOT 文件结构和实验数据一致，可直接用于与真实实验数据进行对比分析。</li>
+<li>物理分析：可用 ROOT 脚本或分析框架对仿真数据进行统计、绘图、效率计算、能谱分析等。</li>
+<li>探测器性能评估：分析探测器的响应分布、分辨率、探测效率等，为实验设计和数据解释提供依据。</li>
+<li>事件筛选：可根据粒子类型、能量、位置等条件筛选感兴趣的物理事件。</li>
 </ul>
 </li>
 </ul>
 <h3 id="3-相关代码模块">3. 相关代码模块<a class="headerlink" href="#3-相关代码模块" title="Permanent link">#</a></h3>
 <ul>
-<li><strong><code>NEBULASimDataConverter_TArtNEBULAPla</code></strong>：负责将仿真数据转换为 <code>TArtNEBULAPla</code> 格式，并写入 ROOT 文件。</li>
-<li><strong><code>NEBULASD</code></strong>：实现敏感体，负责在仿真过程中采集粒子击中信息。</li>
-<li><strong><code>NEBULASimParameterReader</code></strong>：读取探测器参数，决定输出数据结构和内容。</li>
+<li><code>NEBULASimDataConverter_TArtNEBULAPla</code>：负责将仿真数据转换为 <code>TArtNEBULAPla</code> 格式，并写入 ROOT 文件。</li>
+<li><code>NEBULASD</code>：实现敏感体，负责在仿真过程中采集粒子击中信息。</li>
+<li><code>NEBULASimParameterReader</code>：读取探测器参数，决定输出数据结构和内容。</li>
 </ul>
 <h2 id="tartnebulapla-数据结构">TArtNEBULAPla 数据结构<a class="headerlink" href="#tartnebulapla-数据结构" title="Permanent link">#</a></h2>
 <p><code>TArtNEBULAPla</code> 是 ANAROOT 框架中用于描述 NEBULA 单个探测器模块（Plastic Scintillator）的数据结构类。它的主要作用是存储和管理每个 NEBULA 塑料条的实验或仿真响应信息，便于后续物理分析和实验数据处理。</p>
 <h3 id="1-主要成员变量常见字段">1. 主要成员变量（常见字段）<a class="headerlink" href="#1-主要成员变量常见字段" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>探测器编号（ID）</strong>: 唯一标识每个 NEBULA 塑料条的编号，便于定位和区分。</li>
-<li><strong>能量（Energy）</strong>: 记录粒子在该塑料条中的能量沉积（单位通常为 MeV），用于能谱分析和事件筛选。</li>
-<li><strong>时间（Time）</strong>: 记录粒子击中该塑料条的时间信息（如飞行时间 TOF），用于时间分辨和事件重建。</li>
-<li><strong>位置（Position）</strong>: 塑料条在阵列中的空间坐标，便于空间分布分析和几何重建。</li>
-<li><strong>粒子类型（ParticleID）</strong>: 记录击中该塑料条的粒子类型（如中子、γ、重离子等），用于物理过程区分。</li>
-<li><strong>分辨率/信号处理相关变量</strong>: 可能包含模拟或实验中的分辨率、信号幅度、光电倍增管响应等信息。</li>
+<li>探测器编号（ID）: 唯一标识每个 NEBULA 塑料条的编号，便于定位和区分。</li>
+<li>能量（Energy）: 记录粒子在该塑料条中的能量沉积（单位通常为 MeV），用于能谱分析和事件筛选。</li>
+<li>时间（Time）: 记录粒子击中该塑料条的时间信息（如飞行时间 TOF），用于时间分辨和事件重建。</li>
+<li>位置（Position）: 塑料条在阵列中的空间坐标，便于空间分布分析和几何重建。</li>
+<li>粒子类型（ParticleID）: 记录击中该塑料条的粒子类型（如中子、γ、重离子等），用于物理过程区分。</li>
+<li>分辨率/信号处理相关变量: 可能包含模拟或实验中的分辨率、信号幅度、光电倍增管响应等信息。</li>
 </ul>
 <h3 id="2-tartnebulaplah">2. TArtNEBULAPla.h<a class="headerlink" href="#2-tartnebulaplah" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#ifndef _TARTNEBULAPLA_H_</span>
@@ -4257,7 +4257,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年8月28日 01:36:48 UTC"><span class="timeago" datetime="2025-08-28T01:36:48+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年8月28日 01:36:48 UTC">2025-08-28</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         创建日期:

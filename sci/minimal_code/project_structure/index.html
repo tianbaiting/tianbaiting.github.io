@@ -2942,7 +2942,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3395,16 +3395,16 @@
 
 
 <h1 id="现代核物理模拟项目管理与目录结构教程">现代核物理模拟项目管理与目录结构教程<a class="headerlink" href="#现代核物理模拟项目管理与目录结构教程" title="Permanent link">#</a></h1>
-<p>本教程总结一个适用于 <strong>Geant4 + ROOT + C++ + CMake + GoogleTest</strong> 的现代科研项目结构，并给出实践经验与最佳实践。非常适用于核物理模拟、探测器重建、大型 C++ 科学代码开发。</p>
+<p>本教程总结一个适用于 Geant4 + ROOT + C++ + CMake + GoogleTest 的现代科研项目结构，并给出实践经验与最佳实践。非常适用于核物理模拟、探测器重建、大型 C++ 科学代码开发。</p>
 <hr />
 <h1 id="1-总体架构理念">1. 总体架构理念<a class="headerlink" href="#1-总体架构理念" title="Permanent link">#</a></h1>
 <p>一个良好的科研模拟项目应满足：</p>
 <ul>
-<li><strong>模块化</strong>：模拟（Geant4）、数据结构（datatypes）、重建（reconstruction）互相解耦。</li>
-<li><strong>可测试性</strong>：每个模块可单独做单元测试，全链路可做集成测试。</li>
-<li><strong>运行时与构建时分离</strong>：配置、宏、几何、参数文件不参与编译。</li>
-<li><strong>清晰的数据流</strong>：data/raw → data/sim → data/reco → scripts/analysis。</li>
-<li><strong>可扩展</strong></li>
+<li>模块化：模拟（Geant4）、数据结构（datatypes）、重建（reconstruction）互相解耦。</li>
+<li>可测试性：每个模块可单独做单元测试，全链路可做集成测试。</li>
+<li>运行时与构建时分离：配置、宏、几何、参数文件不参与编译。</li>
+<li>清晰的数据流：data/raw → data/sim → data/reco → scripts/analysis。</li>
+<li>可扩展</li>
 </ul>
 <hr />
 <h1 id="2-推荐目录结构">2. 推荐目录结构<a class="headerlink" href="#2-推荐目录结构" title="Permanent link">#</a></h1>
@@ -3663,7 +3663,7 @@ scripts/analysis/*.py → produce results/
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月18日 15:32:26 UTC"><span class="timeago" datetime="2025-11-18T15:32:26+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月18日 15:32:26 UTC">2025-11-18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         创建日期:

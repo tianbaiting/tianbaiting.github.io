@@ -3177,7 +3177,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3821,16 +3821,16 @@
 <p>C++ 等源代码到最终可执行文件的转换是一个复杂的流水线过程，涉及四个主要阶段：</p>
 <ol>
 <li>
-<p><strong>预处理 (Preprocessing)</strong>：在此阶段，预处理器处理所有以 <code>#</code> 开头的指令。主要任务包括展开所有宏定义（如 <code>#define</code>），处理条件编译指令，并将 <code>#include</code> 语句中的头文件内容插入到源代码中。</p>
+<p>预处理 (Preprocessing)：在此阶段，预处理器处理所有以 <code>#</code> 开头的指令。主要任务包括展开所有宏定义（如 <code>#define</code>），处理条件编译指令，并将 <code>#include</code> 语句中的头文件内容插入到源代码中。</p>
 </li>
 <li>
-<p><strong>编译 (Compilation)</strong>：预处理后的代码被编译器翻译成目标机器的汇编语言。这是进行复杂代码优化和语法、语义检查的关键步骤。</p>
+<p>编译 (Compilation)：预处理后的代码被编译器翻译成目标机器的汇编语言。这是进行复杂代码优化和语法、语义检查的关键步骤。</p>
 </li>
 <li>
-<p><strong>汇编 (Assembly)</strong>：汇编器将汇编代码转换为机器码，生成可重定位的目标文件（通常是 <code>.o</code> 文件）。这些文件包含机器指令和尚未解析的符号引用。</p>
+<p>汇编 (Assembly)：汇编器将汇编代码转换为机器码，生成可重定位的目标文件（通常是 <code>.o</code> 文件）。这些文件包含机器指令和尚未解析的符号引用。</p>
 </li>
 <li>
-<p><strong>链接 (Linking)</strong>：链接器负责合并多个目标文件，并解析所有未定义的符号引用，例如函数调用或全局变量。链接的结果是生成最终的可执行文件或动态库。</p>
+<p>链接 (Linking)：链接器负责合并多个目标文件，并解析所有未定义的符号引用，例如函数调用或全局变量。链接的结果是生成最终的可执行文件或动态库。</p>
 </li>
 </ol>
 <h3 id="链接机制动态链接与静态链接的原理与选择">链接机制：动态链接与静态链接的原理与选择<a class="headerlink" href="#链接机制动态链接与静态链接的原理与选择" title="Permanent link">#</a></h3>
@@ -3859,33 +3859,33 @@ Mamba（Conda 的高性能实现）是数据科学和机器学习社区中最流
 <h4 id="spack-架构与无特权部署">Spack 架构与无特权部署<a class="headerlink" href="#spack-架构与无特权部署" title="Permanent link">#</a></h4>
 <p>Spack 的设计与无特权环境高度兼容：</p>
 <ul>
-<li><strong>安装</strong>：Spack 自身可以简单地被克隆或解压到用户目录下的任何位置，例如 <code>$HOME/spack</code>。</li>
-<li><strong>环境设置</strong>：用户只需通过 <code>source</code> 命令加载 Spack 提供的环境脚本，即可在当前 shell 中激活 Spack 功能。<ul>
+<li>安装：Spack 自身可以简单地被克隆或解压到用户目录下的任何位置，例如 <code>$HOME/spack</code>。</li>
+<li>环境设置：用户只需通过 <code>source</code> 命令加载 Spack 提供的环境脚本，即可在当前 shell 中激活 Spack 功能。<ul>
 <li>示例：<code>. $HOME/spack/spack-0.17.1/share/spack/setup-env.sh</code></li>
 </ul>
 </li>
-<li><strong>核心优势</strong>：Spack 的主要价值在于其能够通过抽象规范 (Specs) 系统，从源码构建并管理高度定制化的软件配置。</li>
+<li>核心优势：Spack 的主要价值在于其能够通过抽象规范 (Specs) 系统，从源码构建并管理高度定制化的软件配置。</li>
 </ul>
 <h4 id="细粒度构建规范详解spack-specs">细粒度构建规范详解：Spack Specs<a class="headerlink" href="#细粒度构建规范详解spack-specs" title="Permanent link">#</a></h4>
 <p>Spack 使用一种声明式语法——Specs，来精确地定义软件的依赖关系和构建配置，从而确保环境的高度可重现性。</p>
 <ul>
-<li><strong>版本 (@)</strong>：用于指定软件包的版本。<ul>
+<li>版本 (@)：用于指定软件包的版本。<ul>
 <li>示例：<code>$ spack install hdf5@1.10.1</code></li>
 </ul>
 </li>
-<li><strong>编译器 (%)</strong>：用于指定构建时必须使用的编译器及其版本，确保应用程序二进制接口（ABI）和性能一致性。<ul>
+<li>编译器 (%)：用于指定构建时必须使用的编译器及其版本，确保应用程序二进制接口（ABI）和性能一致性。<ul>
 <li>示例：<code>%gcc@4.7.3</code></li>
 </ul>
 </li>
-<li><strong>特性 (&plusmn;)</strong>：用于在编译期间启用或禁用软件包的特定功能（Variants）。<ul>
+<li>特性 (&plusmn;)：用于在编译期间启用或禁用软件包的特定功能（Variants）。<ul>
 <li>示例：<code>+szip</code> (启用 szip 支持)</li>
 </ul>
 </li>
-<li><strong>依赖 (^)</strong>：用于递归地指定特定依赖项的版本和配置，这是管理复杂依赖链的核心功能。<ul>
+<li>依赖 (^)：用于递归地指定特定依赖项的版本和配置，这是管理复杂依赖链的核心功能。<ul>
 <li>示例：<code>$ spack install mpileaks ^libelf@0.8.12+debug</code></li>
 </ul>
 </li>
-<li><strong>编译优化参数</strong>：允许用户直接注入自定义的编译优化旗标，以实现性能调优。<ul>
+<li>编译优化参数：允许用户直接注入自定义的编译优化旗标，以实现性能调优。<ul>
 <li>示例：<code>$ spack install hdf5 cppflags="-O3 -floop-block"</code></li>
 </ul>
 </li>
@@ -3946,18 +3946,18 @@ Mamba（Conda 的高性能实现）是数据科学和机器学习社区中最流
 <p>Gentoo Prefix 允许用户在非标准位置（<code>$EPREFIX</code>）部署完整的 Gentoo Portage 包管理系统。它是一个在用户空间内运行的完整的系统，无需任何 root 权限。</p>
 <h4 id="prefix-架构与无特权运行原理">Prefix 架构与无特权运行原理<a class="headerlink" href="#prefix-架构与无特权运行原理" title="Permanent link">#</a></h4>
 <ul>
-<li><strong>$EPREFIX</strong>：这是一个用户定义的根目录，所有 Gentoo 的文件系统结构（包括 <code>/etc</code>, <code>/usr</code>, <code>/var</code> 等）都在此目录下重建。所有操作和安装都严格限制在这个 Prefix 内部。</li>
-<li><strong>运行模式</strong>：Gentoo Prefix 使用 bootstrap 脚本自举一个完整的 Portage 实例。对于非 Linux 主机（如 macOS/Darwin 或 Solaris），必须使用 Prefix Guest 变体，该模式利用主机的 POSIX Libc 和内核，但在其之上运行 Gentoo 环境。</li>
+<li>$EPREFIX：这是一个用户定义的根目录，所有 Gentoo 的文件系统结构（包括 <code>/etc</code>, <code>/usr</code>, <code>/var</code> 等）都在此目录下重建。所有操作和安装都严格限制在这个 Prefix 内部。</li>
+<li>运行模式：Gentoo Prefix 使用 bootstrap 脚本自举一个完整的 Portage 实例。对于非 Linux 主机（如 macOS/Darwin 或 Solaris），必须使用 Prefix Guest 变体，该模式利用主机的 POSIX Libc 和内核，但在其之上运行 Gentoo 环境。</li>
 </ul>
 <h4 id="gentoo-prefix-完整-bootstrap-流程">Gentoo Prefix 完整 Bootstrap 流程<a class="headerlink" href="#gentoo-prefix-完整-bootstrap-流程" title="Permanent link">#</a></h4>
 <p>以下是在无特权环境下初始化和配置 Gentoo Prefix 的详细步骤：</p>
-<p><strong>步骤 I：环境准备与 $EPREFIX 定义</strong></p>
+<p>步骤 I：环境准备与 $EPREFIX 定义</p>
 <p>定义 Prefix 系统的安装位置（例如 <code>$HOME/gentoo-prefix</code>）。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 1. 定义 EPREFIX 路径 (所有文件将安装在此处)</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">EPREFIX</span><span class="o">=</span><span class="nv">$HOME</span>/gentoo-prefix
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$EPREFIX</span>
 </code></pre></div>
-<p><strong>步骤 II：Bootstrap 镜像配置</strong></p>
+<p>步骤 II：Bootstrap 镜像配置</p>
 <p>在执行引导脚本（<code>bootstrap-prefix.sh</code>）之前，设置必要的镜像变量以确保源码包下载的稳定性。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 1. 设置 Gentoo Portage 源码包镜像</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">GENTOO_MIRRORS</span><span class="o">=</span><span class="s2">&quot;http://mirror.nyist.edu.cn/gentoo&quot;</span><span class="w"> </span>
@@ -3966,9 +3966,9 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$EPREFIX
 <span class="c1"># 3. 设置 Gentoo Portage 快照镜像</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">SNAPSHOT_URL</span><span class="o">=</span><span class="s2">&quot;http://mirror.nyist.edu.cn/gentoo/snapshots&quot;</span><span class="w"> </span>
 </code></pre></div>
-<p><strong>步骤 III：执行 Bootstrap 脚本</strong></p>
+<p>步骤 III：执行 Bootstrap 脚本</p>
 <p>获取并执行 <code>bootstrap-prefix.sh</code> 脚本。该脚本将自动下载 Portage 树、编译一个最小化的核心工具链（如 bash）和 Portage 本身。（注意：具体脚本的获取方法需参考官方文档，这里仅提供执行环境配置。）</p>
-<p><strong>步骤 IV：配置 Portage Prefix 镜像</strong></p>
+<p>步骤 IV：配置 Portage Prefix 镜像</p>
 <p>Bootstrap 完成后，需要配置 Portage 系统以同步最新的软件包定义。</p>
 <p>创建 Portage 仓库配置目录：</p>
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$EPREFIX</span>/etc/portage/repos.conf
@@ -3977,7 +3977,7 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$EPREFIX
 <div class="highlight"><pre><span></span><code><span class="k">[gentoo_prefix]</span>
 <span class="na">sync-uri</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">rsync://mirror.nyist.edu.cn/gentoo-portage-prefix</span>
 </code></pre></div>
-<p><strong>步骤 V：Distfiles 配置与同步</strong></p>
+<p>步骤 V：Distfiles 配置与同步</p>
 <p>在 <code>$EPREFIX/etc/portage/make.conf</code> 中配置源码包（Distfiles）的下载镜像：</p>
 <div class="highlight"><pre><span></span><code><span class="nv">GENTOO_MIRRORS</span><span class="o">=</span><span class="s2">&quot;https://mirror.nyist.edu.cn/gentoo&quot;</span>
 </code></pre></div>
@@ -3993,7 +3993,7 @@ eix-sync
 <p>Gentoo Prefix 提供了对软件构建的最高级别控制，因为 Portage 系统是基于源码构建的，用户可以通过设置 USE 旗标和 CFLAGS 来精确调整每一个软件包。然而，这种自由度是以高昂的编译时间为代价的。其独特的价值在于，它能够将一个高度灵活的、基于源码的包管理系统引入到缺乏原生支持或权限受限的异构平台（例如 macOS/Darwin），在这些环境中，Gentoo Prefix 成为解决深度定制和兼容性问题的专家级工具。## 综合比较与环境选择指南</p>
 <h3 id="哲学对比二元包源码构建与函数式管理">哲学对比：二元包、源码构建与函数式管理<a class="headerlink" href="#哲学对比二元包源码构建与函数式管理" title="Permanent link">#</a></h3>
 <p>不同的包管理器反映了不同的架构哲学，主要体现在包的交付形式和环境隔离机制上。</p>
-<p><strong>环境管理工具哲学对比</strong></p>
+<p>环境管理工具哲学对比</p>
 <table>
 <thead>
 <tr>
@@ -4005,31 +4005,31 @@ eix-sync
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>APT/YUM</strong></td>
+<td style="text-align: left;">APT/YUM</td>
 <td style="text-align: left;">系统稳定，集中管理</td>
 <td style="text-align: left;">二进制包</td>
 <td style="text-align: left;">系统路径 (<code>/usr</code>)，依赖特权</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Mamba/Conda</strong></td>
+<td style="text-align: left;">Mamba/Conda</td>
 <td style="text-align: left;">环境隔离，跨平台</td>
 <td style="text-align: left;">二进制包</td>
 <td style="text-align: left;"><code>$PATH</code> 环境变量隔离和独立目录</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Spack</strong></td>
+<td style="text-align: left;">Spack</td>
 <td style="text-align: left;">配置确定性，源码定制</td>
 <td style="text-align: left;">源码构建 (定制)</td>
 <td style="text-align: left;">哈希路径与编译时 RPATH 硬编码</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Nix</strong></td>
+<td style="text-align: left;">Nix</td>
 <td style="text-align: left;">函数式，不可变性</td>
 <td style="text-align: left;">源码构建/Store</td>
 <td style="text-align: left;">内容寻址存储与符号链接</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Gentoo Prefix</strong></td>
+<td style="text-align: left;">Gentoo Prefix</td>
 <td style="text-align: left;">源码控制，系统自举</td>
 <td style="text-align: left;">源码构建</td>
 <td style="text-align: left;"><code>$EPREFIX</code> 隔离的独立文件系统</td>
@@ -4050,28 +4050,28 @@ eix-sync
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>部署速度</strong></td>
+<td style="text-align: left;">部署速度</td>
 <td style="text-align: left;">极快 (二进制)</td>
 <td style="text-align: left;">慢 (源码编译)</td>
 <td style="text-align: left;">中等 (可缓存二进制)</td>
 <td style="text-align: left;">极慢 (全源码编译)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>定制粒度</strong></td>
+<td style="text-align: left;">定制粒度</td>
 <td style="text-align: left;">低 (依赖于维护者)</td>
 <td style="text-align: left;">极高 (Specs, 编译器)</td>
 <td style="text-align: left;">极高 (函数式构建)</td>
 <td style="text-align: left;">高 (USE Flags, CFLAGS)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>可重现性</strong></td>
+<td style="text-align: left;">可重现性</td>
 <td style="text-align: left;">中 (依赖二进制来源)</td>
 <td style="text-align: left;">高 (Specs 定义构建输入)</td>
 <td style="text-align: left;">极高 (内容哈希确定)</td>
 <td style="text-align: left;">高 (Portage 配置)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>最适场景</strong></td>
+<td style="text-align: left;">最适场景</td>
 <td style="text-align: left;">数据科学，快速原型，非底层依赖环境</td>
 <td style="text-align: left;">HPC 集群，多编译器/复杂科研环境</td>
 <td style="text-align: left;">CI/CD，基础设施配置，追求原子回滚</td>
@@ -4080,10 +4080,10 @@ eix-sync
 </tbody>
 </table>
 <ul>
-<li>如果核心任务是快速部署且主要使用 Python/R 生态系统，对底层编译优化要求不高，应当首选 <strong>Mamba/Conda</strong>。</li>
-<li>如果用户需要管理复杂的科学计算软件栈，需要精确控制每一个依赖项的编译器版本和优化参数，<strong>Spack</strong> 是无可替代的解决方案。</li>
-<li>如果组织追求极致的配置可追溯性、原子性更新和即时回滚能力，<strong>Nix</strong> 提供了一种函数式、声明式的管理范式。</li>
-<li>如果用户需要在特殊的、非 Linux 的受限环境中实现基于源码的细粒度控制，<strong>Gentoo Prefix</strong> 提供了将 Linux 级定制能力带入用户空间的独特路径。</li>
+<li>如果核心任务是快速部署且主要使用 Python/R 生态系统，对底层编译优化要求不高，应当首选 Mamba/Conda。</li>
+<li>如果用户需要管理复杂的科学计算软件栈，需要精确控制每一个依赖项的编译器版本和优化参数，Spack 是无可替代的解决方案。</li>
+<li>如果组织追求极致的配置可追溯性、原子性更新和即时回滚能力，Nix 提供了一种函数式、声明式的管理范式。</li>
+<li>如果用户需要在特殊的、非 Linux 的受限环境中实现基于源码的细粒度控制，Gentoo Prefix 提供了将 Linux 级定制能力带入用户空间的独特路径。</li>
 </ul>
 <h2 id="总结与未来趋势展望">总结与未来趋势展望<a class="headerlink" href="#总结与未来趋势展望" title="Permanent link">#</a></h2>
 <p>现代软件环境管理的演进方向是确定性、隔离性和声明式配置。系统架构的演变表明，简单依赖环境变量来解决动态链接问题是不可持续的。</p>
@@ -4095,7 +4095,7 @@ eix-sync
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月28日 16:19:33 UTC"><span class="timeago" datetime="2025-11-28T16:19:33+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月28日 16:19:33 UTC">2025-11-28</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         Created:

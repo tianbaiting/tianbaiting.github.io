@@ -3074,7 +3074,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3643,10 +3643,10 @@ cmake<span class="w"> </span>-DCMAKE_EXPORT_COMPILE_COMMANDS<span class="o">=</s
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>配置说明:</strong></p>
+<p>配置说明:</p>
 <ul>
 <li><code>"name"</code>: 配置的名称，可以自定义。</li>
-<li><code>"compileCommands"</code>: <strong>核心配置项</strong>。这里指向了 <code>compile_commands.json</code> 文件的路径。<ul>
+<li><code>"compileCommands"</code>: 核心配置项。这里指向了 <code>compile_commands.json</code> 文件的路径。<ul>
 <li><code>${workspaceFolder}</code> 是一个 VS Code 变量，代表你当前打开的项目根目录。</li>
 <li><code>/build/compile_commands.json</code> 是 <code>compile_commands.json</code> 相对于项目根目录的路径。请根据你的实际构建目录名称（如 <code>build</code>, <code>bin</code> 等）进行修改。</li>
 </ul>
@@ -3684,7 +3684,7 @@ cmake<span class="w"> </span>-DCMAKE_EXPORT_COMPILE_COMMANDS<span class="o">=</s
 <span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>配置说明:</strong></p>
+<p>配置说明:</p>
 <ul>
 <li><code>"includePath"</code>: 一个路径列表。<code>"${workspaceFolder}/**"</code> 表示递归搜索当前项目下的所有目录。你需要将项目中依赖的外部库的 <code>include</code> 文件夹路径也添加进去。</li>
 <li>这种方法的缺点是当项目依赖增多或结构复杂时，手动维护这个列表会变得非常繁琐。</li>
@@ -3698,10 +3698,10 @@ cmake<span class="w"> </span>-DCMAKE_EXPORT_COMPILE_COMMANDS<span class="o">=</s
 <p>在 VS Code 的扩展商店中搜索并安装 <code>clangd</code> 插件。</p>
 </li>
 <li>
-<p><strong>（可选但强烈推荐）</strong> 按照 <strong>方案一</strong> 的方法，在你的项目构建目录中生成 <code>compile_commands.json</code> 文件。<code>clangd</code> 会自动检测并使用这个文件。</p>
+<p>（可选但强烈推荐） 按照 方案一 的方法，在你的项目构建目录中生成 <code>compile_commands.json</code> 文件。<code>clangd</code> 会自动检测并使用这个文件。</p>
 </li>
 <li>
-<p><strong>（可选）</strong> 为了避免与 VS Code 默认的 C/C++ 插件（<code>ms-vscode.cpptools</code>）的 IntelliSense 引擎冲突，你可以在 VS Code 的设置 (<code>settings.json</code>) 中禁用默认引擎：</p>
+<p>（可选） 为了避免与 VS Code 默认的 C/C++ 插件（<code>ms-vscode.cpptools</code>）的 IntelliSense 引擎冲突，你可以在 VS Code 的设置 (<code>settings.json</code>) 中禁用默认引擎：</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&quot;C_Cpp.intelliSenseEngine&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;disabled&quot;</span>
 </code></pre></div>
 </li>
@@ -3720,19 +3720,19 @@ cmake<span class="w"> </span>-DCMAKE_EXPORT_COMPILE_COMMANDS<span class="o">=</s
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong><code>compile_commands.json</code></strong></td>
-<td style="text-align: left;"><strong>最精确</strong>，一劳永逸，能处理复杂的项目结构</td>
+<td style="text-align: left;"><code>compile_commands.json</code></td>
+<td style="text-align: left;">最精确，一劳永逸，能处理复杂的项目结构</td>
 <td style="text-align: left;">依赖于构建系统（如CMake）生成该文件</td>
-<td style="text-align: left;"><strong>强烈推荐</strong>，特别是使用CMake/Meson等现代构建系统的项目</td>
+<td style="text-align: left;">强烈推荐，特别是使用CMake/Meson等现代构建系统的项目</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>手动配置 <code>includePath</code></strong></td>
+<td style="text-align: left;">手动配置 <code>includePath</code></td>
 <td style="text-align: left;">不依赖任何构建系统，简单直接</td>
 <td style="text-align: left;">难以维护，项目复杂时容易出错</td>
 <td style="text-align: left;">不使用构建系统的简单项目，或临时修复</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>使用 <code>clangd</code></strong></td>
+<td style="text-align: left;">使用 <code>clangd</code></td>
 <td style="text-align: left;">性能好，功能强大，诊断信息准确</td>
 <td style="text-align: left;">需要额外安装插件，最佳效果仍依赖<code>compile_commands.json</code></td>
 <td style="text-align: left;">追求极致开发体验的用户，可与方案一结合使用</td>
@@ -3745,7 +3745,7 @@ cmake<span class="w"> </span>-DCMAKE_EXPORT_COMPILE_COMMANDS<span class="o">=</s
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年10月13日 09:58:07 UTC"><span class="timeago" datetime="2025-10-13T09:58:07+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年10月13日 09:58:07 UTC">2025-10-13</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         Created:

@@ -3286,7 +3286,7 @@
   
     <li class="md-nav__item">
       <a href="../../samurai/anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -4041,8 +4041,8 @@ H |\psi\rangle = E |\psi\rangle<br />
 $$<br />
 在质心参考系中，一个两体系统的哈密顿量可以写为 <span class="arithmatex">\(H = H_0 + V\)</span>。</p>
 <ul>
-<li><strong>自由哈密顿量 <span class="arithmatex">\(H_0 = \dfrac{\vec{p}^2}{2\mu}\)</span></strong>，其中 <span class="arithmatex">\(\vec{p}\)</span> 是两粒子间的相对动量，<span class="arithmatex">\(\mu = \dfrac{m_1 m_2}{m_1+m_2}\)</span> 是约化质量。<span class="arithmatex">\(H_0\)</span> 的本征态是动量为 <span class="arithmatex">\(\hbar\vec{k}\)</span> 的平面波 <span class="arithmatex">\(|\vec{k}\rangle\)</span>，其能量为 <span class="arithmatex">\(E_k = \dfrac{\hbar^2 k^2}{2\mu}\)</span>。</li>
-<li><strong>相互作用势 <span class="arithmatex">\(V\)</span></strong>，我们假设它是一个只依赖于相对坐标 <span class="arithmatex">\(\vec{r}\)</span> 的局域势 <span class="arithmatex">\(V(\vec{r})\)</span>，并且是短程的，即当 <span class="arithmatex">\(r \to \infty\)</span> 时，<span class="arithmatex">\(V(r)\)</span> 比 <span class="arithmatex">\(1/r\)</span> 更快地趋于零。</li>
+<li>自由哈密顿量 <span class="arithmatex">\(H_0 = \dfrac{\vec{p}^2}{2\mu}\)</span>，其中 <span class="arithmatex">\(\vec{p}\)</span> 是两粒子间的相对动量，<span class="arithmatex">\(\mu = \dfrac{m_1 m_2}{m_1+m_2}\)</span> 是约化质量。<span class="arithmatex">\(H_0\)</span> 的本征态是动量为 <span class="arithmatex">\(\hbar\vec{k}\)</span> 的平面波 <span class="arithmatex">\(|\vec{k}\rangle\)</span>，其能量为 <span class="arithmatex">\(E_k = \dfrac{\hbar^2 k^2}{2\mu}\)</span>。</li>
+<li>相互作用势 <span class="arithmatex">\(V\)</span>，我们假设它是一个只依赖于相对坐标 <span class="arithmatex">\(\vec{r}\)</span> 的局域势 <span class="arithmatex">\(V(\vec{r})\)</span>，并且是短程的，即当 <span class="arithmatex">\(r \to \infty\)</span> 时，<span class="arithmatex">\(V(r)\)</span> 比 <span class="arithmatex">\(1/r\)</span> 更快地趋于零。</li>
 </ul>
 <p>对于散射问题，我们寻找的是能量 <span class="arithmatex">\(E &gt; 0\)</span> 的连续谱解。这个解在物理上必须描述一个清晰的散射过程：一束粒子（平面波）入射，与散射中心相互作用后，以球面波的形式向四面八方散射开来。这个直观的物理图像，被精确地表述为波函数在坐标空间中的渐进行为（Asymptotic Behavior）：<br />
 $$<br />
@@ -4100,7 +4100,7 @@ H = \sum_{i=1}^3 \frac{\vec{p}<em 12="12">i^2}{2m_i} + V</em>}(\vec{r<em 23="23"
 $$<br />
 这个系统有 9 个坐标自由度。总动量 <span class="arithmatex">\(\vec{P} = \vec{p}_1+\vec{p}_2+\vec{p}_3\)</span> 守恒，意味着质心的运动是平凡的匀速直线运动。为了分离出这 3 个无关的自由度，我们必须引入雅可比坐标（Jacobi Coordinates）。</p>
 <p>这是一个至关重要的步骤，因为三体问题天然地存在三种不同的“组合”方式：(12)+3、(23)+1、(31)+2。每一种组合方式都对应一套最适合描述它的雅可比坐标。</p>
-<p><strong>第一套雅可比坐标（标记为 "3"）：</strong> 适合描述粒子 1 和 2 构成子系统，粒子 3 是“旁观者”。<br />
+<p>第一套雅可比坐标（标记为 "3"）： 适合描述粒子 1 和 2 构成子系统，粒子 3 是“旁观者”。<br />
 $$<br />
 \begin{align*}<br />
 \vec{\rho}_3 &amp;= \vec{r}_1 - \vec{r}_2 \quad &amp;(\text{子系统(12)的内部相对坐标}) \<br />
@@ -4114,8 +4114,8 @@ H_0 = \frac{\vec{p}<em 12="12">{\rho_3}^2}{2\mu</em>}} + \frac{\vec{p}_{\lambda_
 $$<br />
 其中 <span class="arithmatex">\(\mu_{12} = \dfrac{m_1m_2}{m_1+m_2}\)</span> 和 <span class="arithmatex">\(\nu_3 = \dfrac{(m_1+m_2)m_3}{M}\)</span> 是对应的约化质量。这种分离是精确的，没有任何交叉项。</p>
 <p>同理，我们可以定义另外两套雅可比坐标：<br />
-<strong>第二套（标记为 "1"）：</strong> <span class="arithmatex">\(\vec{\rho}_1 = \vec{r}_2 - \vec{r}_3\)</span>, <span class="arithmatex">\(\vec{\lambda}_1 = \dfrac{m_2\vec{r}_2+m_3\vec{r}_3}{m_2+m_3} - \vec{r}_1\)</span>。适合描述 (23)+1 子系统。<br />
-<strong>第三套（标记为 "2"）：</strong> <span class="arithmatex">\(\vec{\rho}_2 = \vec{r}_3 - \vec{r}_1\)</span>, <span class="arithmatex">\(\vec{\lambda}_2 = \dfrac{m_3\vec{r}_3+m_1\vec{r}_1}{m_3+m_1} - \vec{r}_2\)</span>。适合描述 (31)+2 子系统。</p>
+ 第二套（标记为 "1"）： <span class="arithmatex">\(\vec{\rho}_1 = \vec{r}_2 - \vec{r}_3\)</span>, <span class="arithmatex">\(\vec{\lambda}_1 = \dfrac{m_2\vec{r}_2+m_3\vec{r}_3}{m_2+m_3} - \vec{r}_1\)</span>。适合描述 (23)+1 子系统。<br />
+ 第三套（标记为 "2"）： <span class="arithmatex">\(\vec{\rho}_2 = \vec{r}_3 - \vec{r}_1\)</span>, <span class="arithmatex">\(\vec{\lambda}_2 = \dfrac{m_3\vec{r}_3+m_1\vec{r}_1}{m_3+m_1} - \vec{r}_2\)</span>。适合描述 (31)+2 子系统。</p>
 <p>这三套坐标系只是对同一个物理系统的不同描述，它们之间可以通过线性变换相互转换。理解这一点对于后续理解置换算符至关重要。</p>
 <hr />
 <h3 id="13-致命缺陷三体-lippmannschwinger-方程的病态本质">1.3 致命缺陷：三体 Lippmann–Schwinger 方程的病态本质<a class="headerlink" href="#13-致命缺陷三体-lippmannschwinger-方程的病态本质" title="Permanent link">#</a></h3>
@@ -4128,17 +4128,17 @@ $$<br />
 |\Phi_1\rangle = |\phi_d(\vec{\rho}_1)\rangle \otimes |\vec{q}(\vec{\lambda}_1)\rangle<br />
 $$<br />
 它的能量是 <span class="arithmatex">\(E = -\epsilon_d + \dfrac{q^2}{2\nu_1}\)</span>，其中 <span class="arithmatex">\(\epsilon_d\)</span> 是氘核的结合能。</p>
-<p><strong>病灶在何处？</strong></p>
+<p>病灶在何处？</p>
 <p>让我们对 LS 方程进行迭代展开（Born 级数），并仔细审视其中的一项：<br />
 $$<br />
 |\Psi^+\rangle = |\Phi_1\rangle + G_0^+V|\Phi_1\rangle + G_0<sup>+VG_0</sup>+V|\Phi_1\rangle + \dots<br />
 $$<br />
 考虑二阶项中的一个特定过程：<span class="arithmatex">\(G_0^+ V_{23} G_0^+ V_{23} |\Phi_1\rangle\)</span>。</p>
 <ul>
-<li><strong>初态 <span class="arithmatex">\(|\Phi_1\rangle\)</span></strong>：粒子 2 和 3 被束缚成氘核，粒子 1 自由飞行。</li>
-<li><strong>第一次作用 <span class="arithmatex">\(V_{23}\)</span></strong>：势 <span class="arithmatex">\(V_{23}\)</span> 只依赖于 <span class="arithmatex">\(\vec{\rho}_1\)</span>，它只作用于子系统 (23)。它可以使氘核保持束缚，也可以使其激发或破裂，但它**完全不影响**粒子 1 的运动状态。</li>
-<li><strong>第一次传播 <span class="arithmatex">\(G_0^+\)</span></strong>：格林函数 <span class="arithmatex">\(G_0^+(E) = (E - H_{0,23} - H_{0,1} + i\epsilon)^{-1}\)</span> 作用。 <span class="arithmatex">\(G_0^+(E) = \frac{1}{E - H_0 + i\epsilon}\)</span>。在动量表象中，它是一个乘法算符：<span class="arithmatex">\(\frac{1}{E - \frac{p_{\rho_1}^2}{2\mu_{23}} - \frac{p_{\lambda_1}^2}{2\nu_1} + i\epsilon}\)</span>。</li>
-<li><strong>第二次作用 <span class="arithmatex">\(V_{23}\)</span></strong>：势 <span class="arithmatex">\(V_{23}\)</span> 再次作用于子系统 (23)。</li>
+<li>初态 <span class="arithmatex">\(|\Phi_1\rangle\)</span>：粒子 2 和 3 被束缚成氘核，粒子 1 自由飞行。</li>
+<li>第一次作用 <span class="arithmatex">\(V_{23}\)</span>：势 <span class="arithmatex">\(V_{23}\)</span> 只依赖于 <span class="arithmatex">\(\vec{\rho}_1\)</span>，它只作用于子系统 (23)。它可以使氘核保持束缚，也可以使其激发或破裂，但它完全不影响粒子 1 的运动状态。</li>
+<li>第一次传播 <span class="arithmatex">\(G_0^+\)</span>：格林函数 <span class="arithmatex">\(G_0^+(E) = (E - H_{0,23} - H_{0,1} + i\epsilon)^{-1}\)</span> 作用。 <span class="arithmatex">\(G_0^+(E) = \frac{1}{E - H_0 + i\epsilon}\)</span>。在动量表象中，它是一个乘法算符：<span class="arithmatex">\(\frac{1}{E - \frac{p_{\rho_1}^2}{2\mu_{23}} - \frac{p_{\lambda_1}^2}{2\nu_1} + i\epsilon}\)</span>。</li>
+<li>第二次作用 <span class="arithmatex">\(V_{23}\)</span>：势 <span class="arithmatex">\(V_{23}\)</span> 再次作用于子系统 (23)。</li>
 </ul>
 <p>在整个 <span class="arithmatex">\(G_0^+ V_{23} G_0^+ V_{23} \dots\)</span> 的链条中，粒子 1 始终是“旁观者”。这个过程描述的是子系统 (23) 自身的散射，而粒子 1 则完全没有参与，像一个幽灵一样从旁边飞过。</p>
 <p>让我们在动量表象中看得更清楚。<span class="arithmatex">\(V_{23}\)</span> 作用在 <span class="arithmatex">\(|\Phi_1\rangle\)</span> 上，会将其分解到 (23) 对的各种激发态上，但粒子1的动量 <span class="arithmatex">\(\vec{q}\)</span> 保持不变。<br />
@@ -4151,7 +4151,7 @@ $$<br />
 $$<br />
 注意到 <span class="arithmatex">\(E = -\epsilon_d + \frac{q^2}{2\nu_1}\)</span>，分母变为 <span class="arithmatex">\(-\epsilon_d - \frac{k'^2}{2\mu_{23}} + i\epsilon\)</span>。这没有问题。</p>
 <p>但当 <span class="arithmatex">\(V_{23}\)</span> 再次作用，然后 <span class="arithmatex">\(G_0^+\)</span> 再次作用时，我们实际上是在计算一个描述 (23) 对自身散射的T-矩阵的过程。整个过程中，粒子1的动量 <span class="arithmatex">\(\vec{q}\)</span> 像一个幽灵一样，始终没有改变。</p>
-<p>在数学上，这意味着在整个积分链条中，始终存在一个未被积分的动量守恒 <span class="arithmatex">\(\delta(\vec{q} - \vec{q}')\)</span>。这个 <span class="arithmatex">\(\delta\)</span> 函数来自于算符 <span class="arithmatex">\(V_{23}\)</span> 和 <span class="arithmatex">\(H_0\)</span> 对粒子1的“不作为”。它使得积分核 <span class="arithmatex">\(K = G_0^+V\)</span> <strong>不是紧致算符</strong>。</p>
+<p>在数学上，这意味着在整个积分链条中，始终存在一个未被积分的动量守恒 <span class="arithmatex">\(\delta(\vec{q} - \vec{q}')\)</span>。这个 <span class="arithmatex">\(\delta\)</span> 函数来自于算符 <span class="arithmatex">\(V_{23}\)</span> 和 <span class="arithmatex">\(H_0\)</span> 对粒子1的“不作为”。它使得积分核 <span class="arithmatex">\(K = G_0^+V\)</span> 不是紧致算符。</p>
 <p><span class="arithmatex">\(V_{23}\)</span>再换一种写法：<br />
 $$<br />
 \langle \vec{p}', \vec{q}' | V_{23} | \vec{p}, \vec{q} \rangle = \delta(\vec{q}' - \vec{q}) \cdot V_{23}(\vec{p}', \vec{p})<br />
@@ -4160,13 +4160,13 @@ $$<br />
 <p>现在考察积分核 <span class="arithmatex">\(K = G_0^+ V = G_0^+ (V_{12}+V_{23}+V_{31})\)</span>。其中的 <span class="arithmatex">\(G_0^+ V_{23}\)</span> 项就包含了上述的 <span class="arithmatex">\(\delta\)</span> 函数。当我们在 LS 积分方程中进行积分时，例如 <span class="arithmatex">\(\int d^3q \dots \delta(\vec{q}' - \vec{q}) \dots\)</span>，这个 <span class="arithmatex">\(\delta\)</span> 函数不会被消除！它会一直存在于方程的迭代级数中。</p>
 <p>一个包含 <span class="arithmatex">\(\delta\)</span> 函数的积分核，在数学上被称为非紧致（Non-Compact）。<br />
 直观理解：紧致算符有“平滑”作用，能把粗糙的函数变得平滑。而非紧致算符没有这种性质，它会保留甚至制造奇点。<br />
-数学后果：Fredholm 积分方程理论的核心定理之一，就是只有当积分核是紧致时，方程解的唯一性才能得到保证。对于我们这里的非紧致核，Fredholm 理论不适用，方程的解**不唯一**。</p>
-<p><strong>什么是紧致算符？</strong><br />
+数学后果：Fredholm 积分方程理论的核心定理之一，就是只有当积分核是紧致时，方程解的唯一性才能得到保证。对于我们这里的非紧致核，Fredholm 理论不适用，方程的解不唯一。</p>
+<p>什么是紧致算符？<br />
 一个直观的理解是，紧致算符能把有界集合映射到紧集（一个更“小”的集合），它具有“平滑”效应。在积分方程中，紧致的积分核能保证解的良定性。非紧致的核，就像我们这里遇到的，包含无法消除的 <span class="arithmatex">\(\delta\)</span> 函数奇点，它破坏了解的唯一性。</p>
 <p>三体LS方程失败了，因为它无法区分两种截然不同的物理过程：</p>
 <ol>
-<li><strong>连通的 (Connected) 过程：</strong> 所有三个粒子都紧密地参与相互作用，例如粒子1撞击氘核，氘核破裂，然后三个粒子重新组合。这是我们真正关心的复杂散射。</li>
-<li><strong>非连通的 (Disconnected) 过程：</strong> 一个子系统在内部演化，而第三个粒子作为旁观者自由飞行。例如，氘核内部的质子和中子相互作用，而入射的中子在远处飞过，从未靠近。</li>
+<li>连通的 (Connected) 过程： 所有三个粒子都紧密地参与相互作用，例如粒子1撞击氘核，氘核破裂，然后三个粒子重新组合。这是我们真正关心的复杂散射。</li>
+<li>非连通的 (Disconnected) 过程： 一个子系统在内部演化，而第三个粒子作为旁观者自由飞行。例如，氘核内部的质子和中子相互作用，而入射的中子在远处飞过，从未靠近。</li>
 </ol>
 <p>LS方程将这两种过程混为一谈，其数学结构因此而崩溃。我们需要一个全新的、能够从一开始就将这两种过程分离开来的方程。这就是法捷耶夫方程即将要完成的使命。</p>
 <h2 id="法捷耶夫-三体">法捷耶夫-三体<a class="headerlink" href="#法捷耶夫-三体" title="Permanent link">#</a></h2>
@@ -4506,7 +4506,7 @@ $$<br />
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月5日 10:00:17 UTC"><span class="timeago" datetime="2025-11-05T10:00:17+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月5日 10:00:17 UTC">2025-11-05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         Created:

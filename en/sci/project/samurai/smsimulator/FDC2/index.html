@@ -2968,7 +2968,7 @@
   
     <li class="md-nav__item">
       <a href="../../anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3638,14 +3638,14 @@
 </code></pre></div>
 <h3 id="1-detector-geometry--construction">1. Detector Geometry &amp; Construction<a class="headerlink" href="#1-detector-geometry--construction" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Path</strong>: <code>sources/smg4lib/detectors/FDC2/</code></li>
-<li><strong>Files</strong>: <code>FDC2Construction.hh</code> / <code>.cc</code></li>
-<li><strong>Function</strong>: Defines the geometry, materials, position, and orientation of FDC2.</li>
+<li>Path: <code>sources/smg4lib/detectors/FDC2/</code></li>
+<li>Files: <code>FDC2Construction.hh</code> / <code>.cc</code></li>
+<li>Function: Defines the geometry, materials, position, and orientation of FDC2.</li>
 </ul>
 <h3 id="2-sensitive-detector--data-acquisition">2. Sensitive Detector &amp; Data Acquisition<a class="headerlink" href="#2-sensitive-detector--data-acquisition" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Path</strong>: <code>sources/smg4lib/data/</code></li>
-<li><strong>Files</strong>:<ul>
+<li>Path: <code>sources/smg4lib/data/</code></li>
+<li>Files:<ul>
 <li><code>FragmentSD.hh</code> / <code>.cc</code>: Mounted to the active volume of FDC2, responsible for collecting physical information when particles pass through.</li>
 <li><code>TSimData.hh</code> / <code>.cc</code>: Stores physical data for each event, including the <code>detectorName</code> field to distinguish FDC2.</li>
 <li><code>TFragSimParameter.hh</code> / <code>.cc</code>: Configuration parameters for FDC2.</li>
@@ -3656,9 +3656,9 @@
 <h4 id="data-acquisition-process-and-content">Data Acquisition Process and Content<a class="headerlink" href="#data-acquisition-process-and-content" title="Permanent link">#</a></h4>
 <ul>
 <li>The active volume of FDC2 mounts the sensitive detector (<code>FragmentSD</code>). When a particle passes through FDC2, the <code>FragmentSD::ProcessHits</code> method is automatically called to collect and store physical information.</li>
-<li><strong>Stored Data Content</strong> (in <code>TSimData</code> or <code>TFragSimData</code> objects):<ul>
-<li><strong>Detector Name</strong>: <code>fDetectorName</code> (e.g., "FDC2"), used to identify the data source.</li>
-<li><strong>Particle Information</strong>:<ul>
+<li>Stored Data Content (in <code>TSimData</code> or <code>TFragSimData</code> objects):<ul>
+<li>Detector Name: <code>fDetectorName</code> (e.g., "FDC2"), used to identify the data source.</li>
+<li>Particle Information:<ul>
 <li><code>fPDGCode</code>: PDG code</li>
 <li><code>fParticleName</code>: Particle name</li>
 <li><code>fZ</code>, <code>fA</code>: Atomic number and mass number</li>
@@ -3666,25 +3666,25 @@
 <li><code>fMass</code>: Mass</li>
 </ul>
 </li>
-<li><strong>Track Information</strong>:<ul>
+<li>Track Information:<ul>
 <li><code>fParentID</code>: Parent particle ID</li>
 <li><code>fTrackID</code>: Track ID</li>
 </ul>
 </li>
-<li><strong>Position and Momentum</strong>:<ul>
+<li>Position and Momentum:<ul>
 <li><code>fPrePosition</code>, <code>fPostPosition</code>: Position before and after the step (x, y, z, in mm)</li>
 <li><code>fPreMomentum</code>, <code>fPostMomentum</code>: Momentum before and after the step (in MeV)</li>
 </ul>
 </li>
-<li><strong>Time Information</strong>:<ul>
+<li>Time Information:<ul>
 <li><code>fPreTime</code>, <code>fPostTime</code>: Global time before and after the step (in ns)</li>
 </ul>
 </li>
-<li><strong>Flight Length</strong>: <code>fFlightLength</code> (total path length to this point, in mm)</li>
-<li><strong>Accepted</strong>: <code>fIsAccepted</code> (used to filter valid physical events)</li>
+<li>Flight Length: <code>fFlightLength</code> (total path length to this point, in mm)</li>
+<li>Accepted: <code>fIsAccepted</code> (used to filter valid physical events)</li>
 </ul>
 </li>
-<li><strong>Data Output</strong>:<ul>
+<li>Data Output:<ul>
 <li>All the above data are stored in a ROOT file TTree branch (e.g., "fragment").</li>
 <li>Each event contains a data array, with each element corresponding to a valid step (usually when the primary particle hits FDC2).</li>
 <li>Analysis scripts (e.g., <code>work/macros/examples/analysis_example.cc</code>) read these branches and filter data with <code>fDetectorName == "FDC2"</code> for physics analysis.</li>
@@ -3693,8 +3693,8 @@
 </ul>
 <h3 id="3-main-detector-construction--integration">3. Main Detector Construction &amp; Integration<a class="headerlink" href="#3-main-detector-construction--integration" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Path</strong>: <code>sources/projects/sim_samurai21/</code></li>
-<li><strong>Files</strong>:<ul>
+<li>Path: <code>sources/projects/sim_samurai21/</code></li>
+<li>Files:<ul>
 <li><code>sim_samurai21.cc</code>: Main program entry.</li>
 <li><code>src/SAMURAI21DetectorConstruction.cc</code>: Main detector construction class, responsible for instantiating FDC2 and mounting the sensitive detector.</li>
 </ul>
@@ -3702,14 +3702,14 @@
 </ul>
 <h3 id="4-data-analysis">4. Data Analysis<a class="headerlink" href="#4-data-analysis" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Path</strong>: <code>work/macros/examples/</code></li>
-<li><strong>Files</strong>: <code>analysis_example.cc</code>, <code>analysis_crosstalk_example.cc</code></li>
-<li><strong>Function</strong>: Reads and analyzes data collected by FDC2.</li>
+<li>Path: <code>work/macros/examples/</code></li>
+<li>Files: <code>analysis_example.cc</code>, <code>analysis_crosstalk_example.cc</code></li>
+<li>Function: Reads and analyzes data collected by FDC2.</li>
 </ul>
 <h3 id="5-other-helper-libraries">5. Other Helper Libraries<a class="headerlink" href="#5-other-helper-libraries" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Path</strong>: <code>sources/smg4lib/action/</code></li>
-<li><strong>Function</strong>: Includes event, run, and tracking action classes, which indirectly affect the data acquisition process of FDC2.</li>
+<li>Path: <code>sources/smg4lib/action/</code></li>
+<li>Function: Includes event, run, and tracking action classes, which indirectly affect the data acquisition process of FDC2.</li>
 </ul>
 <h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h3>
 <ul>
@@ -3754,7 +3754,7 @@ FDC2 的输出数据由敏感探测器自动采集，封装为数据对象并存
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="August 24, 2025 14:30:31 UTC"><span class="timeago" datetime="2025-08-24T14:30:31+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="August 24, 2025 14:30:31 UTC">2025-08-24</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 20, 2026 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 20, 2026 10:56:55 UTC">2026-04-20</span>
       
         <br>
         Created:

@@ -3117,7 +3117,7 @@
   
     <li class="md-nav__item">
       <a href="../../project/samurai/anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3738,24 +3738,24 @@
 <blockquote>
 <p>能否找到算符 <span class="arithmatex">\(a\)</span>，使得 <span class="arithmatex">\(a|E\rangle \propto |E - \lambda\rangle\)</span>？即用纯代数运算代替求解微分方程。</p>
 </blockquote>
-<p>这个思路的出发点是**对易关系**，而非波函数的具体形式。</p>
+<p>这个思路的出发点是对易关系，而非波函数的具体形式。</p>
 <hr />
 <h2 id="1-一般理论">1. 一般理论<a class="headerlink" href="#1-一般理论" title="Permanent link">#</a></h2>
 <h3 id="11-什么样的算符可以构造升降算符">1.1 什么样的算符可以构造升降算符？<a class="headerlink" href="#11-什么样的算符可以构造升降算符" title="Permanent link">#</a></h3>
 <p>并非所有哈密顿量都能构造升降算符。以下是使构造成立的充分条件，以及背后的物理与数学含义。</p>
-<p><strong>条件一：谱具有等间距结构</strong></p>
+<p>条件一：谱具有等间距结构</p>
 <p>若 <span class="arithmatex">\(H\)</span> 的本征值满足 <span class="arithmatex">\(E_n = E_0 + n\lambda\)</span>（<span class="arithmatex">\(\lambda &gt; 0\)</span> 为常数），则升降算符必然存在。等间距是升降算符存在的最强信号——它直接对应于某个"步长为 <span class="arithmatex">\(\lambda\)</span> 的移位对称性"。</p>
 <p>反例：若谱为 <span class="arithmatex">\(E_n \sim n^2\)</span>（如无限深势阱），相邻能级差 <span class="arithmatex">\(E_n - E_{n-1} = (2n-1)\lambda\)</span> 依赖于 <span class="arithmatex">\(n\)</span>，不存在满足 <span class="arithmatex">\([H,a] = -\lambda a\)</span> 的常系数降算符。</p>
-<p><strong>条件二：<span class="arithmatex">\(H\)</span> 可以因式分解</strong></p>
+<p>条件二：<span class="arithmatex">\(H\)</span> 可以因式分解</p>
 <p>若能写出</p>
 <div class="arithmatex">\[H = a^\dagger a + \varepsilon_0\]</div>
-<p>其中 <span class="arithmatex">\([a, a^\dagger]\)</span> 是**常数或 <span class="arithmatex">\(H\)</span> 本身的简单函数**，则升降算符可以构造。因式分解的关键约束是：</p>
+<p>其中 <span class="arithmatex">\([a, a^\dagger]\)</span> 是常数或 <span class="arithmatex">\(H\)</span> 本身的简单函数，则升降算符可以构造。因式分解的关键约束是：</p>
 <div class="arithmatex">\[[H, a] = [a^\dagger a,\, a] = [a^\dagger, a]\, a\]</div>
 <p>只有当 <span class="arithmatex">\([a^\dagger, a]\)</span> 是常数（Heisenberg 代数）或正比于某守恒量（<span class="arithmatex">\(\mathfrak{su}(2)\)</span> 等），右侧才正比于 <span class="arithmatex">\(a\)</span>，升降算符才成立。</p>
-<p><strong>条件三：系统具有某个连续对称性的李代数结构</strong></p>
+<p>条件三：系统具有某个连续对称性的李代数结构</p>
 <p>若 <span class="arithmatex">\(H\)</span> 或目标算符是某个李代数 <span class="arithmatex">\(\mathfrak{g}\)</span> 的 Casimir 元（与所有生成元对易），而待对角化的量是 <span class="arithmatex">\(\mathfrak{g}\)</span> 的 Cartan 子代数元（即可以同时对角化的极大交换子代数），则 Cartan 元的"根向量"（root vectors）扮演升降算符的角色。</p>
 <p>具体地：设 <span class="arithmatex">\(H_0\)</span> 是 Cartan 元，<span class="arithmatex">\(e_\alpha\)</span> 是根向量，则 <span class="arithmatex">\([H_0, e_\alpha] = \alpha \cdot e_\alpha\)</span>，<span class="arithmatex">\(\alpha\)</span> 称为根。升降算符的构造就是找这些根向量。</p>
-<p><strong>实际判断步骤</strong></p>
+<p>实际判断步骤</p>
 <table>
 <thead>
 <tr>
@@ -3790,48 +3790,48 @@
 <h3 id="12-核心定义">1.2 核心定义<a class="headerlink" href="#12-核心定义" title="Permanent link">#</a></h3>
 <p>设 <span class="arithmatex">\(H\)</span> 是 Hilbert 空间上的自伴算符。若算符 <span class="arithmatex">\(a\)</span> 满足</p>
 <div class="arithmatex">\[[H \, a] = -\lambda\, a, \qquad \lambda \in \mathbb{C} \setminus \{0\},\]</div>
-<p>则称 <span class="arithmatex">\(a\)</span> 为 <span class="arithmatex">\(H\)</span> 关于步长 <span class="arithmatex">\(\lambda\)</span> 的**降算符**。若 <span class="arithmatex">\([H, a^\dagger] = +\bar\lambda\, a^\dagger\)</span>，则 <span class="arithmatex">\(a^\dagger\)</span> 为**升算符**。</p>
-<p>对 <span class="arithmatex">\([H,a]=-\lambda a\)</span> 取厄米共轭，利用 <span class="arithmatex">\(H^\dagger = H\)</span>，立即得 <span class="arithmatex">\([H, a^\dagger] = +\bar\lambda\, a^\dagger\)</span>。因此**降算符的厄米共轭自动成为升算符**。</p>
+<p>则称 <span class="arithmatex">\(a\)</span> 为 <span class="arithmatex">\(H\)</span> 关于步长 <span class="arithmatex">\(\lambda\)</span> 的降算符。若 <span class="arithmatex">\([H, a^\dagger] = +\bar\lambda\, a^\dagger\)</span>，则 <span class="arithmatex">\(a^\dagger\)</span> 为升算符。</p>
+<p>对 <span class="arithmatex">\([H,a]=-\lambda a\)</span> 取厄米共轭，利用 <span class="arithmatex">\(H^\dagger = H\)</span>，立即得 <span class="arithmatex">\([H, a^\dagger] = +\bar\lambda\, a^\dagger\)</span>。因此降算符的厄米共轭自动成为升算符。</p>
 <h3 id="13-伴随映射的视角">1.3 伴随映射的视角<a class="headerlink" href="#13-伴随映射的视角" title="Permanent link">#</a></h3>
-<p>对易关系 <span class="arithmatex">\([H, a] = -\lambda a\)</span> 有一个更深的数学解读。定义**伴随映射**（adjoint map）：</p>
+<p>对易关系 <span class="arithmatex">\([H, a] = -\lambda a\)</span> 有一个更深的数学解读。定义伴随映射（adjoint map）：</p>
 <div class="arithmatex">\[\mathrm{ad}_H : X \longmapsto [H, X],\]</div>
-<p>这是算符空间上的一个**线性映射**——它把算符映到算符，而且保持线性：</p>
+<p>这是算符空间上的一个线性映射——它把算符映到算符，而且保持线性：</p>
 <div class="arithmatex">\[\mathrm{ad}_H(\alpha X + \beta Y) = \alpha\,[H, X] + \beta\,[H, Y].\]</div>
 <p>在这个视角下，<span class="arithmatex">\([H, a] = -\lambda a\)</span> 就是：</p>
 <div class="arithmatex">\[\boxed{\mathrm{ad}_H(a) = -\lambda\, a,}\]</div>
-<p>即 <span class="arithmatex">\(a\)</span> 是线性映射 <span class="arithmatex">\(\mathrm{ad}_H\)</span> 的**特征向量**，<span class="arithmatex">\(-\lambda\)</span> 是对应的**特征值**。</p>
-<p>因此，<strong>寻找升降算符的问题，就是对 <span class="arithmatex">\(\mathrm{ad}_H\)</span> 这个线性映射做谱分解的问题。</strong></p>
+<p>即 <span class="arithmatex">\(a\)</span> 是线性映射 <span class="arithmatex">\(\mathrm{ad}_H\)</span> 的特征向量，<span class="arithmatex">\(-\lambda\)</span> 是对应的特征值。</p>
+<p>因此，寻找升降算符的问题，就是对 <span class="arithmatex">\(\mathrm{ad}_H\)</span> 这个线性映射做谱分解的问题。</p>
 <p>这个视角统一了前面的所有讨论：</p>
 <ul>
-<li>**零特征值**的特征向量满足 <span class="arithmatex">\([H, C] = 0\)</span>，即与 <span class="arithmatex">\(H\)</span> 对易的守恒量。</li>
-<li>**非零特征值**的特征向量就是升降算符，特征值的大小给出步长。</li>
-<li>在李代数语言中，<span class="arithmatex">\(\mathrm{ad}_H\)</span> 的特征分解就是**根空间分解**（root space decomposition）：Cartan 元 <span class="arithmatex">\(H\)</span> 的伴随作用把李代数分解为根空间，根向量就是升降算符，根就是步长。</li>
+<li>零特征值的特征向量满足 <span class="arithmatex">\([H, C] = 0\)</span>，即与 <span class="arithmatex">\(H\)</span> 对易的守恒量。</li>
+<li>非零特征值的特征向量就是升降算符，特征值的大小给出步长。</li>
+<li>在李代数语言中，<span class="arithmatex">\(\mathrm{ad}_H\)</span> 的特征分解就是根空间分解（root space decomposition）：Cartan 元 <span class="arithmatex">\(H\)</span> 的伴随作用把李代数分解为根空间，根向量就是升降算符，根就是步长。</li>
 </ul>
-<p><strong>例：</strong> 对谐振子，取 <span class="arithmatex">\(N = a^\dagger a\)</span>，在 <span class="arithmatex">\(\{a,\, a^\dagger,\, N\}\)</span> 张成的空间上：</p>
+<p>例： 对谐振子，取 <span class="arithmatex">\(N = a^\dagger a\)</span>，在 <span class="arithmatex">\(\{a,\, a^\dagger,\, N\}\)</span> 张成的空间上：</p>
 <div class="arithmatex">\[\mathrm{ad}_N(a) = [a^\dagger a,\, a] = -a, \qquad \mathrm{ad}_N(a^\dagger) = [a^\dagger a,\, a^\dagger] = +a^\dagger, \qquad \mathrm{ad}_N(N) = 0.\]</div>
 <p>三个算符恰好是 <span class="arithmatex">\(\mathrm{ad}_N\)</span> 的特征向量，特征值分别为 <span class="arithmatex">\(-1,\, +1,\, 0\)</span>。升降算符并非偶然发现，而是 <span class="arithmatex">\(\mathrm{ad}_N\)</span> 的特征分解的必然结果。</p>
 <h3 id="14-定理1本征值移位">1.4 定理1：本征值移位<a class="headerlink" href="#14-定理1本征值移位" title="Permanent link">#</a></h3>
-<p>**定理1 ** 设 <span class="arithmatex">\([H,a] = -\lambda a\)</span>，<span class="arithmatex">\(H|E\rangle = E|E\rangle\)</span>。则：</p>
+<p>定理1  设 <span class="arithmatex">\([H,a] = -\lambda a\)</span>，<span class="arithmatex">\(H|E\rangle = E|E\rangle\)</span>。则：</p>
 <ul>
 <li>若 <span class="arithmatex">\(a|E\rangle \neq 0\)</span>，则 <span class="arithmatex">\(H(a|E\rangle) = (E-\lambda)(a|E\rangle)\)</span></li>
 <li>若 <span class="arithmatex">\(a^\dagger|E\rangle \neq 0\)</span>，则 <span class="arithmatex">\(H(a^\dagger|E\rangle) = (E+\bar\lambda)(a^\dagger|E\rangle)\)</span></li>
 </ul>
-<p><strong>证明：</strong></p>
+<p>证明：</p>
 <div class="arithmatex">\[H(a|E\rangle) = (aH + [H,a])|E\rangle = aH|E\rangle - \lambda a|E\rangle = (E - \lambda)\,a|E\rangle. \quad \blacksquare\]</div>
 <p>这说明了升降算符两种等价定义， <span class="arithmatex">\([H,a] = -\lambda a\)</span>，<span class="arithmatex">\(a | E \rangle = (E-\lambda) |E\rangle\)</span></p>
 <h3 id="15-谱的截断为什么升降不能无限进行">1.5 谱的截断：为什么升降不能无限进行？<a class="headerlink" href="#15-谱的截断为什么升降不能无限进行" title="Permanent link">#</a></h3>
-<p>升降算符每施加一次，本征值移动一个步长。但物理系统的谱不可能真的无限延伸——**Hilbert 空间的正定内积**对谱的范围施加了刚性约束。根据截断方式的不同，可分为两类。</p>
-<p><strong>单侧截断（谐振子型）</strong></p>
-<p>对 Heisenberg 代数 <span class="arithmatex">\([a, a^\dagger] = 1\)</span>，粒子数算符 <span class="arithmatex">\(\hat{N} = a^\dagger a\)</span> 是**正半定**的：</p>
+<p>升降算符每施加一次，本征值移动一个步长。但物理系统的谱不可能真的无限延伸——Hilbert 空间的正定内积对谱的范围施加了刚性约束。根据截断方式的不同，可分为两类。</p>
+<p>单侧截断（谐振子型）</p>
+<p>对 Heisenberg 代数 <span class="arithmatex">\([a, a^\dagger] = 1\)</span>，粒子数算符 <span class="arithmatex">\(\hat{N} = a^\dagger a\)</span> 是正半定的：</p>
 <div class="arithmatex">\[\langle \psi |\hat{N}| \psi \rangle = \langle \psi | a^\dagger a | \psi \rangle = \| a|\psi\rangle \|^2 \geq 0.\]</div>
 <p>因此 <span class="arithmatex">\(\hat{N}\)</span> 的本征值 <span class="arithmatex">\(n \geq 0\)</span>，存在基态 <span class="arithmatex">\(a|0\rangle = 0\)</span>。但升算符方向没有类似约束——<span class="arithmatex">\(a^\dagger\)</span> 可以无限施加，谱向上无界。</p>
 <p>物理上，这对应于谐振子的能量没有上限。代数上，这是因为 Heisenberg 代数没有 Casimir 算符来约束谱的另一侧。</p>
-<p><strong>双侧截断（角动量型）</strong></p>
-<p>对 <span class="arithmatex">\(\mathfrak{su}(2)\)</span> 代数，Casimir 算符 <span class="arithmatex">\(\mathbf{L}^2\)</span> 提供了**额外的全局约束**。由于 <span class="arithmatex">\(L_x^2 + L_y^2\)</span> 是正半定算符：</p>
+<p>双侧截断（角动量型）</p>
+<p>对 <span class="arithmatex">\(\mathfrak{su}(2)\)</span> 代数，Casimir 算符 <span class="arithmatex">\(\mathbf{L}^2\)</span> 提供了额外的全局约束。由于 <span class="arithmatex">\(L_x^2 + L_y^2\)</span> 是正半定算符：</p>
 <div class="arithmatex">\[\mathbf{L}^2 - L_z^2 = L_x^2 + L_y^2 \geq 0 \implies m^2\hbar^2 \leq \hbar^2 \ell(\ell+1),\]</div>
-<p>因此 <span class="arithmatex">\(|m| \leq \ell\)</span>，<span class="arithmatex">\(m\)</span> 被**上下同时截断**。存在最高权态 <span class="arithmatex">\(L_+|\ell,\ell\rangle = 0\)</span> 和最低权态 <span class="arithmatex">\(L_-|\ell,-\ell\rangle = 0\)</span>。</p>
-<p>物理上，角动量分量不能超过角动量的总大小。代数上，这是 <span class="arithmatex">\(\mathfrak{su}(2)\)</span> 作为**紧致**李群的李代数，其有限维不可约表示必然是有限维的——Casimir 值固定后，权（即 <span class="arithmatex">\(m\)</span> 值）的范围是有限的。</p>
-<p><strong>一般判据</strong></p>
+<p>因此 <span class="arithmatex">\(|m| \leq \ell\)</span>，<span class="arithmatex">\(m\)</span> 被上下同时截断。存在最高权态 <span class="arithmatex">\(L_+|\ell,\ell\rangle = 0\)</span> 和最低权态 <span class="arithmatex">\(L_-|\ell,-\ell\rangle = 0\)</span>。</p>
+<p>物理上，角动量分量不能超过角动量的总大小。代数上，这是 <span class="arithmatex">\(\mathfrak{su}(2)\)</span> 作为紧致李群的李代数，其有限维不可约表示必然是有限维的——Casimir 值固定后，权（即 <span class="arithmatex">\(m\)</span> 值）的范围是有限的。</p>
+<p>一般判据</p>
 <table>
 <thead>
 <tr>
@@ -3863,7 +3863,7 @@
 </tbody>
 </table>
 <blockquote>
-<p><strong>核心要点</strong>：升降算符的谱是否有界，不取决于升降算符本身，而取决于**代数结构中正定性约束的数量**。一个正定性条件（<span class="arithmatex">\(a^\dagger a \geq 0\)</span>）给出单侧截断；若 Casimir 提供第二个正定性条件（<span class="arithmatex">\(\mathbf{L}^2 - L_z^2 \geq 0\)</span>），则双侧截断，表示变为有限维。</p>
+<p>核心要点：升降算符的谱是否有界，不取决于升降算符本身，而取决于代数结构中正定性约束的数量。一个正定性条件（<span class="arithmatex">\(a^\dagger a \geq 0\)</span>）给出单侧截断；若 Casimir 提供第二个正定性条件（<span class="arithmatex">\(\mathbf{L}^2 - L_z^2 \geq 0\)</span>），则双侧截断，表示变为有限维。</p>
 </blockquote>
 <p>由基态出发递推得第 <span class="arithmatex">\(n\)</span> 激发态：</p>
 <div class="arithmatex">\[|n\rangle = \frac{(a^\dagger)^n}{\sqrt{n!}}|0\rangle, \qquad E_n = E_0 + n\lambda.\]</div>
@@ -3872,7 +3872,7 @@
 <div class="arithmatex">\[H = a^\dagger a + \varepsilon_0,\]</div>
 <p>则 <span class="arithmatex">\([H, a] = [a^\dagger a, a] = [a^\dagger, a] a\)</span>。</p>
 <p>只要 <span class="arithmatex">\([a^\dagger, a] = -1\)</span>（Heisenberg 代数），即得 <span class="arithmatex">\([H, a] = -a\)</span>，步长 <span class="arithmatex">\(\lambda = 1\)</span>（乘以能量量纲后为 <span class="arithmatex">\(\hbar\omega\)</span> 等）。</p>
-<p>构造的核心任务因此变为：<strong>找一对 <span class="arithmatex">\((a, a^\dagger)\)</span> 使得 <span class="arithmatex">\(a^\dagger a \approx H - \varepsilon_0\)</span> 且 <span class="arithmatex">\([a, a^\dagger]\)</span> 是常数</strong>。</p>
+<p>构造的核心任务因此变为：找一对 <span class="arithmatex">\((a, a^\dagger)\)</span> 使得 <span class="arithmatex">\(a^\dagger a \approx H - \varepsilon_0\)</span> 且 <span class="arithmatex">\([a, a^\dagger]\)</span> 是常数。</p>
 <hr />
 <h2 id="2-应用一一维谐振子">2. 应用一：一维谐振子<a class="headerlink" href="#2-应用一一维谐振子" title="Permanent link">#</a></h2>
 <h3 id="21-哈密顿量与因式分解动机">2.1 哈密顿量与因式分解动机<a class="headerlink" href="#21-哈密顿量与因式分解动机" title="Permanent link">#</a></h3>
@@ -3920,13 +3920,13 @@ a^\dagger \equiv \sqrt{\frac{m\omega}{2\hbar}}\,x - \frac{i}{\sqrt{2m\omega\hbar
 <p>第二式保证 <span class="arithmatex">\(L_\pm\)</span> 不改变 <span class="arithmatex">\(\mathbf{L}^2\)</span> 的本征值。</p>
 <h3 id="33-谱的推导">3.3 谱的推导<a class="headerlink" href="#33-谱的推导" title="Permanent link">#</a></h3>
 <p>设 <span class="arithmatex">\(\mathbf{L}^2|\ell,m\rangle = \lambda|\ell,m\rangle\)</span>，<span class="arithmatex">\(L_z|\ell,m\rangle = m\hbar|\ell,m\rangle\)</span>。</p>
-<p><strong>步骤一：上下界。</strong> <span class="arithmatex">\(\mathbf{L}^2 - L_z^2 = L_x^2 + L_y^2 \geq 0\)</span>，故 <span class="arithmatex">\(\lambda \geq m^2\hbar^2\)</span>，<span class="arithmatex">\(m\)</span> 有界。设最大值为 <span class="arithmatex">\(\ell\)</span>：</p>
+<p>步骤一：上下界。 <span class="arithmatex">\(\mathbf{L}^2 - L_z^2 = L_x^2 + L_y^2 \geq 0\)</span>，故 <span class="arithmatex">\(\lambda \geq m^2\hbar^2\)</span>，<span class="arithmatex">\(m\)</span> 有界。设最大值为 <span class="arithmatex">\(\ell\)</span>：</p>
 <div class="arithmatex">\[L_+|\ell, \ell\rangle = 0.\]</div>
-<p><strong>步骤二：确定 <span class="arithmatex">\(\lambda\)</span>。</strong> 利用 <span class="arithmatex">\(L_- L_+ = \mathbf{L}^2 - L_z^2 - \hbar L_z\)</span> 作用在 <span class="arithmatex">\(|\ell,\ell\rangle\)</span> 上：</p>
+<p>步骤二：确定 <span class="arithmatex">\(\lambda\)</span>。 利用 <span class="arithmatex">\(L_- L_+ = \mathbf{L}^2 - L_z^2 - \hbar L_z\)</span> 作用在 <span class="arithmatex">\(|\ell,\ell\rangle\)</span> 上：</p>
 <div class="arithmatex">\[0 = (\lambda - \ell^2\hbar^2 - \ell\hbar^2)|\ell,\ell\rangle \implies \lambda = \hbar^2\ell(\ell+1).\]</div>
-<p><strong>步骤三：量子化。</strong> 最小值为 <span class="arithmatex">\(m_{\min} = -\ell\)</span>，从 <span class="arithmatex">\(\ell\)</span> 到 <span class="arithmatex">\(-\ell\)</span> 步数为整数，故 <span class="arithmatex">\(2\ell \in \mathbb{Z}_{\geq 0}\)</span>：</p>
+<p>步骤三：量子化。 最小值为 <span class="arithmatex">\(m_{\min} = -\ell\)</span>，从 <span class="arithmatex">\(\ell\)</span> 到 <span class="arithmatex">\(-\ell\)</span> 步数为整数，故 <span class="arithmatex">\(2\ell \in \mathbb{Z}_{\geq 0}\)</span>：</p>
 <div class="arithmatex">\[\ell = 0,\,\tfrac{1}{2},\,1,\,\tfrac{3}{2},\,2,\,\ldots\]</div>
-<p><strong>最终结果：</strong></p>
+<p>最终结果：</p>
 <div class="arithmatex">\[\mathbf{L}^2|\ell,m\rangle = \hbar^2\ell(\ell+1)|\ell,m\rangle, \qquad L_z|\ell,m\rangle = m\hbar|\ell,m\rangle,\]</div>
 <div class="arithmatex">\[L_\pm|\ell,m\rangle = \hbar\sqrt{\ell(\ell+1)-m(m\pm1)}\;|\ell,m\pm1\rangle,\]</div>
 <p>其中 <span class="arithmatex">\(m \in \{-\ell,\,-\ell+1,\,\ldots,\,\ell\}\)</span>，共 <span class="arithmatex">\(2\ell+1\)</span> 个本征态。</p>
@@ -3976,14 +3976,14 @@ a^\dagger \equiv \sqrt{\frac{m\omega}{2\hbar}}\,x - \frac{i}{\sqrt{2m\omega\hbar
 <hr />
 <h2 id="5-总结一般构造流程">5. 总结：一般构造流程<a class="headerlink" href="#5-总结一般构造流程" title="Permanent link">#</a></h2>
 <ol>
-<li><strong>选目标算符</strong>：确定要对角化的 <span class="arithmatex">\(H\)</span>（或 <span class="arithmatex">\(L_z\)</span> 等），观察谱是否有等间距或规则步进结构。</li>
-<li><strong>写候选形式</strong>：对因式分解型系统，试 <span class="arithmatex">\(a = \alpha x + \beta p\)</span>；对李代数型系统，取实生成元的复线性组合。</li>
-<li><strong>计算 <span class="arithmatex">\([H,a]\)</span></strong>：要求结果正比于 <span class="arithmatex">\(a\)</span>，由此反解系数。</li>
-<li><strong>建立截断条件</strong>：利用物理约束（能量下界、模方非负）确定基态或边界态，量子化谱。</li>
-<li><strong>递推归一化</strong>：由 <span class="arithmatex">\(\langle n|n\rangle = 1\)</span> 和对易关系得 <span class="arithmatex">\(a|n\rangle\)</span>、<span class="arithmatex">\(a^\dagger|n\rangle\)</span> 的精确矩阵元。</li>
+<li>选目标算符：确定要对角化的 <span class="arithmatex">\(H\)</span>（或 <span class="arithmatex">\(L_z\)</span> 等），观察谱是否有等间距或规则步进结构。</li>
+<li>写候选形式：对因式分解型系统，试 <span class="arithmatex">\(a = \alpha x + \beta p\)</span>；对李代数型系统，取实生成元的复线性组合。</li>
+<li>计算 <span class="arithmatex">\([H,a]\)</span>：要求结果正比于 <span class="arithmatex">\(a\)</span>，由此反解系数。</li>
+<li>建立截断条件：利用物理约束（能量下界、模方非负）确定基态或边界态，量子化谱。</li>
+<li>递推归一化：由 <span class="arithmatex">\(\langle n|n\rangle = 1\)</span> 和对易关系得 <span class="arithmatex">\(a|n\rangle\)</span>、<span class="arithmatex">\(a^\dagger|n\rangle\)</span> 的精确矩阵元。</li>
 </ol>
 <blockquote>
-<p><strong>核心洞察</strong>：本征值的等间距结构 <span class="arithmatex">\(\Longleftrightarrow\)</span> 某个对易子等于算符本身，即 <span class="arithmatex">\([H, a] = -\lambda a\)</span>。这是量子力学代数方法的基石，也是从矩阵力学推广到无穷维算符代数的桥梁。</p>
+<p>核心洞察：本征值的等间距结构 <span class="arithmatex">\(\Longleftrightarrow\)</span> 某个对易子等于算符本身，即 <span class="arithmatex">\([H, a] = -\lambda a\)</span>。这是量子力学代数方法的基石，也是从矩阵力学推广到无穷维算符代数的桥梁。</p>
 </blockquote>
 
   <hr>
@@ -3991,7 +3991,7 @@ a^\dagger \equiv \sqrt{\frac{m\omega}{2\hbar}}\,x - \frac{i}{\sqrt{2m\omega\hbar
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月15日 02:31:05 UTC"><span class="timeago" datetime="2026-04-15T02:31:05+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月15日 02:31:05 UTC">2026-04-15</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         创建日期:

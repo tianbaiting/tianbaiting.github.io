@@ -3154,7 +3154,7 @@
   
     <li class="md-nav__item">
       <a href="../../samurai/anaroot/anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3811,12 +3811,12 @@
 <h3 id="sipm-相对于传统光电探测器如-pmt的主要优势">SiPM 相对于传统光电探测器（如 PMT）的主要优势<a class="headerlink" href="#sipm-相对于传统光电探测器如-pmt的主要优势" title="Permanent link">#</a></h3>
 <p>与传统光电倍增管（PMT）相比，SiPM 在核物理与粒子物理应用中有多方面优势：</p>
 <ul>
-<li><strong>高增益</strong>：可实现 10⁵ 至 10⁶ 量级的内禀增益，与 PMT 相当，且无需高压电源。</li>
-<li><strong>低工作电压</strong>：典型工作电压低于 100V，通常在 30-70V，简化供电系统并提高安全性。</li>
-<li><strong>紧凑与坚固</strong>：固态器件，体积小、机械强度高，不易受机械冲击或振动损坏。</li>
-<li><strong>磁场不敏感性</strong>：基本不受强磁场影响，适合磁场环境下应用，而 PMT 需复杂磁屏蔽。</li>
-<li><strong>成本效益</strong>：大规模生产（如CMOS工艺）时，具有更低成本潜力。</li>
-<li><strong>优异的光子计数能力</strong>：分段结构可分辨探测到的光子数量。</li>
+<li>高增益：可实现 10⁵ 至 10⁶ 量级的内禀增益，与 PMT 相当，且无需高压电源。</li>
+<li>低工作电压：典型工作电压低于 100V，通常在 30-70V，简化供电系统并提高安全性。</li>
+<li>紧凑与坚固：固态器件，体积小、机械强度高，不易受机械冲击或振动损坏。</li>
+<li>磁场不敏感性：基本不受强磁场影响，适合磁场环境下应用，而 PMT 需复杂磁屏蔽。</li>
+<li>成本效益：大规模生产（如CMOS工艺）时，具有更低成本潜力。</li>
+<li>优异的光子计数能力：分段结构可分辨探测到的光子数量。</li>
 </ul>
 <hr />
 <h2 id="sipm-的关键性能参数">SiPM 的关键性能参数<a class="headerlink" href="#sipm-的关键性能参数" title="Permanent link">#</a></h2>
@@ -3825,73 +3825,73 @@
 <p>PDE 指入射光子成功触发一次可探测盖革雪崩的概率，主要由硅的量子效率（QE）、触发概率（ϵtrigger）和几何填充因子（ϵgeom）决定：<br />
 PDE = QE × ϵtrigger × ϵgeom</p>
 <ul>
-<li><strong>波长依赖性</strong>：PDE 对波长敏感。核物理/粒子物理常用闪烁体和切伦科夫辐射多在400-420 nm，SiPM 需针对该波段优化（如“NUV增强型”）。</li>
-<li><strong>过电压影响</strong>：PDE 随过电压 ΔV 增加而提升，但 DCR 和相关噪声也会增加。</li>
-<li><strong>填充因子</strong>：ϵgeom 为微单元光敏面积与总面积之比。结构优化（如隔离沟槽、透明导电层）可提升填充因子，现代 SiPM 可超80%。</li>
+<li>波长依赖性：PDE 对波长敏感。核物理/粒子物理常用闪烁体和切伦科夫辐射多在400-420 nm，SiPM 需针对该波段优化（如“NUV增强型”）。</li>
+<li>过电压影响：PDE 随过电压 ΔV 增加而提升，但 DCR 和相关噪声也会增加。</li>
+<li>填充因子：ϵgeom 为微单元光敏面积与总面积之比。结构优化（如隔离沟槽、透明导电层）可提升填充因子，现代 SiPM 可超80%。</li>
 </ul>
 <p>对更高 PDE 的追求涉及 QE、填充因子和触发概率的多方面技术挑战。</p>
 <h3 id="增益-gain-m">增益 (Gain, M)<a class="headerlink" href="#增益-gain-m" title="Permanent link">#</a></h3>
 <p>SiPM 微单元增益为单次盖革雪崩产生的总载流子数，通常 10⁵-10⁶。</p>
 <ul>
-<li><strong>与过电压关系</strong>：增益与 ΔV 和结电容 CJ 成正比：M = (CJ × ΔV) / e</li>
-<li><strong>温度依赖性</strong>：固定偏置下，温度升高增益降低（VBR 随温度升高，ΔV 变小）。</li>
-<li><strong>均匀性</strong>：像素间/器件间良好增益均匀性对精确能量测量重要。</li>
+<li>与过电压关系：增益与 ΔV 和结电容 CJ 成正比：M = (CJ × ΔV) / e</li>
+<li>温度依赖性：固定偏置下，温度升高增益降低（VBR 随温度升高，ΔV 变小）。</li>
+<li>均匀性：像素间/器件间良好增益均匀性对精确能量测量重要。</li>
 </ul>
 <h2 id="23-暗计数率-dark-count-rate-dcr">2.3. 暗计数率 (Dark Count Rate, DCR)<a class="headerlink" href="#23-暗计数率-dark-count-rate-dcr" title="Permanent link">#</a></h2>
 <p>DCR 指无入射光时 SiPM 自发雪崩速率，主要由热生载流子或隧穿效应引起。</p>
 <ul>
-<li><strong>温度依赖性</strong>：温度每降低7-10°C，DCR约减半，冷却可显著降低DCR。</li>
-<li><strong>过电压依赖性</strong>：ΔV 增大，DCR 增加。</li>
-<li><strong>面积/单元尺寸依赖性</strong>：DCR 通常以单位面积计，面积越大总 DCR 越高。</li>
-<li><strong>影响</strong>：高 DCR 限制弱光灵敏度，影响能量分辨率。</li>
+<li>温度依赖性：温度每降低7-10°C，DCR约减半，冷却可显著降低DCR。</li>
+<li>过电压依赖性：ΔV 增大，DCR 增加。</li>
+<li>面积/单元尺寸依赖性：DCR 通常以单位面积计，面积越大总 DCR 越高。</li>
+<li>影响：高 DCR 限制弱光灵敏度，影响能量分辨率。</li>
 </ul>
 <h3 id="时间分辨率">时间分辨率<a class="headerlink" href="#时间分辨率" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>单光子时间分辨率 (SPTR)</strong>：单光子到达与输出信号间的时间差FWHM，部分器件可低于100 ps。</li>
-<li><strong>符合时间分辨率 (CRT)</strong>：如PET应用，CRT可达100 ps FWHM或更好。</li>
-<li><strong>影响因素</strong>：SiPM固有特性、过电压、入射光波长、读出电子学带宽与噪声。</li>
+<li>单光子时间分辨率 (SPTR)：单光子到达与输出信号间的时间差FWHM，部分器件可低于100 ps。</li>
+<li>符合时间分辨率 (CRT)：如PET应用，CRT可达100 ps FWHM或更好。</li>
+<li>影响因素：SiPM固有特性、过电压、入射光波长、读出电子学带宽与噪声。</li>
 </ul>
 <h2 id="25-动态范围与线性度">2.5. 动态范围与线性度<a class="headerlink" href="#25-动态范围与线性度" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>受单元数量限制</strong>：有限微单元数Ncells，入射光子数Nph接近或超过Ncells时，信号饱和、非线性。<br />
+<li>受单元数量限制：有限微单元数Ncells，入射光子数Nph接近或超过Ncells时，信号饱和、非线性。<br />
   Nfired = Ncells × (1 - exp(-PDE × Nph / Ncells))</li>
-<li><strong>单元密度/尺寸</strong>：更高密度（更小单元）对应更大动态范围。</li>
-<li><strong>恢复时间</strong>：单元恢复时间影响高计数率下动态范围。</li>
+<li>单元密度/尺寸：更高密度（更小单元）对应更大动态范围。</li>
+<li>恢复时间：单元恢复时间影响高计数率下动态范围。</li>
 </ul>
 <h3 id="相关噪声">相关噪声<a class="headerlink" href="#相关噪声" title="Permanent link">#</a></h3>
 <h4 id="光学串扰-optical-crosstalk-oct">光学串扰 (Optical Crosstalk, OCT)<a class="headerlink" href="#光学串扰-optical-crosstalk-oct" title="Permanent link">#</a></h4>
 <ul>
 <li>雪崩过程发射次级光子，可能触发相邻微单元，导致信号幅度大于预期。</li>
-<li><strong>缓解</strong>：隔离沟槽、材料填充。</li>
-<li><strong>依赖性</strong>：OCT 概率随增益/ΔV 增加。</li>
+<li>缓解：隔离沟槽、材料填充。</li>
+<li>依赖性：OCT 概率随增益/ΔV 增加。</li>
 </ul>
 <h4 id="后脉冲-afterpulsing-ap">后脉冲 (Afterpulsing, AP)<a class="headerlink" href="#后脉冲-afterpulsing-ap" title="Permanent link">#</a></h4>
 <ul>
 <li>雪崩载流子被缺陷俘获，释放后可重新触发雪崩，产生延迟脉冲。</li>
-<li><strong>缓解</strong>：提高硅纯度、改进工艺、降低温度。</li>
-<li><strong>依赖性</strong>：AP 概率随 ΔV 增加。</li>
+<li>缓解：提高硅纯度、改进工艺、降低温度。</li>
+<li>依赖性：AP 概率随 ΔV 增加。</li>
 </ul>
 <p>相关噪声影响有效增益和 PDE，增加数据分析复杂度，降低能量分辨率。制造商通过结构和材料改进减轻这些效应。</p>
 <h3 id="工作电压与温度稳定性">工作电压与温度稳定性<a class="headerlink" href="#工作电压与温度稳定性" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>击穿电压 (VBR)</strong>：通常30-70V，部分onsemi C系列低于30V。</li>
-<li><strong>过电压 (ΔV)</strong>：VBIAS - VBR，决定增益、PDE、DCR、时间特性和相关噪声。</li>
-<li><strong>温度系数</strong>：VBR随温度升高而增加（20-60 mV/°C）。</li>
-<li><strong>稳定性要求</strong>：需精确控温或调节偏置电压补偿VBR变化，保持恒定ΔV，确保增益和PDE稳定。</li>
+<li>击穿电压 (VBR)：通常30-70V，部分onsemi C系列低于30V。</li>
+<li>过电压 (ΔV)：VBIAS - VBR，决定增益、PDE、DCR、时间特性和相关噪声。</li>
+<li>温度系数：VBR随温度升高而增加（20-60 mV/°C）。</li>
+<li>稳定性要求：需精确控温或调节偏置电压补偿VBR变化，保持恒定ΔV，确保增益和PDE稳定。</li>
 </ul>
 <p>SiPM参数（VBR、DCR、增益）温度依赖性要求实验装置严格控温或采用补偿机制，保证长期稳定性。</p>
 <hr />
 <h3 id="耐辐射性能">耐辐射性能<a class="headerlink" href="#耐辐射性能" title="Permanent link">#</a></h3>
 <p>在核物理和粒子物理实验中，辐射（中子、质子、伽马、电子）会导致性能下降：</p>
 <ul>
-<li><strong>主要影响</strong>：DCR 增加（硅体损伤产生复合中心）。</li>
-<li><strong>其他影响</strong>：击穿电压、漏电流、PDE 可能变化，但DCR增加通常为主要限制因素。部分研究表明，某些注量下PDE和增益影响较小。</li>
+<li>主要影响：DCR 增加（硅体损伤产生复合中心）。</li>
+<li>其他影响：击穿电压、漏电流、PDE 可能变化，但DCR增加通常为主要限制因素。部分研究表明，某些注量下PDE和增益影响较小。</li>
 </ul>
-<p><strong>缓解策略：</strong><br />
+<p>缓解策略：<br />
 - 冷却：低温运行可减轻DCR增加。<br />
 - 退火：部分辐射损伤可随时间（高温下）退火，但不总能完全恢复。<br />
 - 器件设计：小单元尺寸有时更耐辐射，如FBK开发的小单元“耐辐射SiPM”。</p>
-<p><strong>注量水平：</strong><br />
+<p>注量水平：<br />
 - FBK NUV-HD-lowCT SiPM 经受高达 1×10¹¹ p/cm² 质子辐照。<br />
 - onsemi J 系列研究高达约 10¹¹ p/cm² 质子注量。<br />
 - KETEK、Hamamatsu、SensL、Zecotek SiPM 有高达约 10¹² neq/cm² 中子注量研究。</p>
@@ -3910,7 +3910,7 @@ DCR：S13360-1350PE 每通道典型 DCR 为 90 kHz 。S13360-3050CS 在典型过
 其他：优异的时间分辨率 。50µm 像素 S13360 的串扰概率较低，例如在 3V 过电压下小于 10% 。<br />
 应用：PET、辐射监测仪、激光显微镜、流式细胞术。</p>
 <hr />
-<p><strong>S14160 系列</strong>（例如 S14160-3015PS）：</p>
+<p>S14160 系列（例如 S14160-3015PS）：</p>
 <ul>
 <li>特点：针对 UV-VIS 优化，适用于闪烁光探测。采用小微单元（10, 15 µm 像素），具有宽动态范围（HDR-MPPC）。</li>
 <li>PDE：针对 UV-VIS 优化。S14160-3015PS（15µm 像素）在 450nm 处 PDE 约为 28%。</li>
@@ -3918,12 +3918,12 @@ DCR：S13360-1350PE 每通道典型 DCR 为 90 kHz 。S13360-3050CS 在典型过
 <li>应用：量能器、高动态范围测量、PET。</li>
 </ul>
 <hr />
-<p><strong>S14520 系列</strong>（CTA-MPPC）：</p>
+<p>S14520 系列（CTA-MPPC）：</p>
 <ul>
 <li>特点：用于切伦科夫望远镜阵列（CTA），良好的蓝光/紫外灵敏度和大面积选项。S14520-3050CS 的 PDE 峰值在 350-400nm 附近约为 50%。</li>
 </ul>
 <hr />
-<p><strong>Hamamatsu MPPC 通用特性</strong>：</p>
+<p>Hamamatsu MPPC 通用特性：</p>
 <ul>
 <li>低后脉冲和低串扰是主要发展目标。</li>
 <li>击穿电压温度稳定性好（dVBR/dT=56 mV/°C）。</li>
@@ -3933,7 +3933,7 @@ DCR：S13360-1350PE 每通道典型 DCR 为 90 kHz 。S13360-3050CS 在典型过
 <h4 id="onsemi">onsemi<a class="headerlink" href="#onsemi" title="Permanent link">#</a></h4>
 <p>onsemi 公司采用高产量 CMOS 工艺制造 SiPM，强调均匀性和低电压操作。</p>
 <ul>
-<li><strong>C 系列</strong>（如 MICROFC 型号）：</li>
+<li>C 系列（如 MICROFC 型号）：</li>
 <li>特点：极低 DCR（30 kHz/mm²），420 nm 处 PDE &gt;40%，紫外灵敏度扩展至 300 nm。偏置电压 &lt;30V。快速输出端（上升时间 300 ps）。尺寸有 1mm, 3mm, 6mm。击穿电压均匀性（±250 mV），VBR 温度稳定性 21.5 mV/°C 。   </li>
 </ul>
 <p>PDE：对于 3x3mm²、35µm 像素的型号，420nm 处 PDE 为 41%。对于 3x3mm²、50µm 像素的型号，420nm 处 PDE 为 47% 。<br />
@@ -4230,7 +4230,7 @@ NDL (Novel Device Laboratory)：因其高单元密度（&lt;10 µm）SiPM 而被
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年6月5日 06:55:48 UTC"><span class="timeago" datetime="2025-06-05T06:55:48+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年6月5日 06:55:48 UTC">2025-06-05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
       
         <br>
         创建日期:

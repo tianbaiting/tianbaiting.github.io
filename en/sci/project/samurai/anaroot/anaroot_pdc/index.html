@@ -2970,7 +2970,7 @@
   
     <li class="md-nav__item">
       <a href="../anaroot/" class="md-nav__link">
-        **ANAROOT 综合分析框架：
+        ANAROOT 综合分析框架：
       </a>
     </li>
   
@@ -3509,9 +3509,9 @@
 <h1 id="c-libraries-for-pdc-reconstruction-and-calibration">C++ Libraries for PDC Reconstruction and Calibration<a class="headerlink" href="#c-libraries-for-pdc-reconstruction-and-calibration" title="Permanent link">#</a></h1>
 <h2 id="tartcalibpdchit">TArtCalibPDCHit<a class="headerlink" href="#tartcalibpdchit" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Location:</strong> anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCHit.hh, TArtCalibPDCHit.cc  </li>
-<li><strong>Function:</strong> Performs hit-level calibration and reconstruction for PDC raw data (such as TDC, QDC), generating a TArtDCHit object for each wire.</li>
-<li><strong>Typical usage:</strong><br />
+<li>Location: anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCHit.hh, TArtCalibPDCHit.cc  </li>
+<li>Function: Performs hit-level calibration and reconstruction for PDC raw data (such as TDC, QDC), generating a TArtDCHit object for each wire.</li>
+<li>Typical usage:<br />
 <div class="highlight"><pre><span></span><code><span class="n">TArtCalibPDCHit</span><span class="w"> </span><span class="o">*</span><span class="n">pdchitcalib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TArtCalibPDCHit</span><span class="p">();</span>
 <span class="n">pdchitcalib</span><span class="o">-&gt;</span><span class="n">ReconstructData</span><span class="p">();</span>
 <span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">pdc_hit_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">&quot;SAMURAIPDCHit&quot;</span><span class="p">);</span>
@@ -3519,9 +3519,9 @@
 </ul>
 <h2 id="tartcalibpdctrack">TArtCalibPDCTrack<a class="headerlink" href="#tartcalibpdctrack" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Location:</strong> anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCTrack.hh, TArtCalibPDCTrack.cc  </li>
-<li><strong>Function:</strong> Based on the output of TArtCalibPDCHit, reconstructs tracks from all hits and outputs TArtDCTrack objects.</li>
-<li><strong>Typical usage:</strong><br />
+<li>Location: anaroot/sources/Reconstruction/SAMURAI/include/TArtCalibPDCTrack.hh, TArtCalibPDCTrack.cc  </li>
+<li>Function: Based on the output of TArtCalibPDCHit, reconstructs tracks from all hits and outputs TArtDCTrack objects.</li>
+<li>Typical usage:<br />
 <div class="highlight"><pre><span></span><code><span class="n">TArtCalibPDCTrack</span><span class="w"> </span><span class="o">*</span><span class="n">pdctrackcalib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TArtCalibPDCTrack</span><span class="p">();</span>
 <span class="n">pdctrackcalib</span><span class="o">-&gt;</span><span class="n">ReconstructData</span><span class="p">();</span>
 <span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">pdc_trk_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">&quot;SAMURAIPDCTrack&quot;</span><span class="p">);</span>
@@ -3529,58 +3529,58 @@
 </ul>
 <h2 id="tartdchit-and-tartdctrack">TArtDCHit and TArtDCTrack<a class="headerlink" href="#tartdchit-and-tartdctrack" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>TArtDCHit:</strong> Stores information for a single PDC wire hit (position, TDC, QDC, etc.).</li>
-<li><strong>TArtDCTrack:</strong> Stores a reconstructed PDC track (position, angle, chi2, etc.).</li>
+<li>TArtDCHit: Stores information for a single PDC wire hit (position, TDC, QDC, etc.).</li>
+<li>TArtDCTrack: Stores a reconstructed PDC track (position, angle, chi2, etc.).</li>
 </ul>
 <h1 id="pdc-parameter-database">PDC Parameter Database<a class="headerlink" href="#pdc-parameter-database" title="Permanent link">#</a></h1>
 <h2 id="samuraipdcxml">SAMURAIPDC.xml<a class="headerlink" href="#samuraipdcxml" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Location:</strong> SAMURAIPDC.xml  </li>
-<li><strong>Function:</strong> Stores parameters for each PDC wire (geo, ch, wireid, position, etc.), used for lookup and calibration during reconstruction.</li>
+<li>Location: SAMURAIPDC.xml  </li>
+<li>Function: Stores parameters for each PDC wire (geo, ch, wireid, position, etc.), used for lookup and calibration during reconstruction.</li>
 </ul>
 <h1 id="macros-and-scripts">Macros and Scripts<a class="headerlink" href="#macros-and-scripts" title="Permanent link">#</a></h1>
 <h2 id="recopdctrackc">recoPDCTrack.C<a class="headerlink" href="#recopdctrackc" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Location:</strong> users/tbt/tbt_try/recoPDCTrack.C  </li>
-<li><strong>Function:</strong> Typical macro for PDC reconstruction. Workflow: load parameters → open RIDF → PDC hit reconstruction → PDC track reconstruction → output track parameters.</li>
-<li><strong>Usage:</strong> Batch processing of data files, outputting PDC track parameters for each event.</li>
+<li>Location: users/tbt/tbt_try/recoPDCTrack.C  </li>
+<li>Function: Typical macro for PDC reconstruction. Workflow: load parameters → open RIDF → PDC hit reconstruction → PDC track reconstruction → output track parameters.</li>
+<li>Usage: Batch processing of data files, outputting PDC track parameters for each event.</li>
 </ul>
 <h2 id="ridf2treec">RIDF2Tree.C<a class="headerlink" href="#ridf2treec" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Location:</strong> users/tbt/tbt_try/RIDF2Tree.C  </li>
-<li><strong>Function:</strong> Decodes RIDF raw data and saves as ROOT TTree format for further analysis. Can include PDC data branches.</li>
+<li>Location: users/tbt/tbt_try/RIDF2Tree.C  </li>
+<li>Function: Decodes RIDF raw data and saves as ROOT TTree format for further analysis. Can include PDC data branches.</li>
 </ul>
 <h2 id="recosamuraic-recotrack_wsksc">RecoSAMURAI.C, RecoTrack_wSks.C<a class="headerlink" href="#recosamuraic-recotrack_wsksc" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Location:</strong> Macros/SAMURAI/Analysis/RecoSAMURAI.C, Macros/SAMURAI/RKtrace/RecoTrack_wSks.C  </li>
-<li><strong>Function:</strong> Used for fragment momentum and track reconstruction in the SAMURAI spectrometer. By default uses FDC/BDC, but can be modified to use PDC tracks for extrapolation and momentum reconstruction.</li>
+<li>Location: Macros/SAMURAI/Analysis/RecoSAMURAI.C, Macros/SAMURAI/RKtrace/RecoTrack_wSks.C  </li>
+<li>Function: Used for fragment momentum and track reconstruction in the SAMURAI spectrometer. By default uses FDC/BDC, but can be modified to use PDC tracks for extrapolation and momentum reconstruction.</li>
 </ul>
 <h2 id="onlinemonitorcc">OnlineMonitor.cc<a class="headerlink" href="#onlinemonitorcc" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Location:</strong> OnlineMonitor.cc  </li>
-<li><strong>Function:</strong> Online monitoring macro, supports online reconstruction and visualization of PDC data (set fUsePDC=true).</li>
+<li>Location: OnlineMonitor.cc  </li>
+<li>Function: Online monitoring macro, supports online reconstruction and visualization of PDC data (set fUsePDC=true).</li>
 </ul>
 <h1 id="other-notes">Other Notes<a class="headerlink" href="#other-notes" title="Permanent link">#</a></h1>
 <h2 id="samuraipdcxml-parameter-file">SAMURAIPDC.xml Parameter File<a class="headerlink" href="#samuraipdcxml-parameter-file" title="Permanent link">#</a></h2>
 <ul>
 <li>
-<p><strong>Note:</strong> All PDC channels (geo/ch) actually used must be defined in this file, otherwise reconstruction will fail.</p>
+<p>Note: All PDC channels (geo/ch) actually used must be defined in this file, otherwise reconstruction will fail.</p>
 </li>
 <li>
-<p><strong>ID</strong>: Unique identifier for the wire (usually the same as wireid).</p>
+<p>ID: Unique identifier for the wire (usually the same as wireid).</p>
 </li>
-<li><strong>NAME</strong>: Name of the wire, e.g. <code>PDC_0_0</code> means layer 0, wire 0.</li>
-<li><strong>FPL</strong>: Focal plane number, e.g. 13 means F13.</li>
-<li><strong>layer</strong>: Layer number (e.g. 0, 1, 2, etc.).</li>
-<li><strong>id_plane</strong>: Plane ID (e.g. 81, 82, 83, etc.).</li>
-<li><strong>anodedir</strong>: Anode wire direction (U/X/V), indicates the measurement direction of the layer.</li>
-<li><strong>wireid</strong>: Wire number within the layer.</li>
-<li><strong>wirepos</strong>: Physical position of the wire in this layer (usually in mm).</li>
-<li><strong>wirez</strong>: Z position of the wire (usually in mm).</li>
-<li><strong>tzero_offset</strong>: Time zero offset (usually 0).</li>
-<li><strong>det</strong>: Detector ID (e.g. 37).</li>
-<li><strong>geo</strong>: Electronics geometry number (e.g. 0, 1, 2, etc.).</li>
-<li><strong>ch</strong>: Electronics channel number, used for data decoding.</li>
+<li>NAME: Name of the wire, e.g. <code>PDC_0_0</code> means layer 0, wire 0.</li>
+<li>FPL: Focal plane number, e.g. 13 means F13.</li>
+<li>layer: Layer number (e.g. 0, 1, 2, etc.).</li>
+<li>id_plane: Plane ID (e.g. 81, 82, 83, etc.).</li>
+<li>anodedir: Anode wire direction (U/X/V), indicates the measurement direction of the layer.</li>
+<li>wireid: Wire number within the layer.</li>
+<li>wirepos: Physical position of the wire in this layer (usually in mm).</li>
+<li>wirez: Z position of the wire (usually in mm).</li>
+<li>tzero_offset: Time zero offset (usually 0).</li>
+<li>det: Detector ID (e.g. 37).</li>
+<li>geo: Electronics geometry number (e.g. 0, 1, 2, etc.).</li>
+<li>ch: Electronics channel number, used for data decoding.</li>
 </ul>
 <h1 id="summary-and-recommendations">Summary and Recommendations<a class="headerlink" href="#summary-and-recommendations" title="Permanent link">#</a></h1>
 <table>
@@ -3641,30 +3641,30 @@
 </table>
 <h2 id="how-to-choose-and-use">How to Choose and Use<a class="headerlink" href="#how-to-choose-and-use" title="Permanent link">#</a></h2>
 <ul>
-<li><strong>Only PDC reconstruction:</strong> Use TArtCalibPDCHit, TArtCalibPDCTrack.</li>
-<li><strong>Full-chain physics analysis:</strong> In macros like RecoSAMURAI.C or RecoTrack_wSks.C, replace FDC/BDC with PDC track for extrapolation to the target and momentum reconstruction.</li>
-<li><strong>Online monitoring:</strong> Use OnlineMonitor.s024 and set fUsePDC=true.</li>
+<li>Only PDC reconstruction: Use TArtCalibPDCHit, TArtCalibPDCTrack.</li>
+<li>Full-chain physics analysis: In macros like RecoSAMURAI.C or RecoTrack_wSks.C, replace FDC/BDC with PDC track for extrapolation to the target and momentum reconstruction.</li>
+<li>Online monitoring: Use OnlineMonitor.s024 and set fUsePDC=true.</li>
 </ul>
 <hr />
 <h2 id="data-flow-and-algorithm-for-pdc-track-reconstruction">Data Flow and Algorithm for PDC Track Reconstruction<a class="headerlink" href="#data-flow-and-algorithm-for-pdc-track-reconstruction" title="Permanent link">#</a></h2>
 <h3 id="data-flow-overview">Data Flow Overview<a class="headerlink" href="#data-flow-overview" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Input:</strong> All PDC hits (TArtDCHit), each with spatial position (x/y/z), drift time, etc.</li>
-<li><strong>Processing:</strong> In <code>TArtCalibPDCTrack::ReconstructData()</code>, hits are first classified (by layer/direction), then geometric methods (e.g., weighted centroid, line fitting) are used to reconstruct track parameters.</li>
-<li><strong>Output:</strong> Reconstructed track parameters (position, angle, chi2, etc.) are written to TArtDCTrack objects via <code>SetAngle</code>, <code>SetPosition</code>, etc.</li>
+<li>Input: All PDC hits (TArtDCHit), each with spatial position (x/y/z), drift time, etc.</li>
+<li>Processing: In <code>TArtCalibPDCTrack::ReconstructData()</code>, hits are first classified (by layer/direction), then geometric methods (e.g., weighted centroid, line fitting) are used to reconstruct track parameters.</li>
+<li>Output: Reconstructed track parameters (position, angle, chi2, etc.) are written to TArtDCTrack objects via <code>SetAngle</code>, <code>SetPosition</code>, etc.</li>
 </ul>
 <h3 id="typical-implementation-weighted-centroid-example">Typical Implementation (Weighted Centroid Example)<a class="headerlink" href="#typical-implementation-weighted-centroid-example" title="Permanent link">#</a></h3>
 <ol>
 <li>
-<p><strong>Hit Classification</strong><br />
+<p>Hit Classification<br />
    Classify all hits by wire direction (u/x/v/y), store in separate buffers.</p>
 </li>
 <li>
-<p><strong>Calculate Weighted Centroid for Each Direction</strong><br />
+<p>Calculate Weighted Centroid for Each Direction<br />
    For each layer, calculate the weighted average position (weight is usually drift time difference or signal strength).</p>
 </li>
 <li>
-<p><strong>Line Fitting to Obtain Angles</strong><br />
+<p>Line Fitting to Obtain Angles<br />
    Fit a straight line to the centroid points to get the slope (angle):  </p>
 </li>
 <li>X direction: a = (x2 - x1)/(z2 - z1)</li>
@@ -3673,11 +3673,11 @@
    Or use least squares fitting with multiple points.</p>
 </li>
 <li>
-<p><strong>Write to TArtDCTrack</strong><br />
+<p>Write to TArtDCTrack<br />
    Use <code>SetAngle(a, 0)</code> and <code>SetAngle(b, 1)</code> to store the fitted angles in TArtDCTrack's ca[0] and ca[1].</p>
 </li>
 <li>
-<p><strong>Access Later</strong><br />
+<p>Access Later<br />
    Use <code>GetAngle(0)</code> and <code>GetAngle(1)</code> to retrieve the X and Y angles.</p>
 </li>
 </ol>
@@ -3786,7 +3786,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="June 8, 2025 16:15:15 UTC"><span class="timeago" datetime="2025-06-08T16:15:15+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="June 8, 2025 16:15:15 UTC">2025-06-08</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 20, 2026 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 20, 2026 10:56:55 UTC">2026-04-20</span>
       
         <br>
         Created:
