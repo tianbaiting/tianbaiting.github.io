@@ -1,551 +1,513 @@
 # S 矩阵与散射截面
 
-本文按照 Taylor 教科书的逻辑链条，正面建立非相对论散射理论的核心框架。全文只用薛定谔表象。
+本文沿 Taylor《Scattering Theory: Quantum Theory of Nonrelativistic Collisions》第 2–3 章的思路，在薛定谔表象下建立非相对论散射的核心框架：渐近条件 → Møller 算符 → 入出态与 S 算符 → T 矩阵 → 微分截面 → 光学定理。
 
-**贯穿全文的核心区分**：
+## 原书参考（Taylor, Ch. 2–3）
 
-| 名称 | 记号 | 身份 | 角色 |
-|:--|:--|:--|:--|
-| 通道基矢 / 自由参考态 | $\|\alpha\rangle$ | $H_0$ 的广义本征矢 | **坐标轴 / 标签** |
-| 自由波包 | $\|\phi\rangle = \int g(\alpha)\|\alpha\rangle\,d\alpha$ | 归一化的自由态 | 渐近条件的**参考对象** |
-| 入出态 / 渐近态 | $\|\psi_\alpha^{(\pm)}\rangle = \Omega_\pm\|\alpha\rangle$ | $H$ 的广义本征矢 | **物理散射态** |
-| 时变态 | $\|\Psi(t)\rangle = e^{-iHt}\|\Psi(0)\rangle$ | 真实演化的波包 | 实验中的**被测对象** |
+关于态与散射截面的讲解，Taylor 这本书是我见过最清楚的。下面把相关页面直接附在开头。阅读本文时可随时对照——后文的符号和推导基本按 Taylor 的思路走。
 
-> 渐近态不是自由态。
-> 渐近态是完整哈密顿量 $H$ 的精确态，它在远时极限与某个自由参考传播不可区分，但在有限时间、有限距离内与自由态完全不同。
+### Chapter 2: The Scattering Operator for a Single Particle（pp. 21–37）
 
-## 0. 散射问题的物理图景
+渐近条件、Møller 算符、散射算符的引入。
 
-设两体经由短程势 $V(r)$ 散射。在质心系中，问题约化为一个粒子被固定势 $V$ 散射，哈密顿量为
+<details>
+<summary>展开页面图片</summary>
 
-$$
-H = H_0 + V, \qquad H_0 = \frac{p^2}{2\mu}
-$$
+![Taylor p.21](./assets/S_matrix_and_cross_section.zh/taylor-p21.png)
+![Taylor p.22](./assets/S_matrix_and_cross_section.zh/taylor-p22.png)
+![Taylor p.23](./assets/S_matrix_and_cross_section.zh/taylor-p23.png)
+![Taylor p.24](./assets/S_matrix_and_cross_section.zh/taylor-p24.png)
+![Taylor p.25](./assets/S_matrix_and_cross_section.zh/taylor-p25.png)
+![Taylor p.26](./assets/S_matrix_and_cross_section.zh/taylor-p26.png)
+![Taylor p.27](./assets/S_matrix_and_cross_section.zh/taylor-p27.png)
+![Taylor p.28](./assets/S_matrix_and_cross_section.zh/taylor-p28.png)
+![Taylor p.29](./assets/S_matrix_and_cross_section.zh/taylor-p29.png)
+![Taylor p.30](./assets/S_matrix_and_cross_section.zh/taylor-p30.png)
+![Taylor p.31](./assets/S_matrix_and_cross_section.zh/taylor-p31.png)
+![Taylor p.32](./assets/S_matrix_and_cross_section.zh/taylor-p32.png)
+![Taylor p.33](./assets/S_matrix_and_cross_section.zh/taylor-p33.png)
+![Taylor p.34](./assets/S_matrix_and_cross_section.zh/taylor-p34.png)
+![Taylor p.35](./assets/S_matrix_and_cross_section.zh/taylor-p35.png)
+![Taylor p.36](./assets/S_matrix_and_cross_section.zh/taylor-p36.png)
+![Taylor p.37](./assets/S_matrix_and_cross_section.zh/taylor-p37.png)
 
-其中 $\mu$ 是约化质量。
+</details>
 
-散射的时间演化图像：
+### Chapter 3: Cross Sections in Terms of the S Matrix（pp. 38–55）
 
-1. **远过去** $t \to -\infty$：粒子远离散射中心，$V \approx 0$，真实传播与自由传播不可区分。
-2. **有限时间**：粒子进入相互作用区，受 $V$ 作用发生散射。
-3. **远未来** $t \to +\infty$：粒子再次远离，$V \approx 0$，真实传播再次与某个自由传播不可区分。
+能量守恒、壳上 T 矩阵、经典与量子截面、波包与碰撞参数、光学定理。
 
-关键在于：在第 1 步和第 3 步中，我们并没有"关掉" $V$。$V$ 始终存在于哈密顿量中；只是粒子在远处时几乎不感受到它。因此，远过去和远未来的态仍然是 $H$（而非 $H_0$）的态。
+<details>
+<summary>展开页面图片</summary>
 
-## 1. 通道基矢：坐标轴，不是物理态
+![Taylor p.38](./assets/S_matrix_and_cross_section.zh/taylor-p38.png)
+![Taylor p.39](./assets/S_matrix_and_cross_section.zh/taylor-p39.png)
+![Taylor p.40](./assets/S_matrix_and_cross_section.zh/taylor-p40.png)
+![Taylor p.41](./assets/S_matrix_and_cross_section.zh/taylor-p41.png)
+![Taylor p.42](./assets/S_matrix_and_cross_section.zh/taylor-p42.png)
+![Taylor p.43](./assets/S_matrix_and_cross_section.zh/taylor-p43.png)
+![Taylor p.44](./assets/S_matrix_and_cross_section.zh/taylor-p44.png)
+![Taylor p.45](./assets/S_matrix_and_cross_section.zh/taylor-p45.png)
+![Taylor p.46](./assets/S_matrix_and_cross_section.zh/taylor-p46.png)
+![Taylor p.47](./assets/S_matrix_and_cross_section.zh/taylor-p47.png)
+![Taylor p.48](./assets/S_matrix_and_cross_section.zh/taylor-p48.png)
+![Taylor p.49](./assets/S_matrix_and_cross_section.zh/taylor-p49.png)
+![Taylor p.50](./assets/S_matrix_and_cross_section.zh/taylor-p50.png)
+![Taylor p.51](./assets/S_matrix_and_cross_section.zh/taylor-p51.png)
+![Taylor p.52](./assets/S_matrix_and_cross_section.zh/taylor-p52.png)
+![Taylor p.53](./assets/S_matrix_and_cross_section.zh/taylor-p53.png)
+![Taylor p.54](./assets/S_matrix_and_cross_section.zh/taylor-p54.png)
+![Taylor p.55](./assets/S_matrix_and_cross_section.zh/taylor-p55.png)
 
-自由哈密顿量 $H_0$ 的广义本征态记为
+</details>
 
-$$
-H_0 |\alpha\rangle = E_\alpha |\alpha\rangle
-$$
+---
 
-这里的 $|\alpha\rangle$ 可以是平面波 $|\mathbf{p}\rangle$，也可以是自由球面波 $|E,l,m\rangle$，或任何一组完整的自由状态标签。
+##  记号约定与核心区分
 
-它们的性质：
+令 $H = H_0 + V$，$H_0 = p^2/2m$ 是自由粒子哈密顿量，$V$ 是短程势。整个问题有**三类不同**的对象，它们在文献里常被同一批符号混用，因此先把身份讲清楚：
 
-- **$\delta$-归一化的广义本征矢**：$\langle \alpha | \alpha' \rangle = \delta(\alpha - \alpha')$。
-- **不可归一化**：单个 $|\alpha\rangle$ 不是 Hilbert 空间中的物理态。
-- **作用是标签和坐标轴**：用来标记动量、角动量、自旋等量子数，并作为展开其他态的基底。
+| 对象 | 记号 | 方程 | 可归一？ | 角色 |
+|:--|:--|:--|:--|:--|
+| 自由基矢 | $\|\mathbf{p}\rangle$，$\|\alpha\rangle$ | $H_0\|\alpha\rangle = E_\alpha\|\alpha\rangle$ | 否（$\delta$-归一） | **坐标轴** |
+| 自由波包 | $\|\phi\rangle = \int g(\alpha)\|\alpha\rangle\,d\alpha$ | 自由演化 $e^{-iH_0 t}\|\phi\rangle$ | 是 | 渐近**参考** |
+| 入出态 | $\|\psi_\alpha^{\pm}\rangle = \Omega_\pm\|\alpha\rangle$ | $H\|\psi_\alpha^{\pm}\rangle = E_\alpha\|\psi_\alpha^{\pm}\rangle$ | 否（$\delta$-归一） | **物理态**的坐标 |
+| 散射态 | $\|\Psi(t)\rangle = e^{-iHt}\|\Psi(0)\rangle$ | 完整 $H$ 下演化 | 是 | 实验对象 |
 
-所以 $\{|\alpha\rangle\}$ 是自由参考空间中的一组坐标轴。任何可归一化的自由态——即真正的物理自由波包——都是这些坐标轴上的"矢量"：
+需要反复提醒自己的两件事：
 
-$$
-|\phi\rangle = \int d\alpha\; g(\alpha)\, |\alpha\rangle, \qquad \int |g(\alpha)|^2\, d\alpha = 1
-$$
+1. **基矢不是物理态**。$|\alpha\rangle$ 和 $|\psi_\alpha^\pm\rangle$ 都是 $\delta$-归一的广义本征矢，都不直接出现在概率公式里。它们的作用是为可归一的波包提供展开基底。
+2. **入出态不是自由态**。$|\psi_\alpha^{\pm}\rangle$ 是 $H$（不是 $H_0$）的广义本征矢。它之所以带上自由标签 $\alpha$，仅仅是因为它在 $t\to\mp\infty$ 时的渐近行为与自由态 $|\alpha\rangle$ 匹配；在有限距离、有限时间内它与自由态完全不同。
 
-**判据**：
+##  渐近条件
 
-- 基矢 $|\alpha\rangle$：$\delta$-归一化，数学对象；不能直接出现在概率公式里。
-- 波包 $|\phi\rangle$：平方可积，物理对象；可以谈它"被测量到"的概率。
-
-## 2. 渐近条件（Asymptotic Condition）
-
-这是整个散射理论的出发公设（Taylor §2.5）。
-
-**渐近条件**：对于散射问题中的每一个物理态 $|\Psi\rangle$（$H$ 下演化的真实态），存在两个归一化的自由波包 $|\phi_\text{in}\rangle$ 和 $|\phi_\text{out}\rangle$，使得
-
-$$
-\lim_{t \to -\infty} \left\| e^{-iHt} |\Psi\rangle - e^{-iH_0 t} |\phi_\text{in}\rangle \right\| = 0
-$$
-
-$$
-\lim_{t \to +\infty} \left\| e^{-iHt} |\Psi\rangle - e^{-iH_0 t} |\phi_\text{out}\rangle \right\| = 0
-$$
-
-逐条解读：
-
-1. **这是关于波包的陈述**。$|\phi_\text{in}\rangle$ 和 $|\phi_\text{out}\rangle$ 是归一化的自由波包，不是平面波基矢。渐近条件说的是两个波包在远时极限下的范数之差趋于零，而范数只对可归一化的态有定义。
-2. **真实态始终在 $H$ 下演化**。左边的 $e^{-iHt}|\Psi\rangle$ 是包含相互作用的完整演化，不是把 $V$ 关掉后的自由演化。
-3. **"不可区分"是在 $t \to \pm\infty$ 意义下的**。在有限时间内，$e^{-iHt}|\Psi\rangle$ 和 $e^{-iH_0 t}|\phi_\text{in}\rangle$ 一般完全不同——粒子正处于散射区。
-4. **同一个真实态 $|\Psi\rangle$ 对应两个不同的自由波包**。$|\phi_\text{in}\rangle$ 描述了远过去的渐近行为，$|\phi_\text{out}\rangle$ 描述了远未来的渐近行为。散射的全部信息就蕴含在 $|\phi_\text{in}\rangle \to |\phi_\text{out}\rangle$ 的映射中。
-5. **束缚态被排除在外**。渐近条件只对散射态（连续谱态）成立。如果 $H$ 有束缚态，那些态在 $t \to \pm\infty$ 时不会"跑到远处"，没有自由波包与之对应。
-
-## 3. Møller 算符
-
-### 3.1 定义
-
-渐近条件的等价写法是
+短程势下，对于任何一个散射态 $|\Psi\rangle$（$H$ 的正能子空间里的矢量），存在两个归一化的**自由**波包 $|\phi_\text{in}\rangle$、$|\phi_\text{out}\rangle$，使得
 
 $$
-|\Psi\rangle = \lim_{t \to -\infty} e^{iHt} e^{-iH_0 t} |\phi_\text{in}\rangle
+\lim_{t\to-\infty}\bigl\|\,e^{-iHt}|\Psi\rangle - e^{-iH_0 t}|\phi_\text{in}\rangle\,\bigr\| = 0,
+\qquad
+\lim_{t\to+\infty}\bigl\|\,e^{-iHt}|\Psi\rangle - e^{-iH_0 t}|\phi_\text{out}\rangle\,\bigr\| = 0.
 $$
 
-（这通过在两边乘 $e^{iHt}$ 并取 $t \to -\infty$ 极限从渐近条件的第一式推出。）
+三点注记：
 
-由此定义 **Møller 算符**（也叫波算符）：
+- 左边的 $e^{-iHt}|\Psi\rangle$ 一直是**完整**动力学，没有把 $V$ 关掉；只是在远时极限下，真实演化在范数意义下与某个自由演化不可区分。
+- 渐近条件是关于**波包**（可归一态）的陈述，范数差 $\|\cdot\|$ 才有意义。对 $\delta$-归一的广义态，这个极限没有直接含义。
+- 束缚态不满足渐近条件——它们永远不会跑到远处，没有自由波包与之对应。渐近条件只定义**散射子空间** $\mathcal{H}_\text{scatt}\subset\mathcal{H}$。
 
-$$
-\Omega_+ = \operatorname*{s-lim}_{t \to -\infty} e^{iHt} e^{-iH_0 t}
-$$
+##  Møller 算符
 
-$$
-\Omega_- = \operatorname*{s-lim}_{t \to +\infty} e^{iHt} e^{-iH_0 t}
-$$
+###  定义
 
-这里 "s-lim" 表示强算符极限：对每个固定的归一化态 $|\phi\rangle$，$\Omega_\pm |\phi\rangle$ 作为 Hilbert 空间中的矢量收敛。
-
-于是渐近条件可以简洁地写成：
+对渐近条件的第一式两边左乘 $e^{iHt}$ 并取极限，得到
 
 $$
-|\Psi\rangle = \Omega_+ |\phi_\text{in}\rangle = \Omega_- |\phi_\text{out}\rangle
+|\Psi\rangle = \lim_{t\to-\infty} e^{iHt}e^{-iH_0 t}|\phi_\text{in}\rangle.
 $$
 
-### 3.2 物理含义
-
-$\Omega_+$ 做的事情是：
-
-> 给定一个自由波包 $|\phi_\text{in}\rangle$（你在远过去"看到"的样子），找到那个在完整动力学下会演化成在 $t \to -\infty$ 时与这个自由波包不可区分的真实散射态。
-
-换句话说，$\Omega_+$ 把自由参考空间中的态（标签）映射到完整物理空间中的散射态（物理态）。
-
-$\Omega_-$ 的含义类似，只是参考时刻换成了 $t \to +\infty$。
-
-### 3.3 关键性质
-
-**等距性**。$\Omega_\pm$ 保持内积：
+由此定义
 
 $$
-\langle \Omega_\pm \phi | \Omega_\pm \chi \rangle = \langle \phi | \chi \rangle
+\Omega_+ = \operatorname*{s\text{-}lim}_{t\to-\infty} e^{iHt}e^{-iH_0 t},
+\qquad
+\Omega_- = \operatorname*{s\text{-}lim}_{t\to+\infty} e^{iHt}e^{-iH_0 t},
 $$
 
-这意味着 $\Omega_\pm^\dagger \Omega_\pm = \mathbf{1}$（自由空间上的恒等算符）。
-
-**一般不酉**。如果 $H$ 存在束缚态，则 $\Omega_\pm$ 的值域不覆盖整个 Hilbert 空间（束缚态不在值域中）。此时 $\Omega_\pm \Omega_\pm^\dagger \neq \mathbf{1}$。
-
-**渐近完备性**。如果 $\Omega_+$ 和 $\Omega_-$ 的值域相同（都等于散射子空间），则称系统满足**渐近完备性**。物理上这意味着：任何一个在远过去看起来自由的态，在远未来也看起来自由——没有粒子永远被困在相互作用区。对短程势，渐近完备性成立。
-
-**交缠（intertwining）关系**：
+其中 s-lim 指**强**算符极限：对每个归一化 $|\phi\rangle$，$\Omega_\pm|\phi\rangle$ 作为 Hilbert 空间矢量收敛。渐近条件可以紧凑地写成
 
 $$
-H \Omega_\pm = \Omega_\pm H_0
+|\Psi\rangle = \Omega_+|\phi_\text{in}\rangle = \Omega_-|\phi_\text{out}\rangle.
 $$
 
-这说明：如果 $|\alpha\rangle$ 是 $H_0$ 的能量为 $E_\alpha$ 的广义本征矢，则 $\Omega_\pm |\alpha\rangle$ 是 $H$ 的相同能量的广义本征矢。因此，
+一句话：$\Omega_+$ 把"粒子在远过去看起来像 $|\phi_\text{in}\rangle$"翻译成"它实际上就是散射态 $|\Psi\rangle$"。$\Omega_-$ 类似，只是参考时刻在远未来。
+
+### 等距性与值域
+
+直接从定义可以验证
 
 $$
-|\psi_\alpha^{(\pm)}\rangle \equiv \Omega_\pm |\alpha\rangle
+\Omega_\pm^\dagger \Omega_\pm = \mathbf{1},
 $$
 
-是 $H$ 的广义本征矢，满足
+即 $\Omega_\pm$ 保持内积。但一般地 $\Omega_\pm\Omega_\pm^\dagger \neq \mathbf{1}$：$\Omega_\pm$ 的值域恰是散射子空间 $\mathcal{H}_\text{scatt}$，束缚态不在里面。
+
+**渐近完备性**：若 $\text{Range}(\Omega_+) = \text{Range}(\Omega_-) = \mathcal{H}_\text{scatt}$，则系统渐近完备——远过去看起来自由的态，远未来也看起来自由。短程势下这成立。
+
+### 交缠关系
+
+从 $H = H_0 + V$ 与极限定义出发，考察 $e^{iH\tau}\Omega_\pm$：
 
 $$
-H |\psi_\alpha^{(\pm)}\rangle = E_\alpha |\psi_\alpha^{(\pm)}\rangle
+\begin{aligned}
+e^{iH\tau}\Omega_\pm
+&= \lim_{t\to\mp\infty} e^{iH(t+\tau)} e^{-iH_0(t+\tau)}\,e^{iH_0\tau} \\
+&= \Omega_\pm\, e^{iH_0\tau}.
+\end{aligned}
 $$
 
-这就是**入态**（$+$）和**出态**（$-$）的定义。
-
-### 3.4 再次强调：入出态是什么，不是什么
-
-- $|\psi_\alpha^{(+)}\rangle$ 是完整 $H$ 的广义本征矢。它**不是**自由态。
-- "$+$" 标记来自 $\Omega_+$，即远过去（$t \to -\infty$）的渐近条件。所以"入态"是指在远过去与自由参考态 $|\alpha\rangle$ 匹配的那个散射态。
-- $|\alpha\rangle$ 只是用来标记 $|\psi_\alpha^{(+)}\rangle$ 的坐标。真正的物理对象是 $|\psi_\alpha^{(+)}\rangle$。
-- $\{|\psi_\alpha^{(+)}\rangle\}$ 和 $\{|\psi_\alpha^{(-)}\rangle\}$ 各自构成散射子空间的一组完备基底（这从 $\Omega_\pm$ 的等距性和渐近完备性推出）。
-
-## 4. S 算符
-
-### 4.1 定义
-
-同一个物理态 $|\Psi\rangle$ 对应两个自由波包：
+对 $\tau$ 求导并令 $\tau\to 0$：
 
 $$
-|\Psi\rangle = \Omega_+ |\phi_\text{in}\rangle = \Omega_- |\phi_\text{out}\rangle
+\boxed{\,H\Omega_\pm = \Omega_\pm H_0\,}
 $$
 
-用 $\Omega_-^\dagger$ 作用于第一个等式：
+这是整个理论最重要的代数关系。直接推论：若 $H_0|\alpha\rangle = E_\alpha|\alpha\rangle$，则
 
 $$
-|\phi_\text{out}\rangle = \Omega_-^\dagger \Omega_+ |\phi_\text{in}\rangle
-$$
-
-（这里用到了 $\Omega_-^\dagger \Omega_- = \mathbf{1}$。）
-
-定义 **S 算符**：
-
-$$
-S \equiv \Omega_-^\dagger \Omega_+
-$$
-
-它将入射自由波包映射到出射自由波包：
-
-$$
-|\phi_\text{out}\rangle = S |\phi_\text{in}\rangle
-$$
-
-### 4.2 S 算符的身份
-
-$S$ 是定义在**自由参考空间**上的算符：输入和输出都是自由波包。它编码了散射的全部信息——把远过去的"标签"翻译成远未来的"标签"。
-
-但 $S$ 本身不直接作用于真实的时变态。真实动力学由 $H$ 生成；$S$ 是这个动力学在自由参考空间上的"投影"。
-
-### 4.3 S 的酉性
-
-如果渐近完备性成立（$\Omega_+$ 和 $\Omega_-$ 的值域相同），则 $S$ 是酉的：
-
-$$
-S^\dagger S = S S^\dagger = \mathbf{1}
-$$
-
-物理含义：概率守恒。"进来多少概率，出去多少概率"。
-
-### 4.4 S 矩阵元
-
-在通道基矢上展开：
-
-$$
-S_{\beta\alpha} \equiv \langle \beta | S | \alpha \rangle = \langle \beta | \Omega_-^\dagger \Omega_+ | \alpha \rangle = \langle \psi_\beta^{(-)} | \psi_\alpha^{(+)} \rangle
-$$
-
-这条等式的两端：
-
-- 左边是 $S$ 算符在**自由参考基底**中的矩阵元——一个纯粹的坐标表示。
-- 右边是**入态和出态**（$H$ 的广义本征矢）之间的内积——真正的物理重叠。
-
-自由基矢 $|\alpha\rangle$、$|\beta\rangle$ 只是坐标轴。真正的物理内容在 $|\psi^{(\pm)}\rangle$ 里。
-
-## 5. 为什么渐近态的内积给出概率
-
-### 5.1 探测器测量的是什么
-
-设实验准备了一个入射波包态
-
-$$
-|\Psi_\text{in}\rangle = \Omega_+ |\Phi_\text{in}\rangle
-$$
-
-其中 $|\Phi_\text{in}\rangle$ 是归一化的自由波包。
-
-探测器被放在某个方向上，调到接收某个出射通道——即一个归一化的自由波包 $|\chi_\beta\rangle$。这个通道在完整物理空间中对应的态是
-
-$$
-|\psi_\beta^{(-)}\rangle = \Omega_- |\chi_\beta\rangle
-$$
-
-### 5.2 正确的投影算符
-
-"在远未来探测到出射通道 $|\chi_\beta\rangle$"这件事，在完整物理 Hilbert 空间中对应的投影算符不是在自由基矢上的投影
-
-$$
-|\chi_\beta\rangle\langle\chi_\beta| \quad (\text{错误！})
-$$
-
-而是 **out-projector**：
-
-$$
-Q_\beta^\text{out} = |\psi_\beta^{(-)}\rangle \langle \psi_\beta^{(-)}| = \Omega_- |\chi_\beta\rangle \langle \chi_\beta| \Omega_-^\dagger
-$$
-
-为什么？因为探测器工作在远未来的渐近区。它测到的"自由粒子"实际上是在完整 $H$ 下演化的散射态，只不过这个散射态在远未来与 $|\chi_\beta\rangle$ 的自由传播不可区分。所以正确的本征态是出态 $|\psi_\beta^{(-)}\rangle$，而非自由态 $|\chi_\beta\rangle$。
-
-### 5.3 概率公式
-
-由 Born 规则：
-
-$$
-P_{\beta \leftarrow \text{in}} = \langle \Psi_\text{in} | Q_\beta^\text{out} | \Psi_\text{in} \rangle = |\langle \psi_\beta^{(-)} | \Psi_\text{in} \rangle|^2
-$$
-
-将 $|\Psi_\text{in}\rangle = \Omega_+ |\Phi_\text{in}\rangle$ 代入：
-
-$$
-\langle \psi_\beta^{(-)} | \Psi_\text{in} \rangle = \langle \chi_\beta | \Omega_-^\dagger \Omega_+ | \Phi_\text{in} \rangle = \langle \chi_\beta | S | \Phi_\text{in} \rangle
+H\,\Omega_\pm|\alpha\rangle = E_\alpha\,\Omega_\pm|\alpha\rangle.
 $$
 
 因此
 
 $$
-P_{\beta \leftarrow \text{in}} = |\langle \chi_\beta | S | \Phi_\text{in} \rangle|^2
+|\psi_\alpha^{\pm}\rangle \equiv \Omega_\pm|\alpha\rangle
 $$
 
-**总结**：概率之所以由 $S$ 矩阵元（或等价地由入出态的内积）给出，不是因为渐近态是自由态（它不是），而是因为：
+是 $H$ 的广义本征矢，与 $|\alpha\rangle$ **能量相同**但**态不同**。再重申一遍：$|\alpha\rangle$ 是标签（$H_0$ 本征），$|\psi_\alpha^{\pm}\rangle$ 是物理态（$H$ 本征）。
 
-1. 探测器测量的是远未来的渐近通道；
-2. 渐近通道在物理空间中的正确投影是 out-projector $Q_\beta^\text{out}$；
-3. out-projector 的本征态正是出态 $|\psi_\beta^{(-)}\rangle$；
-4. 因此 Born 规则自然给出入出态的内积；
-5. 由波算符的等距性，这个内积可以等价地写成自由参考空间中的 $S$ 矩阵元。
-
-### 5.4 对一个末态窗口的推广
-
-若探测器接收的不是单个通道而是一片末态区域 $\Delta$，则在自由参考空间中定义
+由等距性 $\Omega_\pm^\dagger\Omega_\pm = \mathbf{1}$ 和交缠关系还可得到
 
 $$
-\Pi_\Delta = \int_\Delta d\beta\; |\beta\rangle\langle\beta|
+\Omega_\pm^\dagger H\,\Omega_\pm = H_0,
 $$
 
-对应的物理 out-projector 为
+即 Møller 算符把完整哈密顿量限制在散射子空间上与自由哈密顿量酉等价。
+
+##  S 算符
+
+###  定义
+
+同一个散射态 $|\Psi\rangle$ 对应两个自由波包：
 
 $$
-Q_\Delta^\text{out} = \Omega_- \Pi_\Delta \Omega_-^\dagger
+\Omega_+|\phi_\text{in}\rangle = \Omega_-|\phi_\text{out}\rangle.
 $$
 
-概率为
+用 $\Omega_-^\dagger$ 作用左边，利用 $\Omega_-^\dagger\Omega_- = \mathbf{1}$：
 
 $$
-P_\Delta = \langle \Phi_\text{in} | S^\dagger \Pi_\Delta S | \Phi_\text{in} \rangle
+|\phi_\text{out}\rangle = \Omega_-^\dagger\Omega_+\,|\phi_\text{in}\rangle \;\equiv\; S\,|\phi_\text{in}\rangle.
 $$
 
-这条式子比单个矩阵元更根本：Born 规则作用在物理 out-projector 上，$S^\dagger \Pi_\Delta S$ 只是这个物理投影在自由参考空间中的表示。
-
-### 5.5 为什么有限时间下自由基底展开系数不是概率
-
-在某个有限时刻 $t$，真实态总可以在自由基底上展开：
+所以
 
 $$
-|\Psi(t)\rangle = \int d\alpha\; c_t(\alpha)\, |\alpha\rangle
+S = \Omega_-^\dagger\Omega_+.
 $$
 
-但 $|c_t(\alpha)|^2$ 一般**不能**解释为"发现系统处于散射末态 $\alpha$ 的概率"，原因有三：
+$S$ 定义在**自由空间**上：输入和输出都是自由波包。真实动力学由 $H$ 生成；$S$ 只是这个动力学投影到自由参考空间中的表示。
 
-1. **这只是坐标展开**。$|\alpha\rangle$ 是自由参考基底，不是 out-projector 的本征态。
-2. **通道尚未分离**。在有限时间内，系统可能仍处在相互作用区内，自由基底系数不对应任何清晰的通道探测。
-3. **$\delta$-归一化的问题**。$|\alpha\rangle$ 是广义本征矢，$|c_t(\alpha)|^2$ 是概率密度，直接取模平方会碰到 $\delta$ 函数平方。
+###  酉性与能量守恒
 
-## 6. Lippmann-Schwinger 方程与定态散射 ket
+渐近完备性下 $S^\dagger S = SS^\dagger = \mathbf{1}$。
 
-### 6.1 从时域到定态
-
-在 §3 中，入态的定义是通过波算符和远时极限给出的（时域定义）。对于定态散射问题，我们需要一个不显含时间的方程。
-
-用通道基矢 $|\alpha\rangle$ 作为 $\Omega_+$ 的输入，定义入态
+由交缠关系 $H\Omega_\pm = \Omega_\pm H_0$：
 
 $$
-|\psi_\alpha^{(+)}\rangle = \Omega_+ |\alpha\rangle
+[S, H_0] = \Omega_-^\dagger\Omega_+ H_0 - H_0\Omega_-^\dagger\Omega_+
+= \Omega_-^\dagger H\Omega_+ - \Omega_-^\dagger H\Omega_+ = 0.
 $$
 
-由交缠关系 $H\Omega_+ = \Omega_+ H_0$，它满足
+因此 $S$ 与 $H_0$ 对易：S 算符在**自由能量**壳层上对角化——**能量守恒**在连续谱中的体现。
+
+### S 矩阵元
+
+在自由基底 $\{|\alpha\rangle\}$ 上展开：
 
 $$
-H |\psi_\alpha^{(+)}\rangle = E_\alpha |\psi_\alpha^{(+)}\rangle
+S_{\beta\alpha} \equiv \langle\beta|S|\alpha\rangle
+= \langle\beta|\Omega_-^\dagger\Omega_+|\alpha\rangle
+= \langle\psi_\beta^{-}|\psi_\alpha^{+}\rangle.
 $$
 
-即 $(E_\alpha - H_0 - V)|\psi_\alpha^{(+)}\rangle = 0$，也就是
+两种写法各有含义：
+
+- 左边 $\langle\beta|S|\alpha\rangle$：S 算符在**自由基底**中的矩阵元，纯粹的坐标表示。
+- 右边 $\langle\psi_\beta^{-}|\psi_\alpha^{+}\rangle$：**入态与出态**的物理内积。
+
+二者相等正是 $\Omega_\pm$ 等距性的直接推论。真正的物理重叠发生在 $H$ 的广义本征态之间；自由基底 $|\alpha\rangle$、$|\beta\rangle$ 只提供展开时用的坐标轴。
+
+### 概率的来源
+
+**为什么是入出态的内积给出概率，而不是自由基底的展开系数？**
+
+实验准备入态 $|\Psi_\text{in}\rangle = \Omega_+|\phi_\text{in}\rangle$。探测器放在远未来的渐近区，工作在某个出射通道 $|\chi_\beta\rangle$（归一化自由波包）上。"探测到出射通道 $\chi_\beta$" 这件事，对应的**物理**投影算符不是自由基底上的投影，而是
 
 $$
-(E_\alpha - H_0)|\psi_\alpha^{(+)}\rangle = V |\psi_\alpha^{(+)}\rangle
+Q_\beta^\text{out} = \Omega_-|\chi_\beta\rangle\langle\chi_\beta|\Omega_-^\dagger,
 $$
 
-### 6.2 Lippmann-Schwinger 方程
-
-上式的形式解需要 $(E_\alpha - H_0)$ 的逆，但 $E_\alpha$ 在 $H_0$ 的连续谱上，所以必须加 $i\epsilon$ 处方做正则化。由入射边界条件（outgoing spherical wave），正确的处方是
+因为探测器实际测到的本征态是 $|\psi_{\chi_\beta}^{-}\rangle = \Omega_-|\chi_\beta\rangle$，而非 $|\chi_\beta\rangle$ 本身。由 Born 规则：
 
 $$
-|\psi_\alpha^{(+)}\rangle = |\alpha\rangle + G_0^+(E_\alpha)\, V\, |\psi_\alpha^{(+)}\rangle
+P_{\chi_\beta\leftarrow\phi_\text{in}}
+= \bigl|\langle\psi_{\chi_\beta}^{-}|\Psi_\text{in}\rangle\bigr|^2
+= \bigl|\langle\chi_\beta|\Omega_-^\dagger\Omega_+|\phi_\text{in}\rangle\bigr|^2
+= \bigl|\langle\chi_\beta|S|\phi_\text{in}\rangle\bigr|^2.
+$$
+
+由 Møller 等距性，这个概率等价地可以写成自由空间中的 S 矩阵元：这正是 S 矩阵与概率之间联系的根源。$|S|\phi_\text{in}\rangle$ 之所以出现，是因为物理的 out-projector 被 $\Omega_-$ 共轭到了自由空间。
+
+相应的有限时间下，把真实态在自由基底上展开得到的系数 $c_t(\alpha) = \langle\alpha|\Psi(t)\rangle$，一般**不**是通道探测概率——粒子可能还没有离开相互作用区，通道尚未分离。
+
+##  动量表象、T 矩阵与散射振幅
+
+接下来把 $|\alpha\rangle$ 具体取为动量本征态 $|\mathbf{p}\rangle$：
+
+$$
+H_0|\mathbf{p}\rangle = \frac{\mathbf{p}^2}{2m}|\mathbf{p}\rangle,
+\qquad
+\langle\mathbf{p}'|\mathbf{p}\rangle = \delta_3(\mathbf{p}'-\mathbf{p}).
+$$
+
+由 $[S,H_0] = 0$，S 矩阵元在动量空间必然挂一个能量 $\delta$ 函数。把 $S = \mathbf{1} + R$ 拆开（$R$ 是非平凡跃迁部分），定义 **T 矩阵元**
+
+$$
+\langle\mathbf{p}'|R|\mathbf{p}\rangle = -2\pi i\,\delta(E_{p'} - E_p)\,t(\mathbf{p}'\leftarrow\mathbf{p}),
+$$
+
+即
+
+$$
+\langle\mathbf{p}'|S|\mathbf{p}\rangle
+= \delta_3(\mathbf{p}'-\mathbf{p})
+- 2\pi i\,\delta(E_{p'}-E_p)\,t(\mathbf{p}'\leftarrow\mathbf{p}).
+$$
+
+能量 $\delta$ 函数确保 $t$ 只在能量壳上 $|\mathbf{p}'| = |\mathbf{p}|$ 取值——壳上 T 矩阵。**散射振幅**定义为
+
+$$
+f(\mathbf{p}'\leftarrow\mathbf{p}) \equiv -(2\pi)^2\,m\,t(\mathbf{p}'\leftarrow\mathbf{p}),
+$$
+
+于是
+
+$$
+\boxed{\;
+\langle\mathbf{p}'|S|\mathbf{p}\rangle
+= \delta_3(\mathbf{p}'-\mathbf{p})
+- \frac{i}{2\pi m}\,\delta(E_{p'}-E_p)\,f(\mathbf{p}'\leftarrow\mathbf{p}).
+\;}
+$$
+
+这个形式把所有壳上的物理信息浓缩到一个只含两个方向变量（和一个能量）的复函数 $f$ 上。
+
+##  散射截面——Taylor 的推导
+
+###  经典图像
+
+先回忆经典定义。一束均匀入射粒子，已知入射动量 $\mathbf{p}_0$，但无法测量碰撞参数 $\boldsymbol\rho$（$\mathbf\rho \perp \mathbf{p}_0$）。每单位面积入射 $n_\text{inc}$ 个粒子，若散射到立体角 $d\Omega$ 内的总粒子数为 $N_\text{sc}(d\Omega)$，则
+
+$$
+\frac{d\sigma}{d\Omega}\,d\Omega = \frac{N_\text{sc}(d\Omega)}{n_\text{inc}}.
+$$
+
+直观上，$\sigma$ 是靶子在垂直于 $\mathbf{p}_0$ 方向的"有效横截面"。
+
+关键是：散射截面需要对**随机均匀的碰撞参数**平均。如果所有粒子都恰好撞同一处，定义出的就不是 $\sigma$。
+
+### 量子版本：波包加碰撞参数平均
+
+量子力学里，实验制备的入射态是某个波包 $|\phi\rangle$（动量分布集中在 $\mathbf{p}_0$ 附近）。碰撞参数 $\boldsymbol\rho$ 对应在 $\mathbf\rho\perp\mathbf{p}_0$ 方向的**空间平移**：
+
+$$
+|\phi_{\boldsymbol\rho}\rangle = e^{-i\mathbf{p}\cdot\boldsymbol\rho}|\phi\rangle,
+\qquad
+\phi_{\boldsymbol\rho}(\mathbf{p}) = e^{-i\mathbf{p}\cdot\boldsymbol\rho}\phi(\mathbf{p}).
+$$
+
+对给定碰撞参数 $\boldsymbol\rho$，远未来探测到粒子在立体角 $d\Omega$（不含入射方向）内的概率是
+
+$$
+w(d\Omega\leftarrow\phi_{\boldsymbol\rho})
+= d\Omega\int_0^\infty p^2\,dp\;\bigl|\psi_\text{out}^{\boldsymbol\rho}(\mathbf{p})\bigr|^2,
+$$
+
+其中 $\psi_\text{out}^{\boldsymbol\rho} = S\phi_{\boldsymbol\rho}$。把所有随机碰撞参数累加（对 $\boldsymbol\rho$ 在垂直平面上的均匀分布积分），**截面**就定义为
+
+$$
+\boxed{\;
+\sigma(d\Omega\leftarrow\phi) = \int d^2\rho\;w(d\Omega\leftarrow\phi_{\boldsymbol\rho}).
+\;}
+$$
+
+这是 Taylor 对量子散射截面的定义：入射波包形状、加上对碰撞参数的平均。经典截面定义里"每单位面积 $n_\text{inc}$ 粒子"的作用正是这个 $\int d^2\rho$。
+
+### 用 S 矩阵计算
+
+$\psi_\text{out}(\mathbf{p}) = \int d^3p'\,\langle\mathbf{p}|S|\mathbf{p}'\rangle\,\phi_{\boldsymbol\rho}(\mathbf{p}')$。代入 §4 的结构：
+
+$$
+\psi_\text{out}(\mathbf{p}) = \phi_{\boldsymbol\rho}(\mathbf{p})
+- \frac{i}{2\pi m}\int d^3p'\,\delta(E_p-E_{p'})\,f(\mathbf{p}\leftarrow\mathbf{p}')\,\phi_{\boldsymbol\rho}(\mathbf{p}').
+$$
+
+对 $\mathbf{p}$ 不在入射方向 $\mathbf{p}_0$ 的小邻域里，第一项 $\phi_{\boldsymbol\rho}(\mathbf{p}) = 0$，只剩跃迁部分。代入 $\phi_{\boldsymbol\rho}(\mathbf{p}') = e^{-i\mathbf{p}'\cdot\boldsymbol\rho}\phi(\mathbf{p}')$ 并取模平方：
+
+$$
+|\psi_\text{out}(\mathbf{p})|^2
+= \frac{1}{(2\pi m)^2}
+\int d^3p'\,d^3p''\;
+\delta(E_p-E_{p'})\,\delta(E_p-E_{p''})\,
+f^*(\mathbf{p}\!\leftarrow\!\mathbf{p}')\,f(\mathbf{p}\!\leftarrow\!\mathbf{p}'')\,
+\phi^*(\mathbf{p}')\phi(\mathbf{p}'')\,
+e^{i(\mathbf{p}'-\mathbf{p}'')\cdot\boldsymbol\rho}.
+$$
+
+代入截面定义并对 $\boldsymbol\rho$ 积分。关键是
+
+$$
+\int d^2\rho\; e^{i(\mathbf{p}'-\mathbf{p}'')\cdot\boldsymbol\rho}
+= (2\pi)^2\,\delta_2\!\bigl(\mathbf{p}'_\perp - \mathbf{p}''_\perp\bigr),
+$$
+
+这把 $\mathbf{p}'$、$\mathbf{p}''$ 的垂直分量锁在一起。再配合两个能量 $\delta$：固定 $\mathbf{p}'_\perp = \mathbf{p}''_\perp$ 以及 $E_{p'} = E_{p''}$，只剩纵向分量的一维自由度，而
+
+$$
+\delta(E_{p'}-E_{p''}) = \frac{m}{p'_\|}\,\delta\!\bigl(p'_\|-p''_\|\bigr).
+$$
+
+合在一起得到 $\delta_3(\mathbf{p}'-\mathbf{p}'')$。因此
+
+$$
+\sigma(d\Omega\leftarrow\phi)
+= \frac{d\Omega}{m}\int_0^\infty p^2\,dp
+\int d^3p'\;\frac{p'}{p'_\|}\,
+\delta(E_p-E_{p'})\,\bigl|f(\mathbf{p}\leftarrow\mathbf{p}')\bigr|^2\,
+|\phi(\mathbf{p}')|^2.
+$$
+
+现在利用波包**集中**这个假设：若 $\phi(\mathbf{p}')$ 集中在 $\mathbf{p}'\approx\mathbf{p}_0$ 附近（$\mathbf{p}_0$ 沿轴向，故 $p'_\|\approx p'$），且 $f$ 在这一邻域内近似常数，可以把 $f$ 和 $p'/p'_\|=1$ 提到积分外，并用 $\delta(E_p-E_{p'})$ 把 $p$ 积掉：
+
+$$
+\sigma(d\Omega\leftarrow\phi) \approx d\Omega\,|f(\mathbf{p}\leftarrow\mathbf{p}_0)|^2
+\int d^3p'\,|\phi(\mathbf{p}')|^2
+= d\Omega\,|f(\mathbf{p}\leftarrow\mathbf{p}_0)|^2.
+$$
+
+也就是
+
+$$
+\boxed{\;
+\frac{d\sigma}{d\Omega}(\mathbf{p}\leftarrow\mathbf{p}_0)
+= \bigl|f(\mathbf{p}\leftarrow\mathbf{p}_0)\bigr|^2.
+\;}
+$$
+
+这就是课本里熟悉的公式。注意这里的推导**没有**出现 $[\delta(E)]^2$ 之类的病态量：能量的一个 $\delta$ 被碰撞参数积分 $\int d^2\rho$ 通过傅里叶分解吃掉了，另一个被波包 $|\phi|^2$ 的积分吃掉。
+
+### 推导过程对波包的要求与散射方向的限制
+
+- **$\phi(\mathbf{p})$ 必须足够集中**：集中在 $\mathbf{p}_0$ 的一个小邻域内，且 $f(\mathbf{p}\leftarrow\mathbf{p}')$ 在这一邻域里变化缓慢（即势 $V$ 不能太尖），才能把它提到积分外。这两个条件互相制约：波包越窄，位置展开越宽，但只要大于势的作用范围即可。
+- **散射方向 $\mathbf{p}\neq\mathbf{p}_0$**：推导从一开始就扔掉了 $\phi_{\boldsymbol\rho}(\mathbf{p})$ 项——它只在前向方向有贡献。**前向散射的微分截面本来就没有清晰定义**：前向出射与"没散射直接穿过"的粒子无法区分。
+- **只依赖 $|f|^2$，与相位无关**：这也解释了为什么 $f$ 的整体相位（在远场波函数的定义中是约定）不影响观测量。
+
+## 光学定理
+
+把 $S = \mathbf{1} + R$ 代入酉性 $S^\dagger S = \mathbf{1}$：
+
+$$
+R + R^\dagger + R^\dagger R = 0.
+$$
+
+取动量矩阵元 $\langle\mathbf{p}|\cdot|\mathbf{p}\rangle$（同一个态，前向方向）：
+
+$$
+\langle\mathbf{p}|R|\mathbf{p}\rangle + \langle\mathbf{p}|R|\mathbf{p}\rangle^*
+= -\int d^3p''\,|\langle\mathbf{p}''|R|\mathbf{p}\rangle|^2.
+$$
+
+用 $\langle\mathbf{p}'|R|\mathbf{p}\rangle = -(i/2\pi m)\delta(E_{p'}-E_p)f(\mathbf{p}'\leftarrow\mathbf{p})$ 代入。左边两项相加给出 $2\operatorname{Im}f(\mathbf{p}\leftarrow\mathbf{p})/(\pi m)$ 乘以一个能量 $\delta$；右边的 $\delta^2$ 中有一个被能量积分吃掉，剩下的归一化因子配合立体角积分给出总截面。最后得到
+
+$$
+\boxed{\;
+\operatorname{Im}f(\mathbf{p}\leftarrow\mathbf{p}) = \frac{p}{4\pi}\,\sigma_\text{tot}(\mathbf{p}),
+\;}
+\qquad
+\sigma_\text{tot}(\mathbf{p}) = \int d\Omega_{\mathbf{p}'}\,|f(\mathbf{p}'\leftarrow\mathbf{p})|^2.
+$$
+
+两点含义：
+
+1. 前向散射振幅的虚部由总散射截面决定。微分截面只测到 $|f|^2$，但光学定理把 $\operatorname{Im}f$ 和 $\sigma$ 联系起来，于是（配合色散关系）可以恢复 $\operatorname{Re}f$。
+2. 推导只用到 $S$ 的酉性，这一结论在非弹性散射、相对论散射中都成立。
+
+## Lippmann–Schwinger 方程
+
+至此的一切都是时域的（通过 $t\to\pm\infty$ 极限定义算符）。若要一个不显含时间的定态散射方程，从交缠关系 $H\Omega_+ = \Omega_+H_0$ 出发直接得到：$|\psi_\alpha^+\rangle = \Omega_+|\alpha\rangle$ 满足
+
+$$
+(E_\alpha - H_0)|\psi_\alpha^+\rangle = V|\psi_\alpha^+\rangle.
+$$
+
+$E_\alpha$ 在 $H_0$ 的连续谱上，直接反演 $(E_\alpha - H_0)^{-1}$ 病态，加 $i\epsilon$ 选定远过去渐近条件（输入为自由平面波、输出为外行球面波）：
+
+$$
+|\psi_\alpha^+\rangle = |\alpha\rangle + G_0^+(E_\alpha)\,V\,|\psi_\alpha^+\rangle,
+\qquad
+G_0^+(E) = \frac{1}{E - H_0 + i\epsilon}.
+$$
+
+出态满足同样形式的方程，只是 $i\epsilon\to -i\epsilon$。
+
+取 $|\alpha\rangle = |\mathbf{k}\rangle$ 并在坐标空间中写开，$G_0^+$ 的核是
+
+$$
+G_0^+(\mathbf{r},\mathbf{r}';E_k) = -\frac{m}{2\pi}\,\frac{e^{ik|\mathbf{r}-\mathbf{r}'|}}{|\mathbf{r}-\mathbf{r}'|}
+\quad(\hbar=1).
+$$
+
+远场 $r\to\infty$，用 $|\mathbf{r}-\mathbf{r}'|\approx r - \hat{\mathbf{r}}\cdot\mathbf{r}'$：
+
+$$
+\psi_\mathbf{k}^{+}(\mathbf{r})
+\;\xrightarrow{r\to\infty}\;
+e^{i\mathbf{k}\cdot\mathbf{r}}
++ f(\hat{\mathbf{r}}\leftarrow\mathbf{k})\,\frac{e^{ikr}}{r},
 $$
 
 其中
 
 $$
-G_0^+(E) = \frac{1}{E - H_0 + i\epsilon}
+f(\hat{\mathbf{r}}\leftarrow\mathbf{k})
+= -\frac{m}{2\pi}\int d^3r'\;e^{-i\mathbf{k}_f\cdot\mathbf{r}'}\,V(\mathbf{r}')\,\psi_\mathbf{k}^+(\mathbf{r}'),
+\qquad \mathbf{k}_f = k\hat{\mathbf{r}}.
 $$
 
-是自由推迟 Green 算符。
+这正是 §4 里定义的散射振幅（$\mathbf{p}'\leftarrow\mathbf{p}$ 的记号换成 $\hat{\mathbf{r}}\leftarrow\mathbf{k}$）。注意远场中那个 $e^{i\mathbf{k}\cdot\mathbf{r}}$ **不是**波函数"的自由部分"——$\psi_\mathbf{k}^{+}$ 通篇是 $H$ 的精确广义本征函数。平面波项只是渐近匹配条件给出的一种结构性写法。
 
-**再次强调**：
-
-- $|\alpha\rangle$ 是自由参考态，是输入的标签/坐标。
-- $|\psi_\alpha^{(+)}\rangle$ 是完整 $H$ 的广义本征矢，是输出的物理态。
-- LS 方程将两者联系起来，但它们有本质区别。
-
-出态的 LS 方程类似，只是用 $G_0^-(E) = 1/(E - H_0 - i\epsilon)$：
+**Born 近似**的含义至此也清楚了：把 $\psi_\mathbf{k}^+$ 用自由态 $|\mathbf{k}\rangle$ 近似替代，
 
 $$
-|\psi_\alpha^{(-)}\rangle = |\alpha\rangle + G_0^-(E_\alpha)\, V\, |\psi_\alpha^{(-)}\rangle
+f^\text{Born}(\mathbf{k}_f\leftarrow\mathbf{k})
+= -\frac{m}{2\pi}\int d^3r\,e^{-i(\mathbf{k}_f-\mathbf{k})\cdot\mathbf{r}}\,V(\mathbf{r}).
 $$
 
-### 6.3 坐标表示
+它可以和 $V$ 足够弱（或耦合足够小）有关。**这正是自由态与入态不同的量化**：如果二者相等，就不存在散射。
 
-对势散射，取 $|\alpha\rangle = |\mathbf{k}\rangle$（动量本征态），LS 方程在坐标空间中为
-
-$$
-\psi_{\mathbf{k}}^{(+)}(\mathbf{r}) = e^{i\mathbf{k}\cdot\mathbf{r}} + \int d^3r'\; G_0^+(\mathbf{r}, \mathbf{r}'; E_k)\, V(\mathbf{r}')\, \psi_{\mathbf{k}}^{(+)}(\mathbf{r}')
-$$
-
-其中 $G_0^+(\mathbf{r}, \mathbf{r}'; E) = -\frac{\mu}{2\pi\hbar^2} \frac{e^{ik|\mathbf{r}-\mathbf{r}'|}}{|\mathbf{r}-\mathbf{r}'|}$。
-
-在远场 $r \to \infty$ 下，利用 $|\mathbf{r} - \mathbf{r}'| \approx r - \hat{\mathbf{r}} \cdot \mathbf{r}'$：
+##  逻辑链概览
 
 $$
-\psi_{\mathbf{k}}^{(+)}(\mathbf{r}) \xrightarrow{r \to \infty} e^{i\mathbf{k}\cdot\mathbf{r}} + f(\hat{\mathbf{r}}, \mathbf{k})\, \frac{e^{ikr}}{r}
-$$
-
-其中散射振幅
-
-$$
-f(\hat{\mathbf{r}}, \mathbf{k}) = -\frac{\mu}{2\pi\hbar^2} \int d^3r'\; e^{-i\mathbf{k}_f \cdot \mathbf{r}'}\, V(\mathbf{r}')\, \psi_{\mathbf{k}}^{(+)}(\mathbf{r}')
-$$
-
-这里 $\mathbf{k}_f = k\hat{\mathbf{r}}$。
-
-**远场渐近形式的解读**：
-
-- 第一项 $e^{i\mathbf{k}\cdot\mathbf{r}}$ 是自由参考平面波——不是物理态的一部分，而是渐近匹配的标签。
-- 第二项 $f \cdot e^{ikr}/r$ 是散射出射球面波——这才是散射产生的物理效果。
-- 整个 $\psi_{\mathbf{k}}^{(+)}(\mathbf{r})$ 是 $H$ 的精确广义本征函数。
-
-## 7. T 算符
-
-### 7.1 定义
-
-定义 T 算符（壳上跃迁算符）使得 S 矩阵元可以分解为平凡部分和跃迁部分：
-
-$$
-\langle \beta | S | \alpha \rangle = \delta_{\beta\alpha} - 2\pi i\, \delta(E_\beta - E_\alpha)\, T_{\beta\alpha}(E_\alpha)
-$$
-
-其中
-
-$$
-T_{\beta\alpha}(E) = \langle \beta | V | \psi_\alpha^{(+)} \rangle = \langle \psi_\beta^{(-)} | V | \alpha \rangle
-$$
-
-### 7.2 物理含义
-
-- $\delta_{\beta\alpha}$：直行项——粒子不散射，出去就是进来的那个态。
-- $-2\pi i\, \delta(E)\, T$：跃迁项——粒子真正发生了从 $\alpha$ 到 $\beta \neq \alpha$ 的转变。
-- 能量 $\delta$ 函数确保散射是能量守恒的（on-shell condition）。
-- $T_{\beta\alpha}$ 是 $V$ 在入态 $|\psi_\alpha^{(+)}\rangle$ 上的矩阵元，编码了所有动力学信息。
-
-### 7.3 关系链
-
-$$
-S_{\beta\alpha} = \langle \psi_\beta^{(-)} | \psi_\alpha^{(+)} \rangle \xrightarrow{\text{减去直行}} T_{\beta\alpha} = \langle \beta | V | \psi_\alpha^{(+)} \rangle \xrightarrow{\text{Born 近似}} T_{\beta\alpha}^\text{Born} = \langle \beta | V | \alpha \rangle
-$$
-
-Born 近似的含义正是：用自由基矢 $|\alpha\rangle$ 近似替代物理入态 $|\psi_\alpha^{(+)}\rangle$。这再次表明二者的区别。
-
-## 8. 从跃迁率到散射截面
-
-### 8.1 连续谱中的概率密度
-
-当初末态都在连续谱中时，$S_{\beta\alpha}$ 包含 $\delta$ 函数，直接取模平方没有意义。物理可测量是在某个末态窗口 $\Delta$ 中的**跃迁概率**：
-
-$$
-P(\alpha \to \Delta) = \int_\Delta d\beta\; |S_{\beta\alpha} - \delta_{\beta\alpha}|^2
-$$
-
-对于 $\beta \neq \alpha$ 的跃迁（非前向散射），这简化为
-
-$$
-P(\alpha \to \Delta) = \int_\Delta d\beta\; (2\pi)^2\, [\delta(E_\beta - E_\alpha)]^2\, |T_{\beta\alpha}|^2
-$$
-
-这里出现了 $[\delta(E)]^2$。标准处理（Taylor §8.3）是用有限时间 $T$ 做正则化：
-
-$$
-2\pi\, [\delta(E_\beta - E_\alpha)]^2 \to \delta(E_\beta - E_\alpha) \cdot \frac{T}{2\pi\hbar}
-$$
-
-从而得到单位时间跃迁率
-
-$$
-\dot{P}(\alpha \to \Delta) = \frac{2\pi}{\hbar} \int_\Delta d\beta\; \delta(E_\beta - E_\alpha)\; |T_{\beta\alpha}|^2
-$$
-
-这就是 **Fermi 黄金规则**的散射版本。
-
-### 8.2 散射截面的定义
-
-实验中可控的量是入射流强 $j_\text{in}$，可测的量是出射事件率。截面的定义是
-
-$$
-d\sigma = \frac{\dot{P}}{j_\text{in}}
-$$
-
-即：单位时间跃迁率除以入射流。这样定义的截面与束流强度无关，是势 $V$ 的内禀性质。
-
-### 8.3 两体弹性散射的微分截面
-
-对约化质量为 $\mu$ 的两体弹性势散射，取入态为 $|\mathbf{k}_i\rangle$。
-
-入射流（平面波 $e^{i\mathbf{k}_i \cdot \mathbf{r}}$ 的概率流密度）：
-
-$$
-j_\text{in} = \frac{\hbar k_i}{\mu}
-$$
-
-远场出射球面波 $f(\hat{\mathbf{r}}, \mathbf{k}_i)\, e^{ikr}/r$ 在立体角 $d\Omega$ 内的概率流：
-
-$$
-d\dot{P} = \frac{\hbar k_f}{\mu}\, |f(\hat{\mathbf{r}}, \mathbf{k}_i)|^2\, d\Omega
-$$
-
-因此
-
-$$
-\frac{d\sigma}{d\Omega} = \frac{d\dot{P}/d\Omega}{j_\text{in}} = \frac{k_f}{k_i}\, |f(\hat{\mathbf{r}}, \mathbf{k}_i)|^2
-$$
-
-对弹性散射 $k_f = k_i$：
-
-$$
-\frac{d\sigma}{d\Omega} = |f(\theta, \varphi)|^2
-$$
-
-这个公式为什么可测？因为它比较的是：
-
-- **分子**：远未来出射通道中的概率流——由渐近态 $|\psi_{\mathbf{k}_i}^{(+)}\rangle$ 的远场行为决定。
-- **分母**：远过去入射通道中的参考流——由自由态标签 $|\mathbf{k}_i\rangle$ 决定。
-
-两者都定义在渐近区，而非相互作用区内部。
-
-### 8.4 散射振幅与 T 矩阵元的关系
-
-将 T 矩阵元与散射振幅联系起来（以 $\hbar = 1$ 单位制）：
-
-$$
-f(\hat{\mathbf{r}}, \mathbf{k}) = -4\pi^2 \mu\, T_{\mathbf{k}_f, \mathbf{k}}
-$$
-
-其中 $\mathbf{k}_f = k\hat{\mathbf{r}}$。这给出了从算符语言到波函数语言的翻译。
-
-## 9. 总结：概念地图
-
-整个理论的逻辑链条如下：
-
-$$
-\boxed{
+\boxed{\;
 \text{渐近条件}
-\;\xrightarrow{\text{定义}}\;
+\;\longrightarrow\;
 \Omega_\pm
-\;\xrightarrow{\text{定义}}\;
-|\psi^{(\pm)}\rangle,\; S
-\;\xrightarrow{\text{分解}}\;
-T
-\;\xrightarrow{\text{除以流}}\;
-\sigma
-}
+\;\longrightarrow\;
+S,\;|\psi_\alpha^{\pm}\rangle
+\;\longrightarrow\;
+t,\;f
+\;\longrightarrow\;
+d\sigma/d\Omega
+\;\longrightarrow\;
+\text{光学定理}
+\;}
 $$
 
-贯穿始终的核心区分：
-
-| | 自由参考态 $\|\alpha\rangle$ | 入出态 $\|\psi_\alpha^{(\pm)}\rangle$ |
+| | 自由基矢 $\|\alpha\rangle$ | 入出态 $\|\psi_\alpha^{\pm}\rangle$ |
 |:--|:--|:--|
-| 满足的方程 | $H_0\|\alpha\rangle = E_\alpha \|\alpha\rangle$ | $H\|\psi_\alpha^{(\pm)}\rangle = E_\alpha \|\psi_\alpha^{(\pm)}\rangle$ |
-| 身份 | 坐标轴 / 标签 | 物理散射态 |
-| 包含相互作用？ | 否 | 是 |
-| 在 S 矩阵中的角色 | 提供表示基底 | 提供物理内积 |
+| 方程 | $H_0\|\alpha\rangle = E_\alpha\|\alpha\rangle$ | $H\|\psi_\alpha^{\pm}\rangle = E_\alpha\|\psi_\alpha^{\pm}\rangle$ |
+| 身份 | 坐标轴 / 标签 | 物理散射态（$\delta$-归一广义本征） |
+| 含相互作用 | 否 | 是 |
+| 在 $S$ 矩阵里的角色 | 提供展开基底 | 提供物理内积 |
 
-**一句话总结**：渐近态不是自由态。自由态是标签/坐标；入出态是完整 $H$ 下的物理散射态。S 矩阵是散射动力学从物理空间投影到自由参考空间后的表示。概率来自对物理渐近通道子空间的投影（out-projector），而不是来自对自由基底的展开系数。
-
-**约定**：全文对短程势成立。对 Coulomb 等长程势，自由参考传播和波算符的具体形式需要修正，但核心概念结构不变。
+最后一点：整篇都假设 $V$ 是短程势（快于 $1/r$ 衰减）。对 Coulomb 等长程势，自由传播本身就不对，需要把参考动力学改成包含对数相位修正的 Coulomb 波；但上面所有的代数结构都可以平行地搬过去。
