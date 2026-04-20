@@ -1050,7 +1050,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section.zh.md",
-      "size": 16540,
+      "size": 16699,
       "url": "/sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section/"
     },
     {
@@ -1559,6 +1559,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-04-20 10:30:25.236422"
+    "generated_at": "2026-04-20 10:48:36.595979"
   }
 }
