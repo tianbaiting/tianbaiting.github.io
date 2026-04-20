@@ -10,56 +10,83 @@
 
 渐近条件、Møller 算符、散射算符的引入。
 
-<details>
-<summary>展开页面图片</summary>
+??? note "展开页面图片"
 
-![Taylor p.21](./assets/S_matrix_and_cross_section.zh/taylor-p21.png)
-![Taylor p.22](./assets/S_matrix_and_cross_section.zh/taylor-p22.png)
-![Taylor p.23](./assets/S_matrix_and_cross_section.zh/taylor-p23.png)
-![Taylor p.24](./assets/S_matrix_and_cross_section.zh/taylor-p24.png)
-![Taylor p.25](./assets/S_matrix_and_cross_section.zh/taylor-p25.png)
-![Taylor p.26](./assets/S_matrix_and_cross_section.zh/taylor-p26.png)
-![Taylor p.27](./assets/S_matrix_and_cross_section.zh/taylor-p27.png)
-![Taylor p.28](./assets/S_matrix_and_cross_section.zh/taylor-p28.png)
-![Taylor p.29](./assets/S_matrix_and_cross_section.zh/taylor-p29.png)
-![Taylor p.30](./assets/S_matrix_and_cross_section.zh/taylor-p30.png)
-![Taylor p.31](./assets/S_matrix_and_cross_section.zh/taylor-p31.png)
-![Taylor p.32](./assets/S_matrix_and_cross_section.zh/taylor-p32.png)
-![Taylor p.33](./assets/S_matrix_and_cross_section.zh/taylor-p33.png)
-![Taylor p.34](./assets/S_matrix_and_cross_section.zh/taylor-p34.png)
-![Taylor p.35](./assets/S_matrix_and_cross_section.zh/taylor-p35.png)
-![Taylor p.36](./assets/S_matrix_and_cross_section.zh/taylor-p36.png)
-![Taylor p.37](./assets/S_matrix_and_cross_section.zh/taylor-p37.png)
+    ![Taylor p.21](./assets/S_matrix_and_cross_section.zh/taylor-p21.png)
 
-</details>
+    ![Taylor p.22](./assets/S_matrix_and_cross_section.zh/taylor-p22.png)
+
+    ![Taylor p.23](./assets/S_matrix_and_cross_section.zh/taylor-p23.png)
+
+    ![Taylor p.24](./assets/S_matrix_and_cross_section.zh/taylor-p24.png)
+
+    ![Taylor p.25](./assets/S_matrix_and_cross_section.zh/taylor-p25.png)
+
+    ![Taylor p.26](./assets/S_matrix_and_cross_section.zh/taylor-p26.png)
+
+    ![Taylor p.27](./assets/S_matrix_and_cross_section.zh/taylor-p27.png)
+
+    ![Taylor p.28](./assets/S_matrix_and_cross_section.zh/taylor-p28.png)
+
+    ![Taylor p.29](./assets/S_matrix_and_cross_section.zh/taylor-p29.png)
+
+    ![Taylor p.30](./assets/S_matrix_and_cross_section.zh/taylor-p30.png)
+
+    ![Taylor p.31](./assets/S_matrix_and_cross_section.zh/taylor-p31.png)
+
+    ![Taylor p.32](./assets/S_matrix_and_cross_section.zh/taylor-p32.png)
+
+    ![Taylor p.33](./assets/S_matrix_and_cross_section.zh/taylor-p33.png)
+
+    ![Taylor p.34](./assets/S_matrix_and_cross_section.zh/taylor-p34.png)
+
+    ![Taylor p.35](./assets/S_matrix_and_cross_section.zh/taylor-p35.png)
+
+    ![Taylor p.36](./assets/S_matrix_and_cross_section.zh/taylor-p36.png)
+
+    ![Taylor p.37](./assets/S_matrix_and_cross_section.zh/taylor-p37.png)
 
 ### Chapter 3: Cross Sections in Terms of the S Matrix（pp. 38–55）
 
 能量守恒、壳上 T 矩阵、经典与量子截面、波包与碰撞参数、光学定理。
 
-<details>
-<summary>展开页面图片</summary>
+??? note "展开页面图片"
 
-![Taylor p.38](./assets/S_matrix_and_cross_section.zh/taylor-p38.png)
-![Taylor p.39](./assets/S_matrix_and_cross_section.zh/taylor-p39.png)
-![Taylor p.40](./assets/S_matrix_and_cross_section.zh/taylor-p40.png)
-![Taylor p.41](./assets/S_matrix_and_cross_section.zh/taylor-p41.png)
-![Taylor p.42](./assets/S_matrix_and_cross_section.zh/taylor-p42.png)
-![Taylor p.43](./assets/S_matrix_and_cross_section.zh/taylor-p43.png)
-![Taylor p.44](./assets/S_matrix_and_cross_section.zh/taylor-p44.png)
-![Taylor p.45](./assets/S_matrix_and_cross_section.zh/taylor-p45.png)
-![Taylor p.46](./assets/S_matrix_and_cross_section.zh/taylor-p46.png)
-![Taylor p.47](./assets/S_matrix_and_cross_section.zh/taylor-p47.png)
-![Taylor p.48](./assets/S_matrix_and_cross_section.zh/taylor-p48.png)
-![Taylor p.49](./assets/S_matrix_and_cross_section.zh/taylor-p49.png)
-![Taylor p.50](./assets/S_matrix_and_cross_section.zh/taylor-p50.png)
-![Taylor p.51](./assets/S_matrix_and_cross_section.zh/taylor-p51.png)
-![Taylor p.52](./assets/S_matrix_and_cross_section.zh/taylor-p52.png)
-![Taylor p.53](./assets/S_matrix_and_cross_section.zh/taylor-p53.png)
-![Taylor p.54](./assets/S_matrix_and_cross_section.zh/taylor-p54.png)
-![Taylor p.55](./assets/S_matrix_and_cross_section.zh/taylor-p55.png)
+    ![Taylor p.38](./assets/S_matrix_and_cross_section.zh/taylor-p38.png)
 
-</details>
+    ![Taylor p.39](./assets/S_matrix_and_cross_section.zh/taylor-p39.png)
+
+    ![Taylor p.40](./assets/S_matrix_and_cross_section.zh/taylor-p40.png)
+
+    ![Taylor p.41](./assets/S_matrix_and_cross_section.zh/taylor-p41.png)
+
+    ![Taylor p.42](./assets/S_matrix_and_cross_section.zh/taylor-p42.png)
+
+    ![Taylor p.43](./assets/S_matrix_and_cross_section.zh/taylor-p43.png)
+
+    ![Taylor p.44](./assets/S_matrix_and_cross_section.zh/taylor-p44.png)
+
+    ![Taylor p.45](./assets/S_matrix_and_cross_section.zh/taylor-p45.png)
+
+    ![Taylor p.46](./assets/S_matrix_and_cross_section.zh/taylor-p46.png)
+
+    ![Taylor p.47](./assets/S_matrix_and_cross_section.zh/taylor-p47.png)
+
+    ![Taylor p.48](./assets/S_matrix_and_cross_section.zh/taylor-p48.png)
+
+    ![Taylor p.49](./assets/S_matrix_and_cross_section.zh/taylor-p49.png)
+
+    ![Taylor p.50](./assets/S_matrix_and_cross_section.zh/taylor-p50.png)
+
+    ![Taylor p.51](./assets/S_matrix_and_cross_section.zh/taylor-p51.png)
+
+    ![Taylor p.52](./assets/S_matrix_and_cross_section.zh/taylor-p52.png)
+
+    ![Taylor p.53](./assets/S_matrix_and_cross_section.zh/taylor-p53.png)
+
+    ![Taylor p.54](./assets/S_matrix_and_cross_section.zh/taylor-p54.png)
+
+    ![Taylor p.55](./assets/S_matrix_and_cross_section.zh/taylor-p55.png)
 
 ---
 
@@ -296,7 +323,7 @@ $$
 
 ###  经典图像
 
-先回忆经典定义。一束均匀入射粒子，已知入射动量 $\mathbf{p}_0$，但无法测量碰撞参数 $\boldsymbol\rho$（$\mathbf\rho \perp \mathbf{p}_0$）。每单位面积入射 $n_\text{inc}$ 个粒子，若散射到立体角 $d\Omega$ 内的总粒子数为 $N_\text{sc}(d\Omega)$，则
+先回忆经典定义。一束均匀入射粒子，已知入射动量 $\mathbf{p}_0$，但无法测量碰撞参数 $\boldsymbol{\rho}$（$\mathbf\rho \perp \mathbf{p}_0$）。每单位面积入射 $n_\text{inc}$ 个粒子，若散射到立体角 $d\Omega$ 内的总粒子数为 $N_\text{sc}(d\Omega)$，则
 
 $$
 \frac{d\sigma}{d\Omega}\,d\Omega = \frac{N_\text{sc}(d\Omega)}{n_\text{inc}}.
@@ -308,26 +335,26 @@ $$
 
 ### 量子版本：波包加碰撞参数平均
 
-量子力学里，实验制备的入射态是某个波包 $|\phi\rangle$（动量分布集中在 $\mathbf{p}_0$ 附近）。碰撞参数 $\boldsymbol\rho$ 对应在 $\mathbf\rho\perp\mathbf{p}_0$ 方向的**空间平移**：
+量子力学里，实验制备的入射态是某个波包 $|\phi\rangle$（动量分布集中在 $\mathbf{p}_0$ 附近）。碰撞参数 $\boldsymbol{\rho}$ 对应在 $\mathbf\rho\perp\mathbf{p}_0$ 方向的**空间平移**：
 
 $$
-|\phi_{\boldsymbol\rho}\rangle = e^{-i\mathbf{p}\cdot\boldsymbol\rho}|\phi\rangle,
+|\phi_{\boldsymbol{\rho}}\rangle = e^{-i\mathbf{p}\cdot\boldsymbol{\rho}}|\phi\rangle,
 \qquad
-\phi_{\boldsymbol\rho}(\mathbf{p}) = e^{-i\mathbf{p}\cdot\boldsymbol\rho}\phi(\mathbf{p}).
+\phi_{\boldsymbol{\rho}}(\mathbf{p}) = e^{-i\mathbf{p}\cdot\boldsymbol{\rho}}\phi(\mathbf{p}).
 $$
 
-对给定碰撞参数 $\boldsymbol\rho$，远未来探测到粒子在立体角 $d\Omega$（不含入射方向）内的概率是
+对给定碰撞参数 $\boldsymbol{\rho}$，远未来探测到粒子在立体角 $d\Omega$（不含入射方向）内的概率是
 
 $$
-w(d\Omega\leftarrow\phi_{\boldsymbol\rho})
-= d\Omega\int_0^\infty p^2\,dp\;\bigl|\psi_\text{out}^{\boldsymbol\rho}(\mathbf{p})\bigr|^2,
+w(d\Omega\leftarrow\phi_{\boldsymbol{\rho}})
+= d\Omega\int_0^\infty p^2\,dp\;\bigl|\psi_\text{out}^{\boldsymbol{\rho}}(\mathbf{p})\bigr|^2,
 $$
 
-其中 $\psi_\text{out}^{\boldsymbol\rho} = S\phi_{\boldsymbol\rho}$。把所有随机碰撞参数累加（对 $\boldsymbol\rho$ 在垂直平面上的均匀分布积分），**截面**就定义为
+其中 $\psi_\text{out}^{\boldsymbol{\rho}} = S\phi_{\boldsymbol{\rho}}$。把所有随机碰撞参数累加（对 $\boldsymbol{\rho}$ 在垂直平面上的均匀分布积分），**截面**就定义为
 
 $$
 \boxed{\;
-\sigma(d\Omega\leftarrow\phi) = \int d^2\rho\;w(d\Omega\leftarrow\phi_{\boldsymbol\rho}).
+\sigma(d\Omega\leftarrow\phi) = \int d^2\rho\;w(d\Omega\leftarrow\phi_{\boldsymbol{\rho}}).
 \;}
 $$
 
@@ -335,14 +362,14 @@ $$
 
 ### 用 S 矩阵计算
 
-$\psi_\text{out}(\mathbf{p}) = \int d^3p'\,\langle\mathbf{p}|S|\mathbf{p}'\rangle\,\phi_{\boldsymbol\rho}(\mathbf{p}')$。代入 §4 的结构：
+$\psi_\text{out}(\mathbf{p}) = \int d^3p'\,\langle\mathbf{p}|S|\mathbf{p}'\rangle\,\phi_{\boldsymbol{\rho}}(\mathbf{p}')$。代入 §4 的结构：
 
 $$
-\psi_\text{out}(\mathbf{p}) = \phi_{\boldsymbol\rho}(\mathbf{p})
-- \frac{i}{2\pi m}\int d^3p'\,\delta(E_p-E_{p'})\,f(\mathbf{p}\leftarrow\mathbf{p}')\,\phi_{\boldsymbol\rho}(\mathbf{p}').
+\psi_\text{out}(\mathbf{p}) = \phi_{\boldsymbol{\rho}}(\mathbf{p})
+- \frac{i}{2\pi m}\int d^3p'\,\delta(E_p-E_{p'})\,f(\mathbf{p}\leftarrow\mathbf{p}')\,\phi_{\boldsymbol{\rho}}(\mathbf{p}').
 $$
 
-对 $\mathbf{p}$ 不在入射方向 $\mathbf{p}_0$ 的小邻域里，第一项 $\phi_{\boldsymbol\rho}(\mathbf{p}) = 0$，只剩跃迁部分。代入 $\phi_{\boldsymbol\rho}(\mathbf{p}') = e^{-i\mathbf{p}'\cdot\boldsymbol\rho}\phi(\mathbf{p}')$ 并取模平方：
+对 $\mathbf{p}$ 不在入射方向 $\mathbf{p}_0$ 的小邻域里，第一项 $\phi_{\boldsymbol{\rho}}(\mathbf{p}) = 0$，只剩跃迁部分。代入 $\phi_{\boldsymbol{\rho}}(\mathbf{p}') = e^{-i\mathbf{p}'\cdot\boldsymbol{\rho}}\phi(\mathbf{p}')$ 并取模平方：
 
 $$
 |\psi_\text{out}(\mathbf{p})|^2
@@ -351,13 +378,13 @@ $$
 \delta(E_p-E_{p'})\,\delta(E_p-E_{p''})\,
 f^*(\mathbf{p}\!\leftarrow\!\mathbf{p}')\,f(\mathbf{p}\!\leftarrow\!\mathbf{p}'')\,
 \phi^*(\mathbf{p}')\phi(\mathbf{p}'')\,
-e^{i(\mathbf{p}'-\mathbf{p}'')\cdot\boldsymbol\rho}.
+e^{i(\mathbf{p}'-\mathbf{p}'')\cdot\boldsymbol{\rho}}.
 $$
 
-代入截面定义并对 $\boldsymbol\rho$ 积分。关键是
+代入截面定义并对 $\boldsymbol{\rho}$ 积分。关键是
 
 $$
-\int d^2\rho\; e^{i(\mathbf{p}'-\mathbf{p}'')\cdot\boldsymbol\rho}
+\int d^2\rho\; e^{i(\mathbf{p}'-\mathbf{p}'')\cdot\boldsymbol{\rho}}
 = (2\pi)^2\,\delta_2\!\bigl(\mathbf{p}'_\perp - \mathbf{p}''_\perp\bigr),
 $$
 
@@ -399,7 +426,7 @@ $$
 ### 推导过程对波包的要求与散射方向的限制
 
 - **$\phi(\mathbf{p})$ 必须足够集中**：集中在 $\mathbf{p}_0$ 的一个小邻域内，且 $f(\mathbf{p}\leftarrow\mathbf{p}')$ 在这一邻域里变化缓慢（即势 $V$ 不能太尖），才能把它提到积分外。这两个条件互相制约：波包越窄，位置展开越宽，但只要大于势的作用范围即可。
-- **散射方向 $\mathbf{p}\neq\mathbf{p}_0$**：推导从一开始就扔掉了 $\phi_{\boldsymbol\rho}(\mathbf{p})$ 项——它只在前向方向有贡献。**前向散射的微分截面本来就没有清晰定义**：前向出射与"没散射直接穿过"的粒子无法区分。
+- **散射方向 $\mathbf{p}\neq\mathbf{p}_0$**：推导从一开始就扔掉了 $\phi_{\boldsymbol{\rho}}(\mathbf{p})$ 项——它只在前向方向有贡献。**前向散射的微分截面本来就没有清晰定义**：前向出射与"没散射直接穿过"的粒子无法区分。
 - **只依赖 $|f|^2$，与相位无关**：这也解释了为什么 $f$ 的整体相位（在远场波函数的定义中是约定）不影响观测量。
 
 ## 光学定理
