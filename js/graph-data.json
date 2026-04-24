@@ -1108,6 +1108,15 @@
       "url": "/sci/project/faddeev/faddeev_WavePacket/"
     },
     {
+      "id": "sci/project/D_polar_exp/polar_measure_and_axis.en",
+      "title": "Polar Measure And Axis",
+      "language": "en",
+      "category": "page",
+      "path": "sci/project/D_polar_exp/polar_measure_and_axis.en.md",
+      "size": 21417,
+      "url": "/en/sci/project/D_polar_exp/polar_measure_and_axis/"
+    },
+    {
       "id": "sci/project/D_polar_exp/faddeevWPCD.zh",
       "title": "Faddeevwpcd",
       "language": "zh",
@@ -1142,6 +1151,15 @@
       "path": "sci/project/D_polar_exp/todo_list.md",
       "size": 26,
       "url": "/sci/project/D_polar_exp/todo_list/"
+    },
+    {
+      "id": "sci/project/D_polar_exp/polar_measure_and_axis.zh",
+      "title": "Polar Measure And Axis",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/D_polar_exp/polar_measure_and_axis.zh.md",
+      "size": 12985,
+      "url": "/sci/project/D_polar_exp/polar_measure_and_axis/"
     },
     {
       "id": "sci/project/D_polar_exp/caogao",
@@ -1542,16 +1560,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 171,
+    "total_nodes": 173,
     "total_links": 0,
     "languages": {
-      "zh": 143,
-      "en": 28
+      "zh": 144,
+      "en": 29
     },
     "categories": {
       "category": 26,
       "main": 2,
-      "page": 143
+      "page": 145
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1559,6 +1577,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-04-20 10:59:10.748490"
+    "generated_at": "2026-04-24 01:04:42.799759"
   }
 }
