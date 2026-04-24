@@ -1252,6 +1252,15 @@
       "url": "/sci/project/D_polar_exp/Sipm_PMT/"
     },
     {
+      "id": "sci/project/D_polar_exp/lane_hvh_esym.zh",
+      "title": "Lane 关系、光学势、EST 展开与 HVH 推导对称能",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/D_polar_exp/lane_hvh_esym.zh.md",
+      "size": 13943,
+      "url": "/sci/project/D_polar_exp/lane_hvh_esym/"
+    },
+    {
       "id": "sci/project/samurai/detector_samurai.zh",
       "title": "SAMURAI 光谱仪带电粒子探测器详细功能",
       "language": "zh",
@@ -1560,16 +1569,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 173,
+    "total_nodes": 174,
     "total_links": 0,
     "languages": {
-      "zh": 144,
+      "zh": 145,
       "en": 29
     },
     "categories": {
       "category": 26,
       "main": 2,
-      "page": 145
+      "page": 146
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1577,6 +1586,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-04-24 01:04:42.799759"
+    "generated_at": "2026-04-24 03:12:00.122599"
   }
 }
