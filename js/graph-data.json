@@ -802,6 +802,15 @@
       "url": "/sci/minimal_code/class_dataTransport/"
     },
     {
+      "id": "sci/minimal_code/sshfs.zh",
+      "title": "sshfs：把远程目录当本地盘用",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/sshfs.zh.md",
+      "size": 3397,
+      "url": "/sci/minimal_code/sshfs/"
+    },
+    {
       "id": "sci/minimal_code/python_lib_self.zh",
       "title": "python 包的创建与使用",
       "language": "zh",
@@ -1578,16 +1587,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 175,
+    "total_nodes": 176,
     "total_links": 0,
     "languages": {
-      "zh": 146,
+      "zh": 147,
       "en": 29
     },
     "categories": {
       "category": 26,
       "main": 2,
-      "page": 147
+      "page": 148
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1595,6 +1604,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-04-30 03:21:52.216562"
+    "generated_at": "2026-04-30 07:13:56.104938"
   }
 }
