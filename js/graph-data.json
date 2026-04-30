@@ -856,6 +856,15 @@
       "url": "/sci/minimal_code/root_plot/"
     },
     {
+      "id": "sci/minimal_code/freerdp_disconnect.zh",
+      "title": "FreeRDP 客户端：怎么「正确地」结束一次远程",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/freerdp_disconnect.zh.md",
+      "size": 2025,
+      "url": "/sci/minimal_code/freerdp_disconnect/"
+    },
+    {
       "id": "sci/minimal_code/linux_swap.zh",
       "title": "swap linux",
       "language": "zh",
@@ -1569,16 +1578,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 174,
+    "total_nodes": 175,
     "total_links": 0,
     "languages": {
-      "zh": 145,
+      "zh": 146,
       "en": 29
     },
     "categories": {
       "category": 26,
       "main": 2,
-      "page": 146
+      "page": 147
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1586,6 +1595,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-04-24 03:12:00.122599"
+    "generated_at": "2026-04-30 03:21:52.216562"
   }
 }
