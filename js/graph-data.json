@@ -613,6 +613,15 @@
       "url": "/sci/minimal_code/gemni_use_wen2cli/"
     },
     {
+      "id": "sci/minimal_code/local_rag.zh",
+      "title": "本地 RAG：用 paperpipe + LEANN 给科研论文做向量检索",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/local_rag.zh.md",
+      "size": 11664,
+      "url": "/sci/minimal_code/local_rag/"
+    },
+    {
       "id": "sci/minimal_code/vscodevimPlug.zh",
       "title": "vscode vim 插件",
       "language": "zh",
@@ -1587,16 +1596,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 176,
+    "total_nodes": 177,
     "total_links": 0,
     "languages": {
-      "zh": 147,
+      "zh": 148,
       "en": 29
     },
     "categories": {
       "category": 26,
       "main": 2,
-      "page": 148
+      "page": 149
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1604,6 +1613,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-04-30 07:13:56.104938"
+    "generated_at": "2026-05-07 02:29:06.038956"
   }
 }
