@@ -38,7 +38,7 @@ fzf --version
 
 ## 基础用法
 
-### 1. 文件搜索
+### 文件搜索
 ```bash
 # 在当前目录搜索文件
 fzf
@@ -50,13 +50,13 @@ vim $(fzf)
 find . -name "*.py" | fzf
 ```
 
-### 2. 历史命令搜索
+### 历史命令搜索
 ```bash
 # Ctrl+R 搜索历史命令（需要 shell 集成）
 history | fzf
 ```
 
-### 3. 进程搜索
+### 进程搜索
 ```bash
 # 搜索并终止进程
 ps aux | fzf | awk '{print $2}' | xargs kill
@@ -90,7 +90,7 @@ ps aux | fzf | awk '{print $2}' | xargs kill
 
 ## 高级功能
 
-### 1. 预览模式
+### 预览模式
 ```bash
 # 预览文件内容
 fzf --preview 'cat {}'
@@ -102,7 +102,7 @@ fzf --preview 'ls -la {}'
 fzf --preview 'cat {}' --preview-window=right:70%:wrap
 ```
 
-### 2. 多选模式
+### 多选模式
 ```bash
 # 启用多选
 fzf -m
@@ -111,7 +111,7 @@ fzf -m
 cp $(fzf -m) /target/directory/
 ```
 
-### 3. 自定义搜索命令
+### 自定义搜索命令
 ```bash
 # 使用 fd 替代 find
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
@@ -120,7 +120,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 ```
 
-### 4. 交互式过滤
+### 交互式过滤
 ```bash
 # 实时过滤日志
 tail -f /var/log/system.log | fzf --no-sort --tac
@@ -155,7 +155,7 @@ export FZF_CTRL_T_OPTS="
 
 ## 实用案例
 
-### 1. 快速文件编辑
+### 快速文件编辑
 ```bash
 # 创建快捷函数
 vf() {
@@ -164,7 +164,7 @@ vf() {
 }
 ```
 
-### 2. Git 分支切换
+### Git 分支切换
 ```bash
 # 交互式分支切换
 fbr() {
@@ -175,7 +175,7 @@ fbr() {
 }
 ```
 
-### 3. 进程管理
+### 进程管理
 ```bash
 # 交互式进程终止
 fkill() {
@@ -187,7 +187,7 @@ fkill() {
 }
 ```
 
-### 4. 目录跳转
+### 目录跳转
 ```bash
 # 快速目录跳转
 fd() {
@@ -197,7 +197,7 @@ fd() {
 }
 ```
 
-### 5. Docker 容器管理
+### Docker 容器管理
 ```bash
 # 进入 Docker 容器
 dexec() {
@@ -207,7 +207,7 @@ dexec() {
 }
 ```
 
-### 6. 环境变量查看
+### 环境变量查看
 ```bash
 # 搜索环境变量
 fenv() {
@@ -217,7 +217,7 @@ fenv() {
 
 ## 自定义配置
 
-### 1. 颜色主题
+### 颜色主题
 ```bash
 export FZF_DEFAULT_OPTS='
   --color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9
@@ -226,7 +226,7 @@ export FZF_DEFAULT_OPTS='
   --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
 ```
 
-### 2. 布局设置
+### 布局设置
 ```bash
 export FZF_DEFAULT_OPTS='
   --height 60%
@@ -236,7 +236,7 @@ export FZF_DEFAULT_OPTS='
   --padding=1'
 ```
 
-### 3. 预览设置
+### 预览设置
 ```bash
 export FZF_DEFAULT_OPTS='
   --preview-window=right:50%:hidden:wrap
@@ -245,7 +245,7 @@ export FZF_DEFAULT_OPTS='
   --bind=ctrl-d:preview-page-down'
 ```
 
-### 4. 自定义绑定
+### 自定义绑定
 ```bash
 export FZF_DEFAULT_OPTS='
   --bind=ctrl-a:select-all
@@ -257,7 +257,7 @@ export FZF_DEFAULT_OPTS='
 
 ## 高级技巧
 
-### 1. 与其他工具结合
+### 与其他工具结合
 
 #### 与 ripgrep 结合
 ```bash
@@ -272,7 +272,7 @@ fzf --delimiter : --preview 'bat --color=always --line-range {2}: {1}'
 alias ff='fd --type f | fzf --preview "bat --color=always --line-range :500 {}"'
 ```
 
-### 2. 复杂搜索模式
+### 复杂搜索模式
 ```bash
 # 精确匹配
 fzf --exact
@@ -284,7 +284,7 @@ fzf --query="!pattern"
 fzf --query="term1 term2"
 ```
 
-### 3. 自定义启动脚本
+### 自定义启动脚本
 ```bash
 # ~/.fzf_functions.sh
 #!/bin/bash
@@ -307,19 +307,19 @@ finstall() {
 
 ## 性能优化
 
-### 1. 缓存搜索结果
+### 缓存搜索结果
 ```bash
 # 使用缓存加速大目录搜索
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git 2>/dev/null'
 ```
 
-### 2. 限制搜索深度
+### 限制搜索深度
 ```bash
 # 限制搜索深度提升性能
 fd --max-depth 3 --type f | fzf
 ```
 
-### 3. 异步预览
+### 异步预览
 ```bash
 # 异步预览大文件
 fzf --preview 'timeout 1 bat --color=always --line-range :100 {}'
@@ -327,20 +327,20 @@ fzf --preview 'timeout 1 bat --color=always --line-range :100 {}'
 
 ## 故障排除
 
-### 1. 中文显示问题
+### 中文显示问题
 ```bash
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 ```
 
-### 2. 预览不工作
+### 预览不工作
 ```bash
 # 检查依赖工具
 which bat || sudo apt install bat
 which fd || sudo apt install fd-find
 ```
 
-### 3. 快捷键冲突
+### 快捷键冲突
 ```bash
 # 检查按键绑定
 bind -p | grep fzf

@@ -9,13 +9,13 @@ tag:
 
 本页整理 isovector reorientation 文章 (*Simulation studies of the isovector reorientation effect of deuteron scattering on heavy target*) 中关于氘核极化测量、极化散射的推导和监测方案，并在此基础上补充两部分：(1) 束流经过磁场元件时自旋的进动；(2) 在束流不同位置放置极化探测器以确定极化轴的方法。
 
-## 1. 实验背景
+## 实验背景
 
 文章的目标是在 RIKEN Nishina Center 的 SAMURAI 谱仪上，测量 190 MeV/u 极化氘核束流与重靶（$^{112}$Sn, $^{124}$Sn, $^{208}$Pb）散射后发生破裂时，同向性势 (isovector potential) 所导致的 reorientation 效应。该效应要求氘核束流的张量极化必须已知且稳定，因此在靶前放置一个专用 polarimeter 用 $p(\vec{d},d)p$ 弹性散射来在线监测张量极化。
 
 使用极化束流的意义在于：如果束流不极化，破裂后中子–质子角分布的各向异性会在统计平均下抵消，无法观察到 IVR 效应。
 
-## 2. 张量极化的定义
+## 张量极化的定义
 
 氘核是自旋 1 的原子核。它的极化态由自旋密度算符 $\hat{\rho}$ 表征。对自旋 1 体系，$\hat{\rho}$ 是 $3\times 3$ 的 Hermitian 矩阵，同时携带矢量极化和张量极化信息。
 
@@ -35,7 +35,7 @@ $$
 
 实验中通常使用束流系 $S'$：$z'$ 轴沿入射方向 $\vec{k}_\text{in}$，$y'$ 轴指向上方。理想的张量极化态是 $p_{z'z'}=1$（纵向极化）或 $p_{y'y'}=1$（垂直极化）。
 
-## 3. 极化微分散射截面
+## 极化微分散射截面
 
 末态密度矩阵与初态的关系为 $\hat{\rho}_f = M\hat{\rho}_i M^\dagger$。定义分析本领
 
@@ -62,7 +62,7 @@ $$
 \end{aligned}
 $$
 
-## 4. LRUD 四探测器方案
+## LRUD 四探测器方案
 
 在同一极角 $\theta$、方位角 $\phi = 0^\circ,90^\circ,180^\circ,270^\circ$ 放置四个探测器，分别记为 L, U, R, D。代入上式得
 
@@ -75,7 +75,7 @@ $$
 \end{aligned}
 $$
 
-### 4.1 监测 $p_{y'y'}$（既有方法）
+### 监测 $p_{y'y'}$（既有方法）
 
 按 Bieber 2001 定义左右上下的计数不对称
 
@@ -89,7 +89,7 @@ $$
 p_{y'y'} = \frac{R_{LRUD}}{\tfrac{1}{2}A_{zz} R_{LRUD} - \tfrac{1}{4}(A_{xx}-A_{yy})}.
 $$
 
-### 4.2 监测 $p_{z'z'}$（本工作提出）
+### 监测 $p_{z'z'}$（本工作提出）
 
 四路平均截面
 
@@ -99,7 +99,7 @@ $$
 
 若已知 $A_{zz}$ 可直接由 $\bar{\sigma}$ 得到 $p_{z'z'}$。为消去束流强度与靶厚带来的系统误差，取两个不同极角 $\theta_1$ 与 $\theta_2$ 处的 $\bar{\sigma}$ 作比值，即可抵消公共因子，仅保留两个角度的 $\sigma_0$ 与 $A_{zz}$ 组合。
 
-## 5. Polarimeter 设计与模拟结果
+## Polarimeter 设计与模拟结果
 
 探测器方案：$p(\vec{d},d)p$ 弹性散射，CH$_2$ 靶厚 $1000\,\text{mg/cm}^2$，束流 $1.6\times 10^{-3}$ pnA（即 $10^7$ pps）。双角度反冲质子探测点：$\theta_1 = 55.9^\circ$ 与 $\theta_2 = 11.3^\circ$，靶距 600 mm，探测器接收角各向约 $20\times 20\,\text{mm}^2$；并在 $\theta = 20.87^\circ$ 处放置一个 $50\times 40\,\text{mm}^2$ 的 deuteron 探测器（距靶 500 mm）。
 
@@ -111,11 +111,11 @@ GEANT4 模拟结果：
 - 两角度计数比对 $p_{zz}$ 的灵敏度（Fig. Ratio_vs_pzz）和 $R_{LRUD}$ 对 $p_{y'y'}$ 的灵敏度（Fig. R\_LRUD\_vs\_pyy）都显示，统计误差远小于 $\sim 10\%$ 的张量极化分辨率要求；
 - 因此本 polarimeter 可以稳定地把 $p_{z'z'}$ 与 $p_{y'y'}$ 监测到 $\sim 10\%$ 的相对精度。
 
-## 6. 磁场中的自旋进动
+## 磁场中的自旋进动
 
 polarimeter 的读数只给出"在该位置"的极化分量。要把它与束流产生端（polarized ion source 与 Wien filter）以及靶处的极化态联系起来，必须追踪束流在加速与传输系统中的自旋进动。
 
-### 6.1 氘核的 g-factor
+### 氘核的 g-factor
 
 氘核 g 因子 $g_d \approx 0.8574$。定义异常磁矩因子
 
@@ -125,7 +125,7 @@ $$
 
 对氘核 $G_d \approx -0.1430$。
 
-### 6.2 Thomas–BMT 进动
+### Thomas–BMT 进动
 
 在纯磁场中，相对论 Thomas–BMT 方程给出自旋绕磁场的进动。对于在竖直弯曲磁场中运动的粒子，自旋相对于动量方向的额外旋转角为
 
@@ -146,19 +146,19 @@ $$
 - 垂直极化 ($y'$) 与磁场方向平行，Thomas–BMT 不会使其在一级效应下发生方向变化，只会保持；
 - 纵向极化 ($z'$) 位于水平面内，会随 $G\gamma\,\theta_B$ 相对动量方向发生旋转，因此从离子源到靶前，polarimeter 前段的任何水平弯铁都会改变"在 polarimeter 处看到的极化轴方向"。
 
-### 6.3 Wien filter
+### Wien filter
 
 RIKEN 方案在加速器前端放置 Wien filter（正交电、磁场）。在 Wien filter 中粒子轨迹不偏转，但自旋可以任意旋转到所需方向。这使得在源端可以把极化轴调到任一目标方向（沿 $x$, $y$, $z$ 中任一轴，或它们的合成方向）。Wien filter 的设定值需要由后续 polarimeter 的实测反馈，以保证到达靶位时的极化轴与设计一致。
 
-### 6.4 单次通过 cyclotron 提取的自旋守恒
+### 单次通过 cyclotron 提取的自旋守恒
 
 三台 cyclotron (AVF, RRC, SRC) 的单圈提取（single-turn extraction）保证了束流在加速过程中没有因多圈叠加相消导致的极化幅度降低，最终提取极化仍保持理论值的 $\sim 80\%$。
 
-## 7. 用多位置 polarimeter 确定极化轴
+## 用多位置 polarimeter 确定极化轴
 
 如果只把 polarimeter 放在束线的一个点上，L/R/U/D 四路计数能够给出该点处几个 $p_{i'j'}$ 的组合（参见 §4），但无法把极化轴 $\hat{S}$ 在三维空间中的方向完全确定出来。原因是：在单点处，自由度有限——例如只靠 $R_{LRUD}$ 本身无法同时解出 ($\beta,\phi$)。
 
-### 7.1 任意极化轴下的截面
+### 任意极化轴下的截面
 
 把极化轴方向写成球面角 $(\beta,\phi)$，仅存纵向极化 $P_{zz}$ 的情况下（Ohlsen 旋转规则，参见本站 `spherical_operator.md`），束流系中
 
@@ -185,7 +185,7 @@ $$
 
 这三个观测量一起是 ($P_z$, $P_{zz}$, $\beta$, $\phi$) 的函数，但实际上 $\sin\beta$ 与 $\cos\beta$ 存在分支、$\phi$ 有 $\phi \leftrightarrow \phi + \pi$ 的对称性等等。单点 LRUD 对 $\hat{S}$ 的空间方向并不具完全可逆性。
 
-### 7.2 多位置 polarimeter 的方案
+### 多位置 polarimeter 的方案
 
 沿束线在磁场元件前后各设一台 polarimeter（记为 $P_1$ 与 $P_2$），它们之间的束流要经过已知的磁场 $B$ 及几何弯角 $\theta_B$。根据 §6.2，水平面内的极化轴在两点之间会相对动量方向多转 $\Delta\phi_s = G\gamma\,\theta_B$。
 
@@ -204,7 +204,7 @@ $$
 3. 极化轴天顶角 $\beta$；
 4. 方位角 $\phi_1$ (进而 $\phi_2$)。
 
-### 7.3 为什么一定要用磁场做中介
+### 为什么一定要用磁场做中介
 
 两台 polarimeter 之间若没有磁场（即 drift space），自旋方向不变，两台读数完全等价，信息量没有增加。必须要有已知的磁场进动 $\Delta\phi_s$ 才能把原本简并的 ($\beta,\phi$) 分量拆开——这就是"利用磁场进动 + 多位置 polarimeter 来确定极化轴"的物理本质。
 
@@ -214,7 +214,7 @@ $$
 - 专门的 spin rotator (如 Wien filter, solenoid)：$\Delta\phi_s$ 可以程序化扫描，作为校准手段；
 - 前置的 solenoid：把极化轴从 $z'$ 转到 $y'$ 或其组合，与两端 polarimeter 配合做系统化校准。
 
-### 7.4 实用布局建议
+### 实用布局建议
 
 对 IVR 实验而言，可以采用的最小配置为：
 
@@ -225,11 +225,11 @@ $$
 
 这样既继承了论文中已论证的"单点 LRUD + 双角度"方案的灵敏度，又把极化轴方向纳入可观测量，从而在实验过程中确认 Wien filter 工作在目标状态。
 
-## 8. 同时存在矢量极化与张量极化的情况
+## 同时存在矢量极化与张量极化的情况
 
 §7 假设束流只带张量极化 ($P_{zz}$, $P_z = 0$)。真实的 RIKEN 极化离子源由不同 RF 跃迁态叠加产生，一般同时带有矢量极化 $P_z$ 和张量极化 $P_{zz}$。此时单一极化轴 $(\beta,\phi)$ 加两个幅度一共有 **4 个未知数** $(P_z, P_{zz}, \beta, \phi)$。
 
-### 8.1 极化分量的完整表达
+### 极化分量的完整表达
 
 沿 $(\beta,\phi)$ 方向的矢量极化在束流系的分量
 
@@ -252,7 +252,7 @@ p_{x'z'} &= -\sin\beta\cos\beta\sin\phi\, P_{zz}.
 \end{aligned}
 $$
 
-### 8.2 四个独立观测量
+### 四个独立观测量
 
 把上述分量代入 §4 的 Ohlsen 截面公式，单台 polarimeter 在同一极角 $\theta$ 下给出三路不对称量
 
@@ -281,7 +281,7 @@ $$
 
 因此单点 polarimeter 虽然方程数够，但反解不稳定。
 
-### 8.3 用两台 polarimeter 解除简并
+### 用两台 polarimeter 解除简并
 
 在两台 polarimeter 之间设置已知水平弯铁（弯角 $\theta_B$）。由 §6.2，垂直 $p_{y'}$ 分量守恒，水平面内的极化分量多旋转 $\Delta\phi_s = G\gamma\,\theta_B$。对 $(\beta,\phi)$ 而言，$\beta$ 不变，而 $\phi$ 映射为
 
@@ -305,7 +305,7 @@ $$
 
 同时对 $(P_z, P_{zz}, \beta, \phi_1)$ 进行拟合，即可唯一解出 4 个未知数，且留下 4 个自由度可用于自洽检验（goodness-of-fit 与系统偏差诊断）。
 
-### 8.4 与 spin-flip 技术的互补
+### 与 spin-flip 技术的互补
 
 在离子源端切换 RF 跃迁态可以得到几组不同的源态，例如
 
@@ -327,7 +327,7 @@ $$
 
 实践上推荐两者合用：以 spin-flip 把 $\{P_z, P_{zz}\}$ 的线性响应分开，再用两台 polarimeter 的 8 个观测量同时拟合 $\beta$ 与 $\phi$，把 Wien filter 的闭环调节精度推到极化轴角度 $\sim$ 几度的量级。
 
-### 8.5 拟合流程小结
+### 拟合流程小结
 
 1. 离线标定：在已知源态（如 unpolarized 或纯 $m=0$）下测 $\sigma_0(\theta_1),\sigma_0(\theta_2)$，固定两台 polarimeter 的几何与效率因子；从 $d$–$p$ 数据库（Sekiguchi 等）取 $A_y(\theta),A_{xz}(\theta),A_{zz}(\theta),(A_{xx}-A_{yy})(\theta)$。
 2. 在线数据：对每个源态取两台 polarimeter 的计数，计算 8 个观测量及其统计误差。
@@ -335,7 +335,7 @@ $$
 4. 用 spin-flip 后的独立数据集交叉验证，确认拟合稳定性。
 5. 把 $(\beta,\phi)$ 的实测值反馈到 Wien filter，实现极化轴闭环稳定。
 
-## 9. 与相关参考页的交叉索引
+## 与相关参考页的交叉索引
 
 - `spherical_operator.md`：Cartesian / spherical tensor 的算符矩阵、$U$ 变换下的张量分量、极化轴 $(\beta,\phi)$ 分解；
 - `my_polarimeter.zh.md`：束团间隔 (bunch spacing) 与 polarimeter 时间分辨率要求；

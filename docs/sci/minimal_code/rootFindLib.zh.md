@@ -10,7 +10,7 @@ https://root.cern/manual/integrate_root_into_my_cmake_project/
 
 在 ROOT 中，“库”通常指共享目标文件（`.so`（Linux）、`.dylib`（macOS）、`.dll`（Windows））。为了让 ROOT 的解释器（Cling）理解你的 C++ 类，必须生成字典（dictionary）。
 
-### 1. 制作一个 ROOT 库（工作流程）
+### 制作一个 ROOT 库（工作流程）
 
 假设有一个简单的物理类 `MyParticle`。
 
@@ -90,7 +90,7 @@ g++ -shared -fPIC -o libMyParticle.so MyParticle.cxx G__MyParticle.cxx `root-con
 
 现在会得到 `libMyParticle.so` 和 `G__MyParticle_rdict.pcm`（ROOT 6+ 需要 pcm 文件）。
 
-### 2. 寻找与加载第三方库
+### 寻找与加载第三方库
 
 分两类：解释型（ROOT 宏 / Cling）与编译型（可执行程序）。
 
@@ -146,7 +146,7 @@ export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/path/to/workdir
 
 ROOT 代码本质是 C++，可以用 Google Test 编写单元测试。
 
-### 1. 环境准备
+### 环境准备
 
 Ubuntu:
 ```bash
@@ -159,7 +159,7 @@ Conda（推荐）:
 conda install -c conda-forge gtest
 ```
 
-### 2. 编写测试用例
+### 编写测试用例
 
 文件：`test_MyParticle.cpp`
 ```cpp
@@ -182,7 +182,7 @@ TEST(MyParticleTest, MassCalculation) {
 
 > 如果测试需要 ROOT 的全局对象（如 `TFile`, `TCanvas`, `TH1`），可能需要在 `main` 中初始化 `TApplication`；纯数学/逻辑类通常不需要。
 
-### 3. 编译测试程序
+### 编译测试程序
 
 需要链接：gtest、ROOT、自定义库。例如：
 ```bash

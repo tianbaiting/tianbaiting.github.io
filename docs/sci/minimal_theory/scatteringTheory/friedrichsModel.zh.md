@@ -25,9 +25,9 @@ $u_{\rm down}$ 等于下半面的极点贡献。
 
 ---
 
-## 0. 设定
+## 设定
 
-### 0.1 空间分解
+### 空间分解
 
 $$
 \mathcal H = \mathbb C|d\rangle \oplus \mathcal H_c,
@@ -35,7 +35,7 @@ $$
 
 $|d\rangle$ 为离散态，$\mathcal H_c$ 为连续谱子空间。
 
-### 0.2 正交归一
+### 正交归一
 
 设
 
@@ -52,9 +52,9 @@ $$
 
 ---
 
-## 1. 哈密顿量
+## 哈密顿量
 
-### 1.1 无耦合哈密顿量 $H_0$
+### 无耦合哈密顿量 $H_0$
 
 $$
 H_d = E_d |d\rangle\langle d|.
@@ -76,7 +76,7 @@ $$
 
 ---
 
-### 1.2 打开耦合：加入相互作用 $V$
+### 打开耦合：加入相互作用 $V$
 
 $$
 V=\int_{E_{\rm th}}^\infty dE\;\Big(g(E)\,|d\rangle\langle E| + g^*(E)\,|E\rangle\langle d|\Big).
@@ -89,19 +89,19 @@ $$
 
 ---
 
-## 2. 本征方程与自能方程
+## 本征方程与自能方程
 
 $$
 H|\psi\rangle = z|\psi\rangle.
 $$
 
-### 2.1 一般态展开
+### 一般态展开
 
 $$
 |\psi\rangle = \alpha |d\rangle + \int dE\,\phi(E)|E\rangle.
 $$
 
-### 2.2 计算 $H|\psi\rangle$
+### 计算 $H|\psi\rangle$
 
 #### (a) 先算 $H_0|\psi\rangle$
 
@@ -148,7 +148,7 @@ H|\psi\rangle &=
 \end{aligned}
 $$
 
-### 2.3 对比 $z|\psi\rangle$
+### 对比 $z|\psi\rangle$
 
 $$
 z|\psi\rangle = z\alpha|d\rangle + \int dE\, z\phi(E)|E\rangle.
@@ -182,7 +182,7 @@ $$
 \tag{B}
 $$
 
-### 2.4 消去 $\phi(E)$
+### 消去 $\phi(E)$
 
 $$
 \phi(E)=\frac{-\alpha g^*(E)}{E-z}.
@@ -225,9 +225,9 @@ $$
 
 ---
 
-## 3. Feshbach 投影与 $\Sigma(z)$
+## Feshbach 投影与 $\Sigma(z)$
 
-### 3.1 定义投影
+### 定义投影
 
 $$
 P=|d\rangle\langle d|,\qquad Q=1-P.
@@ -236,7 +236,7 @@ $$
 * $P\mathcal H$ 维数 = 1
 * $Q\mathcal H$ 是连续谱子空间
 
-### 3.2 从 $(H-z)|\psi\rangle=0$ 出发
+### 从 $(H-z)|\psi\rangle=0$ 出发
 
 写成
 
@@ -291,7 +291,7 @@ $$
 H_{\rm eff}(z)=PHP+PHQ(z-QHQ)^{-1}QHP.
 $$
 
-### 3.3 在 Friedrichs 模型中
+### 在 Friedrichs 模型中
 
 * $PHP = E_d |d\rangle\langle d|$ 在 1 维空间上就是数 $E_d$；
 * $QHQ$ 在 $|E\rangle$ 表象下就是乘法算符 $E$；
@@ -311,9 +311,9 @@ $$
 
 ---
 
-## 4. 散射态与边界值
+## 散射态与边界值
 
-### 4.1 Lippmann–Schwinger 方程
+### Lippmann–Schwinger 方程
 
 自由连续态 $|E\rangle$ 为 $H_0$ 本征态，散射态定义为
 
@@ -324,7 +324,7 @@ $$
 \tag{LS}
 $$
 
-## 4.2 将 $|\Psi_E^{(\pm)}\rangle$ 展开
+## 将 $|\Psi_E^{(\pm)}\rangle$ 展开
 
 设
 
@@ -457,7 +457,7 @@ $$
 
 ---
 
-## 4.3 $\Delta(E)$ 与 $\Gamma(E)$
+## $\Delta(E)$ 与 $\Gamma(E)$
 
 用分布恒等式（Sokhotski–Plemelj）：
 
@@ -500,9 +500,9 @@ $$
 
 ---
 
-## 5. 极点、Gamow 态与 RHS
+## 极点、Gamow 态与 RHS
 
-### 5.1 离散通道 resolvent 与极点方程
+### 离散通道 resolvent 与极点方程
 
 $$
 G_d(z)\equiv \langle d|(z-H)^{-1}|d\rangle
@@ -528,7 +528,7 @@ $$
 \Sigma(E\pm i0)=\Delta(E)\mp i\Gamma(E)/2.
 $$
 
-### 5.2 第二 Riemann 面与共振极点
+### 第二 Riemann 面与共振极点
 
 $$
 \Sigma(z)=\int_{E_{\rm th}}^\infty dE'\,\frac{|g(E')|^2}{z-E'}
@@ -555,7 +555,7 @@ z_*=E_R-\frac{i}{2}\Gamma_R,\qquad
 z_*-E_d-\Sigma^{\rm II}(z_*)=0.
 $$
 
-### 5.3 谱函数与 Breit-Wigner 近似
+### 谱函数与 Breit-Wigner 近似
 
 谱函数
 
@@ -577,7 +577,7 @@ $$
 
 窄宽度近似下即 Breit-Wigner 峰形。
 
-### 5.4 Gamow 态、指数衰减与支割修正
+### Gamow 态、指数衰减与支割修正
 
 生存振幅
 
@@ -622,7 +622,7 @@ $$
 
 ---
 
-## 6. 总结
+## 总结
 
 * 模型：一个离散态 $|d\rangle$ 与连续谱 $|E\rangle$ 通过 $g(E)$ 耦合。
 * 核心函数：$\Sigma(z)=\int dE\,|g(E)|^2/(z-E)$。

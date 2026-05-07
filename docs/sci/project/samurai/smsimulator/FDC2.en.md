@@ -30,13 +30,13 @@ smsimulator
     └── rootfiles
 ```
 
-### 1. Detector Geometry & Construction
+### Detector Geometry & Construction
 
 - Path: `sources/smg4lib/detectors/FDC2/`
 - Files: `FDC2Construction.hh` / `.cc`
 - Function: Defines the geometry, materials, position, and orientation of FDC2.
 
-### 2. Sensitive Detector & Data Acquisition
+### Sensitive Detector & Data Acquisition
 
 - Path: `sources/smg4lib/data/`
 - Files:
@@ -71,20 +71,20 @@ smsimulator
     - Each event contains a data array, with each element corresponding to a valid step (usually when the primary particle hits FDC2).
     - Analysis scripts (e.g., `work/macros/examples/analysis_example.cc`) read these branches and filter data with `fDetectorName == "FDC2"` for physics analysis.
 
-### 3. Main Detector Construction & Integration
+### Main Detector Construction & Integration
 
 - Path: `sources/projects/sim_samurai21/`
 - Files:
     - `sim_samurai21.cc`: Main program entry.
     - `src/SAMURAI21DetectorConstruction.cc`: Main detector construction class, responsible for instantiating FDC2 and mounting the sensitive detector.
 
-### 4. Data Analysis
+### Data Analysis
 
 - Path: `work/macros/examples/`
 - Files: `analysis_example.cc`, `analysis_crosstalk_example.cc`
 - Function: Reads and analyzes data collected by FDC2.
 
-### 5. Other Helper Libraries
+### Other Helper Libraries
 
 - Path: `sources/smg4lib/action/`
 - Function: Includes event, run, and tracking action classes, which indirectly affect the data acquisition process of FDC2.

@@ -2,7 +2,7 @@
 
 绝对路径在不同设备运行程序时不通用，且相对路径在不同上下文（比如宏或构建系统）中也可能失效。最佳做法是通过环境变量来传递可移植的路径或配置。
 
-## 1. C++ (标准)
+## C++ (标准)
 获取：
 ```cpp
 #include <cstdlib>
@@ -30,7 +30,7 @@ if (val) {
 }
 ```
 
-## 2. Python
+## Python
 获取：
 ```python
 import os
@@ -47,7 +47,7 @@ data_file_path = os.path.join(my_env_var_value, "simulation", "output.root")
 print(f"数据文件路径: {data_file_path}")
 ```
 
-## 3. Bash
+## Bash
 获取：
 ```bash
 # 获取环境变量的值
@@ -67,7 +67,7 @@ echo "Running script from directory: ${val}/scripts"
 "${val}/bin/run_simulation" --input "${val}/data/input.dat"
 ```
 
-## 4. CMake
+## CMake
 获取（在 CMakeLists.txt 中）：
 ```cmake
 # 读取环境变量并赋值给 CMake 变量（推荐）
@@ -90,7 +90,7 @@ include_directories(${MY_DIR_FROM_ENV}/include)
 add_library(MyLib STATIC ${MY_DIR_FROM_ENV}/src/MySource.cpp)
 ```
 
-## 5. Geant4 宏
+## Geant4 宏
 获取：
 ```text
 # 将操作系统环境变量 SMSIMDIR 的值赋给 Geant4 宏变量 SMSIMDIR
@@ -106,7 +106,7 @@ add_library(MyLib STATIC ${MY_DIR_FROM_ENV}/src/MySource.cpp)
 /file/open $SMSIMDIR/results.root
 ```
 
-## 6. LaTeX（使用 LuaLaTeX）
+## LaTeX（使用 LuaLaTeX）
 标准 LaTeX 不易安全跨平台地读取系统环境变量。推荐使用 LuaLaTeX，通过 Lua 的 `os.getenv` 访问环境变量。
 
 ```latex

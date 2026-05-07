@@ -5,7 +5,7 @@
 
 ---
 
-## 0. 动机
+## 动机
 
 给定哈密顿量 $H$，求本征值通常需要在坐标表象中解偏微分方程。但若谱具有"等间距结构"，就可以提出一个更经济的问题：
 
@@ -15,9 +15,9 @@
 
 ---
 
-## 1. 一般理论
+## 一般理论
 
-### 1.1 什么样的算符可以构造升降算符？
+### 什么样的算符可以构造升降算符？
 
 并非所有哈密顿量都能构造升降算符。以下是使构造成立的充分条件，以及背后的物理与数学含义。
 
@@ -54,7 +54,7 @@ $$[H, a] = [a^\dagger a,\, a] = [a^\dagger, a]\, a$$
 | $V(x)$ 是否为二次型（谐振子）或库仑型（氢原子）？ | 存在精确升降算符 | SUSY 量子力学可系统处理 |
 | 系统是否有旋转对称性？ | 用 $L_\pm = L_x \pm iL_y$ | 考察具体的对称群 |
 
-### 1.2 核心定义
+### 核心定义
 
 设 $H$ 是 Hilbert 空间上的自伴算符。若算符 $a$ 满足
 
@@ -64,7 +64,7 @@ $$[H \, a] = -\lambda\, a, \qquad \lambda \in \mathbb{C} \setminus \{0\},$$
 
 对 $[H,a]=-\lambda a$ 取厄米共轭，利用 $H^\dagger = H$，立即得 $[H, a^\dagger] = +\bar\lambda\, a^\dagger$。因此降算符的厄米共轭自动成为升算符。
 
-### 1.3 伴随映射的视角
+### 伴随映射的视角
 
 对易关系 $[H, a] = -\lambda a$ 有一个更深的数学解读。定义伴随映射（adjoint map）：
 
@@ -94,7 +94,7 @@ $$\mathrm{ad}_N(a) = [a^\dagger a,\, a] = -a, \qquad \mathrm{ad}_N(a^\dagger) = 
 
 三个算符恰好是 $\mathrm{ad}_N$ 的特征向量，特征值分别为 $-1,\, +1,\, 0$。升降算符并非偶然发现，而是 $\mathrm{ad}_N$ 的特征分解的必然结果。
 
-### 1.4 定理1：本征值移位
+### 定理1：本征值移位
 
 定理1  设 $[H,a] = -\lambda a$，$H|E\rangle = E|E\rangle$。则：
 
@@ -108,7 +108,7 @@ $$H(a|E\rangle) = (aH + [H,a])|E\rangle = aH|E\rangle - \lambda a|E\rangle = (E 
 这说明了升降算符两种等价定义， $[H,a] = -\lambda a$，$a | E \rangle = (E-\lambda) |E\rangle$
 
 
-### 1.5 谱的截断：为什么升降不能无限进行？
+### 谱的截断：为什么升降不能无限进行？
 
 升降算符每施加一次，本征值移动一个步长。但物理系统的谱不可能真的无限延伸——Hilbert 空间的正定内积对谱的范围施加了刚性约束。根据截断方式的不同，可分为两类。
 
@@ -146,7 +146,7 @@ $$\mathbf{L}^2 - L_z^2 = L_x^2 + L_y^2 \geq 0 \implies m^2\hbar^2 \leq \hbar^2 \
 
 $$|n\rangle = \frac{(a^\dagger)^n}{\sqrt{n!}}|0\rangle, \qquad E_n = E_0 + n\lambda.$$
 
-### 1.6 因式分解法：系统构造 $a$
+### 因式分解法：系统构造 $a$
 
 将 $H$ 写成
 
@@ -160,9 +160,9 @@ $$H = a^\dagger a + \varepsilon_0,$$
 
 ---
 
-## 2. 应用一：一维谐振子
+## 应用一：一维谐振子
 
-### 2.1 哈密顿量与因式分解动机
+### 哈密顿量与因式分解动机
 
 $$H = \frac{p^2}{2m} + \frac{1}{2}m\omega^2 x^2.$$
 
@@ -171,7 +171,7 @@ $$H = \frac{p^2}{2m} + \frac{1}{2}m\omega^2 x^2.$$
 $$a \equiv \sqrt{\frac{m\omega}{2\hbar}}\,x + \frac{i}{\sqrt{2m\omega\hbar}}\,p, \qquad
 a^\dagger \equiv \sqrt{\frac{m\omega}{2\hbar}}\,x - \frac{i}{\sqrt{2m\omega\hbar}}\,p.$$
 
-### 2.2 推导对易关系
+### 推导对易关系
 
 利用 $[x,p] = i\hbar$，$[x,x]=[p,p]=0$：
 
@@ -183,7 +183,7 @@ $$[a,\, a^\dagger]
 
 $$\boxed{[a,\, a^\dagger] = 1.}$$
 
-### 2.3 将 $H$ 用 $a, a^\dagger$ 表示
+### 将 $H$ 用 $a, a^\dagger$ 表示
 
 计算 $a^\dagger a$，利用 $[p,x] = -i\hbar$ 处理交叉项：
 
@@ -196,7 +196,7 @@ $$\boxed{H = \hbar\omega\!\left(a^\dagger a + \frac{1}{2}\right) \equiv \hbar\om
 
 粒子数算符 $\hat{N} \equiv a^\dagger a$ 满足 $\hat{N}|n\rangle = n|n\rangle$。
 
-### 2.4 谱
+### 谱
 
 $$[H,\, a] = \hbar\omega\,[a^\dagger a,\, a] = \hbar\omega\,(-1)\,a = -\hbar\omega\, a. \quad \text{步长} = \hbar\omega.$$
 
@@ -214,9 +214,9 @@ $$a|n\rangle = \sqrt{n}\,|n-1\rangle, \qquad a^\dagger|n\rangle = \sqrt{n+1}\,|n
 
 ---
 
-## 3. 应用二：角动量
+## 应用二：角动量
 
-### 3.1 角动量代数
+### 角动量代数
 
 角动量算符 $(L_x, L_y, L_z)$ 满足（旋转群 $\mathrm{SO}(3)$ 的李代数）：
 
@@ -224,7 +224,7 @@ $$[L_i,\, L_j] = i\hbar\,\varepsilon_{ijk}\,L_k.$$
 
 目标：同时对角化 $\mathbf{L}^2 = L_x^2+L_y^2+L_z^2$ 和 $L_z$（两者对易，可共同对角化）。
 
-### 3.2 构造升降算符
+### 构造升降算符
 
 希望找算符满足 $[L_z, L_\pm] = \pm c \cdot L_\pm$。取 $L_x, L_y$ 的复线性组合（将实李代数 $\mathfrak{su}(2)$ 复化）：
 
@@ -242,7 +242,7 @@ $$[L_+, L_-] = 2\hbar L_z, \qquad [\mathbf{L}^2,\, L_\pm] = 0.$$
 
 第二式保证 $L_\pm$ 不改变 $\mathbf{L}^2$ 的本征值。
 
-### 3.3 谱的推导
+### 谱的推导
 
 设 $\mathbf{L}^2|\ell,m\rangle = \lambda|\ell,m\rangle$，$L_z|\ell,m\rangle = m\hbar|\ell,m\rangle$。
 
@@ -268,7 +268,7 @@ $$L_\pm|\ell,m\rangle = \hbar\sqrt{\ell(\ell+1)-m(m\pm1)}\;|\ell,m\pm1\rangle,$$
 
 ---
 
-## 4. 两个应用的对比
+## 两个应用的对比
 
 |  | 谐振子 | 角动量 |
 |--|--------|--------|
@@ -281,7 +281,7 @@ $$L_\pm|\ell,m\rangle = \hbar\sqrt{\ell(\ell+1)-m(m\pm1)}\;|\ell,m\pm1\rangle,$$
 
 ---
 
-## 5. 总结：一般构造流程
+## 总结：一般构造流程
 
 1. 选目标算符：确定要对角化的 $H$（或 $L_z$ 等），观察谱是否有等间距或规则步进结构。
 2. 写候选形式：对因式分解型系统，试 $a = \alpha x + \beta p$；对李代数型系统，取实生成元的复线性组合。

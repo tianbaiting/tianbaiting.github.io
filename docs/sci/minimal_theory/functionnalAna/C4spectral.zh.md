@@ -184,7 +184,7 @@ $f(T)=2\pi i \oint_\Gamma f(\lambda) R_\lambda(T) d\lambda$
 
 ---
 
-### 3. 一个具体的矩阵例子
+### 一个具体的矩阵例子
 
 为了彻底搞懂，我们算一个简单的 $2 \times 2$ 矩阵。
 设 $T = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$。我们想算 $e^{tT}$（即旋转矩阵）。

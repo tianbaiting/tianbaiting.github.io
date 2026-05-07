@@ -1,4 +1,4 @@
-# Gemini 使用限制与付费模式解析
+# Gemini 限制与付费
 
 本文档旨在澄清 Gemini 在不同平台（网页版、CLI、API）上的使用限制，以及 Google AI Pro 订阅与 API 付费之间的关系。
 

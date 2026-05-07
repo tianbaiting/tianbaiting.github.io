@@ -2,7 +2,7 @@
 
 本文给出一套可落地的 `ctags` 用法，适合中大型 C/C++ 项目；最后附录补充 `clangd` 的最小可用配置。
 
-## 1. `ctags` 是什么
+## `ctags` 是什么
 
 `ctags` 会扫描源码并生成一个符号索引文件（通常叫 `tags` 或 `.tags`）。
 编辑器根据这个索引实现“按符号跳转到定义”。
@@ -18,7 +18,7 @@
 - `clangd` 负责语义（诊断、补全、精确跳转）。
 - `ctags` 负责快速兜底导航。
 
-## 2. 安装
+## 安装
 
 ### Debian/Ubuntu
 
@@ -41,7 +41,7 @@ micromamba install -n <env-name> -c conda-forge universal-ctags
 micromamba activate <env-name>
 ```
 
-## 3. 在项目中生成标签
+## 在项目中生成标签
 
 在项目根目录执行：
 
@@ -66,7 +66,7 @@ ls -lh .tags
 wc -l .tags
 ```
 
-## 4. 查询符号
+## 查询符号
 
 使用 `readtags` 直接查：
 
@@ -81,7 +81,7 @@ readtags -t .tags -e -n SimDataManager
 - `-e`：显示扩展字段。
 - `-n`：显示行号。
 
-## 5. 在 Neovim/Vim 中使用
+## 在 Neovim/Vim 中使用
 
 在配置中加入：
 
@@ -102,7 +102,7 @@ set tags=./.tags;,./tags;,tags;
 - `Ctrl-]`：跳到符号定义。
 - `Ctrl-t`：返回。
 
-## 6. 在 VSCode 中使用 `ctags`
+## 在 VSCode 中使用 `ctags`
 
 VSCode 本身不原生依赖 `ctags`，通常通过扩展使用。
 可在扩展市场安装 `ctags` 类插件（如 `vscode-ctags`）。
@@ -113,7 +113,7 @@ VSCode 本身不原生依赖 `ctags`，通常通过扩展使用。
 2. 修改代码后重新生成 `.tags`。
 3. 把跳转主路径交给 `clangd`，`ctags` 作为兜底。
 
-## 7. 自动刷新建议
+## 自动刷新建议
 
 可以在项目里放一个脚本，例如 `scripts/dev/update_tags.sh`：
 
@@ -135,7 +135,7 @@ chmod +x scripts/dev/update_tags.sh
 ./scripts/dev/update_tags.sh
 ```
 
-## 8. 常见问题
+## 常见问题
 
 ### Q1: 为什么跳转不准？
 

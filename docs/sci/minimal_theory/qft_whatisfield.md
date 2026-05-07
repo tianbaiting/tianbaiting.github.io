@@ -4,7 +4,7 @@
 
 -----
 
-### 1. 核心定义：一个时空依赖的算符
+### 核心定义：一个时空依赖的算符
 
 首先，场算符 $\hat\phi(x)$ 不是一个数，也不是一个波函数。  
 它是一个算符（operator），类似量子力学中的位置算符 $\hat x$ 或动量算符 $\hat p$，作用在希尔伯特空间（例如 Fock 空间）上的态矢 $|\Psi\rangle$。
@@ -20,7 +20,7 @@
 
 -----
 
-### 2. 数学构造：用产生与湮灭算符构建
+### 数学构造：用产生与湮灭算符构建
 
 自由标量场算符的常见展开（在相互作用绘景或自由场情况下）为：
 
@@ -46,7 +46,7 @@
 
 -----
 
-### 3. 定义特征：量子化条件与因果性
+### 定义特征：量子化条件与因果性
 
 场的量子化通过其对易（或反对易）关系给出。标量玻色场的等时对易关系为：
 
@@ -89,7 +89,7 @@
 
 ---
 
-### 1. 核心骨架：泛函分析 (Functional Analysis)
+### 核心骨架：泛函分析 (Functional Analysis)
 
 这是QFT的“语言”。它处理的是无限维空间上的数学。
 
@@ -103,7 +103,7 @@
     * <strong>$a, a^\dagger$ (产生/湮灭算符)：</strong> 这是Fock空间最基本的算符。
     * <strong>$\hat{\phi}(x)$ (场算符)：</strong> 正如我们之前讨论的，它是一个<strong>算符值分布 (Operator-Valued Distribution)</strong>。它不是一个普通的函数，你必须用一个“测试函数” $f(x)$ 去“探测”它（即 $\int d^4x f(x) \hat{\phi}(x)$），才能得到一个“行为良好”的算符。这是QFT中“无穷大”的第一个来源。
 
-### 2. 指导原则：对称性与群论 (Symmetry & Group Theory)
+### 指导原则：对称性与群论 (Symmetry & Group Theory)
 
 这是QFT的“灵魂”。它决定了“什么可以存在”以及“它们如何相互作用”。
 
@@ -122,7 +122,7 @@
     * <strong>SU(3)群 $\to$ 强相互作用 (QCD)</strong> $\to$ 胶子
     * 标准模型 ($\text{SU(3)}_C \times \text{SU(2)}_L \times \text{U(1)}_Y$) 的拉格朗日量，<strong>完全</strong>是由这个群结构决定的。
 
-### 3. 几何结构：微分几何 (Differential Geometry)
+### 几何结构：微分几何 (Differential Geometry)
 
 这是“规范场论”的<strong>精确</strong>数学语言，尽管物理教材（如Peskin）很少明确使用它。
 
@@ -133,7 +133,7 @@
     * <strong>规范联络 (Gauge Connection)：</strong> <strong>这正是规范场（$A_\mu$）的数学定义！</strong> 它告诉你如何在时空的不同点之间“平行移动”一个场而不改变其物理（即“协变导数” $D_\mu = \partial_\mu - igA_\mu$）。
     * <strong>曲率 (Curvature)：</strong> <strong>这正是场强（$F_{\mu\nu}$）的数学定义！</strong> 它描述了规范场的“弯曲”程度，即力的强度。
 
-### 4. 计算引擎：路径积分 (Path Integrals / Functional Integrals)
+### 计算引擎：路径积分 (Path Integrals / Functional Integrals)
 
 这是物理学家<strong>实际使用</strong>的QFT结构。
 
@@ -148,7 +148,7 @@
 
 ---
 
-### 5. 严格基础：公理化QFT (Axiomatic QFT)
+### 严格基础：公理化QFT (Axiomatic QFT)
 
 这是数学家们试图建立的“坚实”的QFT结构，它<strong>不</strong>依赖于拉格朗日量或路径积分。
 

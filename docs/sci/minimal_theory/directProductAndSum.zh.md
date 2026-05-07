@@ -96,9 +96,9 @@ https://www.changhai.org/forum/collection_article_load.php?aid=1186358149
 
 假设我们所用的域为 $F$（例如 $\mathbb{R}$ 或 $\mathbb{C}$）。
 
-## 1. 向量空间、对偶空间、矢量与对偶矢量
+## 向量空间、对偶空间、矢量与对偶矢量
 
-### 1.1 形式化写法
+### 形式化写法
 
 * 设 $V$ 是一个 $F$ 上的向量空间。  
 * 定义其对偶空间（dual space）：
@@ -119,7 +119,7 @@ https://www.changhai.org/forum/collection_article_load.php?aid=1186358149
 
     \( \alpha(v)=\alpha_j v^i e^j(e_i)=\alpha_j v^i \delta^j_i=\alpha_i v^i. \)
 
-### 1.2 指标写法
+### 指标写法
 
 * 矢量分量写作 $v^i$（上标，反变）。  
 * 对偶矢量分量写作 $\alpha_i$（下标，协变）。  
@@ -134,7 +134,7 @@ https://www.changhai.org/forum/collection_article_load.php?aid=1186358149
 
     其中 $M$ 为基变换矩阵。
 
-### 1.3 braket 记法（量子力学版）
+### braket 记法（量子力学版）
 
 * 在量子力学中我们通常使用希尔伯特空间 $\mathcal H$，态向量写作 $|\psi\rangle\in\mathcal H$。  
 * 对偶矢量对应的是 $\langle\phi|\in\mathcal H^*$（狄拉克 bra）。  
@@ -145,13 +145,13 @@ https://www.changhai.org/forum/collection_article_load.php?aid=1186358149
 
 ---
 
-## 2. 直和（Direct Sum）、直乘（Direct Product）与张量积（Tensor Product）
+## 直和（Direct Sum）、直乘（Direct Product）与张量积（Tensor Product）
 
 这里常见混淆在于“直乘”一词在不同文献里有不同用法。为避免混淆，先说明各自定义。
 
-### 2.1 形式化写法
+### 形式化写法
 
-#### 2.1.1 直和
+#### 直和
 
 设 $V_1$ 和 $V_2$ 是 $F$-向量空间。定义
 
@@ -162,11 +162,11 @@ https://www.changhai.org/forum/collection_article_load.php?aid=1186358149
 \( (v_1,v_2)+(v'_1,v'_2)=(v_1+v'_1,\ v_2+v'_2),\qquad a\cdot(v_1,v_2)=(a v_1,\ a v_2). \)
 若为有限维，$\dim(V_1\oplus V_2)=\dim V_1+\dim V_2$。
 
-#### 2.1.2 直乘（笛卡尔积/物理语境说明）
+#### 直乘（笛卡尔积/物理语境说明）
 
 “直乘”在不同语境下含义不同。若指集合意义上的笛卡尔积 $V_1\times V_2$，并在其上赋予向量空间结构，它与 $V_1\oplus V_2$ 本质等价（作为向量空间）。但在物理文献中，有时说 “direct product” 实际上意指张量积。为避免歧义，本文中把“直乘”专指笛卡尔积/直和的集合并列结构（非张量耦合）。
 
-#### 2.1.3 张量积
+#### 张量积
 
 设 $V$ 和 $W$ 是 $F$-向量空间。张量积 $V\otimes W$ 具有泛性质：存在双线性映射
 
@@ -182,7 +182,7 @@ https://www.changhai.org/forum/collection_article_load.php?aid=1186358149
 
 一般元素可写为有限线性组合 $\sum_{i,j} c_{ij}\, (v_i\otimes w_j)$。
 
-### 2.2 指标写法
+### 指标写法
 
 设 $\dim V=m,\ \dim W=n$，基分别为 $\{e_i\}_{i=1}^m,\ \{f_j\}_{j=1}^n$。
 
@@ -190,7 +190,7 @@ https://www.changhai.org/forum/collection_article_load.php?aid=1186358149
 * 在 $V\otimes W$ 中，一个纯张量写为 $(v^i e_i)\otimes(w^j f_j)=v^i w^j\,(e_i\otimes f_j)$，更一般的元素为 $\sum_{i,j}T^{ij}\,(e_i\otimes f_j)$.  
 * 若引入对偶空间，则类型为 $(r,s)$ 的张量可写为 \(T^{i_1\ldots i_r}{}_{j_1\ldots j_s}\, (e_{i_1}\otimes\cdots\otimes e_{i_r}\otimes e^{j_1}\otimes\cdots\otimes e^{j_s})\)，其中上标为“矢量方向”（逆变指数），下标为“对偶矢量方向”（协变指数）。
 
-### 2.3 braket 记法（量子力学）
+### braket 记法（量子力学）
 
 * 若系统 A、B 的希尔伯特空间为 $\mathcal H_A,\mathcal H_B$，合成系统的态空间为 $\mathcal H_A\otimes\mathcal H_B$（不是直和）。  
 * 直和通常表示“系统 A 或 系统 B”的选择性合并；张量积表示两个系统“同时”存在并可纠缠。  
@@ -200,7 +200,7 @@ https://www.changhai.org/forum/collection_article_load.php?aid=1186358149
 
 * 合态的一般表示为 $\sum_{i,j}c_{ij}\,|e_i\rangle_A\otimes|f_j\rangle_B$，不总能写成单一纯张量（即存在纠缠态）。
 
-### 2.4 直和 vs 张量积 vs “直乘”的关键区别
+### 直和 vs 张量积 vs “直乘”的关键区别
 
 * 直和 $V_1\oplus V_2$：并列合并，维度相加，元素形如 $(v_1,v_2)$.  
 * 笛卡尔积/“直乘” $V_1\times V_2$：集合意义上的有序对；若赋予向量空间结构则等同于直和，但与张量积不同。  
@@ -211,9 +211,9 @@ https://www.changhai.org/forum/collection_article_load.php?aid=1186358149
 
 ---
 
-## 3. 举例：量子力学 & 广义相对论
+## 举例：量子力学 & 广义相对论
 
-### 3.1 量子力学例子：两个自旋-1/2 粒子系统
+### 量子力学例子：两个自旋-1/2 粒子系统
 
 * 单粒子状态空间 $\mathcal H_1\cong\mathbb{C}^2$，基为 $\{|+\rangle,|-\rangle\}$.  
 * 两粒子系统状态空间为 $\mathcal H=\mathcal H_1\otimes\mathcal H_2\cong\mathbb{C}^4$。若误用直和 $\mathcal H_1\oplus\mathcal H_2$，则表示“一个粒子在系统1 或 系统2”，而非“两个粒子同时存在且可能纠缠”。  
@@ -228,7 +228,7 @@ https://www.changhai.org/forum/collection_article_load.php?aid=1186358149
 
     \( |\Psi\rangle=v^i w^j\,(e_i\otimes f_j). \)
 
-### 3.2 广义相对论例子：应力-能量张量与矢量、对偶矢量
+### 广义相对论例子：应力-能量张量与矢量、对偶矢量
 
 * 在广义相对论中，切空间 $T_p(M)$ 是一个四维实向量空间。矢量写作 $v^a$，对偶矢量写作 $w_b$。  
 * “直和”将两个切空间并列 $T_p(M)\oplus T_p(M)$ 在物理上不常用；常见的是张量结构。  
@@ -245,7 +245,7 @@ https://www.changhai.org/forum/collection_article_load.php?aid=1186358149
 
 ---
 
-## 4. 总结与提示
+## 总结与提示
 
 1. 矢量与对偶矢量是不同对象，务必区分上标／下标。  
 2. 直和（或笛卡尔合并）与张量积本质不同：前者为“或／并列”合并，后者为“同时／耦合”合并，维度与元素形式均不同。  

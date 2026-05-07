@@ -7,7 +7,7 @@
 
 -----
 
-# 教程：在 Ubuntu 上部署 Nextcloud 并通过 OpenVPN 安全访问
+# Nextcloud + OpenVPN 部署
 
 本教程将引导您完成以下目标：
 

@@ -1,10 +1,10 @@
-# Debian 系统连接网络打印机（Fuji Xerox DocuPrint C3360）
+# Debian 接网络打印机
 
 本教程说明如何在 Debian 上通过 CUPS 配置内网网络打印机（以 Fuji Xerox DocuPrint C3360 为例）。
 
 https://wiki.debian.org/SystemPrinting
 
-## 一、环境准备
+## 环境准备
 
 在开始前请确保已安装并启用 CUPS 服务。
 
@@ -27,7 +27,7 @@ sudo usermod -aG lpadmin $(whoami)
 ```
 > 注意：执行后建议注销并重新登录或重启，使权限生效。
 
-## 二、获取打印机信息
+## 获取打印机信息
 
 需要知道打印机的内网 IP 地址。示例 IP：`172.27.227.180`
 
@@ -35,7 +35,7 @@ sudo usermod -aG lpadmin $(whoami)
 - 在打印机面板的“网络设置”或“TCP/IP 设置”中查看。
 - 在路由器管理后台的设备列表中查看。
 
-## 三、通过 CUPS Web 界面添加打印机
+## 通过 CUPS Web 界面添加打印机
 
 1. 打开 CUPS 管理页面：`http://localhost:631`
 
@@ -54,7 +54,7 @@ sudo usermod -aG lpadmin $(whoami)
 - Description: `Fuji Xerox DocuPrint C3360`
 - Location: 可选（如 `Office`）
 
-## 四、驱动程序选择（关键）
+## 驱动程序选择（关键）
 
 - 情况 A：使用厂商驱动  
     在 Make 列表选择 `Fuji Xerox` 或 `Xerox`，并在型号中选 `DocuPrint C3360`（如有）。
@@ -65,7 +65,7 @@ sudo usermod -aG lpadmin $(whoami)
 - 情况 C：手动提供 PPD 文件  
     如果有官方 `.ppd` 文件，在上传 PPD 后点击 Add Printer。
 
-## 五、测试与保存设置
+## 测试与保存设置
 
 1. 设置默认选项（例如纸张 A4，颜色 Color），点击 Set Default Options。  
 2. 在打印机详情页的 Maintenance 菜单中选择 Print Test Page。  

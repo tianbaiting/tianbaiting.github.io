@@ -7,13 +7,13 @@ subtitle: 以lorentz vector为例
 
 本例演示如何用 Python 定义一个四维动量（洛伦兹矢量）类，并实现常用的物理操作，如 boost（洛伦兹变换）、矢量加法、极角设置等。
 
-## 1. 导入依赖
+## 导入依赖
 
 ```python
 import numpy as np
 ```
 
-## 2. 定义 LorentzVector 类
+## 定义 LorentzVector 类
 
 ```python
 class LorentzVector:
@@ -79,7 +79,7 @@ class LorentzVector:
         return f"LorentzVector(px={self.px}, py={self.py}, pz={self.pz}, E={self.E})"
 ```
 
-## 3. 物理过程示例函数
+## 物理过程示例函数
 
 下面以质心系与实验室系的四动量变换为例，演示如何使用 LorentzVector 类。
 
@@ -120,6 +120,6 @@ def P_lab(theta_D_c, phi_D_c):
     return P_D_c, P_pro_c
 ```
 
-## 4. 总结
+## 总结
 
 本例展示了如何用 Python 类封装四维动量的常用操作，并结合物理过程进行实际应用。通过合理封装，可以极大提升代码的可读性和复用性。

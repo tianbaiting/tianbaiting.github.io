@@ -1,10 +1,10 @@
-# Detailed Functions of Charged Particle Detectors in the SAMURAI Spectrometer
+# SAMURAI Charged Particle Detectors
 
 The SAMURAI (Superconducting Analyzer for Multi-particles from RAdioIsotope beams) spectrometer is equipped with various charged particle detectors for precise measurement and analysis of particles produced in reactions with radioactive isotope beams. The main functions of each detector are as follows:
 
 ---
 
-## 1. Beam Particle Tracking and Identification
+## Beam Particle Tracking and Identification
 
 These detectors are located upstream of the target and are used to precisely measure the properties of the incident beam particles.
 
@@ -17,7 +17,7 @@ These detectors are located upstream of the target and are used to precisely mea
 
 ---
 
-## 2. Reaction Product (Fragment) Analysis
+## Reaction Product (Fragment) Analysis
 
 These detectors are located downstream of the target and are used to analyze the charged fragments produced in the reaction.
 
@@ -36,7 +36,7 @@ These detectors are located downstream of the target and are used to analyze the
 
 ---
 
-## 3. Light Charged Particle (e.g., Proton) Analysis
+## Light Charged Particle (e.g., Proton) Analysis
 
 These detectors are dedicated to measuring light charged particles emitted in the reaction, such as protons from unbound state decay or knockout reactions.
 

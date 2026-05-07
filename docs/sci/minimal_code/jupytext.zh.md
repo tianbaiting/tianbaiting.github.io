@@ -7,7 +7,7 @@ tag:
   - notebook
 ---
 
-# jupytext 工作流（完整版）
+# jupytext 工作流
 
 本文是可直接迁移到任意仓库的实战教程，目标是：
 
@@ -16,7 +16,7 @@ tag:
 3. 新下载的 `.py` 能快速生成 `.ipynb`。
 4. 在 `commit`、`pull`、`checkout` 后自动同步，减少冲突和无意义 diff。
 
-## 1. 为什么要这样做
+## 为什么要这样做
 
 Jupyter Notebook 的 JSON 文件天然不适合代码评审：
 
@@ -30,22 +30,22 @@ Jupyter Notebook 的 JSON 文件天然不适合代码评审：
 2. 让 Git 只看可读、可审查的 `.py` 文本。
 3. 在不牺牲体验的前提下，把 notebook 纳入工程化流程。
 
-## 2. 适用场景与不适用场景
+## 适用场景与不适用场景
 
-### 2.1 适用场景
+### 适用场景
 
 1. 数据分析、科研计算、可视化报告类仓库。
 2. 团队成员同时使用 JupyterLab/VSCode Notebook。
 3. 需要 PR review、CI 检查、代码归档。
 
-### 2.2 不适用场景
+### 不适用场景
 
 1. notebook 中大量依赖“输出快照”作为审查对象（图像输出必须保留版本化时）。
 2. 团队不接受任何本地 hook 机制。
 
-## 3. 前置条件
+## 前置条件
 
-### 3.1 工具要求
+### 工具要求
 
 建议最低版本：
 
@@ -66,7 +66,7 @@ python3 -m pip install jupytext
 
 如果项目使用 `requirements.txt` 或 `pyproject.toml`，请把 `jupytext` 作为开发依赖写入。
 
-### 3.2 仓库目录约定（推荐）
+### 仓库目录约定（推荐）
 ```text
 repo/
 ├── notebooks/
@@ -88,9 +88,9 @@ repo/
 3. `.githooks/`：仓库内共享 hooks，便于团队一致行为。
 4. `.jupytext.toml`：定义全仓库 notebook 配对策略。
 
-## 4. 核心配置
+## 核心配置
 
-### 4.1 新建 `.jupytext.toml`
+### 新建 `.jupytext.toml`
 
 ```toml
 formats = "ipynb,py:percent"
@@ -104,7 +104,7 @@ cell_metadata_filter = "-all"
 2. `notebook_metadata_filter`：只保留内核和语言等必要元信息，减少 merge 冲突。
 3. `cell_metadata_filter = "-all"`：去除 cell 级元数据，减少无效变更。
 
-### 4.2 `.gitignore` 建议
+### `.gitignore` 建议
 
 推荐加入：
 
@@ -119,7 +119,7 @@ cell_metadata_filter = "-all"
 
 注意：迁移时仍需 `git rm --cached` 取消旧追踪。
 
-## 5. 同步脚本（可复用）
+## 同步脚本（可复用）
 
 新建 `tools/jupytext_sync.py`：
 
@@ -289,9 +289,9 @@ chmod +x tools/jupytext_sync.py
 1. 给脚本添加可执行位，后续可直接被 hook 调用。
 2. 不加可执行位时，部分环境会报 `Permission denied`。
 
-## 6. Git hooks 自动同步
+## Git hooks 自动同步
 
-### 6.1 新建 `.githooks/pre-commit`
+### 新建 `.githooks/pre-commit`
 
 ```bash
 #!/usr/bin/env bash
@@ -309,7 +309,7 @@ python3 tools/jupytext_sync.py --all --stage-updated
 2. `git rev-parse --show-toplevel`：确保在仓库根目录执行。
 3. `--all --stage-updated`：提交前全量同步，并把更新后的 `.py` 自动加入暂存区。
 
-### 6.2 新建 `.githooks/post-merge`
+### 新建 `.githooks/post-merge`
 
 ```bash
 #!/usr/bin/env bash
@@ -327,7 +327,7 @@ python3 tools/jupytext_sync.py --all >/dev/null 2>&1 || true
 2. `>/dev/null 2>&1`：隐藏噪声输出，避免干扰日常 pull。
 3. `|| true`：即使同步失败也不阻断 merge 完成（避免仓库状态被 hook 卡死）。
 
-### 6.3 新建 `.githooks/post-checkout`
+### 新建 `.githooks/post-checkout`
 
 ```bash
 #!/usr/bin/env bash
@@ -344,7 +344,7 @@ python3 tools/jupytext_sync.py --all >/dev/null 2>&1 || true
 1. 切换分支后自动同步，避免“分支 A/B 的 notebook 配对状态不一致”。
 2. 其余逻辑与 `post-merge` 相同：静默执行且不阻断 checkout。
 
-### 6.4 新建 `.githooks/post-rewrite`
+### 新建 `.githooks/post-rewrite`
 
 ```bash
 #!/usr/bin/env bash
@@ -361,7 +361,7 @@ python3 tools/jupytext_sync.py --all >/dev/null 2>&1 || true
 1. `post-rewrite` 覆盖 `rebase`、`commit --amend` 等历史重写场景。
 2. 历史重写后立即同步可避免“旧 `.py` 与新 `.ipynb` 错位”。
 
-### 6.5 启用 hooks
+### 启用 hooks
 
 ```bash
 chmod +x .githooks/pre-commit .githooks/post-merge .githooks/post-checkout .githooks/post-rewrite
@@ -394,11 +394,11 @@ git config --get core.hooksPath
 
 1. 这是预期值，表示后续 commit/pull/checkout 会触发你定义的脚本。
 
-## 7. 迁移已有仓库（重点）
+## 迁移已有仓库（重点）
 
 假设你的仓库中已有大量 `.ipynb` 被追踪。
 
-### 7.1 先为已有 notebook 生成 `.py`
+### 先为已有 notebook 生成 `.py`
 
 ```bash
 python3 tools/jupytext_sync.py --all
@@ -409,7 +409,7 @@ python3 tools/jupytext_sync.py --all
 1. 扫描 `notebooks/` 下所有目标并生成或更新配对 `.py`。
 2. 这是迁移第一步，保证后续取消追踪 `.ipynb` 时不会丢可读源码。
 
-### 7.2 取消 Git 对 `.ipynb` 的追踪（保留本地文件）
+### 取消 Git 对 `.ipynb` 的追踪（保留本地文件）
 
 ```bash
 git ls-files '*.ipynb' | xargs -r git rm --cached
@@ -421,7 +421,7 @@ git ls-files '*.ipynb' | xargs -r git rm --cached
 2. `git rm --cached`：仅从索引删除，不删除工作区文件。
 3. `xargs -r`：当列表为空时不执行命令，避免空参数报错。
 
-### 7.3 添加新文件并提交
+### 添加新文件并提交
 
 ```bash
 git add .jupytext.toml .githooks tools/jupytext_sync.py
@@ -435,15 +435,15 @@ git commit -m "migrate notebooks to jupytext py tracking"
 2. 第二行提交 notebook 对应 `.py`，作为后续唯一追踪对象。
 3. 第三行形成迁移基线提交，便于回溯与团队同步。
 
-## 8. 日常工作流
+## 日常工作流
 
-### 8.1 普通开发
+### 普通开发
 
 1. 你可以继续用 JupyterLab 编辑 `.ipynb`。
 2. 也可以直接编辑 `.py`（更利于重构和 review）。
 3. `git commit` 前，hook 会自动同步并把更新后的 `.py` 重新入暂存区。
 
-### 8.2 从远端更新后
+### 从远端更新后
 
 1. `git pull`、`git checkout` 后会触发同步。
 2. 如果你仍看到不同步，手动运行：
@@ -457,9 +457,9 @@ python3 tools/jupytext_sync.py --all
 1. 这是“手动兜底”的全量同步命令。
 2. 适合在 hook 未启用、CI 复现、或怀疑本地状态脏时执行。
 
-## 9. 新下载 `.py` 如何生成 `.ipynb`
+## 新下载 `.py` 如何生成 `.ipynb`
 
-### 9.1 单文件生成
+### 单文件生成
 
 ```bash
 python3 tools/jupytext_sync.py notebooks/xxx/downloaded.py
@@ -470,7 +470,7 @@ python3 tools/jupytext_sync.py notebooks/xxx/downloaded.py
 1. 传入单个 `.py` 路径时，脚本只处理该文件。
 2. 如果该文件符合 notebook 识别规则，会自动生成配对 `.ipynb`。
 
-### 9.2 推荐写法
+### 推荐写法
 
 下载或新建的 `.py` 建议使用 `# %%` 分块，例如：
 
@@ -489,9 +489,9 @@ x = np.linspace(0, 1, 100)
 
 这样转回 notebook 后，单元结构清晰。
 
-## 10. 团队协作与 CI 建议
+## 团队协作与 CI 建议
 
-### 10.1 团队要求（每位开发者一次性执行）
+### 团队要求（每位开发者一次性执行）
 
 ```bash
 git config core.hooksPath .githooks
@@ -502,7 +502,7 @@ git config core.hooksPath .githooks
 1. 这是“每位成员本地初始化”的关键步骤。
 2. 不执行这条命令，仓库内 hooks 文件不会被 Git 自动使用。
 
-### 10.2 CI 一致性检查
+### CI 一致性检查
 
 在 CI 中加入：
 
@@ -517,7 +517,7 @@ git diff --exit-code
 2. 第二行检查同步后是否有未提交改动。
 3. 若有改动，返回非 0，让 CI 失败，提醒开发者提交同步结果。
 
-### 10.3 大仓库性能优化
+### 大仓库性能优化
 
 如果 notebook 很多、提交较慢，可把 `pre-commit` 从：
 
@@ -537,9 +537,9 @@ python3 tools/jupytext_sync.py --staged --stage-updated
 2. `--staged`：只处理当前暂存相关文件，提交速度更快。
 3. 适合 notebook 数量多、单次 commit 变更范围小的项目。
 
-## 11. 常见问题（FAQ）
+## 常见问题（FAQ）
 
-### 11.1 `.py` 没被识别为 notebook 脚本
+### `.py` 没被识别为 notebook 脚本
 
 排查：
 
@@ -547,17 +547,17 @@ python3 tools/jupytext_sync.py --staged --stage-updated
 2. 文件中是否包含 `# %%` 或 jupytext 头信息。
 3. 是否存在同名 `.ipynb`。
 
-### 11.2 commit 后 `.py` 又变化了
+### commit 后 `.py` 又变化了
 
 这是预期行为：pre-commit 在同步后把 `.py` 规范化。再次执行 `git commit` 即可。
 
-### 11.3 为什么不是直接删除 `.ipynb`
+### 为什么不是直接删除 `.ipynb`
 
 1. `.ipynb` 仍是 notebook 前端的主要编辑载体。
 2. 我们做的是“不追踪”而不是“不存在”。
 3. 本地仍保留 `.ipynb`，只是 Git 历史中只存 `.py`。
 
-## 12. 一键初始化（可复制）
+## 一键初始化（可复制）
 
 下面是一组最小命令（假设你已创建配置文件、脚本、hooks）：
 
@@ -580,7 +580,7 @@ git commit -m "migrate notebooks to jupytext py tracking"
 4. `git rm --cached` 取消 `.ipynb` 追踪但不删本地文件。
 5. 最后 `git add + commit` 固化迁移结果。
 
-## 13. 迁移后的验收清单
+## 迁移后的验收清单
 
 提交前建议检查：
 

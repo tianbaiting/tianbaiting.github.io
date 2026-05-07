@@ -2,7 +2,7 @@
 
 本文介绍如何开发、托管并发布 VS Code 插件。
 
-## 1. 环境准备
+## 环境准备
 
 首先需要安装 Node.js 和 Git。接着使用 npm 安装 Yeoman 和 VS Code 插件生成器：
 
@@ -10,7 +10,7 @@
 npm install -g yo generator-code
 ```
 
-## 2. 创建与开发项目
+## 创建与开发项目
 
 运行以下命令初始化插件项目：
 
@@ -23,7 +23,7 @@ yo code
 2. 按 `F5` 键启动调试，这会打开一个新的“扩展开发宿主”窗口。
 3. 修改 `src/extension.ts` 中的代码，然后在调试控制台使用 `Developer: Reload Window` 查看效果。
 
-## 3. 托管至 GitHub
+## 托管至 GitHub
 
 1. 在 GitHub 上创建一个新的仓库。
 2. 在本地项目根目录执行：
@@ -37,7 +37,7 @@ git remote add origin <你的仓库地址>
 git push -u origin main
 ```
 
-## 4. 发布到 Marketplace
+## 发布到 Marketplace
 
 发布插件需要使用 `vsce` (Visual Studio Code Extensions) 命令行工具。
 

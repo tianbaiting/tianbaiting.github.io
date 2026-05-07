@@ -208,7 +208,7 @@ target_link_libraries(myAnalysis ${ROOT_LIBRARIES})
 
 在不清楚数据结构时，可用 TBrowser 浏览文件内容。 或者使用 TTree::Print() 查看结构 ; 或者 TTree::Show(0) 查看第一条记录; 或者 TTree::Scan("particle") 查看所有记录 ; 或者 TTree::GetListOfBranches() 列出所有分支 或者 TTree::GetBranch("particle")->Print() 查看分支详情。或者使用 TTree::GetBranch("particle")->GetSplitLevel() 查看 split level;或者 tfile->Map() 查看文件映射。
 
-## 1. 传统方式：SetBranchAddress（不推荐新代码）
+## 传统方式：SetBranchAddress（不推荐新代码）
 特点：手动管理指针，容易出错但可微调 I/O。
 
 ```cpp
@@ -238,7 +238,7 @@ void read_legacy() {
 }
 ```
 
-## 2. 现代推荐：TTreeReader
+## 现代推荐：TTreeReader
 
 类型安全，自动按需加载，异常安全。
 
@@ -265,7 +265,7 @@ void read_modern() {
 }
 ```
 
-## 3. 高级分析：RDataFrame
+## 高级分析：RDataFrame
 声明式、支持并行，适合统计分析与画图。
 
 ```cpp

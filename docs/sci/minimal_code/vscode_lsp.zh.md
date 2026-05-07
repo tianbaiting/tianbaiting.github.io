@@ -1,6 +1,6 @@
 
 
-# 如何解决 VS Code 中的 C/C++ `include` 报错问题
+# VS Code C/C++ include 报错
 
 在使用 Visual Studio Code 进行 C/C++ 开发时，一个常见的问题是 IntelliSense 无法找到头文件，导致在 `#include` 指令下出现红色波浪线报错。这通常是因为 VS Code 的 C/C++ 插件不知道项目的包含路径（Include Path）。
 

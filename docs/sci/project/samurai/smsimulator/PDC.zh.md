@@ -2,27 +2,27 @@
 
 ## 参考资料与教学
 
-### 1. 漂移室原理
+### 漂移室原理
 - [漂移室教学材料 (中文)](https://yznkxjs.xml-journal.net/cn/article/pdf/preview/10.7538/yzk.1981.15.01.0116.pdf)
 - [Drift Chamber Tutorial (ICFA 2005)](https://indico.cern.ch/event/426015/contributions/1047606/attachments/906077/1278746/DriftChamber_ICFA2005.pdf)
 - [Drift Chamber Principles (IOP)](https://iopscience.iop.org/article/10.1088/1742-6596/18/1/010/pdf)
 
-### 2. Geant4 模拟
+### Geant4 模拟
 - [Geant4 Simulation Tutorial (Munich 2018)](https://indico.cern.ch/event/709670/contributions/3027829/attachments/1670306/2679293/Munich.pdf)
 
-### 3. PDC 探测器技术文档
+### PDC 探测器技术文档
 - [PDC 详细参数与设计说明](https://www.nishina.riken.jp/ribf/SAMURAI/image/Detector-PDC.pdf)
 - [PDC CAD 截图](https://indico2.riken.jp/event/2752/contributions/11231/attachments/7528/8801/04_EMIS2012_KobayashiT.pdf)
 
 ## PDC 指标
 
-### 1. 设计与用途
+### 设计与用途
 
 PDC探测器（质子漂移室）用于测量与束流速度相近（projectile-rapidity）的质子的动量，放置在SAMURAI磁铁下游。为减少探测器平面数量，PDC采用阴极读出法获取位置信息，阳极平面使用Walenta型漂移室，8毫米漂移长度设计减少阳极线数量。为探测多粒子事件，阴极线采用三种方向：0度、+45度和-45度。
 
 > 注：PDC采用阴极读出（cathode readout）。当电离产生的电子向阳极丝漂移并引发雪崩时，会在附近的阴极条上产生感应电荷，通过读取这些感应电荷来确定粒子的位置。
 
-### 2. 主要参数
+### 主要参数
 
 - 有效面积：1700mm × 800mm
 - 阳极线：金-钨/铼合金，30μm直径，间距16mm，漂移长度8mm
@@ -46,7 +46,7 @@ PDC探测器（质子漂移室）用于测量与束流速度相近（projectile-
 
 代码在https://github.com/tianbaiting/Dpol_smsimulator/blob/main/sim_deuteron/forunderstanding/plot_pdc_wires.py
 
-### 3. 读出方案与发展
+### 读出方案与发展
 
 - 初始方案（已测试）：为减少读出通道，曾测试电荷分割读出法，将阴极条通过电阻串联，每8个条通过一个电荷灵敏前置放大器读出。原型探测器（600mm × 480mm）对X射线取得1mm（rms）位置分辨率，但无法正确处理两个质子事件。
 - 新方案（开发中）：为解决多粒子问题并提高分辨率，开发新读出电路。每个阴极信号直接连接到前置放大器、整形器和采样保持电路，在前端板（FEB）数字化。预计位置分辨率提升约5倍，需约810个读出通道。
@@ -70,29 +70,29 @@ PDC探测器（质子漂移室）用于测量与束流速度相近（projectile-
 
 ---
 
-## 1. 物理模型简述
+## 物理模型简述
 
 - 用 Geant4 构建 PDC 漂移室几何和气体材料。
 - 粒子（如质子）穿过气体时产生电离，能量沉积被记录。
 - 在 SteppingAction 中，判断电离事件是否靠近某根丝（anode wire），将最近距离作为漂移时间，能量沉积作为信号幅度。
 - 忽略电子漂移过程、雪崩增益和信号波形，仅模拟空间分布和能量响应。
 
-## 2. 几何与材料构建
+## 几何与材料构建
 
 - 定义气体混合物：如 75% Ar + 25% i-C4H10，1 atm。
 - 构建漂移室盒体：用 G4Box 或 G4Trap 表示气体体积。
 - 构建丝阵列：用 G4Cylinder 或 G4Tubs 表示阳极丝，按实际位置排布。
 
-## 3. 敏感体设置
+## 敏感体设置
 
 - 将气体体积设置为 Sensitive Detector（SD），在 SD 中记录每一步的能量沉积和位置。
 
-## 4. SteppingAction 实现
+## SteppingAction 实现
 
 - 在 UserSteppingAction 中，判断每一步是否发生在气体体积内。
 
 
-## 5. 数据输出
+## 数据输出
 
 - 每个事件输出所有“点火”信号（可用 TTree/TClonesArray），包括能量、位置、最近丝编号、漂移距离等。
 

@@ -1,4 +1,4 @@
-# 在 Termux 中安装 Ubuntu 桌面环境并运行 VS Code 的终极指南
+# Termux 装 Ubuntu + VS Code
 
 这份文档总结了从零开始，在 Termux 中部署一个完整的 Ubuntu 图形化桌面环境，并成功运行 Visual Studio Code 的所有步骤。本文档包含了针对常见问题（特别是三星设备的后台限制和 VNC 显示问题）的最终解决方案。
 

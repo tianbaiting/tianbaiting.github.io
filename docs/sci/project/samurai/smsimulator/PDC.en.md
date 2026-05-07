@@ -2,27 +2,27 @@
 
 ## References and Tutorials
 
-### 1. Drift Chamber Principles
+### Drift Chamber Principles
 - [Drift Chamber tutorial (Chinese)](https://yznkxjs.xml-journal.net/cn/article/pdf/preview/10.7538/yzk.1981.15.01.0116.pdf)
 - [Drift Chamber Tutorial (ICFA 2005)](https://indico.cern.ch/event/426015/contributions/1047606/attachments/906077/1278746/DriftChamber_ICFA2005.pdf)
 - [Drift Chamber Principles (IOP)](https://iopscience.iop.org/article/10.1088/1742-6596/18/1/010/pdf)
 
-### 2. Geant4 Simulation
+### Geant4 Simulation
 - [Geant4 Simulation Tutorial (Munich 2018)](https://indico.cern.ch/event/709670/contributions/3027829/attachments/1670306/2679293/Munich.pdf)
 
-### 3. PDC Detector Technical Documents
+### PDC Detector Technical Documents
 - [PDC detailed parameters and design](https://www.nishina.riken.jp/ribf/SAMURAI/image/Detector-PDC.pdf)
 - [PDC CAD screenshots](https://indico2.riken.jp/event/2752/contributions/11231/attachments/7528/8801/04_EMIS2012_KobayashiT.pdf)
 
 ## PDC Specifications
 
-### 1. Design and Purpose
+### Design and Purpose
 
 The PDC detector (Proton Drift Chamber) measures momenta of protons near projectile rapidity and is placed downstream of the SAMURAI magnet. To reduce the number of readout planes, PDC uses cathode readout for position information while the anode planes use Walenta-type drift chamber wires. An 8 mm drift distance reduces the number of anode wires. To handle multi-particle events, the cathode strips are arranged in three orientations: 0°, +45°, and -45°.
 
 Note: PDC uses cathode readout. When ionization electrons drift toward the anode wires and cause avalanches, induced charges appear on nearby cathode strips. Reading these induced charges provides particle positions.
 
-### 2. Main Parameters
+### Main Parameters
 
 - Effective area: 1700 mm × 800 mm
 - Anode wires: gold-tungsten/ rhenium alloy, 30 μm diameter, 16 mm spacing, 8 mm drift length
@@ -44,7 +44,7 @@ Anode wire (readout wire) illustration:
 
 Code: https://github.com/tianbaiting/Dpol_smsimulator/blob/main/sim_deuteron/forunderstanding/plot_pdc_wires.py
 
-### 3. Readout Scheme and Development
+### Readout Scheme and Development
 
 - Initial scheme (tested): To reduce readout channels, a charge-division readout was tested where cathode strips were chained through resistors and every 8 strips were read out by one charge-sensitive preamplifier. A prototype chamber (600 mm × 480 mm) achieved ~1 mm (rms) position resolution with X-rays but could not correctly handle two-proton events.
 - New scheme (in development): To address multi-particle events and improve resolution, a new readout circuit is being developed. Each cathode signal connects directly to a preamplifier, shaper, and sample-and-hold circuit, digitized on a front-end board (FEB). Position resolution is expected to improve by about 5×, requiring ~810 readout channels.
@@ -68,28 +68,28 @@ You need to build the PDC detector geometry yourself. Geant4 can simulate ioniza
 
 ---
 
-## 1. Physical Model Summary
+## Physical Model Summary
 
 - Build PDC geometry and gas materials in Geant4.
 - Particles (e.g., protons) ionize the gas and energy depositions are recorded.
 - In SteppingAction, check if an ionization step is near an anode wire; use the nearest distance as drift time and deposited energy as signal amplitude.
 - Ignore electron drift, avalanche gain, and signal shaping — simulate only spatial distribution and energy response.
 
-## 2. Geometry and Materials Construction
+## Geometry and Materials Construction
 
 - Define the gas mixture, e.g., 75% Ar + 25% i-C4H10 at 1 atm.
 - Build the chamber box using G4Box or G4Trap to represent the gas volume.
 - Construct the wire array using G4Cylinder or G4Tubs for anode wires and place them at actual positions.
 
-## 3. Sensitive Detector Setup
+## Sensitive Detector Setup
 
 - Set the gas volume as a Sensitive Detector (SD) and record energy deposition and position for each step in the SD.
 
-## 4. SteppingAction Implementation
+## SteppingAction Implementation
 
 - In UserSteppingAction, check whether the step is in the gas volume and handle recording accordingly.
 
-## 5. Data Output
+## Data Output
 
 - For each event, output all “fired” signals (store in a TTree/TClonesArray), including energy, position, nearest-wire index, drift distance, etc.
 

@@ -2,7 +2,7 @@
 title: Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Description
 ---
 
-# Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Description
+# RIDF Data Block
 
 RIKEN's RIDF (RIBF Data Format) file is a binary file, and its basic unit is the data block (Block). The entire file consists of a series of such data blocks arranged sequentially. Each data block describes specific information, such as raw detector data, event information, scaler data, comments, or status information.
 

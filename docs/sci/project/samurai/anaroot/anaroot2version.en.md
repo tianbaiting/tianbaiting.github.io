@@ -1,4 +1,4 @@
-# ANAROOT Detailed Documentation
+# ANAROOT documentation
 
 ## References
 

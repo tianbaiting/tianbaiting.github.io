@@ -1,6 +1,6 @@
 # 散射理论
 
-## 1. 数学基础 — 希尔伯特空间 (Hilbert Space)
+## 数学基础 — 希尔伯特空间 (Hilbert Space)
 在量子力学中，物理系统的态由希尔伯特空间 $\mathcal{H}$ 中的态矢量描述。希尔伯特空间是带内积 $\langle\cdot|\cdot\rangle$ 的完备矢量空间。
 
 - 内积 (Inner product)：概率幅 $\langle\phi|\psi\rangle$，概率为 $|\langle\phi|\psi\rangle|^2$。
@@ -16,7 +16,7 @@
     $\langle\phi|\psi\rangle=\int_{\mathbb{R}^3}\phi^*(\mathbf{x})\psi(\mathbf{x})\,d^3x.$
     注意平面波 $e^{i\mathbf{k}\cdot\mathbf{x}}$ 为广义本征矢，需用配备希尔伯特空间（rigged Hilbert space）处理。
 
-## 2. 态的极限与 Møller 算符
+## 态的极限与 Møller 算符
 在散射理论中“入/出”态通过 $t\to\mp\infty$ 的极限定义。
 
 - 强极限 (strong limit)：$s\text{-}\lim_{n\to\infty}|\psi_n\rangle=|\psi\rangle$ 当且仅当
@@ -29,7 +29,7 @@ Møller 算符（要求为强极限）将自由演化态映射到相互作用态
 $\Omega_\pm=\lim_{t\to\mp\infty} e^{iHt/\hbar}e^{-iH_0 t/\hbar}.$
 入态/出态定义为 $|\psi^{(\pm)}\rangle=\Omega_\pm|\phi\rangle$。
 
-## 3. S、R、T 矩阵
+## S、R、T 矩阵
 - S 算符（散射算符）：将入态映射到出态
     $|\psi_{out}\rangle=S|\psi_{in}\rangle,\qquad S=\Omega_-^\dagger\Omega_+.$
     矩阵元 $S_{fi}=\langle\phi_f|S|\phi_i\rangle$。
@@ -42,7 +42,7 @@ $\Omega_\pm=\lim_{t\to\mp\infty} e^{iHt/\hbar}e^{-iH_0 t/\hbar}.$
     在壳 (on-shell) 的 $T_{fi}$ 可由相互作用势 $V$ 與入态求得：
     $T_{fi}=\langle\phi_f|V|\psi_i^{(+)}\rangle.$
 
-## 4. Resolvent（G 算符）与 Lippmann–Schwinger 方程
+## Resolvent（G 算符）与 Lippmann–Schwinger 方程
 - 预解算符（Resolvent）：
     $G(z)=(z-H)^{-1},\qquad G_0(z)=(z-H_0)^{-1},\quad z\in\mathbb{C}.$
 - Dyson 恒等式：
@@ -54,7 +54,7 @@ $\Omega_\pm=\lim_{t\to\mp\infty} e^{iHt/\hbar}e^{-iH_0 t/\hbar}.$
     $T(z)=V+V G(z) V = V + V G_0(z) T(z).$
     取 $z=E_i+i0$ 得 $T_{fi}=\langle\phi_f|T(E_i+i0)|\phi_i\rangle$。
 
-## 5. 分波 (Partial Waves) — 选取basis
+## 分波 (Partial Waves) — 选取basis
 对中心势 $V(\mathbf r)=V(r)$，系统旋转不变，$[H,L^2]=[H,L_z]=0$，可取共同本征态 $|E,l,m\rangle$ 或 $|k,l,m\rangle$。
 
 - 平面波的分波展开：
@@ -70,7 +70,7 @@ $\Omega_\pm=\lim_{t\to\mp\infty} e^{iHt/\hbar}e^{-iH_0 t/\hbar}.$
     $f_l(k)=\frac{e^{i\delta_l}\sin\delta_l}{k}=\frac{1}{k\cot\delta_l-ik}.$
 分波法将三维问题化为若干径向一维问题（求 $\delta_l$），低能下常只需少数几个分波。
 
-## 6. 角动量叠加 & Hilbert 空间叠加
+## 角动量叠加 & Hilbert 空间叠加
 
 
 当粒子具有内部自由度（如自旋）或我们考虑多个粒子的系统时，需要用到希尔伯特空间的叠加。

@@ -30,13 +30,13 @@ smsimulator
     └── rootfiles
 ```
 
-### 1. 探测器几何与构建 (Detector Geometry & Construction)
+### 探测器几何与构建 (Detector Geometry & Construction)
 
 - 路径: `sources/smg4lib/detectors/FDC2/`
 - 文件: `FDC2Construction.hh` / `.cc`
 - 功能: 负责 FDC2 的几何结构、材料、位置、角度等定义。
 
-### 2. 敏感探测器与数据采集 (Sensitive Detector & Data Acquisition)
+### 敏感探测器与数据采集 (Sensitive Detector & Data Acquisition)
 
 - 路径: `sources/smg4lib/data/`
 - 文件:
@@ -71,20 +71,20 @@ smsimulator
     - 每个事件包含一个数据数组，数组中的每个元素对应一次有效的 step（通常是主粒子击中 FDC2 的 step）。
     - 后续分析脚本（如 `work/macros/examples/analysis_example.cc`）会读取这些分支，筛选 `fDetectorName == "FDC2"` 的数据进行物理分析。
 
-### 3. 主探测器构建与集成 (Main Detector Construction & Integration)
+### 主探测器构建与集成 (Main Detector Construction & Integration)
 
 - 路径: `sources/projects/sim_samurai21/`
 - 文件:
     - `sim_samurai21.cc`：主程序入口。
     - `src/SAMURAI21DetectorConstruction.cc`：主探测器构建类，负责实例化 FDC2 并挂载敏感探测器。
 
-### 4. 数据分析 (Data Analysis)
+### 数据分析 (Data Analysis)
 
 - 路径: `work/macros/examples/`
 - 文件: `analysis_example.cc`, `analysis_crosstalk_example.cc`
 - 功能: 读取和分析 FDC2 采集的数据。
 
-### 5. 其他辅助库 (Other Helper Libraries)
+### 其他辅助库 (Other Helper Libraries)
 
 - 路径: `sources/smg4lib/action/`
 - 功能: 包含事件、运行、跟踪等动作类，这些类间接影响 FDC2 的数据采集流程。

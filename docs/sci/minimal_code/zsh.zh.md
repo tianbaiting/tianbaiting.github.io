@@ -175,7 +175,7 @@ source ~/.zshrc
 
 ## 故障排除
 
-### 1. 权限问题
+### 权限问题
 ```bash
 # 确保脚本有执行权限
 chmod +x setup_zsh.sh
@@ -184,14 +184,14 @@ chmod +x setup_zsh.sh
 sudo -v
 ```
 
-### 2. 网络连接问题
+### 网络连接问题
 ```bash
 # 测试网络连接
 curl -I https://github.com
 ping -c 3 github.com
 ```
 
-### 3. 插件不生效
+### 插件不生效
 ```bash
 # 重新加载配置
 source ~/.zshrc
@@ -200,7 +200,7 @@ source ~/.zshrc
 ls -la ~/.oh-my-zsh/custom/plugins/
 ```
 
-### 4. Starship不显示
+### Starship不显示
 ```bash
 # 检查starship是否安装
 which starship
@@ -209,7 +209,7 @@ which starship
 echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 ```
 
-### 5. 恢复默认设置
+### 恢复默认设置
 ```bash
 # 切换回bash
 chsh -s /bin/bash

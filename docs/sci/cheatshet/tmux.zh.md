@@ -11,7 +11,7 @@ session（会话）
         └── pane（面板）
 ```
 
-## 一、会话（session）管理
+## 会话（session）管理
 
 ### 会话：命令行
 
@@ -33,7 +33,7 @@ Ctrl+b s        # 列出会话并切换
 
 ---
 
-## 二、窗口（window）管理
+## 窗口（window）管理
 
 ### 窗口：命令行
 
@@ -59,7 +59,7 @@ Ctrl+b 0-9      # 切换窗口编号
 
 ---
 
-## 三、面板（pane）管理
+## 面板（pane）管理
 
 ### 分割
 
@@ -97,7 +97,7 @@ Ctrl+b z        # 放大/恢复 pane
 
 ---
 
-## 四、布局（layout）
+## 布局（layout）
 
 ``` 
 Ctrl+b Space    # 循环布局  
@@ -110,7 +110,7 @@ Ctrl+b Alt+5    # tiled
 
 ---
 
-## 五、复制模式 / 滚动
+## 复制模式 / 滚动
 
 ``` 
 Ctrl+b [        # 进入复制模式  
@@ -137,7 +137,7 @@ PgDn            # 下滚
 
 ---
 
-## 六、缓冲区
+## 缓冲区
 
 ### 缓冲区：快捷键
 
@@ -156,7 +156,7 @@ tmux load-buffer file
 
 ---
 
-## 七、同步输入
+## 同步输入
 
 ``` 
 Ctrl+b : setw synchronize-panes on  
@@ -167,7 +167,7 @@ Ctrl+b : setw synchronize-panes off
 
 ---
 
-## 八、发送命令到 pane
+## 发送命令到 pane
 
 ```bash
 tmux send-keys -t pane 'cmd' Enter
@@ -175,7 +175,7 @@ tmux send-keys -t pane 'cmd' Enter
 
 ---
 
-## 九、服务器管理
+## 服务器管理
 
 ```bash
 tmux kill-server                 # 关闭所有 tmux
@@ -184,7 +184,7 @@ tmux source-file ~/.tmux.conf    # 重新加载配置
 
 ---
 
-## 十、帮助与命令模式
+## 帮助与命令模式
 
 ``` 
 Ctrl+b ?        # 查看所有快捷键  
@@ -193,7 +193,7 @@ Ctrl+b :        # 进入命令模式
 
 ---
 
-## 十一、常见自定义建议
+## 常见自定义建议
 
 set -g mouse on              # 鼠标支持  
 set -g history-limit 10000   # 历史行数  
@@ -202,7 +202,7 @@ bind r source-file ~/.tmux.conf \; display "reloaded"
 
 ---
 
-## 十二、个人高频使用 TOP
+## 个人高频使用 TOP
 
 ``` 
 Ctrl+b c        # 新窗口  
