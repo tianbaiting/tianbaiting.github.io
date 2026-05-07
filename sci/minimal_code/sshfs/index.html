@@ -3679,12 +3679,12 @@ diskutil<span class="w"> </span>unmount<span class="w"> </span>force<span class=
 <p><code>x-systemd.automount</code> 让它按需挂载，避免开机时网络没起来卡住启动。</p>
 <h2 id="为什么远程-bashrc-第一行就要短路非交互保护">为什么远程 <code>.bashrc</code> 第一行就要短路：非交互保护<a class="headerlink" href="#为什么远程-bashrc-第一行就要短路非交互保护" title="Permanent link">#</a></h2>
 <p>sshfs 建连时实际上在远端跑一个非交互的 shell 启动 <code>sftp-server</code>。SSH 会把远端的启动文件（bash 是 <code>~/.bashrc</code>，因为 OpenSSH 对非交互非登录会话默认读 <code>.bashrc</code>）执行一遍。</p>
-<p><strong>关键陷阱</strong>：如果 <code>.bashrc</code> 里有任何往 stdout/stderr 输出的命令——<code>echo "welcome"</code>、<code>fortune</code>、<code>neofetch</code>、<code>conda</code> 的初始化打印、<code>source</code> 一个会 echo 的脚本——这些字节会污染 SFTP 协议流，sshfs 直接挂掉，报：</p>
+<p>关键陷阱：如果 <code>.bashrc</code> 里有任何往 stdout/stderr 输出的命令——<code>echo "welcome"</code>、<code>fortune</code>、<code>neofetch</code>、<code>conda</code> 的初始化打印、<code>source</code> 一个会 echo 的脚本——这些字节会污染 SFTP 协议流，sshfs 直接挂掉，报：</p>
 <div class="highlight"><pre><span></span><code>read: Connection reset by peer
 remote host has disconnected
 </code></pre></div>
 <p>或者挂上但每个操作都报 <code>Input/output error</code>。</p>
-<p>解决方案：在远端 <code>.bashrc</code> **最顶部**加一行守卫，让非交互 shell 立刻返回，跳过后续所有逻辑：</p>
+<p>解决方案：在远端 <code>.bashrc</code> 最顶部加一行守卫，让非交互 shell 立刻返回，跳过后续所有逻辑：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/.bashrc 第一行</span>
 <span class="k">case</span><span class="w"> </span><span class="nv">$-</span><span class="w"> </span><span class="k">in</span>
 <span class="w">    </span>*i*<span class="o">)</span><span class="w"> </span><span class="p">;;</span><span class="w">     </span><span class="c1"># 交互式 shell：$- 包含 &#39;i&#39;，什么都不做，继续往下</span>
@@ -3750,7 +3750,7 @@ remote host has disconnected
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月30日 07:13:23 UTC"><span class="timeago" datetime="2026-04-30T07:13:23+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月30日 07:13:23 UTC">2026-04-30</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月7日 10:55:17 UTC"><span class="timeago" datetime="2026-05-07T10:55:17+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月7日 10:55:17 UTC">2026-05-07</span>
       
         <br>
         创建日期:

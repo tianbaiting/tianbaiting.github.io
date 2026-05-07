@@ -618,7 +618,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/local_rag.zh.md",
-      "size": 14515,
+      "size": 14324,
       "url": "/sci/minimal_code/local_rag/"
     },
     {
@@ -816,7 +816,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/sshfs.zh.md",
-      "size": 3397,
+      "size": 3389,
       "url": "/sci/minimal_code/sshfs/"
     },
     {
@@ -879,7 +879,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/freerdp_disconnect.zh.md",
-      "size": 2012,
+      "size": 1964,
       "url": "/sci/minimal_code/freerdp_disconnect/"
     },
     {
@@ -1185,7 +1185,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/polar_measure_and_axis.zh.md",
-      "size": 12898,
+      "size": 12870,
       "url": "/sci/project/D_polar_exp/polar_measure_and_axis/"
     },
     {
@@ -1284,7 +1284,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/lane_hvh_esym.zh.md",
-      "size": 13859,
+      "size": 13727,
       "url": "/sci/project/D_polar_exp/lane_hvh_esym/"
     },
     {
@@ -1613,6 +1613,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-05-07 09:13:24.306811"
+    "generated_at": "2026-05-07 10:57:18.013601"
   }
 }

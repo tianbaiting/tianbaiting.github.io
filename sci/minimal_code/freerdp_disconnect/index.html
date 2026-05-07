@@ -3671,7 +3671,7 @@
 
 
 <h1 id="freerdp-正确退出">FreeRDP 正确退出<a class="headerlink" href="#freerdp-正确退出" title="Permanent link">#</a></h1>
-<p>用 <code>xfreerdp</code> / <code>wlfreerdp</code> 连 Linux 上的 <code>xrdp</code> 服务时，**关窗口**和**注销**是两件不同的事。混用会留下幽灵进程、占内存，或者反过来——以为只是临时离开，结果上下文全没了。</p>
+<p>用 <code>xfreerdp</code> / <code>wlfreerdp</code> 连 Linux 上的 <code>xrdp</code> 服务时，关窗口和注销是两件不同的事。混用会留下幽灵进程、占内存，或者反过来——以为只是临时离开，结果上下文全没了。</p>
 <h2 id="服务端发生了什么">服务端发生了什么<a class="headerlink" href="#服务端发生了什么" title="Permanent link">#</a></h2>
 <p>Debian 上 <code>xrdp</code> 的默认配置（见 <code>/etc/xrdp/sesman.ini</code>）：</p>
 <div class="highlight"><pre><span></span><code><span class="k">[Sessions]</span>
@@ -3679,7 +3679,7 @@
 <span class="na">KillDisconnected</span><span class="o">=</span><span class="s">false</span><span class="w">     </span><span class="c1"># 断线后 session 不死</span>
 <span class="na">DisconnectedTimeLimit</span><span class="o">=</span><span class="s">0</span><span class="w">    </span><span class="c1"># 不自动定时清理</span>
 </code></pre></div>
-<p>也就是：<strong>断线 ≠ 注销</strong>。断线只是切掉了 client ↔ xrdp 的 TCP 连接；服务端的 X server、窗口管理器、所有打开的 brave/code/编辑器、private dbus-daemon——全都继续在跑，等你下次连回来 resume。</p>
+<p>也就是：断线 ≠ 注销。断线只是切掉了 client ↔ xrdp 的 TCP 连接；服务端的 X server、窗口管理器、所有打开的 brave/code/编辑器、private dbus-daemon——全都继续在跑，等你下次连回来 resume。</p>
 <p>如果你的 dotfile 里给 XRDP session 配了独立 dbus（例如 <code>bin/rdp-session-bus</code>），那个 dbus-daemon 也只在「真正注销」时才被回收。</p>
 <h2 id="两种正确的退出方式">两种正确的退出方式<a class="headerlink" href="#两种正确的退出方式" title="Permanent link">#</a></h2>
 <table>
@@ -3692,12 +3692,12 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Disconnect（断线）</strong>：直接关 freerdp 窗口</td>
+<td>Disconnect（断线）：直接关 freerdp 窗口</td>
 <td>session 留着，所有进程继续跑，下次连回来秒恢复</td>
-<td><strong>绝大多数时候用这个</strong>——这是 RDP 的核心价值</td>
+<td>绝大多数时候用这个——这是 RDP 的核心价值</td>
 </tr>
 <tr>
-<td><strong>Logout（注销）</strong>：在远程桌面里执行 WM 退出</td>
+<td>Logout（注销）：在远程桌面里执行 WM 退出</td>
 <td>WM 退出 → <code>.xsession</code> 退出 → cleanup hook 触发 → dbus-daemon、socket 文件被回收 → xrdp-sesman 收尸整个 X server</td>
 <td>不再需要这个 session；机器要重启；怀疑状态污染想要全新一次</td>
 </tr>
@@ -3711,9 +3711,9 @@
 <p>GNOME / KDE 等：从右上角菜单选「注销」。</p>
 <h2 id="不推荐的几种退出">不推荐的几种「退出」<a class="headerlink" href="#不推荐的几种退出" title="Permanent link">#</a></h2>
 <ul>
-<li><strong><code>kill -9 xfreerdp</code></strong>：等同 disconnect，只是更粗暴。没必要。</li>
-<li><strong><code>Ctrl+Alt+End</code></strong>：在 Windows 客户端是 <code>Ctrl+Alt+Del</code> 的远端等价键，对 Linux/i3 桌面没意义，不会触发任何注销逻辑。</li>
-<li><strong>直接拔网线 / 关物理机</strong>：服务端走 TCP 超时判 disconnect，行为同 disconnect。但本地正在 flush 的进程（同步盘、未保存的编辑器）可能丢数据。少用。</li>
+<li><code>kill -9 xfreerdp</code>：等同 disconnect，只是更粗暴。没必要。</li>
+<li><code>Ctrl+Alt+End</code>：在 Windows 客户端是 <code>Ctrl+Alt+Del</code> 的远端等价键，对 Linux/i3 桌面没意义，不会触发任何注销逻辑。</li>
+<li>直接拔网线 / 关物理机：服务端走 TCP 超时判 disconnect，行为同 disconnect。但本地正在 flush 的进程（同步盘、未保存的编辑器）可能丢数据。少用。</li>
 </ul>
 <h2 id="边角">边角<a class="headerlink" href="#边角" title="Permanent link">#</a></h2>
 <h3 id="我想断线一段时间后自动清理">我想断线一段时间后自动清理<a class="headerlink" href="#我想断线一段时间后自动清理" title="Permanent link">#</a></h3>
@@ -3721,24 +3721,24 @@
 <div class="highlight"><pre><span></span><code><span class="na">KillDisconnected</span><span class="o">=</span><span class="s">true</span>
 <span class="na">DisconnectedTimeLimit</span><span class="o">=</span><span class="s">86400</span><span class="w">   </span><span class="c1"># 24 小时后强制清掉断线 session</span>
 </code></pre></div>
-<p>代价：你以为可以「换地方继续」的远程，超时后变成全新 session，所有上下文丢失。<strong>只有当你主要价值在干净状态、不在 session resume 时才开启</strong>。</p>
+<p>代价：你以为可以「换地方继续」的远程，超时后变成全新 session，所有上下文丢失。只有当你主要价值在干净状态、不在 session resume 时才开启。</p>
 <h3 id="我注销了下次连接会怎样">我注销了，下次连接会怎样？<a class="headerlink" href="#我注销了下次连接会怎样" title="Permanent link">#</a></h3>
 <p><code>xrdp</code> 看到没有 disconnected session 留着，会起一个全新 X server，跑你的 <code>.xsession</code>，重新启动 i3 + autostart 里所有东西。等同于一次完整登录。</p>
 <h3 id="我断线了从另一台机器连接上行不行">我断线了，从另一台机器连接上行不行？<a class="headerlink" href="#我断线了从另一台机器连接上行不行" title="Permanent link">#</a></h3>
-<p>行——<code>xrdp</code> 会把那个持久 session 接管给新 client。原来那台 client 即使再连也只能拿到「session 已被接管」提示。所以你**不需要**先回到原 client 再断线。</p>
+<p>行——<code>xrdp</code> 会把那个持久 session 接管给新 client。原来那台 client 即使再连也只能拿到「session 已被接管」提示。所以你不需要先回到原 client 再断线。</p>
 <h3 id="怎么判断当前-session-是断线复用还是全新">怎么判断当前 session 是「断线复用」还是「全新」？<a class="headerlink" href="#怎么判断当前-session-是断线复用还是全新" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>ps<span class="w"> </span>-o<span class="w"> </span><span class="nv">etime</span><span class="o">=</span><span class="w"> </span>-p<span class="w"> </span><span class="nv">$$</span>
 </code></pre></div>
 <p>在远程桌面里开个终端跑这个，看你的 shell 已经活了多久。如果显示几小时甚至几天 → 是复用的旧 session；如果显示几秒 → 是全新登录。</p>
 <h2 id="一句话总结">一句话总结<a class="headerlink" href="#一句话总结" title="Permanent link">#</a></h2>
-<p><strong>默认 disconnect（关窗口），偶尔 <code>Mod+Shift+E</code> 注销做一次大扫除</strong>。session resume 是 RDP 区别于 SSH 的核心特性，别因为不熟悉退出语义而错误使用。</p>
+<p>默认 disconnect（关窗口），偶尔 <code>Mod+Shift+E</code> 注销做一次大扫除。session resume 是 RDP 区别于 SSH 的核心特性，别因为不熟悉退出语义而错误使用。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月7日 09:12:45 UTC"><span class="timeago" datetime="2026-05-07T09:12:45+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月7日 09:12:45 UTC">2026-05-07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月7日 10:55:17 UTC"><span class="timeago" datetime="2026-05-07T10:55:17+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月7日 10:55:17 UTC">2026-05-07</span>
       
         <br>
         创建日期:

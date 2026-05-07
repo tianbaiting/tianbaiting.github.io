@@ -4067,8 +4067,8 @@
 
 
 <h1 id="本地论文-rag">本地论文 RAG<a class="headerlink" href="#本地论文-rag" title="Permanent link">#</a></h1>
-<p>科研工作者面对的论文越来越多，用浏览器 50 个 tab 打开、 Mendeley 里堆成几千条、Zotero collection 互相重复——这些都不解决"我读过的某篇论文里到底是怎么定义 ε 的"或者"我代码里这个公式和原文一致吗"这类**实际工作中真正卡住的问题**。这篇笔记记录我目前用的本地 RAG 方案：用 <a href="https://github.com/hummat/paperpipe">paperpipe</a> 管论文、用 <a href="https://github.com/yichuan-w/LEANN">LEANN</a> 做本地语义检索，整套不依赖任何云端 API，集成进 Claude Code / Codex / Gemini CLI 的 skill 系统。</p>
-<p>文章先讲什么是 embedding 和 RAG（如果你已经懂可以跳过），再讲我推荐的工具栈和落地配置，最后讨论"知识应该怎么组织"——其中包含一些反直觉的判断，比如**不要给所有论文都写 Markdown 总结**。</p>
+<p>科研工作者面对的论文越来越多，用浏览器 50 个 tab 打开、 Mendeley 里堆成几千条、Zotero collection 互相重复——这些都不解决"我读过的某篇论文里到底是怎么定义 ε 的"或者"我代码里这个公式和原文一致吗"这类实际工作中真正卡住的问题。这篇笔记记录我目前用的本地 RAG 方案：用 <a href="https://github.com/hummat/paperpipe">paperpipe</a> 管论文、用 <a href="https://github.com/yichuan-w/LEANN">LEANN</a> 做本地语义检索，整套不依赖任何云端 API，集成进 Claude Code / Codex / Gemini CLI 的 skill 系统。</p>
+<p>文章先讲什么是 embedding 和 RAG（如果你已经懂可以跳过），再讲我推荐的工具栈和落地配置，最后讨论"知识应该怎么组织"——其中包含一些反直觉的判断，比如不要给所有论文都写 Markdown 总结。</p>
 <hr />
 <h2 id="概念">概念<a class="headerlink" href="#概念" title="Permanent link">#</a></h2>
 <h3 id="文本-embedding">文本 embedding<a class="headerlink" href="#文本-embedding" title="Permanent link">#</a></h3>
@@ -4124,7 +4124,7 @@
 </tr>
 </tbody>
 </table>
-<p>**纯本地运行**只能用前两个。维度高一般质量好但慢；中文文献优先选 <code>bge-m3</code>。</p>
+<p>纯本地运行只能用前两个。维度高一般质量好但慢；中文文献优先选 <code>bge-m3</code>。</p>
 <h3 id="rag">RAG<a class="headerlink" href="#rag" title="Permanent link">#</a></h3>
 <p>RAG 的全套流程：</p>
 <div class="highlight"><pre><span></span><code>                  ┌────────────┐
@@ -4145,12 +4145,12 @@
 </code></pre></div>
 <p>关键点：</p>
 <ol>
-<li><strong>检索</strong>（retrieval）解决"哪些段落和我的问题相关"。靠的是向量相似度，不是关键词匹配。</li>
-<li><strong>生成</strong>（generation）解决"基于这些相关段落，把答案组织出来"。靠的是 LLM 阅读理解。</li>
-<li><strong>引用</strong>（grounding）是 RAG 区别于普通 chatbot 的关键——回答里每个 claim 都要能追溯到某段原文，否则 LLM 会幻觉。</li>
+<li>检索（retrieval）解决"哪些段落和我的问题相关"。靠的是向量相似度，不是关键词匹配。</li>
+<li>生成（generation）解决"基于这些相关段落，把答案组织出来"。靠的是 LLM 阅读理解。</li>
+<li>引用（grounding）是 RAG 区别于普通 chatbot 的关键——回答里每个 claim 都要能追溯到某段原文，否则 LLM 会幻觉。</li>
 </ol>
 <h3 id="何时不需要-rag">何时不需要 RAG<a class="headerlink" href="#何时不需要-rag" title="Permanent link">#</a></h3>
-<p>如果你的语料是 grep 友好的纯文本（Markdown 笔记、代码、LaTeX 源码），<strong>ripgrep 比向量检索更准</strong>——专业术语（"Hamiltonian"、"²P doublet"、"Faddeev"）的精确匹配天然吊打 cosine 相似度。RAG 真正发力是在 PDF / 长论文 / 跨语义表述这种场景。</p>
+<p>如果你的语料是 grep 友好的纯文本（Markdown 笔记、代码、LaTeX 源码），ripgrep 比向量检索更准——专业术语（"Hamiltonian"、"²P doublet"、"Faddeev"）的精确匹配天然吊打 cosine 相似度。RAG 真正发力是在 PDF / 长论文 / 跨语义表述这种场景。</p>
 <p>所以我的实践分两层：</p>
 <table>
 <thead>
@@ -4176,7 +4176,7 @@
 <hr />
 <h2 id="工具">工具<a class="headerlink" href="#工具" title="Permanent link">#</a></h2>
 <h3 id="paperpipe">paperpipe<a class="headerlink" href="#paperpipe" title="Permanent link">#</a></h3>
-<p>paperpipe 不是又一个 Zotero 替代品。它的定位是 <strong>"给 coding agent 提供论文上下文"</strong>：每篇论文加进库时，会自动产出 <code>paper.pdf</code> / <code>source.tex</code> / <code>equations.md</code> / <code>summary.md</code> / <code>tldr.md</code> / <code>notes.md</code> / <code>meta.json</code>。结构化产物可以直接进 LEANN 索引、可以被 Claude Code / Codex / Gemini CLI 的 skill 触发，也可以让你手写实现笔记。</p>
+<p>paperpipe 不是又一个 Zotero 替代品。它的定位是 "给 coding agent 提供论文上下文"：每篇论文加进库时，会自动产出 <code>paper.pdf</code> / <code>source.tex</code> / <code>equations.md</code> / <code>summary.md</code> / <code>tldr.md</code> / <code>notes.md</code> / <code>meta.json</code>。结构化产物可以直接进 LEANN 索引、可以被 Claude Code / Codex / Gemini CLI 的 skill 触发，也可以让你手写实现笔记。</p>
 <div class="highlight"><pre><span></span><code>~/.paperpipe/
 ├── index.json
 ├── .leann/                    # LEANN 索引缓存
@@ -4196,16 +4196,15 @@
 <ul>
 <li>没有图形界面（命令行 + agent skill）</li>
 <li>没有"协作 / 引文样式"功能</li>
-<li>但有 **"论文 ↔ 我的代码"对照核验**这个 niche 卖点（<code>papi-verify</code> / <code>papi-ground</code>）</li>
+<li>但有 "论文 ↔ 我的代码"对照核验这个 niche 卖点（<code>papi-verify</code> / <code>papi-ground</code>）</li>
 </ul>
 <p>适用人群：用 LLM 辅助写代码 / 实现论文方法的人。如果你只是阅读、不实现，Zotero 更合适。</p>
 <h3 id="leann">LEANN<a class="headerlink" href="#leann" title="Permanent link">#</a></h3>
 <p>LEANN 是斯坦福 SkyLab 的开源项目，主要卖点：</p>
 <ul>
-<li><strong>本地优先</strong>——索引存在你自己机器上，不需要任何远程服务</li>
-<li><strong>图索引（HNSW / DiskANN）</strong>——查询快，比 brute force 强一个数量级</li>
-<li><strong>支持 sentence-transformers / Ollama / OpenAI / Anthropic 等多种 embedding 后端</strong></li>
-<li><strong>有交互式终端 UI</strong>（<code>leann ask --interactive</code>）</li>
+<li>本地优先——索引存在你自己机器上，不需要任何远程服务</li>
+<li>图索引（HNSW / DiskANN）——查询快，比 brute force 强一个数量级</li>
+<li>支持 sentence-transformers / Ollama / OpenAI / Anthropic 等多种 embedding 后端- 有交互式终端 UI（<code>leann ask --interactive</code>）</li>
 </ul>
 <p>paperpipe 把 LEANN 包装成 <code>papi index --backend leann</code> 一行命令，连模型下载也代办了。</p>
 <h3 id="安装">安装<a class="headerlink" href="#安装" title="Permanent link">#</a></h3>
@@ -4246,7 +4245,7 @@ papi<span class="w"> </span>add<span class="w"> </span>--pdf<span class="w"> </s
 <span class="w">         </span>--year<span class="w"> </span><span class="m">1996</span><span class="w"> </span>--venue<span class="w"> </span><span class="s2">&quot;Phys. Rep.&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">         </span>-t<span class="w"> </span>faddeev,3N,review
 </code></pre></div>
-<p><code>-t/--tags</code> 是浏览用的（<code>papi list -t faddeev</code>），不影响检索权重，但**养成习惯随手打**——日后翻阅会感谢自己。</p>
+<p><code>-t/--tags</code> 是浏览用的（<code>papi list -t faddeev</code>），不影响检索权重，但养成习惯随手打——日后翻阅会感谢自己。</p>
 <h3 id="建索引">建索引<a class="headerlink" href="#建索引" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 默认用 sentence-transformers/all-MiniLM-L6-v2（90MB，英文）</span>
 papi<span class="w"> </span>index<span class="w"> </span>--backend<span class="w"> </span>leann
@@ -4258,22 +4257,22 @@ papi<span class="w"> </span>index<span class="w"> </span>--backend<span class="w
 </code></pre></div>
 <p>首次会下载 embedding 模型，之后增量更新。索引存在 <code>~/.paperpipe/.leann/indexes/papers/</code>。</p>
 <h3 id="查询">查询<a class="headerlink" href="#查询" title="Permanent link">#</a></h3>
-<p><strong>模式 A：纯本地，零 API（推荐起步）</strong></p>
+<p>模式 A：纯本地，零 API（推荐起步）<br />
 <div class="highlight"><pre><span></span><code>papi<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;How do Faddeev equations decompose the 3N continuum?&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--backend<span class="w"> </span>leann<span class="w"> </span>--leann-provider<span class="w"> </span>simulated
-</code></pre></div>
-<p><code>--leann-provider simulated</code> 意味着只检索、不合成——返回最相关的 chunks 给你。如果是在 Claude Code 对话里，<strong>Claude Code 自己会负责合成答案</strong>，因此不需要本地或云端 LLM。这是最便宜、最干净的路线。</p>
-<p><strong>模式 B：本地 LLM 合成（要先跑 ollama）</strong></p>
+</code></pre></div></p>
+<p><code>--leann-provider simulated</code> 意味着只检索、不合成——返回最相关的 chunks 给你。如果是在 Claude Code 对话里，Claude Code 自己会负责合成答案，因此不需要本地或云端 LLM。这是最便宜、最干净的路线。</p>
+<p>模式 B：本地 LLM 合成（要先跑 ollama）<br />
 <div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>serve<span class="w"> </span><span class="p">&amp;</span>
 ollama<span class="w"> </span>pull<span class="w"> </span>llama3.1:8b
 
 papi<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span>--backend<span class="w"> </span>leann<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--leann-provider<span class="w"> </span>ollama<span class="w"> </span>--leann-model<span class="w"> </span>llama3.1:8b
-</code></pre></div>
+</code></pre></div></p>
 <p>适合不在 Claude Code 里、纯命令行用户。</p>
-<p><strong>模式 C：在 Claude Code 里直接说自然语言</strong></p>
+<p>模式 C：在 Claude Code 里直接说自然语言<br />
 <div class="highlight"><pre><span></span><code>你：对照 arXiv 2303.08813 检查我的 lora_adapter.py 实现是否正确
-</code></pre></div>
+</code></pre></div></p>
 <p><code>papi-verify</code> skill 自动触发，调 <code>papi show lora --level eq</code> 取方程，按 grounding 规则给出符号映射表 + 不一致清单 + 修补方案。这是日常最高频的入口。</p>
 <h3 id="命令速查">命令速查<a class="headerlink" href="#命令速查" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>papi<span class="w"> </span>list<span class="w">                    </span><span class="c1"># 列所有论文</span>
@@ -4290,28 +4289,26 @@ papi<span class="w"> </span>add<span class="w"> </span>--from-file<span class="w
 <h2 id="知识组织">知识组织<a class="headerlink" href="#知识组织" title="Permanent link">#</a></h2>
 <p>这部分是我踩过坑后的判断，可能和你看到的 LLM 时代"知识管理"教程相反。</p>
 <h3 id="pdf-位置">PDF 位置<a class="headerlink" href="#pdf-位置" title="Permanent link">#</a></h3>
-<p><strong>让 paperpipe 管，不要再分散到别处。</strong></p>
-<ul>
-<li>✅ <code>~/.paperpipe/papers/&lt;name&gt;/paper.pdf</code> 是唯一源</li>
-<li>❌ 不要再在 <code>~/Documents/papers/</code> 或项目仓库 <code>dpol/papers/</code> 放副本——双源永远 drift</li>
-<li>❌ 论文不要 commit 进 git——文件大、PDF 二进制、版权复杂</li>
-<li>✅ 想跨机器同步：把 <code>~/.paperpipe/</code> 整体 symlink 到 Dropbox/syncthing 同步盘</li>
-<li>✅ 想阅读：直接 <code>open ~/.paperpipe/papers/lora/paper.pdf</code>，paperpipe 不锁文件</li>
-</ul>
+<p>让 paperpipe 管，不要再分散到别处。<br />
+- ✅ <code>~/.paperpipe/papers/&lt;name&gt;/paper.pdf</code> 是唯一源<br />
+- ❌ 不要再在 <code>~/Documents/papers/</code> 或项目仓库 <code>dpol/papers/</code> 放副本——双源永远 drift<br />
+- ❌ 论文不要 commit 进 git——文件大、PDF 二进制、版权复杂<br />
+- ✅ 想跨机器同步：把 <code>~/.paperpipe/</code> 整体 symlink 到 Dropbox/syncthing 同步盘<br />
+- ✅ 想阅读：直接 <code>open ~/.paperpipe/papers/lora/paper.pdf</code>，paperpipe 不锁文件</p>
 <h3 id="全局还是项目隔离">全局还是项目隔离<a class="headerlink" href="#全局还是项目隔离" title="Permanent link">#</a></h3>
-<p>我的判断：<strong>按"研究领域"分，不按"代码仓库"分</strong>。</p>
+<p>我的判断：按"研究领域"分，不按"代码仓库"分。</p>
 <ul>
 <li>你的 DPOL 实验下面有 Tic-tac、smsimulator、polarimeter 多个子项目，但它们共享 80% 文献——分项目反而要 add 多次</li>
 <li>用 git worktree 做并行开发时，<code>.paperpipe/</code> 在仓库里就跟着 worktree 切，反而碎了</li>
 <li>跨论文的语义检索是 RAG 卖点，强行隔离把卖点废了</li>
 </ul>
-<p>主流做法（Zotero / Obsidian / Mendeley 用户的共识）也是**一个大库**。所以我用单一的 <code>~/.paperpipe/</code>，所有论文进去；如果哪天我开一个完全无关的项目（比如玩量子计算），那时再考虑独立 DB。</p>
+<p>主流做法（Zotero / Obsidian / Mendeley 用户的共识）也是一个大库。所以我用单一的 <code>~/.paperpipe/</code>，所有论文进去；如果哪天我开一个完全无关的项目（比如玩量子计算），那时再考虑独立 DB。</p>
 <p>如果你确实想隔离，paperpipe 走 <code>PAPER_DB_PATH</code> 环境变量：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 进项目自动激活——用 direnv 或 .claude/settings.json</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">PAPER_DB_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PWD</span><span class="s2">/.paperpipe&quot;</span>
 </code></pre></div>
 <h3 id="两种总结">两种总结<a class="headerlink" href="#两种总结" title="Permanent link">#</a></h3>
-<p>这个问题真正的答案是：<strong>取决于你是按"论文"还是按"概念"组织笔记</strong>。这是两件容易被混在一起、但完全不同的工作。</p>
+<p>这个问题真正的答案是：取决于你是按"论文"还是按"概念"组织笔记。这是两件容易被混在一起、但完全不同的工作。</p>
 <h4 id="按论文索引不写">按论文索引：不写<a class="headerlink" href="#按论文索引不写" title="Permanent link">#</a></h4>
 <p>我刚开始也想"读一篇就在 Obsidian 写 3000 字解读、互相 wiki 链接"。试了三个月，结论是——这是低性价比劳动：</p>
 <ul>
@@ -4321,12 +4318,12 @@ papi<span class="w"> </span>add<span class="w"> </span>--from-file<span class="w
 <li>手写"按论文索引"的 KB 三个月不维护就成噪音</li>
 </ul>
 <h4 id="按概念索引必写">按概念索引：必写<a class="headerlink" href="#按概念索引必写" title="Permanent link">#</a></h4>
-<p>这一层是 paperpipe **不能也不该**替代的，必须自己写。原因：</p>
+<p>这一层是 paperpipe 不能也不该替代的，必须自己写。原因：</p>
 <ul>
-<li><strong>论文之间不一致</strong>——同一个量，A 用 <span class="arithmatex">\(\phi\)</span>、B 用 <span class="arithmatex">\(\psi\)</span>，符号约定、归一化、近似层级各不相同。RAG 检索回来的是某一篇的原话，不是统一视角下的解释</li>
-<li><strong>你的研究方向需要一个固定坐标系</strong>——给 ε(jJ) 一个你自己版本的定义，所有论文的差异都映射到这一坐标系上</li>
-<li><strong>概念笔记是写论文/答辩/教学的真正素材</strong>，而不是临时检索来的零散段落</li>
-<li><strong>写概念笔记的过程本身就是理解</strong>（Feynman Technique）</li>
+<li>论文之间不一致——同一个量，A 用 <span class="arithmatex">\(\phi\)</span>、B 用 <span class="arithmatex">\(\psi\)</span>，符号约定、归一化、近似层级各不相同。RAG 检索回来的是某一篇的原话，不是统一视角下的解释</li>
+<li>你的研究方向需要一个固定坐标系——给 ε(jJ) 一个你自己版本的定义，所有论文的差异都映射到这一坐标系上</li>
+<li>概念笔记是写论文/答辩/教学的真正素材，而不是临时检索来的零散段落</li>
+<li>写概念笔记的过程本身就是理解（Feynman Technique）</li>
 </ul>
 <p>我自己的 <code>minimal_theory/</code> 就是这一层。打开 <a href="../../minimal_theory/resolvent/">resolvent.zh.md</a> 你能看到典型结构：</p>
 <div class="highlight"><pre><span></span><code># resolvent
@@ -4343,25 +4340,25 @@ papi<span class="w"> </span>add<span class="w"> </span>--from-file<span class="w
 </code></pre></div>
 <p>特点：</p>
 <ul>
-<li>**按物理概念**编号（不是按论文）</li>
-<li><strong>统一的符号、约定</strong>——你的标准</li>
-<li>**每个 claim 有引用**到原文，但只是 anchor，不是逐篇照搬</li>
-<li><strong>跨多个文献综合</strong>——同一个定义可能出现在 Reed-Simon、Glöckle、Kato 三本书里，你写一遍</li>
+<li>按物理概念编号（不是按论文）</li>
+<li>统一的符号、约定——你的标准</li>
+<li>每个 claim 有引用到原文，但只是 anchor，不是逐篇照搬</li>
+<li>跨多个文献综合——同一个定义可能出现在 Reed-Simon、Glöckle、Kato 三本书里，你写一遍</li>
 </ul>
 <p>paperpipe 里的论文是这一层的引用基础。当你在 <code>minimal_theory/</code> 写 <code>[1] Glöckle 1996</code> 时，那篇论文就在 <code>~/.paperpipe/papers/glockle1996/</code>，能 grep 它的 <code>equations.md</code>，能用 <code>papi-verify</code> 对照你的代码。两层互相引用：概念笔记按物理概念组织、用你自己的符号，paperpipe 按论文索引、保留原文 grounding。</p>
 <h4 id="两类补充笔记">两类补充笔记<a class="headerlink" href="#两类补充笔记" title="Permanent link">#</a></h4>
-<p><strong>(a) <code>papi notes &lt;paper&gt;</code>——实现某篇论文时的具体决定</strong></p>
+<p>(a) <code>papi notes &lt;paper&gt;</code>——实现某篇论文时的具体决定<br />
 <div class="highlight"><pre><span></span><code>papi<span class="w"> </span>notes<span class="w"> </span>faddeev_glockle96
-</code></pre></div>
-<p>写 5–15 行**论文 ↔ 你代码**的桥接：</p>
+</code></pre></div></p>
+<p>写 5–15 行论文 ↔ 你代码的桥接：</p>
 <div class="highlight"><pre><span></span><code><span class="k">-</span><span class="w"> </span>用在 <span class="sb">`Tic-tac/src/core/faddeev_solver/ags_solver.cpp:42`</span>
 <span class="k">-</span><span class="w"> </span>partial-wave decomposition 我去掉了 P-wave 以上耦合（论文 §3.4）
 <span class="k">-</span><span class="w"> </span>关键 figure 是 Fig. 4（不是摘要里那张）
 <span class="k">-</span><span class="w"> </span>我的 Np=30 收敛对齐它的 Np=20，注意 grid spacing 不同
 </code></pre></div>
 <p>这是论文级实现笔记——不可被自动总结替代，但也不试图替代概念层。</p>
-<p><strong>(b) 写论文/答辩时再做主题综述</strong></p>
-<p>不预先建 KB，而是当你要写 PRC/PRL 或准备 talk 时，触发综述工具（比如 <code>systematic-literature-review</code> skill），它临时检索→评分→分组→综述，<strong>用完即焚</strong>。比预先建论文级综述 KB 更合时宜。</p>
+<p>(b) 写论文/答辩时再做主题综述<br />
+不预先建 KB，而是当你要写 PRC/PRL 或准备 talk 时，触发综述工具（比如 <code>systematic-literature-review</code> skill），它临时检索→评分→分组→综述，用完即焚。比预先建论文级综述 KB 更合时宜。</p>
 <h4 id="分工对照">分工对照<a class="headerlink" href="#分工对照" title="Permanent link">#</a></h4>
 <table>
 <thead>
@@ -4404,7 +4401,7 @@ papi<span class="w"> </span>add<span class="w"> </span>--from-file<span class="w
 </tr>
 </tbody>
 </table>
-<p><strong>反对的只有"按论文写 3000 字解读"这一类</strong>——它既被 paperpipe 自动覆盖，又没起到抽象层的作用。其他三层都该写，且角色不同。</p>
+<p>反对的只有"按论文写 3000 字解读"这一类——它既被 paperpipe 自动覆盖，又没起到抽象层的作用。其他三层都该写，且角色不同。</p>
 <h3 id="tag-习惯">tag 习惯<a class="headerlink" href="#tag-习惯" title="Permanent link">#</a></h3>
 <p>这是真正提高效率的小习惯：</p>
 <div class="highlight"><pre><span></span><code>papi<span class="w"> </span>add<span class="w"> </span><span class="m">2303</span>.08813<span class="w"> </span>-t<span class="w"> </span>faddeev,3N,benchmark,190MeV
@@ -4438,7 +4435,7 @@ papi<span class="w"> </span>add<span class="w"> </span>--from-file<span class="w
 </thead>
 <tbody>
 <tr>
-<td><strong>概念骨架</strong>（散射理论 / Faddeev / 谱分解）</td>
+<td>概念骨架（散射理论 / Faddeev / 谱分解）</td>
 <td>博客 <code>minimal_theory/</code></td>
 <td>按物理概念</td>
 <td>跨论文综合，统一你自己的符号；paperpipe 给不了</td>
@@ -4477,11 +4474,11 @@ papi<span class="w"> </span>add<span class="w"> </span>--from-file<span class="w
 </table>
 <h3 id="检索优先级">检索优先级<a class="headerlink" href="#检索优先级" title="Permanent link">#</a></h3>
 <ol>
-<li><strong>个人事项 / lifestyle 问题</strong> → 触发 <code>local-notes-search</code>，grep 我的博客</li>
-<li><strong>项目算法 / 验证 / 物理实现</strong> → grep 当前 <code>&lt;项目&gt;/docs/</code></li>
-<li><strong>论文级问题（"那篇论文怎么定义 X"）</strong> → 触发 <code>papi-ask</code> / <code>papi-ground</code>，走 LEANN</li>
-<li><strong>代码 ↔ 论文一致性</strong> → 触发 <code>papi-verify</code></li>
-<li><strong>以上都没命中</strong> → LLM 一般知识 + 明确标注"非笔记内容"</li>
+<li>个人事项 / lifestyle 问题 → 触发 <code>local-notes-search</code>，grep 我的博客</li>
+<li>项目算法 / 验证 / 物理实现 → grep 当前 <code>&lt;项目&gt;/docs/</code></li>
+<li>论文级问题（"那篇论文怎么定义 X"） → 触发 <code>papi-ask</code> / <code>papi-ground</code>，走 LEANN</li>
+<li>代码 ↔ 论文一致性 → 触发 <code>papi-verify</code></li>
+<li>以上都没命中 → LLM 一般知识 + 明确标注"非笔记内容"</li>
 </ol>
 <p>这个流程靠 skill 系统自动选择，我大多数时候只是用自然语言提问。</p>
 <hr />
@@ -4558,10 +4555,10 @@ papi<span class="w"> </span>add<span class="w"> </span>--from-file<span class="w
 <h2 id="局限">局限<a class="headerlink" href="#局限" title="Permanent link">#</a></h2>
 <p>paperpipe + LEANN 不是银弹，目前还有这些问题：</p>
 <ul>
-<li><strong>OCR</strong>：扫描版 PDF 检索效果差。paperpipe 有 <code>[figures]</code> extra 走 docling，但精度有限。期刊新版 PDF 没问题</li>
-<li><strong>公式检索</strong>：embedding 对 LaTeX 数学符号不敏感，"什么是 ⟨φ|G₀|ψ⟩"这种问题不如直接 grep <code>equations.md</code> 里的 <code>\langle \phi |</code></li>
-<li><strong>多语言</strong>：bge-m3 解决了中英混合，但德文/日文老论文还是会差</li>
-<li><strong>跨论文综合</strong>：LEANN 的 <code>papi ask</code> 走 simulated provider 不会真的"综合"，只是返回 top-k chunks。综合得靠 Claude Code 在对话里完成</li>
+<li>OCR：扫描版 PDF 检索效果差。paperpipe 有 <code>[figures]</code> extra 走 docling，但精度有限。期刊新版 PDF 没问题</li>
+<li>公式检索：embedding 对 LaTeX 数学符号不敏感，"什么是 ⟨φ|G₀|ψ⟩"这种问题不如直接 grep <code>equations.md</code> 里的 <code>\langle \phi |</code></li>
+<li>多语言：bge-m3 解决了中英混合，但德文/日文老论文还是会差</li>
+<li>跨论文综合：LEANN 的 <code>papi ask</code> 走 simulated provider 不会真的"综合"，只是返回 top-k chunks。综合得靠 Claude Code 在对话里完成</li>
 </ul>
 <p>如果哪天上面这些成为瓶颈，可以考虑加 PaperQA2（<code>paperpipe[paperqa]</code>，需要 LLM API key），它的 multi-step retrieval 在跨论文综合上更强，代价是每次 query 0.01–0.05 USD。</p>
 <hr />
@@ -4601,7 +4598,7 @@ papi<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;ho
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月7日 09:12:45 UTC"><span class="timeago" datetime="2026-05-07T09:12:45+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月7日 09:12:45 UTC">2026-05-07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月7日 10:55:17 UTC"><span class="timeago" datetime="2026-05-07T10:55:17+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月7日 10:55:17 UTC">2026-05-07</span>
       
         <br>
         创建日期:

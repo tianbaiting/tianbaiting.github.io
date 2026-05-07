@@ -3887,13 +3887,13 @@
 <p>参考素材：<code>D_nuclear_experiment/note/d_breakup/d_breakup.tex</code>，以及 <code>dpol/toy_DAbreak/docs/physics/04-06</code>（Lane observables、光学输入链、HVH 反演）。</p>
 </blockquote>
 <h2 id="为什么需要这套链路">为什么需要这套链路<a class="headerlink" href="#为什么需要这套链路" title="Permanent link">#</a></h2>
-<p>在 <span class="arithmatex">\((\vec d, pn)\)</span> 破裂反应里，我们想从联合角分布（<span class="arithmatex">\(d^2\sigma/d\Omega_p d\Omega_n\)</span>, <span class="arithmatex">\(A_y\)</span>, <span class="arithmatex">\(A_{yy}\)</span>）反演核物质对称能 <span class="arithmatex">\(S_{\mathrm{sym}}(\rho)\)</span> 与其斜率 <span class="arithmatex">\(L\)</span>。但直接的观测量只接触到核子-核（NA）通道的复光学势；对称能是**核物质**的体性质。</p>
+<p>在 <span class="arithmatex">\((\vec d, pn)\)</span> 破裂反应里，我们想从联合角分布（<span class="arithmatex">\(d^2\sigma/d\Omega_p d\Omega_n\)</span>, <span class="arithmatex">\(A_y\)</span>, <span class="arithmatex">\(A_{yy}\)</span>）反演核物质对称能 <span class="arithmatex">\(S_{\mathrm{sym}}(\rho)\)</span> 与其斜率 <span class="arithmatex">\(L\)</span>。但直接的观测量只接触到核子-核（NA）通道的复光学势；对称能是核物质的体性质。</p>
 <p>桥梁分两段：</p>
 <ol>
-<li><strong>NA 光学势 → Lane 能量依赖参数 <span class="arithmatex">\((V_1^{(0)}, \alpha_V, W_1^{(0)}, \alpha_W)\)</span></strong>：通过 Koning-Delaroche（KD 2003）全局参数化加一组 Lane-ED 四参数描述同位旋不对称项。</li>
-<li><strong>Lane 参数 → <span class="arithmatex">\((S_{\mathrm{sym}}, L)\)</span></strong>：通过 Hugenholtz-Van Hove（HVH）定理，把费米面处的 Lane 实部值与斜率翻译成饱和密度处的对称能与斜率。</li>
+<li>NA 光学势 → Lane 能量依赖参数 <span class="arithmatex">\((V_1^{(0)}, \alpha_V, W_1^{(0)}, \alpha_W)\)</span>：通过 Koning-Delaroche（KD 2003）全局参数化加一组 Lane-ED 四参数描述同位旋不对称项。</li>
+<li>Lane 参数 → <span class="arithmatex">\((S_{\mathrm{sym}}, L)\)</span>：通过 Hugenholtz-Van Hove（HVH）定理，把费米面处的 Lane 实部值与斜率翻译成饱和密度处的对称能与斜率。</li>
 </ol>
-<p>中间还有一道数值关卡：三体 Faddeev/AGS 求解要求**可分势**（分离势），于是引入 **EST（Ernst-Shakin-Thaler）rank-<span class="arithmatex">\(N\)</span> 展开**把 Woods-Saxon 的全复光学势投影到有限秩的可分形式 <span class="arithmatex">\((\lambda, \beta)\)</span>，再进入 AGS 的核。</p>
+<p>中间还有一道数值关卡：三体 Faddeev/AGS 求解要求可分势（分离势），于是引入 EST（Ernst-Shakin-Thaler）rank-<span class="arithmatex">\(N\)</span> 展开把 Woods-Saxon 的全复光学势投影到有限秩的可分形式 <span class="arithmatex">\((\lambda, \beta)\)</span>，再进入 AGS 的核。</p>
 <p>整条流水线可以写成：</p>
 <div class="highlight"><pre><span></span><code>(V1_0, α_V, W1_0, α_W)
          │
@@ -3913,15 +3913,15 @@
    HVH 映射 → (S_sym, L)    —— 第 6 节
 </code></pre></div>
 <h2 id="核子-核光学势kd-2003-骨架">核子-核光学势（KD 2003 骨架）<a class="headerlink" href="#核子-核光学势kd-2003-骨架" title="Permanent link">#</a></h2>
-<p>按 <code>d_breakup.tex</code> 末节的写法，**中心**光学势的实部 <span class="arithmatex">\(V_\tau(E)\)</span> 按能量多项式展开并带同位旋依赖：</p>
+<p>按 <code>d_breakup.tex</code> 末节的写法，中心光学势的实部 <span class="arithmatex">\(V_\tau(E)\)</span> 按能量多项式展开并带同位旋依赖：</p>
 <div class="arithmatex">\[
 V_\tau(E,\delta) = V_0(E) + \tau_3\,V_{\mathrm{sym},1}(E)\,\delta + V_{\mathrm{sym},2}(E)\,\delta^2,
 \]</div>
 <p>其中 <span class="arithmatex">\(\tau_3 = +1\)</span> 对中子、<span class="arithmatex">\(-1\)</span> 对质子，<span class="arithmatex">\(\delta = (N-Z)/A\)</span> 是靶核同位旋不对称度。把等号右边三项分别称为：</p>
 <ul>
-<li><span class="arithmatex">\(V_0(E)\)</span>：<strong>同位旋标量势</strong>（iso-scalar）；</li>
-<li><span class="arithmatex">\(V_{\mathrm{sym},1}(E)\)</span>：<strong>一阶对称势</strong>（Lane 势，<span class="arithmatex">\(\propto \delta\)</span>）；</li>
-<li><span class="arithmatex">\(V_{\mathrm{sym},2}(E)\)</span>：<strong>二阶对称势</strong>（<span class="arithmatex">\(\propto \delta^2\)</span>）。</li>
+<li><span class="arithmatex">\(V_0(E)\)</span>：同位旋标量势（iso-scalar）；</li>
+<li><span class="arithmatex">\(V_{\mathrm{sym},1}(E)\)</span>：一阶对称势（Lane 势，<span class="arithmatex">\(\propto \delta\)</span>）；</li>
+<li><span class="arithmatex">\(V_{\mathrm{sym},2}(E)\)</span>：二阶对称势（<span class="arithmatex">\(\propto \delta^2\)</span>）。</li>
 </ul>
 <p>完整形式还包括虚部体、虚部面、自旋-轨道、库仑项：</p>
 <div class="arithmatex">\[
@@ -3943,7 +3943,7 @@ E_F^{(p)} = -8.4075  + 0.01378\,A,
 V_1^{(n)} = 59.30 - 21.0\,\delta - 0.024\,A,\qquad
 V_1^{(p)} = 59.30 + 21.0\,\delta - 0.024\,A.
 \]</div>
-<p>**符号相反**是 Lane 项在 KD 原始参数化中的直接体现。虚部体 <span class="arithmatex">\(W_V(E)\)</span>、虚部面 <span class="arithmatex">\(W_D(E)\)</span>、几何 <span class="arithmatex">\(R_V, a_V, R_D, a_D, R_C\)</span> 都有相应的解析形式（见 <code>toy_DAbreak</code> 讲义第 5.2 节的完整列表）。</p>
+<p>符号相反是 Lane 项在 KD 原始参数化中的直接体现。虚部体 <span class="arithmatex">\(W_V(E)\)</span>、虚部面 <span class="arithmatex">\(W_D(E)\)</span>、几何 <span class="arithmatex">\(R_V, a_V, R_D, a_D, R_C\)</span> 都有相应的解析形式（见 <code>toy_DAbreak</code> 讲义第 5.2 节的完整列表）。</p>
 <h2 id="lane-关系">Lane 关系<a class="headerlink" href="#lane-关系" title="Permanent link">#</a></h2>
 <h3 id="原始-lane-形式">原始 Lane 形式<a class="headerlink" href="#原始-lane-形式" title="Permanent link">#</a></h3>
 <p>Lane 原始的等价中子/质子势写法：</p>
@@ -3955,9 +3955,9 @@ U_p = U_0 - 4\,U_1\,\frac{N-Z}{A} + V_C,
 <div class="arithmatex">\[
 U_\tau = U_0 + \tau_3\,U_1\,\delta \quad (\tau_3 = \pm 1).
 \]</div>
-<p>这把 <span class="arithmatex">\((n, p)\)</span> 的光学势差额归结到一个**同位旋矢量**分量 <span class="arithmatex">\(U_1\)</span>。从物理上看，<span class="arithmatex">\(U_1 &gt; 0\)</span> 时，中子在中子过剩核中比在对称核中感到更深的实势（中子"不想进来"，因为价中子已多），这与对称能表达式一致。</p>
+<p>这把 <span class="arithmatex">\((n, p)\)</span> 的光学势差额归结到一个同位旋矢量分量 <span class="arithmatex">\(U_1\)</span>。从物理上看，<span class="arithmatex">\(U_1 &gt; 0\)</span> 时，中子在中子过剩核中比在对称核中感到更深的实势（中子"不想进来"，因为价中子已多），这与对称能表达式一致。</p>
 <h3 id="叠加能量依赖lane-ed-四参数">叠加能量依赖：Lane-ED 四参数<a class="headerlink" href="#叠加能量依赖lane-ed-四参数" title="Permanent link">#</a></h3>
-<p>KD 2003 已经含一个**能量无关**的 Lane 不对称项（来自 <span class="arithmatex">\(V_1^{(n/p)}\)</span> 和 <span class="arithmatex">\(D_1^{(n/p)}\)</span>）。在此之上，对称能反演所需的自由度来自对 <span class="arithmatex">\(U_1\)</span> 的**能量依赖**建模。<code>toy_DAbreak</code> 采用最小的四参数线性模型：</p>
+<p>KD 2003 已经含一个能量无关的 Lane 不对称项（来自 <span class="arithmatex">\(V_1^{(n/p)}\)</span> 和 <span class="arithmatex">\(D_1^{(n/p)}\)</span>）。在此之上，对称能反演所需的自由度来自对 <span class="arithmatex">\(U_1\)</span> 的能量依赖建模。<code>toy_DAbreak</code> 采用最小的四参数线性模型：</p>
 <div class="arithmatex">\[
 V_1(E) = V_1^{(0)} + \alpha_V\,E,\qquad
 W_1(E) = W_1^{(0)} + \alpha_W\,E.
@@ -4007,7 +4007,7 @@ V_n - V_p = 2\,V_1(E) = 2\bigl[V_1^{(0)} + \alpha_V\,E\bigr],
 </tbody>
 </table>
 <h2 id="从-vr-e-到分波相移numerov">从 <span class="arithmatex">\(V(r, E)\)</span> 到分波相移：Numerov<a class="headerlink" href="#从-vr-e-到分波相移numerov" title="Permanent link">#</a></h2>
-<p>拿到能量依赖的 WS 深度 <span class="arithmatex">\(V_{\mathrm{tot}}(E)+iW_{\mathrm{tot}}(E)\)</span> 之后，在径向网格上解**径向 Schrödinger**（对每个 <span class="arithmatex">\(l\)</span>，每种电荷，支撑能量集合 <span class="arithmatex">\(E_i\)</span>）：</p>
+<p>拿到能量依赖的 WS 深度 <span class="arithmatex">\(V_{\mathrm{tot}}(E)+iW_{\mathrm{tot}}(E)\)</span> 之后，在径向网格上解径向 Schrödinger（对每个 <span class="arithmatex">\(l\)</span>，每种电荷，支撑能量集合 <span class="arithmatex">\(E_i\)</span>）：</p>
 <div class="arithmatex">\[
 \!\left[\frac{d^2}{dr^2} + k^2 - \frac{l(l+1)}{r^2} - \frac{2\mu}{(\hbar c)^2}\bigl(V(r) + iW(r) + V_C(r)\bigr)\right]\!u_l(r) = 0.
 \]</div>
@@ -4031,17 +4031,17 @@ V_C(r) =
 \]</div>
 <p>输出为分波相移 <span class="arithmatex">\(\delta_l^{(n/p)}(E)\)</span> 和径向波函数 <span class="arithmatex">\(\psi_l(r; E)\)</span>，喂给下一步 EST 展开。</p>
 <h2 id="est-rank-n-可分势展开">EST Rank-<span class="arithmatex">\(N\)</span> 可分势展开<a class="headerlink" href="#est-rank-n-可分势展开" title="Permanent link">#</a></h2>
-<p>三体 AGS 积分方程对**两体 T-矩阵**要求**可分势**（separable）以保持核紧致、数值可解。Yamaguchi rank-1 形式是最简单的例子：</p>
+<p>三体 AGS 积分方程对两体 T-矩阵要求可分势（separable）以保持核紧致、数值可解。Yamaguchi rank-1 形式是最简单的例子：</p>
 <div class="arithmatex">\[
 V_{\mathrm{sep}}(k, k') = \lambda\,g(k)\,g(k'),\qquad g(k) = \frac{1}{k^2 + \beta^2}.
 \]</div>
-<p>EST（Ernst-Shakin-Thaler）给出一种把**全势** <span class="arithmatex">\(V(r, E)\)</span> 投影成 rank-<span class="arithmatex">\(N\)</span> 可分形式的系统程序，核心是选 <span class="arithmatex">\(N\)</span> 个支撑能量 <span class="arithmatex">\(E_i\)</span> 与对应的 on-shell 波函数 <span class="arithmatex">\(\psi_i(r)\)</span>。</p>
+<p>EST（Ernst-Shakin-Thaler）给出一种把全势 <span class="arithmatex">\(V(r, E)\)</span> 投影成 rank-<span class="arithmatex">\(N\)</span> 可分形式的系统程序，核心是选 <span class="arithmatex">\(N\)</span> 个支撑能量 <span class="arithmatex">\(E_i\)</span> 与对应的 on-shell 波函数 <span class="arithmatex">\(\psi_i(r)\)</span>。</p>
 <h3 id="形状因子form-factor">形状因子（form factor）<a class="headerlink" href="#形状因子form-factor" title="Permanent link">#</a></h3>
 <p>对每个 <span class="arithmatex">\(l\)</span> 和每个支撑能量 <span class="arithmatex">\(E_i\)</span>，</p>
 <div class="arithmatex">\[
 \phi_i^{(l)}(q) = \int_0^\infty dr\,r\,j_l\!\bigl(q r / \hbar c\bigr)\,V(r; E_i)\,\psi_l(r; E_i).
 \]</div>
-<p>这是**分波 t-matrix 的谱投影**：用 <span class="arithmatex">\(\psi_l(r; E_i)\)</span> 作为"优先再现"的态，保证 rank-<span class="arithmatex">\(N\)</span> 投影在支撑能量上严格等价于原始势。</p>
+<p>这是分波 t-matrix 的谱投影：用 <span class="arithmatex">\(\psi_l(r; E_i)\)</span> 作为"优先再现"的态，保证 rank-<span class="arithmatex">\(N\)</span> 投影在支撑能量上严格等价于原始势。</p>
 <h3 id="bateman-矩阵与-lambda">Bateman 矩阵与 <span class="arithmatex">\(\Lambda\)</span><a class="headerlink" href="#bateman-矩阵与-lambda" title="Permanent link">#</a></h3>
 <p>Bateman 矩阵定义为</p>
 <div class="arithmatex">\[
@@ -4061,9 +4061,9 @@ V_{\mathrm{sep}}^{(l)}(q, q') = \sum_{i,j=1}^{N} \phi_i^{(l)}(q)\,\Lambda_{ij}\,
 \]</div>
 <p><code>toy_DAbreak</code> 固定 <span class="arithmatex">\(N = \mathrm{rank} = 3\)</span>，支撑能量取 <span class="arithmatex">\((25, 75, 150)\)</span> MeV，分别覆盖低 / 中 / 高能区。对 <span class="arithmatex">\(3\times 3\)</span> 直接用 Cramer 展开求逆。</p>
 <h3 id="为什么-n3且支撑能量分散">为什么 <span class="arithmatex">\(N=3\)</span>、且支撑能量分散<a class="headerlink" href="#为什么-n3且支撑能量分散" title="Permanent link">#</a></h3>
-<p>每一分波 <span class="arithmatex">\(l\)</span> 的 EST 展开通过"在 <span class="arithmatex">\(E_i\)</span> 处严格再现"来吸收能量依赖：rank = 3 让 <span class="arithmatex">\(s, p, d\)</span> 波分别偏重低、中、高能的势形，保证**Lane 能量斜率** <span class="arithmatex">\(\alpha_V\)</span> 有独立的投影信号——否则四参数 <span class="arithmatex">\((V_1^{(0)}, \alpha_V, W_1^{(0)}, \alpha_W)\)</span> 会在单一能量处被压成两个标量（实 + 虚），秩亏，反演不可辨识。</p>
+<p>每一分波 <span class="arithmatex">\(l\)</span> 的 EST 展开通过"在 <span class="arithmatex">\(E_i\)</span> 处严格再现"来吸收能量依赖：rank = 3 让 <span class="arithmatex">\(s, p, d\)</span> 波分别偏重低、中、高能的势形，保证Lane 能量斜率 <span class="arithmatex">\(\alpha_V\)</span> 有独立的投影信号——否则四参数 <span class="arithmatex">\((V_1^{(0)}, \alpha_V, W_1^{(0)}, \alpha_W)\)</span> 会在单一能量处被压成两个标量（实 + 虚），秩亏，反演不可辨识。</p>
 <h3 id="born-匹配回到-lambda-beta">Born 匹配：回到 <span class="arithmatex">\((\lambda, \beta)\)</span><a class="headerlink" href="#born-匹配回到-lambda-beta" title="Permanent link">#</a></h3>
-<p>为了把 rank-<span class="arithmatex">\(N\)</span> 结果最终"压"回 AGS 基矩阵实际使用的 rank-1 形式（出于计算代价与相位保留的折衷），做一步 <strong>Born K-matrix 匹配</strong>：</p>
+<p>为了把 rank-<span class="arithmatex">\(N\)</span> 结果最终"压"回 AGS 基矩阵实际使用的 rank-1 形式（出于计算代价与相位保留的折衷），做一步 Born K-matrix 匹配：</p>
 <div class="arithmatex">\[
 B_l(k) = \int_0^\infty dr\,r^2\,j_l(k r)^2\,V_{\mathrm{WS}}(r).
 \]</div>
@@ -4076,7 +4076,7 @@ B_l(k) = \int_0^\infty dr\,r^2\,j_l(k r)^2\,V_{\mathrm{WS}}(r).
 \sqrt{R} \equiv \sqrt{\frac{|B_1|}{|B_2|}},\qquad
 \beta^2 = \frac{k_2^2 - \sqrt{R}\,k_1^2}{\sqrt{R} - 1}.
 \]</div>
-<p><span class="arithmatex">\(\lambda\)</span> 的比值（<strong>复数</strong>，保留相位）：</p>
+<p><span class="arithmatex">\(\lambda\)</span> 的比值（复数，保留相位）：</p>
 <div class="arithmatex">\[
 \frac{\lambda_{pA}}{\lambda_{nA}}
 = \frac{B^{(pA)}(k_1)\bigl(p_1^{(pA)\,2} + \beta_{pA}^2\bigr)^{2}}
@@ -4098,11 +4098,11 @@ E(\rho, \delta) = E(\rho, 0) + E_{\mathrm{sym},2}(\rho)\,\delta^2 + E_{\mathrm{s
 \]</div>
 <p>通常只保留二阶项，<span class="arithmatex">\(S_{\mathrm{sym}}(\rho) \equiv E_{\mathrm{sym},2}(\rho)\)</span>。</p>
 <h3 id="hugenholtz-van-hove-定理">Hugenholtz-Van Hove 定理<a class="headerlink" href="#hugenholtz-van-hove-定理" title="Permanent link">#</a></h3>
-<p>**HVH 定理**给出无穷自束缚费米系统在零温的普适关系：</p>
+<p>HVH 定理给出无穷自束缚费米系统在零温的普适关系：</p>
 <div class="arithmatex">\[
 E_F = \frac{d\xi}{d\rho} = E + \rho\,\frac{dE}{d\rho} = E + \frac{P}{\rho}.
 \]</div>
-<p>即**费米面处的单粒子能等于每核子能加压强份额**。对中子/质子分开：</p>
+<p>即费米面处的单粒子能等于每核子能加压强份额。对中子/质子分开：</p>
 <div class="arithmatex">\[
 t(k_F^n) + U_n(\rho, \delta, k_F^n) = \frac{\partial\xi}{\partial\rho_n},\qquad
 t(k_F^p) + U_p(\rho, \delta, k_F^p) = \frac{\partial\xi}{\partial\rho_p},
@@ -4153,9 +4153,9 @@ E_{\mathrm{sym},2}(\rho)
 \]</div>
 <p>三项的物理含义：</p>
 <ol>
-<li><span class="arithmatex">\(\tfrac{1}{3}\,t(k_F)\)</span>：**自由费米动能**的同位旋贡献；</li>
-<li><span class="arithmatex">\(\tfrac{1}{6}(\partial U_0/\partial k)\,k_F\)</span>：<strong>同位旋标量势的动量依赖</strong>（有效质量）贡献；</li>
-<li><span class="arithmatex">\(\tfrac{1}{2}\,U_{\mathrm{sym},1}(\rho, k_F)\)</span>：<strong>Lane 实部在费米面上的值</strong>。</li>
+<li><span class="arithmatex">\(\tfrac{1}{3}\,t(k_F)\)</span>：自由费米动能的同位旋贡献；</li>
+<li><span class="arithmatex">\(\tfrac{1}{6}(\partial U_0/\partial k)\,k_F\)</span>：同位旋标量势的动量依赖（有效质量）贡献；</li>
+<li><span class="arithmatex">\(\tfrac{1}{2}\,U_{\mathrm{sym},1}(\rho, k_F)\)</span>：Lane 实部在费米面上的值。</li>
 </ol>
 <h3 id="引入有效质量-mm">引入有效质量 <span class="arithmatex">\(m^*/m\)</span><a class="headerlink" href="#引入有效质量-mm" title="Permanent link">#</a></h3>
 <p>把同位旋标量势的动量依赖吸收进有效质量：</p>
@@ -4182,7 +4182,7 @@ L = 2\,S_{\mathrm{sym}} + 3\gamma\,U_1(T_F) + 3 k_F\,\left.\frac{dU_1}{dk}\right
 \]</div>
 <p>其中</p>
 <ul>
-<li><span class="arithmatex">\(\gamma\)</span> 是 <span class="arithmatex">\(U_0\)</span> 的**密度依赖指数**（<span class="arithmatex">\(U_0 \propto \rho^\gamma\)</span>），toy 模型取 <span class="arithmatex">\(\gamma = 0.30\)</span>；</li>
+<li><span class="arithmatex">\(\gamma\)</span> 是 <span class="arithmatex">\(U_0\)</span> 的密度依赖指数（<span class="arithmatex">\(U_0 \propto \rho^\gamma\)</span>），toy 模型取 <span class="arithmatex">\(\gamma = 0.30\)</span>；</li>
 <li><span class="arithmatex">\(dU_1/dk\)</span> 通过链式法则由 <span class="arithmatex">\(\alpha_V\)</span> 给出：</li>
 </ul>
 <div class="arithmatex">\[
@@ -4191,7 +4191,7 @@ L = 2\,S_{\mathrm{sym}} + 3\gamma\,U_1(T_F) + 3 k_F\,\left.\frac{dU_1}{dk}\right
 \]</div>
 <p>因为 <span class="arithmatex">\(U_1(E) = V_1^{(0)} + \alpha_V E\)</span> 且 <span class="arithmatex">\(E = (\hbar c)^2 k^2 / (2 m^*)\)</span>（在有效质量框架里）。</p>
 <h3 id="从光学势v到核物质单粒子势u">从光学势（<span class="arithmatex">\(V\)</span>）到核物质单粒子势（<span class="arithmatex">\(U\)</span>）<a class="headerlink" href="#从光学势v到核物质单粒子势u" title="Permanent link">#</a></h3>
-<p>注意**光学势 <span class="arithmatex">\(V_\tau(E, \delta)\)</span>** 与**单粒子势 <span class="arithmatex">\(U_\tau(\rho, k, \delta)\)</span>** 形式相似却定义不同：前者随**入射动能 <span class="arithmatex">\(E\)</span><strong>，后者随**费米面内动量 <span class="arithmatex">\(k\)</span></strong>。两者通过 <span class="arithmatex">\(T(E)\)</span> 转换：</p>
+<p>注意光学势 <span class="arithmatex">\(V_\tau(E, \delta)\)</span> 与单粒子势 <span class="arithmatex">\(U_\tau(\rho, k, \delta)\)</span> 形式相似却定义不同：前者随入射动能 <span class="arithmatex">\(E\)</span>，后者随费米面内动量 <span class="arithmatex">\(k\)</span>。两者通过 <span class="arithmatex">\(T(E)\)</span> 转换：</p>
 <div class="arithmatex">\[
 E = T + \mathrm{Re}\,U_0(T) + \mathrm{Re}\,U_1(T),
 \]</div>
@@ -4214,7 +4214,7 @@ U_{\mathrm{sym},2}(T(E)) &amp;= V_{\mathrm{sym},2}\,\mu + \zeta\,V_{\mathrm{sym}
 \zeta = \frac{\partial V_{\mathrm{sym},1}}{\partial E},\qquad
 \vartheta = \frac{\partial^{2} V_0}{\partial E^{2}}.
 \]</div>
-<p><code>toy_DAbreak</code> 的实现直接用 <span class="arithmatex">\(V_1(T_F)\)</span> 代 <span class="arithmatex">\(U_1(T_F)\)</span>、并以 <code>m_star_ratio = 0.70</code> 固定 <span class="arithmatex">\(\mu \leftrightarrow m^*/m\)</span>，省掉 <span class="arithmatex">\(E\to T\)</span> 的自洽迭代。这是一种**刚性 HVH 映射**，足够作为闭环反演的自洽代价函数，但不是实验级定量模型。</p>
+<p><code>toy_DAbreak</code> 的实现直接用 <span class="arithmatex">\(V_1(T_F)\)</span> 代 <span class="arithmatex">\(U_1(T_F)\)</span>、并以 <code>m_star_ratio = 0.70</code> 固定 <span class="arithmatex">\(\mu \leftrightarrow m^*/m\)</span>，省掉 <span class="arithmatex">\(E\to T\)</span> 的自洽迭代。这是一种刚性 HVH 映射，足够作为闭环反演的自洽代价函数，但不是实验级定量模型。</p>
 <h3 id="数值标定默认背景参数">数值标定（默认背景参数）<a class="headerlink" href="#数值标定默认背景参数" title="Permanent link">#</a></h3>
 <p>令 <span class="arithmatex">\(\rho_0 = 0.16\,\mathrm{fm}^{-3}\)</span>，<span class="arithmatex">\(m^*/m = 0.70\)</span>，<span class="arithmatex">\(\gamma = 0.30\)</span>：</p>
 <ul>
@@ -4232,7 +4232,7 @@ S_{\mathrm{sym}} \approx 17.5 + 3.4 \approx 20.9\ \mathrm{MeV}.
 <p>有了上述链路，四参数 <span class="arithmatex">\((V_1^{(0)}, \alpha_V, W_1^{(0)}, \alpha_W)\)</span> 成为 LM 拟合的唯一自由量。<code>run_closed_loop</code> 流程：</p>
 <ol>
 <li>用 truth Lane 正演生成伪观测 <span class="arithmatex">\(d^2\sigma_{\mathrm{truth}}[\mathrm{bin}]\)</span>；</li>
-<li>从 bounds 中点出发做 LM 拟合（目标是相对残差），每次评估都要**重跑一次完整 AGS**；</li>
+<li>从 bounds 中点出发做 LM 拟合（目标是相对残差），每次评估都要重跑一次完整 AGS；</li>
 <li>对 fit 与 truth 分别 <code>compute_hvh</code>；</li>
 <li>分级审计：参数 5%、<span class="arithmatex">\(S_{\mathrm{sym}}\)</span> 10%、<span class="arithmatex">\(L\)</span> 20%。</li>
 </ol>
@@ -4313,7 +4313,7 @@ S_{\mathrm{sym}} \approx 17.5 + 3.4 \approx 20.9\ \mathrm{MeV}.
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月7日 09:12:45 UTC"><span class="timeago" datetime="2026-05-07T09:12:45+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月7日 09:12:45 UTC">2026-05-07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月7日 10:55:17 UTC"><span class="timeago" datetime="2026-05-07T10:55:17+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月7日 10:55:17 UTC">2026-05-07</span>
       
         <br>
         创建日期:
