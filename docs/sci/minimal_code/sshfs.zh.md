@@ -76,7 +76,7 @@ user@host:/data  /home/me/mnt/server  fuse.sshfs  noauto,x-systemd.automount,_ne
 
 sshfs 建连时实际上在远端跑一个非交互的 shell 启动 `sftp-server`。SSH 会把远端的启动文件（bash 是 `~/.bashrc`，因为 OpenSSH 对非交互非登录会话默认读 `.bashrc`）执行一遍。
 
-**关键陷阱**：如果 `.bashrc` 里有任何往 stdout/stderr 输出的命令——`echo "welcome"`、`fortune`、`neofetch`、`conda` 的初始化打印、`source` 一个会 echo 的脚本——这些字节会污染 SFTP 协议流，sshfs 直接挂掉，报：
+关键陷阱：如果 `.bashrc` 里有任何往 stdout/stderr 输出的命令——`echo "welcome"`、`fortune`、`neofetch`、`conda` 的初始化打印、`source` 一个会 echo 的脚本——这些字节会污染 SFTP 协议流，sshfs 直接挂掉，报：
 
 ```
 read: Connection reset by peer
@@ -85,7 +85,7 @@ remote host has disconnected
 
 或者挂上但每个操作都报 `Input/output error`。
 
-解决方案：在远端 `.bashrc` **最顶部**加一行守卫，让非交互 shell 立刻返回，跳过后续所有逻辑：
+解决方案：在远端 `.bashrc` 最顶部加一行守卫，让非交互 shell 立刻返回，跳过后续所有逻辑：
 
 ```bash
 # ~/.bashrc 第一行

@@ -227,7 +227,7 @@ $$
 
 ## 同时存在矢量极化与张量极化的情况
 
-§7 假设束流只带张量极化 ($P_{zz}$, $P_z = 0$)。真实的 RIKEN 极化离子源由不同 RF 跃迁态叠加产生，一般同时带有矢量极化 $P_z$ 和张量极化 $P_{zz}$。此时单一极化轴 $(\beta,\phi)$ 加两个幅度一共有 **4 个未知数** $(P_z, P_{zz}, \beta, \phi)$。
+§7 假设束流只带张量极化 ($P_{zz}$, $P_z = 0$)。真实的 RIKEN 极化离子源由不同 RF 跃迁态叠加产生，一般同时带有矢量极化 $P_z$ 和张量极化 $P_{zz}$。此时单一极化轴 $(\beta,\phi)$ 加两个幅度一共有 4 个未知数 $(P_z, P_{zz}, \beta, \phi)$。
 
 ### 极化分量的完整表达
 
@@ -273,7 +273,7 @@ $$
 \mathcal{R}_{12} \equiv \frac{\bar{\sigma}(\theta_1)}{\bar{\sigma}(\theta_2)} = \frac{\sigma_0(\theta_1)}{\sigma_0(\theta_2)}\cdot\frac{1 + \tfrac{1}{4}(3\cos^2\beta - 1)P_{zz} A_{zz}(\theta_1)}{1 + \tfrac{1}{4}(3\cos^2\beta - 1)P_{zz} A_{zz}(\theta_2)},
 $$
 
-则单台 polarimeter 共提供 **4 个独立观测量** $\{\mathcal{A}_{LR},\mathcal{A}_{UD},\mathcal{A}_{LR-UD},\mathcal{R}_{12}\}$，与 4 个未知数数目相同。但这些方程对 $(\beta,\phi)$ 存在多重简并：
+则单台 polarimeter 共提供 4 个独立观测量 $\{\mathcal{A}_{LR},\mathcal{A}_{UD},\mathcal{A}_{LR-UD},\mathcal{R}_{12}\}$，与 4 个未知数数目相同。但这些方程对 $(\beta,\phi)$ 存在多重简并：
 
 - $\phi \leftrightarrow \phi + \pi$：$(\mathcal{A}_{LR},\mathcal{A}_{UD})$ 同时反号，$\mathcal{A}_{LR-UD}$ 与 $\mathcal{R}_{12}$ 不变；等价于同时翻转 $P_z \to -P_z$，无法区分。
 - $\beta \leftrightarrow \pi - \beta$：$\cos\beta \to -\cos\beta$，$\mathcal{R}_{12}$ 与 $\mathcal{A}_{LR-UD}$ 不变。
@@ -291,7 +291,7 @@ $$
 
 （严格来说"方位角"指的是水平面内围绕 $y'$ 的方位，本节仍沿用 §7.1 的 Ohlsen 记号。对纯竖直极化 $\beta=\pi/2,\phi=0$，弯铁不改变可观测量，此时必须依赖下文的 spin-flip 方法。）
 
-两台 polarimeter 共给出 **8 个观测量**：
+两台 polarimeter 共给出 8 个观测量：
 
 $$
 \big\{\mathcal{A}_{LR}^{(1)},\mathcal{A}_{UD}^{(1)},\mathcal{A}_{LR-UD}^{(1)},\mathcal{R}_{12}^{(1)};\ \mathcal{A}_{LR}^{(2)},\mathcal{A}_{UD}^{(2)},\mathcal{A}_{LR-UD}^{(2)},\mathcal{R}_{12}^{(2)}\big\}.
@@ -317,13 +317,13 @@ $$
 
 态 $m=\pm 1$ 互换可翻转 $P_z$ 而保持 $P_{zz}$；因此
 
-- $(N^{(+)}-N^{(-)})$ 只留下线性 $P_z$ 的项 → 直接给出 **矢量不对称**；
-- $(N^{(+)}+N^{(-)})/2 - N^{\text{unpol}}$ 只留下线性 $P_{zz}$ 的项 → 直接给出 **张量不对称**。
+- $(N^{(+)}-N^{(-)})$ 只留下线性 $P_z$ 的项 → 直接给出 矢量不对称；
+- $(N^{(+)}+N^{(-)})/2 - N^{\text{unpol}}$ 只留下线性 $P_{zz}$ 的项 → 直接给出 张量不对称。
 
 这两类技术互补：
 
-- **Spin-flip** 从源端纯化观测量，代价是需要可控且稳定的快速源态切换；
-- **两台 polarimeter** 利用传输线自身的磁场进动同时确定极化幅度与极化轴方向，不要求源态切换，但要求至少一段已知几何的弯铁。
+- Spin-flip 从源端纯化观测量，代价是需要可控且稳定的快速源态切换；
+- 两台 polarimeter 利用传输线自身的磁场进动同时确定极化幅度与极化轴方向，不要求源态切换，但要求至少一段已知几何的弯铁。
 
 实践上推荐两者合用：以 spin-flip 把 $\{P_z, P_{zz}\}$ 的线性响应分开，再用两台 polarimeter 的 8 个观测量同时拟合 $\beta$ 与 $\phi$，把 Wien filter 的闭环调节精度推到极化轴角度 $\sim$ 几度的量级。
 

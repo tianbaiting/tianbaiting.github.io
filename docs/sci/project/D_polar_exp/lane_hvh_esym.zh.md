@@ -8,14 +8,14 @@
 
 ## 为什么需要这套链路
 
-在 $(\vec d, pn)$ 破裂反应里，我们想从联合角分布（$d^2\sigma/d\Omega_p d\Omega_n$, $A_y$, $A_{yy}$）反演核物质对称能 $S_{\mathrm{sym}}(\rho)$ 与其斜率 $L$。但直接的观测量只接触到核子-核（NA）通道的复光学势；对称能是**核物质**的体性质。
+在 $(\vec d, pn)$ 破裂反应里，我们想从联合角分布（$d^2\sigma/d\Omega_p d\Omega_n$, $A_y$, $A_{yy}$）反演核物质对称能 $S_{\mathrm{sym}}(\rho)$ 与其斜率 $L$。但直接的观测量只接触到核子-核（NA）通道的复光学势；对称能是核物质的体性质。
 
 桥梁分两段：
 
-1. **NA 光学势 → Lane 能量依赖参数 $(V_1^{(0)}, \alpha_V, W_1^{(0)}, \alpha_W)$**：通过 Koning-Delaroche（KD 2003）全局参数化加一组 Lane-ED 四参数描述同位旋不对称项。
-2. **Lane 参数 → $(S_{\mathrm{sym}}, L)$**：通过 Hugenholtz-Van Hove（HVH）定理，把费米面处的 Lane 实部值与斜率翻译成饱和密度处的对称能与斜率。
+1. NA 光学势 → Lane 能量依赖参数 $(V_1^{(0)}, \alpha_V, W_1^{(0)}, \alpha_W)$：通过 Koning-Delaroche（KD 2003）全局参数化加一组 Lane-ED 四参数描述同位旋不对称项。
+2. Lane 参数 → $(S_{\mathrm{sym}}, L)$：通过 Hugenholtz-Van Hove（HVH）定理，把费米面处的 Lane 实部值与斜率翻译成饱和密度处的对称能与斜率。
 
-中间还有一道数值关卡：三体 Faddeev/AGS 求解要求**可分势**（分离势），于是引入 **EST（Ernst-Shakin-Thaler）rank-$N$ 展开**把 Woods-Saxon 的全复光学势投影到有限秩的可分形式 $(\lambda, \beta)$，再进入 AGS 的核。
+中间还有一道数值关卡：三体 Faddeev/AGS 求解要求可分势（分离势），于是引入 EST（Ernst-Shakin-Thaler）rank-$N$ 展开把 Woods-Saxon 的全复光学势投影到有限秩的可分形式 $(\lambda, \beta)$，再进入 AGS 的核。
 
 整条流水线可以写成：
 
@@ -40,7 +40,7 @@
 
 ## 核子-核光学势（KD 2003 骨架）
 
-按 `d_breakup.tex` 末节的写法，**中心**光学势的实部 $V_\tau(E)$ 按能量多项式展开并带同位旋依赖：
+按 `d_breakup.tex` 末节的写法，中心光学势的实部 $V_\tau(E)$ 按能量多项式展开并带同位旋依赖：
 
 $$
 V_\tau(E,\delta) = V_0(E) + \tau_3\,V_{\mathrm{sym},1}(E)\,\delta + V_{\mathrm{sym},2}(E)\,\delta^2,
@@ -48,9 +48,9 @@ $$
 
 其中 $\tau_3 = +1$ 对中子、$-1$ 对质子，$\delta = (N-Z)/A$ 是靶核同位旋不对称度。把等号右边三项分别称为：
 
-- $V_0(E)$：**同位旋标量势**（iso-scalar）；
-- $V_{\mathrm{sym},1}(E)$：**一阶对称势**（Lane 势，$\propto \delta$）；
-- $V_{\mathrm{sym},2}(E)$：**二阶对称势**（$\propto \delta^2$）。
+- $V_0(E)$：同位旋标量势（iso-scalar）；
+- $V_{\mathrm{sym},1}(E)$：一阶对称势（Lane 势，$\propto \delta$）；
+- $V_{\mathrm{sym},2}(E)$：二阶对称势（$\propto \delta^2$）。
 
 完整形式还包括虚部体、虚部面、自旋-轨道、库仑项：
 
@@ -80,7 +80,7 @@ V_1^{(n)} = 59.30 - 21.0\,\delta - 0.024\,A,\qquad
 V_1^{(p)} = 59.30 + 21.0\,\delta - 0.024\,A.
 $$
 
-**符号相反**是 Lane 项在 KD 原始参数化中的直接体现。虚部体 $W_V(E)$、虚部面 $W_D(E)$、几何 $R_V, a_V, R_D, a_D, R_C$ 都有相应的解析形式（见 `toy_DAbreak` 讲义第 5.2 节的完整列表）。
+符号相反是 Lane 项在 KD 原始参数化中的直接体现。虚部体 $W_V(E)$、虚部面 $W_D(E)$、几何 $R_V, a_V, R_D, a_D, R_C$ 都有相应的解析形式（见 `toy_DAbreak` 讲义第 5.2 节的完整列表）。
 
 ## Lane 关系
 
@@ -99,11 +99,11 @@ $$
 U_\tau = U_0 + \tau_3\,U_1\,\delta \quad (\tau_3 = \pm 1).
 $$
 
-这把 $(n, p)$ 的光学势差额归结到一个**同位旋矢量**分量 $U_1$。从物理上看，$U_1 > 0$ 时，中子在中子过剩核中比在对称核中感到更深的实势（中子"不想进来"，因为价中子已多），这与对称能表达式一致。
+这把 $(n, p)$ 的光学势差额归结到一个同位旋矢量分量 $U_1$。从物理上看，$U_1 > 0$ 时，中子在中子过剩核中比在对称核中感到更深的实势（中子"不想进来"，因为价中子已多），这与对称能表达式一致。
 
 ### 叠加能量依赖：Lane-ED 四参数
 
-KD 2003 已经含一个**能量无关**的 Lane 不对称项（来自 $V_1^{(n/p)}$ 和 $D_1^{(n/p)}$）。在此之上，对称能反演所需的自由度来自对 $U_1$ 的**能量依赖**建模。`toy_DAbreak` 采用最小的四参数线性模型：
+KD 2003 已经含一个能量无关的 Lane 不对称项（来自 $V_1^{(n/p)}$ 和 $D_1^{(n/p)}$）。在此之上，对称能反演所需的自由度来自对 $U_1$ 的能量依赖建模。`toy_DAbreak` 采用最小的四参数线性模型：
 
 $$
 V_1(E) = V_1^{(0)} + \alpha_V\,E,\qquad
@@ -140,7 +140,7 @@ $$
 
 ## 从 $V(r, E)$ 到分波相移：Numerov
 
-拿到能量依赖的 WS 深度 $V_{\mathrm{tot}}(E)+iW_{\mathrm{tot}}(E)$ 之后，在径向网格上解**径向 Schrödinger**（对每个 $l$，每种电荷，支撑能量集合 $E_i$）：
+拿到能量依赖的 WS 深度 $V_{\mathrm{tot}}(E)+iW_{\mathrm{tot}}(E)$ 之后，在径向网格上解径向 Schrödinger（对每个 $l$，每种电荷，支撑能量集合 $E_i$）：
 
 $$
 \!\left[\frac{d^2}{dr^2} + k^2 - \frac{l(l+1)}{r^2} - \frac{2\mu}{(\hbar c)^2}\bigl(V(r) + iW(r) + V_C(r)\bigr)\right]\!u_l(r) = 0.
@@ -174,13 +174,13 @@ $$
 
 ## EST Rank-$N$ 可分势展开
 
-三体 AGS 积分方程对**两体 T-矩阵**要求**可分势**（separable）以保持核紧致、数值可解。Yamaguchi rank-1 形式是最简单的例子：
+三体 AGS 积分方程对两体 T-矩阵要求可分势（separable）以保持核紧致、数值可解。Yamaguchi rank-1 形式是最简单的例子：
 
 $$
 V_{\mathrm{sep}}(k, k') = \lambda\,g(k)\,g(k'),\qquad g(k) = \frac{1}{k^2 + \beta^2}.
 $$
 
-EST（Ernst-Shakin-Thaler）给出一种把**全势** $V(r, E)$ 投影成 rank-$N$ 可分形式的系统程序，核心是选 $N$ 个支撑能量 $E_i$ 与对应的 on-shell 波函数 $\psi_i(r)$。
+EST（Ernst-Shakin-Thaler）给出一种把全势 $V(r, E)$ 投影成 rank-$N$ 可分形式的系统程序，核心是选 $N$ 个支撑能量 $E_i$ 与对应的 on-shell 波函数 $\psi_i(r)$。
 
 ### 形状因子（form factor）
 
@@ -190,7 +190,7 @@ $$
 \phi_i^{(l)}(q) = \int_0^\infty dr\,r\,j_l\!\bigl(q r / \hbar c\bigr)\,V(r; E_i)\,\psi_l(r; E_i).
 $$
 
-这是**分波 t-matrix 的谱投影**：用 $\psi_l(r; E_i)$ 作为"优先再现"的态，保证 rank-$N$ 投影在支撑能量上严格等价于原始势。
+这是分波 t-matrix 的谱投影：用 $\psi_l(r; E_i)$ 作为"优先再现"的态，保证 rank-$N$ 投影在支撑能量上严格等价于原始势。
 
 ### Bateman 矩阵与 $\Lambda$
 
@@ -222,11 +222,11 @@ $$
 
 ### 为什么 $N=3$、且支撑能量分散
 
-每一分波 $l$ 的 EST 展开通过"在 $E_i$ 处严格再现"来吸收能量依赖：rank = 3 让 $s, p, d$ 波分别偏重低、中、高能的势形，保证**Lane 能量斜率** $\alpha_V$ 有独立的投影信号——否则四参数 $(V_1^{(0)}, \alpha_V, W_1^{(0)}, \alpha_W)$ 会在单一能量处被压成两个标量（实 + 虚），秩亏，反演不可辨识。
+每一分波 $l$ 的 EST 展开通过"在 $E_i$ 处严格再现"来吸收能量依赖：rank = 3 让 $s, p, d$ 波分别偏重低、中、高能的势形，保证Lane 能量斜率 $\alpha_V$ 有独立的投影信号——否则四参数 $(V_1^{(0)}, \alpha_V, W_1^{(0)}, \alpha_W)$ 会在单一能量处被压成两个标量（实 + 虚），秩亏，反演不可辨识。
 
 ### Born 匹配：回到 $(\lambda, \beta)$
 
-为了把 rank-$N$ 结果最终"压"回 AGS 基矩阵实际使用的 rank-1 形式（出于计算代价与相位保留的折衷），做一步 **Born K-matrix 匹配**：
+为了把 rank-$N$ 结果最终"压"回 AGS 基矩阵实际使用的 rank-1 形式（出于计算代价与相位保留的折衷），做一步 Born K-matrix 匹配：
 
 $$
 B_l(k) = \int_0^\infty dr\,r^2\,j_l(k r)^2\,V_{\mathrm{WS}}(r).
@@ -245,7 +245,7 @@ $$
 \beta^2 = \frac{k_2^2 - \sqrt{R}\,k_1^2}{\sqrt{R} - 1}.
 $$
 
-$\lambda$ 的比值（**复数**，保留相位）：
+$\lambda$ 的比值（复数，保留相位）：
 
 $$
 \frac{\lambda_{pA}}{\lambda_{nA}}
@@ -277,13 +277,13 @@ $$
 
 ### Hugenholtz-Van Hove 定理
 
-**HVH 定理**给出无穷自束缚费米系统在零温的普适关系：
+HVH 定理给出无穷自束缚费米系统在零温的普适关系：
 
 $$
 E_F = \frac{d\xi}{d\rho} = E + \rho\,\frac{dE}{d\rho} = E + \frac{P}{\rho}.
 $$
 
-即**费米面处的单粒子能等于每核子能加压强份额**。对中子/质子分开：
+即费米面处的单粒子能等于每核子能加压强份额。对中子/质子分开：
 
 $$
 t(k_F^n) + U_n(\rho, \delta, k_F^n) = \frac{\partial\xi}{\partial\rho_n},\qquad
@@ -352,9 +352,9 @@ $$
 
 三项的物理含义：
 
-1. $\tfrac{1}{3}\,t(k_F)$：**自由费米动能**的同位旋贡献；
-2. $\tfrac{1}{6}(\partial U_0/\partial k)\,k_F$：**同位旋标量势的动量依赖**（有效质量）贡献；
-3. $\tfrac{1}{2}\,U_{\mathrm{sym},1}(\rho, k_F)$：**Lane 实部在费米面上的值**。
+1. $\tfrac{1}{3}\,t(k_F)$：自由费米动能的同位旋贡献；
+2. $\tfrac{1}{6}(\partial U_0/\partial k)\,k_F$：同位旋标量势的动量依赖（有效质量）贡献；
+3. $\tfrac{1}{2}\,U_{\mathrm{sym},1}(\rho, k_F)$：Lane 实部在费米面上的值。
 
 ### 引入有效质量 $m^*/m$
 
@@ -392,7 +392,7 @@ $$
 
 其中
 
-- $\gamma$ 是 $U_0$ 的**密度依赖指数**（$U_0 \propto \rho^\gamma$），toy 模型取 $\gamma = 0.30$；
+- $\gamma$ 是 $U_0$ 的密度依赖指数（$U_0 \propto \rho^\gamma$），toy 模型取 $\gamma = 0.30$；
 - $dU_1/dk$ 通过链式法则由 $\alpha_V$ 给出：
 
 $$
@@ -404,7 +404,7 @@ $$
 
 ### 从光学势（$V$）到核物质单粒子势（$U$）
 
-注意**光学势 $V_\tau(E, \delta)$** 与**单粒子势 $U_\tau(\rho, k, \delta)$** 形式相似却定义不同：前者随**入射动能 $E$**，后者随**费米面内动量 $k$**。两者通过 $T(E)$ 转换：
+注意光学势 $V_\tau(E, \delta)$ 与单粒子势 $U_\tau(\rho, k, \delta)$ 形式相似却定义不同：前者随入射动能 $E$，后者随费米面内动量 $k$。两者通过 $T(E)$ 转换：
 
 $$
 E = T + \mathrm{Re}\,U_0(T) + \mathrm{Re}\,U_1(T),
@@ -435,7 +435,7 @@ $$
 \vartheta = \frac{\partial^{2} V_0}{\partial E^{2}}.
 $$
 
-`toy_DAbreak` 的实现直接用 $V_1(T_F)$ 代 $U_1(T_F)$、并以 `m_star_ratio = 0.70` 固定 $\mu \leftrightarrow m^*/m$，省掉 $E\to T$ 的自洽迭代。这是一种**刚性 HVH 映射**，足够作为闭环反演的自洽代价函数，但不是实验级定量模型。
+`toy_DAbreak` 的实现直接用 $V_1(T_F)$ 代 $U_1(T_F)$、并以 `m_star_ratio = 0.70` 固定 $\mu \leftrightarrow m^*/m$，省掉 $E\to T$ 的自洽迭代。这是一种刚性 HVH 映射，足够作为闭环反演的自洽代价函数，但不是实验级定量模型。
 
 ### 数值标定（默认背景参数）
 
@@ -459,7 +459,7 @@ $$
 有了上述链路，四参数 $(V_1^{(0)}, \alpha_V, W_1^{(0)}, \alpha_W)$ 成为 LM 拟合的唯一自由量。`run_closed_loop` 流程：
 
 1. 用 truth Lane 正演生成伪观测 $d^2\sigma_{\mathrm{truth}}[\mathrm{bin}]$；
-2. 从 bounds 中点出发做 LM 拟合（目标是相对残差），每次评估都要**重跑一次完整 AGS**；
+2. 从 bounds 中点出发做 LM 拟合（目标是相对残差），每次评估都要重跑一次完整 AGS；
 3. 对 fit 与 truth 分别 `compute_hvh`；
 4. 分级审计：参数 5%、$S_{\mathrm{sym}}$ 10%、$L$ 20%。
 
