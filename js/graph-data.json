@@ -60,7 +60,7 @@
       "language": "zh",
       "category": "category",
       "path": "life/twist.zh.md",
-      "size": 1459,
+      "size": 1450,
       "url": "/life/twist/"
     },
     {
@@ -78,7 +78,7 @@
       "language": "zh",
       "category": "category",
       "path": "life/焦虑.zh.md",
-      "size": 588,
+      "size": 579,
       "url": "/life/焦虑/"
     },
     {
@@ -92,11 +92,11 @@
     },
     {
       "id": "life/flavor.zh",
-      "title": "探索味型奥秘：以川菜为例的烹饪科学指南",
+      "title": "川菜味型",
       "language": "zh",
       "category": "category",
       "path": "life/flavor.zh.md",
-      "size": 18028,
+      "size": 18013,
       "url": "/life/flavor/"
     },
     {
@@ -105,7 +105,7 @@
       "language": "zh",
       "category": "category",
       "path": "MickeyMiaoMiao/opvpn.md",
-      "size": 3158,
+      "size": 3141,
       "url": "/MickeyMiaoMiao/opvpn/"
     },
     {
@@ -191,11 +191,11 @@
     },
     {
       "id": "日本生存指南/日版手机felica芯片",
-      "title": "日版索尼 Xperia 1 II 刷机后 FeliCa NFC 及 Suica 使用情况分析",
+      "title": "Xperia 日版刷机后 FeliCa/Suica",
       "language": "zh",
       "category": "category",
       "path": "日本生存指南/日版手机felica芯片.md",
-      "size": 17780,
+      "size": 17759,
       "url": "/日本生存指南/日版手机felica芯片/"
     },
     {
@@ -222,7 +222,7 @@
       "language": "zh",
       "category": "category",
       "path": "日本生存指南/垃圾分类.md",
-      "size": 2328,
+      "size": 2297,
       "url": "/日本生存指南/垃圾分类/"
     },
     {
@@ -326,11 +326,11 @@
     },
     {
       "id": "sci/cheatshet/debian_printer_connection.zh",
-      "title": "Debian 系统连接网络打印机（Fuji Xerox DocuPrint C3360）",
+      "title": "Debian 接网络打印机",
       "language": "zh",
       "category": "page",
       "path": "sci/cheatshet/debian_printer_connection.zh.md",
-      "size": 1672,
+      "size": 1631,
       "url": "/sci/cheatshet/debian_printer_connection/"
     },
     {
@@ -384,7 +384,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/cheatshet/tmux.zh.md",
-      "size": 2691,
+      "size": 2665,
       "url": "/sci/cheatshet/tmux/"
     },
     {
@@ -411,7 +411,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/ladderOpearator.zh.md",
-      "size": 9056,
+      "size": 8986,
       "url": "/sci/minimal_theory/ladderOpearator/"
     },
     {
@@ -429,7 +429,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/dead_time.zh.md",
-      "size": 3373,
+      "size": 3349,
       "url": "/sci/minimal_theory/dead_time/"
     },
     {
@@ -443,11 +443,11 @@
     },
     {
       "id": "sci/minimal_theory/qft_schwartz_ref.zh",
-      "title": "Schwartz — 《量子场论与标准模型》学习资源指南",
+      "title": "Schwartz QFT 资源",
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/qft_schwartz_ref.zh.md",
-      "size": 4030,
+      "size": 4017,
       "url": "/sci/minimal_theory/qft_schwartz_ref/"
     },
     {
@@ -474,7 +474,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/qft_whatisfield.md",
-      "size": 7298,
+      "size": 7274,
       "url": "/sci/minimal_theory/qft_whatisfield/"
     },
     {
@@ -483,7 +483,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/directProductAndSum.zh.md",
-      "size": 11312,
+      "size": 11246,
       "url": "/sci/minimal_theory/directProductAndSum/"
     },
     {
@@ -492,7 +492,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/linearspace.zh.md",
-      "size": 4572,
+      "size": 4548,
       "url": "/sci/minimal_theory/linearspace/"
     },
     {
@@ -510,7 +510,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/functionalAna_SpecThe.zh.md",
-      "size": 11718,
+      "size": 11700,
       "url": "/sci/minimal_theory/functionalAna_SpecThe/"
     },
     {
@@ -519,16 +519,16 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatering_theory.zh.md",
-      "size": 5123,
+      "size": 5105,
       "url": "/sci/minimal_theory/scatering_theory/"
     },
     {
       "id": "sci/minimal_code/vscode_lsp.zh",
-      "title": "如何解决 VS Code 中的 C/C++ `include` 报错问题",
+      "title": "VS Code C/C++ include 报错",
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/vscode_lsp.zh.md",
-      "size": 3525,
+      "size": 3513,
       "url": "/sci/minimal_code/vscode_lsp/"
     },
     {
@@ -537,7 +537,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/vscode_plug.zh.md",
-      "size": 1087,
+      "size": 1075,
       "url": "/sci/minimal_code/vscode_plug/"
     },
     {
@@ -546,7 +546,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/ctags.zh.md",
-      "size": 3276,
+      "size": 3252,
       "url": "/sci/minimal_code/ctags/"
     },
     {
@@ -605,20 +605,20 @@
     },
     {
       "id": "sci/minimal_code/gemni_use_wen2cli.zh",
-      "title": "Gemini 使用限制与付费模式解析",
+      "title": "Gemini 限制与付费",
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/gemni_use_wen2cli.zh.md",
-      "size": 1925,
+      "size": 1919,
       "url": "/sci/minimal_code/gemni_use_wen2cli/"
     },
     {
       "id": "sci/minimal_code/local_rag.zh",
-      "title": "本地 RAG：用 paperpipe + LEANN 给科研论文做向量检索",
+      "title": "本地论文 RAG",
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/local_rag.zh.md",
-      "size": 11664,
+      "size": 14515,
       "url": "/sci/minimal_code/local_rag/"
     },
     {
@@ -636,7 +636,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/fzf.zh.md",
-      "size": 6169,
+      "size": 6091,
       "url": "/sci/minimal_code/fzf/"
     },
     {
@@ -681,7 +681,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/cernrootData.zh.md",
-      "size": 6888,
+      "size": 6879,
       "url": "/sci/minimal_code/cernrootData/"
     },
     {
@@ -690,7 +690,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/log.zh.md",
-      "size": 11187,
+      "size": 11154,
       "url": "/sci/minimal_code/log/"
     },
     {
@@ -713,11 +713,11 @@
     },
     {
       "id": "sci/minimal_code/server_clouddirve.zh",
-      "title": "如何从零搭建私有云盘服务器 (Markdown 教程)",
+      "title": "私有云盘搭建",
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/server_clouddirve.zh.md",
-      "size": 4084,
+      "size": 4063,
       "url": "/sci/minimal_code/server_clouddirve/"
     },
     {
@@ -731,11 +731,11 @@
     },
     {
       "id": "sci/minimal_code/geant4_oop.zh",
-      "title": "揭秘面向对象编程：Geant4工具包深度导览",
+      "title": "Geant4 面向对象设计",
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/geant4_oop.zh.md",
-      "size": 17736,
+      "size": 17683,
       "url": "/sci/minimal_code/geant4_oop/"
     },
     {
@@ -776,11 +776,11 @@
     },
     {
       "id": "sci/minimal_code/root_opener",
-      "title": "设置 ROOT 文件默认浏览器教程",
+      "title": "ROOT 文件默认浏览器",
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/root_opener.md",
-      "size": 2196,
+      "size": 2191,
       "url": "/sci/minimal_code/root_opener/"
     },
     {
@@ -803,11 +803,11 @@
     },
     {
       "id": "sci/minimal_code/class_dataTransport.zh",
-      "title": "面向对象设计教程：管理类之间的数据依赖和解耦",
+      "title": "类间数据依赖与解耦",
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/class_dataTransport.zh.md",
-      "size": 5406,
+      "size": 5393,
       "url": "/sci/minimal_code/class_dataTransport/"
     },
     {
@@ -830,20 +830,20 @@
     },
     {
       "id": "sci/minimal_code/system_runtime_check.zh",
-      "title": "如何查找当前运行的进程、程序与远程会话",
+      "title": "查找运行进程与远程会话",
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/system_runtime_check.zh.md",
-      "size": 8133,
+      "size": 8090,
       "url": "/sci/minimal_code/system_runtime_check/"
     },
     {
       "id": "sci/minimal_code/project_structure.zh",
-      "title": "现代核物理模拟项目管理与目录结构教程",
+      "title": "核物理项目目录结构",
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/project_structure.zh.md",
-      "size": 5309,
+      "size": 5300,
       "url": "/sci/minimal_code/project_structure/"
     },
     {
@@ -852,16 +852,16 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/rootFindLib.zh.md",
-      "size": 8102,
+      "size": 8087,
       "url": "/sci/minimal_code/rootFindLib/"
     },
     {
       "id": "sci/minimal_code/server_clouddirve_example.zh",
-      "title": "教程：在 Ubuntu 上部署 Nextcloud 并通过 OpenVPN 安全访问",
+      "title": "Nextcloud + OpenVPN 部署",
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/server_clouddirve_example.zh.md",
-      "size": 6444,
+      "size": 6424,
       "url": "/sci/minimal_code/server_clouddirve_example/"
     },
     {
@@ -875,11 +875,11 @@
     },
     {
       "id": "sci/minimal_code/freerdp_disconnect.zh",
-      "title": "FreeRDP 客户端：怎么「正确地」结束一次远程",
+      "title": "FreeRDP 正确退出",
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/freerdp_disconnect.zh.md",
-      "size": 2025,
+      "size": 2012,
       "url": "/sci/minimal_code/freerdp_disconnect/"
     },
     {
@@ -906,7 +906,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/c++project.zh.md",
-      "size": 9329,
+      "size": 9318,
       "url": "/sci/minimal_code/c++project/"
     },
     {
@@ -915,7 +915,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/zsh.zh.md",
-      "size": 4386,
+      "size": 4371,
       "url": "/sci/minimal_code/zsh/"
     },
     {
@@ -942,16 +942,16 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/getEnv.zh.md",
-      "size": 2704,
+      "size": 2686,
       "url": "/sci/minimal_code/getEnv/"
     },
     {
       "id": "sci/minimal_code/jupytext.zh",
-      "title": "jupytext 工作流（完整版）",
+      "title": "jupytext 工作流",
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/jupytext.zh.md",
-      "size": 11771,
+      "size": 11621,
       "url": "/sci/minimal_code/jupytext/"
     },
     {
@@ -969,16 +969,16 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/python_def_class.zh.md",
-      "size": 2951,
+      "size": 2939,
       "url": "/sci/minimal_code/python_def_class/"
     },
     {
       "id": "sci/minimal_code/termux.zh",
-      "title": "在 Termux 中安装 Ubuntu 桌面环境并运行 VS Code 的终极指南",
+      "title": "Termux 装 Ubuntu + VS Code",
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_code/termux.zh.md",
-      "size": 5152,
+      "size": 5136,
       "url": "/sci/minimal_code/termux/"
     },
     {
@@ -1050,7 +1050,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/functionnalAna/C4spectral.zh.md",
-      "size": 7474,
+      "size": 7471,
       "url": "/sci/minimal_theory/functionnalAna/C4spectral/"
     },
     {
@@ -1059,7 +1059,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/partial_wave_projection.zh.md",
-      "size": 19080,
+      "size": 18944,
       "url": "/sci/minimal_theory/scatteringTheory/partial_wave_projection/"
     },
     {
@@ -1068,7 +1068,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/Green_operator.zh.md",
-      "size": 8063,
+      "size": 8039,
       "url": "/sci/minimal_theory/scatteringTheory/Green_operator/"
     },
     {
@@ -1086,7 +1086,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/T_and_U_operators.zh.md",
-      "size": 11048,
+      "size": 10918,
       "url": "/sci/minimal_theory/scatteringTheory/T_and_U_operators/"
     },
     {
@@ -1095,7 +1095,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/friedrichsModel.zh.md",
-      "size": 8641,
+      "size": 8548,
       "url": "/sci/minimal_theory/scatteringTheory/friedrichsModel/"
     },
     {
@@ -1104,7 +1104,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym.md",
-      "size": 8530,
+      "size": 8400,
       "url": "/sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym/"
     },
     {
@@ -1131,7 +1131,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/faddeev/faddeev_WavePacket.zh.md",
-      "size": 23090,
+      "size": 22948,
       "url": "/sci/project/faddeev/faddeev_WavePacket/"
     },
     {
@@ -1140,7 +1140,7 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/D_polar_exp/polar_measure_and_axis.en.md",
-      "size": 21417,
+      "size": 21330,
       "url": "/en/sci/project/D_polar_exp/polar_measure_and_axis/"
     },
     {
@@ -1185,7 +1185,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/polar_measure_and_axis.zh.md",
-      "size": 12985,
+      "size": 12898,
       "url": "/sci/project/D_polar_exp/polar_measure_and_axis/"
     },
     {
@@ -1284,16 +1284,16 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/lane_hvh_esym.zh.md",
-      "size": 13943,
+      "size": 13859,
       "url": "/sci/project/D_polar_exp/lane_hvh_esym/"
     },
     {
       "id": "sci/project/samurai/detector_samurai.zh",
-      "title": "SAMURAI 光谱仪带电粒子探测器详细功能",
+      "title": "SAMURAI 带电粒子探测器",
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/detector_samurai.zh.md",
-      "size": 1464,
+      "size": 1448,
       "url": "/sci/project/samurai/detector_samurai/"
     },
     {
@@ -1307,11 +1307,11 @@
     },
     {
       "id": "sci/project/samurai/detector_samurai.en",
-      "title": "Detailed Functions of Charged Particle Detectors in the SAMURAI Spectrometer",
+      "title": "SAMURAI Charged Particle Detectors",
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/detector_samurai.en.md",
-      "size": 3514,
+      "size": 3463,
       "url": "/en/sci/project/samurai/detector_samurai/"
     },
     {
@@ -1320,16 +1320,16 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot2version.zh.md",
-      "size": 53650,
+      "size": 53511,
       "url": "/sci/project/samurai/anaroot/anaroot2version/"
     },
     {
       "id": "sci/project/samurai/anaroot/RIDF.en",
-      "title": "Detailed Explanation of RIKEN RIDF File Structure: Data Block (Block) Description",
+      "title": "RIDF Data Block",
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/anaroot/RIDF.en.md",
-      "size": 10315,
+      "size": 10249,
       "url": "/en/sci/project/samurai/anaroot/RIDF/"
     },
     {
@@ -1379,20 +1379,20 @@
     },
     {
       "id": "sci/project/samurai/anaroot/anaroot2version.en",
-      "title": "ANAROOT Detailed Documentation",
+      "title": "ANAROOT documentation",
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot2version.en.md",
-      "size": 5746,
+      "size": 5737,
       "url": "/en/sci/project/samurai/anaroot/anaroot2version/"
     },
     {
       "id": "sci/project/samurai/anaroot/RIDF.zh",
-      "title": "RIKEN RIDF 文件构成详解：数据块 (Block) 说明",
+      "title": "RIDF 数据块",
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/anaroot/RIDF.zh.md",
-      "size": 6523,
+      "size": 6499,
       "url": "/sci/project/samurai/anaroot/RIDF/"
     },
     {
@@ -1428,7 +1428,7 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/PDC.en.md",
-      "size": 8477,
+      "size": 8444,
       "url": "/en/sci/project/samurai/smsimulator/PDC/"
     },
     {
@@ -1437,7 +1437,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/PDC.zh.md",
-      "size": 5045,
+      "size": 5012,
       "url": "/sci/project/samurai/smsimulator/PDC/"
     },
     {
@@ -1446,7 +1446,7 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/nebula_simlulator.en.md",
-      "size": 16739,
+      "size": 16709,
       "url": "/en/sci/project/samurai/smsimulator/nebula_simlulator/"
     },
     {
@@ -1455,7 +1455,7 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/FDC2.en.md",
-      "size": 4974,
+      "size": 4959,
       "url": "/en/sci/project/samurai/smsimulator/FDC2/"
     },
     {
@@ -1473,7 +1473,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/nebula_simlulator.zh.md",
-      "size": 13163,
+      "size": 13133,
       "url": "/sci/project/samurai/smsimulator/nebula_simlulator/"
     },
     {
@@ -1482,7 +1482,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/FDC2.zh.md",
-      "size": 3744,
+      "size": 3729,
       "url": "/sci/project/samurai/smsimulator/FDC2/"
     },
     {
@@ -1541,11 +1541,11 @@
     },
     {
       "id": "life/健康/鼻炎.zh",
-      "title": "鼻炎综合管理临床报告：过敏性鼻炎与血管运动性鼻炎的深度解析",
+      "title": "鼻炎管理",
       "language": "zh",
       "category": "page",
       "path": "life/健康/鼻炎.zh.md",
-      "size": 18087,
+      "size": 18062,
       "url": "/life/健康/鼻炎/"
     },
     {
@@ -1554,7 +1554,7 @@
       "language": "zh",
       "category": "page",
       "path": "life/健康/workout_diet.zh.md",
-      "size": 9949,
+      "size": 9861,
       "url": "/life/健康/workout_diet/"
     },
     {
@@ -1613,6 +1613,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-05-07 02:29:06.038956"
+    "generated_at": "2026-05-07 09:13:24.306811"
   }
 }
