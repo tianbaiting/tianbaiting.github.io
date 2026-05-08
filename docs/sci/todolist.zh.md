@@ -14,9 +14,17 @@
 - [x] 5. Separable rank-1 (`separable_rank1`)：T 矩阵闭合解、off-shell 行为，给 EST 附录补最小完整范例
 - [x] 6. 数值实验 (`numerical_pipeline`)：Numerov + Gauss 求积，把前 5 篇势作为 sanity-check 标准
 
-设计约束：
-- 单 `.py` < 100 行
-- markdown 中贴关键代码段，整文件可执行
+## 散射理论 / 教学轨：共振态例子
+
+延续可解模型系列，覆盖三种典型共振机制。
+
+- [ ] 7. 一维势阱+势垒 (`well_barrier_1d`)：α 衰变图像、长寿命极限、Numerov 透射率 vs WKB 障壁穿透
+- [ ] 8. 离心障壁共振 (`centrifugal_barrier`)：3D 吸引方阱 + $l(l+1)/r^2$，d 波准束缚态、复 $k$ 极点轨迹随 $V_0$
+- [ ] 9. 双通道 Feshbach (`feshbach_two_channel`)：矩阵 Numerov、闭合通道泄漏、$\Gamma \propto g^2$、与 Friedrichs 笔记 $\Sigma(z)$ 对账
+
+设计约束沿用前 6 篇：
+- 单 `.py` < 150 行
+- markdown 贴关键代码段，整文件可执行
 - 图保存到 `examples/assets/<篇名>/*.png`
-- 第 6 篇在前 5 篇完成后再写
+- CSS 自动编号、noun-phrase 标题、中文不用 bold
 

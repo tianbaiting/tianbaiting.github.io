@@ -1,8 +1,8 @@
 """Unified s-wave numerical pipeline.
 
 Two engines:
-  1. numerov_swave(V_local, k)  — coordinate space, V(r) → δ_0
-  2. ls_swave(V_l_pp, E)         — momentum space, V_l(p,p') → T_l(k,k;E) → δ_0
+  1. numerov_swave(V_local, k)  — coordinate space, takes V(r), returns δ_0
+  2. ls_swave(V_l_pp, E)         — momentum space, takes V_l(p,p'), returns T_l(k,k;E), then δ_0
 
 Apply to: square well, delta shell (smoothed), Yukawa, Yamaguchi.
 Compare numerical against analytic results from prior articles.
