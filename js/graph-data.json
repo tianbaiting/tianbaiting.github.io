@@ -159,7 +159,7 @@
       "language": "zh",
       "category": "category",
       "path": "sci/todolist.zh.md",
-      "size": 38,
+      "size": 1116,
       "url": "/sci/todolist/"
     },
     {
@@ -512,6 +512,15 @@
       "path": "sci/minimal_theory/functionalAna_SpecThe.zh.md",
       "size": 11700,
       "url": "/sci/minimal_theory/functionalAna_SpecThe/"
+    },
+    {
+      "id": "sci/minimal_theory/riggedHilbertSpace.zh",
+      "title": "装备希尔伯特空间与 Dirac 形式的严格化",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/riggedHilbertSpace.zh.md",
+      "size": 8084,
+      "url": "/sci/minimal_theory/riggedHilbertSpace/"
     },
     {
       "id": "sci/minimal_theory/scatering_theory.zh",
@@ -1108,6 +1117,87 @@
       "url": "/sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym/"
     },
     {
+      "id": "sci/minimal_theory/scatteringTheory/examples/01_1d_delta.zh",
+      "title": "一维 delta 势",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/01_1d_delta.zh.md",
+      "size": 7634,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/01_1d_delta/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/07_well_barrier_1d.zh",
+      "title": "一维势阱加势垒：α 衰变图像",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/07_well_barrier_1d.zh.md",
+      "size": 6392,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/07_well_barrier_1d/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/04_yukawa.zh",
+      "title": "Yukawa 势与 Born 近似",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/04_yukawa.zh.md",
+      "size": 6307,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/04_yukawa/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/08_centrifugal_barrier.zh",
+      "title": "离心位垒与高分波 shape 共振",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/08_centrifugal_barrier.zh.md",
+      "size": 9006,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/08_centrifugal_barrier/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/09_feshbach_two_channel.zh",
+      "title": "双通道 Feshbach 共振",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/09_feshbach_two_channel.zh.md",
+      "size": 8265,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/09_feshbach_two_channel/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/02_square_well_3d.zh",
+      "title": "三维方阱 s 波散射",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/02_square_well_3d.zh.md",
+      "size": 6454,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/02_square_well_3d/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/06_numerical_pipeline.zh",
+      "title": "数值实验：分波相移与截面的统一流程",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/06_numerical_pipeline.zh.md",
+      "size": 6847,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/06_numerical_pipeline/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/03_delta_shell.zh",
+      "title": "三维 delta 壳层势的散射与共振",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/03_delta_shell.zh.md",
+      "size": 7887,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/03_delta_shell/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/05_separable_rank1.zh",
+      "title": "秩 1 separable 势与解析 T 矩阵",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/05_separable_rank1.zh.md",
+      "size": 8645,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/05_separable_rank1/"
+    },
+    {
       "id": "sci/project/faddeev/construct_basis.zh",
       "title": "Construct Basis",
       "language": "zh",
@@ -1596,16 +1686,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 177,
+    "total_nodes": 187,
     "total_links": 0,
     "languages": {
-      "zh": 148,
+      "zh": 158,
       "en": 29
     },
     "categories": {
       "category": 26,
       "main": 2,
-      "page": 149
+      "page": 159
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1613,6 +1703,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-05-07 10:57:18.013601"
+    "generated_at": "2026-05-09 12:58:01.677448"
   }
 }
