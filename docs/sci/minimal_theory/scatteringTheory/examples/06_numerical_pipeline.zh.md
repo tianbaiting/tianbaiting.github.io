@@ -125,14 +125,14 @@ $$
 
 | 势 | 引擎 | 解析参考 | 备注 |
 |:--|:--|:--|:--|
-| 三维方阱 | Numerov | `square_well_3d.py:delta0` (line 22) | $r=R$ 处 $V$ 不连续，Numerov 损失阶数 |
-| delta 壳层 | Numerov（Gauss 光滑化） | `delta_shell.py:tan_delta0` (line 10) | 光滑宽度 $\sigma=0.015$；过窄时 Numerov 步长需相应缩小 |
+| 三维方阱 | Numerov | `02_square_well_3d.py:delta0` (line 22) | $r=R$ 处 $V$ 不连续，Numerov 损失阶数 |
+| delta 壳层 | Numerov（Gauss 光滑化） | `03_delta_shell.py:tan_delta0` (line 10) | 光滑宽度 $\sigma=0.015$；过窄时 Numerov 步长需相应缩小 |
 | Yukawa | Numerov（无解析参考） | 与 Born 振幅对比 | $1/r$ 在原点限制 Numerov 阶数 |
-| Yamaguchi separable | LS solver | `separable_rank1.py:tau` (line 25) | 局域化无意义；只能动量空间处理 |
+| Yamaguchi separable | LS solver | `05_separable_rank1.py:tau` (line 25) | 局域化无意义；只能动量空间处理 |
 
 ### 综合相移图
 
-![四种势的 δ_0(k) 数值与解析对照](./assets/numerical_pipeline/delta0_unified.png)
+![四种势的 δ_0(k) 数值与解析对照](./assets/06_numerical_pipeline/delta0_unified.png)
 
 四个面板分别看：
 
@@ -143,13 +143,13 @@ $$
 
 ### LS 引擎残差
 
-![Yamaguchi 上 LS solver 与解析相位的偏差](./assets/numerical_pipeline/ls_engine.png)
+![Yamaguchi 上 LS solver 与解析相位的偏差](./assets/06_numerical_pipeline/ls_engine.png)
 
 左图直接看不出差别；右图用对数纵轴显示 $|\delta_0^{\rm LS} - \delta_0^{\rm an}|$，在 $k \in [0.5, 4]$ 范围内残差 $\sim 10^{-5}$，在 $k \to 0.1$ 附近升至 $10^{-3}$。低能精度退化的原因是 $q_{\max}=30$ 截断产生的尾巴误差对低能 $T$ 影响相对更大，扩大 $q_{\max}$ 或加密 Gauss 节点能改善。
 
 ### Numerov 收敛阶
 
-![Numerov 误差随网格 N 的标度](./assets/numerical_pipeline/convergence.png)
+![Numerov 误差随网格 N 的标度](./assets/06_numerical_pipeline/convergence.png)
 
 理论上 Numerov 是 $O(h^4) \sim 1/N^4$。但实测两条曲线都是 $\sim 1/N^2$：
 

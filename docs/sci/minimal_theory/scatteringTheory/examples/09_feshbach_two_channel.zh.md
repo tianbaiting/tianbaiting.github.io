@@ -132,27 +132,27 @@ $$
 
 ## 数值结果与图
 
-完整脚本见 `feshbach_two_channel.py`。先看通道势的全景：
+完整脚本见 `09_feshbach_two_channel.py`。先看通道势的全景：
 
-![two-channel potentials](./assets/feshbach_two_channel/model.png)
+![two-channel potentials](./assets/09_feshbach_two_channel/model.png)
 
 蓝色平线是开通道（自由），橙色阶梯是闭通道——内部深 $-V_2 + \Delta E = -3$，外部抬高到阈值 $\Delta E = 5$。红虚线 $E_b^{(2)} \approx 1.982$ 是闭通道孤立束缚能；它正好落在开通道散射连续谱里，是共振的种子。
 
 开通道相移 $\delta_1(E)$ 对若干 $g$：
 
-![open-channel phase shift](./assets/feshbach_two_channel/phase_shift_E.png)
+![open-channel phase shift](./assets/09_feshbach_two_channel/phase_shift_E.png)
 
 三条曲线在 $E_R \approx E_b^{(2)}$ 附近都把相移扫过 $\pi$。$g = 0.3$ 时跳变非常陡峭（共振窄）；$g = 0.7$ 中等；$g = 1.5$ 时跳跃被抹开成宽缓的 S 形。这是 Friedrichs 笔记 `friedrichsModel.zh.md:486` 中 $\Gamma(E) = 2\pi |g(E)|^2$ 的直接体现：耦合越强，宽度越大。注意相移的整体偏移 $-\pi$ 是 Levinson 印记（耦合后系统多出一个准束缚态）。
 
 开通道弹性截面 $\sigma_1(E) = 4\pi\sin^2\delta_1(E)/k_1^2$：
 
-![open-channel cross section](./assets/feshbach_two_channel/cross_section.png)
+![open-channel cross section](./assets/09_feshbach_two_channel/cross_section.png)
 
 经典 Breit-Wigner 峰，正好坐在 $E_b^{(2)}$ 上方。$g$ 越小峰越尖、越接近 $E_b^{(2)}$；$g$ 越大峰被压宽并向高能稍微漂移（实部修正 $\Delta(E)$ 起作用，对应 `friedrichsModel.zh.md:485`）。这正是冷原子物理里"调 $g$ 调 Feshbach 共振宽度"的简化模型。
 
 最后是这一篇的核心对账图——共振宽度 $\Gamma$ 与 $g^2$ 的关系：
 
-![width vs coupling](./assets/feshbach_two_channel/gamma_vs_g2.png)
+![width vs coupling](./assets/09_feshbach_two_channel/gamma_vs_g2.png)
 
 横轴 $g^2$（log），纵轴数值提取的 $\Gamma$（log）。蓝色圆点是从相移导数极值 $(\partial_E \delta_1)|_{E_R} = 2/\Gamma$ 直接读出的数值宽度。橙色虚线是 Friedrichs 公式
 
@@ -185,13 +185,13 @@ $$
 
 ## sanity checks
 
-`feshbach_two_channel.py` 的 `sanity_checks` 跑三件事：
+`09_feshbach_two_channel.py` 的 `sanity_checks` 跑三件事：
 
 1. $g = 0$ 时 $\delta_1(E) = 0\pmod \pi$ 在多个 $E$ 上严格成立——耦合关掉，开通道完全自由，相移消失。
 2. $g = 0.3$ 时数值 $\Gamma$ 与 Friedrichs 闭式 $2\pi |g_{\rm eff}(E_b^{(2)})|^2$ 相对误差约 $1.6\%$，已在弱耦合区。
 3. $g \to 0$ 时数值共振位置 $E_R \to E_b^{(2)}$；$g = 0.2$ 时偏差 $< 0.1$，与一阶能量位移 $\Delta(E_b^{(2)})$ 符号一致。
 
-跑一次约 30 秒，所有图写到 `assets/feshbach_two_channel/`。
+跑一次约 30 秒，所有图写到 `assets/09_feshbach_two_channel/`。
 
 ## 与 Feshbach 投影的对账
 
@@ -220,7 +220,7 @@ $$
 
 ## 与 delta-shell、3D 方阱的对照
 
-第 3 篇 `delta_shell.zh.md` 用单通道排斥壳产生共振：内部腔体的离散态通过壳泄漏。第 2 篇 `square_well_3d.zh.md` 在 s 波给出散射长度与束缚态。这两个例子都是单通道共振或束缚态，与 Friedrichs 的对应需要"等效耦合 $|g_{\rm eff}|^2 \sim 1/\gamma$"这种翻译（见 `delta_shell.zh.md:187`）。
+第 3 篇 `03_delta_shell.zh.md` 用单通道排斥壳产生共振：内部腔体的离散态通过壳泄漏。第 2 篇 `02_square_well_3d.zh.md` 在 s 波给出散射长度与束缚态。这两个例子都是单通道共振或束缚态，与 Friedrichs 的对应需要"等效耦合 $|g_{\rm eff}|^2 \sim 1/\gamma$"这种翻译（见 `03_delta_shell.zh.md:187`）。
 
 本模型的优势在于，"离散态"$|d\rangle$ 与"连续谱"$|E\rangle$ 直接对应于两个物理通道的不同模式，耦合 $g$ 是哈密顿量里写出来的常数，不需要任何反直觉的"耦合反比"——$g$ 大就是共振宽。这正是 Feshbach 投影在多通道散射里的天然语言。
 

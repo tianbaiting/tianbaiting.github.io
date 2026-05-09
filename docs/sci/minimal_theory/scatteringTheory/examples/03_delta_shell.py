@@ -3,7 +3,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-ASSETS = Path(__file__).parent / "assets" / "delta_shell"
+ASSETS = Path(__file__).parent / "assets" / "03_delta_shell"
 ASSETS.mkdir(parents=True, exist_ok=True)
 
 

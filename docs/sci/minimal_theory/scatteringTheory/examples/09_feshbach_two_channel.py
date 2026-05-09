@@ -9,7 +9,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-ASSETS = Path(__file__).parent / "assets" / "feshbach_two_channel"
+ASSETS = Path(__file__).parent / "assets" / "09_feshbach_two_channel"
 ASSETS.mkdir(parents=True, exist_ok=True)
 V2, R, DE = 8.0, 1.0, 5.0
 

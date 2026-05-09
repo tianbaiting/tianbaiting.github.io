@@ -7,14 +7,14 @@ Two engines:
 Apply to: square well, delta shell (smoothed), Yukawa, Yamaguchi.
 Compare numerical against analytic results from prior articles.
 
-Convention: ℏ=1, 2m=1.  LS measure follows separable_rank1.py.
+Convention: ℏ=1, 2m=1.  LS measure follows 05_separable_rank1.py.
 """
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
 
-ASSETS = Path(__file__).parent / "assets" / "numerical_pipeline"
+ASSETS = Path(__file__).parent / "assets" / "06_numerical_pipeline"
 ASSETS.mkdir(parents=True, exist_ok=True)
 
 

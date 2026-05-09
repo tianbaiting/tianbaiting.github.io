@@ -76,7 +76,7 @@ $$
 
 ## 数值与图
 
-完整脚本见 `well_barrier_1d.py`。算法走三步：
+完整脚本见 `07_well_barrier_1d.py`。算法走三步：
 
 - 在实轴扫 $L(E)$ 数值符号变化得到共振位置初值；
 - 复 $E$ 平面阻尼 Newton 求 $L(E)+ik=0$ 的极点；
@@ -103,37 +103,37 @@ def log_deriv(E, b=B):
 
 第一张图：势的几何与共振能级。
 
-![potential](./assets/well_barrier_1d/potential.png)
+![potential](./assets/07_well_barrier_1d/potential.png)
 
 阱（蓝）深 $V_0=20$，宽 $a=1$；势垒（红）高 $V_1=8$，宽 $b=2$。虚线标出共振 $E_R\approx 5.29$，正好嵌在势垒高度以下，是典型的亚阈准束缚态。
 
 第二张图：相移 $\eta(E)$ 经过共振时的 $\pi$ 跳跃及其 BW 拟合。
 
-![phase shift across resonance](./assets/well_barrier_1d/transmission.png)
+![phase shift across resonance](./assets/07_well_barrier_1d/transmission.png)
 
 外圈大尺度上看不到峰，因为宽度太窄（$\Gamma\sim 10^{-2}$）；放大插图里 $\eta$ 在 $\pm 8\Gamma/2$ 范围内走完一个 $\pi$，与 BW 解析曲线几乎完全重合。脚本里直接对 $\tan(\eta-\eta_\text{bg})$ 做线性最小二乘，反提的 $E_R$ 与 Newton 极点实部一致到 $10^{-5}$，$\Gamma$ 一致到 $10^{-3}$ 量级。
 
 第三张图：复 $E$ 平面 $|S(E)|$ 等高线，标出 Newton 找到的极点。
 
-![pole on second sheet](./assets/well_barrier_1d/pole_E_plane.png)
+![pole on second sheet](./assets/07_well_barrier_1d/pole_E_plane.png)
 
 极点正好位于 $E_R-i\Gamma/2$，即 BW 拟合给出的中心向下半平面的解析延拓。这一极点在物理面（上半平面 $\mathrm{Im}\,E>0$ 这一支）是缺席的，必须穿过实轴正半轴的连续谱支割延拓到第二张面，才能"看到"——`Green_operator.zh.md:468` 中"自伴 $H$ 的复极点只能位于第二张面"那条原理在这里有了像素级实例。
 
 第四张图：第一共振宽度 $\Gamma$ 随势垒宽度 $b$ 的变化。
 
-![width vs barrier width](./assets/well_barrier_1d/width_vs_b.png)
+![width vs barrier width](./assets/07_well_barrier_1d/width_vs_b.png)
 
 数值数据点与 WKB 直线在半对数图上几乎平行，比值 $\Gamma_\text{num}/\Gamma_\text{WKB}\approx 1.40$ 在 $b\in[2,3]$ 范围内稳定不变。这条曲线就是 Gamow 在原子核 α 衰变上发现的图像：寿命 $\tau=1/\Gamma\propto \exp(2b\sqrt{V_1-E_R})$，对原子核而言 $b$ 与 $V_1$ 由库仑势的高度与宽度决定，不同核素的 $\sqrt{V_1-E_R}$ 略有差异就让 $\log\tau$ 跨十几个量级——Geiger-Nuttall 规则的指数因子正是这里的 $\mathrm e^{-2b\kappa}$。
 
 ## sanity checks
 
-`well_barrier_1d.py` 的 `sanity_checks` 跑三件事：
+`07_well_barrier_1d.py` 的 `sanity_checks` 跑三件事：
 
 - 实 $E$ 上 $|S(E)|=1$（弹性幺正性），随机 6 组 $E$ 全通过，绝对误差 $<10^{-9}$；
 - Newton 极点与 BW 拟合的 $E_R$ 一致到 $10^{-3}$，$\Gamma$ 相对误差 $<10^{-2}$；
 - 数值 $\Gamma$ 与 WKB $\Gamma$ 在 $b>2$ 时比值在 $[0.5,2]$ 内（实测 $\approx 1.40$，被丢的 WKB 前因子是 $O(1)$ 的）。
 
-跑一次约 1 秒，4 张 png 写到 `assets/well_barrier_1d/`。
+跑一次约 1 秒，4 张 png 写到 `assets/07_well_barrier_1d/`。
 
 ## 与 Friedrichs 模型的对账
 

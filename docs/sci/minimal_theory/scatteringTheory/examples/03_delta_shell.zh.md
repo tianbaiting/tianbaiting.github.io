@@ -115,7 +115,7 @@ $$
 
 ## 数值与图
 
-完整脚本见 `delta_shell.py`。下面贴关键片段。
+完整脚本见 `03_delta_shell.py`。下面贴关键片段。
 
 ```python
 def tan_delta0(k, gamma, R=1.0):
@@ -139,37 +139,37 @@ def newton_pole(k0, gamma, R=1.0, tol=1e-12, itmax=80):
 
 第一张图：相移 $\delta_0(k)$ 对几个 $\gamma$。
 
-![s-wave phase shift](./assets/delta_shell/phase_shift.png)
+![s-wave phase shift](./assets/03_delta_shell/phase_shift.png)
 
 $\gamma=5$ 时相移平缓上升；$\gamma=20$ 时在 $kR \approx \pi$ 附近出现明显的 $\pi$ 跳跃；$\gamma=50$ 时几乎是阶梯。每过一个 $n\pi$ 相移再增加一个 $\pi$，这是 Levinson 定理在共振版本下的体现：每一个准束缚态贡献 $\pi$ 相位。
 
 第二张图：截面 $\sigma_0(k) = 4\pi\sin^2\delta_0/k^2$。
 
-![cross section](./assets/delta_shell/cross_section.png)
+![cross section](./assets/03_delta_shell/cross_section.png)
 
 Breit-Wigner 峰直接坐在 $kR = n\pi$ 附近，峰高 $\sim 4\pi/(n\pi/R)^2$；$\gamma$ 越大峰越窄越尖。$\gamma=5$ 时基本看不见峰，$\gamma=50$ 时峰已经收成针。这就是把 Friedrichs 笔记里"耦合极限下极点靠近实轴"的图像具体化到一个解析势上。
 
 第三张图：复 $k$ 平面上 $|S_0(k)|$ 的对数幅度，$\gamma=20$。
 
-![complex k pole map](./assets/delta_shell/pole_scan.png)
+![complex k pole map](./assets/03_delta_shell/pole_scan.png)
 
 亮点（$|S_0|$ 大）正好落在 Newton 迭代找到的三个极点处，分别对应 $n=1,2,3$ 共振。极点全在下半平面，正符合物理面外延到第二张面后衰变态极点的位置。如果换 $\gamma<0$（吸引），极点会跑到正虚轴，对应束缚态——这与一维 delta 势的束缚态极点结构同源。
 
 第四张图：第一共振宽度 $\Gamma_1$ 随 $\gamma$ 的变化（log-log）。
 
-![width vs coupling](./assets/delta_shell/width_vs_gamma.png)
+![width vs coupling](./assets/03_delta_shell/width_vs_gamma.png)
 
 数据点几乎压在 $2\pi/\gamma$ 直线上：宽度反比于耦合，$\Gamma_1 \sim 2\pi/\gamma$。这条 scaling 和 Friedrichs 笔记里 $\Gamma(E) = 2\pi |g(E)|^2$ 的依赖结构是一致的——这里有效"耦合"$|g|^2$ 反比于势的"硬度"$\gamma$，因为壳越硬，准束缚态在内部停留越久（宽度越小）。极限 $\gamma \to \infty$ 极点掉到实轴，恢复硬球内部的真束缚态。
 
 ## sanity checks
 
-`delta_shell.py` 的 `sanity_checks` 跑三件事：
+`03_delta_shell.py` 的 `sanity_checks` 跑三件事：
 
 1. 实 $k$ 上 $|S_0(k)| = 1$（弹性幺正性），随机 8 组 $(\gamma, k)$ 全通过；
 2. $\gamma = 0$ 时 $\delta_0(k) = 0$；
 3. $\gamma = 20$ 第一个共振极点 $k_1 \approx 2.996 - 0.021\,i$，实部偏离 $\pi$ 约 0.05（约 1.5%），虚部很小——硬球极限的小修正。
 
-跑一次大概 1 秒，所有图写到 `assets/delta_shell/`。
+跑一次大概 1 秒，所有图写到 `assets/03_delta_shell/`。
 
 ## 与 Friedrichs 模型的对账
 

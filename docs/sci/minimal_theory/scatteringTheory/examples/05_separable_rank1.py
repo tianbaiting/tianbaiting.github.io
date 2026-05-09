@@ -9,7 +9,7 @@ from pathlib import Path
 import numpy as np
 import matplotlib.pyplot as plt
 
-ASSETS = Path(__file__).parent / "assets" / "separable_rank1"
+ASSETS = Path(__file__).parent / "assets" / "05_separable_rank1"
 ASSETS.mkdir(parents=True, exist_ok=True)
 
 g = lambda p, b: 1.0 / (p ** 2 + b ** 2)

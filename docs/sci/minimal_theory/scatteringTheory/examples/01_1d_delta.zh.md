@@ -173,7 +173,7 @@ $$
 
 ## 数值与图
 
-下面给出 `1d_delta.py` 的关键片段（完整可运行版本在同目录）。它做四件事：
+下面给出 `01_1d_delta.py` 的关键片段（完整可运行版本在同目录）。它做四件事：
 
 1. 解析地画 $|t(k)|^2$、$|r(k)|^2$ 与 $|t|^2 + |r|^2$ 验证幺正性。
 2. 在复 $k$ 平面上扫描 $|t(k)|$，定位极点。
@@ -201,10 +201,10 @@ for ax, lam, title in zip(axes, [-2.0, +2.0], ['Attractive λ=-2', 'Repulsive λ
     ax.plot(k, np.abs(r)**2, label='|r|²')
     ax.plot(k, np.abs(t)**2 + np.abs(r)**2, '--', label='sum')
     ax.set_xlabel('k'); ax.set_title(title); ax.legend()
-plt.tight_layout(); plt.savefig('assets/1d_delta/transmission.png', dpi=140)
+plt.tight_layout(); plt.savefig('assets/01_1d_delta/transmission.png', dpi=140)
 ```
 
-![transmission and reflection probabilities](./assets/1d_delta/transmission.png)
+![transmission and reflection probabilities](./assets/01_1d_delta/transmission.png)
 
 两图共同的事实：
 
@@ -227,10 +227,10 @@ plt.axhline(0, color='w', lw=0.5); plt.axvline(0, color='w', lw=0.5)
 kappa = -lam / 2
 plt.plot(0, kappa, 'r*', ms=15, label=f'pole k=i*{kappa:.2f}')
 plt.xlabel('Re k'); plt.ylabel('Im k'); plt.legend()
-plt.savefig('assets/1d_delta/pole.png', dpi=140)
+plt.savefig('assets/01_1d_delta/pole.png', dpi=140)
 ```
 
-![bound-state pole on positive imaginary k axis](./assets/1d_delta/pole.png)
+![bound-state pole on positive imaginary k axis](./assets/01_1d_delta/pole.png)
 
 亮点正落在 $k = i\kappa = i\,|\lambda|/2$ 上，与解析公式吻合。把 $\lambda$ 翻号，亮点会切到下半平面，对应非物理面，束缚态消失。
 
@@ -240,10 +240,10 @@ k = np.linspace(0.05, 5.0, 400)
 for lam, c in zip([-2.0, -0.5, +0.5, +2.0], ['C0', 'C1', 'C2', 'C3']):
     plt.plot(k, phase_shift_even(k, lam), c, label=f'λ={lam}')
 plt.xlabel('k'); plt.ylabel('δ_e(k)'); plt.legend()
-plt.savefig('assets/1d_delta/phase_shift.png', dpi=140)
+plt.savefig('assets/01_1d_delta/phase_shift.png', dpi=140)
 ```
 
-![even-channel phase shift](./assets/1d_delta/phase_shift.png)
+![even-channel phase shift](./assets/01_1d_delta/phase_shift.png)
 
 吸引势 $\delta_e \to \pi/2$ 当 $k \to 0$，正是束缚态存在的标志（一维版的 Levinson）；排斥势 $\delta_e \to -\pi/2$，无束缚态。两条曲线在 $k \to \infty$ 都回到零。
 

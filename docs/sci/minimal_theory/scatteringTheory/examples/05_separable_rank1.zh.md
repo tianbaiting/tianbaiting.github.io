@@ -1,6 +1,6 @@
 # 秩 1 separable 势与解析 T 矩阵
 
-`1d_delta.zh.md` 的最后一节已经把一维 delta 势改写成动量空间的秩 1 separable 形式 $V = \lambda |0\rangle\langle 0|$，并指出这一结构的特征是 $\langle k'|T(E)|k\rangle$ 不依赖出射动量 $k'$。这一篇把同一个机制推广到一般 form factor $g(p)$：势仍然秩 1，但 $g(p)$ 不再是常数，整个 LS 方程仍然能精确解出，并且 $T(p,p';E)$ 的所有动量依赖都被压进同一对 $g(p)g(p')$。
+`01_1d_delta.zh.md` 的最后一节已经把一维 delta 势改写成动量空间的秩 1 separable 形式 $V = \lambda |0\rangle\langle 0|$，并指出这一结构的特征是 $\langle k'|T(E)|k\rangle$ 不依赖出射动量 $k'$。这一篇把同一个机制推广到一般 form factor $g(p)$：势仍然秩 1，但 $g(p)$ 不再是常数，整个 LS 方程仍然能精确解出，并且 $T(p,p';E)$ 的所有动量依赖都被压进同一对 $g(p)g(p')$。
 
 具体取核物理里经典的 Yamaguchi（1954）模型 $g(p) = 1/(p^2 + \beta^2)$。这一选择的好处是：传播子积分有完全闭式，散射长度、有效力程都是 $\lambda, \beta$ 的初等函数，束缚态条件、相移、off-shell 行为都一笔写完。本篇的目的就是给 `../appendix_EST_seperable_HVH_Esym.md` 中第 93–149 行那段高度抽象的秩 $N$ EST 公式补一个最小完整、可验证的范例。
 
@@ -14,7 +14,7 @@ $$
 V(p, p') = \lambda\, g(p)\, g(p'), \qquad g(p) = \frac{1}{p^2 + \beta^2}.
 $$
 
-回到坐标空间它是非局域的（高斯型衰减的核），但这不影响散射理论框架。$\lambda$ 控制强度（吸引取 $\lambda < 0$），$\beta$ 控制 form factor 的动量尺度——$\beta \to \infty$ 退到 $g \to 1/\beta^2$ 常数，与一维 delta 势的退化情形相对应（见 `1d_delta.zh.md` 末段）。
+回到坐标空间它是非局域的（高斯型衰减的核），但这不影响散射理论框架。$\lambda$ 控制强度（吸引取 $\lambda < 0$），$\beta$ 控制 form factor 的动量尺度——$\beta \to \infty$ 退到 $g \to 1/\beta^2$ 常数，与一维 delta 势的退化情形相对应（见 `01_1d_delta.zh.md` 末段）。
 
 s 波 LS 方程（取 `../partial_wave_projection.zh.md` 第 340 行的形式，配上 $2\mu=1$）
 
@@ -142,11 +142,11 @@ $$
 
 把附录第 117 行那一句"T 矩阵有解析形式，无需再求解积分方程"在本篇里被显式兑现：$\tau(E)$ 一行写出，$T(p, p'; E)$ 是有理函数。
 
-与一维 delta 势的退化对应：`1d_delta.zh.md` 第 146 行的 $V = \lambda |0\rangle\langle 0|$ 在动量空间 $\langle p|0\rangle\langle 0|p'\rangle = 1/(2\pi)$（一维），对应 form factor $g(p) \equiv 1/\sqrt{2\pi}$ 常数。这是 $\beta \to \infty$（form factor 完全无 cutoff）的极限——但严格的常数 form factor 让 $I(E)$ 紫外发散，所以一维 delta 在三维 s 波框架下是非平凡的，需要重正化（这与 Yamaguchi 的紫外软化形成对比）。本篇取有限 $\beta$ 就是给这个紫外发散一个物理的截断。
+与一维 delta 势的退化对应：`01_1d_delta.zh.md` 第 146 行的 $V = \lambda |0\rangle\langle 0|$ 在动量空间 $\langle p|0\rangle\langle 0|p'\rangle = 1/(2\pi)$（一维），对应 form factor $g(p) \equiv 1/\sqrt{2\pi}$ 常数。这是 $\beta \to \infty$（form factor 完全无 cutoff）的极限——但严格的常数 form factor 让 $I(E)$ 紫外发散，所以一维 delta 在三维 s 波框架下是非平凡的，需要重正化（这与 Yamaguchi 的紫外软化形成对比）。本篇取有限 $\beta$ 就是给这个紫外发散一个物理的截断。
 
 ## 数值与图
 
-代码在同目录 `separable_rank1.py`，依赖仅 `numpy + matplotlib`。验证策略：把 $I(E)$ 用 Gauss-Legendre 求积离散化，对 $E > 0$ 用减法处理主值积分（减去 on-shell 处 $g^2$ 的奇异部分，再加回解析尾巴），加上来自 $i0$ 处方的 $-i\pi\delta$ 贡献，最后比对解析 $\tau(E)$。
+代码在同目录 `05_separable_rank1.py`，依赖仅 `numpy + matplotlib`。验证策略：把 $I(E)$ 用 Gauss-Legendre 求积离散化，对 $E > 0$ 用减法处理主值积分（减去 on-shell 处 $g^2$ 的奇异部分，再加回解析尾巴），加上来自 $i0$ 处方的 $-i\pi\delta$ 贡献，最后比对解析 $\tau(E)$。
 
 核心 sanity check（取 $\lambda = -30$，$\beta = 1$）：
 
@@ -170,19 +170,19 @@ def kcot(k, lam, beta):
 
 四张图：
 
-![|tau(E)| 在实能量轴上的扫描](./assets/separable_rank1/tau_vs_E.png)
+![|tau(E)| 在实能量轴上的扫描](./assets/05_separable_rank1/tau_vs_E.png)
 
 $|\tau(E)|$ 在束缚态能量 $E_b = -\kappa^2$ 处发散（红线标出），$E = 0$ 处穿越分支点。$E > 0$ 区域 $|\tau|$ 是平滑的有限值，与解析阈值条件吻合。
 
-![s 波相移：解析与数值 LS 对比](./assets/separable_rank1/phase_shift.png)
+![s 波相移：解析与数值 LS 对比](./assets/05_separable_rank1/phase_shift.png)
 
 闭式 $\delta_0(k) = \arctan[k / (k\cot\delta_0)]$ 与 Gauss-Legendre 数值 LS 在所有测试点完全重合。三组 $(\lambda, \beta)$ 覆盖弱吸引、强吸引、不同尺度的情形。强吸引情形 $\delta_0(0) \approx \pi$ 是 Levinson 定理 $\delta_0(0) - \delta_0(\infty) = N_b \pi$ 的体现（$N_b = 1$ 个束缚态）。
 
-![有效力程展开线性化](./assets/separable_rank1/effective_range.png)
+![有效力程展开线性化](./assets/05_separable_rank1/effective_range.png)
 
 $k\cot\delta_0$ 对 $k^2$ 作图；ERE 截断到 $O(k^2)$ 的虚线（用解析 $a, r_e$ 画出）与精确曲线在低 $k^2$ 完美吻合，高 $k^2$ 处出现来自 $-4\pi k^4/\lambda$ 项的偏离——这一项也在解析公式里写明，所以"偏离"也是解析可控的。
 
-![off-shell T 矩阵的可分离结构](./assets/separable_rank1/off_shell.png)
+![off-shell T 矩阵的可分离结构](./assets/05_separable_rank1/off_shell.png)
 
 固定 $k_0 = 0.8$ 在壳，扫 $p$ 看 $T(p, k_0; E_{k_0})$。曲线形状完全由 $g(p) = 1/(p^2 + 1)$ 决定（实部、虚部只差一个 $\tau$ 给出的复整体因子），这就是秩 1 separable 的可视化签名。
 
@@ -195,7 +195,7 @@ $k\cot\delta_0$ 对 $k^2$ 作图；ERE 截断到 $O(k^2)$ 的虚线（用解析 
 | `../partial_wave_projection.zh.md` 第 372 行 on-shell $T_l \leftrightarrow \delta_l$ | $T_0(k,k;E_k) = -[4\pi]^{-1}(k\cot\delta_0 - ik)^{-1}$（系数差由本篇 $1/(2\pi^2)$ 测度约定决定） |
 | `../appendix_EST_seperable_HVH_Esym.md` 第 99–117 行 separable T 矩阵 | 秩 $N=1$ 显式实现，$D(z)^{-1} = 1/(\lambda^{-1} - I(E))$ |
 | `../appendix_EST_seperable_HVH_Esym.md` 第 151–180 行实用方案 | 把 Gauss form factor 换成 Yamaguchi，用留数代替 $\mathrm{erfi}$ |
-| `1d_delta.zh.md` 第 146 行 $V = \lambda |0\rangle\langle 0|$ | $g(p) \equiv$ 常数（紫外不收敛）的极限，本篇有限 $\beta$ 提供截断 |
+| `01_1d_delta.zh.md` 第 146 行 $V = \lambda |0\rangle\langle 0|$ | $g(p) \equiv$ 常数（紫外不收敛）的极限，本篇有限 $\beta$ 提供截断 |
 
 ## next-step
 

@@ -116,7 +116,7 @@ $$
 
 ## 数值与图
 
-完整可运行的 `square_well_3d.py` 在同目录。核心是几行：
+完整可运行的 `02_square_well_3d.py` 在同目录。核心是几行：
 
 ```python
 def delta0(k, V0, R=1.0):
@@ -134,19 +134,19 @@ def scattering_length(V0, R=1.0):
 
 四张图各自验证一条公式。
 
-![s-wave phase shift](./assets/square_well_3d/phase_shift_vs_k.png)
+![s-wave phase shift](./assets/02_square_well_3d/phase_shift_vs_k.png)
 
 $\delta_0(k)$ 对 $V_0 \in \{1, 5, 25, 60\}$（取 $R=1$）。低能极限严格落在 $0, \pi, 2\pi, 2\pi$ 上（$K_0 R$ 阈值 $\pi/2, 3\pi/2$ 之间分别给 0, 1, 2 个束缚态；$V_0 = 60$ 在第三阈值之内仍是 2）。这正是 Levinson。
 
-![total s-wave cross section](./assets/square_well_3d/cross_section.png)
+![total s-wave cross section](./assets/02_square_well_3d/cross_section.png)
 
 $\sigma_0(k) = 4\pi\sin^2\delta_0/k^2$。$V_0 = 25, 60$ 在中等 $k$ 处出现尖锐极小，这是 Ramsauer-Townsend 现象：相移穿过 $\pi$ 的整数倍，$\sin\delta_0 = 0$，$\sigma_0$ 完全归零。低能 $k\to 0$ 极限 $\sigma_0 \to 4\pi a^2$。
 
-![scattering length](./assets/square_well_3d/scattering_length.png)
+![scattering length](./assets/02_square_well_3d/scattering_length.png)
 
 $a(V_0)$ 在 $V_0 \in [0, 30]$。两条红色虚线 $V_0 = (\pi/2)^2 \approx 2.47$ 与 $(3\pi/2)^2 \approx 22.2$ 对应 $K_0 R = \pi/2, 3\pi/2$，正是两次束缚态阈值。$a$ 在阈值左从 $-\infty$ 跳到右的 $+\infty$，每次新束缚态出现 $a$ 必经一次符号翻转。
 
-![effective range fit](./assets/square_well_3d/effective_range_fit.png)
+![effective range fit](./assets/02_square_well_3d/effective_range_fit.png)
 
 固定 $V_0 = 2.0$（弱阱，无束缚态），画 $k\cot\delta_0$ 对 $k^2$ 的散点。直线拟合给出截距 $-1/a \approx -0.280$、斜率 $r_e/2 \approx 0.610$。截距与解析散射长度 $a = 1 - \tan\sqrt 2 / \sqrt 2 \approx 3.479$ 给出 $-1/a \approx -0.287$，吻合。这就是有效力程展开"两个参数足以描述低能 s 波"的实验性证据。
 

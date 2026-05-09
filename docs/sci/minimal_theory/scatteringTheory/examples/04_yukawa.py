@@ -10,7 +10,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-ASSETS = Path(__file__).parent / "assets" / "yukawa"
+ASSETS = Path(__file__).parent / "assets" / "04_yukawa"
 ASSETS.mkdir(parents=True, exist_ok=True)
 
 V_yukawa = lambda r, V0, mu: -V0 * np.exp(-mu * r) / (mu * r)

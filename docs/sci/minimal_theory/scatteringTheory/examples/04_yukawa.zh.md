@@ -63,7 +63,7 @@ $$
 
 下图是 $|f^B(q)|^2$ 对几个 $\mu$ 值的对数图。$\mu$ 越小，前向越尖锐，远端 $q \gg \mu$ 段都收敛到同一个 $V_0^2/(\mu^2 q^4)$ 包络。
 
-![Born amplitude squared for several screening masses](./assets/yukawa/born_amplitude.png)
+![Born amplitude squared for several screening masses](./assets/04_yukawa/born_amplitude.png)
 
 ## Born 级数何时收敛
 
@@ -91,7 +91,7 @@ $$
 
 下图是数值精确 s 波相移与 Born 公式的对照（$\mu = 1$ 固定，三个 $V_0$ 值）。$V_0 = 0.1$ 时两条线肉眼重合；$V_0 = 0.5$ 时小幅偏离；$V_0 = 1.5$ 时已经在 Bargmann 上界以内、但接近真实阈值，Born 严重低估相移。
 
-![Phase shift exact vs Born](./assets/yukawa/phase_shift_compare.png)
+![Phase shift exact vs Born](./assets/04_yukawa/phase_shift_compare.png)
 
 s 波 Born 相移本身有闭式：从 `partial_wave_projection.zh.md:348` 出发把 $j_0(kr) = \sin(kr)/(kr)$ 代入
 
@@ -118,7 +118,7 @@ $$
 
 可以看到 Born 近似在中等耦合就开始失败的全貌。下图是 $V_0 = \mu = 1$、$k = 1.5$ 的一帧：Born 振幅幅度系统性偏高、且仍然单调，而 full partial-wave sum（截到 $l_{\max} = 6$）在 $\theta \approx 40^\circ$ 处出现一个 Born 看不见的浅极小，对应 $\delta_0$ 与 $\delta_1$ 干涉相消。
 
-![Differential cross section Born vs exact](./assets/yukawa/cross_section.png)
+![Differential cross section Born vs exact](./assets/04_yukawa/cross_section.png)
 
 这个极小是非微扰的：它的位置依赖于多个分波相移之间的相对相位，是 Born 一阶振幅没有任何信息可以预测的。与第 2 篇方阱里的 Ramsauer-Townsend 极小是同源现象——Yukawa 这里耦合还不算非常强，但已经能定性看到。
 
@@ -138,7 +138,7 @@ $$
 
 把 $V_0$ 从小扫到大、保持 $k = 0.05$（接近零能），看 $\delta_0$ 怎么变。Levinson 定理告诉我们 $\delta_0(k\to 0) - \delta_0(k\to \infty) = N_b\pi$，其中 $N_b$ 是 s 波束缚态数。$\delta_0(k\to\infty) \to 0$，所以低能极限里每出现一个新的束缚态，$\delta_0(0)$ 就跳一次 $\pi$。
 
-![Bound state threshold scan](./assets/yukawa/bound_state_threshold.png)
+![Bound state threshold scan](./assets/04_yukawa/bound_state_threshold.png)
 
 数值结果：第一次跳变发生在 $V_0 \approx 1.68$，与 Yukawa s 波束缚态的标准阈值符合。Bargmann 不等式给出的 $V_0/\mu^2 \le 0.84$ 上界标在图上，是真实阈值的一半左右，明显保守——它只用到 $\int r\,|V|\,dr$，没看到 Yukawa 指数压制带来的额外有效宽度。
 

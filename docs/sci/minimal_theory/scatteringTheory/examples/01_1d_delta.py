@@ -10,7 +10,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-ASSETS = Path(__file__).parent / "assets" / "1d_delta"
+ASSETS = Path(__file__).parent / "assets" / "01_1d_delta"
 ASSETS.mkdir(parents=True, exist_ok=True)
 
 

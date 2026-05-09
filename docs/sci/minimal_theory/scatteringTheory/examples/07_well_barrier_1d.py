@@ -5,7 +5,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-ASSETS = Path(__file__).parent / "assets" / "well_barrier_1d"
+ASSETS = Path(__file__).parent / "assets" / "07_well_barrier_1d"
 ASSETS.mkdir(parents=True, exist_ok=True)
 V0, V1, A, B = 20.0, 8.0, 1.0, 2.0
 

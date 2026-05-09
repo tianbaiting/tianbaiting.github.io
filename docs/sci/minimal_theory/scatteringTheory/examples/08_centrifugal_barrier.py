@@ -11,7 +11,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-ASSETS = Path(__file__).parent / "assets" / "centrifugal_barrier"
+ASSETS = Path(__file__).parent / "assets" / "08_centrifugal_barrier"
 ASSETS.mkdir(parents=True, exist_ok=True)
 L, LL1, V0_LIST = 2, 6, [12.0, 15.0, 18.0]
 
