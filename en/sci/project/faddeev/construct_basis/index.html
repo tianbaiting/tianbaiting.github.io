@@ -2426,6 +2426,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_15" tabindex="0" aria-expanded="false">
@@ -2502,6 +2506,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/coulomb_scattering/" class="md-nav__link">
+        Coulomb 散射的完整形式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../minimal_theory/scatteringTheory/friedrichsModel/" class="md-nav__link">
         Friedrichs 模型
       </a>
@@ -2529,13 +2547,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/polarization_formalism/" class="md-nav__link">
+        极化形式与自旋观测量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_7" type="checkbox" id="__nav_5_4_15_7" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_9" type="checkbox" id="__nav_5_4_15_9" >
       
       
         
@@ -2557,15 +2589,17 @@
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_5_4_15_7" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4_15_9" tabindex="0" aria-expanded="false">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Examples" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_4_15_7">
+        <label class="md-nav__title" for="__nav_5_4_15_9">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -2691,6 +2725,20 @@
     <li class="md-nav__item">
       <a href="../../../minimal_theory/scatteringTheory/examples/09_feshbach_two_channel/" class="md-nav__link">
         双通道 Feshbach 共振
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/10_polarization_demo/" class="md-nav__link">
+        极化散射的数值演示
       </a>
     </li>
   
@@ -3921,100 +3969,98 @@
 <li><span class="arithmatex">\(\mathcal T=\vec T+\vec t\)</span>：总同位旋</li>
 <li><span class="arithmatex">\(\mathcal T_z\)</span>：总同位旋 z 分量</li>
 </ul>
-<p>总结：<br />
-$$<br />
-|p,q;\alpha\rangle \equiv |p,q;(LS)J,(ls)j,(Jj)\mathcal J,(Tt)\mathcal T,\mathcal T_z\rangle<br />
-$$</p>
+<p>总结：</p>
+<div class="arithmatex">\[
+|p,q;\alpha\rangle \equiv |p,q;(LS)J,(ls)j,(Jj)\mathcal J,(Tt)\mathcal T,\mathcal T_z\rangle
+\]</div>
 <p>在数值计算中需截断角动量空间（例如工作中使用 <span class="arithmatex">\(\mathcal J \le 17/2\)</span> 和 <span class="arithmatex">\(J \le 3\)</span>）。</p>
 <hr />
 <h2 id="第二部分计算基--wpcd-离散化">第二部分：计算基 — WPCD 离散化<a class="headerlink" href="#第二部分计算基--wpcd-离散化" title="Permanent link">#</a></h2>
-<p>目标是把连续基 <span class="arithmatex">\(|p,q;\alpha\rangle\)</span> 离散化，使 AGS（Faddeev）方程<br />
-$$<br />
-\hat U = \hat P \hat v + \hat P \hat v \hat G_1(E) \hat U<br />
-$$<br />
-可转化为有限维矩阵方程。</p>
+<p>目标是把连续基 <span class="arithmatex">\(|p,q;\alpha\rangle\)</span> 离散化，使 AGS（Faddeev）方程</p>
+<div class="arithmatex">\[
+\hat U = \hat P \hat v + \hat P \hat v \hat G_1(E) \hat U
+\]</div>
+<p>可转化为有限维矩阵方程。</p>
 <p>WPCD 的核心思想是用波包（wave packet）将动量轴分箱并构建两类基：</p>
 <h3 id="步骤-1定义输入基--自由波包fwp">步骤 1：定义输入基 — 自由波包（FWP）<a class="headerlink" href="#步骤-1定义输入基--自由波包fwp" title="Permanent link">#</a></h3>
 <ul>
-<li>
-<p>一维 FWP <span class="arithmatex">\(|x_i\rangle_p\)</span> 表示动量区间（箱）<span class="arithmatex">\(\mathcal D_i=[k_i,k_{i+1}]\)</span> 上所有平面波的归一化积累：<br />
-  $$<br />
+<li>一维 FWP <span class="arithmatex">\(|x_i\rangle_p\)</span> 表示动量区间（箱）<span class="arithmatex">\(\mathcal D_i=[k_i,k_{i+1}]\)</span> 上所有平面波的归一化积累：</li>
+</ul>
+<p>$$<br />
   |x_i\rangle_p = \frac{1}{N_i}\int_{\mathcal D_i} f(p)\,|p\rangle\,p\,dp<br />
-  $$<br />
-  其中 <span class="arithmatex">\(f(p)\)</span> 与归一化因子 <span class="arithmatex">\(N_i\)</span> 依具体选择而定。</p>
-</li>
-<li>
-<p>三核子 FWP 基为张量积：<br />
-  $$<br />
+  $$</p>
+<p>其中 <span class="arithmatex">\(f(p)\)</span> 与归一化因子 <span class="arithmatex">\(N_i\)</span> 依具体选择而定。</p>
+<ul>
+<li>三核子 FWP 基为张量积：</li>
+</ul>
+<p>$$<br />
   |X_{ij}^\alpha\rangle = |x_i\rangle_p \otimes |\overline{x}_j\rangle_q \otimes |\alpha\rangle.<br />
   $$</p>
+<ul>
+<li>网格选择（可复现要点）：</li>
+<li>使用广义切比雪夫网格（generalized Chebyshev grid）。</li>
+<li>
+<p>网格点生成公式：</p>
+<p>$$<br />
+ p_i = \alpha \cdot \tan^{t}!\left(\frac{2i-1}{4N_{WP}}\pi\right),\quad i=1,\dots,N_{WP}.<br />
+ $$</p>
 </li>
 <li>
-<p>网格选择（可复现要点）：</p>
+<p>常用参数示例：<span class="arithmatex">\(N_{WP}=50,75,100,\dots\)</span>；<span class="arithmatex">\(\alpha=200\ \text{MeV}\)</span>；<span class="arithmatex">\(t=1\)</span>。</p>
 </li>
-<li>使用广义切比雪夫网格（generalized Chebyshev grid）。</li>
-<li>网格点生成公式：<br />
-     $$<br />
-     p_i = \alpha \cdot \tan^{t}!\left(\frac{2i-1}{4N_{WP}}\pi\right),\quad i=1,\dots,N_{WP}.<br />
-     $$</li>
-<li>常用参数示例：<span class="arithmatex">\(N_{WP}=50,75,100,\dots\)</span>；<span class="arithmatex">\(\alpha=200\ \text{MeV}\)</span>；<span class="arithmatex">\(t=1\)</span>。</li>
 <li>在 <span class="arithmatex">\(p\)</span> 和 <span class="arithmatex">\(q\)</span> 自由度上通常使用相同的 <span class="arithmatex">\(N_{WP}\)</span> 和网格参数。</li>
 </ul>
 <h3 id="步骤-2定义求解基--散射波包swp">步骤 2：定义求解基 — 散射波包（SWP）<a class="headerlink" href="#步骤-2定义求解基--散射波包swp" title="Permanent link">#</a></h3>
 <ul>
-<li>
-<p>通道哈密顿量：<br />
-  $$<br />
+<li>通道哈密顿量：</li>
+</ul>
+<p>$$<br />
   \hat H_1 = \hat h_{NN} + \hat h_{\text{spec}} = (\hat h_0^{(p)} + \hat v_{23}) + \hat h_0^{(q)}.<br />
-  $$<br />
-  通道格林函数 <span class="arithmatex">\(\hat G_1(E)=(E-\hat H_1+i\epsilon)^{-1}\)</span> 在 FWP 基上通常是非对角的。</p>
-</li>
-<li>
-<p>思路：在使 <span class="arithmatex">\(\hat G_1\)</span> 对角的本征基上求解。由于 <span class="arithmatex">\(\hat h_{NN}\)</span> 与 <span class="arithmatex">\(\hat h_{\text{spec}}\)</span> 可对易，本征基为各自本征基的张量积：</p>
-</li>
+  $$</p>
+<p>通道格林函数 <span class="arithmatex">\(\hat G_1(E)=(E-\hat H_1+i\epsilon)^{-1}\)</span> 在 FWP 基上通常是非对角的。</p>
+<ul>
+<li>思路：在使 <span class="arithmatex">\(\hat G_1\)</span> 对角的本征基上求解。由于 <span class="arithmatex">\(\hat h_{NN}\)</span> 与 <span class="arithmatex">\(\hat h_{\text{spec}}\)</span> 可对易，本征基为各自本征基的张量积：</li>
 <li><span class="arithmatex">\(\hat h_{\text{spec}}\)</span> 的本征基：FWP <span class="arithmatex">\(|\overline{x}_j\rangle_q\)</span>（旁观者自由）。</li>
 <li>
 <p><span class="arithmatex">\(\hat h_{NN}\)</span> 的本征基：两体相互作用系统的本征态，即散射波包（SWP） <span class="arithmatex">\(|z_i^\alpha\rangle_p\)</span>。</p>
 </li>
 <li>
-<p>混合求解基：<br />
-  $$<br />
-  |Z_{ij}^\alpha\rangle = |z_i^\alpha\rangle_p \otimes |\overline{x}_j\rangle_q,<br />
-  $$<br />
-  在此基上 <span class="arithmatex">\(\hat G_1(E)\)</span> 为对角矩阵，其对角元可通过 SWP 本征能量与旁观者能量解析得到。</p>
+<p>混合求解基：</p>
 </li>
 </ul>
+<p>$$<br />
+  |Z_{ij}^\alpha\rangle = |z_i^\alpha\rangle_p \otimes |\overline{x}_j\rangle_q,<br />
+  $$</p>
+<p>在此基上 <span class="arithmatex">\(\hat G_1(E)\)</span> 为对角矩阵，其对角元可通过 SWP 本征能量与旁观者能量解析得到。</p>
 <h3 id="步骤-3构建转换矩阵-cfwp--swp">步骤 3：构建转换矩阵 C（FWP ↔ SWP）<a class="headerlink" href="#步骤-3构建转换矩阵-cfwp--swp" title="Permanent link">#</a></h3>
 <ul>
-<li>
-<p>在一维 FWP 基 <span class="arithmatex">\(|x_i\rangle_p\)</span> 上构建两体哈密顿量矩阵：<br />
-  $$<br />
-  (\mathbf H_{NN})<em NN="NN">{ik} = \langle x_i|\hat h</em> + \hat v |x_k\rangle.}|x_k\rangle = \langle x_i| \hat h_0^{(p)<br />
-  $$<br />
-  这是一个 <span class="arithmatex">\(N_{WP}\times N_{WP}\)</span> 的实对称矩阵。</p>
-</li>
-<li>
-<p>对角化 <span class="arithmatex">\(\mathbf H_{NN}\)</span>（例如用 LAPACK 的 <code>dsyev</code> 等例程）：<br />
-  $$<br />
-  \mathbf H_{NN} = \mathbf C \mathbf D \mathbf C^T.<br />
-  $$<br />
-  返回的本征向量矩阵 <span class="arithmatex">\(\mathbf C\)</span> 的列即 SWP 在 FWP 基上的表示，元素 <span class="arithmatex">\(C_{ki}=\langle x_k|z_i\rangle\)</span>。对角矩阵 <span class="arithmatex">\(\mathbf D\)</span> 给出 SWP 的本征能量 <span class="arithmatex">\(\epsilon_i^\alpha\)</span>。</p>
-</li>
+<li>在一维 FWP 基 <span class="arithmatex">\(|x_i\rangle_p\)</span> 上构建两体哈密顿量矩阵：</li>
 </ul>
+<p>$$<br />
+  (\mathbf H_{NN})<em NN="NN">{ik} = \langle x_i|\hat h</em> + \hat v |x_k\rangle.}|x_k\rangle = \langle x_i| \hat h_0^{(p)<br />
+  $$</p>
+<p>这是一个 <span class="arithmatex">\(N_{WP}\times N_{WP}\)</span> 的实对称矩阵。</p>
+<ul>
+<li>对角化 <span class="arithmatex">\(\mathbf H_{NN}\)</span>（例如用 LAPACK 的 <code>dsyev</code> 等例程）：</li>
+</ul>
+<p>$$<br />
+  \mathbf H_{NN} = \mathbf C \mathbf D \mathbf C^T.<br />
+  $$</p>
+<p>返回的本征向量矩阵 <span class="arithmatex">\(\mathbf C\)</span> 的列即 SWP 在 FWP 基上的表示，元素 <span class="arithmatex">\(C_{ki}=\langle x_k|z_i\rangle\)</span>。对角矩阵 <span class="arithmatex">\(\mathbf D\)</span> 给出 SWP 的本征能量 <span class="arithmatex">\(\epsilon_i^\alpha\)</span>。</p>
 <h3 id="最终矩阵方程">最终矩阵方程<a class="headerlink" href="#最终矩阵方程" title="Permanent link">#</a></h3>
-<p>在 SWP 基中，AGS 方程变为有限维矩阵方程：<br />
-$$<br />
-\mathbf U = \mathbf A + \mathbf A\,\mathbf G(E)\,\mathbf U,<br />
-$$<br />
-其中：<br />
+<p>在 SWP 基中，AGS 方程变为有限维矩阵方程：</p>
+<div class="arithmatex">\[
+\mathbf U = \mathbf A + \mathbf A\,\mathbf G(E)\,\mathbf U,
+\]</div>
+<p>其中：<br />
 - <span class="arithmatex">\(\mathbf U = \langle Z|\hat U|Z\rangle\)</span>（待求矩阵）。<br />
 - <span class="arithmatex">\(\mathbf G(E) = \langle Z|\hat G_1(E)|Z\rangle\)</span>，为对角矩阵，其对角元可写为 <span class="arithmatex">\(\displaystyle \frac{1}{E-\epsilon_i-E_j^q}\)</span>（<span class="arithmatex">\(\epsilon_i\)</span> 为 SWP 本征能，<span class="arithmatex">\(E_j^q\)</span> 为旁观者能量）。<br />
 - <span class="arithmatex">\(\mathbf A = \langle Z|\hat P\hat v|Z\rangle\)</span>，为在 SWP 基中的非对角核矩阵。</p>
-<p>由于 <span class="arithmatex">\(\hat P\)</span> 与 <span class="arithmatex">\(\hat v\)</span> 通常在 FWP 基中构建（记为 <span class="arithmatex">\(\mathbf P_{FWP}\)</span> 与 <span class="arithmatex">\(\mathbf V_{FWP}\)</span>），<span class="arithmatex">\(\mathbf A\)</span> 通过基变换得到：<br />
-$$<br />
-\mathbf A = \mathbf C^T \big(\mathbf P_{FWP}\,\mathbf V_{FWP}\big) \mathbf C,<br />
-$$<br />
-其中 <span class="arithmatex">\(\mathbf C\)</span> 作用于 <span class="arithmatex">\(p\)</span> 自由度，<span class="arithmatex">\(q\)</span> 自由度保留单位阵。</p>
+<p>由于 <span class="arithmatex">\(\hat P\)</span> 与 <span class="arithmatex">\(\hat v\)</span> 通常在 FWP 基中构建（记为 <span class="arithmatex">\(\mathbf P_{FWP}\)</span> 与 <span class="arithmatex">\(\mathbf V_{FWP}\)</span>），<span class="arithmatex">\(\mathbf A\)</span> 通过基变换得到：</p>
+<div class="arithmatex">\[
+\mathbf A = \mathbf C^T \big(\mathbf P_{FWP}\,\mathbf V_{FWP}\big) \mathbf C,
+\]</div>
+<p>其中 <span class="arithmatex">\(\mathbf C\)</span> 作用于 <span class="arithmatex">\(p\)</span> 自由度，<span class="arithmatex">\(q\)</span> 自由度保留单位阵。</p>
 <hr />
 <h2 id="复现要点与步骤清单">复现要点与步骤清单<a class="headerlink" href="#复现要点与步骤清单" title="Permanent link">#</a></h2>
 <ol>
@@ -4065,7 +4111,7 @@ $$<br />
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月5日 10:00:17 UTC"><span class="timeago" datetime="2025-11-05T10:00:17+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月5日 10:00:17 UTC">2025-11-05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月9日 15:05:14 UTC"><span class="timeago" datetime="2026-05-09T15:05:14+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月9日 15:05:14 UTC">2026-05-09</span>
       
         <br>
         Created:

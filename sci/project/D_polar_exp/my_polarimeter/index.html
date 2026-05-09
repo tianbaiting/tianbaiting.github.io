@@ -2408,6 +2408,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_15" tabindex="0" aria-expanded="false">
@@ -2484,6 +2488,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/coulomb_scattering/" class="md-nav__link">
+        Coulomb 散射的完整形式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../minimal_theory/scatteringTheory/friedrichsModel/" class="md-nav__link">
         Friedrichs 模型
       </a>
@@ -2511,13 +2529,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/polarization_formalism/" class="md-nav__link">
+        极化形式与自旋观测量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_7" type="checkbox" id="__nav_5_4_15_7" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_9" type="checkbox" id="__nav_5_4_15_9" >
       
       
         
@@ -2539,15 +2571,17 @@
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_5_4_15_7" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4_15_9" tabindex="0" aria-expanded="false">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Examples" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_4_15_7">
+        <label class="md-nav__title" for="__nav_5_4_15_9">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -2673,6 +2707,20 @@
     <li class="md-nav__item">
       <a href="../../../minimal_theory/scatteringTheory/examples/09_feshbach_two_channel/" class="md-nav__link">
         双通道 Feshbach 共振
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/10_polarization_demo/" class="md-nav__link">
+        极化散射的数值演示
       </a>
     </li>
   
@@ -3733,18 +3781,34 @@
 <h2 id="time-resolution-require">Time resolution require<a class="headerlink" href="#time-resolution-require" title="Permanent link">#</a></h2>
 <p><img alt="alt text" src="../assets/my_polarimeter.en/image-2.png" /></p>
 <p>Harmonic number <span class="arithmatex">\(h = 6\)</span>，SRC 导出轨道半径 <span class="arithmatex">\(R_{ext} = 5.36\ \mathrm{m}\)</span>，束流动能 <span class="arithmatex">\(T_u = 190\ \mathrm{MeV}/u\)</span>。</p>
-<p>束流包之间的间隔时间 <span class="arithmatex">\(\Delta t\)</span> 实际上是射频电场的周期 <span class="arithmatex">\(T_{RF}\)</span>，即：<br />
-$<span class="arithmatex">\(\Delta t = T_{RF} = \frac{1}{f_{RF}} = \frac{1}{h \times f_{rev}}\)</span>$</p>
-<p>先由 <span class="arithmatex">\(T_u = 190\ \mathrm{MeV}/u\)</span> 求相对论因子（取 <span class="arithmatex">\(m_u c^2 = 931.494\ \mathrm{MeV}\)</span>）：<br />
-$<span class="arithmatex">\(\gamma = 1 + \frac{T_u}{m_u c^2} = 1 + \frac{190}{931.494} = 1.20397\)</span>$<br />
-$<span class="arithmatex">\(\beta = \sqrt{1 - \gamma^{-2}} = 0.55689\)</span>$<br />
-$<span class="arithmatex">\(v = \beta c = 1.6695 \times 10^{8}\ \mathrm{m/s}\)</span>$</p>
-<p>再由导出半径 <span class="arithmatex">\(R_{ext} = 5.36\ \mathrm{m}\)</span> 计算导出轨道圆周与回旋频率：<br />
-$<span class="arithmatex">\(C = 2\pi R_{ext} = 33.678\ \mathrm{m}\)</span>$<br />
-$<span class="arithmatex">\(f_{rev} = \frac{v}{C} = 4.9573\ \mathrm{MHz}\)</span>$</p>
-<p>于是 bucket 频率与束团间隔为：<br />
-$<span class="arithmatex">\(f_{bucket} = h \times f_{rev} = 6 \times 4.9573\ \mathrm{MHz} = 29.7441\ \mathrm{MHz}\)</span>$<br />
-$<span class="arithmatex">\(\Delta t = \frac{1}{f_{bucket}} \approx 33.62\ \mathrm{ns}\)</span>$</p>
+<p>束流包之间的间隔时间 <span class="arithmatex">\(\Delta t\)</span> 实际上是射频电场的周期 <span class="arithmatex">\(T_{RF}\)</span>，即：</p>
+<div class="arithmatex">\[
+\Delta t = T_{RF} = \frac{1}{f_{RF}} = \frac{1}{h \times f_{rev}}
+\]</div>
+<p>先由 <span class="arithmatex">\(T_u = 190\ \mathrm{MeV}/u\)</span> 求相对论因子（取 <span class="arithmatex">\(m_u c^2 = 931.494\ \mathrm{MeV}\)</span>）：</p>
+<div class="arithmatex">\[
+\gamma = 1 + \frac{T_u}{m_u c^2} = 1 + \frac{190}{931.494} = 1.20397
+\]</div>
+<div class="arithmatex">\[
+\beta = \sqrt{1 - \gamma^{-2}} = 0.55689
+\]</div>
+<div class="arithmatex">\[
+v = \beta c = 1.6695 \times 10^{8}\ \mathrm{m/s}
+\]</div>
+<p>再由导出半径 <span class="arithmatex">\(R_{ext} = 5.36\ \mathrm{m}\)</span> 计算导出轨道圆周与回旋频率：</p>
+<div class="arithmatex">\[
+C = 2\pi R_{ext} = 33.678\ \mathrm{m}
+\]</div>
+<div class="arithmatex">\[
+f_{rev} = \frac{v}{C} = 4.9573\ \mathrm{MHz}
+\]</div>
+<p>于是 bucket 频率与束团间隔为：</p>
+<div class="arithmatex">\[
+f_{bucket} = h \times f_{rev} = 6 \times 4.9573\ \mathrm{MHz} = 29.7441\ \mathrm{MHz}
+\]</div>
+<div class="arithmatex">\[
+\Delta t = \frac{1}{f_{bucket}} \approx 33.62\ \mathrm{ns}
+\]</div>
 <h2 id="energy-deposit">Energy deposit<a class="headerlink" href="#energy-deposit" title="Permanent link">#</a></h2>
 <p><img alt="alt text" src="../assets/my_polarimeter.en/image.png" /></p>
 <p>![alt text](assets/my_polarimeter.en/image-1.png</p>
@@ -3754,7 +3818,7 @@ $<span class="arithmatex">\(\Delta t = \frac{1}{f_{bucket}} \approx 33.62\ \math
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:29:38 UTC"><span class="timeago" datetime="2026-04-20T10:29:38+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:29:38 UTC">2026-04-20</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月9日 15:05:14 UTC"><span class="timeago" datetime="2026-05-09T15:05:14+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月9日 15:05:14 UTC">2026-05-09</span>
       
         <br>
         创建日期:

@@ -2608,6 +2608,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_15" tabindex="0" aria-expanded="false">
@@ -2684,6 +2688,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../scatteringTheory/coulomb_scattering/" class="md-nav__link">
+        Coulomb 散射的完整形式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../scatteringTheory/friedrichsModel/" class="md-nav__link">
         Friedrichs 模型
       </a>
@@ -2711,13 +2729,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../scatteringTheory/polarization_formalism/" class="md-nav__link">
+        极化形式与自旋观测量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_7" type="checkbox" id="__nav_5_4_15_7" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_9" type="checkbox" id="__nav_5_4_15_9" >
       
       
         
@@ -2739,15 +2771,17 @@
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_5_4_15_7" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4_15_9" tabindex="0" aria-expanded="false">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Examples" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_4_15_7">
+        <label class="md-nav__title" for="__nav_5_4_15_9">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -2873,6 +2907,20 @@
     <li class="md-nav__item">
       <a href="../../scatteringTheory/examples/09_feshbach_two_channel/" class="md-nav__link">
         双通道 Feshbach 共振
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scatteringTheory/examples/10_polarization_demo/" class="md-nav__link">
+        极化散射的数值演示
       </a>
     </li>
   
@@ -4033,7 +4081,9 @@
 <h2 id="def">def<a class="headerlink" href="#def" title="Permanent link">#</a></h2>
 <h3 id="本征值与本征向量-eigenvalues-and-eigenvectors">本征值与本征向量 (Eigenvalues and Eigenvectors)<a class="headerlink" href="#本征值与本征向量-eigenvalues-and-eigenvectors" title="Permanent link">#</a></h3>
 <p>若存在复数 <span class="arithmatex">\(\lambda\in\mathbb{C}\)</span> 及非零向量 <span class="arithmatex">\(x\in\mathcal{D}(A)\)</span>，使得</p>
-<p><span class="arithmatex">\( Ax=\lambda x \)</span></p>
+<div class="arithmatex">\[
+Ax=\lambda x
+\]</div>
 <p>则称 <span class="arithmatex">\(\lambda\)</span> 为算子 <span class="arithmatex">\(A\)</span> 的本征值 (eigenvalue)，称 <span class="arithmatex">\(x\)</span> 为对应的本征向量 (eigenvector)。</p>
 <h3 id="本征空间-eigenspace">本征空间 (Eigenspace)<a class="headerlink" href="#本征空间-eigenspace" title="Permanent link">#</a></h3>
 <p>对应于本征值 <span class="arithmatex">\(\lambda\)</span> 的所有本征向量与零向量组成的集合，记作 <span class="arithmatex">\(E_\lambda\)</span>：<span class="arithmatex">\(E_\lambda=\{x\in\mathcal{D}(A):(A-\lambda I)x=0\}=\ker(A-\lambda I)\)</span><br />
@@ -4051,7 +4101,9 @@
 <p>residual spectrum 残余谱几乎不出现在物理应用中. 对于自伴算子（Self-adjoint Operator）——即量子力学中的可观测量——残谱是空的（σr​=∅）。 这就是为什么我们在物理课上通常只听说过“离散谱”和“连续谱”，而没听说过“残谱”。它通常出现在非厄米算子（如非幺正的移位算子）中。</p>
 <h3 id="谱半径-spectral-radius">谱半径 (Spectral Radius)<a class="headerlink" href="#谱半径-spectral-radius" title="Permanent link">#</a></h3>
 <p>算子 <span class="arithmatex">\(A\)</span> 的谱半径定义为</p>
-<p><span class="arithmatex">\( r(A)=\sup\{|\lambda|:\lambda\in\sigma(A)\}. \)</span></p>
+<div class="arithmatex">\[
+r(A)=\sup\{|\lambda|:\lambda\in\sigma(A)\}.
+\]</div>
 <h3 id="谱分解-spectral-decomposition">谱分解 (Spectral Decomposition)<a class="headerlink" href="#谱分解-spectral-decomposition" title="Permanent link">#</a></h3>
 <p>对于某些算子（例如自伴算子或正规算子），可由谱定理将其表示为谱测度或本征向量的“分解”，用于构造函数算子等。</p>
 <p>在量子力学中，算子的谱对应于可观测量的可能测量结果：本征值为测量值，本征向量为对应的量子态。通过谱分析可研究系统性质与动力学。  </p>
@@ -4096,7 +4148,9 @@
 <p>一切都源于复变函数中最经典的柯西积分公式。</p>
 <h4 id="step-1-回忆标量情况">Step 1: 回忆标量情况<a class="headerlink" href="#step-1-回忆标量情况" title="Permanent link">#</a></h4>
 <p>设 <span class="arithmatex">\(f(z)\)</span> 是一个全纯函数（解析函数）。如果你想求它在某个点 <span class="arithmatex">\(a\)</span> 的值 <span class="arithmatex">\(f(a)\)</span>，你不需要直接代入 <span class="arithmatex">\(a\)</span>，而是可以在 <span class="arithmatex">\(a\)</span> 周围画一个圈 <span class="arithmatex">\(\Gamma\)</span>，然后算积分：</p>
-<p><span class="arithmatex">\( f(a) = \frac{1}{2\pi i} \oint_{\Gamma} \frac{f(\lambda)}{\lambda - a} d\lambda \)</span></p>
+<div class="arithmatex">\[
+f(a) = \frac{1}{2\pi i} \oint_{\Gamma} \frac{f(\lambda)}{\lambda - a} d\lambda
+\]</div>
 <p>这里 <span class="arithmatex">\(\Gamma\)</span> 必须包围点 <span class="arithmatex">\(a\)</span>。</p>
 <h4 id="step-2-从数-a-到算子-t">Step 2: 从数 <span class="arithmatex">\(a\)</span> 到算子 <span class="arithmatex">\(T\)</span><a class="headerlink" href="#step-2-从数-a-到算子-t" title="Permanent link">#</a></h4>
 <p>现在，如果我们想定义 <span class="arithmatex">\(f(T)\)</span>（比如 <span class="arithmatex">\(e^T\)</span>, <span class="arithmatex">\(\sin T\)</span>, <span class="arithmatex">\(\sqrt{T}\)</span>），我们直接把上面的 <span class="arithmatex">\(a\)</span> 换成算子 <span class="arithmatex">\(T\)</span>。</p>
@@ -4106,26 +4160,36 @@
 <li>除法 <span class="arithmatex">\(\frac{1}{\lambda - a}\)</span> <span class="arithmatex">\(\longrightarrow\)</span> 逆算子 <span class="arithmatex">\((\lambda I - T)^{-1}\)</span></li>
 </ul>
 <p>于是，公式变成了：</p>
-<p><span class="arithmatex">\( f(T) = \frac{1}{2\pi i} \oint_{\Gamma} f(\lambda) (\lambda I - T)^{-1} d\lambda \)</span></p>
+<div class="arithmatex">\[
+f(T) = \frac{1}{2\pi i} \oint_{\Gamma} f(\lambda) (\lambda I - T)^{-1} d\lambda
+\]</div>
 <p>这里的 <span class="arithmatex">\((\lambda I - T)^{-1}\)</span> 正是我们在谱论中定义的预解算子（差一个负号，通常 <span class="arithmatex">\(R_\lambda(T) = (T - \lambda I)^{-1}\)</span>，所以符号会抵消，或者调整积分方向）。</p>
 <p>核心思想：<br />
 我们利用预解算子作为“内核”，把定义在复平面上的函数 <span class="arithmatex">\(f(\lambda)\)</span> “投影”到了算子空间上。</p>
 <hr />
 <h3 id="格林函数与极点">格林函数与极点<a class="headerlink" href="#格林函数与极点" title="Permanent link">#</a></h3>
 <p>对于物理学家来说，预解算子就是格林函数。</p>
-<p><span class="arithmatex">\( G(\lambda) = \frac{1}{\lambda - H} \)</span></p>
+<div class="arithmatex">\[
+G(\lambda) = \frac{1}{\lambda - H}
+\]</div>
 <p>其中 <span class="arithmatex">\(H\)</span> 是哈密顿量，<span class="arithmatex">\(\lambda\)</span> 是能量参数（通常记为 <span class="arithmatex">\(E\)</span>）。</p>
 <h4 id="公式的物理意义">公式的物理意义<a class="headerlink" href="#公式的物理意义" title="Permanent link">#</a></h4>
 <p>当我们计算算子函数 <span class="arithmatex">\(f(H)\)</span>（例如时间演化算子 <span class="arithmatex">\(U(t) = e^{-iHt}\)</span>）时，全纯泛函演算告诉我们：</p>
-<p><span class="arithmatex">\( e^{-iHt} = \frac{1}{2\pi i} \oint_{\Gamma} e^{-i\lambda t} \frac{1}{\lambda - H} d\lambda \)</span></p>
+<div class="arithmatex">\[
+e^{-iHt} = \frac{1}{2\pi i} \oint_{\Gamma} e^{-i\lambda t} \frac{1}{\lambda - H} d\lambda
+\]</div>
 <p>这个积分在干什么？<br />
 1.  扫描能谱：积分围道 <span class="arithmatex">\(\Gamma\)</span> 包围了哈密顿量 <span class="arithmatex">\(H\)</span> 的所有本征值（能级）。<br />
 2.  提取留数：格林函数 <span class="arithmatex">\(\frac{1}{\lambda - H}\)</span> 在 <span class="arithmatex">\(H\)</span> 的本征值 <span class="arithmatex">\(E_n\)</span> 处有极点。<br />
 3.  加权求和：柯西积分定理告诉我们，围道积分等于所有极点的留数之和。</p>
 <p>如果 <span class="arithmatex">\(H\)</span> 有离散能级 <span class="arithmatex">\(E_n\)</span> 和本征态 <span class="arithmatex">\(|n\rangle\)</span>，格林函数可以写成谱分解形式：</p>
-<p><span class="arithmatex">\( \frac{1}{\lambda - H} = \sum_n \frac{|n\rangle\langle n|}{\lambda - E_n} \)</span></p>
+<div class="arithmatex">\[
+\frac{1}{\lambda - H} = \sum_n \frac{|n\rangle\langle n|}{\lambda - E_n}
+\]</div>
 <p>把它代入积分公式：</p>
-<p><span class="arithmatex">\( \begin{aligned} f(H) &amp;= \frac{1}{2\pi i} \oint_{\Gamma} f(\lambda) \left( \sum_n \frac{|n\rangle\langle n|}{\lambda - E_n} \right) d\lambda \\ &amp;= \sum_n |n\rangle\langle n| \underbrace{\left( \frac{1}{2\pi i} \oint_{\Gamma} \frac{f(\lambda)}{\lambda - E_n} d\lambda \right)}_{\text{柯西公式} \implies f(E_n)} \\ &amp;= \sum_n f(E_n) |n\rangle\langle n| \end{aligned} \)</span></p>
+<div class="arithmatex">\[
+\begin{aligned} f(H) &amp;= \frac{1}{2\pi i} \oint_{\Gamma} f(\lambda) \left( \sum_n \frac{|n\rangle\langle n|}{\lambda - E_n} \right) d\lambda \\ &amp;= \sum_n |n\rangle\langle n| \underbrace{\left( \frac{1}{2\pi i} \oint_{\Gamma} \frac{f(\lambda)}{\lambda - E_n} d\lambda \right)}_{\text{柯西公式} \implies f(E_n)} \\ &amp;= \sum_n f(E_n) |n\rangle\langle n| \end{aligned}
+\]</div>
 <p>结论：<br />
 这正是我们熟悉的量子力学操作——在能量本征基下，算子函数直接作用在把本征值上（即 <span class="arithmatex">\(e^{-iHt}|n\rangle = e^{-iE_n t}|n\rangle\)</span>）。</p>
 <p>但全纯泛函演算的威力在于：即使你解不出本征值（或者有连续谱），这个积分表达式依然成立！它提供了一种不依赖于对角化的、更本质的定义方式。</p>
@@ -4140,28 +4204,42 @@
     谱是 <span class="arithmatex">\(\sigma(T) = \{i, -i\}\)</span>。</p>
 </li>
 <li>
-<p>求预解算子（格林函数）：<br />
-<span class="arithmatex">\( (\lambda I - T)^{-1} = \begin{pmatrix} \lambda &amp; -1 \\ 1 &amp; \lambda \end{pmatrix}^{-1} = \frac{1}{\lambda^2 + 1} \begin{pmatrix} \lambda &amp; 1 \\ -1 &amp; \lambda \end{pmatrix} \)</span></p>
+<p>求预解算子（格林函数）：</p>
+<div class="arithmatex">\[
+(\lambda I - T)^{-1} = \begin{pmatrix} \lambda &amp; -1 \\ 1 &amp; \lambda \end{pmatrix}^{-1} = \frac{1}{\lambda^2 + 1} \begin{pmatrix} \lambda &amp; 1 \\ -1 &amp; \lambda \end{pmatrix}
+\]</div>
 </li>
 <li>
 <p>应用公式：<br />
-    令 <span class="arithmatex">\(f(\lambda) = e^{\lambda t}\)</span>。我们需要计算：<br />
-<span class="arithmatex">\( e^{tT} = \frac{1}{2\pi i} \oint_{\Gamma} e^{\lambda t} \frac{1}{(\lambda - i)(\lambda + i)} \begin{pmatrix} \lambda &amp; 1 \\ -1 &amp; \lambda \end{pmatrix} d\lambda \)</span><br />
-    围道 <span class="arithmatex">\(\Gamma\)</span> 包围 <span class="arithmatex">\(\pm i\)</span>。</p>
+    令 <span class="arithmatex">\(f(\lambda) = e^{\lambda t}\)</span>。我们需要计算：</p>
+<div class="arithmatex">\[
+e^{tT} = \frac{1}{2\pi i} \oint_{\Gamma} e^{\lambda t} \frac{1}{(\lambda - i)(\lambda + i)} \begin{pmatrix} \lambda &amp; 1 \\ -1 &amp; \lambda \end{pmatrix} d\lambda
+\]</div>
+<p>围道 <span class="arithmatex">\(\Gamma\)</span> 包围 <span class="arithmatex">\(\pm i\)</span>。</p>
 </li>
 <li>
 <p>计算留数：</p>
 <ul>
-<li>在 <span class="arithmatex">\(\lambda = i\)</span> 处：<br />
-<span class="arithmatex">\( \text{Res}(i) = \lim_{\lambda \to i} (\lambda - i) [\dots] = e^{it} \frac{1}{2i} \begin{pmatrix} i &amp; 1 \\ -1 &amp; i \end{pmatrix} \)</span></li>
-<li>在 <span class="arithmatex">\(\lambda = -i\)</span> 处：<br />
-<span class="arithmatex">\( \text{Res}(-i) = \lim_{\lambda \to -i} (\lambda + i) [\dots] = e^{-it} \frac{1}{-2i} \begin{pmatrix} -i &amp; 1 \\ -1 &amp; -i \end{pmatrix} \)</span></li>
+<li>
+<p>在 <span class="arithmatex">\(\lambda = i\)</span> 处：</p>
+<div class="arithmatex">\[
+\text{Res}(i) = \lim_{\lambda \to i} (\lambda - i) [\dots] = e^{it} \frac{1}{2i} \begin{pmatrix} i &amp; 1 \\ -1 &amp; i \end{pmatrix}
+\]</div>
+</li>
+<li>
+<p>在 <span class="arithmatex">\(\lambda = -i\)</span> 处：</p>
+<div class="arithmatex">\[
+\text{Res}(-i) = \lim_{\lambda \to -i} (\lambda + i) [\dots] = e^{-it} \frac{1}{-2i} \begin{pmatrix} -i &amp; 1 \\ -1 &amp; -i \end{pmatrix}
+\]</div>
+</li>
 </ul>
 </li>
 <li>
 <p>相加得到结果：<br />
     利用欧拉公式 <span class="arithmatex">\(\cos t = \frac{e^{it} + e^{-it}}{2}, \sin t = \frac{e^{it} - e^{-it}}{2i}\)</span>：</p>
-<p><span class="arithmatex">\( e^{tT} = \text{Res}(i) + \text{Res}(-i) = \begin{pmatrix} \cos t &amp; \sin t \\ -\sin t &amp; \cos t \end{pmatrix} \)</span></p>
+<div class="arithmatex">\[
+e^{tT} = \text{Res}(i) + \text{Res}(-i) = \begin{pmatrix} \cos t &amp; \sin t \\ -\sin t &amp; \cos t \end{pmatrix}
+\]</div>
 <p>看！我们通过复积分，完美推导出了旋转矩阵。</p>
 </li>
 </ol>
@@ -4171,7 +4249,9 @@
 <p>它比泰勒展开（<span class="arithmatex">\(e^X = 1 + X + \dots\)</span>）更强大，因为它可以处理算子无界的情况（只要积分收敛），这在量子场论中至关重要。</p>
 <h3 id="有界线性算子的谱性质">有界线性算子的谱性质<a class="headerlink" href="#有界线性算子的谱性质" title="Permanent link">#</a></h3>
 <p>谱半径 (Spectral Radius) <span class="arithmatex">\(r_\sigma(T)\)</span>：</p>
-<p><span class="arithmatex">\( r_\sigma(T) = \lim_{n \to \infty} \|T^n\|^{1/n} \)</span></p>
+<div class="arithmatex">\[
+r_\sigma(T) = \lim_{n \to \infty} \|T^n\|^{1/n}
+\]</div>
 <p>物理映射：它决定了微扰级数（如纽曼级数 <span class="arithmatex">\(\sum T^n\)</span>）是否收敛。如果物理系统的耦合常数太大，导致算子范数超过收敛半径，微扰论就失效了（非微扰物理）。</p>
 <p>紧算子 (Compact Operators)：紧算子的谱性质最像有限维矩阵（只有点谱），对应于束缚在有限箱子里的粒子。</p>
 <p>紧线性算子(全连续算子):def:设T:X-&gt;Y是一个线性算子，如果对于X中任意有界子集B，T(B)在Y中是相对紧的（即其闭包是紧集），则称T为紧线性算子。</p>
@@ -4197,7 +4277,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月7日 09:12:45 UTC"><span class="timeago" datetime="2026-05-07T09:12:45+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月7日 09:12:45 UTC">2026-05-07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月9日 15:05:14 UTC"><span class="timeago" datetime="2026-05-09T15:05:14+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月9日 15:05:14 UTC">2026-05-09</span>
       
         <br>
         Created:

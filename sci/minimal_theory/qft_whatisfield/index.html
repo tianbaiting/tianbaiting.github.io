@@ -2503,6 +2503,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_15" tabindex="0" aria-expanded="false">
@@ -2579,6 +2583,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../scatteringTheory/coulomb_scattering/" class="md-nav__link">
+        Coulomb 散射的完整形式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../scatteringTheory/friedrichsModel/" class="md-nav__link">
         Friedrichs 模型
       </a>
@@ -2606,13 +2624,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/polarization_formalism/" class="md-nav__link">
+        极化形式与自旋观测量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_7" type="checkbox" id="__nav_5_4_15_7" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_9" type="checkbox" id="__nav_5_4_15_9" >
       
       
         
@@ -2634,15 +2666,17 @@
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_5_4_15_7" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4_15_9" tabindex="0" aria-expanded="false">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Examples" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_4_15_7">
+        <label class="md-nav__title" for="__nav_5_4_15_9">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -2768,6 +2802,20 @@
     <li class="md-nav__item">
       <a href="../scatteringTheory/examples/09_feshbach_two_channel/" class="md-nav__link">
         双通道 Feshbach 共振
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/examples/10_polarization_demo/" class="md-nav__link">
+        极化散射的数值演示
       </a>
     </li>
   
@@ -3842,7 +3890,9 @@
 <hr />
 <h3 id="数学构造用产生与湮灭算符构建">数学构造：用产生与湮灭算符构建<a class="headerlink" href="#数学构造用产生与湮灭算符构建" title="Permanent link">#</a></h3>
 <p>自由标量场算符的常见展开（在相互作用绘景或自由场情况下）为：</p>
-<p><span class="arithmatex">\( \hat\phi(x)=\hat\phi(\mathbf{x},t) =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right), \)</span></p>
+<div class="arithmatex">\[
+\hat\phi(x)=\hat\phi(\mathbf{x},t) =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right),
+\]</div>
 <p>其中 <span class="arithmatex">\(p\cdot x=E_{\mathbf{p}}t-\mathbf{p}\cdot\mathbf{x}\)</span>。拆解如下：</p>
 <ul>
 <li><span class="arithmatex">\(\int\frac{d^3p}{(2\pi)^3}\)</span>：遍历所有三维动量模式 <span class="arithmatex">\(\mathbf{p}\)</span>，对应“无限个谐振子”中的每个模式。  </li>
@@ -3852,18 +3902,28 @@
 <li><span class="arithmatex">\(\frac{1}{\sqrt{2E_{\mathbf{p}}}}\)</span>：洛伦兹不变的归一化因子（保证测度 <span class="arithmatex">\(\frac{d^3p}{E_{\mathbf{p}}}\)</span> 的不变性）。</li>
 </ul>
 <p>当场算符作用于真空态 <span class="arithmatex">\(|0\rangle\)</span> 时：</p>
-<p><span class="arithmatex">\( \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right)\lvert0\rangle. \)</span></p>
+<div class="arithmatex">\[
+\hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right)\lvert0\rangle.
+\]</div>
 <p>由于 <span class="arithmatex">\(\hat a_{\mathbf{p}}\lvert0\rangle=0\)</span>，只剩下产生部分：</p>
-<p><span class="arithmatex">\( \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{e^{ip\cdot x}}{\sqrt{2E_{\mathbf{p}}}}\, \hat a_{\mathbf{p}}^\dagger\lvert0\rangle. \)</span></p>
+<div class="arithmatex">\[
+\hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{e^{ip\cdot x}}{\sqrt{2E_{\mathbf{p}}}}\, \hat a_{\mathbf{p}}^\dagger\lvert0\rangle.
+\]</div>
 <p>该结果是一个单粒子态，但不是动量本征态，而是局域于点 <span class="arithmatex">\(x\)</span> 的粒子激发。因此常说“场算符在点 <span class="arithmatex">\(x\)</span> 创建了一个粒子”。</p>
 <hr />
 <h3 id="定义特征量子化条件与因果性">定义特征：量子化条件与因果性<a class="headerlink" href="#定义特征量子化条件与因果性" title="Permanent link">#</a></h3>
 <p>场的量子化通过其对易（或反对易）关系给出。标量玻色场的等时对易关系为：</p>
-<p><span class="arithmatex">\( [\hat\phi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=i\delta^{(3)}(\mathbf{x}-\mathbf{y}), \)</span></p>
-<p><span class="arithmatex">\( [\hat\phi(t,\mathbf{x}),\,\hat\phi(t,\mathbf{y})]=0,\qquad [\hat\pi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=0, \)</span></p>
+<div class="arithmatex">\[
+[\hat\phi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=i\delta^{(3)}(\mathbf{x}-\mathbf{y}),
+\]</div>
+<div class="arithmatex">\[
+[\hat\phi(t,\mathbf{x}),\,\hat\phi(t,\mathbf{y})]=0,\qquad [\hat\pi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=0,
+\]</div>
 <p>其中共轭动量场 <span class="arithmatex">\(\hat\pi(x)=\partial\mathcal{L}/\partial(\partial_0\hat\phi(x))\)</span>。</p>
 <p>更普适的因果性（微观局域性）条件是：</p>
-<p><span class="arithmatex">\( [\hat\phi(x),\,\hat\phi(y)]=0\quad\text{当 }(x-y)^2&lt;0\ (\text{类空间隔}), \)</span></p>
+<div class="arithmatex">\[
+[\hat\phi(x),\,\hat\phi(y)]=0\quad\text{当 }(x-y)^2&lt;0\ (\text{类空间隔}),
+\]</div>
 <p>即若两点间为类空间隔，则相应的场算符必须对易，保证在这两点的局域测量互不影响（不违反狭义相对论因果律）。</p>
 <hr />
 <h3 id="总结场算符的要点">总结：场算符的要点<a class="headerlink" href="#总结场算符的要点" title="Permanent link">#</a></h3>
@@ -3937,15 +3997,17 @@
 <h3 id="计算引擎路径积分-path-integrals--functional-integrals">计算引擎：路径积分 (Path Integrals / Functional Integrals)<a class="headerlink" href="#计算引擎路径积分-path-integrals--functional-integrals" title="Permanent link">#</a></h3>
 <p>这是物理学家<strong>实际使用</strong>的QFT结构。</p>
 <ul>
-<li><strong>核心思想：</strong> 一个系统从状态A到状态B，经历了<strong>所有可能</strong>的路径，其总振幅是所有路径振幅的<strong>泛函积分 (Functional Integral)</strong>：<br />
-<span class="arithmatex">\( Z = \int \mathcal{D}\phi \exp\left( \frac{i}{\hbar} S[\phi] \right) \)</span><br />
-    其中 <span class="arithmatex">\(S[\phi] = \int d^4x \mathcal{L}(\phi, \partial\mu\phi)\)</span> 是作用量。</li>
-<li><strong>数学问题：</strong> 这是一个<strong>无穷维</strong>的积分。<span class="arithmatex">\(\mathcal{D}\phi\)</span> 这个“测度”在数学上是<strong>严格病态的 (ill-defined)</strong>。</li>
-<li><strong>物理学家的“诡计”：</strong><ol>
-<li><strong>微扰论：</strong> 我们假设相互作用很弱，将 <span class="arithmatex">\(e^{iS_{int}}\)</span> 展开为泰勒级数。</li>
-<li><strong>费曼图：</strong> 这个级数的每一项都对应一个费曼图，它把一个极其复杂的泛函积分“简化”成了（仍然很复杂的）普通高维动量积分。</li>
-<li><strong>重整化 (Renormalization)：</strong> 这些动量积分几乎都是<strong>发散</strong>（无穷大）的。重整化是一套系统的“黑魔法”，它告诉我们如何系统地从这些无穷大中“减去”另一些无穷大，从而得到一个有限的、可与实验对比的物理结果。</li>
-</ol>
+<li>
+<p><strong>核心思想：</strong> 一个系统从状态A到状态B，经历了<strong>所有可能</strong>的路径，其总振幅是所有路径振幅的<strong>泛函积分 (Functional Integral)</strong>：</p>
+<div class="arithmatex">\[
+Z = \int \mathcal{D}\phi \exp\left( \frac{i}{\hbar} S[\phi] \right)
+\]</div>
+<p>其中 <span class="arithmatex">\(S[\phi] = \int d^4x \mathcal{L}(\phi, \partial\mu\phi)\)</span> 是作用量。<br />
+* <strong>数学问题：</strong> 这是一个<strong>无穷维</strong>的积分。<span class="arithmatex">\(\mathcal{D}\phi\)</span> 这个“测度”在数学上是<strong>严格病态的 (ill-defined)</strong>。<br />
+* <strong>物理学家的“诡计”：</strong><br />
+1.  <strong>微扰论：</strong> 我们假设相互作用很弱，将 <span class="arithmatex">\(e^{iS_{int}}\)</span> 展开为泰勒级数。<br />
+2.  <strong>费曼图：</strong> 这个级数的每一项都对应一个费曼图，它把一个极其复杂的泛函积分“简化”成了（仍然很复杂的）普通高维动量积分。<br />
+3.  <strong>重整化 (Renormalization)：</strong> 这些动量积分几乎都是<strong>发散</strong>（无穷大）的。重整化是一套系统的“黑魔法”，它告诉我们如何系统地从这些无穷大中“减去”另一些无穷大，从而得到一个有限的、可与实验对比的物理结果。</p>
 </li>
 </ul>
 <hr />
@@ -3973,7 +4035,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月7日 09:12:45 UTC"><span class="timeago" datetime="2026-05-07T09:12:45+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月7日 09:12:45 UTC">2026-05-07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月9日 15:05:14 UTC"><span class="timeago" datetime="2026-05-09T15:05:14+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月9日 15:05:14 UTC">2026-05-09</span>
       
         <br>
         创建日期:

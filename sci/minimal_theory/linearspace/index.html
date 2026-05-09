@@ -2662,6 +2662,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_15" tabindex="0" aria-expanded="false">
@@ -2738,6 +2742,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../scatteringTheory/coulomb_scattering/" class="md-nav__link">
+        Coulomb 散射的完整形式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../scatteringTheory/friedrichsModel/" class="md-nav__link">
         Friedrichs 模型
       </a>
@@ -2765,13 +2783,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/polarization_formalism/" class="md-nav__link">
+        极化形式与自旋观测量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_7" type="checkbox" id="__nav_5_4_15_7" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_9" type="checkbox" id="__nav_5_4_15_9" >
       
       
         
@@ -2793,15 +2825,17 @@
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_5_4_15_7" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4_15_9" tabindex="0" aria-expanded="false">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Examples" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_4_15_7">
+        <label class="md-nav__title" for="__nav_5_4_15_9">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -2927,6 +2961,20 @@
     <li class="md-nav__item">
       <a href="../scatteringTheory/examples/09_feshbach_two_channel/" class="md-nav__link">
         双通道 Feshbach 共振
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/examples/10_polarization_demo/" class="md-nav__link">
+        极化散射的数值演示
       </a>
     </li>
   
@@ -4171,19 +4219,27 @@
 <li>波函数空间 <span class="arithmatex">\(L^2(\mathbb{R}^3)\)</span>（平方可积复函数）。</li>
 </ul>
 <h3 id="基底与坐标">基底与坐标<a class="headerlink" href="#基底与坐标" title="Permanent link">#</a></h3>
-<p>若有基 <span class="arithmatex">\(\{e_i\}_{i=1}^n\)</span>，则任意 <span class="arithmatex">\(v\in V\)</span> 可写作<br />
-<span class="arithmatex">\( v = v^i e_i. \)</span><br />
-分量 <span class="arithmatex">\(v^i\)</span> 为“逆变分量”，上标常用于表示它是向量在该基下的系数（爱因斯坦求和约定）。</p>
+<p>若有基 <span class="arithmatex">\(\{e_i\}_{i=1}^n\)</span>，则任意 <span class="arithmatex">\(v\in V\)</span> 可写作</p>
+<div class="arithmatex">\[
+v = v^i e_i.
+\]</div>
+<p>分量 <span class="arithmatex">\(v^i\)</span> 为“逆变分量”，上标常用于表示它是向量在该基下的系数（爱因斯坦求和约定）。</p>
 <hr />
 <h2 id="对偶空间dual-space">对偶空间（Dual Space）<a class="headerlink" href="#对偶空间dual-space" title="Permanent link">#</a></h2>
 <h3 id="定义_1">定义<a class="headerlink" href="#定义_1" title="Permanent link">#</a></h3>
-<p>对偶空间 <span class="arithmatex">\(V^*\)</span> 是所有从 <span class="arithmatex">\(V\)</span> 到 <span class="arithmatex">\(F\)</span> 的线性泛函的集合：<br />
-<span class="arithmatex">\( V^* = \{\alpha: V\to F \mid \alpha(a v + b w)=a\alpha(v)+b\alpha(w)\}. \)</span></p>
+<p>对偶空间 <span class="arithmatex">\(V^*\)</span> 是所有从 <span class="arithmatex">\(V\)</span> 到 <span class="arithmatex">\(F\)</span> 的线性泛函的集合：</p>
+<div class="arithmatex">\[
+V^* = \{\alpha: V\to F \mid \alpha(a v + b w)=a\alpha(v)+b\alpha(w)\}.
+\]</div>
 <h3 id="对偶基">对偶基<a class="headerlink" href="#对偶基" title="Permanent link">#</a></h3>
-<p>若 <span class="arithmatex">\(\{e_i\}\)</span> 是 <span class="arithmatex">\(V\)</span> 的基，则存在唯一对偶基 <span class="arithmatex">\(\{e^i\}\subset V^*\)</span>，满足<br />
-<span class="arithmatex">\( e^i(e_j) = \delta^i_j. \)</span><br />
-于是<br />
-<span class="arithmatex">\( \alpha = \alpha_i e^i,\quad v=v^i e_i,\quad \alpha(v)=\alpha_i v^i. \)</span></p>
+<p>若 <span class="arithmatex">\(\{e_i\}\)</span> 是 <span class="arithmatex">\(V\)</span> 的基，则存在唯一对偶基 <span class="arithmatex">\(\{e^i\}\subset V^*\)</span>，满足</p>
+<div class="arithmatex">\[
+e^i(e_j) = \delta^i_j.
+\]</div>
+<p>于是</p>
+<div class="arithmatex">\[
+\alpha = \alpha_i e^i,\quad v=v^i e_i,\quad \alpha(v)=\alpha_i v^i.
+\]</div>
 <p>记号约定：</p>
 <ul>
 <li>向量分量 <span class="arithmatex">\(v^i\)</span>：上标（反变）。  </li>
@@ -4192,24 +4248,34 @@
 <hr />
 <h2 id="线性算符与对偶映射">线性算符与对偶映射<a class="headerlink" href="#线性算符与对偶映射" title="Permanent link">#</a></h2>
 <h3 id="定义_2">定义<a class="headerlink" href="#定义_2" title="Permanent link">#</a></h3>
-<p>线性算符 <span class="arithmatex">\(A:V\to W\)</span> 满足<br />
-<span class="arithmatex">\( A(av+bw)=aA(v)+bA(w). \)</span></p>
+<p>线性算符 <span class="arithmatex">\(A:V\to W\)</span> 满足</p>
+<div class="arithmatex">\[
+A(av+bw)=aA(v)+bA(w).
+\]</div>
 <h3 id="对偶映射伴随映射">对偶映射（伴随映射）<a class="headerlink" href="#对偶映射伴随映射" title="Permanent link">#</a></h3>
-<p>定义 <span class="arithmatex">\(A^*:W^*\to V^*\)</span>，对任意 <span class="arithmatex">\(\beta\in W^*\)</span>、<span class="arithmatex">\(v\in V\)</span>，<br />
-<span class="arithmatex">\( (A^*\beta)(v)=\beta(A v). \)</span></p>
+<p>定义 <span class="arithmatex">\(A^*:W^*\to V^*\)</span>，对任意 <span class="arithmatex">\(\beta\in W^*\)</span>、<span class="arithmatex">\(v\in V\)</span>，</p>
+<div class="arithmatex">\[
+(A^*\beta)(v)=\beta(A v).
+\]</div>
 <h3 id="矩阵形式">矩阵形式<a class="headerlink" href="#矩阵形式" title="Permanent link">#</a></h3>
-<p>若 <span class="arithmatex">\(A(e_i)=f_a\,A^a{}_{i}\)</span>（$ {f_a}$ 为 <span class="arithmatex">\(W\)</span> 基），则<br />
-<span class="arithmatex">\( A^*(f^a) = e^i A^a{}_{i}. \)</span><br />
-即 <span class="arithmatex">\(A^*\)</span> 的矩阵为 <span class="arithmatex">\(A\)</span> 的转置（对复数域通常取共轭转置）。</p>
+<p>若 <span class="arithmatex">\(A(e_i)=f_a\,A^a{}_{i}\)</span>（$ {f_a}$ 为 <span class="arithmatex">\(W\)</span> 基），则</p>
+<div class="arithmatex">\[
+A^*(f^a) = e^i A^a{}_{i}.
+\]</div>
+<p>即 <span class="arithmatex">\(A^*\)</span> 的矩阵为 <span class="arithmatex">\(A\)</span> 的转置（对复数域通常取共轭转置）。</p>
 <hr />
 <h2 id="希尔伯特空间hilbert-space与态矢state-vector">希尔伯特空间（Hilbert Space）与态矢（State Vector）<a class="headerlink" href="#希尔伯特空间hilbert-space与态矢state-vector" title="Permanent link">#</a></h2>
 <h3 id="定义_3">定义<a class="headerlink" href="#定义_3" title="Permanent link">#</a></h3>
-<p>希尔伯特空间 <span class="arithmatex">\(\mathcal H\)</span> 是带有内积且完备的线性空间：<br />
-<span class="arithmatex">\( \langle\phi|\psi\rangle \in \mathbb C,\qquad \langle a\phi+b\chi|\psi\rangle = a^*\langle\phi|\psi\rangle + b^*\langle\chi|\psi\rangle. \)</span></p>
+<p>希尔伯特空间 <span class="arithmatex">\(\mathcal H\)</span> 是带有内积且完备的线性空间：</p>
+<div class="arithmatex">\[
+\langle\phi|\psi\rangle \in \mathbb C,\qquad \langle a\phi+b\chi|\psi\rangle = a^*\langle\phi|\psi\rangle + b^*\langle\chi|\psi\rangle.
+\]</div>
 <h3 id="riesz-表示定理">Riesz 表示定理<a class="headerlink" href="#riesz-表示定理" title="Permanent link">#</a></h3>
-<p>在希尔伯特空间中，每个连续线性泛函 <span class="arithmatex">\(\alpha\)</span> 对应唯一向量 <span class="arithmatex">\(|u\rangle\)</span>，使得：<br />
-<span class="arithmatex">\( \alpha(|\psi\rangle) = \langle u|\psi\rangle. \)</span><br />
-因此 <span class="arithmatex">\(\mathcal H \cong \mathcal H^*\)</span>。</p>
+<p>在希尔伯特空间中，每个连续线性泛函 <span class="arithmatex">\(\alpha\)</span> 对应唯一向量 <span class="arithmatex">\(|u\rangle\)</span>，使得：</p>
+<div class="arithmatex">\[
+\alpha(|\psi\rangle) = \langle u|\psi\rangle.
+\]</div>
+<p>因此 <span class="arithmatex">\(\mathcal H \cong \mathcal H^*\)</span>。</p>
 <h3 id="物理诠释">物理诠释<a class="headerlink" href="#物理诠释" title="Permanent link">#</a></h3>
 <p>在量子力学中：</p>
 <ul>
@@ -4252,26 +4318,38 @@
 <hr />
 <h2 id="散射态与束缚态的希尔伯特空间结构">散射态与束缚态的希尔伯特空间结构<a class="headerlink" href="#散射态与束缚态的希尔伯特空间结构" title="Permanent link">#</a></h2>
 <h3 id="哈密顿量与谱分解">哈密顿量与谱分解<a class="headerlink" href="#哈密顿量与谱分解" title="Permanent link">#</a></h3>
-<p>给定 <span class="arithmatex">\(H = H_0 + V\)</span>，其中 <span class="arithmatex">\(H_0\)</span> 是自由哈密顿量，<span class="arithmatex">\(V\)</span> 是势或相互作用。谱分解为：<br />
-<span class="arithmatex">\( \mathcal H = \mathcal H_{\mathrm{bound}} \oplus \mathcal H_{\mathrm{scatt}}. \)</span></p>
+<p>给定 <span class="arithmatex">\(H = H_0 + V\)</span>，其中 <span class="arithmatex">\(H_0\)</span> 是自由哈密顿量，<span class="arithmatex">\(V\)</span> 是势或相互作用。谱分解为：</p>
+<div class="arithmatex">\[
+\mathcal H = \mathcal H_{\mathrm{bound}} \oplus \mathcal H_{\mathrm{scatt}}.
+\]</div>
 <ul>
 <li>束缚态（Bound state）：离散本征值 <span class="arithmatex">\(E_n\)</span>，对应归一化本征态 <span class="arithmatex">\(|\psi_n\rangle\in\mathcal H_{\mathrm{bound}}\)</span>，满足 <span class="arithmatex">\(\langle\psi_n|\psi_m\rangle=\delta_{nm}\)</span>。  </li>
 <li>散射态（Scattering state）：连续谱 <span class="arithmatex">\(E&gt;0\)</span>，形式归一化 <span class="arithmatex">\(\langle \psi_E | \psi_{E'}\rangle = \delta(E-E')\)</span>。</li>
 </ul>
 <h3 id="渐进自由态asymptotic-free-states">渐进自由态（Asymptotic Free States）<a class="headerlink" href="#渐进自由态asymptotic-free-states" title="Permanent link">#</a></h3>
-<p>在 <span class="arithmatex">\(t\to\pm\infty\)</span> 极限下，相互作用项 <span class="arithmatex">\(V\)</span> 的影响消失，系统表现如自由粒子。自由态生成的空间为：<br />
-<span class="arithmatex">\( \mathcal H_{\mathrm{free}} = \operatorname{span}\{|\phi_p\rangle : H_0|\phi_p\rangle = E_p|\phi_p\rangle\}. \)</span></p>
+<p>在 <span class="arithmatex">\(t\to\pm\infty\)</span> 极限下，相互作用项 <span class="arithmatex">\(V\)</span> 的影响消失，系统表现如自由粒子。自由态生成的空间为：</p>
+<div class="arithmatex">\[
+\mathcal H_{\mathrm{free}} = \operatorname{span}\{|\phi_p\rangle : H_0|\phi_p\rangle = E_p|\phi_p\rangle\}.
+\]</div>
 <hr />
 <h2 id="møller-算符与-s-算符">Møller 算符与 S 算符<a class="headerlink" href="#møller-算符与-s-算符" title="Permanent link">#</a></h2>
 <h3 id="时间演化算符">时间演化算符<a class="headerlink" href="#时间演化算符" title="Permanent link">#</a></h3>
-<p><span class="arithmatex">\( U(t,t_0)=e^{-\frac{i}{\hbar}H(t-t_0)}. \)</span></p>
+<div class="arithmatex">\[
+U(t,t_0)=e^{-\frac{i}{\hbar}H(t-t_0)}.
+\]</div>
 <h3 id="møller-算符wave-operators">Møller 算符（Wave Operators）<a class="headerlink" href="#møller-算符wave-operators" title="Permanent link">#</a></h3>
-<p><span class="arithmatex">\( \Omega_\pm = \lim_{t\to\mp\infty} e^{iH_0 t} e^{-iHt}, \)</span></p>
+<div class="arithmatex">\[
+\Omega_\pm = \lim_{t\to\mp\infty} e^{iH_0 t} e^{-iHt},
+\]</div>
 <p>其中 <span class="arithmatex">\(\Omega_\pm:\mathcal H_{\mathrm{free}}\to\mathcal H_{\mathrm{int}}\)</span>，将自由态映射为“渐进相互作用态”。</p>
 <h3 id="s-算符scattering-operator">S 算符（Scattering Operator）<a class="headerlink" href="#s-算符scattering-operator" title="Permanent link">#</a></h3>
-<p><span class="arithmatex">\( S = \Omega_+^\dagger \Omega_-. \)</span></p>
-<p>作用在自由空间上：<br />
-<span class="arithmatex">\( |\psi_{\mathrm{out}}\rangle = S |\psi_{\mathrm{in}}\rangle. \)</span></p>
+<div class="arithmatex">\[
+S = \Omega_+^\dagger \Omega_-.
+\]</div>
+<p>作用在自由空间上：</p>
+<div class="arithmatex">\[
+|\psi_{\mathrm{out}}\rangle = S |\psi_{\mathrm{in}}\rangle.
+\]</div>
 <p>因此 <span class="arithmatex">\(\mathcal H_{\mathrm{int}} \cong \mathcal H_{\mathrm{free}}\)</span>，同构映射由 <span class="arithmatex">\(\Omega_\pm\)</span> 给出。</p>
 <hr />
 <h2 id="三种语言对照表">三种语言对照表<a class="headerlink" href="#三种语言对照表" title="Permanent link">#</a></h2>
@@ -4364,7 +4442,7 @@
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月7日 09:12:45 UTC"><span class="timeago" datetime="2026-05-07T09:12:45+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月7日 09:12:45 UTC">2026-05-07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月9日 15:05:14 UTC"><span class="timeago" datetime="2026-05-09T15:05:14+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月9日 15:05:14 UTC">2026-05-09</span>
       
         <br>
         创建日期:

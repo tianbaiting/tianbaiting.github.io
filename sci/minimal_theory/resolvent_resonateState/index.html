@@ -2635,6 +2635,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_15" tabindex="0" aria-expanded="false">
@@ -2711,6 +2715,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../scatteringTheory/coulomb_scattering/" class="md-nav__link">
+        Coulomb 散射的完整形式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../scatteringTheory/friedrichsModel/" class="md-nav__link">
         Friedrichs 模型
       </a>
@@ -2738,13 +2756,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/polarization_formalism/" class="md-nav__link">
+        极化形式与自旋观测量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_7" type="checkbox" id="__nav_5_4_15_7" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_9" type="checkbox" id="__nav_5_4_15_9" >
       
       
         
@@ -2766,15 +2798,17 @@
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_5_4_15_7" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4_15_9" tabindex="0" aria-expanded="false">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Examples" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_4_15_7">
+        <label class="md-nav__title" for="__nav_5_4_15_9">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -2900,6 +2934,20 @@
     <li class="md-nav__item">
       <a href="../scatteringTheory/examples/09_feshbach_two_channel/" class="md-nav__link">
         双通道 Feshbach 共振
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/examples/10_polarization_demo/" class="md-nav__link">
+        极化散射的数值演示
       </a>
     </li>
   
@@ -4090,9 +4138,11 @@
 <h2 id="第一节引言预解式算符谱与核心悖论"><strong>第一节：引言：预解式算符、谱与核心悖论</strong><a class="headerlink" href="#第一节引言预解式算符谱与核心悖论" title="Permanent link">#</a></h2>
 <h3 id="11-预解式算符与谱的定义"><strong>1.1 预解式算符与谱的定义</strong><a class="headerlink" href="#11-预解式算符与谱的定义" title="Permanent link">#</a></h3>
 <p>在量子力学的数学框架中，一个物理系统的哈密顿算符 <span class="arithmatex">\(A\)</span>（在本文中也记为 <span class="arithmatex">\(H\)</span>）是一个在希尔伯特空间 <span class="arithmatex">\(\mathcal{H}\)</span> 上作用的（通常是无界的）自伴算符。该算符的谱 (spectrum) <span class="arithmatex">\(\sigma(A)\)</span> 包含了系统所有可能的能量测量值。<br />
-为了研究算符 <span class="arithmatex">\(A\)</span> 的谱特性，数学物理学中引入了一个核心工具：<strong>预解式算符 (Resolvent Operator)</strong> <span class="arithmatex">\(R(z, A)\)</span>。对于任意复数 <span class="arithmatex">\(z \in \mathbb{C}\)</span>，预解式算符定义为 <a href="#ref-1">1</a>：<br />
-<span class="arithmatex">\( R(z, A) \equiv (zI - A)^{-1} \)</span><br />
-其中 <span class="arithmatex">\(I\)</span> 是单位算符。<br />
+为了研究算符 <span class="arithmatex">\(A\)</span> 的谱特性，数学物理学中引入了一个核心工具：<strong>预解式算符 (Resolvent Operator)</strong> <span class="arithmatex">\(R(z, A)\)</span>。对于任意复数 <span class="arithmatex">\(z \in \mathbb{C}\)</span>，预解式算符定义为 <a href="#ref-1">1</a>：</p>
+<div class="arithmatex">\[
+R(z, A) \equiv (zI - A)^{-1}
+\]</div>
+<p>其中 <span class="arithmatex">\(I\)</span> 是单位算符。<br />
 <strong>预解集 (Resolvent Set)</strong> <span class="arithmatex">\(\rho(A)\)</span> 定义为所有使得 <span class="arithmatex">\(R(z, A)\)</span> 存在且为 <span class="arithmatex">\(\mathcal{H}\)</span> 上有界算符的复数 <span class="arithmatex">\(z\)</span> 的集合。根据定义，<strong>谱 (Spectrum)</strong> <span class="arithmatex">\(\sigma(A)\)</span> 则是预解集的补集：<span class="arithmatex">\(\sigma(A) = \mathbb{C} \setminus \rho(A)\)</span> <a href="#ref-2">2</a>。<br />
 谱 <span class="arithmatex">\(\sigma(A)\)</span> 本身可以进一步分解为：</p>
 <ol>
@@ -4103,7 +4153,9 @@
 <h3 id="12-预解式的解析性质与极点"><strong>1.2 预解式的解析性质与极点</strong><a class="headerlink" href="#12-预解式的解析性质与极点" title="Permanent link">#</a></h3>
 <p>预解式算符 <span class="arithmatex">\(R(z, A)\)</span> 的关键数学特性在于其解析性 (analyticity)。<span class="arithmatex">\(R(z, A)\)</span> 是一个在整个预解集 <span class="arithmatex">\(\rho(A)\)</span> 上解析的算符值函数 <a href="#ref-4">4</a>。这意味着 <span class="arithmatex">\(R(z, A)\)</span> 的所有<strong>奇异点 (singularities)</strong>——即函数无定义或不解析的点——必定位于且仅位于 <span class="arithmatex">\(A\)</span> 的谱 <span class="arithmatex">\(\sigma(A)\)</span> 之中。<br />
 对于谱的离散部分 <span class="arithmatex">\(\sigma_d(A)\)</span>，其奇异性表现为<strong>极点 (poles)</strong>。一个孤立的本征值 <span class="arithmatex">\(\lambda \in \sigma_d(A)\)</span> 对应于 <span class="arithmatex">\(R(z, A)\)</span> 的一个极点 <a href="#ref-5">5</a>。更准确地说，如果 <span class="arithmatex">\(\lambda\)</span> 是一个简单本征值， <span class="arithmatex">\(R(z, A)\)</span> 在 <span class="arithmatex">\(z = \lambda\)</span> 附近具有洛朗展开：</p>
-<p><span class="arithmatex">\( R(z, A) = \frac{-P_{\lambda}}{z - \lambda} + \text{analytic part} \)</span></p>
+<div class="arithmatex">\[
+R(z, A) = \frac{-P_{\lambda}}{z - \lambda} + \text{analytic part}
+\]</div>
 <p>其中，该极点的<strong>留数 (residue)</strong> <span class="arithmatex">\(P_{\lambda} = -\frac{1}{2\pi i} \oint_{C_{\lambda}} R(z, A) dz\)</span> 正是对应于本征值 <span class="arithmatex">\(\lambda\)</span> 的本征空间的<strong>投影算符</strong> <a href="#ref-3">3</a>。这些本征态是定态 (stationary states)，即束缚态 (bound states)，它们在时间演化下保持稳定，其波函数 <span class="arithmatex">\(\Psi(t) = e^{-i\lambda t} \Psi(0)\)</span> 仅获得一个相位因子。</p>
 <h3 id="13-核心悖论自伴性与复数能量"><strong>1.3 核心悖论：自伴性与复数能量</strong><a class="headerlink" href="#13-核心悖论自伴性与复数能量" title="Permanent link">#</a></h3>
 <p>至此，我们建立了一个清晰的对应关系：系统的（离散）能量本征值 <span class="arithmatex">\(\leftrightarrow R(z, A)\)</span> 的极点。<br />
@@ -4138,10 +4190,14 @@
 <p>预解式 <span class="arithmatex">\(R(z, H) = (z - H)^{-1}\)</span> 的奇异性因此由两部分组成：位于负实轴上的对应束缚态的<strong>极点</strong>，以及位于正实轴 <span class="arithmatex">\([0, \infty)\)</span> 上的对应散射态的<strong>分支切割</strong> <a href="#ref-8">8</a>。</p>
 <h3 id="22-分支切割的起源k-平面与-e-平面"><strong>2.2 分支切割的起源：k 平面与 E 平面</strong><a class="headerlink" href="#22-分支切割的起源k-平面与-e-平面" title="Permanent link">#</a></h3>
 <p>分支切割的数学根源在于能量 <span class="arithmatex">\(E\)</span> 和动量（或波矢 <span class="arithmatex">\(k\)</span>）之间的非线性关系。对于自由粒子（以及散射态的渐进行为），能量 <span class="arithmatex">\(E\)</span> 和波矢大小 <span class="arithmatex">\(k\)</span> 的关系为：</p>
-<p><span class="arithmatex">\( E = \frac{\hbar^2 k^2}{2m} \)</span><br />
-当我们反过来，将 <span class="arithmatex">\(k\)</span> 视为复能量 <span class="arithmatex">\(z\)</span> 的函数时（为方便起见，设 <span class="arithmatex">\(\hbar = 2m = 1\)</span>，则 <span class="arithmatex">\(E=k^2\)</span>），我们得到 <a href="#ref-20">20</a>：</p>
-<p><span class="arithmatex">\( k(z) = \sqrt{z} \)</span><br />
-这是一个多值函数。<span class="arithmatex">\(\sqrt{z}\)</span> 在 <span class="arithmatex">\(z=0\)</span> 处有一个<strong>分支点 (branch point)</strong>。<span class="arithmatex">\(z=0\)</span> 正是连续谱的下限，即<strong>阈值 (threshold)</strong>。<br />
+<div class="arithmatex">\[
+E = \frac{\hbar^2 k^2}{2m}
+\]</div>
+<p>当我们反过来，将 <span class="arithmatex">\(k\)</span> 视为复能量 <span class="arithmatex">\(z\)</span> 的函数时（为方便起见，设 <span class="arithmatex">\(\hbar = 2m = 1\)</span>，则 <span class="arithmatex">\(E=k^2\)</span>），我们得到 <a href="#ref-20">20</a>：</p>
+<div class="arithmatex">\[
+k(z) = \sqrt{z}
+\]</div>
+<p>这是一个多值函数。<span class="arithmatex">\(\sqrt{z}\)</span> 在 <span class="arithmatex">\(z=0\)</span> 处有一个<strong>分支点 (branch point)</strong>。<span class="arithmatex">\(z=0\)</span> 正是连续谱的下限，即<strong>阈值 (threshold)</strong>。<br />
 为了使 <span class="arithmatex">\(k(z)\)</span>（以及依赖于 <span class="arithmatex">\(k\)</span> 的预解式算符 <span class="arithmatex">\(R(z, H)\)</span>）成为一个单值解析函数，我们必须在复数 <span class="arithmatex">\(z\)</span> 平面引入一个<strong>分支切割 (branch cut)</strong>。按照惯例，这个切割从分支点 <span class="arithmatex">\(z=0\)</span> 开始，沿着正实轴延伸到 <span class="arithmatex">\(+\infty\)</span>，即 <span class="arithmatex">\(\sigma_c(H) = [0, \infty)\)</span>。</p>
 <h3 id="23-riemann-曲面的构建物理片与非物理片"><strong>2.3 Riemann 曲面的构建：物理片与非物理片</strong><a class="headerlink" href="#23-riemann-曲面的构建物理片与非物理片" title="Permanent link">#</a></h3>
 <p>这个分支切割将复数能量 <span class="arithmatex">\(z\)</span> 平面“切割”开，但同时也暗示了一个更丰富的结构：一个<strong>Riemann 曲面</strong>。<span class="arithmatex">\(\sqrt{z}\)</span> 函数自然地生活在一个由两个复平面（“片”）粘合而成的曲面上。<br />
@@ -4169,8 +4225,10 @@
 <li><strong>k 平面：</strong> 这个 <span class="arithmatex">\(k_R\)</span> 位于 <span class="arithmatex">\(k\)</span> 平面的<strong>第四象限</strong>，即下半平面 (<span class="arithmatex">\(\text{Im}(k_R) &lt; 0\)</span>) <a href="#ref-14">14</a>。</li>
 <li>
 <p><strong>E 平面：</strong> 当我们将这个 <span class="arithmatex">\(k_R\)</span> 映射回能量 <span class="arithmatex">\(z\)</span> 平面时：</p>
-<p><span class="arithmatex">\( z_R = k_R^2 = (k_0 - i\gamma)^2 = (k_0^2 - \gamma^2) - i(2k_0 \gamma) \)</span><br />
-令 <span class="arithmatex">\(E_R = k_0^2 - \gamma^2\)</span> 且 <span class="arithmatex">\(\Gamma = 4 k_0 \gamma\)</span>（假设 <span class="arithmatex">\(\hbar=2m=1\)</span>），我们得到 <span class="arithmatex">\(z_R = E_R - i\Gamma/2\)</span>（<span class="arithmatex">\(\Gamma &gt; 0\)</span>）。<br />
+<div class="arithmatex">\[
+z_R = k_R^2 = (k_0 - i\gamma)^2 = (k_0^2 - \gamma^2) - i(2k_0 \gamma)
+\]</div>
+<p>令 <span class="arithmatex">\(E_R = k_0^2 - \gamma^2\)</span> 且 <span class="arithmatex">\(\Gamma = 4 k_0 \gamma\)</span>（假设 <span class="arithmatex">\(\hbar=2m=1\)</span>），我们得到 <span class="arithmatex">\(z_R = E_R - i\Gamma/2\)</span>（<span class="arithmatex">\(\Gamma &gt; 0\)</span>）。<br />
 *   <strong>结论：</strong> 共振态 <span class="arithmatex">\(z_R\)</span> 位于 <span class="arithmatex">\(E\)</span> 平面的<strong>下半平面</strong> <a href="#ref-12">12</a>。根据 2.3 节的定义，这个 <span class="arithmatex">\(k_R\)</span>（位于 <span class="arithmatex">\(\text{Im}(k) &lt; 0\)</span>）和 <span class="arithmatex">\(z_R\)</span>（位于 <span class="arithmatex">\(\text{Im}(z) &lt; 0\)</span> 的下半平面）都属于<strong>非物理片 (Sheet II)</strong> <a href="#ref-19">19</a>。</p>
 </li>
 </ul>
@@ -4183,8 +4241,10 @@
 S 矩阵（及其矩阵元）是能量 <span class="arithmatex">\(z\)</span> 的解析函数。它与预解式算符 <span class="arithmatex">\(R(z, A)\)</span> 一样，具有分支切割 <span class="arithmatex">\(\sigma_c(A) = [0, \infty)\)</span>，并且可以从物理片解析延拓到非物理片 <a href="#ref-13">13</a>。</p>
 <h3 id="32-t-矩阵-t-matrix"><strong>3.2 T 矩阵 (T-Matrix)</strong><a class="headerlink" href="#32-t-矩阵-t-matrix" title="Permanent link">#</a></h3>
 <p>通常，将 S 矩阵分解为无散射部分（单位算符 <span class="arithmatex">\(I\)</span>）和发生散射的部分（T 矩阵）会更方便：</p>
-<p><span class="arithmatex">\( S(z) = I - 2\pi i \delta(E - E') T(z) \)</span><br />
-T 矩阵 <span class="arithmatex">\(T(z)\)</span> 包含了所有动力学信息，并且与 S 矩阵共享相同的解析结构（极点、割线等）。因此，在讨论极点时，我们可以等价地研究 T 矩阵 <span class="arithmatex">\(T(z)\)</span>。</p>
+<div class="arithmatex">\[
+S(z) = I - 2\pi i \delta(E - E') T(z)
+\]</div>
+<p>T 矩阵 <span class="arithmatex">\(T(z)\)</span> 包含了所有动力学信息，并且与 S 矩阵共享相同的解析结构（极点、割线等）。因此，在讨论极点时，我们可以等价地研究 T 矩阵 <span class="arithmatex">\(T(z)\)</span>。</p>
 <h3 id="33-共振态的形式定义"><strong>3.3 共振态的形式定义</strong><a class="headerlink" href="#33-共振态的形式定义" title="Permanent link">#</a></h3>
 <p>在现代量子场论和散射理论中，系统的激发谱（包括束缚态和共振态）由 S 矩阵（或 T 矩阵）在复能量平面上的极点位置严格定义 <a href="#ref-16">16</a>。<br />
 根据第 2 节建立的 Riemann 曲面结构，我们对 S/T 矩阵的极点有如下物理分类 <a href="#ref-20">20</a>：</p>
@@ -4211,8 +4271,10 @@ T 矩阵 <span class="arithmatex">\(T(z)\)</span> 包含了所有动力学信息
 <h3 id="34-breit-wigner-形式"><strong>3.4 Breit-Wigner 形式</strong><a class="headerlink" href="#34-breit-wigner-形式" title="Permanent link">#</a></h3>
 <p>共振态作为非物理片上的极点，其对物理测量的影响（发生在物理片上，能量 <span class="arithmatex">\(E \ge 0\)</span>）是如何体现的？<br />
 如果一个共振极点 <span class="arithmatex">\(z_R = E_R - i\Gamma/2\)</span> 距离实轴足够近（即 <span class="arithmatex">\(\Gamma\)</span> 较小，称为窄共振），那么 T 矩阵（或 S 矩阵）在实轴 <span class="arithmatex">\(E\)</span> 附近的行为将由这个极点主导。在 <span class="arithmatex">\(z=z_R\)</span> 附近，T 矩阵元可以近似写为：</p>
-<p><span class="arithmatex">\( T(E) \approx \frac{\text{Residue}}{E - z_R} = \frac{\text{Residue}}{E - (E_R - i\Gamma/2)} \)</span><br />
-这就是著名的<strong>Breit-Wigner 共振形式</strong> <a href="#ref-17">17</a>。散射截面 <span class="arithmatex">\(\sigma(E) \propto |T(E)|^2\)</span>，因此在 <span class="arithmatex">\(E \approx E_R\)</span> 处呈现一个洛伦兹峰形，其半高宽 (FWHM) 正比于 <span class="arithmatex">\(\Gamma\)</span>。<br />
+<div class="arithmatex">\[
+T(E) \approx \frac{\text{Residue}}{E - z_R} = \frac{\text{Residue}}{E - (E_R - i\Gamma/2)}
+\]</div>
+<p>这就是著名的<strong>Breit-Wigner 共振形式</strong> <a href="#ref-17">17</a>。散射截面 <span class="arithmatex">\(\sigma(E) \propto |T(E)|^2\)</span>，因此在 <span class="arithmatex">\(E \approx E_R\)</span> 处呈现一个洛伦兹峰形，其半高宽 (FWHM) 正比于 <span class="arithmatex">\(\Gamma\)</span>。<br />
 这为我们的定义提供了实验支持：物理上观测到的共振峰（Breit-Wigner 形式）是数学上非物理片极点在实轴上的“投影”。</p>
 <h3 id="35-证明策略的转变"><strong>3.5 证明策略的转变</strong><a class="headerlink" href="#35-证明策略的转变" title="Permanent link">#</a></h3>
 <p>通过第 3 节的讨论，我们已经将一个模糊的物理概念（共振）转化为一个严格的数学定义（非物理片上的 T 矩阵极点）。<br />
@@ -4231,24 +4293,40 @@ T 矩阵 <span class="arithmatex">\(T(z)\)</span> 包含了所有动力学信息
 </ul>
 <h3 id="41-算符恒等式的推导-lippmann-schwinger"><strong>4.1 算符恒等式的推导 (Lippmann-Schwinger)</strong><a class="headerlink" href="#41-算符恒等式的推导-lippmann-schwinger" title="Permanent link">#</a></h3>
 <p>我们从 <span class="arithmatex">\(G(z)\)</span> 的定义开始：</p>
-<p><span class="arithmatex">\( (z - H) G(z) = I \implies (z - H_0 - V) G(z) = I \)</span><br />
-将其写为：</p>
-<p><span class="arithmatex">\( (z - H_0) G(z) = I + V G(z) \)</span><br />
-在等式两边从左侧同乘以 <span class="arithmatex">\(G_0(z) = (z - H_0)^{-1}\)</span>，我们得到 <a href="#ref-28">28</a>：</p>
-<p><span class="arithmatex">\( G(z) = G_0(z) + G_0(z) V G(z) \quad \cdots \quad (\text{L-S 方程 1}) \)</span><br />
-这是第一个 Lippmann-Schwinger (L-S) 方程，它将完整预解式 <span class="arithmatex">\(G(z)\)</span> 与自由预解式 <span class="arithmatex">\(G_0(z)\)</span> 联系起来。<br />
+<div class="arithmatex">\[
+(z - H) G(z) = I \implies (z - H_0 - V) G(z) = I
+\]</div>
+<p>将其写为：</p>
+<div class="arithmatex">\[
+(z - H_0) G(z) = I + V G(z)
+\]</div>
+<p>在等式两边从左侧同乘以 <span class="arithmatex">\(G_0(z) = (z - H_0)^{-1}\)</span>，我们得到 <a href="#ref-28">28</a>：</p>
+<div class="arithmatex">\[
+G(z) = G_0(z) + G_0(z) V G(z) \quad \cdots \quad (\text{L-S 方程 1})
+\]</div>
+<p>这是第一个 Lippmann-Schwinger (L-S) 方程，它将完整预解式 <span class="arithmatex">\(G(z)\)</span> 与自由预解式 <span class="arithmatex">\(G_0(z)\)</span> 联系起来。<br />
 T 矩阵算符 <span class="arithmatex">\(T(z)\)</span> 通常通过它与 <span class="arithmatex">\(V\)</span> 和 <span class="arithmatex">\(G_0(z)\)</span> 的关系来定义，即满足第二个 L-S 方程 <a href="#ref-28">28</a>：</p>
-<p><span class="arithmatex">\( T(z) = V + V G_0(z) T(z) \quad \cdots \quad (\text{L-S 方程 2}) \)</span><br />
-这个方程的迭代解（Born 级数）给出了 <span class="arithmatex">\(T(z)\)</span> 的物理图像：</p>
-<p><span class="arithmatex">\( T(z) = V + V G_0(z) V + V G_0(z) V G_0(z) V + \dots \)</span></p>
+<div class="arithmatex">\[
+T(z) = V + V G_0(z) T(z) \quad \cdots \quad (\text{L-S 方程 2})
+\]</div>
+<p>这个方程的迭代解（Born 级数）给出了 <span class="arithmatex">\(T(z)\)</span> 的物理图像：</p>
+<div class="arithmatex">\[
+T(z) = V + V G_0(z) V + V G_0(z) V G_0(z) V + \dots
+\]</div>
 <p>这表示 <span class="arithmatex">\(T(z)\)</span> 包含了单次散射 (<span class="arithmatex">\(V\)</span>) 以及所有由自由粒子传播 (<span class="arithmatex">\(G_0\)</span>) 连接的多次散射过程 <a href="#ref-8">8</a>。</p>
 <h3 id="42-核心证明-atz-极点-implies-gz-极点"><strong>4.2 核心证明 A：T(z) 极点 <span class="arithmatex">\(\implies\)</span> G(z) 极点</strong><a class="headerlink" href="#42-核心证明-atz-极点-implies-gz-极点" title="Permanent link">#</a></h3>
 <p>我们需要一个表示 <span class="arithmatex">\(G(z)\)</span> 的恒等式，该恒等式以 <span class="arithmatex">\(T(z)\)</span> 作为输入。 我们迭代 L-S 方程 1 (<span class="arithmatex">\(G = G_0 + G_0 V G\)</span>)：</p>
-<p><span class="arithmatex">\( G = G_0 + G_0 V (G_0 + G_0 V G) = G_0 + G_0 V G_0 + G_0 V G_0 V G \)</span></p>
-<p><span class="arithmatex">\( G = G_0 + G_0 [V + V G_0 V + V G_0 V G_0 V + \dots] G_0 \)</span><br />
-我们观察到，方括号中的无穷级数正是 <span class="arithmatex">\(T(z)\)</span> 的 Born 级数 <a href="#ref-8">8</a>。因此，我们得到了连接 <span class="arithmatex">\(G(z)\)</span> 和 <span class="arithmatex">\(T(z)\)</span> 的第一个关键恒等式 <a href="#ref-28">28</a>：</p>
-<p><span class="arithmatex">\( G(z) = G_0(z) + G_0(z) T(z) G_0(z) \quad \cdots \quad (\text{恒等式 1}) \)</span><br />
-<strong>证明：</strong> 假设 <span class="arithmatex">\(T(z)\)</span> 在 <span class="arithmatex">\(z = z_R\)</span> 处有一个极点。根据第 3 节的定义，这是一个共振态，因此 <span class="arithmatex">\(z_R\)</span> 是一个<strong>非实数</strong>的复数（<span class="arithmatex">\(z_R = E_R - i\Gamma/2\)</span>）。<br />
+<div class="arithmatex">\[
+G = G_0 + G_0 V (G_0 + G_0 V G) = G_0 + G_0 V G_0 + G_0 V G_0 V G
+\]</div>
+<div class="arithmatex">\[
+G = G_0 + G_0 [V + V G_0 V + V G_0 V G_0 V + \dots] G_0
+\]</div>
+<p>我们观察到，方括号中的无穷级数正是 <span class="arithmatex">\(T(z)\)</span> 的 Born 级数 <a href="#ref-8">8</a>。因此，我们得到了连接 <span class="arithmatex">\(G(z)\)</span> 和 <span class="arithmatex">\(T(z)\)</span> 的第一个关键恒等式 <a href="#ref-28">28</a>：</p>
+<div class="arithmatex">\[
+G(z) = G_0(z) + G_0(z) T(z) G_0(z) \quad \cdots \quad (\text{恒等式 1})
+\]</div>
+<p><strong>证明：</strong> 假设 <span class="arithmatex">\(T(z)\)</span> 在 <span class="arithmatex">\(z = z_R\)</span> 处有一个极点。根据第 3 节的定义，这是一个共振态，因此 <span class="arithmatex">\(z_R\)</span> 是一个<strong>非实数</strong>的复数（<span class="arithmatex">\(z_R = E_R - i\Gamma/2\)</span>）。<br />
 现在我们来分析恒等式 1 在 <span class="arithmatex">\(z = z_R\)</span> 处的行为：</p>
 <ol>
 <li><span class="arithmatex">\(T(z)\)</span> 在 <span class="arithmatex">\(z_R\)</span> 处具有奇异性（极点）。</li>
@@ -4261,13 +4339,21 @@ T 矩阵算符 <span class="arithmatex">\(T(z)\)</span> 通常通过它与 <span
 <h3 id="43-核心证明-bgz-极点-implies-tz-极点"><strong>4.3 核心证明 B：G(z) 极点 <span class="arithmatex">\(\implies\)</span> T(z) 极点</strong><a class="headerlink" href="#43-核心证明-bgz-极点-implies-tz-极点" title="Permanent link">#</a></h3>
 <p>现在我们需要证明反方向的蕴含关系。我们需要一个表示 <span class="arithmatex">\(T(z)\)</span> 的恒等式，该恒等式以 <span class="arithmatex">\(G(z)\)</span> 作为输入。<br />
 从 L-S 方程 1 (<span class="arithmatex">\(G = G_0 + G_0 V G\)</span>) 出发，我们整理得到：</p>
-<p><span class="arithmatex">\( G - G_0 = G_0 V G \implies G_0^{-1} (G - G_0) = V G \)</span></p>
-<p><span class="arithmatex">\( (z - H_0) (G - G_0) = V G \)</span></p>
+<div class="arithmatex">\[
+G - G_0 = G_0 V G \implies G_0^{-1} (G - G_0) = V G
+\]</div>
+<div class="arithmatex">\[
+(z - H_0) (G - G_0) = V G
+\]</div>
 <p>另一方面，T 矩阵也可以通过 <span class="arithmatex">\(T(z) = V + V G(z) V\)</span> 来定义。将 <span class="arithmatex">\(V G\)</span> 的表达式代入：</p>
-<p><span class="arithmatex">\( T(z) = V + V G_0^{-1} (G - G_0) = V + (z - H_0) (G - G_0) \)</span></p>
+<div class="arithmatex">\[
+T(z) = V + V G_0^{-1} (G - G_0) = V + (z - H_0) (G - G_0)
+\]</div>
 <p>这是一个不太常见的恒等式，但它直接将 <span class="arithmatex">\(T(z)\)</span> 与 <span class="arithmatex">\(G(z)\)</span> 联系起来。</p>
 <p>一个更常用且更有启发性的恒等式是：</p>
-<p><span class="arithmatex">\( T(z) = V + V G(z) V \quad \cdots \quad (\text{恒等式 2}) \)</span></p>
+<div class="arithmatex">\[
+T(z) = V + V G(z) V \quad \cdots \quad (\text{恒等式 2})
+\]</div>
 <p><strong>证明：</strong> 假设 <span class="arithmatex">\(G(z)\)</span> 在 <span class="arithmatex">\(z = z_R\)</span> 处有一个极点。同样，<span class="arithmatex">\(z_R\)</span> 是非实数。<br />
 现在我们来分析恒等式 2 在 <span class="arithmatex">\(z = z_R\)</span> 处的行为：</p>
 <ol>
@@ -4328,7 +4414,7 @@ T 矩阵算符 <span class="arithmatex">\(T(z)\)</span> 通常通过它与 <span
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年2月25日 11:33:13 UTC"><span class="timeago" datetime="2026-02-25T11:33:13+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年2月25日 11:33:13 UTC">2026-02-25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月9日 15:05:14 UTC"><span class="timeago" datetime="2026-05-09T15:05:14+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月9日 15:05:14 UTC">2026-05-09</span>
       
         <br>
         创建日期:

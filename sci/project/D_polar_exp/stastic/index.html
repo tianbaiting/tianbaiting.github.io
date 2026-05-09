@@ -2408,6 +2408,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_15" tabindex="0" aria-expanded="false">
@@ -2484,6 +2488,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/coulomb_scattering/" class="md-nav__link">
+        Coulomb 散射的完整形式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../minimal_theory/scatteringTheory/friedrichsModel/" class="md-nav__link">
         Friedrichs 模型
       </a>
@@ -2511,13 +2529,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/polarization_formalism/" class="md-nav__link">
+        极化形式与自旋观测量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_7" type="checkbox" id="__nav_5_4_15_7" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_9" type="checkbox" id="__nav_5_4_15_9" >
       
       
         
@@ -2539,15 +2571,17 @@
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_5_4_15_7" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4_15_9" tabindex="0" aria-expanded="false">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Examples" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_4_15_7">
+        <label class="md-nav__title" for="__nav_5_4_15_9">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -2673,6 +2707,20 @@
     <li class="md-nav__item">
       <a href="../../../minimal_theory/scatteringTheory/examples/09_feshbach_two_channel/" class="md-nav__link">
         双通道 Feshbach 共振
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/10_polarization_demo/" class="md-nav__link">
+        极化散射的数值演示
       </a>
     </li>
   
@@ -3864,54 +3912,66 @@
 </ul>
 <p>泰勒展开近似</p>
 <p>假设 <span class="arithmatex">\(f\)</span> 是输入变量的平滑函数，可以对 <span class="arithmatex">\(f\)</span> 进行一阶泰勒展开近似：</p>
-<p>$$ f \approx f_0 + \sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - x_{i,0}) $$ </p>
+<p>$$<br />
+ f \approx f_0 + \sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - x_{i,0})<br />
+ $$</p>
 <p>其中：</p>
 <p><span class="arithmatex">\(f_0\)</span> 是 <span class="arithmatex">\(f\)</span> 在点 <span class="arithmatex">\((x_{1,0}, x_{2,0}, ..., x_{n,0})\)</span> 的值；<br />
 <span class="arithmatex">\(\frac{\partial f}{\partial x_i}\)</span> 是 <span class="arithmatex">\(f\)</span> 对 <span class="arithmatex">\(x_i\)</span> 的偏导数。</p>
 <ol>
 <li>方差的定义</li>
 </ol>
-<p>方差的定义为：<br />
- $$ \text{Var}(f) = \mathbb{E}[(f - \mathbb{E}[f])^2] $$ <br />
- 将 <span class="arithmatex">\(f\)</span> 的泰勒展开代入，忽略高阶项，得到： </p>
-<p>$$ f - \mathbb{E}[f] \approx \sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - \mathbb{E}[x_i]) $$</p>
-<p>因此，<span class="arithmatex">\(f\)</span> 的方差可以近似为： <br />
-$$ \text{Var}(f) \approx \text{Var}\left(\sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - \mathbb{E}[x_i])\right) $$</p>
+<p>方差的定义为：</p>
+<p>$$<br />
+ \text{Var}(f) = \mathbb{E}[(f - \mathbb{E}[f])^2]<br />
+ $$</p>
+<p>将 <span class="arithmatex">\(f\)</span> 的泰勒展开代入，忽略高阶项，得到： </p>
+<p>$$<br />
+ f - \mathbb{E}[f] \approx \sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - \mathbb{E}[x_i])<br />
+ $$</p>
+<p>因此，<span class="arithmatex">\(f\)</span> 的方差可以近似为： </p>
+<div class="arithmatex">\[
+\text{Var}(f) \approx \text{Var}\left(\sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - \mathbb{E}[x_i])\right)
+\]</div>
 <ol>
 <li>方差的性质</li>
 </ol>
-<p>根据方差的性质，对于随机变量的线性组合：<br />
- $$ \text{Var}\left(\sum_{i=1}^n a_i X_i\right) = \sum_{i=1}^n a_i^2 \text{Var}(X_i) + 2 \sum_{i=1}^n \sum_{j=i+1}^n a_i a_j \text{Cov}(X_i, X_j) $$ <br />
- 其中 <span class="arithmatex">\(a_i\)</span> 是常数，<span class="arithmatex">\(X_i\)</span> 是随机变量。</p>
+<p>根据方差的性质，对于随机变量的线性组合：</p>
+<p>$$<br />
+ \text{Var}\left(\sum_{i=1}^n a_i X_i\right) = \sum_{i=1}^n a_i^2 \text{Var}(X_i) + 2 \sum_{i=1}^n \sum_{j=i+1}^n a_i a_j \text{Cov}(X_i, X_j)<br />
+ $$</p>
+<p>其中 <span class="arithmatex">\(a_i\)</span> 是常数，<span class="arithmatex">\(X_i\)</span> 是随机变量。</p>
 <p>在这里，令 <span class="arithmatex">\(a_i = \frac{\partial f}{\partial x_i}\)</span>，<span class="arithmatex">\(X_i = x_i - \mathbb{E}[x_i]\)</span>，代入后得到： </p>
-<div class="arithmatex">\[ \text{Var}(f) \approx \sum_{i=1}^n \left( \frac{\partial f}{\partial x_i} \right)^2 \text{Var}(x_i) + 2 \sum_{i=1}^n \sum_{j=i+1}^n \frac{\partial f}{\partial x_i} \frac{\partial f}{\partial x_j} \text{Cov}(x_i, x_j) \]</div>
+<div class="arithmatex">\[
+\text{Var}(f) \approx \sum_{i=1}^n \left( \frac{\partial f}{\partial x_i} \right)^2 \text{Var}(x_i) + 2 \sum_{i=1}^n \sum_{j=i+1}^n \frac{\partial f}{\partial x_i} \frac{\partial f}{\partial x_j} \text{Cov}(x_i, x_j)
+\]</div>
 <h2 id="多项式分布的方差与协方差">多项式分布的方差与协方差<a class="headerlink" href="#多项式分布的方差与协方差" title="Permanent link">#</a></h2>
 <p>对于多项式分布，假设有 <span class="arithmatex">\(n\)</span> 个类别，每个类别的概率为 <span class="arithmatex">\(p_i\)</span>，其中 <span class="arithmatex">\(i = 1, 2, ..., n\)</span>，且 <span class="arithmatex">\(\sum_{i=1}^n p_i = 1\)</span>。若进行 <span class="arithmatex">\(N\)</span> 次独立试验，记每个类别的计数为 <span class="arithmatex">\(X_i\)</span>，则随机向量 <span class="arithmatex">\(\vec{X} = (X_1, X_2, ..., X_n)\)</span> 服从多项式分布。</p>
 <h3 id="方差">方差<a class="headerlink" href="#方差" title="Permanent link">#</a></h3>
-<p>多项式分布中，每个类别的计数 <span class="arithmatex">\(X_i\)</span> 的方差为：<br />
-$$<br />
-\text{Var}(X_i) = N p_i (1 - p_i)<br />
-$$</p>
+<p>多项式分布中，每个类别的计数 <span class="arithmatex">\(X_i\)</span> 的方差为：</p>
+<div class="arithmatex">\[
+\text{Var}(X_i) = N p_i (1 - p_i)
+\]</div>
 <h3 id="协方差">协方差<a class="headerlink" href="#协方差" title="Permanent link">#</a></h3>
-<p>对于不同类别 <span class="arithmatex">\(i\)</span> 和 <span class="arithmatex">\(j\)</span>，计数 <span class="arithmatex">\(X_i\)</span> 和 <span class="arithmatex">\(X_j\)</span> 的协方差为：<br />
-$$<br />
-\text{Cov}(X_i, X_j) = -N p_i p_j \quad (i \neq j)<br />
-$$</p>
+<p>对于不同类别 <span class="arithmatex">\(i\)</span> 和 <span class="arithmatex">\(j\)</span>，计数 <span class="arithmatex">\(X_i\)</span> 和 <span class="arithmatex">\(X_j\)</span> 的协方差为：</p>
+<div class="arithmatex">\[
+\text{Cov}(X_i, X_j) = -N p_i p_j \quad (i \neq j)
+\]</div>
 <h2 id="多项式分布近似为泊松分布或高斯分布">多项式分布近似为泊松分布或高斯分布<a class="headerlink" href="#多项式分布近似为泊松分布或高斯分布" title="Permanent link">#</a></h2>
 <h3 id="泊松分布近似">泊松分布近似<a class="headerlink" href="#泊松分布近似" title="Permanent link">#</a></h3>
-<p>当试验次数 <span class="arithmatex">\(N\)</span> 很大且每个类别的概率 <span class="arithmatex">\(p_i\)</span> 很小（满足 <span class="arithmatex">\(N p_i\)</span> 为有限值）时，多项式分布中的每个类别计数 <span class="arithmatex">\(X_i\)</span> 可以近似为泊松分布，其参数为 <span class="arithmatex">\(\lambda_i = N p_i\)</span>。即：<br />
-$$<br />
-X_i \sim \text{Poisson}(\lambda_i)<br />
-$$</p>
+<p>当试验次数 <span class="arithmatex">\(N\)</span> 很大且每个类别的概率 <span class="arithmatex">\(p_i\)</span> 很小（满足 <span class="arithmatex">\(N p_i\)</span> 为有限值）时，多项式分布中的每个类别计数 <span class="arithmatex">\(X_i\)</span> 可以近似为泊松分布，其参数为 <span class="arithmatex">\(\lambda_i = N p_i\)</span>。即：</p>
+<div class="arithmatex">\[
+X_i \sim \text{Poisson}(\lambda_i)
+\]</div>
 <h4 id="方差与标准差">方差与标准差<a class="headerlink" href="#方差与标准差" title="Permanent link">#</a></h4>
-<p>在泊松分布中，每个类别计数 <span class="arithmatex">\(X_i\)</span> 的方差等于其均值 <span class="arithmatex">\(\lambda_i\)</span>，即：<br />
-$$<br />
-\text{Var}(X_i) = \lambda_i<br />
-$$</p>
-<p>标准差是方差的平方根，因此：<br />
-$$<br />
-\text{Std}(X_i) = \sqrt{\lambda_i}<br />
-$$</p>
+<p>在泊松分布中，每个类别计数 <span class="arithmatex">\(X_i\)</span> 的方差等于其均值 <span class="arithmatex">\(\lambda_i\)</span>，即：</p>
+<div class="arithmatex">\[
+\text{Var}(X_i) = \lambda_i
+\]</div>
+<p>标准差是方差的平方根，因此：</p>
+<div class="arithmatex">\[
+\text{Std}(X_i) = \sqrt{\lambda_i}
+\]</div>
 <p>其中：<br />
 - <span class="arithmatex">\(\lambda_i = N p_i\)</span> 是泊松分布的参数；<br />
 - <span class="arithmatex">\(N\)</span> 是试验次数；<br />
@@ -3919,25 +3979,23 @@ $$</p>
 <h3 id="高斯分布近似">高斯分布近似<a class="headerlink" href="#高斯分布近似" title="Permanent link">#</a></h3>
 <p>当试验次数 <span class="arithmatex">\(N\)</span> 很大且每个类别的概率 <span class="arithmatex">\(p_i\)</span> 不太小（满足 <span class="arithmatex">\(N p_i (1 - p_i)\)</span> 较大）时，多项式分布可以近似为高斯分布。随机向量 <span class="arithmatex">\(\vec{X} = (X_1, X_2, ..., X_n)\)</span> 的分布近似为多元高斯分布，其均值和协方差矩阵分别为：</p>
 <ul>
-<li>
-<p>均值向量：<br />
-$$<br />
-\mathbb{E}[\vec{X}] = (N p_1, N p_2, ..., N p_n)<br />
-$$</p>
-</li>
-<li>
-<p>协方差矩阵：<br />
-$$<br />
-\text{Cov}(\vec{X}) = <br />
-\begin{bmatrix}<br />
-N p_1 (1 - p_1) &amp; -N p_1 p_2 &amp; \cdots &amp; -N p_1 p_n \<br />
--N p_2 p_1 &amp; N p_2 (1 - p_2) &amp; \cdots &amp; -N p_2 p_n \<br />
-\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br />
--N p_n p_1 &amp; -N p_n p_2 &amp; \cdots &amp; N p_n (1 - p_n)<br />
-\end{bmatrix}<br />
-$$</p>
-</li>
+<li>均值向量：</li>
 </ul>
+<div class="arithmatex">\[
+\mathbb{E}[\vec{X}] = (N p_1, N p_2, ..., N p_n)
+\]</div>
+<ul>
+<li>协方差矩阵：</li>
+</ul>
+<div class="arithmatex">\[
+\text{Cov}(\vec{X}) = 
+\begin{bmatrix}
+N p_1 (1 - p_1) &amp; -N p_1 p_2 &amp; \cdots &amp; -N p_1 p_n \\
+-N p_2 p_1 &amp; N p_2 (1 - p_2) &amp; \cdots &amp; -N p_2 p_n \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+-N p_n p_1 &amp; -N p_n p_2 &amp; \cdots &amp; N p_n (1 - p_n)
+\end{bmatrix}
+\]</div>
 <p>这种高斯分布近似在类别数较多且每个类别的概率 <span class="arithmatex">\(p_i\)</span> 不极端的情况下表现较好。</p>
 
   <hr>
@@ -3945,7 +4003,7 @@ $$</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年5月7日 07:59:55 UTC"><span class="timeago" datetime="2025-05-07T07:59:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年5月7日 07:59:55 UTC">2025-05-07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月9日 15:05:14 UTC"><span class="timeago" datetime="2026-05-09T15:05:14+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月9日 15:05:14 UTC">2026-05-09</span>
       
         <br>
         创建日期:

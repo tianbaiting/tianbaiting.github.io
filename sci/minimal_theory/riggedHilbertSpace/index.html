@@ -2561,6 +2561,10 @@
         
           
         
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_15" tabindex="0" aria-expanded="false">
@@ -2637,6 +2641,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../scatteringTheory/coulomb_scattering/" class="md-nav__link">
+        Coulomb 散射的完整形式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../scatteringTheory/friedrichsModel/" class="md-nav__link">
         Friedrichs 模型
       </a>
@@ -2664,13 +2682,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/polarization_formalism/" class="md-nav__link">
+        极化形式与自旋观测量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_7" type="checkbox" id="__nav_5_4_15_7" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_9" type="checkbox" id="__nav_5_4_15_9" >
       
       
         
@@ -2692,15 +2724,17 @@
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_5_4_15_7" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4_15_9" tabindex="0" aria-expanded="false">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Examples" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_4_15_7">
+        <label class="md-nav__title" for="__nav_5_4_15_9">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -2826,6 +2860,20 @@
     <li class="md-nav__item">
       <a href="../scatteringTheory/examples/09_feshbach_two_channel/" class="md-nav__link">
         双通道 Feshbach 共振
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/examples/10_polarization_demo/" class="md-nav__link">
+        极化散射的数值演示
       </a>
     </li>
   
@@ -3944,23 +3992,23 @@
 <p>参考资料： Ballentine, <em>Quantum Mechanics</em> (1990)； Bohm, Gadella, <em>Dirac Kets, Gamow Vectors and Gelfand Triplets</em> (1989)； 以及上述 de la Madrid 综述。</p>
 <h2 id="为什么希尔伯特空间不够">为什么希尔伯特空间不够<a class="headerlink" href="#为什么希尔伯特空间不够" title="Permanent link">#</a></h2>
 <h3 id="无界算符的定义域问题">无界算符的定义域问题<a class="headerlink" href="#无界算符的定义域问题" title="Permanent link">#</a></h3>
-<p>位置算符 <span class="arithmatex">\(Q f(x) = x f(x)\)</span> 在 <span class="arithmatex">\(L^2(\mathbb R)\)</span> 上不处处有定义：<br />
-[<br />
-\mathcal D(Q) = { f\in L^2 \mid x f \in L^2} \subsetneq L^2.<br />
-]<br />
-而 <span class="arithmatex">\(g(x)=1/(x+\mathrm i)\in L^2\)</span> 但 <span class="arithmatex">\(Qg\notin L^2\)</span>，所以 <span class="arithmatex">\(Q\)</span> 是无界算符。 进一步， <span class="arithmatex">\(Q^2\)</span> 的定义域比 <span class="arithmatex">\(\mathcal D(Q)\)</span> 还小， <span class="arithmatex">\(\mathcal D(Q)\)</span> 不在 <span class="arithmatex">\(Q\)</span> 的作用下保持不变 (<span class="arithmatex">\(Q\mathcal D(Q)\not\subset \mathcal D(Q)\)</span>)。</p>
+<p>位置算符 <span class="arithmatex">\(Q f(x) = x f(x)\)</span> 在 <span class="arithmatex">\(L^2(\mathbb R)\)</span> 上不处处有定义：</p>
+<div class="arithmatex">\[
+\mathcal D(Q) = \{ f\in L^2 \mid x f \in L^2\} \subsetneq L^2.
+\]</div>
+<p>而 <span class="arithmatex">\(g(x)=1/(x+\mathrm i)\in L^2\)</span> 但 <span class="arithmatex">\(Qg\notin L^2\)</span>，所以 <span class="arithmatex">\(Q\)</span> 是无界算符。 进一步， <span class="arithmatex">\(Q^2\)</span> 的定义域比 <span class="arithmatex">\(\mathcal D(Q)\)</span> 还小， <span class="arithmatex">\(\mathcal D(Q)\)</span> 不在 <span class="arithmatex">\(Q\)</span> 的作用下保持不变 (<span class="arithmatex">\(Q\mathcal D(Q)\not\subset \mathcal D(Q)\)</span>)。</p>
 <p>后果： 期望值 <span class="arithmatex">\((\varphi, Q\varphi)\)</span>、 不确定度 <span class="arithmatex">\(\Delta_\varphi Q\)</span>、 对易关系 <span class="arithmatex">\([Q,P]=\mathrm i\hbar I\)</span>， 在 <span class="arithmatex">\(L^2\)</span> 上没有处处良定义。</p>
 <h3 id="连续谱本征矢不在-l2-中">连续谱本征矢不在 <span class="arithmatex">\(L^2\)</span> 中<a class="headerlink" href="#连续谱本征矢不在-l2-中" title="Permanent link">#</a></h3>
-<p><span class="arithmatex">\(P\)</span> 的本征方程 <span class="arithmatex">\(-\mathrm i\hbar\, \mathrm d/\mathrm dx\,\langle x|p\rangle = p\,\langle x|p\rangle\)</span> 给出平面波 <span class="arithmatex">\(\langle x|p\rangle = \mathrm e^{\mathrm i p x/\hbar}/\sqrt{2\pi\hbar}\)</span>， 它不平方可积。 类似地 <span class="arithmatex">\(\langle x|x'\rangle = \delta(x-x')\)</span> 根本不是函数。 Dirac 形式中的"完备性"<br />
-[<br />
-I = \int\mathrm dp\,|p\rangle\langle p|,\qquad \langle p|p'\rangle = \delta(p-p')<br />
-]<br />
-在 <span class="arithmatex">\(\mathcal H\)</span> 内毫无意义。</p>
+<p><span class="arithmatex">\(P\)</span> 的本征方程 <span class="arithmatex">\(-\mathrm i\hbar\, \mathrm d/\mathrm dx\,\langle x|p\rangle = p\,\langle x|p\rangle\)</span> 给出平面波 <span class="arithmatex">\(\langle x|p\rangle = \mathrm e^{\mathrm i p x/\hbar}/\sqrt{2\pi\hbar}\)</span>， 它不平方可积。 类似地 <span class="arithmatex">\(\langle x|x'\rangle = \delta(x-x')\)</span> 根本不是函数。 Dirac 形式中的"完备性"</p>
+<div class="arithmatex">\[
+I = \int\mathrm dp\,|p\rangle\langle p|,\qquad \langle p|p'\rangle = \delta(p-p')
+\]</div>
+<p>在 <span class="arithmatex">\(\mathcal H\)</span> 内毫无意义。</p>
 <h3 id="思路-一缩一放">思路： 一缩一放<a class="headerlink" href="#思路-一缩一放" title="Permanent link">#</a></h3>
-<p>要补救， 一方面要把 <span class="arithmatex">\(\mathcal H\)</span> 缩小到一个对所有 <span class="arithmatex">\(Q,P,H\)</span> 的任意次幂都不变的子空间 <span class="arithmatex">\(\Phi\)</span>， 那里期望值、 不确定度、 对易关系都良定义； 另一方面要把 <span class="arithmatex">\(\mathcal H\)</span> 放大到包含本征 bra 和 ket 的更大空间 <span class="arithmatex">\(\Phi^\times, \Phi'\)</span>。 这就是装备：<br />
-[<br />
-\Phi \subset \mathcal H \subset \Phi^\times,\qquad \Phi \subset \mathcal H \subset \Phi'.<br />
-]</p>
+<p>要补救， 一方面要把 <span class="arithmatex">\(\mathcal H\)</span> 缩小到一个对所有 <span class="arithmatex">\(Q,P,H\)</span> 的任意次幂都不变的子空间 <span class="arithmatex">\(\Phi\)</span>， 那里期望值、 不确定度、 对易关系都良定义； 另一方面要把 <span class="arithmatex">\(\mathcal H\)</span> 放大到包含本征 bra 和 ket 的更大空间 <span class="arithmatex">\(\Phi^\times, \Phi'\)</span>。 这就是装备：</p>
+<div class="arithmatex">\[
+\Phi \subset \mathcal H \subset \Phi^\times,\qquad \Phi \subset \mathcal H \subset \Phi'.
+\]</div>
 <h2 id="gelfand-三元组">Gelfand 三元组<a class="headerlink" href="#gelfand-三元组" title="Permanent link">#</a></h2>
 <p><span class="arithmatex">\(\Phi\)</span> 是 <span class="arithmatex">\(\mathcal H\)</span> 的稠密子空间， 其上有比 <span class="arithmatex">\(\mathcal H\)</span> 内积范数更强的拓扑 <span class="arithmatex">\(\tau_\Phi\)</span>；</p>
 <ul>
@@ -4000,12 +4048,12 @@ I = \int\mathrm dp\,|p\rangle\langle p|,\qquad \langle p|p'\rangle = \delta(p-p'
 </table>
 <p>记号 <span class="arithmatex">\(\langle\varphi|F\rangle\equiv F(\varphi)\)</span> 把分布作用在测试函数上的过程改写成内积外形， 这正是 Dirac 形式的源头。</p>
 <h2 id="例子-一维矩形势垒">例子： 一维矩形势垒<a class="headerlink" href="#例子-一维矩形势垒" title="Permanent link">#</a></h2>
-<p>考虑一维无自旋粒子， 哈密顿量<br />
-[<br />
-H = -\frac{\hbar^2}{2m}\frac{\mathrm d^2}{\mathrm dx^2} + V(x),\qquad<br />
-V(x) = \begin{cases} 0, &amp; x<a\;\text{或}\;x>b \ V_0, &amp; a&lt;x&lt;b \end{cases}.<br />
-]<br />
-谱 <span class="arithmatex">\(\mathrm{Sp}(Q)=\mathrm{Sp}(P)=\mathbb R\)</span>， <span class="arithmatex">\(\mathrm{Sp}(H)=[0,\infty)\)</span>， 全为连续谱， 无束缚态。 这是检验 RHS 的最干净场景。</p>
+<p>考虑一维无自旋粒子， 哈密顿量</p>
+<div class="arithmatex">\[
+H = -\frac{\hbar^2}{2m}\frac{\mathrm d^2}{\mathrm dx^2} + V(x),\qquad
+V(x) = \begin{cases} 0, &amp; x&lt;a\;\text{或}\;x&gt;b \\ V_0, &amp; a&lt;x&lt;b \end{cases}.
+\]</div>
+<p>谱 <span class="arithmatex">\(\mathrm{Sp}(Q)=\mathrm{Sp}(P)=\mathbb R\)</span>， <span class="arithmatex">\(\mathrm{Sp}(H)=[0,\infty)\)</span>， 全为连续谱， 无束缚态。 这是检验 RHS 的最干净场景。</p>
 <h3 id="构造测试函数空间-phi">构造测试函数空间 <span class="arithmatex">\(\Phi\)</span><a class="headerlink" href="#构造测试函数空间-phi" title="Permanent link">#</a></h3>
 <p>要让 <span class="arithmatex">\(Q,P,H\)</span> 的任意多项式作用在 <span class="arithmatex">\(\varphi\)</span> 上仍是 <span class="arithmatex">\(L^2\)</span>， 并且 <span class="arithmatex">\(H\)</span> 在势垒边界 <span class="arithmatex">\(a,b\)</span> 仍可反复求导， <span class="arithmatex">\(\Phi\)</span> 必须满足：</p>
 <ul>
@@ -4013,129 +4061,133 @@ V(x) = \begin{cases} 0, &amp; x<a\;\text{或}\;x>b \ V_0, &amp; a&lt;x&lt;b \end
 <li>在 <span class="arithmatex">\(x=a, b\)</span> 各阶导数为零 (势的间断点)；</li>
 <li><span class="arithmatex">\(P^n Q^m H^l \varphi \in L^2\)</span> 对一切 <span class="arithmatex">\(n,m,l\geq 0\)</span>。</li>
 </ul>
-<p>正式记<br />
-[<br />
-\Phi \equiv \mathcal S(\mathbb R - {a,b})<br />
-= {\varphi\in L^2\mid \varphi\in C^\infty(\mathbb R), \varphi<sup _n_="(n)">{(n)}(a)=\varphi</sup>(b)=0, |\varphi|<em n_m_l="n,m,l">{n,m,l}&lt;\infty}<br />
-]<br />
-其中范数族<br />
-[<br />
-|\varphi|</em>,\qquad n,m,l=0,1,\dots} = \sqrt{\int|P^n Q^m H^l \varphi(x)|^2\,\mathrm dx<br />
-]<br />
-诱导拓扑 <span class="arithmatex">\(\tau_\Phi\)</span>。 <span class="arithmatex">\(\Phi\)</span> 几乎就是 Schwartz 空间 <span class="arithmatex">\(\mathcal S(\mathbb R)\)</span>， 只多两个边界条件。 可以验证 <span class="arithmatex">\(A\Phi\subset\Phi\)</span> 对 <span class="arithmatex">\(A=Q,P,H\)</span> 都成立： 这就是不变性。</p>
+<p>正式记</p>
+<div class="arithmatex">\[
+\Phi \equiv \mathcal S(\mathbb R - \{a,b\})
+= \{\varphi\in L^2\mid \varphi\in C^\infty(\mathbb R),\ \varphi^{(n)}(a)=\varphi^{(n)}(b)=0,\ \|\varphi\|_{n,m,l}&lt;\infty\}
+\]</div>
+<p>其中范数族</p>
+<div class="arithmatex">\[
+\|\varphi\|_{n,m,l} = \sqrt{\int|P^n Q^m H^l \varphi(x)|^2\,\mathrm dx},\qquad n,m,l=0,1,\dots
+\]</div>
+<p>诱导拓扑 <span class="arithmatex">\(\tau_\Phi\)</span>。 <span class="arithmatex">\(\Phi\)</span> 几乎就是 Schwartz 空间 <span class="arithmatex">\(\mathcal S(\mathbb R)\)</span>， 只多两个边界条件。 可以验证 <span class="arithmatex">\(A\Phi\subset\Phi\)</span> 对 <span class="arithmatex">\(A=Q,P,H\)</span> 都成立： 这就是不变性。</p>
 <h3 id="构造-ket-空间-phitimes">构造 ket 空间 <span class="arithmatex">\(\Phi^\times\)</span><a class="headerlink" href="#构造-ket-空间-phitimes" title="Permanent link">#</a></h3>
-<p>给定本征函数 <span class="arithmatex">\(f(x)\)</span> (例如平面波 <span class="arithmatex">\(\mathrm e^{\mathrm ipx/\hbar}/\sqrt{2\pi\hbar}\)</span>)， 用积分核生成<strong>反线性</strong>泛函<br />
-[<br />
-F(\varphi) = \int\overline{\varphi(x)}\,f(x)\,\mathrm dx.<br />
-]<br />
-Dirac 写法<br />
-[<br />
-\langle\varphi|F\rangle = \int\mathrm dx\,\langle\varphi|x\rangle\langle x|F\rangle.<br />
-]<br />
-按此模板， 三组本征 ket 依次定义：</p>
+<p>给定本征函数 <span class="arithmatex">\(f(x)\)</span> (例如平面波 <span class="arithmatex">\(\mathrm e^{\mathrm ipx/\hbar}/\sqrt{2\pi\hbar}\)</span>)， 用积分核生成<strong>反线性</strong>泛函</p>
+<div class="arithmatex">\[
+F(\varphi) = \int\overline{\varphi(x)}\,f(x)\,\mathrm dx.
+\]</div>
+<p>Dirac 写法</p>
+<div class="arithmatex">\[
+\langle\varphi|F\rangle = \int\mathrm dx\,\langle\varphi|x\rangle\langle x|F\rangle.
+\]</div>
+<p>按此模板， 三组本征 ket 依次定义：</p>
 <ul>
-<li>动量 ket：<br />
-  [<br />
+<li>动量 ket：</li>
+</ul>
+<p>$$<br />
   \langle\varphi|p\rangle \equiv \int\mathrm dx\,\overline{\varphi(x)}\,\frac{1}{\sqrt{2\pi\hbar}}\,\mathrm e^{\mathrm ipx/\hbar}.<br />
-  ]</li>
-<li>位置 ket：<br />
-  [<br />
+  $$</p>
+<ul>
+<li>位置 ket：</li>
+</ul>
+<p>$$<br />
   \langle\varphi|x\rangle \equiv \int\mathrm dx'\,\overline{\varphi(x')}\,\delta(x-x') = \overline{\varphi(x)}.<br />
-  ]</li>
+  $$</p>
+<ul>
 <li>能量 ket <span class="arithmatex">\(|E^\pm\rangle_{\mathrm l,r}\)</span> ：以 <span class="arithmatex">\(\langle x|E^\pm\rangle_{\mathrm l,r}\)</span> 为核， 这些核是带边界条件的 Sturm-Liouville 本征函数 (透射/反射波)。 上标 <span class="arithmatex">\(\pm\)</span> 区分正向/反向时序， 下标 l/r 区分粒子从左/右入射。</li>
 </ul>
 <p>每一个都属于 <span class="arithmatex">\(\mathcal S^\times(\mathbb R-\{a,b\})\)</span>。</p>
 <h3 id="算符在-phitimes-上的延拓">算符在 <span class="arithmatex">\(\Phi^\times\)</span> 上的延拓<a class="headerlink" href="#算符在-phitimes-上的延拓" title="Permanent link">#</a></h3>
-<p>希尔伯特空间内 <span class="arithmatex">\(A\)</span> 自伴等价于 <span class="arithmatex">\((f, Ag)=(Af, g)\)</span>。 把它推广到 ket：<br />
-[<br />
-\langle\varphi|A|F\rangle \equiv \langle A\varphi|F\rangle,\qquad \forall\varphi\in\Phi.<br />
-]<br />
-"<span class="arithmatex">\(|F\rangle\)</span> 是 <span class="arithmatex">\(A\)</span> 的本征 ket， 本征值 <span class="arithmatex">\(a\)</span>" 严格地表述为<br />
-[<br />
-\langle\varphi|A|a\rangle = \langle A\varphi|a\rangle = a\langle\varphi|a\rangle,\qquad \forall\varphi\in\Phi.<br />
-]<br />
-省略左侧 <span class="arithmatex">\(\varphi\)</span> 即得熟悉的 Dirac 写法 <span class="arithmatex">\(A|a\rangle = a|a\rangle\)</span>。 由此可证<br />
-[<br />
-P|p\rangle = p|p\rangle,\quad Q|x\rangle = x|x\rangle,\quad H|E^\pm\rangle_{\mathrm l,r} = E|E^\pm\rangle_{\mathrm l,r}.<br />
-]</p>
+<p>希尔伯特空间内 <span class="arithmatex">\(A\)</span> 自伴等价于 <span class="arithmatex">\((f, Ag)=(Af, g)\)</span>。 把它推广到 ket：</p>
+<div class="arithmatex">\[
+\langle\varphi|A|F\rangle \equiv \langle A\varphi|F\rangle,\qquad \forall\varphi\in\Phi.
+\]</div>
+<p>"<span class="arithmatex">\(|F\rangle\)</span> 是 <span class="arithmatex">\(A\)</span> 的本征 ket， 本征值 <span class="arithmatex">\(a\)</span>" 严格地表述为</p>
+<div class="arithmatex">\[
+\langle\varphi|A|a\rangle = \langle A\varphi|a\rangle = a\langle\varphi|a\rangle,\qquad \forall\varphi\in\Phi.
+\]</div>
+<p>省略左侧 <span class="arithmatex">\(\varphi\)</span> 即得熟悉的 Dirac 写法 <span class="arithmatex">\(A|a\rangle = a|a\rangle\)</span>。 由此可证</p>
+<div class="arithmatex">\[
+P|p\rangle = p|p\rangle,\quad Q|x\rangle = x|x\rangle,\quad H|E^\pm\rangle_{\mathrm l,r} = E|E^\pm\rangle_{\mathrm l,r}.
+\]</div>
 <h3 id="构造-bra-空间-phi">构造 bra 空间 <span class="arithmatex">\(\Phi'\)</span><a class="headerlink" href="#构造-bra-空间-phi" title="Permanent link">#</a></h3>
-<p>把核改成"先复共轭再积分"， 得到<strong>线性</strong>泛函：<br />
-[<br />
-\tilde F(\varphi) = \int\varphi(x)\,\overline{f(x)}\,\mathrm dx,\qquad<br />
-\langle F|\varphi\rangle = \int\mathrm dx\,\langle F|x\rangle\,\langle x|\varphi\rangle.<br />
-]<br />
-于是<br />
-[<br />
-\langle p|\varphi\rangle = \int\mathrm dx\,\varphi(x)\,\frac{1}{\sqrt{2\pi\hbar}}\,\mathrm e^{-\mathrm ipx/\hbar}<br />
-=\overline{\langle\varphi|p\rangle},<br />
-]<br />
-[<br />
-\langle x|\varphi\rangle = \varphi(x),\qquad \langle x|x'\rangle = \delta(x-x').<br />
-]<br />
-bra 在算符左侧的延拓<br />
-[<br />
-\langle F|A|\varphi\rangle \equiv \langle F|A\varphi\rangle<br />
-]<br />
-给出 <span class="arithmatex">\(\langle p|P = p\langle p|\)</span>， <span class="arithmatex">\(\langle x|Q = x\langle x|\)</span>， <span class="arithmatex">\(_{\mathrm{l,r}}\langle{}^{\pm}E|H = E\;_{\mathrm{l,r}}\langle{}^{\pm}E|\)</span>。</p>
+<p>把核改成"先复共轭再积分"， 得到<strong>线性</strong>泛函：</p>
+<div class="arithmatex">\[
+\tilde F(\varphi) = \int\varphi(x)\,\overline{f(x)}\,\mathrm dx,\qquad
+\langle F|\varphi\rangle = \int\mathrm dx\,\langle F|x\rangle\,\langle x|\varphi\rangle.
+\]</div>
+<p>于是</p>
+<div class="arithmatex">\[
+\langle p|\varphi\rangle = \int\mathrm dx\,\varphi(x)\,\frac{1}{\sqrt{2\pi\hbar}}\,\mathrm e^{-\mathrm ipx/\hbar}
+=\overline{\langle\varphi|p\rangle},
+\]</div>
+<div class="arithmatex">\[
+\langle x|\varphi\rangle = \varphi(x),\qquad \langle x|x'\rangle = \delta(x-x').
+\]</div>
+<p>bra 在算符左侧的延拓</p>
+<div class="arithmatex">\[
+\langle F|A|\varphi\rangle \equiv \langle F|A\varphi\rangle
+\]</div>
+<p>给出 <span class="arithmatex">\(\langle p|P = p\langle p|\)</span>， <span class="arithmatex">\(\langle x|Q = x\langle x|\)</span>， <span class="arithmatex">\(_{\mathrm{l,r}}\langle{}^{\pm}E|H = E\;_{\mathrm{l,r}}\langle{}^{\pm}E|\)</span>。</p>
 <p>bra 与 ket 一一对应， <span class="arithmatex">\(\langle p|\in\Phi'\)</span>， <span class="arithmatex">\(|p\rangle\in\Phi^\times\)</span>。</p>
 <h2 id="dirac-基展开">Dirac 基展开<a class="headerlink" href="#dirac-基展开" title="Permanent link">#</a></h2>
-<p>完备性<br />
-[<br />
-\int\mathrm dp\,|p\rangle\langle p| = I,\qquad \int\mathrm dx\,|x\rangle\langle x| = I,<br />
-]<br />
-[<br />
-\int_0^\infty\mathrm dE\,|E^\pm\rangle_{\mathrm l\,\mathrm l}\langle{}^\pm E| + \int_0^\infty\mathrm dE\,|E^\pm\rangle_{\mathrm r\,\mathrm r}\langle{}^\pm E| = I<br />
-]<br />
-都是<strong>形式</strong>等式， 必须夹在 <span class="arithmatex">\(\varphi,\psi\in\Phi\)</span> 之间才有意义：<br />
-[<br />
-\langle x|\varphi\rangle = \int\mathrm dp\,\langle x|p\rangle\langle p|\varphi\rangle<br />
-\quad(\text{即 Fourier 反演}),<br />
-]<br />
-[<br />
-\langle x|\varphi\rangle = \int_0^\infty\mathrm dE\,\langle x|E^\pm\rangle_{\mathrm l\,\mathrm l}\langle{}^\pm E|\varphi\rangle<br />
-+ \int_0^\infty\mathrm dE\,\langle x|E^\pm\rangle_{\mathrm r\,\mathrm r}\langle{}^\pm E|\varphi\rangle.<br />
-]<br />
-这些等式只对 <span class="arithmatex">\(\varphi\in\Phi\)</span> 严格成立， 对一般 <span class="arithmatex">\(L^2\)</span> 元素只能取极限。</p>
-<p>类似地， 算符的"矩阵元"<br />
-[<br />
-\langle x|Q|x'\rangle = x'\delta(x-x'),\quad<br />
-\langle x|P|x'\rangle = -\mathrm i\hbar\,\frac{\mathrm d}{\mathrm dx}\delta(x-x'),<br />
-]<br />
-[<br />
-\langle x|H|x'\rangle = \left(-\frac{\hbar^2}{2m}\frac{\mathrm d^2}{\mathrm dx^2}+V(x)\right)\delta(x-x')<br />
-]<br />
-都是分布意义下的等式， 是有限维基底中 <span class="arithmatex">\(A_{ij}=\langle a_i|A|a_j\rangle = a_i\delta_{ij}\)</span> 的连续推广。</p>
+<p>完备性</p>
+<div class="arithmatex">\[
+\int\mathrm dp\,|p\rangle\langle p| = I,\qquad \int\mathrm dx\,|x\rangle\langle x| = I,
+\]</div>
+<div class="arithmatex">\[
+\int_0^\infty\mathrm dE\,|E^\pm\rangle_{\mathrm l\,\mathrm l}\langle{}^\pm E| + \int_0^\infty\mathrm dE\,|E^\pm\rangle_{\mathrm r\,\mathrm r}\langle{}^\pm E| = I
+\]</div>
+<p>都是<strong>形式</strong>等式， 必须夹在 <span class="arithmatex">\(\varphi,\psi\in\Phi\)</span> 之间才有意义：</p>
+<div class="arithmatex">\[
+\langle x|\varphi\rangle = \int\mathrm dp\,\langle x|p\rangle\langle p|\varphi\rangle
+\quad(\text{即 Fourier 反演}),
+\]</div>
+<div class="arithmatex">\[
+\langle x|\varphi\rangle = \int_0^\infty\mathrm dE\,\langle x|E^\pm\rangle_{\mathrm l\,\mathrm l}\langle{}^\pm E|\varphi\rangle
++ \int_0^\infty\mathrm dE\,\langle x|E^\pm\rangle_{\mathrm r\,\mathrm r}\langle{}^\pm E|\varphi\rangle.
+\]</div>
+<p>这些等式只对 <span class="arithmatex">\(\varphi\in\Phi\)</span> 严格成立， 对一般 <span class="arithmatex">\(L^2\)</span> 元素只能取极限。</p>
+<p>类似地， 算符的"矩阵元"</p>
+<div class="arithmatex">\[
+\langle x|Q|x'\rangle = x'\delta(x-x'),\quad
+\langle x|P|x'\rangle = -\mathrm i\hbar\,\frac{\mathrm d}{\mathrm dx}\delta(x-x'),
+\]</div>
+<div class="arithmatex">\[
+\langle x|H|x'\rangle = \left(-\frac{\hbar^2}{2m}\frac{\mathrm d^2}{\mathrm dx^2}+V(x)\right)\delta(x-x')
+\]</div>
+<p>都是分布意义下的等式， 是有限维基底中 <span class="arithmatex">\(A_{ij}=\langle a_i|A|a_j\rangle = a_i\delta_{ij}\)</span> 的连续推广。</p>
 <h2 id="delta-归一化的真意"><span class="arithmatex">\(\delta\)</span> 归一化的真意<a class="headerlink" href="#delta-归一化的真意" title="Permanent link">#</a></h2>
-<p>[<br />
-\langle p|p'\rangle = \delta(p-p'),\qquad \langle x|x'\rangle = \delta(x-x')<br />
-]<br />
-本身是形式记号， 真正的内容是<br />
-[<br />
-\int\mathrm dp\,\varphi(p)\langle p'|p\rangle = \varphi(p')<br />
-]<br />
-对一切 <span class="arithmatex">\(\varphi\in\Phi\)</span> 成立： 即 <span class="arithmatex">\(\langle p'|p\rangle\)</span> 是分布 <span class="arithmatex">\(\delta(p-p')\)</span>。</p>
-<p>[<br />
-\frac{1}{2\pi\hbar}\int\mathrm dx\,\mathrm e^{\mathrm i(p-p')x/\hbar} = \delta(p-p')<br />
-]<br />
-也只是这套 sandwich 解释的一例。</p>
+<div class="arithmatex">\[
+\langle p|p'\rangle = \delta(p-p'),\qquad \langle x|x'\rangle = \delta(x-x')
+\]</div>
+<p>本身是形式记号， 真正的内容是</p>
+<div class="arithmatex">\[
+\int\mathrm dp\,\varphi(p)\langle p'|p\rangle = \varphi(p')
+\]</div>
+<p>对一切 <span class="arithmatex">\(\varphi\in\Phi\)</span> 成立： 即 <span class="arithmatex">\(\langle p'|p\rangle\)</span> 是分布 <span class="arithmatex">\(\delta(p-p')\)</span>。</p>
+<div class="arithmatex">\[
+\frac{1}{2\pi\hbar}\int\mathrm dx\,\mathrm e^{\mathrm i(p-p')x/\hbar} = \delta(p-p')
+\]</div>
+<p>也只是这套 sandwich 解释的一例。</p>
 <h2 id="物理读法-braket-是概率振幅的核">物理读法： bra/ket 是概率振幅的核<a class="headerlink" href="#物理读法-braket-是概率振幅的核" title="Permanent link">#</a></h2>
-<p>连续谱本征矢不可归一化， 几率诠释要换一种说法。 离散谱的 <span class="arithmatex">\(f_n(x)=\langle x|a_n\rangle\)</span> 平方可积， 直接是几率振幅； 连续谱的 <span class="arithmatex">\(f_a(x)=\langle x|a\rangle\)</span> 是几率振幅的"积分核"：<br />
-[<br />
-\langle\varphi|a\rangle = \int\mathrm dx\,\langle\varphi|x\rangle\langle x|a\rangle.<br />
-]<br />
-<span class="arithmatex">\(\varphi\)</span> 才是物理上可制备的波包。 当 <span class="arithmatex">\(\varphi(p)\)</span> 在 <span class="arithmatex">\(p_0\)</span> 处尖峰时， 其 <span class="arithmatex">\(\varphi(x)\sim\mathrm e^{\mathrm ip_0x/\hbar}/\sqrt{2\pi\hbar}\)</span> 才是有效近似。</p>
+<p>连续谱本征矢不可归一化， 几率诠释要换一种说法。 离散谱的 <span class="arithmatex">\(f_n(x)=\langle x|a_n\rangle\)</span> 平方可积， 直接是几率振幅； 连续谱的 <span class="arithmatex">\(f_a(x)=\langle x|a\rangle\)</span> 是几率振幅的"积分核"：</p>
+<div class="arithmatex">\[
+\langle\varphi|a\rangle = \int\mathrm dx\,\langle\varphi|x\rangle\langle x|a\rangle.
+\]</div>
+<p><span class="arithmatex">\(\varphi\)</span> 才是物理上可制备的波包。 当 <span class="arithmatex">\(\varphi(p)\)</span> 在 <span class="arithmatex">\(p_0\)</span> 处尖峰时， 其 <span class="arithmatex">\(\varphi(x)\sim\mathrm e^{\mathrm ip_0x/\hbar}/\sqrt{2\pi\hbar}\)</span> 才是有效近似。</p>
 <p>平面波之于光波包， 正如 <span class="arithmatex">\(|p\rangle\)</span> 之于 <span class="arithmatex">\(\varphi\)</span>： 单频不可制备， 却是分解物理脉冲的好工具。 这就是 Dirac 形式的 Fourier 隐喻。</p>
 <h2 id="erangle-与-e-rangle-的差别-以及谱测度"><span class="arithmatex">\(|E^+\rangle\)</span> 与 <span class="arithmatex">\(|E^-\rangle\)</span> 的差别， 以及谱测度<a class="headerlink" href="#erangle-与-e-rangle-的差别-以及谱测度" title="Permanent link">#</a></h2>
-<p>希尔伯特空间的谱定理给出 <span class="arithmatex">\(A=\int a\,\mathrm dE_a\)</span>， 对应分解<br />
-[<br />
-\mathrm dE_p = |p\rangle\langle p|\,\mathrm dp,\quad<br />
-\mathrm dE_x = |x\rangle\langle x|\,\mathrm dx,<br />
-]<br />
-[<br />
-\mathrm dE_E = |E^\pm\rangle_{\mathrm l\,\mathrm l}\langle{}^\pm E|\,\mathrm dE<br />
-+ |E^\pm\rangle_{\mathrm r\,\mathrm r}\langle{}^\pm E|\,\mathrm dE.<br />
-]<br />
-<span class="arithmatex">\(\mathrm dE_a\)</span> 在 <span class="arithmatex">\(\mathcal H\)</span> 内是唯一的， 但其分解并不唯一： <span class="arithmatex">\(|E^+\rangle\)</span> 对应入射初条件 (出射波在 <span class="arithmatex">\(\pm\infty\)</span>)， <span class="arithmatex">\(|E^-\rangle\)</span> 对应出射末条件 (入射波在 <span class="arithmatex">\(\pm\infty\)</span>)。 希尔伯特空间的谱测度看不出二者差别， RHS 看得出。 在散射理论里这就是 in/out 基的来源。</p>
+<p>希尔伯特空间的谱定理给出 <span class="arithmatex">\(A=\int a\,\mathrm dE_a\)</span>， 对应分解</p>
+<div class="arithmatex">\[
+\mathrm dE_p = |p\rangle\langle p|\,\mathrm dp,\quad
+\mathrm dE_x = |x\rangle\langle x|\,\mathrm dx,
+\]</div>
+<div class="arithmatex">\[
+\mathrm dE_E = |E^\pm\rangle_{\mathrm l\,\mathrm l}\langle{}^\pm E|\,\mathrm dE
++ |E^\pm\rangle_{\mathrm r\,\mathrm r}\langle{}^\pm E|\,\mathrm dE.
+\]</div>
+<p><span class="arithmatex">\(\mathrm dE_a\)</span> 在 <span class="arithmatex">\(\mathcal H\)</span> 内是唯一的， 但其分解并不唯一： <span class="arithmatex">\(|E^+\rangle\)</span> 对应入射初条件 (出射波在 <span class="arithmatex">\(\pm\infty\)</span>)， <span class="arithmatex">\(|E^-\rangle\)</span> 对应出射末条件 (入射波在 <span class="arithmatex">\(\pm\infty\)</span>)。 希尔伯特空间的谱测度看不出二者差别， RHS 看得出。 在散射理论里这就是 in/out 基的来源。</p>
 <h2 id="结语">结语<a class="headerlink" href="#结语" title="Permanent link">#</a></h2>
 <ul>
 <li>装备 (equipped) 比"延拓 extension"或"诠释 interpretation"更准。 RHS 不是替代希尔伯特空间， 而是把它和分布理论装在一起。</li>
@@ -4149,7 +4201,7 @@ bra 在算符左侧的延拓<br />
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月9日 12:57:27 UTC"><span class="timeago" datetime="2026-05-09T12:57:27+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月9日 12:57:27 UTC">2026-05-09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月9日 15:05:14 UTC"><span class="timeago" datetime="2026-05-09T15:05:14+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月9日 15:05:14 UTC">2026-05-09</span>
       
         <br>
         创建日期:

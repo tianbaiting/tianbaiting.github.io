@@ -159,7 +159,7 @@
       "language": "zh",
       "category": "category",
       "path": "sci/todolist.zh.md",
-      "size": 1116,
+      "size": 1579,
       "url": "/sci/todolist/"
     },
     {
@@ -375,7 +375,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/cheatshet/number_order_dimension.zh.md",
-      "size": 3803,
+      "size": 3809,
       "url": "/sci/cheatshet/number_order_dimension/"
     },
     {
@@ -411,7 +411,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/ladderOpearator.zh.md",
-      "size": 8986,
+      "size": 9044,
       "url": "/sci/minimal_theory/ladderOpearator/"
     },
     {
@@ -429,7 +429,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/dead_time.zh.md",
-      "size": 3349,
+      "size": 3369,
       "url": "/sci/minimal_theory/dead_time/"
     },
     {
@@ -438,7 +438,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/resolvent_resonateState.zh.md",
-      "size": 18750,
+      "size": 18771,
       "url": "/sci/minimal_theory/resolvent_resonateState/"
     },
     {
@@ -474,7 +474,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/qft_whatisfield.md",
-      "size": 7274,
+      "size": 7284,
       "url": "/sci/minimal_theory/qft_whatisfield/"
     },
     {
@@ -483,7 +483,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/directProductAndSum.zh.md",
-      "size": 11246,
+      "size": 11396,
       "url": "/sci/minimal_theory/directProductAndSum/"
     },
     {
@@ -492,7 +492,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/linearspace.zh.md",
-      "size": 4548,
+      "size": 4564,
       "url": "/sci/minimal_theory/linearspace/"
     },
     {
@@ -501,7 +501,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/resolvent.zh.md",
-      "size": 36604,
+      "size": 39734,
       "url": "/sci/minimal_theory/resolvent/"
     },
     {
@@ -510,7 +510,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/functionalAna_SpecThe.zh.md",
-      "size": 11700,
+      "size": 11876,
       "url": "/sci/minimal_theory/functionalAna_SpecThe/"
     },
     {
@@ -519,7 +519,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/riggedHilbertSpace.zh.md",
-      "size": 8084,
+      "size": 8133,
       "url": "/sci/minimal_theory/riggedHilbertSpace/"
     },
     {
@@ -1041,7 +1041,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/functionnalAna/C3fourFundamentalTheo.zh.md",
-      "size": 2249,
+      "size": 2251,
       "url": "/sci/minimal_theory/functionnalAna/C3fourFundamentalTheo/"
     },
     {
@@ -1059,7 +1059,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/functionnalAna/C4spectral.zh.md",
-      "size": 7471,
+      "size": 7533,
       "url": "/sci/minimal_theory/functionnalAna/C4spectral/"
     },
     {
@@ -1081,6 +1081,15 @@
       "url": "/sci/minimal_theory/scatteringTheory/Green_operator/"
     },
     {
+      "id": "sci/minimal_theory/scatteringTheory/coulomb_scattering.zh",
+      "title": "Coulomb 散射的完整形式",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/coulomb_scattering.zh.md",
+      "size": 16072,
+      "url": "/sci/minimal_theory/scatteringTheory/coulomb_scattering/"
+    },
+    {
       "id": "sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section.zh",
       "title": "S 矩阵与散射截面",
       "language": "zh",
@@ -1088,6 +1097,15 @@
       "path": "sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section.zh.md",
       "size": 16555,
       "url": "/sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/polarization_formalism.zh",
+      "title": "极化形式与自旋观测量",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/polarization_formalism.zh.md",
+      "size": 23805,
+      "url": "/sci/minimal_theory/scatteringTheory/polarization_formalism/"
     },
     {
       "id": "sci/minimal_theory/scatteringTheory/T_and_U_operators.zh",
@@ -1124,6 +1142,15 @@
       "path": "sci/minimal_theory/scatteringTheory/examples/01_1d_delta.zh.md",
       "size": 7634,
       "url": "/sci/minimal_theory/scatteringTheory/examples/01_1d_delta/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/10_polarization_demo.zh",
+      "title": "极化散射的数值演示",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/10_polarization_demo.zh.md",
+      "size": 8845,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/10_polarization_demo/"
     },
     {
       "id": "sci/minimal_theory/scatteringTheory/examples/07_well_barrier_1d.zh",
@@ -1203,7 +1230,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/faddeev/construct_basis.zh.md",
-      "size": 4488,
+      "size": 4508,
       "url": "/sci/project/faddeev/construct_basis/"
     },
     {
@@ -1221,7 +1248,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/faddeev/faddeev_WavePacket.zh.md",
-      "size": 22948,
+      "size": 23051,
       "url": "/sci/project/faddeev/faddeev_WavePacket/"
     },
     {
@@ -1248,7 +1275,7 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/D_polar_exp/my_polarimeter.en.md",
-      "size": 1349,
+      "size": 1373,
       "url": "/en/sci/project/D_polar_exp/my_polarimeter/"
     },
     {
@@ -1257,7 +1284,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/my_polarimeter.zh.md",
-      "size": 982,
+      "size": 1006,
       "url": "/sci/project/D_polar_exp/my_polarimeter/"
     },
     {
@@ -1302,7 +1329,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/stastic.zh.md",
-      "size": 2917,
+      "size": 2934,
       "url": "/sci/project/D_polar_exp/stastic/"
     },
     {
@@ -1686,16 +1713,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 187,
+    "total_nodes": 190,
     "total_links": 0,
     "languages": {
-      "zh": 158,
+      "zh": 161,
       "en": 29
     },
     "categories": {
       "category": 26,
       "main": 2,
-      "page": 159
+      "page": 162
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1703,6 +1730,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-05-09 12:58:01.677448"
+    "generated_at": "2026-05-09 15:05:44.334610"
   }
 }
