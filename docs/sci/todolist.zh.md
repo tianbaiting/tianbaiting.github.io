@@ -38,6 +38,7 @@ dpol 应用直接相关。每篇为主线形式 + examples 数值演示双件。
 - [x] B. Coulomb 散射
     - 主线 `scatteringTheory/coulomb_scattering.zh.md`：Dollard 修正 Møller、$F_l/G_l$、$\sigma_l = \arg\Gamma(l+1+i\eta)$、Rutherford、$f = f_C + f_{SR}$ 分解、Coulomb-distorted Born
     - 数值 `examples/11_coulomb_demo`：Weierstrass + Numerov 数值 $\sigma_l$ 验证、Rutherford 截面、Coulomb + Gaussian 短程的干涉
-- [ ] C. DWBA
-    - 畸变波 Born 近似、与 EST 光学势附录连接
+- [x] C. DWBA
+    - 主线 `scatteringTheory/dwba.zh.md`：两势分解 + Gell-Mann–Goldberger、DWBA 一阶截断、分波形式、多通道反应、光学势 + 极化 DWBA
+    - 数值 `examples/12_dwba_demo`：PWBA / DWBA / 全 LS 三方对照，DWBA 误差对 V_SR 的二阶标度，强耦合崩溃图谱
 
