@@ -117,19 +117,19 @@ $$
 
 按此模板， 三组本征 ket 依次定义：
 
-- 动量 ket：
+动量 ket：
 
-  $$
-  \langle\varphi|p\rangle \equiv \int\mathrm dx\,\overline{\varphi(x)}\,\frac{1}{\sqrt{2\pi\hbar}}\,\mathrm e^{\mathrm ipx/\hbar}.
-  $$
+$$
+\langle\varphi|p\rangle \equiv \int\mathrm dx\,\overline{\varphi(x)}\,\frac{1}{\sqrt{2\pi\hbar}}\,\mathrm e^{\mathrm ipx/\hbar}.
+$$
 
-- 位置 ket：
+位置 ket：
 
-  $$
-  \langle\varphi|x\rangle \equiv \int\mathrm dx'\,\overline{\varphi(x')}\,\delta(x-x') = \overline{\varphi(x)}.
-  $$
+$$
+\langle\varphi|x\rangle \equiv \int\mathrm dx'\,\overline{\varphi(x')}\,\delta(x-x') = \overline{\varphi(x)}.
+$$
 
-- 能量 ket $|E^\pm\rangle_{\mathrm l,r}$ ：以 $\langle x|E^\pm\rangle_{\mathrm l,r}$ 为核， 这些核是带边界条件的 Sturm-Liouville 本征函数 (透射/反射波)。 上标 $\pm$ 区分正向/反向时序， 下标 l/r 区分粒子从左/右入射。
+能量 ket $|E^\pm\rangle_{\mathrm l,r}$：以 $\langle x|E^\pm\rangle_{\mathrm l,r}$ 为核， 这些核是带边界条件的 Sturm-Liouville 本征函数 (透射/反射波)。 上标 $\pm$ 区分正向/反向时序， 下标 l/r 区分粒子从左/右入射。
 
 每一个都属于 $\mathcal S^\times(\mathbb R-\{a,b\})$。
 
