@@ -37,12 +37,16 @@
 * 对于扩展型死时间：
     一个事件在时刻 $t$ 被观测到的条件是：1) 它在 $t$ 时刻真实发生；2) 在它之前的 $(t-T_D, t)$ 时间段内，<strong>没有其他真实事件</strong>发生。因此，观测率是真实率乘以一个存活概率。
 
-    $$\mathcal{R}^{m,para}(t) = \mathcal{R}(t) e^{-\int_{t-T_{D}}^{t}\mathcal{R}(t')dt'}$$
+    $$
+    \mathcal{R}^{m,para}(t) = \mathcal{R}(t) e^{-\int_{t-T_{D}}^{t}\mathcal{R}(t')dt'}
+    $$
 
 * 对于非扩展型死时间：
     一个事件在时刻 $t$ 被观测到的条件是：1) 它在 $t$ 时刻真实发生；2) 在它之前的 $(t-T_D, t)$ 时间段内，没有其他事件被观测到。这就导致了一个更复杂的关系：
 
-    $$\mathcal{R}^{m,non}(t) = \mathcal{R}(t) \left( 1 - \int_{t-T_{D}}^{t}\mathcal{R}^{m,non}(t')dt' \right)$$
+    $$
+    \mathcal{R}^{m,non}(t) = \mathcal{R}(t) \left( 1 - \int_{t-T_{D}}^{t}\mathcal{R}^{m,non}(t')dt' \right)
+    $$
     
     这个公式是一个迭代关系，$\mathcal{R}^{m,non}$ 出现在了等式的两边，求解起来非常困难。
 

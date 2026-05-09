@@ -31,11 +31,15 @@
 
 若能写出
 
-$$H = a^\dagger a + \varepsilon_0$$
+$$
+H = a^\dagger a + \varepsilon_0
+$$
 
 其中 $[a, a^\dagger]$ 是常数或 $H$ 本身的简单函数，则升降算符可以构造。因式分解的关键约束是：
 
-$$[H, a] = [a^\dagger a,\, a] = [a^\dagger, a]\, a$$
+$$
+[H, a] = [a^\dagger a,\, a] = [a^\dagger, a]\, a
+$$
 
 只有当 $[a^\dagger, a]$ 是常数（Heisenberg 代数）或正比于某守恒量（$\mathfrak{su}(2)$ 等），右侧才正比于 $a$，升降算符才成立。
 
@@ -58,7 +62,9 @@ $$[H, a] = [a^\dagger a,\, a] = [a^\dagger, a]\, a$$
 
 设 $H$ 是 Hilbert 空间上的自伴算符。若算符 $a$ 满足
 
-$$[H \, a] = -\lambda\, a, \qquad \lambda \in \mathbb{C} \setminus \{0\},$$
+$$
+[H \, a] = -\lambda\, a, \qquad \lambda \in \mathbb{C} \setminus \{0\},
+$$
 
 则称 $a$ 为 $H$ 关于步长 $\lambda$ 的降算符。若 $[H, a^\dagger] = +\bar\lambda\, a^\dagger$，则 $a^\dagger$ 为升算符。
 
@@ -68,15 +74,21 @@ $$[H \, a] = -\lambda\, a, \qquad \lambda \in \mathbb{C} \setminus \{0\},$$
 
 对易关系 $[H, a] = -\lambda a$ 有一个更深的数学解读。定义伴随映射（adjoint map）：
 
-$$\mathrm{ad}_H : X \longmapsto [H, X],$$
+$$
+\mathrm{ad}_H : X \longmapsto [H, X],
+$$
 
 这是算符空间上的一个线性映射——它把算符映到算符，而且保持线性：
 
-$$\mathrm{ad}_H(\alpha X + \beta Y) = \alpha\,[H, X] + \beta\,[H, Y].$$
+$$
+\mathrm{ad}_H(\alpha X + \beta Y) = \alpha\,[H, X] + \beta\,[H, Y].
+$$
 
 在这个视角下，$[H, a] = -\lambda a$ 就是：
 
-$$\boxed{\mathrm{ad}_H(a) = -\lambda\, a,}$$
+$$
+\boxed{\mathrm{ad}_H(a) = -\lambda\, a,}
+$$
 
 即 $a$ 是线性映射 $\mathrm{ad}_H$ 的特征向量，$-\lambda$ 是对应的特征值。
 
@@ -90,7 +102,9 @@ $$\boxed{\mathrm{ad}_H(a) = -\lambda\, a,}$$
 
 例： 对谐振子，取 $N = a^\dagger a$，在 $\{a,\, a^\dagger,\, N\}$ 张成的空间上：
 
-$$\mathrm{ad}_N(a) = [a^\dagger a,\, a] = -a, \qquad \mathrm{ad}_N(a^\dagger) = [a^\dagger a,\, a^\dagger] = +a^\dagger, \qquad \mathrm{ad}_N(N) = 0.$$
+$$
+\mathrm{ad}_N(a) = [a^\dagger a,\, a] = -a, \qquad \mathrm{ad}_N(a^\dagger) = [a^\dagger a,\, a^\dagger] = +a^\dagger, \qquad \mathrm{ad}_N(N) = 0.
+$$
 
 三个算符恰好是 $\mathrm{ad}_N$ 的特征向量，特征值分别为 $-1,\, +1,\, 0$。升降算符并非偶然发现，而是 $\mathrm{ad}_N$ 的特征分解的必然结果。
 
@@ -103,7 +117,9 @@ $$\mathrm{ad}_N(a) = [a^\dagger a,\, a] = -a, \qquad \mathrm{ad}_N(a^\dagger) = 
 
 证明：
 
-$$H(a|E\rangle) = (aH + [H,a])|E\rangle = aH|E\rangle - \lambda a|E\rangle = (E - \lambda)\,a|E\rangle. \quad \blacksquare$$
+$$
+H(a|E\rangle) = (aH + [H,a])|E\rangle = aH|E\rangle - \lambda a|E\rangle = (E - \lambda)\,a|E\rangle. \quad \blacksquare
+$$
 
 这说明了升降算符两种等价定义， $[H,a] = -\lambda a$，$a | E \rangle = (E-\lambda) |E\rangle$
 
@@ -116,7 +132,9 @@ $$H(a|E\rangle) = (aH + [H,a])|E\rangle = aH|E\rangle - \lambda a|E\rangle = (E 
 
 对 Heisenberg 代数 $[a, a^\dagger] = 1$，粒子数算符 $\hat{N} = a^\dagger a$ 是正半定的：
 
-$$\langle \psi |\hat{N}| \psi \rangle = \langle \psi | a^\dagger a | \psi \rangle = \| a|\psi\rangle \|^2 \geq 0.$$
+$$
+\langle \psi |\hat{N}| \psi \rangle = \langle \psi | a^\dagger a | \psi \rangle = \| a|\psi\rangle \|^2 \geq 0.
+$$
 
 因此 $\hat{N}$ 的本征值 $n \geq 0$，存在基态 $a|0\rangle = 0$。但升算符方向没有类似约束——$a^\dagger$ 可以无限施加，谱向上无界。
 
@@ -126,7 +144,9 @@ $$\langle \psi |\hat{N}| \psi \rangle = \langle \psi | a^\dagger a | \psi \rangl
 
 对 $\mathfrak{su}(2)$ 代数，Casimir 算符 $\mathbf{L}^2$ 提供了额外的全局约束。由于 $L_x^2 + L_y^2$ 是正半定算符：
 
-$$\mathbf{L}^2 - L_z^2 = L_x^2 + L_y^2 \geq 0 \implies m^2\hbar^2 \leq \hbar^2 \ell(\ell+1),$$
+$$
+\mathbf{L}^2 - L_z^2 = L_x^2 + L_y^2 \geq 0 \implies m^2\hbar^2 \leq \hbar^2 \ell(\ell+1),
+$$
 
 因此 $|m| \leq \ell$，$m$ 被上下同时截断。存在最高权态 $L_+|\ell,\ell\rangle = 0$ 和最低权态 $L_-|\ell,-\ell\rangle = 0$。
 
@@ -144,13 +164,17 @@ $$\mathbf{L}^2 - L_z^2 = L_x^2 + L_y^2 \geq 0 \implies m^2\hbar^2 \leq \hbar^2 \
 
 由基态出发递推得第 $n$ 激发态：
 
-$$|n\rangle = \frac{(a^\dagger)^n}{\sqrt{n!}}|0\rangle, \qquad E_n = E_0 + n\lambda.$$
+$$
+|n\rangle = \frac{(a^\dagger)^n}{\sqrt{n!}}|0\rangle, \qquad E_n = E_0 + n\lambda.
+$$
 
 ### 因式分解法：系统构造 $a$
 
 将 $H$ 写成
 
-$$H = a^\dagger a + \varepsilon_0,$$
+$$
+H = a^\dagger a + \varepsilon_0,
+$$
 
 则 $[H, a] = [a^\dagger a, a] = [a^\dagger, a] a$。
 
@@ -164,7 +188,9 @@ $$H = a^\dagger a + \varepsilon_0,$$
 
 ### 哈密顿量与因式分解动机
 
-$$H = \frac{p^2}{2m} + \frac{1}{2}m\omega^2 x^2.$$
+$$
+H = \frac{p^2}{2m} + \frac{1}{2}m\omega^2 x^2.
+$$
 
 这是 $\frac{p^2}{2m} + \frac{m\omega^2 x^2}{2}$ 两个平方之和。经典情形 $A^2 + B^2 = (A+iB)(A-iB)$，但 $[x,p] = i\hbar \neq 0$，因式分解产生余项。令：
 
@@ -181,7 +207,9 @@ $$[a,\, a^\dagger]
 + \frac{i}{\sqrt{2m\omega\hbar}} \cdot \sqrt{\frac{m\omega}{2\hbar}} [p,x]
 = \frac{-i(i\hbar)}{2\hbar} + \frac{i(-i\hbar)}{2\hbar} = \frac{1}{2} + \frac{1}{2} = 1.$$
 
-$$\boxed{[a,\, a^\dagger] = 1.}$$
+$$
+\boxed{[a,\, a^\dagger] = 1.}
+$$
 
 ### 将 $H$ 用 $a, a^\dagger$ 表示
 
@@ -192,25 +220,35 @@ $$a^\dagger a = \frac{m\omega}{2\hbar}x^2 + \frac{p^2}{2m\omega\hbar} + \frac{i}
 
 因此：
 
-$$\boxed{H = \hbar\omega\!\left(a^\dagger a + \frac{1}{2}\right) \equiv \hbar\omega\!\left(\hat{N} + \frac{1}{2}\right).}$$
+$$
+\boxed{H = \hbar\omega\!\left(a^\dagger a + \frac{1}{2}\right) \equiv \hbar\omega\!\left(\hat{N} + \frac{1}{2}\right).}
+$$
 
 粒子数算符 $\hat{N} \equiv a^\dagger a$ 满足 $\hat{N}|n\rangle = n|n\rangle$。
 
 ### 谱
 
-$$[H,\, a] = \hbar\omega\,[a^\dagger a,\, a] = \hbar\omega\,(-1)\,a = -\hbar\omega\, a. \quad \text{步长} = \hbar\omega.$$
+$$
+[H,\, a] = \hbar\omega\,[a^\dagger a,\, a] = \hbar\omega\,(-1)\,a = -\hbar\omega\, a. \quad \text{步长} = \hbar\omega.
+$$
 
 基态能量（由 $a|0\rangle=0$ 得 $\hat{N}|0\rangle=0$）：
 
-$$E_0 = \frac{1}{2}\hbar\omega.$$
+$$
+E_0 = \frac{1}{2}\hbar\omega.
+$$
 
 第 $n$ 激发态：
 
-$$|n\rangle = \frac{(a^\dagger)^n}{\sqrt{n!}}|0\rangle, \qquad E_n = \hbar\omega\!\left(n + \frac{1}{2}\right), \qquad n = 0, 1, 2, \ldots$$
+$$
+|n\rangle = \frac{(a^\dagger)^n}{\sqrt{n!}}|0\rangle, \qquad E_n = \hbar\omega\!\left(n + \frac{1}{2}\right), \qquad n = 0, 1, 2, \ldots
+$$
 
 矩阵元（由 $[a,a^\dagger]=1$ 和归一化递推）：
 
-$$a|n\rangle = \sqrt{n}\,|n-1\rangle, \qquad a^\dagger|n\rangle = \sqrt{n+1}\,|n+1\rangle.$$
+$$
+a|n\rangle = \sqrt{n}\,|n-1\rangle, \qquad a^\dagger|n\rangle = \sqrt{n+1}\,|n+1\rangle.
+$$
 
 ---
 
@@ -220,7 +258,9 @@ $$a|n\rangle = \sqrt{n}\,|n-1\rangle, \qquad a^\dagger|n\rangle = \sqrt{n+1}\,|n
 
 角动量算符 $(L_x, L_y, L_z)$ 满足（旋转群 $\mathrm{SO}(3)$ 的李代数）：
 
-$$[L_i,\, L_j] = i\hbar\,\varepsilon_{ijk}\,L_k.$$
+$$
+[L_i,\, L_j] = i\hbar\,\varepsilon_{ijk}\,L_k.
+$$
 
 目标：同时对角化 $\mathbf{L}^2 = L_x^2+L_y^2+L_z^2$ 和 $L_z$（两者对易，可共同对角化）。
 
@@ -228,17 +268,25 @@ $$[L_i,\, L_j] = i\hbar\,\varepsilon_{ijk}\,L_k.$$
 
 希望找算符满足 $[L_z, L_\pm] = \pm c \cdot L_\pm$。取 $L_x, L_y$ 的复线性组合（将实李代数 $\mathfrak{su}(2)$ 复化）：
 
-$$L_+ \equiv L_x + iL_y, \qquad L_- \equiv L_x - iL_y = (L_+)^\dagger.$$
+$$
+L_+ \equiv L_x + iL_y, \qquad L_- \equiv L_x - iL_y = (L_+)^\dagger.
+$$
 
 验证：
 
-$$[L_z,\, L_\pm] = [L_z, L_x] \pm i[L_z, L_y] = i\hbar L_y \pm i(-i\hbar L_x) = \pm\hbar(L_x \pm iL_y) = \pm\hbar L_\pm.$$
+$$
+[L_z,\, L_\pm] = [L_z, L_x] \pm i[L_z, L_y] = i\hbar L_y \pm i(-i\hbar L_x) = \pm\hbar(L_x \pm iL_y) = \pm\hbar L_\pm.
+$$
 
-$$\boxed{[L_z,\, L_\pm] = \pm\hbar\, L_\pm.} \qquad \text{步长} = \pm\hbar.$$
+$$
+\boxed{[L_z,\, L_\pm] = \pm\hbar\, L_\pm.} \qquad \text{步长} = \pm\hbar.
+$$
 
 此外：
 
-$$[L_+, L_-] = 2\hbar L_z, \qquad [\mathbf{L}^2,\, L_\pm] = 0.$$
+$$
+[L_+, L_-] = 2\hbar L_z, \qquad [\mathbf{L}^2,\, L_\pm] = 0.
+$$
 
 第二式保证 $L_\pm$ 不改变 $\mathbf{L}^2$ 的本征值。
 
@@ -248,21 +296,31 @@ $$[L_+, L_-] = 2\hbar L_z, \qquad [\mathbf{L}^2,\, L_\pm] = 0.$$
 
 步骤一：上下界。 $\mathbf{L}^2 - L_z^2 = L_x^2 + L_y^2 \geq 0$，故 $\lambda \geq m^2\hbar^2$，$m$ 有界。设最大值为 $\ell$：
 
-$$L_+|\ell, \ell\rangle = 0.$$
+$$
+L_+|\ell, \ell\rangle = 0.
+$$
 
 步骤二：确定 $\lambda$。 利用 $L_- L_+ = \mathbf{L}^2 - L_z^2 - \hbar L_z$ 作用在 $|\ell,\ell\rangle$ 上：
 
-$$0 = (\lambda - \ell^2\hbar^2 - \ell\hbar^2)|\ell,\ell\rangle \implies \lambda = \hbar^2\ell(\ell+1).$$
+$$
+0 = (\lambda - \ell^2\hbar^2 - \ell\hbar^2)|\ell,\ell\rangle \implies \lambda = \hbar^2\ell(\ell+1).
+$$
 
 步骤三：量子化。 最小值为 $m_{\min} = -\ell$，从 $\ell$ 到 $-\ell$ 步数为整数，故 $2\ell \in \mathbb{Z}_{\geq 0}$：
 
-$$\ell = 0,\,\tfrac{1}{2},\,1,\,\tfrac{3}{2},\,2,\,\ldots$$
+$$
+\ell = 0,\,\tfrac{1}{2},\,1,\,\tfrac{3}{2},\,2,\,\ldots
+$$
 
 最终结果：
 
-$$\mathbf{L}^2|\ell,m\rangle = \hbar^2\ell(\ell+1)|\ell,m\rangle, \qquad L_z|\ell,m\rangle = m\hbar|\ell,m\rangle,$$
+$$
+\mathbf{L}^2|\ell,m\rangle = \hbar^2\ell(\ell+1)|\ell,m\rangle, \qquad L_z|\ell,m\rangle = m\hbar|\ell,m\rangle,
+$$
 
-$$L_\pm|\ell,m\rangle = \hbar\sqrt{\ell(\ell+1)-m(m\pm1)}\;|\ell,m\pm1\rangle,$$
+$$
+L_\pm|\ell,m\rangle = \hbar\sqrt{\ell(\ell+1)-m(m\pm1)}\;|\ell,m\pm1\rangle,
+$$
 
 其中 $m \in \{-\ell,\,-\ell+1,\,\ldots,\,\ell\}$，共 $2\ell+1$ 个本征态。
 

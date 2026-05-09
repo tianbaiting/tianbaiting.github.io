@@ -24,7 +24,9 @@
 
 自由标量场算符的常见展开（在相互作用绘景或自由场情况下）为：
 
-\( \hat\phi(x)=\hat\phi(\mathbf{x},t) =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right), \)
+$$
+\hat\phi(x)=\hat\phi(\mathbf{x},t) =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right),
+$$
 
 其中 $p\cdot x=E_{\mathbf{p}}t-\mathbf{p}\cdot\mathbf{x}$。拆解如下：
 
@@ -36,11 +38,15 @@
 
 当场算符作用于真空态 $|0\rangle$ 时：
 
-\( \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right)\lvert0\rangle. \)
+$$
+\hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E_{\mathbf{p}}}} \left(\hat a_{\mathbf{p}}\,e^{-ip\cdot x}+\hat a_{\mathbf{p}}^\dagger\,e^{ip\cdot x}\right)\lvert0\rangle.
+$$
 
 由于 $\hat a_{\mathbf{p}}\lvert0\rangle=0$，只剩下产生部分：
 
-\( \hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{e^{ip\cdot x}}{\sqrt{2E_{\mathbf{p}}}}\, \hat a_{\mathbf{p}}^\dagger\lvert0\rangle. \)
+$$
+\hat\phi(x)\lvert0\rangle =\int\frac{d^3p}{(2\pi)^3}\frac{e^{ip\cdot x}}{\sqrt{2E_{\mathbf{p}}}}\, \hat a_{\mathbf{p}}^\dagger\lvert0\rangle.
+$$
 
 该结果是一个单粒子态，但不是动量本征态，而是局域于点 $x$ 的粒子激发。因此常说“场算符在点 $x$ 创建了一个粒子”。
 
@@ -50,15 +56,21 @@
 
 场的量子化通过其对易（或反对易）关系给出。标量玻色场的等时对易关系为：
 
-\( [\hat\phi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=i\delta^{(3)}(\mathbf{x}-\mathbf{y}), \)
+$$
+[\hat\phi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=i\delta^{(3)}(\mathbf{x}-\mathbf{y}),
+$$
 
-\( [\hat\phi(t,\mathbf{x}),\,\hat\phi(t,\mathbf{y})]=0,\qquad [\hat\pi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=0, \)
+$$
+[\hat\phi(t,\mathbf{x}),\,\hat\phi(t,\mathbf{y})]=0,\qquad [\hat\pi(t,\mathbf{x}),\,\hat\pi(t,\mathbf{y})]=0,
+$$
 
 其中共轭动量场 $\hat\pi(x)=\partial\mathcal{L}/\partial(\partial_0\hat\phi(x))$。
 
 更普适的因果性（微观局域性）条件是：
 
-\( [\hat\phi(x),\,\hat\phi(y)]=0\quad\text{当 }(x-y)^2<0\ (\text{类空间隔}), \)
+$$
+[\hat\phi(x),\,\hat\phi(y)]=0\quad\text{当 }(x-y)^2<0\ (\text{类空间隔}),
+$$
 
 即若两点间为类空间隔，则相应的场算符必须对易，保证在这两点的局域测量互不影响（不违反狭义相对论因果律）。
 
@@ -138,7 +150,11 @@
 这是物理学家<strong>实际使用</strong>的QFT结构。
 
 * <strong>核心思想：</strong> 一个系统从状态A到状态B，经历了<strong>所有可能</strong>的路径，其总振幅是所有路径振幅的<strong>泛函积分 (Functional Integral)</strong>：
-    \( Z = \int \mathcal{D}\phi \exp\left( \frac{i}{\hbar} S[\phi] \right) \)
+
+    $$
+    Z = \int \mathcal{D}\phi \exp\left( \frac{i}{\hbar} S[\phi] \right)
+    $$
+
     其中 $S[\phi] = \int d^4x \mathcal{L}(\phi, \partial\mu\phi)$ 是作用量。
 * <strong>数学问题：</strong> 这是一个<strong>无穷维</strong>的积分。$\mathcal{D}\phi$ 这个“测度”在数学上是<strong>严格病态的 (ill-defined)</strong>。
 * <strong>物理学家的“诡计”：</strong>
