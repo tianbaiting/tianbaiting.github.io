@@ -28,3 +28,15 @@
 - 图保存到 `examples/assets/<篇名>/*.png`
 - CSS 自动编号、noun-phrase 标题、中文不用 bold
 
+## 散射理论 / 研究轨：极化、Coulomb、DWBA
+
+dpol 应用直接相关。每篇为主线形式 + examples 数值演示双件。
+
+- [x] A. 极化形式与自旋观测量
+    - 主线 `scatteringTheory/polarization_formalism.zh.md`：M 矩阵、密度矩阵、Wolfenstein、spin-1 张量极化、Madison 截面公式
+    - 数值 `examples/10_polarization_demo`：spin-1/2 打 spin-0 (Woods-Saxon + spin-orbit) 算 A_y(θ)；spin-1 schematic 演示 iT_11/T_20/T_22
+- [ ] B. Coulomb 散射
+    - 修正 Møller、Coulomb 波函数 F_l/G_l、Coulomb 相移 σ_l、Rutherford 振幅、短程修正
+- [ ] C. DWBA
+    - 畸变波 Born 近似、与 EST 光学势附录连接
+
