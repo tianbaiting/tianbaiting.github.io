@@ -42,3 +42,15 @@ dpol 应用直接相关。每篇为主线形式 + examples 数值演示双件。
     - 主线 `scatteringTheory/dwba.zh.md`：两势分解 + Gell-Mann–Goldberger、DWBA 一阶截断、分波形式、多通道反应、光学势 + 极化 DWBA
     - 数值 `examples/12_dwba_demo`：PWBA / DWBA / 全 LS 三方对照，DWBA 误差对 V_SR 的二阶标度，强耦合崩溃图谱
 
+## 散射理论 / 理论闭环轨：T 反演、Jost、Levinson
+
+把 Friedrichs / 教学轨例子里逐例处理的极点结构与对称约束，归到统一框架。
+
+- [x] F. 时间反演与细致平衡 `scatteringTheory/time_reversal_detailed_balance.zh.md`（仅主线，无 examples）：反幺正 Θ 代数、$\Theta S \Theta^{-1} = S^\dagger$、reciprocity、细致平衡、极化 T 约束
+- [x] D. Jost 函数与解析性
+    - 主线 `scatteringTheory/jost_analyticity.zh.md`：Jost 解、Jost 函数 $F_l^\pm$、零点 = 束缚态/虚态/共振、$E = k^2$ 双面对应、Levinson 论域原理证明轮廓
+    - 数值 `examples/13_jost_demo`：方阱 / Yamaguchi / delta-壳层的 $F_0^+$ 闭式与零点，复 $k$ 平面零点轨迹，Levinson 数值
+- [x] E. 有效力程理论与 Levinson 系统化
+    - 主线 `scatteringTheory/effective_range_levinson.zh.md`：Wigner 阈值 $\delta_l \propto k^{2l+1}$、ERE $k\cot\delta_l$ 标准形式、$a_l$ 与 $r_l$ 物理意义、Bargmann 不等式、Levinson 完整证明、unitary limit
+    - 数值 `examples/14_ere_levinson_demo`：Wigner 斜率拟合（0.99/3.00/5.00 vs 1/3/5）、三种势的 ERE 拟合提取 $a, r_e$、Levinson $\delta_0(0) - \delta_0(\infty) = n_0\pi$ 数值验证、unitary limit 散射长度发散
+
