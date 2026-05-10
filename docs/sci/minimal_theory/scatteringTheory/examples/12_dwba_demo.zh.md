@@ -20,37 +20,49 @@ $$
 主线 `../dwba.zh.md:240` 把 DWBA 放在两个极限之间：$V_0 = 0$ 退化到纯 Born，$V_0 = V_C$ 落到 Coulomb-distorted Born。本篇同时上演这三种。
 
 PWBA 端（`../dwba.zh.md:232` 的退化情形）。把 $V$ 整体当作微扰
+
 $$
 f^{PWBA}(\theta) = -\frac{1}{4\pi} \int d^3 r\, e^{-i\mathbf q\cdot\mathbf r}\, V(\mathbf r),
 \quad
 \mathbf q = \mathbf k_f - \mathbf k_i.
 $$
+
 $V_C$ 的 Fourier 在 $\mathbf q\to 0$ 处发散（主线 `../dwba.zh.md:59` 已经把这一条列入"Born 级数失效"的判据），即使引入屏蔽截断，长程尾部对前向的贡献也无法摆脱对截断的敏感依赖。物理上 PWBA 对 Coulomb 不存在，本篇的处理就是干脆只对 $V_{SR}$ 部分做平面波 Born——这个选择本身就是 PWBA 在 Coulomb 下的物理叙述。Gaussian 短程势的 Fourier 闭式
+
 $$
 \widetilde V_{SR}(\mathbf q) = \int d^3 r\, e^{-i\mathbf q\cdot\mathbf r}\, V_{SR}(r)
 = -V_0\, (\pi R^2)^{3/2}\, e^{-q^2 R^2/4}
 $$
+
 代入得
+
 $$
 f^{PWBA}_{SR}(\theta) = \frac{V_0}{4\pi}\,(\pi R^2)^{3/2}\, e^{-q^2 R^2/4},
 \qquad q^2 = 4 k^2 \sin^2(\theta/2).
 $$
+
 这是后面所有 PWBA 曲线的来源。它完全没有任何 Coulomb 信息。
 
 DWBA 端（`../dwba.zh.md:223` 的 $\text{(T-DWBA-Coul)}$）。把 $V_0 = V_C$ 精确解掉——畸变波就是 Coulomb 波 $F_l(\eta, kr)$，分波相移就是 Sommerfeld $\sigma_l$（11 篇已经数值验证）。$V_1 = V_{SR}$ 以一阶 Born 处理，主线 `../dwba.zh.md:302` 的 $\text{(delta1-DWBA)}$ 在 $\mu = 1/2$ 下退化为
+
 $$
 \delta_l^{SR,DWBA}(k) = -\frac{1}{k} \int_0^\infty dr\, F_l(\eta, kr)^2\, V_{SR}(r). \tag{delta-DWBA}
 $$
+
 振幅由 11 篇已使用的分波公式（`../coulomb_scattering.zh.md:284` 的 $\text{(fSR-pw)}$）组装
+
 $$
 f^{DWBA}(\theta) = f_C(\theta) + \frac{1}{2ik}\sum_l (2l+1)\, e^{2i\sigma_l}\,\bigl[e^{2i\delta_l^{SR,DWBA}} - 1\bigr] P_l(\cos\theta).
 $$
+
 注意这里没有把 $e^{2i\delta} - 1$ 线性化为 $2i\delta$——线性化是 DWBA 振幅的"二次 DWBA"近似，不必要也会引入额外误差；保留全 $e^{2i\delta}$ 让 $f^{DWBA}$ 至少在分波幺正性上不出问题。一阶 DWBA 的近似只在 $\delta_l^{SR,DWBA}$ 这一步——把它当成第一阶 Born 的相移估计。
 
 精确端。同一组 $V_C + V_{SR}$ 直接 Numerov 积分，按 11 篇的 Richardson 外推提取总相位 $\phi_l^{\rm tot}$，定义
+
 $$
 \delta_l^{SR,\rm exact} \equiv \phi_l^{\rm tot} - \sigma_l \pmod\pi
 $$
+
 取最接近零的分支。同样的分波公式组装得 $f^{\rm exact}(\theta)$。
 
 ```python
@@ -82,6 +94,7 @@ def delta_exact(l, k, eta, V0, sigma_l):
 ## DWBA 误差对 V_SR 的标度
 
 把 $\theta = 90°$ 固定，扫 $V_0 \in [0.05, 5.0]$，画相对误差
+
 $$
 \mathcal R(V_0) \equiv \frac{|f^{DWBA}(\pi/2) - f^{\rm exact}(\pi/2)|}{|f^{\rm exact}(\pi/2)|}.
 $$

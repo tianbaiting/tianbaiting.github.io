@@ -73,9 +73,9 @@ https://www.changhai.org/forum/collection_article_load.php?aid=1186358149
 
     - 例子: 这样的 $H$ 可以写作 $H = H_{even} \oplus H_{odd}$。在矩阵形式上，它看起来像：
 
-      $$
-      H = \begin{pmatrix} H_{even} & 0 \\ 0 & H_{odd} \end{pmatrix}
-      $$
+$$
+H = \begin{pmatrix} H_{even} & 0 \\ 0 & H_{odd} \end{pmatrix}
+$$
 
 
 | 类型                       | 符号                                  | 意义                            | 常见场景                   |
@@ -330,9 +330,9 @@ $$
 - 没有加法、乘法等代数运算；
 - 若 A 有 m 个元素，B 有 n 个元素，则
 
-  $$
-  |A\times B| = mn;
-  $$
+$$
+|A\times B| = mn;
+$$
 
 - 常见于“定义函数域”或“关系”的场景，例如 $f: A\times B\to C$。
 

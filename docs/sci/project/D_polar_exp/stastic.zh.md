@@ -26,11 +26,11 @@ $$
 
 假设 $f$ 是输入变量的平滑函数，可以对 $f$ 进行一阶泰勒展开近似：
 
- $$
- f \approx f_0 + \sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - x_{i,0})
- $$
- 
- 其中：
+$$
+f \approx f_0 + \sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - x_{i,0})
+$$
+
+其中：
 
 $f_0$ 是 $f$ 在点 $(x_{1,0}, x_{2,0}, ..., x_{n,0})$ 的值；
 $\frac{\partial f}{\partial x_i}$ 是 $f$ 对 $x_i$ 的偏导数。
@@ -39,15 +39,15 @@ $\frac{\partial f}{\partial x_i}$ 是 $f$ 对 $x_i$ 的偏导数。
 
 方差的定义为：
 
- $$
- \text{Var}(f) = \mathbb{E}[(f - \mathbb{E}[f])^2]
- $$
+$$
+\text{Var}(f) = \mathbb{E}[(f - \mathbb{E}[f])^2]
+$$
 
  将 $f$ 的泰勒展开代入，忽略高阶项，得到： 
  
- $$
- f - \mathbb{E}[f] \approx \sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - \mathbb{E}[x_i])
- $$
+$$
+f - \mathbb{E}[f] \approx \sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - \mathbb{E}[x_i])
+$$
 
 因此，$f$ 的方差可以近似为： 
 
@@ -59,9 +59,9 @@ $$
 
 根据方差的性质，对于随机变量的线性组合：
 
- $$
- \text{Var}\left(\sum_{i=1}^n a_i X_i\right) = \sum_{i=1}^n a_i^2 \text{Var}(X_i) + 2 \sum_{i=1}^n \sum_{j=i+1}^n a_i a_j \text{Cov}(X_i, X_j)
- $$
+$$
+\text{Var}\left(\sum_{i=1}^n a_i X_i\right) = \sum_{i=1}^n a_i^2 \text{Var}(X_i) + 2 \sum_{i=1}^n \sum_{j=i+1}^n a_i a_j \text{Cov}(X_i, X_j)
+$$
 
  其中 $a_i$ 是常数，$X_i$ 是随机变量。
 
@@ -147,7 +147,6 @@ N p_1 (1 - p_1) & -N p_1 p_2 & \cdots & -N p_1 p_n \\
 $$
 
 这种高斯分布近似在类别数较多且每个类别的概率 $p_i$ 不极端的情况下表现较好。
-
 
 
 

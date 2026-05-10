@@ -194,18 +194,22 @@ $$
 
 这是 $\frac{p^2}{2m} + \frac{m\omega^2 x^2}{2}$ 两个平方之和。经典情形 $A^2 + B^2 = (A+iB)(A-iB)$，但 $[x,p] = i\hbar \neq 0$，因式分解产生余项。令：
 
-$$a \equiv \sqrt{\frac{m\omega}{2\hbar}}\,x + \frac{i}{\sqrt{2m\omega\hbar}}\,p, \qquad
-a^\dagger \equiv \sqrt{\frac{m\omega}{2\hbar}}\,x - \frac{i}{\sqrt{2m\omega\hbar}}\,p.$$
+$$
+a \equiv \sqrt{\frac{m\omega}{2\hbar}}\,x + \frac{i}{\sqrt{2m\omega\hbar}}\,p, \qquad
+a^\dagger \equiv \sqrt{\frac{m\omega}{2\hbar}}\,x - \frac{i}{\sqrt{2m\omega\hbar}}\,p.
+$$
 
 ### 推导对易关系
 
 利用 $[x,p] = i\hbar$，$[x,x]=[p,p]=0$：
 
-$$[a,\, a^\dagger]
+$$
+[a,\, a^\dagger]
 = \frac{m\omega}{2\hbar} \cdot 0
 - \frac{i}{\sqrt{2m\omega\hbar}} \cdot \sqrt{\frac{m\omega}{2\hbar}} [x,p]
 + \frac{i}{\sqrt{2m\omega\hbar}} \cdot \sqrt{\frac{m\omega}{2\hbar}} [p,x]
-= \frac{-i(i\hbar)}{2\hbar} + \frac{i(-i\hbar)}{2\hbar} = \frac{1}{2} + \frac{1}{2} = 1.$$
+= \frac{-i(i\hbar)}{2\hbar} + \frac{i(-i\hbar)}{2\hbar} = \frac{1}{2} + \frac{1}{2} = 1.
+$$
 
 $$
 \boxed{[a,\, a^\dagger] = 1.}
@@ -215,8 +219,10 @@ $$
 
 计算 $a^\dagger a$，利用 $[p,x] = -i\hbar$ 处理交叉项：
 
-$$a^\dagger a = \frac{m\omega}{2\hbar}x^2 + \frac{p^2}{2m\omega\hbar} + \frac{i}{2\hbar}[p,x] \cdot (-1)
-= \frac{H}{\hbar\omega} - \frac{1}{2}.$$
+$$
+a^\dagger a = \frac{m\omega}{2\hbar}x^2 + \frac{p^2}{2m\omega\hbar} + \frac{i}{2\hbar}[p,x] \cdot (-1)
+= \frac{H}{\hbar\omega} - \frac{1}{2}.
+$$
 
 因此：
 
