@@ -14,7 +14,7 @@
           <link rel="prev" href="../11_coulomb_demo/">
         
         
-          <link rel="next" href="../../../../project/example/">
+          <link rel="next" href="../13_jost_demo/">
         
         <link rel="icon" href="../../../../../assets/images/favicon.png">
         <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.0.4">
@@ -1013,6 +1013,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
@@ -1133,6 +1135,20 @@
     <li class="md-nav__item">
       <a href="../../../../cheatshet/root_geant4_install/" class="md-nav__link">
         Root geant4 install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cheatshet/scattering_faddeev/" class="md-nav__link">
+        散射理论与 Faddeev 方程
       </a>
     </li>
   
@@ -2418,6 +2434,12 @@
         
           
         
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_15" tabindex="0" aria-expanded="true">
@@ -2522,8 +2544,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../../effective_range_levinson/" class="md-nav__link">
+        有效力程理论与 Levinson 系统化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../friedrichsModel/" class="md-nav__link">
         Friedrichs 模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jost_analyticity/" class="md-nav__link">
+        Jost 函数与解析性
       </a>
     </li>
   
@@ -2562,6 +2612,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../../time_reversal_detailed_balance/" class="md-nav__link">
+        时间反演与细致平衡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -2571,7 +2635,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_10" type="checkbox" id="__nav_5_4_15_10" checked>
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_13" type="checkbox" id="__nav_5_4_15_13" checked>
       
       
         
@@ -2599,15 +2663,19 @@
         
           
         
+          
+        
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_5_4_15_10" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_5_4_15_13" tabindex="0" aria-expanded="true">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Examples" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_4_15_10">
+        <label class="md-nav__title" for="__nav_5_4_15_13">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -2886,6 +2954,34 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_jost_demo/" class="md-nav__link">
+        Jost 函数的数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14_ere_levinson_demo/" class="md-nav__link">
+        有效力程展开与 Levinson 定理的数值演示
+      </a>
     </li>
   
 
@@ -3968,37 +4064,37 @@ V(r) = \underbrace{\frac{2k\eta}{r}}_{V_0\, =\, V_C}
 <p>固定 <span class="arithmatex">\(\eta = 1\)</span>、<span class="arithmatex">\(R = 1\)</span>、<span class="arithmatex">\(k = 1\)</span>，扫描短程强度 <span class="arithmatex">\(V_0^{SR} \in [0.05, 5.0]\)</span>（下文简写 <span class="arithmatex">\(V_0\)</span>，与代码同名）。这里 <span class="arithmatex">\(V_0^{SR}\)</span> 是吸引型——选这个号是为了让 s 波 <span class="arithmatex">\(\delta_0^{SR} &gt; 0\)</span>，与 11 篇 §三的物理图像保持一致。</p>
 <h3 id="三种振幅">三种振幅<a class="headerlink" href="#三种振幅" title="Permanent link">#</a></h3>
 <p>主线 <code>../dwba.zh.md:240</code> 把 DWBA 放在两个极限之间：<span class="arithmatex">\(V_0 = 0\)</span> 退化到纯 Born，<span class="arithmatex">\(V_0 = V_C\)</span> 落到 Coulomb-distorted Born。本篇同时上演这三种。</p>
-<p>PWBA 端（<code>../dwba.zh.md:232</code> 的退化情形）。把 <span class="arithmatex">\(V\)</span> 整体当作微扰<br />
-$$<br />
-f^{PWBA}(\theta) = -\frac{1}{4\pi} \int d^3 r\, e^{-i\mathbf q\cdot\mathbf r}\, V(\mathbf r),<br />
-\quad<br />
-\mathbf q = \mathbf k_f - \mathbf k_i.<br />
-$$<br />
-<span class="arithmatex">\(V_C\)</span> 的 Fourier 在 <span class="arithmatex">\(\mathbf q\to 0\)</span> 处发散（主线 <code>../dwba.zh.md:59</code> 已经把这一条列入"Born 级数失效"的判据），即使引入屏蔽截断，长程尾部对前向的贡献也无法摆脱对截断的敏感依赖。物理上 PWBA 对 Coulomb 不存在，本篇的处理就是干脆只对 <span class="arithmatex">\(V_{SR}\)</span> 部分做平面波 Born——这个选择本身就是 PWBA 在 Coulomb 下的物理叙述。Gaussian 短程势的 Fourier 闭式<br />
-$$<br />
-\widetilde V_{SR}(\mathbf q) = \int d^3 r\, e^{-i\mathbf q\cdot\mathbf r}\, V_{SR}&reg;<br />
-= -V_0\, (\pi R<sup 3_2="3/2">2)</sup>\, e<sup>{-q</sup>2 R^2/4}<br />
-$$<br />
-代入得<br />
-$$<br />
-f^{PWBA}_{SR}(\theta) = \frac{V_0}{4\pi}\,(\pi R<sup 3_2="3/2">2)</sup>\, e<sup>{-q</sup>2 R^2/4},<br />
-\qquad q^2 = 4 k^2 \sin^2(\theta/2).<br />
-$$<br />
-这是后面所有 PWBA 曲线的来源。它完全没有任何 Coulomb 信息。</p>
-<p>DWBA 端（<code>../dwba.zh.md:223</code> 的 <span class="arithmatex">\(\text{(T-DWBA-Coul)}\)</span>）。把 <span class="arithmatex">\(V_0 = V_C\)</span> 精确解掉——畸变波就是 Coulomb 波 <span class="arithmatex">\(F_l(\eta, kr)\)</span>，分波相移就是 Sommerfeld <span class="arithmatex">\(\sigma_l\)</span>（11 篇已经数值验证）。<span class="arithmatex">\(V_1 = V_{SR}\)</span> 以一阶 Born 处理，主线 <code>../dwba.zh.md:302</code> 的 <span class="arithmatex">\(\text{(delta1-DWBA)}\)</span> 在 <span class="arithmatex">\(\mu = 1/2\)</span> 下退化为<br />
-$$<br />
-\delta_l^{SR,DWBA}(k) = -\frac{1}{k} \int_0^\infty dr\, F_l(\eta, kr)^2\, V_{SR}&reg;. \tag{delta-DWBA}<br />
-$$<br />
-振幅由 11 篇已使用的分波公式（<code>../coulomb_scattering.zh.md:284</code> 的 <span class="arithmatex">\(\text{(fSR-pw)}\)</span>）组装<br />
-$$<br />
-f^{DWBA}(\theta) = f_C(\theta) + \frac{1}{2ik}\sum_l (2l+1)\, e<sup 2i_delta_l_SR_DWBA="2i\delta_l^{SR,DWBA">{2i\sigma_l}\,\bigl[e</sup> - 1\bigr] P_l(\cos\theta).}<br />
-$$<br />
-注意这里没有把 <span class="arithmatex">\(e^{2i\delta} - 1\)</span> 线性化为 <span class="arithmatex">\(2i\delta\)</span>——线性化是 DWBA 振幅的"二次 DWBA"近似，不必要也会引入额外误差；保留全 <span class="arithmatex">\(e^{2i\delta}\)</span> 让 <span class="arithmatex">\(f^{DWBA}\)</span> 至少在分波幺正性上不出问题。一阶 DWBA 的近似只在 <span class="arithmatex">\(\delta_l^{SR,DWBA}\)</span> 这一步——把它当成第一阶 Born 的相移估计。</p>
-<p>精确端。同一组 <span class="arithmatex">\(V_C + V_{SR}\)</span> 直接 Numerov 积分，按 11 篇的 Richardson 外推提取总相位 <span class="arithmatex">\(\phi_l^{\rm tot}\)</span>，定义<br />
-$$<br />
-\delta_l^{SR,\rm exact} \equiv \phi_l^{\rm tot} - \sigma_l \pmod\pi<br />
-$$<br />
-取最接近零的分支。同样的分波公式组装得 <span class="arithmatex">\(f^{\rm exact}(\theta)\)</span>。</p>
+<p>PWBA 端（<code>../dwba.zh.md:232</code> 的退化情形）。把 <span class="arithmatex">\(V\)</span> 整体当作微扰</p>
+<div class="arithmatex">\[
+f^{PWBA}(\theta) = -\frac{1}{4\pi} \int d^3 r\, e^{-i\mathbf q\cdot\mathbf r}\, V(\mathbf r),
+\quad
+\mathbf q = \mathbf k_f - \mathbf k_i.
+\]</div>
+<p><span class="arithmatex">\(V_C\)</span> 的 Fourier 在 <span class="arithmatex">\(\mathbf q\to 0\)</span> 处发散（主线 <code>../dwba.zh.md:59</code> 已经把这一条列入"Born 级数失效"的判据），即使引入屏蔽截断，长程尾部对前向的贡献也无法摆脱对截断的敏感依赖。物理上 PWBA 对 Coulomb 不存在，本篇的处理就是干脆只对 <span class="arithmatex">\(V_{SR}\)</span> 部分做平面波 Born——这个选择本身就是 PWBA 在 Coulomb 下的物理叙述。Gaussian 短程势的 Fourier 闭式</p>
+<div class="arithmatex">\[
+\widetilde V_{SR}(\mathbf q) = \int d^3 r\, e^{-i\mathbf q\cdot\mathbf r}\, V_{SR}(r)
+= -V_0\, (\pi R^2)^{3/2}\, e^{-q^2 R^2/4}
+\]</div>
+<p>代入得</p>
+<div class="arithmatex">\[
+f^{PWBA}_{SR}(\theta) = \frac{V_0}{4\pi}\,(\pi R^2)^{3/2}\, e^{-q^2 R^2/4},
+\qquad q^2 = 4 k^2 \sin^2(\theta/2).
+\]</div>
+<p>这是后面所有 PWBA 曲线的来源。它完全没有任何 Coulomb 信息。</p>
+<p>DWBA 端（<code>../dwba.zh.md:223</code> 的 <span class="arithmatex">\(\text{(T-DWBA-Coul)}\)</span>）。把 <span class="arithmatex">\(V_0 = V_C\)</span> 精确解掉——畸变波就是 Coulomb 波 <span class="arithmatex">\(F_l(\eta, kr)\)</span>，分波相移就是 Sommerfeld <span class="arithmatex">\(\sigma_l\)</span>（11 篇已经数值验证）。<span class="arithmatex">\(V_1 = V_{SR}\)</span> 以一阶 Born 处理，主线 <code>../dwba.zh.md:302</code> 的 <span class="arithmatex">\(\text{(delta1-DWBA)}\)</span> 在 <span class="arithmatex">\(\mu = 1/2\)</span> 下退化为</p>
+<div class="arithmatex">\[
+\delta_l^{SR,DWBA}(k) = -\frac{1}{k} \int_0^\infty dr\, F_l(\eta, kr)^2\, V_{SR}(r). \tag{delta-DWBA}
+\]</div>
+<p>振幅由 11 篇已使用的分波公式（<code>../coulomb_scattering.zh.md:284</code> 的 <span class="arithmatex">\(\text{(fSR-pw)}\)</span>）组装</p>
+<div class="arithmatex">\[
+f^{DWBA}(\theta) = f_C(\theta) + \frac{1}{2ik}\sum_l (2l+1)\, e^{2i\sigma_l}\,\bigl[e^{2i\delta_l^{SR,DWBA}} - 1\bigr] P_l(\cos\theta).
+\]</div>
+<p>注意这里没有把 <span class="arithmatex">\(e^{2i\delta} - 1\)</span> 线性化为 <span class="arithmatex">\(2i\delta\)</span>——线性化是 DWBA 振幅的"二次 DWBA"近似，不必要也会引入额外误差；保留全 <span class="arithmatex">\(e^{2i\delta}\)</span> 让 <span class="arithmatex">\(f^{DWBA}\)</span> 至少在分波幺正性上不出问题。一阶 DWBA 的近似只在 <span class="arithmatex">\(\delta_l^{SR,DWBA}\)</span> 这一步——把它当成第一阶 Born 的相移估计。</p>
+<p>精确端。同一组 <span class="arithmatex">\(V_C + V_{SR}\)</span> 直接 Numerov 积分，按 11 篇的 Richardson 外推提取总相位 <span class="arithmatex">\(\phi_l^{\rm tot}\)</span>，定义</p>
+<div class="arithmatex">\[
+\delta_l^{SR,\rm exact} \equiv \phi_l^{\rm tot} - \sigma_l \pmod\pi
+\]</div>
+<p>取最接近零的分支。同样的分波公式组装得 <span class="arithmatex">\(f^{\rm exact}(\theta)\)</span>。</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">delta_dwba</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">V0</span><span class="p">):</span>
     <span class="n">r</span><span class="p">,</span> <span class="n">F</span> <span class="o">=</span> <span class="n">coulomb_F</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">eta</span><span class="p">)</span>            <span class="c1"># F_l(eta, kr) by Numerov</span>
     <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">F</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">V_SR</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">V0</span><span class="p">),</span> <span class="n">r</span><span class="p">)</span>
@@ -4020,10 +4116,10 @@ $$<br />
 </ul>
 <p>物理总结：DWBA 把 Coulomb 信息全部捕到 <span class="arithmatex">\(f_C\)</span> 这一层，再用 <span class="arithmatex">\(F_l^2\)</span> 的径向积分给出"在 Coulomb 波背景下"的短程相移；PWBA 把 Coulomb 完全丢掉，剩下一段只对极短程有意义的振幅。两者的差距在中后向 <span class="arithmatex">\(\theta \gtrsim 60°\)</span> 区域才显现，因为这个区域 <span class="arithmatex">\(|f_C|^2\)</span> 已经退到 <span class="arithmatex">\(\sim 1\)</span> 量级，与 <span class="arithmatex">\(|f_{SR}|^2\)</span> 同阶，干涉项主导（11 篇 §三的图）。</p>
 <h2 id="dwba-误差对-v_sr-的标度">DWBA 误差对 V_SR 的标度<a class="headerlink" href="#dwba-误差对-v_sr-的标度" title="Permanent link">#</a></h2>
-<p>把 <span class="arithmatex">\(\theta = 90°\)</span> 固定，扫 <span class="arithmatex">\(V_0 \in [0.05, 5.0]\)</span>，画相对误差<br />
-$$<br />
-\mathcal R(V_0) \equiv \frac{|f^{DWBA}(\pi/2) - f^{\rm exact}(\pi/2)|}{|f^{\rm exact}(\pi/2)|}.<br />
-$$</p>
+<p>把 <span class="arithmatex">\(\theta = 90°\)</span> 固定，扫 <span class="arithmatex">\(V_0 \in [0.05, 5.0]\)</span>，画相对误差</p>
+<div class="arithmatex">\[
+\mathcal R(V_0) \equiv \frac{|f^{DWBA}(\pi/2) - f^{\rm exact}(\pi/2)|}{|f^{\rm exact}(\pi/2)|}.
+\]</div>
 <p><img alt="DWBA 相对误差对 V0 的双对数标度，θ=90°" src="../assets/12_dwba_demo/dwba_error_vs_VSR.png" /></p>
 <p>这张图是 DWBA 的"何时准、何时不准"主线 <code>../dwba.zh.md:442</code> 的数值显形。三段结构清晰：</p>
 <ul>
@@ -4193,7 +4289,7 @@ $$</p>
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月9日 15:46:59 UTC"><span class="timeago" datetime="2026-05-09T15:46:59+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月9日 15:46:59 UTC">2026-05-09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月10日 00:50:52 UTC"><span class="timeago" datetime="2026-05-10T00:50:52+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月10日 00:50:52 UTC">2026-05-10</span>
       
         <br>
         创建日期:

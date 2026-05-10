@@ -159,7 +159,7 @@
       "language": "zh",
       "category": "category",
       "path": "sci/todolist.zh.md",
-      "size": 1950,
+      "size": 2826,
       "url": "/sci/todolist/"
     },
     {
@@ -316,6 +316,15 @@
       "url": "/en/sci/cheatshet/site/"
     },
     {
+      "id": "sci/cheatshet/scattering_faddeev.zh",
+      "title": "Scattering Faddeev",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/cheatshet/scattering_faddeev.zh.md",
+      "size": 6523,
+      "url": "/sci/cheatshet/scattering_faddeev/"
+    },
+    {
       "id": "sci/cheatshet/vimrc.zh",
       "title": "Vimrc",
       "language": "zh",
@@ -411,7 +420,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/ladderOpearator.zh.md",
-      "size": 9044,
+      "size": 9050,
       "url": "/sci/minimal_theory/ladderOpearator/"
     },
     {
@@ -483,7 +492,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/directProductAndSum.zh.md",
-      "size": 11396,
+      "size": 11372,
       "url": "/sci/minimal_theory/directProductAndSum/"
     },
     {
@@ -1063,6 +1072,15 @@
       "url": "/sci/minimal_theory/functionnalAna/C4spectral/"
     },
     {
+      "id": "sci/minimal_theory/scatteringTheory/time_reversal_detailed_balance.zh",
+      "title": "时间反演与细致平衡",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/time_reversal_detailed_balance.zh.md",
+      "size": 21633,
+      "url": "/sci/minimal_theory/scatteringTheory/time_reversal_detailed_balance/"
+    },
+    {
       "id": "sci/minimal_theory/scatteringTheory/partial_wave_projection.zh",
       "title": "分波投影与角动量耦合：从抽象算符到数值可解方程",
       "language": "zh",
@@ -1117,6 +1135,15 @@
       "url": "/sci/minimal_theory/scatteringTheory/polarization_formalism/"
     },
     {
+      "id": "sci/minimal_theory/scatteringTheory/effective_range_levinson.zh",
+      "title": "有效力程理论与 Levinson 系统化",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/effective_range_levinson.zh.md",
+      "size": 23038,
+      "url": "/sci/minimal_theory/scatteringTheory/effective_range_levinson/"
+    },
+    {
       "id": "sci/minimal_theory/scatteringTheory/T_and_U_operators.zh",
       "title": "从波算符到 T 算符，再到三体 AGS 的 U 算符",
       "language": "zh",
@@ -1135,6 +1162,15 @@
       "url": "/sci/minimal_theory/scatteringTheory/friedrichsModel/"
     },
     {
+      "id": "sci/minimal_theory/scatteringTheory/jost_analyticity.zh",
+      "title": "Jost 函数与解析性",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/jost_analyticity.zh.md",
+      "size": 24980,
+      "url": "/sci/minimal_theory/scatteringTheory/jost_analyticity/"
+    },
+    {
       "id": "sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym",
       "title": "Woods-Saxon 光学势的 EST Separable 化及其与对称能的联系",
       "language": "zh",
@@ -1151,6 +1187,15 @@
       "path": "sci/minimal_theory/scatteringTheory/examples/01_1d_delta.zh.md",
       "size": 7634,
       "url": "/sci/minimal_theory/scatteringTheory/examples/01_1d_delta/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/13_jost_demo.zh",
+      "title": "Jost 函数的数值演示",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/13_jost_demo.zh.md",
+      "size": 9047,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/13_jost_demo/"
     },
     {
       "id": "sci/minimal_theory/scatteringTheory/examples/10_polarization_demo.zh",
@@ -1243,12 +1288,21 @@
       "url": "/sci/minimal_theory/scatteringTheory/examples/05_separable_rank1/"
     },
     {
+      "id": "sci/minimal_theory/scatteringTheory/examples/14_ere_levinson_demo.zh",
+      "title": "有效力程展开与 Levinson 定理的数值演示",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/14_ere_levinson_demo.zh.md",
+      "size": 10009,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/14_ere_levinson_demo/"
+    },
+    {
       "id": "sci/minimal_theory/scatteringTheory/examples/12_dwba_demo.zh",
       "title": "DWBA 数值演示",
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/examples/12_dwba_demo.zh.md",
-      "size": 10071,
+      "size": 10084,
       "url": "/sci/minimal_theory/scatteringTheory/examples/12_dwba_demo/"
     },
     {
@@ -1257,7 +1311,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/faddeev/construct_basis.zh.md",
-      "size": 4508,
+      "size": 4456,
       "url": "/sci/project/faddeev/construct_basis/"
     },
     {
@@ -1356,7 +1410,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/stastic.zh.md",
-      "size": 2934,
+      "size": 2919,
       "url": "/sci/project/D_polar_exp/stastic/"
     },
     {
@@ -1365,7 +1419,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/D_polar_exp/scintillator.zh.md",
-      "size": 4614,
+      "size": 4682,
       "url": "/sci/project/D_polar_exp/scintillator/"
     },
     {
@@ -1740,16 +1794,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 193,
+    "total_nodes": 199,
     "total_links": 0,
     "languages": {
-      "zh": 164,
+      "zh": 170,
       "en": 29
     },
     "categories": {
       "category": 26,
       "main": 2,
-      "page": 165
+      "page": 171
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1757,6 +1811,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-05-10 00:43:36.524561"
+    "generated_at": "2026-05-10 00:51:30.332500"
   }
 }

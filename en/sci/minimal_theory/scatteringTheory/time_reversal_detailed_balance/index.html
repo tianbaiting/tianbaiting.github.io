@@ -1,0 +1,4933 @@
+
+  <!doctype html>
+  <html lang="en" class="no-js">
+    <head>
+      
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        
+        
+        
+          <link rel="canonical" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/time_reversal_detailed_balance/">
+        
+        
+          <link rel="prev" href="../polarization_formalism/">
+        
+        
+          <link rel="next" href="../examples/01_1d_delta/">
+        
+        <link rel="icon" href="../../../../../assets/images/favicon.png">
+        <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.0.4">
+      
+      
+        
+          <title>时间反演与细致平衡 - TBT个人网站</title>
+        
+      
+      
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/main.9c788c91.min.css">
+        
+          
+          <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.2505c338.min.css">
+        
+        
+
+      
+      
+      
+        
+          
+          
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+          <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        
+      
+      
+        <link rel="stylesheet" href="../../../../../css/timeago.css">
+      
+        <link rel="stylesheet" href="../../../../../css/timeago.css">
+      
+        <link rel="stylesheet" href="../../../../../css/counter.css">
+      
+        <link rel="stylesheet" href="../../../../../css/graph.css">
+      
+      
+        <link rel="stylesheet" href="../../../../../css/counter.css">
+      
+      <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      
+        
+
+      
+      
+      
+    </head>
+    
+    
+      
+      
+      
+      
+      
+      <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink">
+    
+      <script src="../../../../../js/scheme.js" type="text/javascript"></script>
+      
+      
+      <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+      <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+      <label class="md-overlay" for="__drawer"></label>
+      <div data-md-component="skip">
+        
+          
+          <a href="#时间反演与细致平衡" class="md-skip">
+            Skip to content
+          </a>
+        
+      </div>
+      <div data-md-component="announce">
+        
+      </div>
+      
+      
+        
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../" title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TBT个人网站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              时间反演与细致平衡
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      <div class="md-header-nav__scheme md-header-nav__button md-source__icon md-icon">
+  <a
+    href="javascript:toggleScheme();"
+    title="Toggle theme"
+    class="theme-toggle"
+  >
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5 1.43 1.43L4.93 20.5 3.5 19.07 19.07 3.5m-6.18 2.43L11.41 5 9.97 6l.42-1.7L9 3.24l1.75-.12.58-1.65L12 3.1l1.73.03-1.35 1.13.51 1.67m-3.3 3.61-1.16-.73-1.12.78.34-1.32-1.09-.83 1.36-.09.45-1.29.51 1.27 1.36.03-1.05.87.4 1.31M19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58 2.77-1.15-.24 3.35-2.53-2.2m4.33-2.7 1.15-2.77 2.2 2.54-3.35.23m1.15-4.96-1.14-2.78 3.34.24-2.2 2.54M9.63 18.93l2.77 1.15-2.53 2.19-.24-3.34Z"/></svg>
+  </a>
+</div>
+
+
+  <div class="md-header__button md-lang">
+    
+      <a href="../../../../../sci/minimal_theory/scatteringTheory/time_reversal_detailed_balance/" hreflang="zh">简体中文</a>
+    
+      <a href="./" hreflang="en">English</a>
+    
+  </div>
+
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+      
+      <div class="md-container" data-md-component="container">
+        
+        
+          
+            
+              
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../../" class="md-tabs__link">
+      Index
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../../howtomakewebsite/" class="md-tabs__link">
+      网站制作
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../MickeyMiaoMiao/adblock/" class="md-tabs__link">
+        MickeyMiaoMiao
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../life/flavor/" class="md-tabs__link">
+        Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../todolist/" class="md-tabs__link md-tabs__link--active">
+        Sci
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-tabs__link">
+        日本生存指南
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+            
+          
+        
+        <main class="md-main" data-md-component="main">
+          <div class="md-main__inner md-grid">
+            
+              
+                
+                <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../" title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    TBT个人网站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../howtomakewebsite/" class="md-nav__link">
+        网站制作
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          MickeyMiaoMiao
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MickeyMiaoMiao" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          MickeyMiaoMiao
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/adblock/" class="md-nav__link">
+        adblock 元素
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/citetree/" class="md-nav__link">
+        引文网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/firefoxplug/" class="md-nav__link">
+        浏览器插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/gost/" class="md-nav__link">
+        gost 代理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/linuxUseWin/" class="md-nav__link">
+        linuxUseWin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/opvpn/" class="md-nav__link">
+        opvpn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_7" tabindex="0" aria-expanded="false">
+          Useful tips
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Useful tips" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Useful tips
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/overleaf_vscode%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        overleaf插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/%E5%88%A9%E7%94%A8%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E5%88%86%E5%B1%8F/" class="md-nav__link">
+        移动设备作为电脑的分屏
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84vscode/" class="md-nav__link">
+        如何安装多个版本的code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/%E6%9C%89%E8%B6%A3%E7%9A%84%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        有趣的插件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Life" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/flavor/" class="md-nav__link">
+        川菜味型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/schedule/" class="md-nav__link">
+        作息时间表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/subtleSCI/" class="md-nav__link">
+        subtle definition in sci
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/twist/" class="md-nav__link">
+        手腕不适尺侧腕屈肌 与 肱桡肌
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/z30_DeepSky/" class="md-nav__link">
+        深空摄影
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/%E7%84%A6%E8%99%91/" class="md-nav__link">
+        焦虑
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/%E9%A3%9F%E7%89%A9%E4%B8%AD%E6%AF%92/" class="md-nav__link">
+        易发中毒食物
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/%E9%A3%9F%E7%89%A9%E5%AE%89%E5%85%A8%E6%B8%A9%E5%BA%A6/" class="md-nav__link">
+        食物安全温度
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_9" type="checkbox" id="__nav_4_9" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_9" tabindex="0" aria-expanded="false">
+          Workout
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Workout" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_9">
+          <span class="md-nav__icon md-icon"></span>
+          Workout
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/workout/%E4%BA%8C%E5%93%88%E8%83%8C%E9%83%A8/" class="md-nav__link">
+        二哈背部
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/workout/%E8%82%A9%E8%83%9B/" class="md-nav__link">
+        肩胛
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/workout/%E9%AA%A8%E7%9B%86/" class="md-nav__link">
+        骨盆 Pelvis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/workout/%E9%AA%A8%E7%9B%86kai/" class="md-nav__link">
+        骨盆kai
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_10" tabindex="0" aria-expanded="false">
+          健康
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="健康" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          健康
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/%E5%81%A5%E5%BA%B7/workout_diet/" class="md-nav__link">
+        营养
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/%E5%81%A5%E5%BA%B7/%E9%BC%BB%E7%82%8E/" class="md-nav__link">
+        鼻炎管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="true">
+          Sci
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sci" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Sci
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../todolist/" class="md-nav__link">
+        todo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
+          Cheatshet
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cheatshet" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cheatshet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/bashrc/" class="md-nav__link">
+        Bashrc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/debian_printer_connection/" class="md-nav__link">
+        Debian 接网络打印机
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/git/" class="md-nav__link">
+        git cheatsheat
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/nuclear_source/" class="md-nav__link">
+        ☢ 精选核科学资源 ☢
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/number_order_dimension/" class="md-nav__link">
+        数量级估计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/root_geant4_install/" class="md-nav__link">
+        Root geant4 install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/scattering_faddeev/" class="md-nav__link">
+        散射理论与 Faddeev 方程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/shell/" class="md-nav__link">
+        Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/site/" class="md-nav__link">
+        网页相关知识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/termux/" class="md-nav__link">
+        termux 运行ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/tmux/" class="md-nav__link">
+        tmux 常用命令与快捷键速查表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/vimrc/" class="md-nav__link">
+        vim配置文件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
+          Minimal code
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minimal code" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Minimal code
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/HighPerfomenceCompute/" class="md-nav__link">
+        高效能计算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/Operating_system/" class="md-nav__link">
+        装系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/c%2B%2Bproject/" class="md-nav__link">
+        c++项目
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/cernrootData/" class="md-nav__link">
+        CERN ROOT 数据结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/cernrootDic/" class="md-nav__link">
+        root 字典
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/class_dataTransport/" class="md-nav__link">
+        类间数据依赖与解耦
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/cmake/" class="md-nav__link">
+        cmake项目
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/color_scheme/" class="md-nav__link">
+        Color Scheme in Scientific Visualization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/cpp_package/" class="md-nav__link">
+        cpp 包管理 以及 依赖管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/ctags/" class="md-nav__link">
+        ctags 使用教程（C/C++）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/env_manage/" class="md-nav__link">
+        环境管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/format_guidelines/" class="md-nav__link">
+        Formatting Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/freerdp_disconnect/" class="md-nav__link">
+        FreeRDP 正确退出
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/fzf/" class="md-nav__link">
+        FZF 模糊搜索工具完全教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/gdb/" class="md-nav__link">
+        gdb 调试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/geant4_oop/" class="md-nav__link">
+        Geant4 面向对象设计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/gemni_use_wen2cli/" class="md-nav__link">
+        Gemini 限制与付费
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/getEnv/" class="md-nav__link">
+        获取环境变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/jupyternotebook/" class="md-nav__link">
+        Jupyter Notebook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/jupytext/" class="md-nav__link">
+        jupytext 工作流（Git 追踪 .py，而不是 .ipynb）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/latex_graphics/" class="md-nav__link">
+        latex include graphics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/linux_swap/" class="md-nav__link">
+        swap linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/local_rag/" class="md-nav__link">
+        本地论文 RAG
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/log/" class="md-nav__link">
+        日志记录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/project_structure/" class="md-nav__link">
+        核物理项目目录结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/python_def_class/" class="md-nav__link">
+        python 定义类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/python_lib_self/" class="md-nav__link">
+        python 包的创建与使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/python_venv/" class="md-nav__link">
+        Python 虚拟环境
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/rootFindLib/" class="md-nav__link">
+        ROOT 库管理与单元测试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/root_opener/" class="md-nav__link">
+        ROOT 文件默认浏览器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/root_plot/" class="md-nav__link">
+        root_plot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/root_visual_geant4/" class="md-nav__link">
+        Root visual geant4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/server_clouddirve/" class="md-nav__link">
+        私有云盘搭建
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/server_clouddirve_example/" class="md-nav__link">
+        Server clouddirve example
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/sshfs/" class="md-nav__link">
+        sshfs：把远程目录当本地盘用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/system_runtime_check/" class="md-nav__link">
+        查找运行进程与远程会话
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/termux/" class="md-nav__link">
+        Termux 装 Ubuntu + VS Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vim_neovim/" class="md-nav__link">
+        Vim neovim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vscode_env_path/" class="md-nav__link">
+        Vscode env path
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vscode_lsp/" class="md-nav__link">
+        VS Code C/C++ include 报错
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vscode_plug/" class="md-nav__link">
+        VS Code 插件开发指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vscodetunnel/" class="md-nav__link">
+        VS Code Tunnel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vscodevimPlug/" class="md-nav__link">
+        vscode vim 插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/yazi/" class="md-nav__link">
+        快捷键
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/zsh/" class="md-nav__link">
+        Zsh 环境一键配置脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/%E5%BE%85%E8%A7%A3%E5%86%B3%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        to be solved
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="true">
+          Minimal theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minimal theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Minimal theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TransmissionLineEq/" class="md-nav__link">
+        TransmissionLineEq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dead_time/" class="md-nav__link">
+        Dead time
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../directProductAndSum/" class="md-nav__link">
+        直积 / 直和 / 张量积 辨析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functionalAna_SpecThe/" class="md-nav__link">
+        泛函分析和谱理论初步
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ladderOpearator/" class="md-nav__link">
+        升降算符的构造
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linearspace/" class="md-nav__link">
+        线性空间、对偶空间与量子态
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qft_schwartz_ref/" class="md-nav__link">
+        Schwartz QFT 资源
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qft_whatisfield/" class="md-nav__link">
+        Qft whatisfield
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resolvent/" class="md-nav__link">
+        resolvent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resolvent_resonateState/" class="md-nav__link">
+        共振态 resolvent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../riggedHilbertSpace/" class="md-nav__link">
+        装备希尔伯特空间与 Dirac 形式的严格化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scatering_theory/" class="md-nav__link">
+        散射理论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scatteringTheoryBook/" class="md-nav__link">
+        散射理论书籍推荐
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_14" type="checkbox" id="__nav_5_4_14" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4_14" tabindex="0" aria-expanded="false">
+          functionnalAna
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="functionnalAna" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_4_14">
+          <span class="md-nav__icon md-icon"></span>
+          functionnalAna
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functionnalAna/C0xu/" class="md-nav__link">
+        泛函序言
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functionnalAna/C1space/" class="md-nav__link">
+        空间
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functionnalAna/C2operatorFunctional/" class="md-nav__link">
+        算子和泛函 -空间上的作用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functionnalAna/C3fourFundamentalTheo/" class="md-nav__link">
+        泛函四大基石定理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functionnalAna/C4spectral/" class="md-nav__link">
+        谱理论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functionnalAna/C5unboudPhysics/" class="md-nav__link">
+        无界算子和量子力学中的应用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functionnalAna/RHS/" class="md-nav__link">
+        装备希尔伯特空间
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15" type="checkbox" id="__nav_5_4_15" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4_15" tabindex="0" aria-expanded="true">
+          scatteringTheory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="scatteringTheory" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_4_15">
+          <span class="md-nav__icon md-icon"></span>
+          scatteringTheory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Green_operator/" class="md-nav__link">
+        格林算符与格林函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../S_matrix_and_cross_section/" class="md-nav__link">
+        S 矩阵与散射截面
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T_and_U_operators/" class="md-nav__link">
+        从波算符到 T 算符，再到三体 AGS 的 U 算符
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix_EST_seperable_HVH_Esym/" class="md-nav__link">
+        Woods-Saxon 光学势的 EST Separable 化及其与对称能的联系
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coulomb_scattering/" class="md-nav__link">
+        Coulomb 散射的完整形式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dwba/" class="md-nav__link">
+        畸变波 Born 近似
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../effective_range_levinson/" class="md-nav__link">
+        有效力程理论与 Levinson 系统化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../friedrichsModel/" class="md-nav__link">
+        Friedrichs 模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jost_analyticity/" class="md-nav__link">
+        Jost 函数与解析性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../partial_wave_projection/" class="md-nav__link">
+        分波投影与角动量耦合：从抽象算符到数值可解方程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polarization_formalism/" class="md-nav__link">
+        极化形式与自旋观测量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          时间反演与细致平衡
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        时间反演与细致平衡
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#反幺正算符-θ-的基本代数" class="md-nav__link">
+    反幺正算符 Θ 的基本代数
+  </a>
+  
+    <nav class="md-nav" aria-label="反幺正算符 Θ 的基本代数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#反幺正性的定义" class="md-nav__link">
+    反幺正性的定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#与单粒子算符的对易关系" class="md-nav__link">
+    与单粒子算符的对易关系
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#自旋空间中的具体形式" class="md-nav__link">
+    自旋空间中的具体形式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#θ²-与-kramers-简并" class="md-nav__link">
+    Θ² 与 Kramers 简并
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h-θ--0-的判据" class="md-nav__link">
+    [H, Θ] = 0 的判据
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#møller-算符在-θ-下的变换" class="md-nav__link">
+    Møller 算符在 Θ 下的变换
+  </a>
+  
+    <nav class="md-nav" aria-label="Møller 算符在 Θ 下的变换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ω-互换" class="md-nav__link">
+    Ω± 互换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#θ-s-θ¹--s" class="md-nav__link">
+    Θ S Θ⁻¹ = S†
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#θ-t-θ¹" class="md-nav__link">
+    Θ T Θ⁻¹
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t-矩阵的反互关系" class="md-nav__link">
+    T 矩阵的反互关系
+  </a>
+  
+    <nav class="md-nav" aria-label="T 矩阵的反互关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#自由基底矩阵元的反互" class="md-nav__link">
+    自由基底矩阵元的反互
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#与-t-公式的等价" class="md-nav__link">
+    与 (T) 公式的等价
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#细致平衡" class="md-nav__link">
+    细致平衡
+  </a>
+  
+    <nav class="md-nav" aria-label="细致平衡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#截面间的关系" class="md-nav__link">
+    截面间的关系
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#弹性散射的退化情形" class="md-nav__link">
+    弹性散射的退化情形
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#历史角色" class="md-nav__link">
+    历史角色
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#极化观测量的-t-约束" class="md-nav__link">
+    极化观测量的 T 约束
+  </a>
+  
+    <nav class="md-nav" aria-label="极化观测量的 T 约束">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_y-的双重约束推导" class="md-nav__link">
+    A_y 的双重约束推导
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#为何-a_y--re-而非-im" class="md-nav__link">
+    为何 A_y = Re 而非 Im
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spin-1-张量极化的-t-约束" class="md-nav__link">
+    Spin-1 张量极化的 T 约束
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#极化转移系数的-reciprocity" class="md-nav__link">
+    极化转移系数的 reciprocity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyzing-power-与-induced-polarization-等同性" class="md-nav__link">
+    Analyzing power 与 induced polarization 等同性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#极化观测量的实验约束" class="md-nav__link">
+    极化观测量的实验约束
+  </a>
+  
+    <nav class="md-nav" aria-label="极化观测量的实验约束">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#三角不等式" class="md-nav__link">
+    三角不等式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t--字称下的独立观测量计数" class="md-nav__link">
+    T + 字称下的独立观测量计数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t-破缺与-cp-破坏" class="md-nav__link">
+    T 破缺与 CP 破坏
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#多通道-t-反演" class="md-nav__link">
+    多通道 T 反演
+  </a>
+  
+    <nav class="md-nav" aria-label="多通道 T 反演">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#反应通道下的-detailed-balance" class="md-nav__link">
+    反应通道下的 detailed balance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#与-friedrichs--分波耦合的衔接" class="md-nav__link">
+    与 Friedrichs / 分波耦合的衔接
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#与主线笔记的对账" class="md-nav__link">
+    与主线笔记的对账
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    next-step
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_13" type="checkbox" id="__nav_5_4_15_13" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4_15_13" tabindex="0" aria-expanded="false">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_4_15_13">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/01_1d_delta/" class="md-nav__link">
+        一维 delta 势
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/02_square_well_3d/" class="md-nav__link">
+        三维方阱 s 波散射
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/03_delta_shell/" class="md-nav__link">
+        三维 delta 壳层势的散射与共振
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/04_yukawa/" class="md-nav__link">
+        Yukawa 势与 Born 近似
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/05_separable_rank1/" class="md-nav__link">
+        秩 1 separable 势与解析 T 矩阵
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/06_numerical_pipeline/" class="md-nav__link">
+        数值实验：分波相移与截面的统一流程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/07_well_barrier_1d/" class="md-nav__link">
+        一维势阱加势垒：α 衰变图像
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/08_centrifugal_barrier/" class="md-nav__link">
+        离心位垒与高分波 shape 共振
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/09_feshbach_two_channel/" class="md-nav__link">
+        双通道 Feshbach 共振
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/10_polarization_demo/" class="md-nav__link">
+        极化散射的数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/11_coulomb_demo/" class="md-nav__link">
+        Coulomb 散射的数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/12_dwba_demo/" class="md-nav__link">
+        DWBA 数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/13_jost_demo/" class="md-nav__link">
+        Jost 函数的数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/14_ere_levinson_demo/" class="md-nav__link">
+        有效力程展开与 Levinson 定理的数值演示
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5" tabindex="0" aria-expanded="false">
+          Project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Project" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/example/" class="md-nav__link">
+        hello world
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_2" type="checkbox" id="__nav_5_5_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_2" tabindex="0" aria-expanded="false">
+          D polar exp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="D polar exp" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          D polar exp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/D_polar_exp/Sipm_PMT/" class="md-nav__link">
+        Sipm PMT参数对比
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/D_polar_exp/caogao/" class="md-nav__link">
+        Caogao
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/D_polar_exp/d_breakup_theory/" class="md-nav__link">
+        氘核破裂理论上可以如何计算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/D_polar_exp/faddeevWPCD/" class="md-nav__link">
+        faddeevWPCD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/D_polar_exp/lane_hvh_esym/" class="md-nav__link">
+        Lane 关系、光学势、EST 展开与 HVH 推导对称能
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/D_polar_exp/my_polarimeter/" class="md-nav__link">
+        My polarimeter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/D_polar_exp/other_polarmeter/" class="md-nav__link">
+        Polarimeters in Other Research Groups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/D_polar_exp/polar_measure_and_axis/" class="md-nav__link">
+        Deuteron polarization measurement and polarization-axis determination
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/D_polar_exp/riken_web_source/" class="md-nav__link">
+        riken 常见资源
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/D_polar_exp/scintillator/" class="md-nav__link">
+        闪烁体光产额
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/D_polar_exp/spherical_operator/" class="md-nav__link">
+        To show some relation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/D_polar_exp/stastic/" class="md-nav__link">
+        统计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/D_polar_exp/sw-api/" class="md-nav__link">
+        solidworks api接口
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/D_polar_exp/todo_list/" class="md-nav__link">
+        To do list
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_3" type="checkbox" id="__nav_5_5_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_3" tabindex="0" aria-expanded="false">
+          Faddeev
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Faddeev" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Faddeev
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/faddeev/PeopelTree/" class="md-nav__link">
+        faddeev 学术谱系图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/faddeev/construct_basis/" class="md-nav__link">
+        Construct basis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
+        faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_4" type="checkbox" id="__nav_5_5_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_4" tabindex="0" aria-expanded="false">
+          Samurai
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Samurai" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Samurai
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/samurai/detector_samurai/" class="md-nav__link">
+        SAMURAI Charged Particle Detectors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/samurai/pdc/" class="md-nav__link">
+        Pdc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_4_3" type="checkbox" id="__nav_5_5_4_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_4_3" tabindex="0" aria-expanded="false">
+          Anaroot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Anaroot" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Anaroot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/samurai/anaroot/RIDF/" class="md-nav__link">
+        RIDF Data Block
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/samurai/anaroot/anaroot/" class="md-nav__link">
+        ANAROOT 综合分析框架：
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/samurai/anaroot/anaroot2version/" class="md-nav__link">
+        ANAROOT documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/samurai/anaroot/anaroot_decoder/" class="md-nav__link">
+        Anaroot decoder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/samurai/anaroot/anaroot_nebula/" class="md-nav__link">
+        Anaroot nebula
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/samurai/anaroot/anaroot_nebula_reconstructionfunction/" class="md-nav__link">
+        Anaroot nebula reconstructionfunction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/samurai/anaroot/anaroot_pdc/" class="md-nav__link">
+        ANAROOT Libraries for PDC Analysis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_5_4_4" type="checkbox" id="__nav_5_5_4_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5_4_4" tabindex="0" aria-expanded="false">
+          Smsimulator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Smsimulator" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_5_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Smsimulator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/samurai/smsimulator/FDC2/" class="md-nav__link">
+        FDC2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/samurai/smsimulator/PDC/" class="md-nav__link">
+        PDC Drift Chamber Simulation Plan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/samurai/smsimulator/nebula_simlulator/" class="md-nav__link">
+        Nebula simlulator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/samurai/smsimulator/smsimulator/" class="md-nav__link">
+        smsimultor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/samurai/smsimulator/smsimulator_tutor/" class="md-nav__link">
+        smsimulator 教学
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          日本生存指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="日本生存指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          日本生存指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-nav__link">
+        Japanese
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%8E%BB%E6%97%A5%E6%9C%AC%E5%89%8D%E6%89%93%E5%8C%85/" class="md-nav__link">
+        登机前打包
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%90%83/" class="md-nav__link">
+        吃
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        垃圾分类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%8E%A5%E6%94%B6%E5%BF%AB%E9%80%92/" class="md-nav__link">
+        接受快递
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%97%A5%E7%89%88%E6%89%8B%E6%9C%BAfelica%E8%8A%AF%E7%89%87/" class="md-nav__link">
+        Xperia 日版刷机后 FeliCa/Suica
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E5%AD%90%E6%94%AF%E4%BB%98-%E4%BA%A4%E9%80%9A%E5%8D%A1/" class="md-nav__link">
+        日本电子支付 - 交通卡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E8%AF%9D%E5%8D%A1/" class="md-nav__link">
+        电话卡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E8%90%BD%E5%9C%B0todo/" class="md-nav__link">
+        落地事宜
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E9%93%B6%E8%A1%8C%E5%8D%A1/" class="md-nav__link">
+        银行卡
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                    </div>
+                  </div>
+                </div>
+              
+              
+                
+                <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#反幺正算符-θ-的基本代数" class="md-nav__link">
+    反幺正算符 Θ 的基本代数
+  </a>
+  
+    <nav class="md-nav" aria-label="反幺正算符 Θ 的基本代数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#反幺正性的定义" class="md-nav__link">
+    反幺正性的定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#与单粒子算符的对易关系" class="md-nav__link">
+    与单粒子算符的对易关系
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#自旋空间中的具体形式" class="md-nav__link">
+    自旋空间中的具体形式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#θ²-与-kramers-简并" class="md-nav__link">
+    Θ² 与 Kramers 简并
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#h-θ--0-的判据" class="md-nav__link">
+    [H, Θ] = 0 的判据
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#møller-算符在-θ-下的变换" class="md-nav__link">
+    Møller 算符在 Θ 下的变换
+  </a>
+  
+    <nav class="md-nav" aria-label="Møller 算符在 Θ 下的变换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ω-互换" class="md-nav__link">
+    Ω± 互换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#θ-s-θ¹--s" class="md-nav__link">
+    Θ S Θ⁻¹ = S†
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#θ-t-θ¹" class="md-nav__link">
+    Θ T Θ⁻¹
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t-矩阵的反互关系" class="md-nav__link">
+    T 矩阵的反互关系
+  </a>
+  
+    <nav class="md-nav" aria-label="T 矩阵的反互关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#自由基底矩阵元的反互" class="md-nav__link">
+    自由基底矩阵元的反互
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#与-t-公式的等价" class="md-nav__link">
+    与 (T) 公式的等价
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#细致平衡" class="md-nav__link">
+    细致平衡
+  </a>
+  
+    <nav class="md-nav" aria-label="细致平衡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#截面间的关系" class="md-nav__link">
+    截面间的关系
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#弹性散射的退化情形" class="md-nav__link">
+    弹性散射的退化情形
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#历史角色" class="md-nav__link">
+    历史角色
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#极化观测量的-t-约束" class="md-nav__link">
+    极化观测量的 T 约束
+  </a>
+  
+    <nav class="md-nav" aria-label="极化观测量的 T 约束">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_y-的双重约束推导" class="md-nav__link">
+    A_y 的双重约束推导
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#为何-a_y--re-而非-im" class="md-nav__link">
+    为何 A_y = Re 而非 Im
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spin-1-张量极化的-t-约束" class="md-nav__link">
+    Spin-1 张量极化的 T 约束
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#极化转移系数的-reciprocity" class="md-nav__link">
+    极化转移系数的 reciprocity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyzing-power-与-induced-polarization-等同性" class="md-nav__link">
+    Analyzing power 与 induced polarization 等同性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#极化观测量的实验约束" class="md-nav__link">
+    极化观测量的实验约束
+  </a>
+  
+    <nav class="md-nav" aria-label="极化观测量的实验约束">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#三角不等式" class="md-nav__link">
+    三角不等式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#t--字称下的独立观测量计数" class="md-nav__link">
+    T + 字称下的独立观测量计数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t-破缺与-cp-破坏" class="md-nav__link">
+    T 破缺与 CP 破坏
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#多通道-t-反演" class="md-nav__link">
+    多通道 T 反演
+  </a>
+  
+    <nav class="md-nav" aria-label="多通道 T 反演">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#反应通道下的-detailed-balance" class="md-nav__link">
+    反应通道下的 detailed balance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#与-friedrichs--分波耦合的衔接" class="md-nav__link">
+    与 Friedrichs / 分波耦合的衔接
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#与主线笔记的对账" class="md-nav__link">
+    与主线笔记的对账
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    next-step
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                    </div>
+                  </div>
+                </div>
+                
+              
+            
+            
+              <div class="md-content" data-md-component="content">
+                <article class="md-content__inner md-typeset">
+                  
+                    
+
+
+
+<h1 id="时间反演与细致平衡">时间反演与细致平衡<a class="headerlink" href="#时间反演与细致平衡" title="Permanent link">#</a></h1>
+<p><code>polarization_formalism.zh.md:470</code> 一节给了字称守恒对 M 矩阵结构的约束，时间反演那一段（<code>polarization_formalism.zh.md:492</code>）只勾勒了一个不变性条件 (T) 与两条直接推论；本篇把它展开成完整的形式链：从反幺正算符 <span class="arithmatex">\(\Theta\)</span> 的代数性质出发，导出 Møller 算符在 T 反演下的交换关系 <span class="arithmatex">\(\Theta\Omega_+\Theta^{-1}=\Omega_-\)</span>，进而得到 <span class="arithmatex">\(\Theta S \Theta^{-1} = S^\dagger\)</span>、T 矩阵的反互关系 <span class="arithmatex">\(T_{\beta\alpha} = T_{\alpha'\beta'}\)</span>、截面间的细致平衡公式（含自旋统计因子）以及极化观测量的 T 约束。</p>
+<p>定位：本篇是"理论闭环轨"的第 1 篇形式补全。前提是 <code>S_matrix_and_cross_section.zh.md</code> 的 Møller / S / T 链条与 <code>polarization_formalism.zh.md</code> 的 M 矩阵 / 自旋张量基底；不再重复其推导。<code>polarization_formalism.zh.md:295</code> 给出的 <span class="arithmatex">\(A_y = 2\,\mathrm{Re}(a^*b)/(|a|^2+|b|^2)\)</span> 中"为什么是 Re 而不是 Im"这一约定根源，本篇要把字称约束与 T 反演的双重叠加单独抽出做一次干净的代数推导。</p>
+<p>约定：<span class="arithmatex">\(\hbar = 1\)</span>；<span class="arithmatex">\(\Theta\)</span> 表示完整的多粒子时间反演算符（含自旋部分）；自旋 &frac12; 取 <span class="arithmatex">\(\Theta = i\sigma_y K\)</span>、自旋 <span class="arithmatex">\(j\)</span> 取 <span class="arithmatex">\(\Theta = e^{-i\pi J_y} K\)</span>（<span class="arithmatex">\(K\)</span> 是相对于 <span class="arithmatex">\(|j,m\rangle\)</span> 基的复共轭算符），相位约定 Condon-Shortley。粒子标记 <span class="arithmatex">\(\alpha = (\mathbf k, m_a, m_A; \text{species})\)</span> 对应入射通道，<span class="arithmatex">\(\beta\)</span> 对应出射通道；<span class="arithmatex">\(\alpha' = \Theta \alpha\)</span> 表示动量与自旋全部反向后的"T 共轭"通道。</p>
+<p>主参考：Taylor《Scattering Theory》第 17 章（Time Reversal and Detailed Balance），Newton《Scattering Theory of Waves and Particles》第 7 章；Sakurai《Modern QM》第 4.4 节给反幺正算符代数；Goldberger–Watson《Collision Theory》第 6 章给 detailed balance 的算符形式。</p>
+<h2 id="反幺正算符-θ-的基本代数">反幺正算符 Θ 的基本代数<a class="headerlink" href="#反幺正算符-θ-的基本代数" title="Permanent link">#</a></h2>
+<h3 id="反幺正性的定义">反幺正性的定义<a class="headerlink" href="#反幺正性的定义" title="Permanent link">#</a></h3>
+<p>线性算符 <span class="arithmatex">\(A\)</span> 满足 <span class="arithmatex">\(A(\alpha|\phi\rangle + \beta|\psi\rangle) = \alpha A|\phi\rangle + \beta A|\psi\rangle\)</span>。反线性（antilinear）算符把标量复共轭</p>
+<div class="arithmatex">\[
+A(\alpha|\phi\rangle + \beta|\psi\rangle) = \alpha^* A|\phi\rangle + \beta^* A|\psi\rangle. \tag{antilin}
+\]</div>
+<p>幺正算符 <span class="arithmatex">\(U\)</span> 保持内积 <span class="arithmatex">\(\langle U\phi|U\psi\rangle = \langle\phi|\psi\rangle\)</span>；反幺正（antiunitary）算符 <span class="arithmatex">\(\Theta\)</span> 把内积复共轭</p>
+<div class="arithmatex">\[
+\langle \Theta\phi | \Theta\psi\rangle = \langle\psi|\phi\rangle = \langle\phi|\psi\rangle^*. \tag{antiunit}
+\]</div>
+<p>任何反幺正算符可分解为 <span class="arithmatex">\(\Theta = U K\)</span>，其中 <span class="arithmatex">\(U\)</span> 幺正，<span class="arithmatex">\(K\)</span> 是某个固定基底下的复共轭算符（<span class="arithmatex">\(K|n\rangle = |n\rangle\)</span>、<span class="arithmatex">\(K c |n\rangle = c^* |n\rangle\)</span>）。<span class="arithmatex">\(K\)</span> 本身是反幺正的，<span class="arithmatex">\(U\)</span> 的具体形式由 <span class="arithmatex">\(\Theta\)</span> 在该基底下的矩阵元决定。</p>
+<h3 id="与单粒子算符的对易关系">与单粒子算符的对易关系<a class="headerlink" href="#与单粒子算符的对易关系" title="Permanent link">#</a></h3>
+<p><span class="arithmatex">\(\Theta\)</span> 对单粒子位置、动量、自旋的作用：</p>
+<div class="arithmatex">\[
+\Theta\, \mathbf r\, \Theta^{-1} = \mathbf r,\qquad
+\Theta\, \mathbf p\, \Theta^{-1} = -\mathbf p,\qquad
+\Theta\, \mathbf S\, \Theta^{-1} = -\mathbf S. \tag{Theta-1p}
+\]</div>
+<p>复数 <span class="arithmatex">\(i\)</span> 在 <span class="arithmatex">\(\Theta\)</span> 下变号</p>
+<div class="arithmatex">\[
+\Theta\, i\, \Theta^{-1} = -i. \tag{Theta-i}
+\]</div>
+<p>(Theta-i) 是反线性的直接体现：把任一态 <span class="arithmatex">\(|\psi\rangle\)</span> 换成 <span class="arithmatex">\(i|\psi\rangle\)</span> 再作 <span class="arithmatex">\(\Theta\)</span> 等于先作 <span class="arithmatex">\(\Theta\)</span> 再乘 <span class="arithmatex">\(-i\)</span>。它使得 <span class="arithmatex">\([\mathbf r, \mathbf p] = i\)</span> 这条对易关系在 (Theta-1p) 下保持一致：<span class="arithmatex">\(\Theta [\mathbf r, \mathbf p] \Theta^{-1} = [\mathbf r, -\mathbf p] = -i\)</span>，恰对应右边 <span class="arithmatex">\(i \to -i\)</span>。同理 <span class="arithmatex">\([\mathbf S_x, \mathbf S_y] = i\mathbf S_z\)</span> 在 <span class="arithmatex">\(\mathbf S \to -\mathbf S\)</span>、<span class="arithmatex">\(i \to -i\)</span> 下不变。</p>
+<h3 id="自旋空间中的具体形式">自旋空间中的具体形式<a class="headerlink" href="#自旋空间中的具体形式" title="Permanent link">#</a></h3>
+<p>在 <span class="arithmatex">\(|j,m\rangle\)</span> 基下取 <span class="arithmatex">\(K\)</span> 为复共轭。要求 <span class="arithmatex">\(\Theta J_x \Theta^{-1} = -J_x\)</span>、<span class="arithmatex">\(\Theta J_y \Theta^{-1} = -J_y\)</span>、<span class="arithmatex">\(\Theta J_z \Theta^{-1} = -J_z\)</span>。<span class="arithmatex">\(J_z\)</span>、<span class="arithmatex">\(J_x\)</span> 在 Condon-Shortley 约定下为实矩阵，<span class="arithmatex">\(J_y\)</span> 纯虚。<span class="arithmatex">\(K\)</span> 把它们送到 <span class="arithmatex">\(J_z, J_x, -J_y\)</span>；要再变号到 <span class="arithmatex">\(-J_z, -J_x, J_y\)</span>，需配合一次 <span class="arithmatex">\(\pi\)</span> 角绕 <span class="arithmatex">\(\hat y\)</span> 旋转</p>
+<div class="arithmatex">\[
+e^{-i\pi J_y} J_z e^{i\pi J_y} = -J_z,\qquad e^{-i\pi J_y} J_x e^{i\pi J_y} = -J_x,\qquad e^{-i\pi J_y} J_y e^{i\pi J_y} = J_y.
+\]</div>
+<p>故</p>
+<div class="arithmatex">\[
+\Theta = e^{-i\pi J_y}\, K \tag{Theta-j}
+\]</div>
+<p>整体相位可调；上面这个选择给 <span class="arithmatex">\(\Theta|j,m\rangle = (-1)^{j-m}|j,-m\rangle\)</span>（self-derive：用 <span class="arithmatex">\(d^j_{-m,m}(\pi) = (-1)^{j-m}\)</span>）。对自旋 &frac12; 等价于</p>
+<div class="arithmatex">\[
+\Theta = i\sigma_y K,\qquad \Theta|\tfrac12, \tfrac12\rangle = |\tfrac12, -\tfrac12\rangle,\quad \Theta|\tfrac12, -\tfrac12\rangle = -|\tfrac12, \tfrac12\rangle.
+\]</div>
+<h3 id="θ²-与-kramers-简并">Θ² 与 Kramers 简并<a class="headerlink" href="#θ²-与-kramers-简并" title="Permanent link">#</a></h3>
+<p>直接计算</p>
+<div class="arithmatex">\[
+\Theta^2 = e^{-i\pi J_y} K\, e^{-i\pi J_y} K = e^{-i\pi J_y}\, e^{+i\pi J_y}\, K^2 = e^{-2\pi i J_y}\cdot 1 = (-1)^{2j}.
+\]</div>
+<p>中间用了 <span class="arithmatex">\(K e^{-i\pi J_y} K = e^{+i\pi J_y}\)</span>（<span class="arithmatex">\(J_y\)</span> 在 CS 约定下纯虚）与 <span class="arithmatex">\(K^2 = 1\)</span>。结论</p>
+<div class="arithmatex">\[
+\Theta^2 = \begin{cases} +1, &amp; 2j \in 2\mathbb{Z}\ (\text{整数自旋})\\ -1, &amp; 2j \in 2\mathbb{Z}+1\ (\text{半整数自旋}) \end{cases}\tag{Theta-sq}
+\]</div>
+<p>半整数自旋下 <span class="arithmatex">\(\Theta^2 = -1\)</span> 是 Kramers 简并的根源：若 <span class="arithmatex">\(H\)</span> 与 <span class="arithmatex">\(\Theta\)</span> 对易、且不存在外加破 T 的场（典型为外磁场），则 <span class="arithmatex">\(|\psi\rangle\)</span> 与 <span class="arithmatex">\(\Theta|\psi\rangle\)</span> 必然正交且简并</p>
+<div class="arithmatex">\[
+\langle\psi | \Theta\psi\rangle = \langle\Theta\psi | \Theta^2\psi\rangle^* = \langle\Theta\psi | -\psi\rangle^* = -\langle\psi|\Theta\psi\rangle \;\Rightarrow\; 0.
+\]</div>
+<p>第一步用 (antiunit)，第二步用 <span class="arithmatex">\(\Theta^2 = -1\)</span>。整数自旋则无此 forced degeneracy。</p>
+<h3 id="h-θ--0-的判据">[H, Θ] = 0 的判据<a class="headerlink" href="#h-θ--0-的判据" title="Permanent link">#</a></h3>
+<p>非相对论哈密顿量 <span class="arithmatex">\(H = \mathbf p^2/(2m) + V(\mathbf r) + V_{LS}\,\mathbf L\!\cdot\!\mathbf S + V_T(\hat r, \mathbf S_1, \mathbf S_2) + \cdots\)</span>。每一项在 (Theta-1p) 下变换：<span class="arithmatex">\(\mathbf p^2\)</span> 偶、<span class="arithmatex">\(V(\mathbf r)\)</span> 偶、<span class="arithmatex">\(\mathbf L\!\cdot\!\mathbf S = \mathbf r\times\mathbf p\cdot\mathbf S\)</span> 偶（<span class="arithmatex">\(\mathbf L\)</span> 与 <span class="arithmatex">\(\mathbf S\)</span> 同时变号）、张量力 <span class="arithmatex">\(\mathbf S_1\!\cdot\!\hat r\,\mathbf S_2\!\cdot\!\hat r\)</span> 偶。故强相互作用与电磁相互作用（无外加 <span class="arithmatex">\(\mathbf B\)</span>）下 <span class="arithmatex">\(\Theta H \Theta^{-1} = H\)</span>。</p>
+<p>T 对易破坏的典型情形：</p>
+<ul>
+<li>外加磁场。<span class="arithmatex">\(\mathbf B\)</span> 是赝矢量，但极化矩 <span class="arithmatex">\(\boldsymbol\mu\!\cdot\!\mathbf B\)</span> 中 <span class="arithmatex">\(\boldsymbol\mu \propto \mathbf S\)</span> 在 T 下变号，<span class="arithmatex">\(\mathbf B\)</span>（视为外参数）不动，故该项变号——破坏 T 对易，但若把 <span class="arithmatex">\(\mathbf B\)</span> 视为动力学量（包含产生 <span class="arithmatex">\(\mathbf B\)</span> 的电流），则 <span class="arithmatex">\(\mathbf B \to -\mathbf B\)</span> 整体仍 T 不变。</li>
+<li>弱相互作用 CP 破坏（CKM 复相位、<span class="arithmatex">\(\theta_{\text{QCD}}\)</span>、新物理）。在散射中体现为微小的 T 破坏振幅（量级 <span class="arithmatex">\(\lesssim 10^{-4}\)</span>）。</li>
+<li>不可逆耗散（开放系统、密度矩阵的 Lindblad 演化）——但这超出 unitary 散射理论的范畴。</li>
+</ul>
+<p>本篇默认 <span class="arithmatex">\([\Theta, H] = 0\)</span>、<span class="arithmatex">\([\Theta, H_0] = 0\)</span>（自由演化平移、动能项均 T 不变）。</p>
+<h2 id="møller-算符在-θ-下的变换">Møller 算符在 Θ 下的变换<a class="headerlink" href="#møller-算符在-θ-下的变换" title="Permanent link">#</a></h2>
+<h3 id="ω-互换">Ω± 互换<a class="headerlink" href="#ω-互换" title="Permanent link">#</a></h3>
+<p><code>S_matrix_and_cross_section.zh.md:138</code> 给的强极限定义</p>
+<div class="arithmatex">\[
+\Omega_+ = \operatorname*{s\text{-}lim}_{t\to-\infty} e^{iHt} e^{-iH_0 t},\qquad \Omega_- = \operatorname*{s\text{-}lim}_{t\to+\infty} e^{iHt} e^{-iH_0 t}.
+\]</div>
+<p>用 <span class="arithmatex">\(\Theta\)</span> 共轭。先看有限时刻的 <span class="arithmatex">\(W(t) = e^{iHt} e^{-iH_0 t}\)</span>：</p>
+<div class="arithmatex">\[
+\Theta W(t) \Theta^{-1} = \Theta e^{iHt} \Theta^{-1}\cdot \Theta e^{-iH_0 t}\Theta^{-1} = e^{-iH t}\cdot e^{+iH_0 t} = W(-t).
+\]</div>
+<p>第二步用 <span class="arithmatex">\(\Theta i \Theta^{-1} = -i\)</span> 与 <span class="arithmatex">\(\Theta H \Theta^{-1} = H\)</span>、<span class="arithmatex">\(\Theta H_0 \Theta^{-1} = H_0\)</span>。所以</p>
+<div class="arithmatex">\[
+\Theta W(t) \Theta^{-1} = W(-t). \tag{Theta-W}
+\]</div>
+<p>取强极限。<span class="arithmatex">\(\Theta\)</span> 反幺正、连续，故强极限可换：当 <span class="arithmatex">\(t \to -\infty\)</span> 时 <span class="arithmatex">\(W(t) \to \Omega_+\)</span>，对应 <span class="arithmatex">\(W(-t) \to \Omega_+\)</span> 中变量替换 <span class="arithmatex">\(t \to -t\)</span> 给 <span class="arithmatex">\(t' \to +\infty\)</span>，即 <span class="arithmatex">\(W(-t) \to \Omega_-\)</span>。结论</p>
+<div class="arithmatex">\[
+\boxed{\;\Theta\, \Omega_+\, \Theta^{-1} = \Omega_-,\qquad \Theta\, \Omega_-\, \Theta^{-1} = \Omega_+.\;}\tag{Theta-Omega}
+\]</div>
+<p>物理上，<span class="arithmatex">\(\Omega_+\)</span> 把"过去看起来像 <span class="arithmatex">\(|\phi\rangle\)</span>"翻译成精确散射态；T 反演把过去与未来对调，自然把 <span class="arithmatex">\(\Omega_+\)</span> 送到 <span class="arithmatex">\(\Omega_-\)</span>。</p>
+<h3 id="θ-s-θ¹--s">Θ S Θ⁻¹ = S†<a class="headerlink" href="#θ-s-θ¹--s" title="Permanent link">#</a></h3>
+<p>由 <code>S_matrix_and_cross_section.zh.md:222</code> 的 <span class="arithmatex">\(S = \Omega_-^\dagger \Omega_+\)</span>：</p>
+<div class="arithmatex">\[
+\Theta S \Theta^{-1} = \Theta\Omega_-^\dagger\Theta^{-1}\,\Theta\Omega_+\Theta^{-1} = (\Theta\Omega_-\Theta^{-1})^\dagger\,\Omega_- = \Omega_+^\dagger\,\Omega_-.
+\]</div>
+<p>第一步插入 <span class="arithmatex">\(\Theta^{-1}\Theta = 1\)</span>；第二步用 <span class="arithmatex">\((\Theta A \Theta^{-1})^\dagger = \Theta A^\dagger \Theta^{-1}\)</span>（self-derive：对反幺正算符，<span class="arithmatex">\(\Theta A \Theta^{-1}\)</span> 把 <span class="arithmatex">\(A\)</span> 的伴随变成新算符的伴随，但因为反幺正算符本身满足 <span class="arithmatex">\(\langle\Theta\phi|\Theta\psi\rangle = \langle\psi|\phi\rangle\)</span>，其共轭定义需小心；正确版本是 <span class="arithmatex">\((\Theta A \Theta^{-1})^\dagger = \Theta A^\dagger \Theta^{-1}\)</span>，可由内积比对验证）。</p>
+<p>最后得到 <span class="arithmatex">\(\Omega_+^\dagger \Omega_- = (\Omega_-^\dagger \Omega_+)^\dagger = S^\dagger\)</span>。由 S 酉性 <span class="arithmatex">\(S^\dagger = S^{-1}\)</span>：</p>
+<div class="arithmatex">\[
+\boxed{\;\Theta\, S\, \Theta^{-1} = S^\dagger = S^{-1}.\;}\tag{Theta-S}
+\]</div>
+<p>等价表述：演化算符 <span class="arithmatex">\(U(t,t_0) = e^{-iH(t-t_0)}\)</span> 满足 <span class="arithmatex">\(\Theta U(t, t_0)\Theta^{-1} = U(-t, -t_0) = U(t_0, t)\)</span>，对全演化区间取极限即给 <span class="arithmatex">\(S \to S^\dagger\)</span>。</p>
+<h3 id="θ-t-θ¹">Θ T Θ⁻¹<a class="headerlink" href="#θ-t-θ¹" title="Permanent link">#</a></h3>
+<p><code>T_and_U_operators.zh.md:332</code> 给出 <span class="arithmatex">\(T(z) = V + V G(z) V\)</span>，<span class="arithmatex">\(G(z) = (z - H)^{-1}\)</span>。<span class="arithmatex">\(V\)</span> 在 T 下不变（势能对易于 <span class="arithmatex">\(\Theta\)</span>）；<span class="arithmatex">\(G(z)\)</span> 含 <span class="arithmatex">\(i\)</span> 隐参数（<span class="arithmatex">\(z = E + i 0\)</span>），故</p>
+<div class="arithmatex">\[
+\Theta G(E + i0) \Theta^{-1} = (E - i0 - H)^{-1} = G(E - i0).
+\]</div>
+<p>得到</p>
+<div class="arithmatex">\[
+\Theta\, T(E + i0)\, \Theta^{-1} = V + V\, G(E - i0)\, V = T(E - i0). \tag{Theta-T}
+\]</div>
+<p>注意 <span class="arithmatex">\(T(E - i0) = T(E + i0)^\dagger\)</span> 当 <span class="arithmatex">\(V = V^\dagger\)</span>（self-derive：从 <span class="arithmatex">\(T = V + VGV\)</span>、<span class="arithmatex">\(G^\dagger(E+i0) = G(E - i0)\)</span> 直接读出）。所以等价地</p>
+<div class="arithmatex">\[
+\Theta\, T(E + i0)\, \Theta^{-1} = T(E + i0)^\dagger. \tag{Theta-T-dag}
+\]</div>
+<h2 id="t-矩阵的反互关系">T 矩阵的反互关系<a class="headerlink" href="#t-矩阵的反互关系" title="Permanent link">#</a></h2>
+<h3 id="自由基底矩阵元的反互">自由基底矩阵元的反互<a class="headerlink" href="#自由基底矩阵元的反互" title="Permanent link">#</a></h3>
+<p>把 (Theta-T-dag) 对自由基底取矩阵元。设 <span class="arithmatex">\(|\alpha\rangle = |\mathbf k, m_a, m_A\rangle\)</span>、<span class="arithmatex">\(|\beta\rangle = |\mathbf k', m'_b, m'_B\rangle\)</span>，定义共轭标签</p>
+<div class="arithmatex">\[
+|\alpha'\rangle \equiv \Theta|\alpha\rangle = \eta_\alpha\,|-\mathbf k, -m_a, -m_A\rangle
+\]</div>
+<p>类似 <span class="arithmatex">\(|\beta'\rangle\)</span>。<span class="arithmatex">\(\eta\)</span> 是 (Theta-j) 中的 <span class="arithmatex">\((-1)^{s-m}\)</span> 类相位（具体 <span class="arithmatex">\(\eta_\alpha = (-1)^{s_a - m_a + s_A - m_A}\)</span>）。</p>
+<p>由反幺正性</p>
+<div class="arithmatex">\[
+\langle \beta | T | \alpha\rangle = \langle \Theta T \alpha | \Theta\beta\rangle^* \cdot 1 \;\;? 
+\]</div>
+<p>更稳的写法：<span class="arithmatex">\(\langle\Theta\phi|\Theta\psi\rangle = \langle\psi|\phi\rangle\)</span>，即 <span class="arithmatex">\(\Theta\)</span> 把 ket 上的标量内积复共轭。具体地</p>
+<div class="arithmatex">\[
+\langle\beta | T | \alpha\rangle = \langle\Theta\beta | \Theta T \alpha\rangle^*\quad(\text{wrong convention})
+\]</div>
+<p>正确做法是同时考虑 <span class="arithmatex">\(\Theta\)</span> 既作用在 bra 也作用在 ket 上。直接的等式（self-derive 推导）：</p>
+<div class="arithmatex">\[
+\langle \beta | T(E + i0) | \alpha\rangle = \overline{\langle \Theta\beta | \Theta\, T(E+i0)\, \Theta^{-1}\,\Theta | \alpha\rangle\,}^{\;*} \cdot (\text{wrong})
+\]</div>
+<p>为了避免约定混乱，直接用算符等式 (Theta-T-dag) 加 <span class="arithmatex">\(\Theta\beta = \beta'\)</span>、<span class="arithmatex">\(\Theta\alpha = \alpha'\)</span>，并用 <span class="arithmatex">\(\Theta^\dagger = \Theta^{-1}\)</span>（反幺正算符）：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\langle \beta'|T(E+i0)|\alpha'\rangle
+&amp;= \langle \Theta\beta\,|\,T\,|\,\Theta\alpha\rangle\\
+&amp;= \langle\Theta\beta\,|\,\Theta\,(\Theta^{-1}T\Theta)\,|\,\alpha\rangle\\
+&amp;= \langle\Theta\beta\,|\,\Theta\,T(E - i0)\,|\,\alpha\rangle\\
+&amp;= \langle\beta\,|\,T(E - i0)\,|\,\alpha\rangle^*\\
+&amp;= \langle\alpha\,|\,T(E + i0)\,|\,\beta\rangle\,.
+\end{aligned} \tag{Trec}
+\]</div>
+<p>第二步插 <span class="arithmatex">\(\Theta^{-1}\Theta = 1\)</span>；第三步用 (Theta-T)；第四步用 <span class="arithmatex">\(\Theta\)</span> 反幺正性 <span class="arithmatex">\(\langle\Theta\phi|\Theta\chi\rangle = \langle\phi|\chi\rangle^*\)</span>（这里 <span class="arithmatex">\(\chi = T(E-i0)|\alpha\rangle\)</span>，把 <span class="arithmatex">\(\Theta\)</span> 提出于 ket 之外得 <span class="arithmatex">\(\langle\Theta\beta|\Theta\chi\rangle = \langle\beta|\chi\rangle^*\)</span>）；第五步用 <span class="arithmatex">\(\langle\beta|T(E-i0)|\alpha\rangle = \langle\beta|T(E+i0)^\dagger|\alpha\rangle = \langle\alpha|T(E+i0)|\beta\rangle^*\)</span> 与外层共轭抵消。</p>
+<p>最终 reciprocity（反互）关系</p>
+<div class="arithmatex">\[
+\boxed{\;\langle\beta'|\,T(E+i0)\,|\alpha'\rangle = \langle\alpha\,|\,T(E+i0)\,|\beta\rangle.\;}\tag{T-reciprocity}
+\]</div>
+<p>物理含义：从 <span class="arithmatex">\(\alpha\)</span> 到 <span class="arithmatex">\(\beta\)</span> 的跃迁振幅，等于其 T 共轭的"反向"跃迁——把 <span class="arithmatex">\(\alpha\to\beta\)</span> 中所有动量、自旋反向后的 <span class="arithmatex">\(\beta'\to\alpha'\)</span> 振幅。</p>
+<h3 id="与-t-公式的等价">与 (T) 公式的等价<a class="headerlink" href="#与-t-公式的等价" title="Permanent link">#</a></h3>
+<p><code>polarization_formalism.zh.md:497</code> 给的 M 矩阵形式</p>
+<div class="arithmatex">\[
+M_{m'_b m'_B; m_a m_A}(-\hat{\mathbf k}, -\hat{\mathbf k}') = \prod_i (-1)^{s_i - m_i + s'_i - m'_i}\, M^*_{-m_a, -m_A;\, -m'_b, -m'_B}(\hat{\mathbf k}', \hat{\mathbf k})
+\]</div>
+<p>正是把 (T-reciprocity) 翻译到 M 矩阵语言：左右两侧的 <span class="arithmatex">\((s-m)\)</span> 相位来自 (Theta-j) 的 <span class="arithmatex">\(\eta\)</span> 因子；下标交换体现 <span class="arithmatex">\(\alpha \leftrightarrow \beta'\)</span> 的对调；复共轭是 (Trec) 推导第四步留下的。所以本篇 <span class="arithmatex">\(\text{(T-reciprocity)}\)</span> 与 polarization 篇的 (T) 同一回事，只是抽象层级不同。</p>
+<h2 id="细致平衡">细致平衡<a class="headerlink" href="#细致平衡" title="Permanent link">#</a></h2>
+<h3 id="截面间的关系">截面间的关系<a class="headerlink" href="#截面间的关系" title="Permanent link">#</a></h3>
+<p>考虑反应 <span class="arithmatex">\(a + A \to b + B\)</span>（不一定弹性，质量 <span class="arithmatex">\(m_i\)</span> 可以不同）。质心系入射相对动量 <span class="arithmatex">\(\mathbf k_a\)</span>、出射 <span class="arithmatex">\(\mathbf k_b\)</span>，能量守恒 <span class="arithmatex">\(E = k_a^2/(2\mu_a) + Q_a = k_b^2/(2\mu_b) + Q_b\)</span>（<span class="arithmatex">\(Q\)</span> 是内禀质量能）。微分截面（自旋已平均）</p>
+<div class="arithmatex">\[
+\frac{d\sigma_{a\to b}}{d\Omega}(\hat{\mathbf k}_b\leftarrow \hat{\mathbf k}_a) = \frac{\mu_a \mu_b}{(2\pi)^2}\,\frac{k_b}{k_a}\,\frac{1}{(2s_a+1)(2s_A+1)}\sum_{m_a,m_A,m_b,m_B}|T_{\beta\alpha}|^2.
+\]</div>
+<p>逆向反应 <span class="arithmatex">\(b + B \to a + A\)</span> 截面</p>
+<div class="arithmatex">\[
+\frac{d\sigma_{b\to a}}{d\Omega}(\hat{\mathbf k}_a\leftarrow \hat{\mathbf k}_b) = \frac{\mu_a \mu_b}{(2\pi)^2}\,\frac{k_a}{k_b}\,\frac{1}{(2s_b+1)(2s_B+1)}\sum |T_{\alpha\beta}|^2.
+\]</div>
+<p>由 (T-reciprocity)：<span class="arithmatex">\(\sum_{\text{spins}}|T_{\beta\alpha}(\mathbf k'\leftarrow \mathbf k)|^2 = \sum_{\text{spins}}|T_{\alpha'\beta'}(-\mathbf k\leftarrow -\mathbf k')|^2\)</span>。再用旋转不变性把 <span class="arithmatex">\(-\mathbf k, -\mathbf k'\)</span> 整体旋转回到 <span class="arithmatex">\(\mathbf k, \mathbf k'\)</span>（自旋求和已对称地包含所有 <span class="arithmatex">\(\pm m\)</span>，故 <span class="arithmatex">\(-m \to m\)</span> 标记重命名不影响），得到 <span class="arithmatex">\(\sum|T_{\beta\alpha}|^2 = \sum|T_{\alpha\beta}|^2\)</span>（自旋求和 + T 反演下相等）。代入两个截面公式相除</p>
+<div class="arithmatex">\[
+\boxed{\;
+(2s_a+1)(2s_A+1)\,k_a^2\,\frac{d\sigma_{a\to b}}{d\Omega} = (2s_b+1)(2s_B+1)\,k_b^2\,\frac{d\sigma_{b\to a}}{d\Omega}.
+\;}\tag{detbal}
+\]</div>
+<p>这就是细致平衡（detailed balance）公式。注意角变量：左边在 <span class="arithmatex">\(\hat{\mathbf k}_b\leftarrow\hat{\mathbf k}_a\)</span> 处取值，右边在 <span class="arithmatex">\(\hat{\mathbf k}_a\leftarrow\hat{\mathbf k}_b\)</span> 处取值，两侧的散射角（<span class="arithmatex">\(\theta = \angle\)</span> 入射出射）相同。</p>
+<h3 id="弹性散射的退化情形">弹性散射的退化情形<a class="headerlink" href="#弹性散射的退化情形" title="Permanent link">#</a></h3>
+<p>弹性 <span class="arithmatex">\(a + A \to a + A\)</span>，<span class="arithmatex">\(m_b = m_a\)</span>、<span class="arithmatex">\(s_b = s_a\)</span>、<span class="arithmatex">\(\mu_b = \mu_a\)</span>、<span class="arithmatex">\(k_b = k_a\)</span>、<span class="arithmatex">\(Q_b = Q_a\)</span>。(detbal) 退化为</p>
+<div class="arithmatex">\[
+\frac{d\sigma}{d\Omega}(\theta) = \frac{d\sigma}{d\Omega}(\theta).
+\]</div>
+<p>平凡，因为弹性散射的"反向反应"就是其本身。这说明细致平衡只对真正不同的入出射通道（反应、转移、重排）才有非平凡含义——例如 <span class="arithmatex">\(p + p \to d + \pi^+\)</span> 与 <span class="arithmatex">\(d + \pi^+ \to p + p\)</span> 间的截面比较。</p>
+<h3 id="历史角色">历史角色<a class="headerlink" href="#历史角色" title="Permanent link">#</a></h3>
+<p>(detbal) 在反应核物理中的早期应用：从已测得的 <span class="arithmatex">\(\pi^+ d \to pp\)</span> 反推 <span class="arithmatex">\(pp \to \pi^+ d\)</span>（前者实验上更易因为 <span class="arithmatex">\(\pi^+\)</span> 束流容易，后者直接测 <span class="arithmatex">\(\pi^+\)</span> 角分布需要 close-target 几何）。配上自旋统计因子 <span class="arithmatex">\((2\cdot 0 + 1)(2\cdot 1 + 1) / [(2\cdot 1/2+1)^2 \cdot 1/2!] = 3/2\)</span>（<span class="arithmatex">\(1/2!\)</span> 来自 <span class="arithmatex">\(pp\)</span> 全同），(detbal) 给出两侧截面的精确比，常作为 <span class="arithmatex">\(s_\pi = 0\)</span> 的实验检验。</p>
+<h2 id="极化观测量的-t-约束">极化观测量的 T 约束<a class="headerlink" href="#极化观测量的-t-约束" title="Permanent link">#</a></h2>
+<h3 id="a_y-的双重约束推导">A_y 的双重约束推导<a class="headerlink" href="#a_y-的双重约束推导" title="Permanent link">#</a></h3>
+<p>回到 spin-&frac12; + spin-0 弹性散射。<code>polarization_formalism.zh.md:237</code> 的 M 矩阵在字称约束下为 <span class="arithmatex">\(M = a\,I + b\,\boldsymbol\sigma\!\cdot\!\hat{\mathbf n}\)</span>。在 (T-reciprocity) 下要求</p>
+<div class="arithmatex">\[
+M(-\hat{\mathbf k}, -\hat{\mathbf k}')_{m'\to m'',\,m\to m'''} = (-1)^{1/2-m+1/2-m'}\, M^*_{-m, -m'''; -m''', -m'}(\hat{\mathbf k}', \hat{\mathbf k})
+\]</div>
+<p>（此处自旋 0 靶的 <span class="arithmatex">\(m_A\)</span> 求和已平凡化）。把 <span class="arithmatex">\(M = a\,I + b\,\sigma_n\)</span> 代入。<span class="arithmatex">\(\hat{\mathbf k}\to -\hat{\mathbf k}\)</span>、<span class="arithmatex">\(\hat{\mathbf k}'\to -\hat{\mathbf k}'\)</span> 下 <span class="arithmatex">\(\hat{\mathbf n} = \hat{\mathbf k}\times\hat{\mathbf k}'/|\cdot| \to \hat{\mathbf n}\)</span>（两个负号抵消）。<span class="arithmatex">\(\sigma_n\)</span> 在自旋翻转下 <span class="arithmatex">\(i\sigma_y \sigma_n^* (i\sigma_y)^{-1} = -\sigma_n^* (i\sigma_y)(i\sigma_y)^{-1} = \sigma_n\)</span>（self-derive：<span class="arithmatex">\(\sigma_y\)</span> 反对易于 <span class="arithmatex">\(\sigma_x, \sigma_z\)</span>，对易于自身；<span class="arithmatex">\(\boldsymbol\sigma^* = (\sigma_x, -\sigma_y, \sigma_z)\)</span>）。</p>
+<p>具体计算 <span class="arithmatex">\(\Theta M \Theta^{-1}\)</span>：</p>
+<div class="arithmatex">\[
+\Theta\,(a\,I + b\,\boldsymbol\sigma\!\cdot\!\hat{\mathbf n})\,\Theta^{-1} = a^*\,I + b^*\,\Theta\,\boldsymbol\sigma\!\cdot\!\hat{\mathbf n}\,\Theta^{-1} = a^*\,I + b^*\,(-\boldsymbol\sigma)\!\cdot\!(-\hat{\mathbf n}^*) = a^*\,I + b^*\,\boldsymbol\sigma\!\cdot\!\hat{\mathbf n}.
+\]</div>
+<p>中间用了 <span class="arithmatex">\(\Theta\,\boldsymbol\sigma\,\Theta^{-1} = -\boldsymbol\sigma\)</span>、<span class="arithmatex">\(\Theta\,\hat{\mathbf n}\,\Theta^{-1} = \hat{\mathbf n}^*\)</span>（实矢量在 <span class="arithmatex">\(K\)</span> 下不变，但写作 <span class="arithmatex">\(\hat{\mathbf n}^*\)</span> 强调它来自 c-数）；负负相消。再加上 (T-reciprocity) 要求 <span class="arithmatex">\(M(\mathbf k',\mathbf k) \leftrightarrow M(-\mathbf k, -\mathbf k')\)</span>（旋转不变把它送回 <span class="arithmatex">\(M(\mathbf k', \mathbf k)\)</span> 自身），得到</p>
+<div class="arithmatex">\[
+a(\theta) = a^*(\theta) \cdot (\text{or some constraint})
+\]</div>
+<p>——但这显然太强（<span class="arithmatex">\(a, b\)</span> 一般是复数）。实际的约束更微妙：(T-reciprocity) 不是 <span class="arithmatex">\(M = M^T\)</span> 而是 <span class="arithmatex">\(M(\mathbf k'\!\leftarrow\!\mathbf k) = M^T(-\mathbf k\!\leftarrow\!-\mathbf k')\)</span>，把入出标签也对调。对 <span class="arithmatex">\(a I + b\sigma_n\)</span> 形式的 spin-&frac12; + 0 M 矩阵，这一约束自动满足（self-derive：<span class="arithmatex">\(M\)</span> 对 <span class="arithmatex">\((\mathbf k, \mathbf k')\)</span> 与对入出自旋指标的依赖通过 <span class="arithmatex">\(\sigma_n\)</span> 共同携带；T 反演把两者一同送过去再送回来，给出恒等式）。</p>
+<h3 id="为何-a_y--re-而非-im">为何 A_y = Re 而非 Im<a class="headerlink" href="#为何-a_y--re-而非-im" title="Permanent link">#</a></h3>
+<p><code>polarization_formalism.zh.md:295</code> 的 <span class="arithmatex">\(A_y = 2\,\mathrm{Re}(a^*b)/(|a|^2+|b|^2)\)</span> 中"Re"的根源：</p>
+<p>字称约束去掉 M 矩阵中赝标量项 <span class="arithmatex">\(\boldsymbol\sigma\!\cdot\!\hat{\mathbf l}, \boldsymbol\sigma\!\cdot\!\hat{\mathbf m}\)</span>，剩下的 <span class="arithmatex">\(a\,I + b\,\sigma_n\)</span> 是字称允许的最一般形式。计算 <span class="arithmatex">\(A_y \propto \mathrm{Tr}[M\sigma_n M^\dagger]\)</span> 直接得 <span class="arithmatex">\(a^*b + ab^* = 2\,\mathrm{Re}(a^*b)\)</span>。</p>
+<p>T 反演的额外贡献：要求 <span class="arithmatex">\(a, b\)</span> 满足某种 reciprocity。在弹性 spin-&frac12; + 0 散射中，T 反演结合旋转不变性自动满足，没有给 <span class="arithmatex">\(a, b\)</span> 添加新约束（即 T 在这一情形下"trivially" 满足）。所以 <span class="arithmatex">\(A_y\)</span> 的"Re"完全来自字称（决定 M 的代数结构）和分波展开中 <span class="arithmatex">\(1/(2ik)\)</span> 的相位选取（决定 <span class="arithmatex">\(a, b\)</span> 是 <span class="arithmatex">\(\mathrm{Re}(a^*b)\)</span> 还是 <span class="arithmatex">\(\mathrm{Im}(a^*b)\)</span>）。</p>
+<p>但在更复杂情形（spin-&frac12; × spin-&frac12;、spin-1 × spin-0 等），T 反演给出独立约束。例：spin-&frac12; + spin-&frac12; NN 散射的 Wolfenstein 5 振幅 <span class="arithmatex">\(\{a, b, c, d, e\}\)</span> 中，若不强加 T 反演只用字称 + 旋转，独立振幅本是 6 个；T 反演把"对易项 <span class="arithmatex">\(f\)</span>"约束为零或写成其它 5 项的线性组合，从而把独立参数个数压回 5。</p>
+<h3 id="spin-1-张量极化的-t-约束">Spin-1 张量极化的 T 约束<a class="headerlink" href="#spin-1-张量极化的-t-约束" title="Permanent link">#</a></h3>
+<p><code>polarization_formalism.zh.md:451</code> 给出字称约束下 spin-1 + spin-0 的 analyzing power 张量 <span class="arithmatex">\(T_{kq}\)</span> 中非零分量</p>
+<div class="arithmatex">\[
+i T_{11},\; T_{20},\; T_{21},\; T_{22}
+\]</div>
+<p>而 <span class="arithmatex">\(T_{10} = 0\)</span>、<span class="arithmatex">\(\mathrm{Re}\,T_{11} = 0\)</span> 来自字称 + T 反演的合成约束。详细来看：</p>
+<ul>
+<li>字称：<span class="arithmatex">\(T_{kq}(\theta) = (-1)^{k+q}\,T_{k,-q}^*(\theta)\)</span>（self-derive：<span class="arithmatex">\(\hat{\mathbf n}\to\hat{\mathbf n}\)</span>，<span class="arithmatex">\(T_{kq}\)</span> 在 <span class="arithmatex">\(\hat{\mathbf n}\to -\hat{\mathbf n}\)</span> 下变 <span class="arithmatex">\((-1)^k\)</span>，再加复共轭来自 <span class="arithmatex">\(\hat{\mathbf n}^* = \hat{\mathbf n}\)</span> 但 azimuthal 方向 <span class="arithmatex">\(\phi\to\pi-\phi\)</span> 给 <span class="arithmatex">\(q\to-q\)</span> 加 <span class="arithmatex">\((-1)^q\)</span>）。</li>
+<li>T 反演：<span class="arithmatex">\(T_{kq}(\theta) = (-1)^q\, T_{k,-q}^*(\theta)\)</span>（self-derive 类似但 azimuthal 翻转的来源是入出对调 + 旋转回来）。</li>
+</ul>
+<p>两个约束乘除得 <span class="arithmatex">\(T_{kq} = (-1)^k\,T_{kq}\)</span>，即 <span class="arithmatex">\(T_{kq} = 0\)</span> 当 <span class="arithmatex">\(k\)</span> 奇 + <span class="arithmatex">\(q = 0\)</span>（特别 <span class="arithmatex">\(T_{10} = 0\)</span>）。<span class="arithmatex">\(\mathrm{Re}\,T_{11} = 0\)</span> 来自字称要求 <span class="arithmatex">\(T_{11} = -T_{1,-1}^*\)</span>、T 要求 <span class="arithmatex">\(T_{11} = -T_{1,-1}^*\)</span>（合作给 <span class="arithmatex">\(T_{11} = -T_{11}^*\)</span>，纯虚）。</p>
+<p>实验记号 <span class="arithmatex">\(iT_{11}\)</span>（带 <span class="arithmatex">\(i\)</span>）是为了让 vector analyzing power 取实值；选择来自上面的"纯虚"性质。</p>
+<h3 id="极化转移系数的-reciprocity">极化转移系数的 reciprocity<a class="headerlink" href="#极化转移系数的-reciprocity" title="Permanent link">#</a></h3>
+<p><code>polarization_formalism.zh.md:309</code> 定义出射极化矢量 <span class="arithmatex">\(\mathbf P_\text{out}\)</span>。极化转移系数 <span class="arithmatex">\(D_{ij}\)</span>（入射极化沿 <span class="arithmatex">\(j\)</span>、出射极化沿 <span class="arithmatex">\(i\)</span>）满足 T 反演下的关系</p>
+<div class="arithmatex">\[
+D_{ij}(\hat{\mathbf k}'\leftarrow\hat{\mathbf k}) = D_{ji}(-\hat{\mathbf k}\leftarrow -\hat{\mathbf k}'). \tag{D-rec}
+\]</div>
+<p>特别地，"<span class="arithmatex">\(D_{NN}\)</span>"（双方 <span class="arithmatex">\(\hat n\)</span> 方向）在 T 反演下对自身。结合字称（保 <span class="arithmatex">\(\hat n\)</span>）后给出在弹性散射中 <span class="arithmatex">\(D_{NN}(\theta)\)</span> 是实函数且在 <span class="arithmatex">\(\theta\to\pi-\theta\)</span> 下满足额外 symmetry（仅当全同粒子或自伴反应）。</p>
+<h3 id="analyzing-power-与-induced-polarization-等同性">Analyzing power 与 induced polarization 等同性<a class="headerlink" href="#analyzing-power-与-induced-polarization-等同性" title="Permanent link">#</a></h3>
+<p>弹性散射，spin-&frac12; + spin-0：T 反演给</p>
+<div class="arithmatex">\[
+A_y(\theta) = P_y(\theta\,|\,\text{unpolarized in}) \tag{Ay-Py}
+\]</div>
+<p>self-derive：<span class="arithmatex">\(P_y(\text{unpol}) = \mathrm{Tr}[M M^\dagger \sigma_n]/\mathrm{Tr}[M M^\dagger] = (a^*b + ab^*)/(|a|^2+|b|^2) = 2\,\mathrm{Re}(a^*b)/(|a|^2+|b|^2)\)</span>，恰为 <span class="arithmatex">\(A_y\)</span>。这是 (T-reciprocity) 的 spin-&frac12; specific 体现。物理上：用 polarized beam 测 analyzing power 与用 unpolarized beam 测 induced polarization 等价——这对 polarimeter 校准是关键，避免直接产生 polarized beam 的复杂性。</p>
+<h2 id="极化观测量的实验约束">极化观测量的实验约束<a class="headerlink" href="#极化观测量的实验约束" title="Permanent link">#</a></h2>
+<h3 id="三角不等式">三角不等式<a class="headerlink" href="#三角不等式" title="Permanent link">#</a></h3>
+<p>入射密度矩阵 <span class="arithmatex">\(\rho_\text{in} \succeq 0\)</span> 蕴含极化矢量长度 <span class="arithmatex">\(|\mathbf P_\text{in}| \le 1\)</span>（spin-&frac12;）、<span class="arithmatex">\(|p_z| \le 1\)</span> 与张量极化的 <span class="arithmatex">\(\rho \succeq 0\)</span> 给出的多面体约束（spin-1）。出射密度矩阵也满足 <span class="arithmatex">\(\rho_\text{out} \succeq 0\)</span>，故 <span class="arithmatex">\(|\mathbf P_\text{out}| \le 1\)</span>。</p>
+<p>由 <span class="arithmatex">\(\mathbf P_\text{out} = \mathbf A + D \mathbf P_\text{in}\)</span>（spin-&frac12; + 0，矩阵形式），<span class="arithmatex">\(|\mathbf P_\text{out}| \le 1\)</span> 对所有 <span class="arithmatex">\(|\mathbf P_\text{in}| \le 1\)</span> 给出对 <span class="arithmatex">\(\{A_y, D_{ij}\}\)</span> 的约束。具体一例（self-derive）：</p>
+<div class="arithmatex">\[
+A_y^2 + D_{nn}^2 \le 1 + 2 A_y D_{nn}\cdot\xi
+\]</div>
+<p>其中 <span class="arithmatex">\(\xi\)</span> 与具体测量配置有关；更通用的 Wolfenstein-Ashkin 不等式可由 <span class="arithmatex">\(\rho_\text{out}\)</span> 的 <span class="arithmatex">\(2\times 2\)</span> 矩阵 positivity 直接读出。</p>
+<h3 id="t--字称下的独立观测量计数">T + 字称下的独立观测量计数<a class="headerlink" href="#t--字称下的独立观测量计数" title="Permanent link">#</a></h3>
+<p>spin-&frac12; + spin-0 弹性：复振幅 <span class="arithmatex">\(a, b\)</span> 各 1 个复数共 4 实自由度，扣去整体相位剩 3 个；M 矩阵的 8 个实矩阵元由 3 个独立参数确定。可观测量：<span class="arithmatex">\(d\sigma_0/d\Omega, A_y, D_{nn}\)</span> 共 3 个（<span class="arithmatex">\(D_{ll}, D_{mm}\)</span> 等可由 <span class="arithmatex">\(D_{nn}\)</span> 与字称约束给出，不独立）。</p>
+<p>spin-&frac12; + spin-&frac12; 弹性（NN）：5 个复振幅 - 1 整体相位 = 9 实自由度。完整观测量集（PWA 标准）：<span class="arithmatex">\(d\sigma_0/d\Omega, A_y, P, D, R, A, R', A', A_{xx}, A_{yy}, A_{xz}, C_{nn}, \ldots\)</span>，共约 11 个 standard 观测量与 9 个独立参数关系——超定，作为 PWA 一致性检验。</p>
+<p>spin-1 + spin-0 弹性（dpol）：4 个复振幅 - 1 = 7 实自由度。观测量 <span class="arithmatex">\(d\sigma_0/d\Omega\)</span>、<span class="arithmatex">\(iT_{11}, T_{20}, T_{21}, T_{22}\)</span>（5 个 analyzing power）、polarization transfer 多个，共测得超定。</p>
+<h2 id="t-破缺与-cp-破坏">T 破缺与 CP 破坏<a class="headerlink" href="#t-破缺与-cp-破坏" title="Permanent link">#</a></h2>
+<p>实验上 T 破缺多通过寻找"T-odd 关联"测试。散射理论中典型的 T-odd 三重积关联</p>
+<div class="arithmatex">\[
+\langle \mathbf p_1\!\cdot\!(\mathbf p_2\times\mathbf S)\rangle
+\]</div>
+<p>在精确 T 不变下应为零（而 final-state interaction 可产生类 T-odd 但实际 T 不变的"伪信号"，需细致区分）。</p>
+<p>中子 EDM <span class="arithmatex">\(d_n\)</span>：<span class="arithmatex">\(d_n\,\mathbf S\!\cdot\!\mathbf E\)</span> 在 T 下变号（<span class="arithmatex">\(\mathbf E \to \mathbf E\)</span>、<span class="arithmatex">\(\mathbf S \to -\mathbf S\)</span>），故 <span class="arithmatex">\(d_n \neq 0\)</span> 直接破 T。当前实验上限 <span class="arithmatex">\(d_n &lt; 1.8\times 10^{-26}\,e\,\mathrm{cm}\)</span>（PSI 2020），强约束 CP 破坏新物理。</p>
+<p>中子 <span class="arithmatex">\(\beta\)</span> 衰变 <span class="arithmatex">\(D\)</span> 项：角分布中含 <span class="arithmatex">\(D\,\mathbf p_e\!\cdot\!(\mathbf p_\nu\times\mathbf S_n)/E\)</span>，T 变换下变号。实验测得 <span class="arithmatex">\(D = (-1.2 \pm 2.0)\times 10^{-4}\)</span>，与 SM 预言一致。</p>
+<p>散射中的 T 破缺，量级 <span class="arithmatex">\(\lesssim 10^{-4}\)</span>，对极化测量精度要求高时（如低能 NN 散射的 polarized observables 极致测量）需要在分析中显式考虑；常规 dpol 测量不必。</p>
+<h2 id="多通道-t-反演">多通道 T 反演<a class="headerlink" href="#多通道-t-反演" title="Permanent link">#</a></h2>
+<h3 id="反应通道下的-detailed-balance">反应通道下的 detailed balance<a class="headerlink" href="#反应通道下的-detailed-balance" title="Permanent link">#</a></h3>
+<p><code>T_and_U_operators.zh.md:519</code> 的 AGS 跃迁算符 <span class="arithmatex">\(U_{\beta\alpha}\)</span> 描述三体（或多通道两体）从入射通道 <span class="arithmatex">\(\alpha\)</span> 到出射通道 <span class="arithmatex">\(\beta\)</span> 的有效跃迁。T 反演在通道空间中把 <span class="arithmatex">\(\alpha\leftrightarrow\beta'\)</span>、<span class="arithmatex">\(\beta\leftrightarrow\alpha'\)</span> 对调</p>
+<div class="arithmatex">\[
+\Theta\, U_{\beta\alpha}(E)\, \Theta^{-1} = U_{\alpha'\beta'}^\dagger(E) \tag{Theta-U}
+\]</div>
+<p>类比 (Theta-T-dag)。具体到反应 <span class="arithmatex">\(a + (BC) \to b + (CA)\)</span> 类型的转移反应，T 反演给</p>
+<div class="arithmatex">\[
+(2J_a + 1)(2J_{BC} + 1)\, k_a^2\, \frac{d\sigma_{a\to b}}{d\Omega} = (2J_b + 1)(2J_{CA} + 1)\, k_b^2\, \frac{d\sigma_{b\to a}}{d\Omega} \tag{detbal-3}
+\]</div>
+<p>其中 <span class="arithmatex">\(J\)</span> 是各通道的有效自旋（含两体束缚态内部自旋耦合）。这是把 (detbal) 推到 reactive 通道的形式。</p>
+<h3 id="与-friedrichs--分波耦合的衔接">与 Friedrichs / 分波耦合的衔接<a class="headerlink" href="#与-friedrichs--分波耦合的衔接" title="Permanent link">#</a></h3>
+<p><code>friedrichsModel.zh.md:79</code> 单通道模型不显式涉及 detailed balance（弹性退化平凡）；推广到多通道 Friedrichs（一个离散态耦合多个连续谱）时，连续谱通道间的截面满足 (detbal)。</p>
+<p><code>partial_wave_projection.zh.md:396</code> 的耦合通道分波 LS 方程 <span class="arithmatex">\(T^J_{l'l}\)</span> 是"通道指标 = <span class="arithmatex">\((l, s)\)</span>"的版本。T 反演给出 <span class="arithmatex">\(T^J_{l'l, s's}(k', k) = T^J_{ll', ss'}(k, k')\)</span>（指标对调 + 动量交换；自旋张量已经对称化到分波基底里），这是 (T-reciprocity) 在分波基底下的具体形式。Stapp 等价相移参数 <span class="arithmatex">\(\bar\delta_l\)</span>、<span class="arithmatex">\(\epsilon_J\)</span> 实数性的根源即此（self-derive：T 反演让 <span class="arithmatex">\(S^J\)</span> 在适当基底下对称，对称酉矩阵可参数化为 Stapp 形式）。</p>
+<h2 id="与主线笔记的对账">与主线笔记的对账<a class="headerlink" href="#与主线笔记的对账" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">主线知识点</th>
+<th style="text-align: left;">对账位置</th>
+<th style="text-align: left;">本篇位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Møller 算符强极限定义</td>
+<td style="text-align: left;"><code>S_matrix_and_cross_section.zh.md:138</code></td>
+<td style="text-align: left;">(Theta-Omega) 推导</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(S = \Omega_-^\dagger\Omega_+\)</span></td>
+<td style="text-align: left;"><code>S_matrix_and_cross_section.zh.md:222</code></td>
+<td style="text-align: left;">(Theta-S) 推导</td>
+</tr>
+<tr>
+<td style="text-align: left;">on-shell <span class="arithmatex">\(S = 1 - 2\pi i\delta(E) T\)</span></td>
+<td style="text-align: left;"><code>T_and_U_operators.zh.md:380</code></td>
+<td style="text-align: left;">(T-reciprocity) 矩阵元化</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(T = V + V G V\)</span></td>
+<td style="text-align: left;"><code>T_and_U_operators.zh.md:332</code></td>
+<td style="text-align: left;">(Theta-T) 推导</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(f = -(2\pi)^2 \mu\, t\)</span></td>
+<td style="text-align: left;"><code>S_matrix_and_cross_section.zh.md:307</code></td>
+<td style="text-align: left;">截面公式 (detbal)</td>
+</tr>
+<tr>
+<td style="text-align: left;">$d\sigma/d\Omega =</td>
+<td style="text-align: left;">f</td>
+<td style="text-align: left;">^2$</td>
+</tr>
+<tr>
+<td style="text-align: left;">光学定理 <span class="arithmatex">\(\mathrm{Im}\,f = (k/4\pi)\sigma_\text{tot}\)</span></td>
+<td style="text-align: left;"><code>S_matrix_and_cross_section.zh.md:451</code></td>
+<td style="text-align: left;">T 反演下保持（酉性）</td>
+</tr>
+<tr>
+<td style="text-align: left;">M 矩阵字称约束 (P)</td>
+<td style="text-align: left;"><code>polarization_formalism.zh.md:477</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(A_y\)</span> 双重约束分析</td>
+</tr>
+<tr>
+<td style="text-align: left;">M 矩阵 T 反演约束 (T)</td>
+<td style="text-align: left;"><code>polarization_formalism.zh.md:497</code></td>
+<td style="text-align: left;">(T-reciprocity) 翻译</td>
+</tr>
+<tr>
+<td style="text-align: left;">spin-&frac12; + 0 的 <span class="arithmatex">\(A_y\)</span></td>
+<td style="text-align: left;"><code>polarization_formalism.zh.md:295</code></td>
+<td style="text-align: left;"><span class="arithmatex">\(A_y = \mathrm{Re}\)</span> 推导</td>
+</tr>
+<tr>
+<td style="text-align: left;">张量极化 <span class="arithmatex">\(T_{kq}\)</span> 非零分量</td>
+<td style="text-align: left;"><code>polarization_formalism.zh.md:454</code></td>
+<td style="text-align: left;">spin-1 T 约束</td>
+</tr>
+<tr>
+<td style="text-align: left;">出射极化 <span class="arithmatex">\(\mathbf P_\text{out}\)</span></td>
+<td style="text-align: left;"><code>polarization_formalism.zh.md:309</code></td>
+<td style="text-align: left;">(D-rec) 极化转移</td>
+</tr>
+<tr>
+<td style="text-align: left;">Wolfenstein 5 振幅</td>
+<td style="text-align: left;"><code>polarization_formalism.zh.md:342</code></td>
+<td style="text-align: left;">独立观测量计数</td>
+</tr>
+<tr>
+<td style="text-align: left;">耦合通道 <span class="arithmatex">\(T^J_{l'l}\)</span></td>
+<td style="text-align: left;"><code>partial_wave_projection.zh.md:396</code></td>
+<td style="text-align: left;">分波 reciprocity</td>
+</tr>
+<tr>
+<td style="text-align: left;">AGS 跃迁算符 <span class="arithmatex">\(U_{\beta\alpha}\)</span></td>
+<td style="text-align: left;"><code>T_and_U_operators.zh.md:519</code></td>
+<td style="text-align: left;">(Theta-U)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Friedrichs 离散-连续耦合</td>
+<td style="text-align: left;"><code>friedrichsModel.zh.md:79</code></td>
+<td style="text-align: left;">多通道 detailed balance</td>
+</tr>
+</tbody>
+</table>
+<p>每条均可用 <code>grep -n</code> 在源文件中校验。</p>
+<h2 id="next-step">next-step<a class="headerlink" href="#next-step" title="Permanent link">#</a></h2>
+<p>本篇给的形式约束在配套例子篇中数值化的几个具体方向（按优先级）：</p>
+<ul>
+<li>多通道 Friedrichs 的数值 detailed balance 验证：扩展 <code>examples/09_feshbach_two_channel</code>（若存在）或新建 <code>examples/12_detailed_balance_demo.zh.md</code>，构造离散态 + 双连续谱（不同色阈、不同质量）的可解 Friedrichs 模型，数值取通道对 <span class="arithmatex">\((c_1, c_2)\)</span> 间的截面，校验 <span class="arithmatex">\(k_1^2\,\sigma_{1\to 2} = k_2^2\,\sigma_{2\to 1}\)</span>（自旋退化为零的简化版），并扫过共振附近观察 detailed balance 在峰旁的精确成立。</li>
+<li><span class="arithmatex">\(A_y = P_y\)</span> 等同性的数值演示：在 Yukawa + spin-orbit 模型中数值算 <span class="arithmatex">\(a(\theta), b(\theta)\)</span>，画 <span class="arithmatex">\(A_y(\theta)\)</span> 与从 unpolarized beam 推出的 <span class="arithmatex">\(P_y(\theta)\)</span> 重合曲线，作为 (Ay-Py) 的可视化。</li>
+<li>Stapp 相移参数的实数性：从带张量耦合的 <span class="arithmatex">\({}^3S_1\)</span>-<span class="arithmatex">\({}^3D_1\)</span> NN 势数值解耦合通道 LS 方程，提取 <span class="arithmatex">\(S^{J=1}\)</span> 矩阵；把 (Theta-T) 翻译为对 <span class="arithmatex">\(S\)</span> 的对称性约束（<span class="arithmatex">\(S^{J=1}\)</span> 的 off-diagonal 元相等），数值验证 <span class="arithmatex">\(S^J = S^{J\,T}\)</span> 到机器精度。</li>
+<li>T 破缺信号的计算：在 <span class="arithmatex">\(D = 0\)</span> 的 SM 计算之上引入小 T 破缺扰动 <span class="arithmatex">\(\delta H\)</span>，数值算反应中子 <span class="arithmatex">\(\beta\)</span> 衰变的 <span class="arithmatex">\(D\)</span> 项作为 <span class="arithmatex">\(\delta H\)</span> 的函数；与 T-保持基底下 final-state interaction 给出的"伪 T-odd"信号区分。</li>
+<li>三体 detailed balance：把 (detbal-3) 应用到 <span class="arithmatex">\(d + p \to {}^3\mathrm{He} + \gamma\)</span> 与 <span class="arithmatex">\(\gamma + {}^3\mathrm{He} \to d + p\)</span> 间的截面比较；与 AGS <code>T_and_U_operators.zh.md:598</code> 数值解的 <span class="arithmatex">\(U_{\beta\alpha}\)</span> 矩阵元一致性检验。</li>
+<li>Coulomb 修正下的 T 反演：长程 Coulomb 相位 <span class="arithmatex">\(\sigma_l\)</span> 是实的、与 T 反演兼容；但 Coulomb-renormalized T 矩阵 <span class="arithmatex">\(T^\text{SR}\)</span> 的反互关系需仔细处理（<code>coulomb_scattering.zh.md:326</code> 已用 <span class="arithmatex">\(\psi_C^{(-)} = [\psi_C^{(+)}(-\mathbf k)]^*\)</span> 暗示这一点）。明确写出 long-range + short-range 分解下 (T-reciprocity) 的修正版本。</li>
+<li>dpol 测量的极化转移系数 reciprocity 校准：实验上对 <span class="arithmatex">\({}^4\mathrm{He}(\vec d, \vec d){}^4\mathrm{He}\)</span> 弹性散射测 <span class="arithmatex">\(D_{ij}(\theta)\)</span> 全表，校验 (D-rec) 在 <span class="arithmatex">\(\theta \to \theta\)</span>（弹性）下的简化版本，作为 polarimeter 系统误差的诊断。</li>
+</ul>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月10日 00:45:05 UTC"><span class="timeago" datetime="2026-05-10T00:45:05+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月10日 00:45:05 UTC">2026-05-10</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月10日 00:45:05 UTC"><span class="timeago" datetime="2026-05-10T00:45:05+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月10日 00:45:05 UTC">2026-05-10</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="tianbaiting/tianbaiting.github.io"
+        data-repo-id="R_kgDOOB38lw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOOB38l84Comp4"
+        data-mapping="url"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+  <script>
+    if (document.querySelector("body").getAttribute("data-md-color-scheme") === "slate") {
+      var giscus = document.querySelector("script[src*=giscus]")
+      giscus.setAttribute("data-theme", "https://gcore.jsdelivr.net/gh/TonyCrane/note/docs/css/giscus.css") 
+    }
+  </script>
+
+                  
+                </article>
+              </div>
+            
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+          
+            <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+              Back to top
+            </a>
+          
+        </main>
+        
+          <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+        
+      </div>
+      <div class="md-dialog" data-md-component="dialog">
+        <div class="md-dialog__inner md-typeset"></div>
+      </div>
+      
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+      
+      
+        <script src="../../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+        
+          <script src="../../../../../js/timeago.min.js"></script>
+        
+          <script src="../../../../../js/timeago_mkdocs_material.js"></script>
+        
+          <script src="../../../../../js/timeago.min.js"></script>
+        
+          <script src="../../../../../js/timeago_mkdocs_material.js"></script>
+        
+          <script src="../../../../../js/mathjax.js"></script>
+        
+          <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+          <script src="https://d3js.org/d3.v7.min.js"></script>
+        
+          <script src="../../../../../js/scheme.js"></script>
+        
+          <script src="../../../../../js/graph.js"></script>
+        
+      
+    </body>
+  </html>
+  

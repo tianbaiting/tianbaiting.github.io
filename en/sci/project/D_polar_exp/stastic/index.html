@@ -1017,6 +1017,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
@@ -1137,6 +1139,20 @@
     <li class="md-nav__item">
       <a href="../../../cheatshet/root_geant4_install/" class="md-nav__link">
         Root geant4 install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/scattering_faddeev/" class="md-nav__link">
+        散射理论与 Faddeev 方程
       </a>
     </li>
   
@@ -2432,6 +2448,12 @@
         
           
         
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_15" tabindex="0" aria-expanded="false">
@@ -2536,8 +2558,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/effective_range_levinson/" class="md-nav__link">
+        有效力程理论与 Levinson 系统化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../minimal_theory/scatteringTheory/friedrichsModel/" class="md-nav__link">
         Friedrichs 模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/jost_analyticity/" class="md-nav__link">
+        Jost 函数与解析性
       </a>
     </li>
   
@@ -2577,13 +2627,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/time_reversal_detailed_balance/" class="md-nav__link">
+        时间反演与细致平衡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_10" type="checkbox" id="__nav_5_4_15_10" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_13" type="checkbox" id="__nav_5_4_15_13" >
       
       
         
@@ -2611,15 +2675,19 @@
         
           
         
+          
+        
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_5_4_15_10" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4_15_13" tabindex="0" aria-expanded="false">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Examples" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_4_15_10">
+        <label class="md-nav__title" for="__nav_5_4_15_13">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -2787,6 +2855,34 @@
     <li class="md-nav__item">
       <a href="../../../minimal_theory/scatteringTheory/examples/12_dwba_demo/" class="md-nav__link">
         DWBA 数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/13_jost_demo/" class="md-nav__link">
+        Jost 函数的数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/14_ere_levinson_demo/" class="md-nav__link">
+        有效力程展开与 Levinson 定理的数值演示
       </a>
     </li>
   
@@ -3994,9 +4090,9 @@
 </ul>
 <p>泰勒展开近似</p>
 <p>假设 <span class="arithmatex">\(f\)</span> 是输入变量的平滑函数，可以对 <span class="arithmatex">\(f\)</span> 进行一阶泰勒展开近似：</p>
-<p>$$<br />
- f \approx f_0 + \sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - x_{i,0})<br />
- $$</p>
+<div class="arithmatex">\[
+f \approx f_0 + \sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - x_{i,0})
+\]</div>
 <p>其中：</p>
 <p><span class="arithmatex">\(f_0\)</span> 是 <span class="arithmatex">\(f\)</span> 在点 <span class="arithmatex">\((x_{1,0}, x_{2,0}, ..., x_{n,0})\)</span> 的值；<br />
 <span class="arithmatex">\(\frac{\partial f}{\partial x_i}\)</span> 是 <span class="arithmatex">\(f\)</span> 对 <span class="arithmatex">\(x_i\)</span> 的偏导数。</p>
@@ -4004,13 +4100,13 @@
 <li>方差的定义</li>
 </ol>
 <p>方差的定义为：</p>
-<p>$$<br />
- \text{Var}(f) = \mathbb{E}[(f - \mathbb{E}[f])^2]<br />
- $$</p>
+<div class="arithmatex">\[
+\text{Var}(f) = \mathbb{E}[(f - \mathbb{E}[f])^2]
+\]</div>
 <p>将 <span class="arithmatex">\(f\)</span> 的泰勒展开代入，忽略高阶项，得到： </p>
-<p>$$<br />
- f - \mathbb{E}[f] \approx \sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - \mathbb{E}[x_i])<br />
- $$</p>
+<div class="arithmatex">\[
+f - \mathbb{E}[f] \approx \sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - \mathbb{E}[x_i])
+\]</div>
 <p>因此，<span class="arithmatex">\(f\)</span> 的方差可以近似为： </p>
 <div class="arithmatex">\[
 \text{Var}(f) \approx \text{Var}\left(\sum_{i=1}^n \frac{\partial f}{\partial x_i} (x_i - \mathbb{E}[x_i])\right)
@@ -4019,9 +4115,9 @@
 <li>方差的性质</li>
 </ol>
 <p>根据方差的性质，对于随机变量的线性组合：</p>
-<p>$$<br />
- \text{Var}\left(\sum_{i=1}^n a_i X_i\right) = \sum_{i=1}^n a_i^2 \text{Var}(X_i) + 2 \sum_{i=1}^n \sum_{j=i+1}^n a_i a_j \text{Cov}(X_i, X_j)<br />
- $$</p>
+<div class="arithmatex">\[
+\text{Var}\left(\sum_{i=1}^n a_i X_i\right) = \sum_{i=1}^n a_i^2 \text{Var}(X_i) + 2 \sum_{i=1}^n \sum_{j=i+1}^n a_i a_j \text{Cov}(X_i, X_j)
+\]</div>
 <p>其中 <span class="arithmatex">\(a_i\)</span> 是常数，<span class="arithmatex">\(X_i\)</span> 是随机变量。</p>
 <p>在这里，令 <span class="arithmatex">\(a_i = \frac{\partial f}{\partial x_i}\)</span>，<span class="arithmatex">\(X_i = x_i - \mathbb{E}[x_i]\)</span>，代入后得到： </p>
 <div class="arithmatex">\[
@@ -4085,7 +4181,7 @@ N p_1 (1 - p_1) &amp; -N p_1 p_2 &amp; \cdots &amp; -N p_1 p_n \\
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月9日 15:05:14 UTC"><span class="timeago" datetime="2026-05-09T15:05:14+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月9日 15:05:14 UTC">2026-05-09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月10日 00:50:52 UTC"><span class="timeago" datetime="2026-05-10T00:50:52+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月10日 00:50:52 UTC">2026-05-10</span>
       
         <br>
         Created:

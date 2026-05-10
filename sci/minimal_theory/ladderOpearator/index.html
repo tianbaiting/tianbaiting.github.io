@@ -1013,6 +1013,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
@@ -1133,6 +1135,20 @@
     <li class="md-nav__item">
       <a href="../../cheatshet/root_geant4_install/" class="md-nav__link">
         Root geant4 install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatshet/scattering_faddeev/" class="md-nav__link">
+        散射理论与 Faddeev 方程
       </a>
     </li>
   
@@ -2601,6 +2617,12 @@
         
           
         
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_15" tabindex="0" aria-expanded="false">
@@ -2705,8 +2727,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../scatteringTheory/effective_range_levinson/" class="md-nav__link">
+        有效力程理论与 Levinson 系统化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../scatteringTheory/friedrichsModel/" class="md-nav__link">
         Friedrichs 模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/jost_analyticity/" class="md-nav__link">
+        Jost 函数与解析性
       </a>
     </li>
   
@@ -2746,13 +2796,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/time_reversal_detailed_balance/" class="md-nav__link">
+        时间反演与细致平衡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_10" type="checkbox" id="__nav_5_4_15_10" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_13" type="checkbox" id="__nav_5_4_15_13" >
       
       
         
@@ -2780,15 +2844,19 @@
         
           
         
+          
+        
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_5_4_15_10" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4_15_13" tabindex="0" aria-expanded="false">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Examples" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_4_15_10">
+        <label class="md-nav__title" for="__nav_5_4_15_13">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -2956,6 +3024,34 @@
     <li class="md-nav__item">
       <a href="../scatteringTheory/examples/12_dwba_demo/" class="md-nav__link">
         DWBA 数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/examples/13_jost_demo/" class="md-nav__link">
+        Jost 函数的数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/examples/14_ere_levinson_demo/" class="md-nav__link">
+        有效力程展开与 Levinson 定理的数值演示
       </a>
     </li>
   
@@ -4278,22 +4374,28 @@ H = a^\dagger a + \varepsilon_0,
 H = \frac{p^2}{2m} + \frac{1}{2}m\omega^2 x^2.
 \]</div>
 <p>这是 <span class="arithmatex">\(\frac{p^2}{2m} + \frac{m\omega^2 x^2}{2}\)</span> 两个平方之和。经典情形 <span class="arithmatex">\(A^2 + B^2 = (A+iB)(A-iB)\)</span>，但 <span class="arithmatex">\([x,p] = i\hbar \neq 0\)</span>，因式分解产生余项。令：</p>
-<div class="arithmatex">\[a \equiv \sqrt{\frac{m\omega}{2\hbar}}\,x + \frac{i}{\sqrt{2m\omega\hbar}}\,p, \qquad
-a^\dagger \equiv \sqrt{\frac{m\omega}{2\hbar}}\,x - \frac{i}{\sqrt{2m\omega\hbar}}\,p.\]</div>
+<div class="arithmatex">\[
+a \equiv \sqrt{\frac{m\omega}{2\hbar}}\,x + \frac{i}{\sqrt{2m\omega\hbar}}\,p, \qquad
+a^\dagger \equiv \sqrt{\frac{m\omega}{2\hbar}}\,x - \frac{i}{\sqrt{2m\omega\hbar}}\,p.
+\]</div>
 <h3 id="推导对易关系">推导对易关系<a class="headerlink" href="#推导对易关系" title="Permanent link">#</a></h3>
 <p>利用 <span class="arithmatex">\([x,p] = i\hbar\)</span>，<span class="arithmatex">\([x,x]=[p,p]=0\)</span>：</p>
-<div class="arithmatex">\[[a,\, a^\dagger]
+<div class="arithmatex">\[
+[a,\, a^\dagger]
 = \frac{m\omega}{2\hbar} \cdot 0
 - \frac{i}{\sqrt{2m\omega\hbar}} \cdot \sqrt{\frac{m\omega}{2\hbar}} [x,p]
 + \frac{i}{\sqrt{2m\omega\hbar}} \cdot \sqrt{\frac{m\omega}{2\hbar}} [p,x]
-= \frac{-i(i\hbar)}{2\hbar} + \frac{i(-i\hbar)}{2\hbar} = \frac{1}{2} + \frac{1}{2} = 1.\]</div>
+= \frac{-i(i\hbar)}{2\hbar} + \frac{i(-i\hbar)}{2\hbar} = \frac{1}{2} + \frac{1}{2} = 1.
+\]</div>
 <div class="arithmatex">\[
 \boxed{[a,\, a^\dagger] = 1.}
 \]</div>
 <h3 id="将-h-用-a-adagger-表示">将 <span class="arithmatex">\(H\)</span> 用 <span class="arithmatex">\(a, a^\dagger\)</span> 表示<a class="headerlink" href="#将-h-用-a-adagger-表示" title="Permanent link">#</a></h3>
 <p>计算 <span class="arithmatex">\(a^\dagger a\)</span>，利用 <span class="arithmatex">\([p,x] = -i\hbar\)</span> 处理交叉项：</p>
-<div class="arithmatex">\[a^\dagger a = \frac{m\omega}{2\hbar}x^2 + \frac{p^2}{2m\omega\hbar} + \frac{i}{2\hbar}[p,x] \cdot (-1)
-= \frac{H}{\hbar\omega} - \frac{1}{2}.\]</div>
+<div class="arithmatex">\[
+a^\dagger a = \frac{m\omega}{2\hbar}x^2 + \frac{p^2}{2m\omega\hbar} + \frac{i}{2\hbar}[p,x] \cdot (-1)
+= \frac{H}{\hbar\omega} - \frac{1}{2}.
+\]</div>
 <p>因此：</p>
 <div class="arithmatex">\[
 \boxed{H = \hbar\omega\!\left(a^\dagger a + \frac{1}{2}\right) \equiv \hbar\omega\!\left(\hat{N} + \frac{1}{2}\right).}
@@ -4423,7 +4525,7 @@ L_\pm|\ell,m\rangle = \hbar\sqrt{\ell(\ell+1)-m(m\pm1)}\;|\ell,m\pm1\rangle,
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月9日 15:05:14 UTC"><span class="timeago" datetime="2026-05-09T15:05:14+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月9日 15:05:14 UTC">2026-05-09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月10日 00:50:52 UTC"><span class="timeago" datetime="2026-05-10T00:50:52+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月10日 00:50:52 UTC">2026-05-10</span>
       
         <br>
         创建日期:

@@ -1017,6 +1017,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
@@ -1137,6 +1139,20 @@
     <li class="md-nav__item">
       <a href="../../../cheatshet/root_geant4_install/" class="md-nav__link">
         Root geant4 install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/scattering_faddeev/" class="md-nav__link">
+        散射理论与 Faddeev 方程
       </a>
     </li>
   
@@ -2432,6 +2448,12 @@
         
           
         
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_15" tabindex="0" aria-expanded="false">
@@ -2536,8 +2558,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/effective_range_levinson/" class="md-nav__link">
+        有效力程理论与 Levinson 系统化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../minimal_theory/scatteringTheory/friedrichsModel/" class="md-nav__link">
         Friedrichs 模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/jost_analyticity/" class="md-nav__link">
+        Jost 函数与解析性
       </a>
     </li>
   
@@ -2577,13 +2627,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/time_reversal_detailed_balance/" class="md-nav__link">
+        时间反演与细致平衡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_10" type="checkbox" id="__nav_5_4_15_10" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_13" type="checkbox" id="__nav_5_4_15_13" >
       
       
         
@@ -2611,15 +2675,19 @@
         
           
         
+          
+        
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_5_4_15_10" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4_15_13" tabindex="0" aria-expanded="false">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Examples" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_4_15_10">
+        <label class="md-nav__title" for="__nav_5_4_15_13">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -2787,6 +2855,34 @@
     <li class="md-nav__item">
       <a href="../../../minimal_theory/scatteringTheory/examples/12_dwba_demo/" class="md-nav__link">
         DWBA 数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/13_jost_demo/" class="md-nav__link">
+        Jost 函数的数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/14_ere_levinson_demo/" class="md-nav__link">
+        有效力程展开与 Levinson 定理的数值演示
       </a>
     </li>
   
@@ -3945,9 +4041,11 @@
 <h2 id="带电粒子在物质中的能量损失">带电粒子在物质中的能量损失<a class="headerlink" href="#带电粒子在物质中的能量损失" title="Permanent link">#</a></h2>
 <p>A. 理论框架<br />
 带电粒子在物质中穿行时，会通过与物质原子发生电磁相互作用而损失能量。描述带电粒子平均能量损失与穿行距离关系的物理量被称为阻止本领（stopping power），通常用 -dE/dx 表示 。它也常被称为线性能量转移（LET）。<br />
-描述阻止本领的著名理论是贝特公式（Bethe formula）。对于速度为 v、电荷为 z（以电子电荷为单位）、能量为 E 的粒子穿过电子数密度为 n、平均激发能为 I 的物质时，相对论形式的贝特公式为 ：<br />
--dE/dx = (4π(ze)² / (mₑv²)) * n * [ln(2mₑv²γ² / I) - β² - δ/2]<br />
-其中：</p>
+描述阻止本领的著名理论是贝特公式（Bethe formula）。对于速度为 v、电荷为 z（以电子电荷为单位）、能量为 E 的粒子穿过电子数密度为 n、平均激发能为 I 的物质时，相对论形式的贝特公式为 ：</p>
+<div class="arithmatex">\[
+-\frac{dE}{dx} = \frac{4\pi (ze)^2}{m_e v^2}\, n \left[\ln\left(\frac{2m_e v^2 \gamma^2}{I}\right) - \beta^2 - \frac{\delta}{2}\right]
+\]</div>
+<p>其中：</p>
 <ul>
 <li>e 是电子电荷  </li>
 <li>mₑ 是电子静止质量  </li>
@@ -4046,7 +4144,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月10日 00:50:52 UTC"><span class="timeago" datetime="2026-05-10T00:50:52+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月10日 00:50:52 UTC">2026-05-10</span>
       
         <br>
         Created:
