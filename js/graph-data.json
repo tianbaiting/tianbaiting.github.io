@@ -159,7 +159,7 @@
       "language": "zh",
       "category": "category",
       "path": "sci/todolist.zh.md",
-      "size": 1579,
+      "size": 1950,
       "url": "/sci/todolist/"
     },
     {
@@ -519,7 +519,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/riggedHilbertSpace.zh.md",
-      "size": 8133,
+      "size": 8114,
       "url": "/sci/minimal_theory/riggedHilbertSpace/"
     },
     {
@@ -1099,6 +1099,15 @@
       "url": "/sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section/"
     },
     {
+      "id": "sci/minimal_theory/scatteringTheory/dwba.zh",
+      "title": "畸变波 Born 近似",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/dwba.zh.md",
+      "size": 21615,
+      "url": "/sci/minimal_theory/scatteringTheory/dwba/"
+    },
+    {
       "id": "sci/minimal_theory/scatteringTheory/polarization_formalism.zh",
       "title": "极化形式与自旋观测量",
       "language": "zh",
@@ -1180,6 +1189,15 @@
       "url": "/sci/minimal_theory/scatteringTheory/examples/08_centrifugal_barrier/"
     },
     {
+      "id": "sci/minimal_theory/scatteringTheory/examples/11_coulomb_demo.zh",
+      "title": "Coulomb 散射的数值演示",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/11_coulomb_demo.zh.md",
+      "size": 10261,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/11_coulomb_demo/"
+    },
+    {
       "id": "sci/minimal_theory/scatteringTheory/examples/09_feshbach_two_channel.zh",
       "title": "双通道 Feshbach 共振",
       "language": "zh",
@@ -1223,6 +1241,15 @@
       "path": "sci/minimal_theory/scatteringTheory/examples/05_separable_rank1.zh.md",
       "size": 8645,
       "url": "/sci/minimal_theory/scatteringTheory/examples/05_separable_rank1/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/12_dwba_demo.zh",
+      "title": "DWBA 数值演示",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/12_dwba_demo.zh.md",
+      "size": 10071,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/12_dwba_demo/"
     },
     {
       "id": "sci/project/faddeev/construct_basis.zh",
@@ -1713,16 +1740,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 190,
+    "total_nodes": 193,
     "total_links": 0,
     "languages": {
-      "zh": 161,
+      "zh": 164,
       "en": 29
     },
     "categories": {
       "category": 26,
       "main": 2,
-      "page": 162
+      "page": 165
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1730,6 +1757,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-05-09 15:05:44.334610"
+    "generated_at": "2026-05-10 00:43:36.524561"
   }
 }

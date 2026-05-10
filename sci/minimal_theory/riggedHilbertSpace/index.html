@@ -2565,6 +2565,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_15" tabindex="0" aria-expanded="false">
@@ -2655,6 +2657,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../scatteringTheory/dwba/" class="md-nav__link">
+        畸变波 Born 近似
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../scatteringTheory/friedrichsModel/" class="md-nav__link">
         Friedrichs 模型
       </a>
@@ -2702,7 +2718,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_9" type="checkbox" id="__nav_5_4_15_9" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_15_10" type="checkbox" id="__nav_5_4_15_10" >
       
       
         
@@ -2726,15 +2742,19 @@
         
           
         
+          
+        
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_5_4_15_9" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_5_4_15_10" tabindex="0" aria-expanded="false">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Examples" data-md-level="4">
-        <label class="md-nav__title" for="__nav_5_4_15_9">
+        <label class="md-nav__title" for="__nav_5_4_15_10">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -2874,6 +2894,34 @@
     <li class="md-nav__item">
       <a href="../scatteringTheory/examples/10_polarization_demo/" class="md-nav__link">
         极化散射的数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/examples/11_coulomb_demo/" class="md-nav__link">
+        Coulomb 散射的数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatteringTheory/examples/12_dwba_demo/" class="md-nav__link">
+        DWBA 数值演示
       </a>
     </li>
   
@@ -4081,21 +4129,15 @@ F(\varphi) = \int\overline{\varphi(x)}\,f(x)\,\mathrm dx.
 \langle\varphi|F\rangle = \int\mathrm dx\,\langle\varphi|x\rangle\langle x|F\rangle.
 \]</div>
 <p>按此模板， 三组本征 ket 依次定义：</p>
-<ul>
-<li>动量 ket：</li>
-</ul>
-<p>$$<br />
-  \langle\varphi|p\rangle \equiv \int\mathrm dx\,\overline{\varphi(x)}\,\frac{1}{\sqrt{2\pi\hbar}}\,\mathrm e^{\mathrm ipx/\hbar}.<br />
-  $$</p>
-<ul>
-<li>位置 ket：</li>
-</ul>
-<p>$$<br />
-  \langle\varphi|x\rangle \equiv \int\mathrm dx'\,\overline{\varphi(x')}\,\delta(x-x') = \overline{\varphi(x)}.<br />
-  $$</p>
-<ul>
-<li>能量 ket <span class="arithmatex">\(|E^\pm\rangle_{\mathrm l,r}\)</span> ：以 <span class="arithmatex">\(\langle x|E^\pm\rangle_{\mathrm l,r}\)</span> 为核， 这些核是带边界条件的 Sturm-Liouville 本征函数 (透射/反射波)。 上标 <span class="arithmatex">\(\pm\)</span> 区分正向/反向时序， 下标 l/r 区分粒子从左/右入射。</li>
-</ul>
+<p>动量 ket：</p>
+<div class="arithmatex">\[
+\langle\varphi|p\rangle \equiv \int\mathrm dx\,\overline{\varphi(x)}\,\frac{1}{\sqrt{2\pi\hbar}}\,\mathrm e^{\mathrm ipx/\hbar}.
+\]</div>
+<p>位置 ket：</p>
+<div class="arithmatex">\[
+\langle\varphi|x\rangle \equiv \int\mathrm dx'\,\overline{\varphi(x')}\,\delta(x-x') = \overline{\varphi(x)}.
+\]</div>
+<p>能量 ket <span class="arithmatex">\(|E^\pm\rangle_{\mathrm l,r}\)</span>：以 <span class="arithmatex">\(\langle x|E^\pm\rangle_{\mathrm l,r}\)</span> 为核， 这些核是带边界条件的 Sturm-Liouville 本征函数 (透射/反射波)。 上标 <span class="arithmatex">\(\pm\)</span> 区分正向/反向时序， 下标 l/r 区分粒子从左/右入射。</p>
 <p>每一个都属于 <span class="arithmatex">\(\mathcal S^\times(\mathbb R-\{a,b\})\)</span>。</p>
 <h3 id="算符在-phitimes-上的延拓">算符在 <span class="arithmatex">\(\Phi^\times\)</span> 上的延拓<a class="headerlink" href="#算符在-phitimes-上的延拓" title="Permanent link">#</a></h3>
 <p>希尔伯特空间内 <span class="arithmatex">\(A\)</span> 自伴等价于 <span class="arithmatex">\((f, Ag)=(Af, g)\)</span>。 把它推广到 ket：</p>
@@ -4201,7 +4243,7 @@ P|p\rangle = p|p\rangle,\quad Q|x\rangle = x|x\rangle,\quad H|E^\pm\rangle_{\mat
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月9日 15:05:14 UTC"><span class="timeago" datetime="2026-05-09T15:05:14+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月9日 15:05:14 UTC">2026-05-09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月9日 15:35:39 UTC"><span class="timeago" datetime="2026-05-09T15:35:39+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月9日 15:35:39 UTC">2026-05-09</span>
       
         <br>
         创建日期:
