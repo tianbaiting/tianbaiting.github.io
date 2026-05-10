@@ -1,6 +1,6 @@
 # 极化散射的数值演示
 
-主线笔记 `../polarization_formalism.zh.md` 把自旋-自旋耦合下的 M 矩阵、密度矩阵、analyzing power 形式链铺开了。本篇把那条链落到具体数字上：用一个含 spin-orbit 项的 Woods-Saxon 势数值算自旋 1/2 + 自旋 0 弹性散射的相移、振幅 $a, b$，画出 $A_y(\theta)$ 与 $\sigma_0(\theta)$；再用 spin-1 + 0 schematic 振幅展示 $iT_{11}, T_{20}, T_{22}$ 的角分布形状。
+主线笔记 `../06_polarization_formalism.zh.md` 把自旋-自旋耦合下的 M 矩阵、密度矩阵、analyzing power 形式链铺开了。本篇把那条链落到具体数字上：用一个含 spin-orbit 项的 Woods-Saxon 势数值算自旋 1/2 + 自旋 0 弹性散射的相移、振幅 $a, b$，画出 $A_y(\theta)$ 与 $\sigma_0(\theta)$；再用 spin-1 + 0 schematic 振幅展示 $iT_{11}, T_{20}, T_{22}$ 的角分布形状。
 
 约定与主线一致：Madison 极化约定，$\hbar = 1$，$2m = 1$，能量 $E = k^2$。
 
@@ -44,26 +44,26 @@ $$
 
 ### 振幅与观测量
 
-主线 `../polarization_formalism.zh.md:249` 给出
+主线 `../06_polarization_formalism.zh.md:249` 给出
 
 $$
 a(\theta) = \frac{1}{2ik}\sum_{l=0}^{L_{\max}} \bigl[(l+1)(e^{2i\delta_l^+} - 1) + l(e^{2i\delta_l^-} - 1)\bigr] P_l(\cos\theta)
 $$
 
-`../polarization_formalism.zh.md:253` 给出
+`../06_polarization_formalism.zh.md:253` 给出
 
 $$
 b(\theta) = \frac{1}{2ik}\sum_{l=1}^{L_{\max}} \bigl[e^{2i\delta_l^+} - e^{2i\delta_l^-}\bigr] P_l^1(\cos\theta)
 $$
 
-代入主线 `../polarization_formalism.zh.md:295`：
+代入主线 `../06_polarization_formalism.zh.md:295`：
 
 $$
 \sigma_0(\theta) = |a|^2 + |b|^2,\qquad
 A_y(\theta) = \frac{2\,\mathrm{Re}(a^*b)}{|a|^2 + |b|^2}
 $$
 
-法向 $\hat{\mathbf n} = \hat{\mathbf k}\times\hat{\mathbf k}'/|\hat{\mathbf k}\times\hat{\mathbf k}'|$（`../polarization_formalism.zh.md:239`），保证 $A_y$ 取实数 + Madison 正号约定。
+法向 $\hat{\mathbf n} = \hat{\mathbf k}\times\hat{\mathbf k}'/|\hat{\mathbf k}\times\hat{\mathbf k}'|$（`../06_polarization_formalism.zh.md:239`），保证 $A_y$ 取实数 + Madison 正号约定。
 
 ### 相移结果
 
@@ -94,7 +94,7 @@ $V_{\rm SO} = 0$ 时左右两幅图同 $l$ 的相移完全重合（数值 $|\del
 
 观察：
 
-- $V_{\rm SO} = 0$ 整条曲线 $A_y(\theta) \equiv 0$。原因直接来自 `../polarization_formalism.zh.md:253` 的 (b-pw)：当 $\delta_l^+ = \delta_l^-$ 时 $b \equiv 0$，干涉项 $\mathrm{Re}(a^* b) = 0$。物理上这与 `../polarization_formalism.zh.md:489` 的字称推论 $A_x = A_z = 0$、$A_y \neq 0$ 配套：法向极化才有 left-right 不对称，而该不对称的强度全靠 spin-orbit 把不同 $j$ 分波撕开。
+- $V_{\rm SO} = 0$ 整条曲线 $A_y(\theta) \equiv 0$。原因直接来自 `../06_polarization_formalism.zh.md:253` 的 (b-pw)：当 $\delta_l^+ = \delta_l^-$ 时 $b \equiv 0$，干涉项 $\mathrm{Re}(a^* b) = 0$。物理上这与 `../06_polarization_formalism.zh.md:489` 的字称推论 $A_x = A_z = 0$、$A_y \neq 0$ 配套：法向极化才有 left-right 不对称，而该不对称的强度全靠 spin-orbit 把不同 $j$ 分波撕开。
 - $V_{\rm SO} = 5$ 时 $A_y(\theta = 90^\circ) \simeq +0.98$，接近极限值 $\pm 1$。这是因为 90° 附近 $|a|$ 与 $|b|$ 量级接近且相位锁定，$2|a||b|/(|a|^2+|b|^2) \to 1$。
 - $A_y$ 在 $\theta \approx 30^\circ$ 处反向到 $\simeq -0.96$，在 $120^\circ$ 处再次过零并变号，呈现典型的多分波干涉花样。
 - $\sigma_0$ 在 $V_{\rm SO}$ 增加时从平滑下降变成有结构的角分布，这是因为高 $l$ 分波的 spin-orbit 劈裂使 $\delta_l^+$ 与 $\delta_l^-$ 互相干涉，往 $a$ 中带入额外的 $l$ 依赖。
@@ -124,7 +124,7 @@ $V_{\rm SO} = 0$ 时左右两幅图同 $l$ 的相移完全重合（数值 $|\del
 
 ### 简化策略
 
-完整端到端做 spin-1 + 0 需要处理张量势 $S_{12}(\hat{\mathbf r})$ 引起的 $l \to l \pm 2$ 通道耦合，超出本篇范围。这里改用主线 `../polarization_formalism.zh.md:418` 的 M 矩阵分解
+完整端到端做 spin-1 + 0 需要处理张量势 $S_{12}(\hat{\mathbf r})$ 引起的 $l \to l \pm 2$ 通道耦合，超出本篇范围。这里改用主线 `../06_polarization_formalism.zh.md:418` 的 M 矩阵分解
 
 $$
 M(\theta) = U(\theta)\,I + V(\theta)\,\mathbf S\!\cdot\!\hat{\mathbf n} + W(\theta)\bigl[(\mathbf S\!\cdot\!\hat{\mathbf l})^2 - (\mathbf S\!\cdot\!\hat{\mathbf m})^2\bigr] + X(\theta)\bigl[(\mathbf S\!\cdot\!\hat{\mathbf l})(\mathbf S\!\cdot\!\hat{\mathbf m}) + (\mathbf S\!\cdot\!\hat{\mathbf m})(\mathbf S\!\cdot\!\hat{\mathbf l})\bigr]
@@ -143,7 +143,7 @@ $$
 
 ### Madison 截面公式
 
-主线 `../polarization_formalism.zh.md:436` 给出 spin-1 + 0 的 Madison 截面公式
+主线 `../06_polarization_formalism.zh.md:436` 给出 spin-1 + 0 的 Madison 截面公式
 
 $$
 \sigma(\theta, \phi) = \sigma_0(\theta)\Bigl[1 + \tfrac{3}{2}\,p_z\,A_y(\theta)\cos\phi + \cdots + \tfrac{1}{2}\,p_{zz}\,A_{zz}(\theta) + \tfrac{2}{3}(p_{xx} - p_{yy})\,A_{xx-yy}(\theta)\cos 2\phi + \cdots\Bigr]
@@ -151,7 +151,7 @@ $$
 
 或紧凑写法 $\sigma = \sigma_0[1 + 2\sum (-1)^q t_{k,-q}^* T_{kq}\, e^{iq\phi}]$，其中 $T_{kq}(\theta) = \mathrm{Tr}[M\,T^{(1)}_{kq}\,M^\dagger]/\mathrm{Tr}[M M^\dagger]$。
 
-字称约束（`../polarization_formalism.zh.md:451`）使得只有 $iT_{11}$、$T_{20}$、$T_{21}$、$T_{22}$ 非零；本演示画三个最常用的：
+字称约束（`../06_polarization_formalism.zh.md:451`）使得只有 $iT_{11}$、$T_{20}$、$T_{21}$、$T_{22}$ 非零；本演示画三个最常用的：
 
 $$
 \sigma_0 = |U|^2 + 2(|V|^2 + |W|^2 + |X|^2),\quad
@@ -160,7 +160,7 @@ T_{20} \propto \text{对角张量组合}/\sigma_0,\quad
 T_{22} \propto \mathrm{Re}(U W^*)/\sigma_0
 $$
 
-（前因子 $\sqrt 3, 1/\sqrt 2$ 等来自不可约球张量的 Wigner-Eckart 归一；具体 Madison 文献约定见主线 `../polarization_formalism.zh.md:431` 节。）
+（前因子 $\sqrt 3, 1/\sqrt 2$ 等来自不可约球张量的 Wigner-Eckart 归一；具体 Madison 文献约定见主线 `../06_polarization_formalism.zh.md:431` 节。）
 
 ### 角分布
 
@@ -178,13 +178,13 @@ $$
 
 | 主线知识点 | 对账位置 | 本篇位置 |
 |:--|:--|:--|
-| 散射平面法向 $\hat{\mathbf n} = \hat{\mathbf k}\times\hat{\mathbf k}'/|\cdot|$ | `../polarization_formalism.zh.md:239` | §模型势 |
-| 振幅 $a(\theta)$ 分波展开 (a-pw) | `../polarization_formalism.zh.md:249` | §振幅与观测量 |
-| 振幅 $b(\theta)$ 分波展开 (b-pw) | `../polarization_formalism.zh.md:253` | §振幅与观测量 |
-| analyzing power $A_y = 2\,\mathrm{Re}(a^*b)/(|a|^2+|b|^2)$ | `../polarization_formalism.zh.md:295` | §振幅与观测量 |
-| 字称推论 $A_x = A_z = 0$、$A_y \neq 0$ | `../polarization_formalism.zh.md:489` | §analyzing power 角分布 |
-| spin-1 + 0 的 M 矩阵分解 (M-1-0) | `../polarization_formalism.zh.md:418` | §简化策略 |
-| Madison 截面公式 (sig-d) | `../polarization_formalism.zh.md:436` | §Madison 截面公式 |
+| 散射平面法向 $\hat{\mathbf n} = \hat{\mathbf k}\times\hat{\mathbf k}'/|\cdot|$ | `../06_polarization_formalism.zh.md:239` | §模型势 |
+| 振幅 $a(\theta)$ 分波展开 (a-pw) | `../06_polarization_formalism.zh.md:249` | §振幅与观测量 |
+| 振幅 $b(\theta)$ 分波展开 (b-pw) | `../06_polarization_formalism.zh.md:253` | §振幅与观测量 |
+| analyzing power $A_y = 2\,\mathrm{Re}(a^*b)/(|a|^2+|b|^2)$ | `../06_polarization_formalism.zh.md:295` | §振幅与观测量 |
+| 字称推论 $A_x = A_z = 0$、$A_y \neq 0$ | `../06_polarization_formalism.zh.md:489` | §analyzing power 角分布 |
+| spin-1 + 0 的 M 矩阵分解 (M-1-0) | `../06_polarization_formalism.zh.md:418` | §简化策略 |
+| Madison 截面公式 (sig-d) | `../06_polarization_formalism.zh.md:436` | §Madison 截面公式 |
 | Numerov + 渐近匹配（$V \mapsto \delta_l$ 引擎） | `06_numerical_pipeline.zh.md:46` | §数值流程 |
 
 每条都可用 `grep -n` 在源文件中校验。
@@ -192,5 +192,5 @@ $$
 ## next-step
 
 - 把本篇演示一改成 LS 动量空间求解（参考 `06_numerical_pipeline.py` 中的 `ls_swave`）：spin-orbit 在动量空间表现为非局域势核 $V_l^\pm(p, p')$，是 `09_feshbach_two_channel.py` 之外另一种"通道"耦合的范例。
-- 演示二改为端到端：拿 ${}^3S_1$-${}^3D_1$ 张量耦合通道求解，从 Stapp 相移 $\bar\delta_0, \bar\delta_2, \epsilon_1$ 反构 $U, V, W, X$，与主线 `../polarization_formalism.zh.md:399` 衔接。
-- 加入 Coulomb 长程相位修正：dpol 真打 ${}^{12}\mathrm{C}$ 时不可忽略，参考 `S_matrix_and_cross_section.zh.md` 长程势备注。
+- 演示二改为端到端：拿 ${}^3S_1$-${}^3D_1$ 张量耦合通道求解，从 Stapp 相移 $\bar\delta_0, \bar\delta_2, \epsilon_1$ 反构 $U, V, W, X$，与主线 `../06_polarization_formalism.zh.md:399` 衔接。
+- 加入 Coulomb 长程相位修正：dpol 真打 ${}^{12}\mathrm{C}$ 时不可忽略，参考 `03_S_matrix_and_cross_section.zh.md` 长程势备注。

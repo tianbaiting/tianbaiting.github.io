@@ -2,7 +2,7 @@
 
 `01_1d_delta.zh.md` 的最后一节已经把一维 delta 势改写成动量空间的秩 1 separable 形式 $V = \lambda |0\rangle\langle 0|$，并指出这一结构的特征是 $\langle k'|T(E)|k\rangle$ 不依赖出射动量 $k'$。这一篇把同一个机制推广到一般 form factor $g(p)$：势仍然秩 1，但 $g(p)$ 不再是常数，整个 LS 方程仍然能精确解出，并且 $T(p,p';E)$ 的所有动量依赖都被压进同一对 $g(p)g(p')$。
 
-具体取核物理里经典的 Yamaguchi（1954）模型 $g(p) = 1/(p^2 + \beta^2)$。这一选择的好处是：传播子积分有完全闭式，散射长度、有效力程都是 $\lambda, \beta$ 的初等函数，束缚态条件、相移、off-shell 行为都一笔写完。本篇的目的就是给 `../appendix_EST_seperable_HVH_Esym.md` 中第 93–149 行那段高度抽象的秩 $N$ EST 公式补一个最小完整、可验证的范例。
+具体取核物理里经典的 Yamaguchi（1954）模型 $g(p) = 1/(p^2 + \beta^2)$。这一选择的好处是：传播子积分有完全闭式，散射长度、有效力程都是 $\lambda, \beta$ 的初等函数，束缚态条件、相移、off-shell 行为都一笔写完。本篇的目的就是给 `../99_appendix_EST_seperable_HVH_Esym.md` 中第 93–149 行那段高度抽象的秩 $N$ EST 公式补一个最小完整、可验证的范例。
 
 全文取 $\hbar = 1$，$2\mu = 1$，能量 $E = k^2$。
 
@@ -16,7 +16,7 @@ $$
 
 回到坐标空间它是非局域的（高斯型衰减的核），但这不影响散射理论框架。$\lambda$ 控制强度（吸引取 $\lambda < 0$），$\beta$ 控制 form factor 的动量尺度——$\beta \to \infty$ 退到 $g \to 1/\beta^2$ 常数，与一维 delta 势的退化情形相对应（见 `01_1d_delta.zh.md` 末段）。
 
-s 波 LS 方程（取 `../partial_wave_projection.zh.md` 第 340 行的形式，配上 $2\mu=1$）
+s 波 LS 方程（取 `../05_partial_wave_projection.zh.md` 第 340 行的形式，配上 $2\mu=1$）
 
 $$
 T(p, p'; E) = V(p, p') + \int_0^\infty \frac{q^2\, dq}{2\pi^2}\,\frac{V(p, q)\, T(q, p'; E)}{E - q^2 + i0}.
@@ -59,7 +59,7 @@ $$
 \boxed{\;I(E) = -\,\frac{1}{8\pi\beta\,(\beta - ik)^2}, \qquad k = \sqrt{E + i0}.\;}
 $$
 
-物理面取 $\text{Im}\, k \geq 0$：散射区 $E > 0$ 取 $k > 0$，束缚区 $E < 0$ 取 $k = i\kappa$（$\kappa > 0$），这时 $I(-\kappa^2) = -1/[8\pi\beta(\beta + \kappa)^2]$，纯实数，与束缚态在物理面上为实极点的标准结论吻合（参 `../Green_operator.zh.md`）。
+物理面取 $\text{Im}\, k \geq 0$：散射区 $E > 0$ 取 $k > 0$，束缚区 $E < 0$ 取 $k = i\kappa$（$\kappa > 0$），这时 $I(-\kappa^2) = -1/[8\pi\beta(\beta + \kappa)^2]$，纯实数，与束缚态在物理面上为实极点的标准结论吻合（参 `../02_Green_operator.zh.md`）。
 
 把 $I(E)$ 的虚部分离出来：$\text{Im}\, I(E) = -k/[4\pi(\beta^2 + k^2)^2]$（$E > 0$）。这条 cut 上的不连续性正是后面相移幺正性的根源。
 
@@ -124,15 +124,15 @@ $$
 
 也就是说 off-shell 的两动量依赖完全乘性分离，比值与 $p'$、$E$ 都无关。固定 $p' = k_0$ 在壳，扫 $p$ 得到的曲线与 $g(p)$ 形状完全一致，只差一个能量依赖的整体因子 $\tau(E)\, g(k_0)$。
 
-这一性质是 separable 势在多体 Faddeev/AGS 计算里被频繁选用的核心原因（见 `../partial_wave_projection.zh.md` 三体方程一节）：在那里 off-shell T 矩阵作为输入被迭代很多次，秩 1 形式让中间核被压成一个标量传播子，三体积分方程从原本的二维方程降为一维。代价是：相同的 on-shell 数据可以兼容无穷多种 off-shell 延拓，而 separable 这条延拓只是其中最简单的一条，物理上未必"正确"。这一矛盾在 EST 框架里被部分化解（下一节）。
+这一性质是 separable 势在多体 Faddeev/AGS 计算里被频繁选用的核心原因（见 `../05_partial_wave_projection.zh.md` 三体方程一节）：在那里 off-shell T 矩阵作为输入被迭代很多次，秩 1 形式让中间核被压成一个标量传播子，三体积分方程从原本的二维方程降为一维。代价是：相同的 on-shell 数据可以兼容无穷多种 off-shell 延拓，而 separable 这条延拓只是其中最简单的一条，物理上未必"正确"。这一矛盾在 EST 框架里被部分化解（下一节）。
 
 ## 与 EST 的对账
 
-`../appendix_EST_seperable_HVH_Esym.md` 第 121–149 行的 EST 原理是这样的：选 $N$ 个支撑能量 $\{E_n\}$，把秩 $N$ separable 势的 form factor 取为原势在该能量处的精确散射波函数 $|g_n\rangle = T^{\rm phys}(E_n)|k_n\rangle$（动量空间表达式见该附录第 137–139 行），并由匹配条件（附录第 145–147 行）确定 $\lambda$ 矩阵。在秩 1 单能量 $E_*$ 情形（附录第 151–180 行的"实用方案"），EST 退化为：取一个 form factor，求一个 $\lambda$，使在 $E_*$ 处的 on-shell T 矩阵元精确再现物理值。
+`../99_appendix_EST_seperable_HVH_Esym.md` 第 121–149 行的 EST 原理是这样的：选 $N$ 个支撑能量 $\{E_n\}$，把秩 $N$ separable 势的 form factor 取为原势在该能量处的精确散射波函数 $|g_n\rangle = T^{\rm phys}(E_n)|k_n\rangle$（动量空间表达式见该附录第 137–139 行），并由匹配条件（附录第 145–147 行）确定 $\lambda$ 矩阵。在秩 1 单能量 $E_*$ 情形（附录第 151–180 行的"实用方案"），EST 退化为：取一个 form factor，求一个 $\lambda$，使在 $E_*$ 处的 on-shell T 矩阵元精确再现物理值。
 
 本篇的 Yamaguchi $g(p) = 1/(p^2 + \beta^2)$ 不严格满足 EST 选取（它不是任何已知"物理"势的散射波函数），但起秩 1 toy 模型作用：
 
-| 本篇 | `appendix_EST_seperable_HVH_Esym.md` 对应 |
+| 本篇 | `99_appendix_EST_seperable_HVH_Esym.md` 对应 |
 |:--|:--|
 | $V = \lambda\, g\,g$，$g$ 为 Yamaguchi | 附录 99–101 行的秩 1 一般式，附录 156 行换成 Gauss form factor 是另一种简化 |
 | $\tau(E) = \lambda/(1 - \lambda I(E))$ | 附录 105–115 行的 $T = g\,D^{-1}\,g$，秩 1 时 $D^{-1} = 1/(\lambda^{-1} - \tau(E))$ |
@@ -190,11 +190,11 @@ $k\cot\delta_0$ 对 $k^2$ 作图；ERE 截断到 $O(k^2)$ 的虚线（用解析 
 
 | 主线 | 本篇的对应 |
 |:--|:--|
-| `../T_and_U_operators.zh.md` $T = V + V G_0 T$ | 秩 1 ansatz $T = \tau\, g\, g$ 把无穷维积分方程降为 $\tau(E)$ 的标量代数方程 |
-| `../Green_operator.zh.md` 物理面实极点 = 束缚态 | $1 - \lambda I(E_b) = 0$ 的解 $E_b = -\kappa^2$，$\kappa = \sqrt{-\lambda/(8\pi\beta)} - \beta$ |
-| `../partial_wave_projection.zh.md` 第 372 行 on-shell $T_l \leftrightarrow \delta_l$ | $T_0(k,k;E_k) = -[4\pi]^{-1}(k\cot\delta_0 - ik)^{-1}$（系数差由本篇 $1/(2\pi^2)$ 测度约定决定） |
-| `../appendix_EST_seperable_HVH_Esym.md` 第 99–117 行 separable T 矩阵 | 秩 $N=1$ 显式实现，$D(z)^{-1} = 1/(\lambda^{-1} - I(E))$ |
-| `../appendix_EST_seperable_HVH_Esym.md` 第 151–180 行实用方案 | 把 Gauss form factor 换成 Yamaguchi，用留数代替 $\mathrm{erfi}$ |
+| `../04_T_and_U_operators.zh.md` $T = V + V G_0 T$ | 秩 1 ansatz $T = \tau\, g\, g$ 把无穷维积分方程降为 $\tau(E)$ 的标量代数方程 |
+| `../02_Green_operator.zh.md` 物理面实极点 = 束缚态 | $1 - \lambda I(E_b) = 0$ 的解 $E_b = -\kappa^2$，$\kappa = \sqrt{-\lambda/(8\pi\beta)} - \beta$ |
+| `../05_partial_wave_projection.zh.md` 第 372 行 on-shell $T_l \leftrightarrow \delta_l$ | $T_0(k,k;E_k) = -[4\pi]^{-1}(k\cot\delta_0 - ik)^{-1}$（系数差由本篇 $1/(2\pi^2)$ 测度约定决定） |
+| `../99_appendix_EST_seperable_HVH_Esym.md` 第 99–117 行 separable T 矩阵 | 秩 $N=1$ 显式实现，$D(z)^{-1} = 1/(\lambda^{-1} - I(E))$ |
+| `../99_appendix_EST_seperable_HVH_Esym.md` 第 151–180 行实用方案 | 把 Gauss form factor 换成 Yamaguchi，用留数代替 $\mathrm{erfi}$ |
 | `01_1d_delta.zh.md` 第 146 行 $V = \lambda |0\rangle\langle 0|$ | $g(p) \equiv$ 常数（紫外不收敛）的极限，本篇有限 $\beta$ 提供截断 |
 
 ## next-step
@@ -202,4 +202,4 @@ $k\cot\delta_0$ 对 $k^2$ 作图；ERE 截断到 $O(k^2)$ 的虚线（用解析 
 - 秩 2 EST：取两个支撑能量，$\lambda$ 变 $2\times 2$，$D(z)$ 矩阵取逆。形式上仍是闭式（附录第 105 行），但 form factor 不再是 Yamaguchi 的简单 $1/(p^2+\beta^2)$，而是两个独立的范围参数。
 - 库仑修正：把 $G_0$ 换成 $G_0^C$，$I(E)$ 中的自由传播子换成库仑传播子，离子-离子散射的 separable 模型由此构造。
 - 把 $\beta \to \beta(p)$ 改成动量依赖的 form factor，可以拟合更宽能区的相移，但失去解析性。
-- 与 Friedrichs 模型（`../friedrichsModel.zh.md`）对照：那里的可解模型核心也是把"势"写成秩 1 算符 $V = g\, g^\dagger$，$\tau(E) = \lambda/(1 - \lambda I(E))$ 这一闭式与 Friedrichs 模型的 reduced resolvent 完全同构，差别只在 $I(E)$ 的具体形式（Yamaguchi 给二阶极点，Friedrichs 通常给紫外软化的 form factor）。这个对应让 Yamaguchi 模型同时是散射理论与开放量子系统的桥梁。
+- 与 Friedrichs 模型（`../01_friedrichsModel.zh.md`）对照：那里的可解模型核心也是把"势"写成秩 1 算符 $V = g\, g^\dagger$，$\tau(E) = \lambda/(1 - \lambda I(E))$ 这一闭式与 Friedrichs 模型的 reduced resolvent 完全同构，差别只在 $I(E)$ 的具体形式（Yamaguchi 给二阶极点，Friedrichs 通常给紫外软化的 form factor）。这个对应让 Yamaguchi 模型同时是散射理论与开放量子系统的桥梁。

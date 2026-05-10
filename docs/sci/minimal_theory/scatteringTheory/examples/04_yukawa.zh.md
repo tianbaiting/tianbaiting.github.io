@@ -6,7 +6,7 @@
 
 ## 目标
 
-- 给主线笔记 `S_matrix_and_cross_section.zh.md` §6 中 Born 振幅 $f^B$ 一个最简洁的解析例子，对照 `T_and_U_operators.zh.md` 的 LS 一阶展开。
+- 给主线笔记 `03_S_matrix_and_cross_section.zh.md` §6 中 Born 振幅 $f^B$ 一个最简洁的解析例子，对照 `04_T_and_U_operators.zh.md` 的 LS 一阶展开。
 - 与精确分波解（Numerov 数值积分）的相移作并排对比，看出"耦合 $\to$ 1，Born 失效"的拐点。
 - 把这个拐点连到 Newton/Bargmann 的束缚态判据：Born 级数发散、束缚态出现、Levinson 相移跳变 $\pi$，是同一件事。
 
@@ -28,7 +28,7 @@ $$
 
 ## Born 振幅闭式
 
-按 `S_matrix_and_cross_section.zh.md:506` 的定义，Born 近似把入态 $\psi_\mathbf{k}^+$ 用自由平面波 $e^{i\mathbf k\cdot\mathbf r}$ 替代，振幅为
+按 `03_S_matrix_and_cross_section.zh.md:506` 的定义，Born 近似把入态 $\psi_\mathbf{k}^+$ 用自由平面波 $e^{i\mathbf k\cdot\mathbf r}$ 替代，振幅为
 
 $$
 f^B(\mathbf k_f \leftarrow \mathbf k)
@@ -93,7 +93,7 @@ $$
 
 ![Phase shift exact vs Born](./assets/04_yukawa/phase_shift_compare.png)
 
-s 波 Born 相移本身有闭式：从 `partial_wave_projection.zh.md:348` 出发把 $j_0(kr) = \sin(kr)/(kr)$ 代入
+s 波 Born 相移本身有闭式：从 `05_partial_wave_projection.zh.md:348` 出发把 $j_0(kr) = \sin(kr)/(kr)$ 代入
 
 $$
 \delta_l^B(k) = -k\int_0^\infty dr\,r^2\,V(r)\,[j_l(kr)]^2,
@@ -155,11 +155,11 @@ $$
 
 | 主线 | Yukawa 中的对应 |
 |:--|:--|
-| `S_matrix_and_cross_section.zh.md:506`，$f^B = -\frac{m}{2\pi}\int e^{-i\mathbf q\cdot\mathbf r} V$ | $f^B(q) = (V_0/\mu)/(q^2 + \mu^2)$ |
-| `T_and_U_operators.zh.md`，Born 级数 $T = V + VG_0V + \cdots$ | 收敛半径 $\sim V_0/\mu^2 < 1.68$ |
-| `partial_wave_projection.zh.md:348`，$\delta_l^B = -k\int r^2 V j_l^2$ | $\delta_0^B = V_0/(4k\mu)\ln(1 + 4k^2/\mu^2)$ |
-| `Green_operator.zh.md`，束缚态 = $T(E)$ 物理面实极点 | 首次极点在 $V_0/\mu^2 \approx 1.68$ |
-| Levinson 定理（同上 `partial_wave_projection.zh.md`） | $\delta_0(0)$ 跳 $\pi$ 与束缚态出现同步 |
+| `03_S_matrix_and_cross_section.zh.md:506`，$f^B = -\frac{m}{2\pi}\int e^{-i\mathbf q\cdot\mathbf r} V$ | $f^B(q) = (V_0/\mu)/(q^2 + \mu^2)$ |
+| `04_T_and_U_operators.zh.md`，Born 级数 $T = V + VG_0V + \cdots$ | 收敛半径 $\sim V_0/\mu^2 < 1.68$ |
+| `05_partial_wave_projection.zh.md:348`，$\delta_l^B = -k\int r^2 V j_l^2$ | $\delta_0^B = V_0/(4k\mu)\ln(1 + 4k^2/\mu^2)$ |
+| `02_Green_operator.zh.md`，束缚态 = $T(E)$ 物理面实极点 | 首次极点在 $V_0/\mu^2 \approx 1.68$ |
+| Levinson 定理（同上 `05_partial_wave_projection.zh.md`） | $\delta_0(0)$ 跳 $\pi$ 与束缚态出现同步 |
 
 ## next-step
 

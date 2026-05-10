@@ -1,6 +1,6 @@
-# Coulomb 散射的完整形式
+# ch07 Coulomb 散射的完整形式
 
-本篇沿 Taylor《Scattering Theory》第 14 章的脉络，把 `S_matrix_and_cross_section.zh.md:540` 末尾留下的备注展开成一条完整的逻辑链：从 Møller 算符的失败、到 Dollard 修正传播子、再到径向 Coulomb 函数 $F_l, G_l$、Coulomb 相移 $\sigma_l$、Rutherford 振幅、$f = f_C + f_{SR}$ 分解，以及 Coulomb-distorted Born。每一节都把短程势的对应结论与 Coulomb 的修正并排列出，目的是看清"哪些代数结构原封不动地搬过去，哪些必须重写"。
+本篇沿 Taylor《Scattering Theory》第 14 章的脉络，把 `03_S_matrix_and_cross_section.zh.md:540` 末尾留下的备注展开成一条完整的逻辑链：从 Møller 算符的失败、到 Dollard 修正传播子、再到径向 Coulomb 函数 $F_l, G_l$、Coulomb 相移 $\sigma_l$、Rutherford 振幅、$f = f_C + f_{SR}$ 分解，以及 Coulomb-distorted Born。每一节都把短程势的对应结论与 Coulomb 的修正并排列出，目的是看清"哪些代数结构原封不动地搬过去，哪些必须重写"。
 
 ## 目标
 
@@ -16,11 +16,11 @@ $$
 
 物理上的图像：经典 Coulomb 双曲轨道在 $r \to \infty$ 时仍偏离直线一个对数大小的量（轨迹相对于直线的偏角衰减为 $\ln r / r$ 而非 $1/r$）。量子层面，这表现为 $\psi^{(+)}$ 的渐近形式不再是 $e^{i\mathbf{k}\cdot\mathbf{r}} + f(\theta)\,e^{ikr}/r$，而要在两个项里都加上对数相位修正。
 
-这一篇只处理弹性、自旋无关、单中心 Coulomb 势的"完整形式"。极化与 Coulomb 的耦合在姊妹篇 `polarization_formalism.zh.md:538` 留作 next-step。
+这一篇只处理弹性、自旋无关、单中心 Coulomb 势的"完整形式"。极化与 Coulomb 的耦合在姊妹篇 `06_polarization_formalism.zh.md:538` 留作 next-step。
 
 ## 长程势对 Møller 强极限的破坏
 
-回顾短程势下的定义（`T_and_U_operators.zh.md:80`）
+回顾短程势下的定义（`04_T_and_U_operators.zh.md:80`）
 
 $$
 \Omega_\pm = \operatorname*{s-lim}_{t \to \mp \infty} e^{iHt/\hbar} e^{-iH_0 t/\hbar} \tag{Mol}
@@ -83,13 +83,13 @@ self-derive 思路：对自由波包 $|\phi(t)\rangle = e^{-iH_0 t}|\phi\rangle$
 
 注意三件事：
 
-- $\Omega_\pm^C$ 与 $|\alpha\rangle$ 的乘积 $|\psi_\alpha^{(\pm)C}\rangle$ 仍是 $H = H_0 + V_C$ 的精确广义本征态，与 `T_and_U_operators.zh.md:120` 的"精确入出态"是同一个数学对象，只是"参考动力学"被改写。
+- $\Omega_\pm^C$ 与 $|\alpha\rangle$ 的乘积 $|\psi_\alpha^{(\pm)C}\rangle$ 仍是 $H = H_0 + V_C$ 的精确广义本征态，与 `04_T_and_U_operators.zh.md:120` 的"精确入出态"是同一个数学对象，只是"参考动力学"被改写。
 - $U_C(t)$ 不是 unitary 群（它对 $t$ 的依赖含 $\mathrm{sgn}$ 与 $\ln|t|$），但它把在 $H_0$ 下散布的自由波包带到与 $e^{-iHt}$ 渐近匹配的位置。
 - 短程极限 $V \to V_{SR}$ 时 $\eta \to 0$，$U_C \to e^{-iH_0 t}$，整套退化回 $\text{(Mol)}$。
 
 ## 径向 Coulomb 方程与 $F_l, G_l$
 
-定态层面，规则化 Schrödinger 方程取无量纲化 $\hbar = 2m = 1$（与 `partial_wave_projection.zh.md` 一致），
+定态层面，规则化 Schrödinger 方程取无量纲化 $\hbar = 2m = 1$（与 `05_partial_wave_projection.zh.md` 一致），
 
 $$
 \Bigl[\frac{d^2}{dr^2} + k^2 - \frac{2k\eta}{r} - \frac{l(l+1)}{r^2}\Bigr] u_l(r) = 0 \tag{rad-C}
@@ -214,7 +214,7 @@ $$
 
 前向 $\theta \to 0$ 处奇异，物理上是因为任意大 impact parameter 的入射粒子都被偏转（$1/r$ 势的力学到处都不为零）——这正对应 Cook 判据的失败。
 
-光学定理在纯 Coulomb 中要小心：$\mathrm{Im}\, f_C(0) = +\infty$，与 $\sigma_C^\text{tot} = \infty$ 在"两个无穷"的意义下匹配，但定理的有限版本（`S_matrix_and_cross_section.zh.md:451`）需要把 $f_C$ 减掉得到正则化的 $f_{SR}$ 后才能用——这是下一节的事。
+光学定理在纯 Coulomb 中要小心：$\mathrm{Im}\, f_C(0) = +\infty$，与 $\sigma_C^\text{tot} = \infty$ 在"两个无穷"的意义下匹配，但定理的有限版本（`03_S_matrix_and_cross_section.zh.md:451`）需要把 $f_C$ 减掉得到正则化的 $f_{SR}$ 后才能用——这是下一节的事。
 
 ## 分波展开 Coulomb 振幅
 
@@ -224,7 +224,7 @@ $$
 f_C(\theta) = \frac{1}{2ik}\sum_{l=0}^{\infty}(2l+1)\bigl[e^{2i\sigma_l(\eta)} - 1\bigr] P_l(\cos\theta) \tag{fC-pw}
 $$
 
-形式 $\text{(fC-pw)}$ 与短程势分波展开（`partial_wave_projection.zh.md:355`-369）
+形式 $\text{(fC-pw)}$ 与短程势分波展开（`05_partial_wave_projection.zh.md:355`-369）
 
 $$
 f_{SR}(\theta) = \frac{1}{2ik}\sum_l (2l+1)\bigl[e^{2i\delta_l} - 1\bigr] P_l(\cos\theta)
@@ -238,7 +238,7 @@ $$
 
 第二，$\text{(fC-pw)}$ 与闭式 $\text{(fC)}$ 的等价仅在 distributional 意义下成立。具体地，对任何 $0 < \theta < \pi$ 有平均收敛：用 Abel 求和或 Cesàro 求和能恢复 $\text{(fC)}$；但逐项级数本身不行。数值实践中要么用闭式 $\text{(fC)}$，要么对级数做正则化（如先减去 Born 近似的 $-\eta/(k(1-\cos\theta))$ 主导奇异部分再求和）。
 
-这是 Coulomb 直接套分波 LS 方程（`partial_wave_projection.zh.md:340`）失败的另一个症状：$V_l(k', k) = (2/\pi)\int dr\, r^2\, j_l(k'r) V_C(r) j_l(kr)$ 在 $r \to \infty$ 处对数发散，分波势矩阵元本身不是良定义函数。
+这是 Coulomb 直接套分波 LS 方程（`05_partial_wave_projection.zh.md:340`）失败的另一个症状：$V_l(k', k) = (2/\pi)\int dr\, r^2\, j_l(k'r) V_C(r) j_l(kr)$ 在 $r \to \infty$ 处对数发散，分波势矩阵元本身不是良定义函数。
 
 ## Coulomb 加短程势的分解
 
@@ -304,7 +304,7 @@ $$
 
 ## Coulomb-distorted Born 近似
 
-把 $V_{SR}$ 当扰动，零阶用 Coulomb 波$\psi_C^{(\pm)}$ 替换主线 Born 近似（`S_matrix_and_cross_section.zh.md:506`-510）里的平面波：
+把 $V_{SR}$ 当扰动，零阶用 Coulomb 波$\psi_C^{(\pm)}$ 替换主线 Born 近似（`03_S_matrix_and_cross_section.zh.md:506`-510）里的平面波：
 
 $$
 f_{SR}^\text{CB}(\mathbf k_f \leftarrow \mathbf k_i)
@@ -368,20 +368,20 @@ $$
 
 | 主线知识点 | 对账位置 | 本篇对应位置 |
 |:--|:--|:--|
-| 短程 Møller 算符强极限定义 $\Omega_\pm = \mathrm{s\text{-}lim}\,e^{iHt}e^{-iH_0 t}$ | `T_and_U_operators.zh.md:80` | 长程破坏分析 + 修正定义 $\text{(Mol-C)}$ |
-| 渐近条件 $\|e^{-iHt}\Omega_+\phi - e^{-iH_0 t}\phi\|\to 0$ | `S_matrix_and_cross_section.zh.md:129` | Cook 判据失败一节 |
-| 自由 $G_0^{(+)}$ 出射球面波远场 $e^{ikR}/R$ | `Green_operator.zh.md:350` | Coulomb 渐近多了 $-\eta\ln(2kr)$ 对数项 $\text{(F-asy)}$ |
-| 散射振幅 $f$ 的远场系数定义 | `S_matrix_and_cross_section.zh.md:280` | $f_C$ 的扭曲入射 + 扭曲出射 $\text{(psi-C)}$ |
-| 短程 Born 近似 $f^B = -(m/2\pi)\int e^{-i\mathbf q\cdot\mathbf r}V$ | `S_matrix_and_cross_section.zh.md:506` | Coulomb-distorted Born $\text{(fSR-CB)}$ |
-| 分波 Lippmann–Schwinger 方程 $\text{(LS-pw)}$ | `partial_wave_projection.zh.md:340` | $V_C$ 致 $V_l$ 对数发散，方程不成立 |
-| 短程 on-shell 相移定义 $\delta_l$、$f_l = e^{i\delta_l}\sin\delta_l/k$ | `partial_wave_projection.zh.md:355` | $\delta_l \to \sigma_l$ 形式不变，但意义改变 $\text{(fC-pw)}$ |
-| 长程势备注（缺口） | `S_matrix_and_cross_section.zh.md:540` | 整篇填补 |
+| 短程 Møller 算符强极限定义 $\Omega_\pm = \mathrm{s\text{-}lim}\,e^{iHt}e^{-iH_0 t}$ | `04_T_and_U_operators.zh.md:80` | 长程破坏分析 + 修正定义 $\text{(Mol-C)}$ |
+| 渐近条件 $\|e^{-iHt}\Omega_+\phi - e^{-iH_0 t}\phi\|\to 0$ | `03_S_matrix_and_cross_section.zh.md:129` | Cook 判据失败一节 |
+| 自由 $G_0^{(+)}$ 出射球面波远场 $e^{ikR}/R$ | `02_Green_operator.zh.md:350` | Coulomb 渐近多了 $-\eta\ln(2kr)$ 对数项 $\text{(F-asy)}$ |
+| 散射振幅 $f$ 的远场系数定义 | `03_S_matrix_and_cross_section.zh.md:280` | $f_C$ 的扭曲入射 + 扭曲出射 $\text{(psi-C)}$ |
+| 短程 Born 近似 $f^B = -(m/2\pi)\int e^{-i\mathbf q\cdot\mathbf r}V$ | `03_S_matrix_and_cross_section.zh.md:506` | Coulomb-distorted Born $\text{(fSR-CB)}$ |
+| 分波 Lippmann–Schwinger 方程 $\text{(LS-pw)}$ | `05_partial_wave_projection.zh.md:340` | $V_C$ 致 $V_l$ 对数发散，方程不成立 |
+| 短程 on-shell 相移定义 $\delta_l$、$f_l = e^{i\delta_l}\sin\delta_l/k$ | `05_partial_wave_projection.zh.md:355` | $\delta_l \to \sigma_l$ 形式不变，但意义改变 $\text{(fC-pw)}$ |
+| 长程势备注（缺口） | `03_S_matrix_and_cross_section.zh.md:540` | 整篇填补 |
 
 ## next-step
 
 - 数值 Coulomb 波计算（指向 `examples/11_coulomb_demo`）：用 `scipy.special` 算 $F_l, G_l, \sigma_l$，在 pp 弹性散射 $E_\text{lab} = 1\text{–}10$ MeV 下绘 $|f_C|^2, |f_C+f_{SR}|^2$ 与干涉项；展示 Coulomb-nuclear 干涉极小点。验证 Rutherford 极限与小相移 Born $\text{(delta-CB)}$。
-- Coulomb-distorted DWBA 完整形式（研究轨 C）：从 $\text{(fSR-CB)}$ 推广到通道耦合 $\langle \beta | T | \alpha\rangle = \langle \chi_\beta^{(-)}| V_{SR}|\chi_\alpha^{(+)}\rangle$，含 transfer reaction 与 inelastic 通道；与 AGS 框架（`T_and_U_operators.zh.md:454`）的 $V_C$ 处理对接。
-- 极化 + Coulomb：把 `polarization_formalism.zh.md:538` 提到的"含 Coulomb 长程势的修正"展开。M 矩阵在 Coulomb-distorted 基下的分解 $M = M_C + M_{SR}$，自旋-轨道耦合下 Coulomb 不影响 spin-flip（因为 $V_C$ 是中心、自旋无关），但 distorted-wave 基会改变 Wolfenstein 振幅的提取流程。
+- Coulomb-distorted DWBA 完整形式（研究轨 C）：从 $\text{(fSR-CB)}$ 推广到通道耦合 $\langle \beta | T | \alpha\rangle = \langle \chi_\beta^{(-)}| V_{SR}|\chi_\alpha^{(+)}\rangle$，含 transfer reaction 与 inelastic 通道；与 AGS 框架（`04_T_and_U_operators.zh.md:454`）的 $V_C$ 处理对接。
+- 极化 + Coulomb：把 `06_polarization_formalism.zh.md:538` 提到的"含 Coulomb 长程势的修正"展开。M 矩阵在 Coulomb-distorted 基下的分解 $M = M_C + M_{SR}$，自旋-轨道耦合下 Coulomb 不影响 spin-flip（因为 $V_C$ 是中心、自旋无关），但 distorted-wave 基会改变 Wolfenstein 振幅的提取流程。
 - 重核库仑散射的相对论修正（Mott 散射）：电子-核 elastic 中 Dirac 方程 + Coulomb 给出 $d\sigma_M/d\Omega = (Z\alpha/2 k\sin^2(\theta/2))^2[1 - \beta^2\sin^2(\theta/2)]$；结构上是把 Schrödinger Coulomb 替换为 Dirac Coulomb，$\sigma_l$ 用 Dirac $\Gamma$ 函数组合代替。
 - 屏蔽 Coulomb 与重整化：物理的 Coulomb 在原子物理中实际被电子云屏蔽 $V \to e^{-r/a}/r$（短程化），$\eta_\text{eff}(k, a)$ 形式给出有限总截面；屏蔽极限 $a\to\infty$ 重新得到 Rutherford 但途径合法（满足 Cook）。这是 Coulomb 长程势困难的"物理正则化"路径。
 - $1/r^2$ 与对数势等其它长程势的 Møller 修正：$1/r^2$ 处于阈值，需要不同的对数指数；van der Waals 类 $1/r^6$ 短程，无修正；$\ln r$ 势（受限色禁闭模型）需要更强的 Dollard 类处方。这些都在 Reed–Simon III、Derezinski–Gérard 中系统展开。

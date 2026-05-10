@@ -46,7 +46,7 @@ $$
 S(E)=-\,\mathrm e^{-2ik(a+b)}\,\frac{L(E)-ik}{L(E)+ik}.
 $$
 
-实 $E>0$ 时 $L$ 为实数，$|S|=1$，幺正性自动成立——与 `S_matrix_and_cross_section.zh.md:229` 中的 $S^\dagger S=\mathbf 1$ 在单通道半线情形完全一致。
+实 $E>0$ 时 $L$ 为实数，$|S|=1$，幺正性自动成立——与 `03_S_matrix_and_cross_section.zh.md:229` 中的 $S^\dagger S=\mathbf 1$ 在单通道半线情形完全一致。
 
 ## 共振条件
 
@@ -62,7 +62,7 @@ $$
 E_*=E_R-i\Gamma/2
 $$
 
-定义宽度 $\Gamma>0$。这一对极点结构在 `friedrichsModel.zh.md:551` 中被写成 $z_*-E_d-\Sigma^{\rm II}(z_*)=0$；本篇里 $L(E)+ik$ 起的就是 $z-E_d-\Sigma(z)$ 的角色。无穷不可穿透极限 $b\to\infty$ 时，$\sinh,\cosh$ 都趋于 $\frac12 \mathrm e^{\kappa b}$，分母里两项各取 $\frac12 e^{\kappa b}$ 后比值为 $\kappa$，得到 $L\to\kappa$，于是极点条件 $\kappa+ik=0$ 给纯虚 $k=i\kappa$，与硬阱内壁外指数衰减边界对应——亚阈共振退化成真束缚态。
+定义宽度 $\Gamma>0$。这一对极点结构在 `01_friedrichsModel.zh.md:551` 中被写成 $z_*-E_d-\Sigma^{\rm II}(z_*)=0$；本篇里 $L(E)+ik$ 起的就是 $z-E_d-\Sigma(z)$ 的角色。无穷不可穿透极限 $b\to\infty$ 时，$\sinh,\cosh$ 都趋于 $\frac12 \mathrm e^{\kappa b}$，分母里两项各取 $\frac12 e^{\kappa b}$ 后比值为 $\kappa$，得到 $L\to\kappa$，于是极点条件 $\kappa+ik=0$ 给纯虚 $k=i\kappa$，与硬阱内壁外指数衰减边界对应——亚阈共振退化成真束缚态。
 
 ## WKB 宽度
 
@@ -117,7 +117,7 @@ def log_deriv(E, b=B):
 
 ![pole on second sheet](./assets/07_well_barrier_1d/pole_E_plane.png)
 
-极点正好位于 $E_R-i\Gamma/2$，即 BW 拟合给出的中心向下半平面的解析延拓。这一极点在物理面（上半平面 $\mathrm{Im}\,E>0$ 这一支）是缺席的，必须穿过实轴正半轴的连续谱支割延拓到第二张面，才能"看到"——`Green_operator.zh.md:468` 中"自伴 $H$ 的复极点只能位于第二张面"那条原理在这里有了像素级实例。
+极点正好位于 $E_R-i\Gamma/2$，即 BW 拟合给出的中心向下半平面的解析延拓。这一极点在物理面（上半平面 $\mathrm{Im}\,E>0$ 这一支）是缺席的，必须穿过实轴正半轴的连续谱支割延拓到第二张面，才能"看到"——`02_Green_operator.zh.md:468` 中"自伴 $H$ 的复极点只能位于第二张面"那条原理在这里有了像素级实例。
 
 第四张图：第一共振宽度 $\Gamma$ 随势垒宽度 $b$ 的变化。
 
@@ -139,17 +139,17 @@ def log_deriv(E, b=B):
 
 | 本篇中的对象 | Friedrichs 笔记中的对应 |
 |:--|:--|
-| 阱内准束缚能级（无穷势垒极限 $b\to\infty$ 是真束缚） | 离散态 $E_d$（解耦极限），见 `friedrichsModel.zh.md:24` |
-| 极点条件 $L(E)+ik=0$ | $z-E_d-\Sigma^{\rm II}(z)=0$，见 `friedrichsModel.zh.md:551` |
-| 第二张面下半面极点 $E_R-i\Gamma/2$ | $z_*=E_R-i\Gamma/2$（Gamow 态），见 `friedrichsModel.zh.md:580` |
-| 宽度 $\Gamma\propto \mathrm e^{-2b\kappa}$ | $\Gamma(E)=2\pi|g(E)|^2$，有效耦合 $|g_\text{eff}|^2\propto \mathrm e^{-2b\kappa}$，见 `friedrichsModel.zh.md:486` |
-| 解析结构：实轴上 $|S|=1$，复极点只在第二张面 | $G(z)$ 物理面无复极点；`Green_operator.zh.md:468` |
-| 实轴幺正 $|S(E)|=1$ | $S^\dagger S=\mathbf 1$，`S_matrix_and_cross_section.zh.md:229` |
+| 阱内准束缚能级（无穷势垒极限 $b\to\infty$ 是真束缚） | 离散态 $E_d$（解耦极限），见 `01_friedrichsModel.zh.md:24` |
+| 极点条件 $L(E)+ik=0$ | $z-E_d-\Sigma^{\rm II}(z)=0$，见 `01_friedrichsModel.zh.md:551` |
+| 第二张面下半面极点 $E_R-i\Gamma/2$ | $z_*=E_R-i\Gamma/2$（Gamow 态），见 `01_friedrichsModel.zh.md:580` |
+| 宽度 $\Gamma\propto \mathrm e^{-2b\kappa}$ | $\Gamma(E)=2\pi|g(E)|^2$，有效耦合 $|g_\text{eff}|^2\propto \mathrm e^{-2b\kappa}$，见 `01_friedrichsModel.zh.md:486` |
+| 解析结构：实轴上 $|S|=1$，复极点只在第二张面 | $G(z)$ 物理面无复极点；`02_Green_operator.zh.md:468` |
+| 实轴幺正 $|S(E)|=1$ | $S^\dagger S=\mathbf 1$，`03_S_matrix_and_cross_section.zh.md:229` |
 
 与 delta 壳层那一篇相比，这里的"耦合"由势垒高度与宽度联合控制：固定 $V_1$，让 $b$ 增大，等效地把 $|g_\text{eff}|^2$ 指数压低，把极点拉向实轴；这是 Friedrichs 模型耦合 $\to 0$ 极限在三维同样可见的同一现象的一维显式化。delta 壳层里"$\gamma$ 越大壳越硬"等效 $|g_\text{eff}|^2$ 越小，本篇里"$b$ 越大墙越厚"也是同一回事，只是在两套不同的可解模型里给出了同一指数律。
 
 ## next-step
 
 - 多重共振：如果 $V_0$ 增大让阱内能容纳两个准束缚级（$(n\pi/a)^2-V_0$ 中 $n=1,2$ 都落在 $(0,V_1)$ 内），可以观察两条 BW 峰分别对应不同 $n$ 的内态，宽度按 $n$ 的奇偶性不同——奇宇称内态在 $a$ 处节点正好阻挡泄漏。
-- 时间域生存振幅 $\langle\psi_R|\mathrm e^{-iHt}|\psi_R\rangle$：直接对 $E$ 做傅里叶反变换，预期早时近指数衰减 $\mathrm e^{-\Gamma t}$，长时被支割贡献的幂律接管，与 `friedrichsModel.zh.md:580` 节的 Gamow + cut 拆分一一对应。
+- 时间域生存振幅 $\langle\psi_R|\mathrm e^{-iHt}|\psi_R\rangle$：直接对 $E$ 做傅里叶反变换，预期早时近指数衰减 $\mathrm e^{-\Gamma t}$，长时被支割贡献的幂律接管，与 `01_friedrichsModel.zh.md:580` 节的 Gamow + cut 拆分一一对应。
 - α 衰变常数：把 $V_0,V_1,a,b$ 换成原子核常数（$V_0\sim 30$ MeV, $V_1\sim 20$–$30$ MeV, $b\sim 10$ fm），代入本篇公式即可估出 $^{210}$Po 等重核 α 半衰期，与实验值在十数量级范围内吻合——Gamow-Condon-Gurney 1928 年的原始计算就建立在这个最简单的一维图像上。

@@ -118,7 +118,7 @@ $$
 
 ## 截面与共振峰
 
-弹性总截面分波分解 `partial_wave_projection.zh.md:360-378`
+弹性总截面分波分解 `05_partial_wave_projection.zh.md:360-378`
 
 $$
 \sigma(k) = \sum_{l=0}^\infty \frac{4\pi(2l+1)}{k^2}\sin^2\delta_l(k).
@@ -152,7 +152,7 @@ N(k) = k\,\hat j_2'(kR) - \beta(k)\,\hat j_2(kR),
 D(k) = k\,\hat n_2'(kR) - \beta(k)\,\hat n_2(kR),
 $$
 
-$\tan\delta_2 = N/D$，故 $S_2 = (1+iN/D)/(1-iN/D) = (D + iN)/(D - iN)$。$S_2$ 极点对应 $D - iN = 0$，等价地 $N + iD = 0$。代码 `08_centrifugal_barrier.py:51` 用 Newton 法直接对这个组合函数做复根迭代。物理共振对应第二张 Riemann 面的下半 $k$ 平面极点 $\mathrm{Im}\, k < 0$，对应能量 $E = k^2 = E_R - i\Gamma/2$（$\Gamma = -4\,\mathrm{Re}\,k\cdot\mathrm{Im}\,k > 0$）。这与 `friedrichsModel.zh.md:551` "共振极点为第二张面下半平面解 $z_* = E_R - i\Gamma_R/2$" 是同一个对象的两个写法。
+$\tan\delta_2 = N/D$，故 $S_2 = (1+iN/D)/(1-iN/D) = (D + iN)/(D - iN)$。$S_2$ 极点对应 $D - iN = 0$，等价地 $N + iD = 0$。代码 `08_centrifugal_barrier.py:51` 用 Newton 法直接对这个组合函数做复根迭代。物理共振对应第二张 Riemann 面的下半 $k$ 平面极点 $\mathrm{Im}\, k < 0$，对应能量 $E = k^2 = E_R - i\Gamma/2$（$\Gamma = -4\,\mathrm{Re}\,k\cdot\mathrm{Im}\,k > 0$）。这与 `01_friedrichsModel.zh.md:551` "共振极点为第二张面下半平面解 $z_* = E_R - i\Gamma_R/2$" 是同一个对象的两个写法。
 
 扫描 $V_0 \in [8, 26]$ 跟踪极点：
 
@@ -160,7 +160,7 @@ $\tan\delta_2 = N/D$，故 $S_2 = (1+iN/D)/(1-iN/D) = (D + iN)/(D - iN)$。$S_2$
 
 弱井（$V_0 \sim 8$）极点远在复平面下方 $k \approx 2.4 - 0.8i$，对应宽共振（$\Gamma \sim 8$）。$V_0$ 增大到 $\sim 19.5$，极点沿弧向 $k$ 实轴爬升，$\Gamma$ 缩到 $0.02$；继续增大 $V_0$ 越过临界值 $V_{0,\rm crit} \approx 20$，极点跳到正虚轴（图中三角形），变成真束缚态 $k = i\kappa$、$E = -\kappa^2 < 0$。临界 $V_0$ 处虚部为零、能量穿过零阈值——这是 d 波束缚态从阈值"出生"的瞬间，与 s 波情形 `02_square_well_3d.zh.md:97` 的束缚态计数公式完全平行，只是阈值条件被离心位垒推迟了。
 
-观察轨迹：$V_0$ 越靠近临界值 $V_{0,\rm crit}$，共振极点越靠近实轴，对应 $\Gamma \to 0$；穿过临界值后立刻成为束缚态，这就是文献里"共振到束缚态的连续转换"。Friedrichs 笔记里"耦合调到极强时第二张面的极点爬到实轴"那张图（`friedrichsModel.zh.md:531-555`）在这里被一个具体可解的中心势完美实现。
+观察轨迹：$V_0$ 越靠近临界值 $V_{0,\rm crit}$，共振极点越靠近实轴，对应 $\Gamma \to 0$；穿过临界值后立刻成为束缚态，这就是文献里"共振到束缚态的连续转换"。Friedrichs 笔记里"耦合调到极强时第二张面的极点爬到实轴"那张图（`01_friedrichsModel.zh.md:531-555`）在这里被一个具体可解的中心势完美实现。
 
 ## sanity checks
 
@@ -176,12 +176,12 @@ $\tan\delta_2 = N/D$，故 $S_2 = (1+iN/D)/(1-iN/D) = (D + iN)/(D - iN)$。$S_2$
 
 | 主线笔记 | 本篇中的对应 |
 |:--|:--|
-| `partial_wave_projection.zh.md:340`，分波 LS 方程 $T_l = V_l + V_l G_0 T_l$ | 中心势 $l = 2$ 通道完全独立，闭式 $\delta_2(k)$ 直接绕过积分方程；on-shell $T_2$ 由 $T_2(k,k;E) = -e^{i\delta_2}\sin\delta_2/(\pi\mu k)$ 反代。 |
-| `partial_wave_projection.zh.md:360`，$f(\theta) = \sum_l (2l+1) f_l(k) P_l(\cos\theta)$ | $\sigma_2 = 4\pi(2l+1)\sin^2\delta_2/k^2$ 与 $l = 2$ 项对应，截面图直接验证。 |
-| `partial_wave_projection.zh.md:378`，$S_l = e^{2i\delta_l}$，$|S_l| = 1$ | 实 $k$ 上 $\delta_2$ 实数，$|S_2| = 1$ 自动；解析延拓的复 $k$ 极点位于 $S_2$ 的极点轨迹上。 |
-| `friedrichsModel.zh.md:551`，共振极点 $z_* = E_R - i\Gamma_R/2$ | $V_0 \in [8, 19.5]$ 区间所有极点 $k_n = k_n^{\rm R} + ik_n^{\rm I}$（$k_n^{\rm I} < 0$），$E_n = k_n^2 = E_R - i\Gamma/2$，$\Gamma = -4 k_n^{\rm R} k_n^{\rm I}$。 |
-| `friedrichsModel.zh.md:486`，$\Gamma(E) = 2\pi |g(E)|^2$ | 离心位垒 $6/r^2$ 起到"耦合 form factor"$g(E)$ 的角色：$E_R$ 越深埋在障壁里，"穿透因子"$|g|^2$ 越小，$\Gamma$ 越窄；本篇随 $V_0 \to V_{0,\rm crit}$ 看到 $\Gamma \to 0$ 即此机制。 |
-| `Green_operator.zh.md:478`，束缚态 = 物理面实极点；共振 = 第二张面复极点 | $V_0 > V_{0,\rm crit}$ 时正虚轴的束缚态极点，$V_0 < V_{0,\rm crit}$ 时下半平面的共振极点；图四把同一族极点跨越临界值的连续变形画出来。 |
+| `05_partial_wave_projection.zh.md:340`，分波 LS 方程 $T_l = V_l + V_l G_0 T_l$ | 中心势 $l = 2$ 通道完全独立，闭式 $\delta_2(k)$ 直接绕过积分方程；on-shell $T_2$ 由 $T_2(k,k;E) = -e^{i\delta_2}\sin\delta_2/(\pi\mu k)$ 反代。 |
+| `05_partial_wave_projection.zh.md:360`，$f(\theta) = \sum_l (2l+1) f_l(k) P_l(\cos\theta)$ | $\sigma_2 = 4\pi(2l+1)\sin^2\delta_2/k^2$ 与 $l = 2$ 项对应，截面图直接验证。 |
+| `05_partial_wave_projection.zh.md:378`，$S_l = e^{2i\delta_l}$，$|S_l| = 1$ | 实 $k$ 上 $\delta_2$ 实数，$|S_2| = 1$ 自动；解析延拓的复 $k$ 极点位于 $S_2$ 的极点轨迹上。 |
+| `01_friedrichsModel.zh.md:551`，共振极点 $z_* = E_R - i\Gamma_R/2$ | $V_0 \in [8, 19.5]$ 区间所有极点 $k_n = k_n^{\rm R} + ik_n^{\rm I}$（$k_n^{\rm I} < 0$），$E_n = k_n^2 = E_R - i\Gamma/2$，$\Gamma = -4 k_n^{\rm R} k_n^{\rm I}$。 |
+| `01_friedrichsModel.zh.md:486`，$\Gamma(E) = 2\pi |g(E)|^2$ | 离心位垒 $6/r^2$ 起到"耦合 form factor"$g(E)$ 的角色：$E_R$ 越深埋在障壁里，"穿透因子"$|g|^2$ 越小，$\Gamma$ 越窄；本篇随 $V_0 \to V_{0,\rm crit}$ 看到 $\Gamma \to 0$ 即此机制。 |
+| `02_Green_operator.zh.md:478`，束缚态 = 物理面实极点；共振 = 第二张面复极点 | $V_0 > V_{0,\rm crit}$ 时正虚轴的束缚态极点，$V_0 < V_{0,\rm crit}$ 时下半平面的共振极点；图四把同一族极点跨越临界值的连续变形画出来。 |
 | `02_square_well_3d.zh.md:43`，$\tan\delta_0$ 闭式 | 本篇的 $\tan\delta_2$ 公式在 $l = 0$ 退化时严格化简到方阱 s 波结果，是 Bessel 函数推广的一致性。 |
 
 ## 与第 3 篇 delta 壳的对照

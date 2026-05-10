@@ -1,4 +1,4 @@
-# Friedrichs 模型
+# ch01 Friedrichs 模型
 
 关键词：friedrichs model, discrete-continuum coupling, scattering state, resonance pole, gamow state
 

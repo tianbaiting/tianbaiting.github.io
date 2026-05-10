@@ -64,7 +64,7 @@ def numerov_swave(V_local, k, r_max=40.0, N=20000):
 
 ## 引擎二：动量空间 Lippmann-Schwinger
 
-s 波 LS 方程（参见 `../partial_wave_projection.zh.md:340`），约定取 $1/(2\pi^2)$ 测度：
+s 波 LS 方程（参见 `../05_partial_wave_projection.zh.md:340`），约定取 $1/(2\pi^2)$ 测度：
 
 $$
 T_l(p, p'; E) = V_l(p, p') + \int_0^\infty \frac{dq\, q^2}{2\pi^2}\,\frac{V_l(p, q)\, T_l(q, p'; E)}{E - q^2 + i0}
@@ -162,11 +162,11 @@ $$
 
 | 对象 | 主线引用 | 本文实现 |
 |:--|:--|:--|
-| 分波 LS 方程 | `../partial_wave_projection.zh.md:340` | `ls_swave`（Sloan 减法版本） |
-| $T_l \to \delta_l$ | `../partial_wave_projection.zh.md:372` | `delta_from_T`（取实部得 $k\cot\delta$） |
-| $G_0^{(\pm)}$ 边界值 | `../Green_operator.zh.md:84` | $1/(E - q^2 + i0)$ 在 LS 中由减法处理 |
-| LS 算符方程 | `../T_and_U_operators.zh.md:296` | $T = V + V G_0 T$，离散化为 $(I - VK)T = V$ |
-| 散射截面 $d\sigma/d\Omega = |f|^2$ | `../S_matrix_and_cross_section.zh.md:419` | s 波情形 $\sigma_0 = 4\pi\sin^2\delta_0/k^2$ |
+| 分波 LS 方程 | `../05_partial_wave_projection.zh.md:340` | `ls_swave`（Sloan 减法版本） |
+| $T_l \to \delta_l$ | `../05_partial_wave_projection.zh.md:372` | `delta_from_T`（取实部得 $k\cot\delta$） |
+| $G_0^{(\pm)}$ 边界值 | `../02_Green_operator.zh.md:84` | $1/(E - q^2 + i0)$ 在 LS 中由减法处理 |
+| LS 算符方程 | `../04_T_and_U_operators.zh.md:296` | $T = V + V G_0 T$，离散化为 $(I - VK)T = V$ |
+| 散射截面 $d\sigma/d\Omega = |f|^2$ | `../03_S_matrix_and_cross_section.zh.md:419` | s 波情形 $\sigma_0 = 4\pi\sin^2\delta_0/k^2$ |
 
 主线中的所有对象在这一篇里都获得了一个具体的数值实现，并通过 4 种可解势作了独立校验。
 
@@ -176,8 +176,8 @@ $$
 
 - 任意 $l$：径向方程加离心势 $l(l+1)/r^2$；Numerov 起点改 $u \sim r^{l+1}$；LS 中 $V_l(p,p')$ 替换为对应 Bessel 投影。
 - 耦合通道（例如 $^3S_1$-$^3D_1$ 张量耦合）：$T$ 与 $V$ 变成块矩阵，Sloan 减法对每个块独立处理；分波 $S$ 矩阵不再对角。
-- 复光学势（吸收散射）：Numerov 与 LS 都直接支持复值 $V$，无需修改算法本身；$\delta$ 变复，$|S| < 1$ 反映吸收。这一点是 `../appendix_EST_seperable_HVH_Esym.md:16` 中 Woods-Saxon 光学势数值实现的入口。
-- 三体 AGS：每个对子 $T_\gamma$ 由这里的 LS 引擎给出，外层加 Jacobi 变换 + 角动量重耦合（见 `../partial_wave_projection.zh.md:546`，引向 Tic-tac 项目）。
+- 复光学势（吸收散射）：Numerov 与 LS 都直接支持复值 $V$，无需修改算法本身；$\delta$ 变复，$|S| < 1$ 反映吸收。这一点是 `../99_appendix_EST_seperable_HVH_Esym.md:16` 中 Woods-Saxon 光学势数值实现的入口。
+- 三体 AGS：每个对子 $T_\gamma$ 由这里的 LS 引擎给出，外层加 Jacobi 变换 + 角动量重耦合（见 `../05_partial_wave_projection.zh.md:546`，引向 Tic-tac 项目）。
 - 极化观测量：自旋通道下 $T$ 是张量，需要从 $T$ 提取 $M$ 矩阵和 Wolfenstein 参数。这一步是后续研究轨"极化形式"那一篇的入口（dpol 直接需要）。
 
 至此可解模型系列收尾。下一阶段进入研究轨，第一篇会是极化形式与 $A_y$。

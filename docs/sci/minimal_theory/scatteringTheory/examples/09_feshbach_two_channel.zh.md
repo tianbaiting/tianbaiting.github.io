@@ -1,6 +1,6 @@
 # 双通道 Feshbach 共振
 
-第 9 篇可解模型，目标只有一个：把 `friedrichsModel.zh.md` 抽象的"$|d\rangle$ 与 $|E\rangle$ 通过 $g(E)$ 耦合"图像，落到一组真正能数值积分的耦合径向方程上。Friedrichs 笔记把共振机制写成自能 $\Sigma(z) = \int dE'\,|g(E')|^2/(z-E')$，但 $|d\rangle$、$g(E)$ 都是孤悬空中的对象。本篇造一个最小双通道模型，让闭通道里的真实方阱束缚态扮演 $|d\rangle$，让两个通道间的短程耦合扮演 $V$，让积分给出的 $\Sigma(z)$ 与 Friedrichs 公式直接逐项对账。
+第 9 篇可解模型，目标只有一个：把 `01_friedrichsModel.zh.md` 抽象的"$|d\rangle$ 与 $|E\rangle$ 通过 $g(E)$ 耦合"图像，落到一组真正能数值积分的耦合径向方程上。Friedrichs 笔记把共振机制写成自能 $\Sigma(z) = \int dE'\,|g(E')|^2/(z-E')$，但 $|d\rangle$、$g(E)$ 都是孤悬空中的对象。本篇造一个最小双通道模型，让闭通道里的真实方阱束缚态扮演 $|d\rangle$，让两个通道间的短程耦合扮演 $V$，让积分给出的 $\Sigma(z)$ 与 Friedrichs 公式直接逐项对账。
 
 约定 $\hbar = 1$，$2m = 1$，$E = k^2$。s 波，所以问题等价于半线 $r > 0$ 的耦合一维方程。
 
@@ -35,19 +35,19 @@ $$
 
 ## 与 Friedrichs 模型的字典
 
-把本模型逐项翻回 `friedrichsModel.zh.md` 的语言，是这一篇的核心收获。
+把本模型逐项翻回 `01_friedrichsModel.zh.md` 的语言，是这一篇的核心收获。
 
 | 本模型 | Friedrichs 笔记 |
 |:--|:--|
-| 闭通道孤立束缚态 $\phi_b^{(2)}(r)$（解耦极限 $g = 0$） | 离散态 $\lvert d\rangle$，`friedrichsModel.zh.md:60` |
-| 闭通道束缚能 $E_b^{(2)}$ | $E_d$（解耦能量），`friedrichsModel.zh.md:60` |
+| 闭通道孤立束缚态 $\phi_b^{(2)}(r)$（解耦极限 $g = 0$） | 离散态 $\lvert d\rangle$，`01_friedrichsModel.zh.md:60` |
+| 闭通道束缚能 $E_b^{(2)}$ | $E_d$（解耦能量），`01_friedrichsModel.zh.md:60` |
 | 开通道自由 s 波 $u_E^{(0)}(r) = \sin(k_1 r)/\sqrt{\pi k_1}$ | 连续态 $\lvert E\rangle$，能量归一 |
-| 通道间耦合 $V_{12}(r) = g\,\theta(R-r)$ | 耦合算符 $V$，`friedrichsModel.zh.md:82` |
+| 通道间耦合 $V_{12}(r) = g\,\theta(R-r)$ | 耦合算符 $V$，`01_friedrichsModel.zh.md:82` |
 | $g_{\rm eff}(E) = \int_0^\infty \phi_b^{(2)}(r)\, V_{12}(r)\, u_E^{(0)}(r)\, dr$ | 耦合矩阵元 $g(E) = \langle d\lvert V\rvert E\rangle$ |
-| $\Sigma(z) = \int_0^\infty dE'\,\lvert g_{\rm eff}(E')\rvert^2 / (z - E')$ | 自能 $\Sigma(z)$，`friedrichsModel.zh.md:216` |
-| 共振位置 $E_R$（$\delta_1$ 跨过 $\pi/2$ 处） | 极点方程 $z - E_d - \Sigma(z) = 0$ 的实部，`friedrichsModel.zh.md:222` |
-| 共振宽度 $\Gamma$（$\delta_1$ 的 $\pi$ 跳跃宽度） | $\Gamma(E) = 2\pi\lvert g(E)\rvert^2$，`friedrichsModel.zh.md:486` |
-| 复极点 $E_R - i\Gamma/2$ | $z_* = E_R - i\Gamma_R/2$，`friedrichsModel.zh.md:554` |
+| $\Sigma(z) = \int_0^\infty dE'\,\lvert g_{\rm eff}(E')\rvert^2 / (z - E')$ | 自能 $\Sigma(z)$，`01_friedrichsModel.zh.md:216` |
+| 共振位置 $E_R$（$\delta_1$ 跨过 $\pi/2$ 处） | 极点方程 $z - E_d - \Sigma(z) = 0$ 的实部，`01_friedrichsModel.zh.md:222` |
+| 共振宽度 $\Gamma$（$\delta_1$ 的 $\pi$ 跳跃宽度） | $\Gamma(E) = 2\pi\lvert g(E)\rvert^2$，`01_friedrichsModel.zh.md:486` |
+| 复极点 $E_R - i\Gamma/2$ | $z_* = E_R - i\Gamma_R/2$，`01_friedrichsModel.zh.md:554` |
 
 数值上我们要验证的核心命题：本模型在弱耦合 $g$ 下的共振宽度 $\Gamma(g)$，等于由 Friedrichs 公式直接计算的 $2\pi |g_{\rm eff}(E_b^{(2)})|^2$。这个等价不再是符号操作——是两套独立计算的数字对照。
 
@@ -142,13 +142,13 @@ $$
 
 ![open-channel phase shift](./assets/09_feshbach_two_channel/phase_shift_E.png)
 
-三条曲线在 $E_R \approx E_b^{(2)}$ 附近都把相移扫过 $\pi$。$g = 0.3$ 时跳变非常陡峭（共振窄）；$g = 0.7$ 中等；$g = 1.5$ 时跳跃被抹开成宽缓的 S 形。这是 Friedrichs 笔记 `friedrichsModel.zh.md:486` 中 $\Gamma(E) = 2\pi |g(E)|^2$ 的直接体现：耦合越强，宽度越大。注意相移的整体偏移 $-\pi$ 是 Levinson 印记（耦合后系统多出一个准束缚态）。
+三条曲线在 $E_R \approx E_b^{(2)}$ 附近都把相移扫过 $\pi$。$g = 0.3$ 时跳变非常陡峭（共振窄）；$g = 0.7$ 中等；$g = 1.5$ 时跳跃被抹开成宽缓的 S 形。这是 Friedrichs 笔记 `01_friedrichsModel.zh.md:486` 中 $\Gamma(E) = 2\pi |g(E)|^2$ 的直接体现：耦合越强，宽度越大。注意相移的整体偏移 $-\pi$ 是 Levinson 印记（耦合后系统多出一个准束缚态）。
 
 开通道弹性截面 $\sigma_1(E) = 4\pi\sin^2\delta_1(E)/k_1^2$：
 
 ![open-channel cross section](./assets/09_feshbach_two_channel/cross_section.png)
 
-经典 Breit-Wigner 峰，正好坐在 $E_b^{(2)}$ 上方。$g$ 越小峰越尖、越接近 $E_b^{(2)}$；$g$ 越大峰被压宽并向高能稍微漂移（实部修正 $\Delta(E)$ 起作用，对应 `friedrichsModel.zh.md:485`）。这正是冷原子物理里"调 $g$ 调 Feshbach 共振宽度"的简化模型。
+经典 Breit-Wigner 峰，正好坐在 $E_b^{(2)}$ 上方。$g$ 越小峰越尖、越接近 $E_b^{(2)}$；$g$ 越大峰被压宽并向高能稍微漂移（实部修正 $\Delta(E)$ 起作用，对应 `01_friedrichsModel.zh.md:485`）。这正是冷原子物理里"调 $g$ 调 Feshbach 共振宽度"的简化模型。
 
 最后是这一篇的核心对账图——共振宽度 $\Gamma$ 与 $g^2$ 的关系：
 
@@ -195,7 +195,7 @@ $$
 
 ## 与 Feshbach 投影的对账
 
-`friedrichsModel.zh.md:228` 给出 Feshbach 投影的形式语言：$P = |d\rangle\langle d|$，$Q = 1 - P$，有效哈密顿量
+`01_friedrichsModel.zh.md:228` 给出 Feshbach 投影的形式语言：$P = |d\rangle\langle d|$，$Q = 1 - P$，有效哈密顿量
 
 $$
 H_{\rm eff}(z) = PHP + PHQ\,(z - QHQ)^{-1}\,QHP.
@@ -207,14 +207,14 @@ $$
 \Sigma(z) = \int_0^\infty dE'\,\frac{|g_{\rm eff}(E')|^2}{z - E'}
 $$
 
-正是 `friedrichsModel.zh.md:216` 的定义直接照抄。Sokhotski-Plemelj 取边界值
+正是 `01_friedrichsModel.zh.md:216` 的定义直接照抄。Sokhotski-Plemelj 取边界值
 
 $$
 \Sigma(E + i0) = \Delta(E) - i\,\Gamma(E)/2,\qquad
 \Gamma(E) = 2\pi|g_{\rm eff}(E)|^2,
 $$
 
-`friedrichsModel.zh.md:486` 与本节图 4 的两条曲线在 $E = E_b^{(2)}$ 处的吻合给同一条公式做了独立的数值证明。
+`01_friedrichsModel.zh.md:486` 与本节图 4 的两条曲线在 $E = E_b^{(2)}$ 处的吻合给同一条公式做了独立的数值证明。
 
 实部 $\Delta(E)$ 给共振位置的偏移 $E_R = E_b^{(2)} + \Delta(E_R)$；虚部 $\Gamma$ 给宽度。本篇没有单独画 $\Delta(E)$，但它已经隐藏在图 3 里——$g$ 增大时 BW 峰中心从 $E_b^{(2)}$ 略向高能漂移，正是 $\Delta(E_R)$ 随耦合增大变得不可忽略。
 
@@ -226,7 +226,7 @@ $$
 
 ## next-step
 
-- 共振极点的复延拓：把 $E$ 解析延拓到第二张面，数值找 $\delta_1$ 的复极点 $E_* = E_R - i\Gamma/2$，与 BW 拟合的 $(E_R, \Gamma)$ 直接比较；这是 `friedrichsModel.zh.md:554` 的具体化。
+- 共振极点的复延拓：把 $E$ 解析延拓到第二张面，数值找 $\delta_1$ 的复极点 $E_* = E_R - i\Gamma/2$，与 BW 拟合的 $(E_R, \Gamma)$ 直接比较；这是 `01_friedrichsModel.zh.md:554` 的具体化。
 - 强耦合区 $\Gamma$ 的偏离：图 4 大 $g$ 处数值高于 Friedrichs 一阶预测，取的是 $\Sigma$ 的高阶迭代或 $z_* - E_d - \Sigma^{\rm II}(z_*) = 0$ 的全极点解；可以用 Newton 迭代直接找。
 - 散射长度的 Feshbach 调谐：调 $\Delta E$ 让 $E_b^{(2)} \to 0$ 时开通道散射长度 $a_1$ 发散，复刻冷原子 Feshbach 共振点的 unitary 极限。
 - 阈值上方多通道（$E > \Delta E$）：闭通道打开为第二条开通道，$S$ 矩阵变成 $2\times 2$，幺正性变成 $|S_{11}|^2 + |S_{12}|^2 = 1$；第 10 篇可以做。

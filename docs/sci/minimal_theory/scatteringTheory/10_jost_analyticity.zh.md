@@ -1,4 +1,4 @@
-# Jost 函数与解析性
+# ch10 Jost 函数与解析性
 
 前面几篇已经把分波相移 $\delta_l(k)$、分波 $S$ 矩阵 $S_l(k) = e^{2i\delta_l}$ 和分波振幅 $f_l(k) = (e^{2i\delta_l}-1)/(2ik)$ 都写出来了，但这些对象只在物理实 $k > 0$ 上定义。物理上想问的问题——束缚态在哪、共振在哪、虚态在哪、为什么 ${}^1 S_0$ 通道里 NN 散射长度奇大——都不能在实轴上回答；它们都是 $f_l(k)$ 解析延拓到复 $k$ 平面后的奇性。这一篇把这件事正面写出来：把分波振幅看作复 $k$ 函数，引入 Jost 函数 $F_l^\pm(k)$，把 $f_l$ 的极点结构归结到 $F_l^+$ 的零点结构。
 
@@ -17,7 +17,7 @@
 
 ## 为什么需要 Jost 函数
 
-主线笔记 `S_matrix_and_cross_section.zh.md` 与 `partial_wave_projection.zh.md` 把 $S$ 矩阵的物理意义与分波展开都讲清楚了，但有几件事在那个层次上没法回答：
+主线笔记 `03_S_matrix_and_cross_section.zh.md` 与 `05_partial_wave_projection.zh.md` 把 $S$ 矩阵的物理意义与分波展开都讲清楚了，但有几件事在那个层次上没法回答：
 
 第一，$f_l(k)$ 的极点在哪？$f_l(k) = e^{i\delta_l(k)}\sin\delta_l(k)/k$ 这个写法只对实 $k > 0$ 成立。$\delta_l(k)$ 是实数，分子在实轴上没有极点；$k$ 在分母上让 $f_l$ 在 $k = 0$ 行为反常，但这不是真正的"束缚态极点"。要看到束缚态极点，需要把 $f_l$ 解析延拓到复 $k$ 平面，并解释 $\delta_l$ 在复 $k$ 上的"复化"是怎么发生的。
 
@@ -33,7 +33,7 @@ Jost 函数 $F_l^\pm(k)$ 同时解决这三件事：
 
 ## 短程势的径向方程与两组特解
 
-记号沿用 `partial_wave_projection.zh.md:340` 与 `partial_wave_projection.zh.md:378`。取 $\hbar = 2\mu = 1$，分波径向方程为
+记号沿用 `05_partial_wave_projection.zh.md:340` 与 `05_partial_wave_projection.zh.md:378`。取 $\hbar = 2\mu = 1$，分波径向方程为
 
 $$
 \Bigl[\frac{d^2}{dr^2} + k^2 - V(r) - \frac{l(l+1)}{r^2}\Bigr] u_l(k, r) = 0 \tag{rad}
@@ -136,7 +136,7 @@ $$
 S_l(k) = \frac{F_l^-(k)}{F_l^+(k)} = \frac{|F_l^+(k)|\, e^{+i\delta_l(k)}}{|F_l^+(k)|\, e^{-i\delta_l(k)}} = e^{2i\delta_l(k)} \tag{S-Jost}
 $$
 
-这与 `partial_wave_projection.zh.md:378` 的 $S_l = e^{2i\delta_l}$ 一致；幺正性 $|S_l| = 1$ 在 (S-Jost) 写法下是 (F-conj) 的一行推论。
+这与 `05_partial_wave_projection.zh.md:378` 的 $S_l = e^{2i\delta_l}$ 一致；幺正性 $|S_l| = 1$ 在 (S-Jost) 写法下是 (F-conj) 的一行推论。
 
 ## 分波振幅与 $F_l^+$ 零点
 
@@ -160,7 +160,7 @@ $$
 
 $F_l^+(k)$ 在复 $k$ 平面上的零点位置完整决定了散射的解析结构。按零点位置可以分四类。
 
-正虚轴零点：束缚态。设 $F_l^+(i\kappa) = 0$，$\kappa > 0$。由 (F-W) 与 $f_l^+(i\kappa, r) \to e^{-\kappa r}$ 远场指数衰减，再由 Wronskian 为零意味着 $\phi_l(i\kappa, r)$ 与 $f_l^+(i\kappa, r)$ 线性相关，即 $\phi_l(i\kappa, r) \propto e^{-\kappa r}$ 在远处指数衰减，加上 (phi-0) 在原点 $r^{l+1}$ 规则，正好就是 $L^2$ 束缚态波函数。能量 $E_b = (i\kappa)^2 = -\kappa^2 < 0$。这与 `Green_operator.zh.md:412` 的谱分解一致：束缚态在 $G(z)$ 的 $z$ 实负轴上是真极点。
+正虚轴零点：束缚态。设 $F_l^+(i\kappa) = 0$，$\kappa > 0$。由 (F-W) 与 $f_l^+(i\kappa, r) \to e^{-\kappa r}$ 远场指数衰减，再由 Wronskian 为零意味着 $\phi_l(i\kappa, r)$ 与 $f_l^+(i\kappa, r)$ 线性相关，即 $\phi_l(i\kappa, r) \propto e^{-\kappa r}$ 在远处指数衰减，加上 (phi-0) 在原点 $r^{l+1}$ 规则，正好就是 $L^2$ 束缚态波函数。能量 $E_b = (i\kappa)^2 = -\kappa^2 < 0$。这与 `02_Green_operator.zh.md:412` 的谱分解一致：束缚态在 $G(z)$ 的 $z$ 实负轴上是真极点。
 
 负虚轴零点：虚态（virtual / antibound state）。$F_l^+(-i\kappa) = 0$，$\kappa > 0$。这一点本身在物理面外面（下半 $k$ 平面），不是 $f_l$ 的物理面极点。但若把 $F_l^-(k)$ 的零点放进来看（由 (F-conj)，$F_l^-$ 的下半平面零点 = $F_l^+$ 的上半平面零点的共轭），$F_l^+(-i\kappa) = 0$ 等价于 $F_l^-(i\kappa) = 0$，对应的是 $f_l$ 在物理面外的零点而非极点。$\phi_l(-i\kappa, r) \propto e^{+\kappa r}$ 在远处指数发散，不是 $L^2$。物理上重要的不是这一点本身，而是它如果靠近实轴（小 $\kappa$），就把实 $k = 0$ 阈值附近的散射长度推到极大。s 波 NN 散射 ${}^1 S_0$ 通道的 $a_0 \approx -23.7$ fm 大散射长度就是这个机制——在那里 $\kappa \approx 0.04$ fm⁻¹，对应的虚态能量 $E_v \approx -0.066$ MeV，几乎贴在零阈值下方。
 
@@ -177,17 +177,17 @@ E_R - i\Gamma/2 = (k_R - i k_I)^2 = k_R^2 - k_I^2 - 2 i k_R k_I,
 \quad \Gamma = 4 k_R k_I \tag{ER-Gamma}
 $$
 
-(ER-Gamma) 与 `friedrichsModel.zh.md:551` 的 $z_* = E_R - i\Gamma_R/2$ 是同一对象。$\Gamma > 0$ 由 $k_R, k_I > 0$ 自动保证。
+(ER-Gamma) 与 `01_friedrichsModel.zh.md:551` 的 $z_* = E_R - i\Gamma_R/2$ 是同一对象。$\Gamma > 0$ 由 $k_R, k_I > 0$ 自动保证。
 
-把上面四类零点画在一张概念图（口头描述：复 $k$ 平面，实轴水平、虚轴竖直）上：上半平面只有正虚轴上的束缚态零点；下半平面包含负虚轴的虚态、第三象限与第四象限的共振对（共振总成对出现，因 $F_l^+(k)^* = F_l^-(k^*) \neq F_l^+(-k^*)$ 在一般势下，但若进一步要求时间反演 $S(k)^* = S(-k)$，则下半平面零点关于虚轴对称分布；详见 `S_matrix_and_cross_section.zh.md` 与时间反演主线）。共振极点必然成对：$(k_R - i k_I, -k_R - i k_I)$，对应 $E_R - i\Gamma/2$ 与 $E_R^* - i\Gamma/2 = E_R - i\Gamma/2$（实部相同，因 $E$ 是 $k$ 偶函数）——但这是 $E$ 平面同一个共振，$k$ 平面两个根。
+把上面四类零点画在一张概念图（口头描述：复 $k$ 平面，实轴水平、虚轴竖直）上：上半平面只有正虚轴上的束缚态零点；下半平面包含负虚轴的虚态、第三象限与第四象限的共振对（共振总成对出现，因 $F_l^+(k)^* = F_l^-(k^*) \neq F_l^+(-k^*)$ 在一般势下，但若进一步要求时间反演 $S(k)^* = S(-k)$，则下半平面零点关于虚轴对称分布；详见 `03_S_matrix_and_cross_section.zh.md` 与时间反演主线）。共振极点必然成对：$(k_R - i k_I, -k_R - i k_I)$，对应 $E_R - i\Gamma/2$ 与 $E_R^* - i\Gamma/2 = E_R - i\Gamma/2$（实部相同，因 $E$ 是 $k$ 偶函数）——但这是 $E$ 平面同一个共振，$k$ 平面两个根。
 
 ## 复 $k$ 平面与复 $E$ 平面
 
 $E = k^2$ 是 $k \to E$ 的双叶映射，分支点在 $E = 0$。两张面的具体对应：
 
-物理面 = 上半 $k$ 平面 $\mathrm{Im}\,k > 0$。这一面包含 $E$ 平面的"第一张"，即从正实轴取 $k = +\sqrt{E}$（$E > 0$），从负实轴取 $k = i\sqrt{|E|}$（$E < 0$）。负实轴对应 $\mathrm{Im}\,k > 0$ 正虚轴，正是束缚态 $E_b = -\kappa^2 < 0$ 在 $k = i\kappa$ 的位置。$E$ 平面正实轴是切割（连续谱），$G(z)$ 在那里有跳跃 (`Green_operator.zh.md:443`)，对应 $k$ 平面实正轴是 $F_l^+$ 与 $F_l^-$ 互换共轭的边界。
+物理面 = 上半 $k$ 平面 $\mathrm{Im}\,k > 0$。这一面包含 $E$ 平面的"第一张"，即从正实轴取 $k = +\sqrt{E}$（$E > 0$），从负实轴取 $k = i\sqrt{|E|}$（$E < 0$）。负实轴对应 $\mathrm{Im}\,k > 0$ 正虚轴，正是束缚态 $E_b = -\kappa^2 < 0$ 在 $k = i\kappa$ 的位置。$E$ 平面正实轴是切割（连续谱），$G(z)$ 在那里有跳跃 (`02_Green_operator.zh.md:443`)，对应 $k$ 平面实正轴是 $F_l^+$ 与 $F_l^-$ 互换共轭的边界。
 
-第二张面 = 下半 $k$ 平面 $\mathrm{Im}\,k < 0$。从 $E$ 平面正实轴上方穿过切割向下走，绕分支点回到原位时进入第二张；按 $E = k^2$ 反查，$E$ 第一张 $\mathrm{Im}\, E > 0$ 加切割上沿对应 $k$ 第一象限实部正、虚部正，穿切割后进入第四象限实部正、虚部负。所以共振极点 $k_R - i k_I$（$k_R, k_I > 0$）落在第四象限，对应 $E = E_R - i\Gamma/2$ 第二张面下半部。这正是 `Green_operator.zh.md:470` 与 `Green_operator.zh.md:480` 的图像。
+第二张面 = 下半 $k$ 平面 $\mathrm{Im}\,k < 0$。从 $E$ 平面正实轴上方穿过切割向下走，绕分支点回到原位时进入第二张；按 $E = k^2$ 反查，$E$ 第一张 $\mathrm{Im}\, E > 0$ 加切割上沿对应 $k$ 第一象限实部正、虚部正，穿切割后进入第四象限实部正、虚部负。所以共振极点 $k_R - i k_I$（$k_R, k_I > 0$）落在第四象限，对应 $E = E_R - i\Gamma/2$ 第二张面下半部。这正是 `02_Green_operator.zh.md:470` 与 `02_Green_operator.zh.md:480` 的图像。
 
 把两张面拼起来看：
 
@@ -254,11 +254,11 @@ $$
 
 ## 极点 vs 零点：物理面 vs 第二张面再细化
 
-主线笔记中"束缚态是物理面实极点、共振是第二张面复极点"（`Green_operator.zh.md:478` 与 `Green_operator.zh.md:480`）的图像，在 Jost 函数语言下要更精确表述："物理面极点对应 $F_l^+$ 在上半 $k$ 平面的零点（必在正虚轴）"，"第二张面极点对应 $F_l^+$ 解析延拓到下半 $k$ 平面后的零点"。下面列三条容易混淆的对应。
+主线笔记中"束缚态是物理面实极点、共振是第二张面复极点"（`02_Green_operator.zh.md:478` 与 `02_Green_operator.zh.md:480`）的图像，在 Jost 函数语言下要更精确表述："物理面极点对应 $F_l^+$ 在上半 $k$ 平面的零点（必在正虚轴）"，"第二张面极点对应 $F_l^+$ 解析延拓到下半 $k$ 平面后的零点"。下面列三条容易混淆的对应。
 
-第一条：束缚态。$F_l^+(i\kappa) = 0$，$\kappa > 0$。$f_l(k)$ 在 $k = i\kappa$ 是真极点。$E_b = -\kappa^2$ 在 $E$ 第一张面（物理面）负实轴上。这与 `Green_operator.zh.md:412` 的 $G(z) = \sum_n |n\rangle\langle n|/(z - E_n)$ 离散和直接对应：束缚态在 resolvent 中是物理面真极点。
+第一条：束缚态。$F_l^+(i\kappa) = 0$，$\kappa > 0$。$f_l(k)$ 在 $k = i\kappa$ 是真极点。$E_b = -\kappa^2$ 在 $E$ 第一张面（物理面）负实轴上。这与 `02_Green_operator.zh.md:412` 的 $G(z) = \sum_n |n\rangle\langle n|/(z - E_n)$ 离散和直接对应：束缚态在 resolvent 中是物理面真极点。
 
-第二条：共振。$F_l^+$ 解析延拓到 $\mathrm{Im}\,k < 0$ 的零点 $k_R - i k_I$。$f_l$ 在原 $k$ 平面没有这个极点（因 $F_l^+$ 在原定义域里是上半平面），但若把 $f_l$ 也延拓到下半平面，则它在 $k_R - i k_I$ 上有极点。$E$ 平面上：$E = (k_R - i k_I)^2 \in $ 第二张面下半部，对应 $G(z)$ 解析延拓后的复极点 `Green_operator.zh.md:470`。
+第二条：共振。$F_l^+$ 解析延拓到 $\mathrm{Im}\,k < 0$ 的零点 $k_R - i k_I$。$f_l$ 在原 $k$ 平面没有这个极点（因 $F_l^+$ 在原定义域里是上半平面），但若把 $f_l$ 也延拓到下半平面，则它在 $k_R - i k_I$ 上有极点。$E$ 平面上：$E = (k_R - i k_I)^2 \in $ 第二张面下半部，对应 $G(z)$ 解析延拓后的复极点 `02_Green_operator.zh.md:470`。
 
 第三条：虚态。$F_l^+(-i\kappa) = 0$（解析延拓后）。$E_v = -\kappa^2$ 在 $E$ 第二张面负实轴上。这一点在物理上不是束缚态（波函数指数发散，非 $L^2$），但靠近实 $k = 0$ 阈值时显著影响低能散射长度。从 $S_l(k) = F_l^-(k)/F_l^+(k)$ 看，$F_l^+(-i\kappa) = 0$ 等价于 $F_l^-(-i\kappa)$ 的某种条件，但虚态本身不是 $f_l$ 在物理面上的极点——它是物理面外的零点对低能散射的"远场效应"。这条区分容易在文献里被简化掉，但在写 ${}^1 S_0$ 的 NN 散射时必须分清楚：${}^1 S_0$ 没有束缚态（$F_0^+$ 上半平面无零点），但有虚态（$F_0^+$ 下半平面接近原点处有零点），这两件事在 Jost 语言里完全不一样。
 
@@ -302,11 +302,11 @@ $$
 
 `examples/08_centrifugal_barrier.zh.md` 的 d 波方阱。$V_0$ 调节下扫描共振极点。`examples/08_centrifugal_barrier.zh.md:155` 把 $S_2(k)$ 写成 $(D + iN)/(D - iN)$，极点条件 $D - iN = 0$（等价 $N + iD = 0$）。从 (S-Jost) 看，$S_2 = F_2^-/F_2^+$ 的极点正是 $F_2^+ = 0$。比较 `examples/08_centrifugal_barrier.zh.md:155` 的 $D - iN$ 与 (F-asy) 给的 $F_2^+$ 表达式（$l = 2$ 下规则解的 $e^{-ikr}$ 系数），两者只差非零的归一化常数，零点集合相同。`examples/08_centrifugal_barrier.zh.md:161` 描述的"$V_0 \in [8, 19.5]$ 共振极点沿弧爬升，$V_{0,\rm crit} \approx 20$ 跳到正虚轴变束缚态"，在 Jost 语言里就是 $F_2^+$ 的零点轨迹随 $V_0$ 连续移动，临界 $V_0$ 时零点穿过实轴。
 
-`examples/07_well_barrier_1d.zh.md` 的 1D 类似物。1D Schrödinger $u'' + (E - V)u = 0$ 没有原点边界（$r$ 整条实数轴），但有"左 Jost 解 / 右 Jost 解"的对称版本：$f^\pm(k, x) \to e^{\pm ikx}$（$x \to \pm\infty$），$F(k)$ 由两组 Jost 解的 Wronskian 定义。极点条件 $L(E) + ik = 0$（用 logarithmic derivative $L$）就是 1D 版本的 $F^+(k) = 0$，与 3D 完全平行。Friedrichs 模型的 $z - E_d - \Sigma(z) = 0$（`friedrichsModel.zh.md:512`）则是把 Jost 类似物推广到通道空间：$\Sigma(z)$ 起 self-energy 的角色，方程零点给出离散通道解析延拓后的极点。
+`examples/07_well_barrier_1d.zh.md` 的 1D 类似物。1D Schrödinger $u'' + (E - V)u = 0$ 没有原点边界（$r$ 整条实数轴），但有"左 Jost 解 / 右 Jost 解"的对称版本：$f^\pm(k, x) \to e^{\pm ikx}$（$x \to \pm\infty$），$F(k)$ 由两组 Jost 解的 Wronskian 定义。极点条件 $L(E) + ik = 0$（用 logarithmic derivative $L$）就是 1D 版本的 $F^+(k) = 0$，与 3D 完全平行。Friedrichs 模型的 $z - E_d - \Sigma(z) = 0$（`01_friedrichsModel.zh.md:512`）则是把 Jost 类似物推广到通道空间：$\Sigma(z)$ 起 self-energy 的角色，方程零点给出离散通道解析延拓后的极点。
 
 ## Coulomb 势与长程修补
 
-Coulomb 势 $V_C = 2k\eta/r$ 不满足 $\int_0^\infty r |V|\,dr < \infty$，前面所有结论都要重写。`coulomb_scattering.zh.md:140` 已经写出 Coulomb 径向解 $F_l(\eta, \rho)$、$G_l(\eta, \rho)$ 的渐近形式：相比短程势的 $\sin(kr - l\pi/2 + \delta_l)$，Coulomb 远场多了 $-\eta\ln(2kr)$ 对数项与 $\sigma_l(\eta) = \arg\Gamma(l+1+i\eta)$ 的总相移。
+Coulomb 势 $V_C = 2k\eta/r$ 不满足 $\int_0^\infty r |V|\,dr < \infty$，前面所有结论都要重写。`07_coulomb_scattering.zh.md:140` 已经写出 Coulomb 径向解 $F_l(\eta, \rho)$、$G_l(\eta, \rho)$ 的渐近形式：相比短程势的 $\sin(kr - l\pi/2 + \delta_l)$，Coulomb 远场多了 $-\eta\ln(2kr)$ 对数项与 $\sigma_l(\eta) = \arg\Gamma(l+1+i\eta)$ 的总相移。
 
 Coulomb-Jost 函数定义需要修改：直接套 (f-inf) 的边界条件 $f_l^\pm \to e^{\pm i kr}$ 不再奏效，因为远场带对数发散相位。正确做法是把 $f_l^\pm$ 替换成"Coulomb 畸变 Jost 解"，远场边界条件改为
 
@@ -314,9 +314,9 @@ $$
 f_l^{\pm, C}(k, r) \xrightarrow{r \to \infty} e^{\pm i[kr - \eta\ln(2kr)]}
 $$
 
-加 $V_{SR}$ 后总 Jost 函数 $F_l^{+, C+SR}(k)$ 用畸变波 $f_l^{\pm, C}$ 与 regular 解的 Wronskian 定义。物理可观测的 Coulomb-distorted 短程相移 $\delta_l^{SR}$（`coulomb_scattering.zh.md:279`）出现在 $F_l^{+, C+SR}$ 的实轴相位中，纯 Coulomb 部分 $\sigma_l$ 已经吸收进畸变波基底。`examples/11_coulomb_demo` 给数值实现。
+加 $V_{SR}$ 后总 Jost 函数 $F_l^{+, C+SR}(k)$ 用畸变波 $f_l^{\pm, C}$ 与 regular 解的 Wronskian 定义。物理可观测的 Coulomb-distorted 短程相移 $\delta_l^{SR}$（`07_coulomb_scattering.zh.md:279`）出现在 $F_l^{+, C+SR}$ 的实轴相位中，纯 Coulomb 部分 $\sigma_l$ 已经吸收进畸变波基底。`examples/11_coulomb_demo` 给数值实现。
 
-这种"两次畸变"的结构和 DWBA 的 distorted wave 思路（`dwba.zh.md`）是同一回事：把已经解掉的部分作为参考，剩下的视为微扰。Jost 函数从短程到长程的推广就是把这条思路在边界条件层面操作化。
+这种"两次畸变"的结构和 DWBA 的 distorted wave 思路（`08_dwba.zh.md`）是同一回事：把已经解掉的部分作为参考，剩下的视为微扰。Jost 函数从短程到长程的推广就是把这条思路在边界条件层面操作化。
 
 Coulomb 极点结构的特殊点：纯 Coulomb 势的束缚态（氢原子 Bohr 能级 $E_n = -1/(2 n^2)$，$n = 1, 2, 3, \ldots$）在 $k$ 平面对应正虚轴上无穷多个零点 $k_n = i/n$，且趋向 $k = 0$ 没有间隔——这与短程势束缚态有限个、分立的图像形成对比。原因是 Coulomb 势的长程吸引让所有 $n$ 都出现束缚态，无穷凝聚于阈值。短程势加 Coulomb 后，$F_l^{+, C+SR}$ 的束缚态零点结构是 Coulomb 谱的扰动：每个 $n$ 都微移，加入了短程修正。这是原子物理 Rydberg 修正、核物理 Coulomb-displacement 能量等物理量的解析框架。
 
@@ -348,17 +348,17 @@ Volterra 迭代。从 $f_l^+(k, r) = e^{ikr} - \int_r^\infty G_0^l(k; r, r')\, V
 
 把前面的零点物理含义归到一张概念表（不展开成图，按主线笔记的对账风格列）：
 
-- 上半 $k$ 平面正虚轴 $k = i\kappa$，$F_l^+ = 0$：束缚态，$E_b = -\kappa^2 < 0$，对应 `Green_operator.zh.md:412` 的实极点；
+- 上半 $k$ 平面正虚轴 $k = i\kappa$，$F_l^+ = 0$：束缚态，$E_b = -\kappa^2 < 0$，对应 `02_Green_operator.zh.md:412` 的实极点；
 - 下半 $k$ 平面负虚轴 $k = -i\kappa$，$F_l^+ = 0$（解析延拓后）：虚态，$E_v = -\kappa^2 < 0$，物理面外但贴近实轴可显著影响低能散射；
 - $k = 0$ 实轴零点 $F_l^+(0) = 0$：阈值零能态，修正 Levinson 常数 $n_l^{1/2}$；
-- 下半 $k$ 平面第四象限 $k = k_R - i k_I$，$F_l^+ = 0$（解析延拓后）：共振，$E = E_R - i\Gamma/2$，$\Gamma = 4 k_R k_I$，对应 `Green_operator.zh.md:470` 与 `friedrichsModel.zh.md:551` 的第二张面极点。
+- 下半 $k$ 平面第四象限 $k = k_R - i k_I$，$F_l^+ = 0$（解析延拓后）：共振，$E = E_R - i\Gamma/2$，$\Gamma = 4 k_R k_I$，对应 `02_Green_operator.zh.md:470` 与 `01_friedrichsModel.zh.md:551` 的第二张面极点。
 
 主线笔记的对账：
 
-- resolvent 谱分解与极点结构：`Green_operator.zh.md:412` 的离散和 + 连续积分，`Green_operator.zh.md:470` 的第二张面共振极点；
-- 分波 $f_l$ 与 $\delta_l$ 的关系：`partial_wave_projection.zh.md:366` 的 $f_l = e^{i\delta_l}\sin\delta_l/k$，`partial_wave_projection.zh.md:378` 的 $S_l = e^{2i\delta_l}$；
-- Friedrichs 第二张面：`friedrichsModel.zh.md:512` 的极点方程 $z - E_d - \Sigma(z) = 0$，`friedrichsModel.zh.md:551` 的 $z_* = E_R - i\Gamma_R/2$；
-- Coulomb 修正：`coulomb_scattering.zh.md:142` 的 $-\eta\ln(2kr)$ 对数相位，`coulomb_scattering.zh.md:152` 的 $\sigma_l(\eta) = \arg\Gamma(l+1+i\eta)$；
+- resolvent 谱分解与极点结构：`02_Green_operator.zh.md:412` 的离散和 + 连续积分，`02_Green_operator.zh.md:470` 的第二张面共振极点；
+- 分波 $f_l$ 与 $\delta_l$ 的关系：`05_partial_wave_projection.zh.md:366` 的 $f_l = e^{i\delta_l}\sin\delta_l/k$，`05_partial_wave_projection.zh.md:378` 的 $S_l = e^{2i\delta_l}$；
+- Friedrichs 第二张面：`01_friedrichsModel.zh.md:512` 的极点方程 $z - E_d - \Sigma(z) = 0$，`01_friedrichsModel.zh.md:551` 的 $z_* = E_R - i\Gamma_R/2$；
+- Coulomb 修正：`07_coulomb_scattering.zh.md:142` 的 $-\eta\ln(2kr)$ 对数相位，`07_coulomb_scattering.zh.md:152` 的 $\sigma_l(\eta) = \arg\Gamma(l+1+i\eta)$；
 - 教学轨极点搜索：`examples/03_delta_shell.zh.md:73` 的 $S_0$ 极点条件、`examples/05_separable_rank1.zh.md:42` 的 $\tau(E)$ 闭式分母、`examples/08_centrifugal_barrier.zh.md:155` 的 $D - iN = 0$ 条件、`examples/07_well_barrier_1d.zh.md` 的 1D Jost 类似物；
 - delta 壳极点轨迹：`examples/03_delta_shell.zh.md:88` 给出 $\gamma = 20$ 的三个共振极点；
 - Yamaguchi 束缚态：`examples/05_separable_rank1.zh.md:154` 的 $\kappa \approx 0.0925$；
@@ -366,7 +366,7 @@ Volterra 迭代。从 $f_l^+(k, r) = e^{ikr} - \int_r^\infty G_0^l(k; r, r')\, V
 
 ## Regge 极点的简介
 
-到此为止把 $f_l(k)$ 看作 $k$ 的函数，分波量子数 $l$ 当离散标签。把 $l$ 也复化是另一条解析延拓方向。把分波 LS 方程 (`partial_wave_projection.zh.md:340`) 中的 $l$ 推广到复数（径向方程把 $l(l+1) \to \alpha(\alpha+1)$，球 Bessel 函数变成一般的 $\alpha$ 阶 Bessel），得到 $f_\alpha(k)$ 在复 $\alpha$ 平面的解析延拓。
+到此为止把 $f_l(k)$ 看作 $k$ 的函数，分波量子数 $l$ 当离散标签。把 $l$ 也复化是另一条解析延拓方向。把分波 LS 方程 (`05_partial_wave_projection.zh.md:340`) 中的 $l$ 推广到复数（径向方程把 $l(l+1) \to \alpha(\alpha+1)$，球 Bessel 函数变成一般的 $\alpha$ 阶 Bessel），得到 $f_\alpha(k)$ 在复 $\alpha$ 平面的解析延拓。
 
 $f_\alpha(k)$ 在复 $\alpha$ 平面的极点称为 Regge 极点，记为 $\alpha = \alpha_n(k)$。能量变 $k$ 时，极点位置 $\alpha_n(k)$ 描出一条轨迹，称为 Regge 轨迹。物理上每条 Regge 轨迹对应一族不同 $l$ 的束缚态/共振：在某个能量下 $\alpha_n(k) = l_0$（整数）时，对应 $l = l_0$ 分波出现一个束缚态或共振；不同能量下不同 $l$ 整数对应同一条轨迹的不同截点。
 
@@ -390,11 +390,11 @@ Regge 极点在高能下 dominant：固定能量 $s = -E$ 在交叉道，$\theta
 next-step：
 
 - 数值 Jost 函数计算，把 Volterra 积分方程迭代到稳态，画 $F_l^+(k)$ 在复 $k$ 平面的零点分布。指向 `examples/13_jost_demo`，覆盖 Yukawa 与 Hulthén 两个解析可控的例子。
-- 有效力程理论的系统化：把 $k\cot\delta_l(k)$ 的低能展开 $k\cot\delta_l = -1/a_l + r_l k^2/2 + O(k^4)$ 通过 $F_l^+$ 在 $k = 0$ 附近的 Taylor 展开 derive 出来，与 Levinson 定理合并讲。指向后续主线 E 篇 effective_range_levinson.zh.md。
+- 有效力程理论的系统化：把 $k\cot\delta_l(k)$ 的低能展开 $k\cot\delta_l = -1/a_l + r_l k^2/2 + O(k^4)$ 通过 $F_l^+$ 在 $k = 0$ 附近的 Taylor 展开 derive 出来，与 Levinson 定理合并讲。指向后续主线 E 篇 11_effective_range_levinson.zh.md。
 - $S$ 矩阵在复 $E$ 平面的解析结构与色散关系：从 $S_l(E)$ 的 unitarity cut + 束缚态极点写出 $N/D$ 表象、Mandelstam 表象、固定 $t$ 色散关系。强子物理 Roy 方程的源头。
 - Regge 极点的具体例子：Yukawa 势的 Regge 轨迹数值计算，看轨迹随耦合强度的变化；与 dispersion relation + 高能极限的对接。
 - 多通道推广：耦合通道 $S$ 矩阵的 Jost 矩阵 $\mathcal F^+(k)$，零点条件 $\det\mathcal F^+(k) = 0$ 给共振极点。延伸到核反应里的 R 矩阵理论。
-- Gamow 态的归一化：复极点对应不可归一化的右本征态（指数发散波函数），通过 RHS / Gelfand 三重定义内积。把 `friedrichsModel.zh.md:580` 的 RHS 框架在径向 Jost 极点处具体化，画 Gamow 波函数 $\phi_l(k_n, r)$ 的实部、虚部、外推区域。
+- Gamow 态的归一化：复极点对应不可归一化的右本征态（指数发散波函数），通过 RHS / Gelfand 三重定义内积。把 `01_friedrichsModel.zh.md:580` 的 RHS 框架在径向 Jost 极点处具体化，画 Gamow 波函数 $\phi_l(k_n, r)$ 的实部、虚部、外推区域。
 - $S$ 矩阵 product 表象：上半 $k$ 平面解析、零点全部在正虚轴的事实让 $F_l^+(k)$ 接受类似 Hadamard 因式分解 $F_l^+(k) = e^{ikc}\prod_n (1 - k/i\kappa_n) \cdot (\text{无零点解析})$ 的写法。这是 $N/D$ 表象（$f_l = N(k)/D(k)$，$D$ 自带束缚态零点结构）的解析根源，下一篇主线 E 篇会用到。
 - 反演问题（Marchenko / Gel'fand-Levitan）：给定 $S_l(k)$ 在实轴的所有 $k$ 上的值加上束缚态能量与归一化常数，能否唯一恢复 $V(r)$？答案在数学上是肯定的（短程势条件下），构造方法即 Marchenko 积分方程，输入正是 $F_l^+(k)$ 的零点位置与实轴幅度。这把"势 $\to$ 散射数据"的正问题反过来做。
 - 把 Jost 框架推广到自旋耦合通道（${}^3 S_1$-${}^3 D_1$ 张量耦合）的 Jost 矩阵，看 $\det\mathcal F^+(k) = 0$ 给的束缚态（氘核）在两通道波函数振幅上的具体表现。这一条直接接到核结构与 NN 散射的低能定理。

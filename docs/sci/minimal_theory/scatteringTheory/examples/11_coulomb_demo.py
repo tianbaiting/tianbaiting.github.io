@@ -116,7 +116,7 @@ def extract_total_phase(r, u, l, k, eta, ref=None):
 # ------------------ Rutherford & Coulomb amplitude -------------------------
 
 def f_coulomb(theta, k, eta):
-    """Closed form f_C(theta), eq (fC) in coulomb_scattering.zh.md:190."""
+    """Closed form f_C(theta), eq (fC) in 07_coulomb_scattering.zh.md:190."""
     s2 = np.sin(theta / 2.0) ** 2
     sig0 = sigma_0(eta)
     mag = -eta / (2.0 * k * s2)

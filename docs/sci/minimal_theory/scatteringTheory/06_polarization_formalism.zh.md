@@ -1,6 +1,6 @@
-# 极化形式与自旋观测量
+# ch06 极化形式与自旋观测量
 
-`partial_wave_projection.zh.md` 的最后一节给了带自旋耦合通道的 LS 方程，但停在 $T^J_{l'l}(k', k; E)$。从这里到一台真实极化谱仪测出 $A_y(\theta)$、$iT_{11}(\theta)$、$T_{20}(\theta)$，中间还有完整一段形式链：T 算符在自旋空间投影为 M 矩阵，密度矩阵把入射极化态参数化，截面公式把 M 矩阵的双线性式翻译成可观测的张量极化系数。本篇就是这一段链。
+`05_partial_wave_projection.zh.md` 的最后一节给了带自旋耦合通道的 LS 方程，但停在 $T^J_{l'l}(k', k; E)$。从这里到一台真实极化谱仪测出 $A_y(\theta)$、$iT_{11}(\theta)$、$T_{20}(\theta)$，中间还有完整一段形式链：T 算符在自旋空间投影为 M 矩阵，密度矩阵把入射极化态参数化，截面公式把 M 矩阵的双线性式翻译成可观测的张量极化系数。本篇就是这一段链。
 
 定位：dpol（氘核极化测量）研究的理论基底。自旋 1 + 自旋 0 的小节是 dpol polarimeter 公式的母方程；自旋 1/2 + 自旋 1/2 的 Wolfenstein 段是 NN 散射输入；时间反演与字称段提供 $A_y$ 非零、$A_x = A_z = 0$ 这类约束的形式根据。
 
@@ -29,13 +29,13 @@ $$
 
 ### 从 T 算符到 M 矩阵
 
-`T_and_U_operators.zh.md:380` 给出 on-shell S 矩阵元
+`04_T_and_U_operators.zh.md:380` 给出 on-shell S 矩阵元
 
 $$
 \langle \beta | S | \alpha\rangle = \delta_{\beta\alpha} - 2\pi i\, \delta(E_\beta - E_\alpha)\, \langle \beta | T(E_\alpha) | \alpha\rangle
 $$
 
-把通道指标 $\alpha, \beta$ 具体化为 $\alpha = (\mathbf{k}, m_a, m_A)$、$\beta = (\mathbf{k}', m'_b, m'_B)$。在自旋空间的固定磁量子数子集上抽出 $T$ 的矩阵元，并按 `S_matrix_and_cross_section.zh.md:307` 的振幅约定 $f = -(2\pi)^2 \mu\, t$，定义 M 矩阵
+把通道指标 $\alpha, \beta$ 具体化为 $\alpha = (\mathbf{k}, m_a, m_A)$、$\beta = (\mathbf{k}', m'_b, m'_B)$。在自旋空间的固定磁量子数子集上抽出 $T$ 的矩阵元，并按 `03_S_matrix_and_cross_section.zh.md:307` 的振幅约定 $f = -(2\pi)^2 \mu\, t$，定义 M 矩阵
 
 $$
 M_{m'_b m'_B;\, m_a m_A}(\mathbf{k}', \mathbf{k}) \equiv f_{m'_b m'_B;\, m_a m_A}(\mathbf{k}'\leftarrow \mathbf{k}) \tag{M}
@@ -53,7 +53,7 @@ $$
 M(\mathcal{R}\hat{\mathbf{k}}', \mathcal{R}\hat{\mathbf{k}}) = D^{(s_b)}(\mathcal{R}) \otimes D^{(s_B)}(\mathcal{R})\; M(\hat{\mathbf{k}}', \hat{\mathbf{k}})\; D^{(s_a)\dagger}(\mathcal{R}) \otimes D^{(s_A)\dagger}(\mathcal{R}) \tag{R}
 $$
 
-其中 $D^{(s)}(\mathcal{R})$ 是自旋 $s$ 的不可约旋转矩阵（即 `partial_wave_projection.zh.md:226` 的 Wigner D 函数）。这条协变性约束 M 的算符结构：M 必须能写成 $\hat{\mathbf{k}}, \hat{\mathbf{k}}'$ 的标量与自旋张量算符的双线性组合。
+其中 $D^{(s)}(\mathcal{R})$ 是自旋 $s$ 的不可约旋转矩阵（即 `05_partial_wave_projection.zh.md:226` 的 Wigner D 函数）。这条协变性约束 M 的算符结构：M 必须能写成 $\hat{\mathbf{k}}, \hat{\mathbf{k}}'$ 的标量与自旋张量算符的双线性组合。
 
 ### 与分波展开的衔接
 
@@ -63,7 +63,7 @@ $$
 M_{m'_b m'_B;\, m_a m_A}(\hat{\mathbf{k}}', \hat{\mathbf{k}}) = \frac{4\pi}{2ik} \sum_{J, l, l', s, s'} \cdots\, \bigl[\delta_{l'l}\delta_{s's} - S^J_{l's',ls}(k)\bigr]\, Y_{l'\!,m_l'}(\hat{\mathbf{k}}')\, Y^*_{l, m_l}(\hat{\mathbf{k}})\, \langle l'm_l', s'm_s' | JM\rangle\, \langle l m_l, s m_s | JM\rangle
 $$
 
-（自旋耦合 $s = s_a \otimes s_A$ 至总通道自旋；磁量子数约束 $m_l + m_s = M = m_l' + m_s'$。）这是 `partial_wave_projection.zh.md:396` 中耦合通道 $T^J_{l'l}$ 经自旋外积投影的"本征"形式。
+（自旋耦合 $s = s_a \otimes s_A$ 至总通道自旋；磁量子数约束 $m_l + m_s = M = m_l' + m_s'$。）这是 `05_partial_wave_projection.zh.md:396` 中耦合通道 $T^J_{l'l}$ 经自旋外积投影的"本征"形式。
 
 具体的自旋情形（1/2×0、1/2×1/2、1×0）只是这条公式在不同 $s, s'$ 下的具体化。下面把每种情形的 M 矩阵写出闭合形式。
 
@@ -197,11 +197,11 @@ $$
 \frac{d\sigma_0}{d\Omega} = \frac{1}{(2s_a+1)(2s_A+1)}\, \mathrm{Tr}\bigl[M\, M^\dagger\bigr] \tag{dsig0}
 $$
 
-这与 `S_matrix_and_cross_section.zh.md:420` 中 spinless 的 $|f|^2$ 公式衔接：当所有自旋为零时 M 退化为标量 $f$，$\mathrm{Tr}$ 退化为乘 1，归一前置因子退化为 1。
+这与 `03_S_matrix_and_cross_section.zh.md:420` 中 spinless 的 $|f|^2$ 公式衔接：当所有自旋为零时 M 退化为标量 $f$，$\mathrm{Tr}$ 退化为乘 1，归一前置因子退化为 1。
 
 ### 光学定理（自旋空间版本）
 
-`S_matrix_and_cross_section.zh.md:451` 的光学定理 $\mathrm{Im}\, f(\mathbf{p}\leftarrow\mathbf{p}) = (k/4\pi)\,\sigma_\text{tot}$ 有自旋形式。S 矩阵酉性 $S^\dagger S = \mathbf 1$ 在自旋空间矩阵元上给出
+`03_S_matrix_and_cross_section.zh.md:451` 的光学定理 $\mathrm{Im}\, f(\mathbf{p}\leftarrow\mathbf{p}) = (k/4\pi)\,\sigma_\text{tot}$ 有自旋形式。S 矩阵酉性 $S^\dagger S = \mathbf 1$ 在自旋空间矩阵元上给出
 
 $$
 2\,\mathrm{Im}\, M(\hat{\mathbf{k}}, \hat{\mathbf{k}}) = \frac{k}{2\pi} \int d\Omega'\; M^\dagger(\hat{\mathbf{k}}', \hat{\mathbf{k}})\, M(\hat{\mathbf{k}}', \hat{\mathbf{k}}) \quad\text{（弹性）} \tag{opt-spin}
@@ -398,7 +398,7 @@ $$
 
 ### 与 ${}^3S_1$-${}^3D_1$ 张量耦合的衔接
 
-`partial_wave_projection.zh.md:399` 提到核力张量力使 ${}^3S_1$-${}^3D_1$ 耦合。这一耦合在 Wolfenstein 形式中通过 $c, d$ 的复杂插值进入：偶 $L$、$S = 1$ 的振幅含 $S - D$ 混合相位 $\bar\delta_0, \bar\delta_2, \epsilon_1$（Stapp 等价相移参数），分波 S 矩阵为
+`05_partial_wave_projection.zh.md:399` 提到核力张量力使 ${}^3S_1$-${}^3D_1$ 耦合。这一耦合在 Wolfenstein 形式中通过 $c, d$ 的复杂插值进入：偶 $L$、$S = 1$ 的振幅含 $S - D$ 混合相位 $\bar\delta_0, \bar\delta_2, \epsilon_1$（Stapp 等价相移参数），分波 S 矩阵为
 
 $$
 S^{J=1} = \begin{pmatrix} \cos 2\epsilon_1\, e^{2i\bar\delta_0} & i\sin 2\epsilon_1\, e^{i(\bar\delta_0+\bar\delta_2)} \\ i\sin 2\epsilon_1\, e^{i(\bar\delta_0+\bar\delta_2)} & \cos 2\epsilon_1\, e^{2i\bar\delta_2} \end{pmatrix}
@@ -515,14 +515,14 @@ $$
 
 | 主线知识点 | 对账位置 | 本篇位置 |
 |:--|:--|:--|
-| on-shell $S = 1 - 2\pi i\,\delta(E)\, T$（自由基底矩阵元） | `T_and_U_operators.zh.md:380` | M 矩阵定义 $\text{(M)}$ |
-| 散射振幅 $f = -(2\pi)^2 m\, t$ | `S_matrix_and_cross_section.zh.md:307` | M 矩阵定义 $\text{(M)}$ |
-| $d\sigma/d\Omega = |f|^2$（spinless） | `S_matrix_and_cross_section.zh.md:420` | unpolarized 截面 $\text{(dsig0)}$ |
-| 光学定理 $\mathrm{Im}\,f(\text{前向}) = (k/4\pi)\sigma_\text{tot}$ | `S_matrix_and_cross_section.zh.md:451` | 自旋空间版本 $\text{(opt-spin)}$ |
-| 耦合通道分波 $T^J_{l'l}$（带自旋） | `partial_wave_projection.zh.md:396` | M 矩阵分波展开 |
-| ${}^3S_1$-${}^3D_1$ 张量耦合 | `partial_wave_projection.zh.md:399` | Wolfenstein 段末尾 |
-| Wigner D 函数（旋转协变） | `partial_wave_projection.zh.md:226` | 协变性 $\text{(R)}$ |
-| 球谐函数与 CG 系数（耦合基） | `partial_wave_projection.zh.md:124` | 不可约张量基底 $\text{(rho-T)}$ |
+| on-shell $S = 1 - 2\pi i\,\delta(E)\, T$（自由基底矩阵元） | `04_T_and_U_operators.zh.md:380` | M 矩阵定义 $\text{(M)}$ |
+| 散射振幅 $f = -(2\pi)^2 m\, t$ | `03_S_matrix_and_cross_section.zh.md:307` | M 矩阵定义 $\text{(M)}$ |
+| $d\sigma/d\Omega = |f|^2$（spinless） | `03_S_matrix_and_cross_section.zh.md:420` | unpolarized 截面 $\text{(dsig0)}$ |
+| 光学定理 $\mathrm{Im}\,f(\text{前向}) = (k/4\pi)\sigma_\text{tot}$ | `03_S_matrix_and_cross_section.zh.md:451` | 自旋空间版本 $\text{(opt-spin)}$ |
+| 耦合通道分波 $T^J_{l'l}$（带自旋） | `05_partial_wave_projection.zh.md:396` | M 矩阵分波展开 |
+| ${}^3S_1$-${}^3D_1$ 张量耦合 | `05_partial_wave_projection.zh.md:399` | Wolfenstein 段末尾 |
+| Wigner D 函数（旋转协变） | `05_partial_wave_projection.zh.md:226` | 协变性 $\text{(R)}$ |
+| 球谐函数与 CG 系数（耦合基） | `05_partial_wave_projection.zh.md:124` | 不可约张量基底 $\text{(rho-T)}$ |
 
 每条都可用 `grep -n` 在源文件中校验。
 
@@ -534,5 +534,5 @@ $$
 - dpol polarimeter 校准：${}^4\mathrm{He}(\vec d, d){}^4\mathrm{He}$ 弹性散射的 $iT_{11}, T_{20}, T_{21}, T_{22}$ 表（Madison 1986、IUCF 测量值），与本篇 $\text{(M-1-0)}$ 拟合，提取 $\{U, V, W, X\}$ 振幅。
 - ${}^3S_1$-${}^3D_1$ 耦合通道下 Wolfenstein 振幅 $\{a, b, c, d, e\}$ 的具体计算：从 Stapp 相移 $\bar\delta_0, \bar\delta_2, \epsilon_1$ 出发，组合分波 S 矩阵到 M 矩阵，与 Nijmegen / SAID PWA 输出对照。
 - 全同粒子反对称化下的 Wolfenstein 形式：pp 散射、对称化 $M(\theta) \to (M(\theta) - M(\pi - \theta))/\sqrt 2$ 类型操作，具体推导每一项振幅在 $\theta \to \pi - \theta$ 下的变换；以及 nn、np 在同位旋投影下的差别。
-- 三体推广：$d + p$ 弹性与破坏散射中的 deuteron 极化、Dalitz–Watson 等张量极化观测量；如何把 `partial_wave_projection.zh.md:539` 的 AGS 分波方程结果接到本篇 $\text{(M-1-0)}$ 类的 M 矩阵参数化。
-- 含 Coulomb 长程势的修正：Coulomb 相位修正下 M 矩阵的振幅分解（与 `S_matrix_and_cross_section.zh.md:540` 提到的长程势备注衔接），尤其在 dpol on charged target 时不可忽略。
+- 三体推广：$d + p$ 弹性与破坏散射中的 deuteron 极化、Dalitz–Watson 等张量极化观测量；如何把 `05_partial_wave_projection.zh.md:539` 的 AGS 分波方程结果接到本篇 $\text{(M-1-0)}$ 类的 M 矩阵参数化。
+- 含 Coulomb 长程势的修正：Coulomb 相位修正下 M 矩阵的振幅分解（与 `03_S_matrix_and_cross_section.zh.md:540` 提到的长程势备注衔接），尤其在 dpol on charged target 时不可忽略。

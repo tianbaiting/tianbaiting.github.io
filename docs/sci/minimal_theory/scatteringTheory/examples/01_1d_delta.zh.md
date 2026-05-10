@@ -6,8 +6,8 @@
 
 ## 目标
 
-- 锚定 `S_matrix_and_cross_section.zh.md` 中 $S = \mathbf 1 + R$ 的拆分：在一维里 $R$ 对应反射振幅 $r$，$T$ 对应透射振幅 $t-1$ 的部分。
-- 锚定 `Green_operator.zh.md` 中"束缚态 = $G(z)$ 在物理面上的实极点"的结论：这里束缚态由 $t(k)$ 在正虚轴上的极点直接给出。
+- 锚定 `03_S_matrix_and_cross_section.zh.md` 中 $S = \mathbf 1 + R$ 的拆分：在一维里 $R$ 对应反射振幅 $r$，$T$ 对应透射振幅 $t-1$ 的部分。
+- 锚定 `02_Green_operator.zh.md` 中"束缚态 = $G(z)$ 在物理面上的实极点"的结论：这里束缚态由 $t(k)$ 在正虚轴上的极点直接给出。
 - 给后续几篇可解模型提供一个最小骨架：势、匹配条件、S 矩阵元、极点、数值验证按这个顺序串起。
 
 ## 势的定义
@@ -112,7 +112,7 @@ $$
 E_b = -\,\kappa^2 = -\,\frac{\lambda^2}{4}.
 $$
 
-排斥势 $\lambda > 0$ 时极点跑到下半平面（非物理面），无束缚态。这与 `Green_operator.zh.md` 中"束缚态是物理面上的实极点"的结论一一对应：在一维 delta 势里，整张 $S$ 矩阵只有这一个极点，理论框架与具体例子完全合拍。
+排斥势 $\lambda > 0$ 时极点跑到下半平面（非物理面），无束缚态。这与 `02_Green_operator.zh.md` 中"束缚态是物理面上的实极点"的结论一一对应：在一维 delta 势里，整张 $S$ 矩阵只有这一个极点，理论框架与具体例子完全合拍。
 
 束缚态归一化波函数
 
@@ -125,7 +125,7 @@ $$
 
 ## 与 T 矩阵和 LS 方程的对账
 
-按 `T_and_U_operators.zh.md` 的定义，$T(E)|\alpha\rangle = V|\psi_\alpha^{(+)}\rangle$。一维 delta 的 $V|\psi^{(+)}_k\rangle$ 完全集中在原点：
+按 `04_T_and_U_operators.zh.md` 的定义，$T(E)|\alpha\rangle = V|\psi_\alpha^{(+)}\rangle$。一维 delta 的 $V|\psi^{(+)}_k\rangle$ 完全集中在原点：
 
 $$
 V \psi_k^{(+)}(x) = \lambda\, \delta(x)\, \psi_k^{(+)}(0) = \lambda\, t(k)\, \delta(x).
@@ -253,11 +253,11 @@ plt.savefig('assets/01_1d_delta/phase_shift.png', dpi=140)
 
 | 主线 | 一维 delta 中的对应 |
 |:--|:--|
-| `S_matrix_and_cross_section.zh.md:218`，$S = \Omega_-^\dagger \Omega_+$ | $S(k) = \begin{pmatrix} r & t \\ t & r \end{pmatrix}$，宇称基对角化 |
+| `03_S_matrix_and_cross_section.zh.md:218`，$S = \Omega_-^\dagger \Omega_+$ | $S(k) = \begin{pmatrix} r & t \\ t & r \end{pmatrix}$，宇称基对角化 |
 | 同上 §3，$S = \mathbf 1 + R$ 拆分 | $R(k) = \begin{pmatrix} r & t-1 \\ t-1 & r \end{pmatrix}$ |
-| `Green_operator.zh.md:412`，束缚态是物理面实极点 | 极点 $k_* = -i\lambda/2$，$E_b = -\lambda^2/4$（仅吸引） |
-| `T_and_U_operators.zh.md:353`，$T(E) = V + V G_0^{(+)} T$ | separable ansatz $T = \tau\,|0\rangle\langle 0|$，标量 $\tau(E) = 2ik\lambda/(2ik-\lambda)$ |
-| `partial_wave_projection.zh.md:374`，$T_l(k,k;E) = -\,e^{i\delta_l}\sin\delta_l/(\pi\mu k)$ | 在偶通道：$\tau(E) \propto e^{i\delta_e}\sin\delta_e/k$（系数差由维度决定） |
+| `02_Green_operator.zh.md:412`，束缚态是物理面实极点 | 极点 $k_* = -i\lambda/2$，$E_b = -\lambda^2/4$（仅吸引） |
+| `04_T_and_U_operators.zh.md:353`，$T(E) = V + V G_0^{(+)} T$ | separable ansatz $T = \tau\,|0\rangle\langle 0|$，标量 $\tau(E) = 2ik\lambda/(2ik-\lambda)$ |
+| `05_partial_wave_projection.zh.md:374`，$T_l(k,k;E) = -\,e^{i\delta_l}\sin\delta_l/(\pi\mu k)$ | 在偶通道：$\tau(E) \propto e^{i\delta_e}\sin\delta_e/k$（系数差由维度决定） |
 
 奇通道相移恒为零这一点，对应于 $\delta$ 函数势在 $\psi(0) = 0$ 子空间上不起作用——本质上是势的 separable 秩为 1，奇通道完全在它的零空间里。
 
@@ -267,4 +267,4 @@ plt.savefig('assets/01_1d_delta/phase_shift.png', dpi=140)
 
 - 双 delta 势 $V = \lambda[\delta(x-a) + \delta(x+a)]$：会出现共振（透射峰不再单调），奇/偶通道都被激活，是从"无共振"到"窄共振"最小的过渡。
 - 一维 delta 与三维 s 波的对应：用 $u_l(r) = r\psi_l(r)$ 代换，三维 s 波在 $r > 0$ 的方程与一维半线性方程在 $x > 0$ 一致，但边界条件 $u_l(0) = 0$ 比一维多一个约束。
-- 时间域生存振幅：$\langle\psi_b | e^{-iHt}|\psi_b\rangle = e^{-iE_b t}$ 是纯指数（无衰减、无 cut 修正），因为是真正的束缚态。这与 `friedrichsModel.zh.md` 中的 Gamow 态形成对比——共振才有非平凡的 cut 贡献。
+- 时间域生存振幅：$\langle\psi_b | e^{-iHt}|\psi_b\rangle = e^{-iE_b t}$ 是纯指数（无衰减、无 cut 修正），因为是真正的束缚态。这与 `01_friedrichsModel.zh.md` 中的 Gamow 态形成对比——共振才有非平凡的 cut 贡献。

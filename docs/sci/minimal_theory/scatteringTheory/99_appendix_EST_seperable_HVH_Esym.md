@@ -1,4 +1,4 @@
-# Woods-Saxon 光学势的 EST Separable 化及其与对称能的联系
+# appendix · Woods-Saxon 光学势的 EST Separable 化及其与对称能的联系
 
 > 本文整理两部分内容：
 > 1. 从 Woods-Saxon 光学势出发，通过 Ernst-Shakin-Thaler（EST）展开匹配 separable 势参数 $(\lambda, \beta)$ 的完整推导；

@@ -1,8 +1,8 @@
-# 畸变波 Born 近似
+# ch08 畸变波 Born 近似
 
-`coulomb_scattering.zh.md:305` 在 Coulomb 加短程势的具体场景下已经做了一次完整的"分块 Born"——把 $V_C$ 当成精确求解的零阶背景，把 $V_{SR}$ 当成微扰，得到 $f_{SR}^{\rm CB}$。本篇把这一具体化抽出来，写成两体散射框架下普适的 Distorted-Wave Born Approximation：把 $V$ 拆成 $V_0 + V_1$，对 $V_0$ 算精确散射态（畸变波 $\chi^{(\pm)}$），对 $V_1$ 在畸变波基底上做一阶 Born。它同时是 Born 级数的"分块求和"、`T_and_U_operators.zh.md:296` 那条 LS 方程的两势重写、Coulomb-distorted Born 的一般化、以及核物理里光学势加转移势的标准微扰起点。
+`07_coulomb_scattering.zh.md:305` 在 Coulomb 加短程势的具体场景下已经做了一次完整的"分块 Born"——把 $V_C$ 当成精确求解的零阶背景，把 $V_{SR}$ 当成微扰，得到 $f_{SR}^{\rm CB}$。本篇把这一具体化抽出来，写成两体散射框架下普适的 Distorted-Wave Born Approximation：把 $V$ 拆成 $V_0 + V_1$，对 $V_0$ 算精确散射态（畸变波 $\chi^{(\pm)}$），对 $V_1$ 在畸变波基底上做一阶 Born。它同时是 Born 级数的"分块求和"、`04_T_and_U_operators.zh.md:296` 那条 LS 方程的两势重写、Coulomb-distorted Born 的一般化、以及核物理里光学势加转移势的标准微扰起点。
 
-定位：研究轨第 3 篇主线笔记。与 `polarization_formalism.zh.md` 联动给出含自旋的 DWBA；与 `appendix_EST_seperable_HVH_Esym.md` 联动给出复光学势 $V_0$ 下的微扰处理；与 `T_and_U_operators.zh.md` 联动指出 DWBA 是两体 $T$ 算符的两势重写、是三体 AGS $U_{\beta\alpha}$ 的弱耦合极限。
+定位：研究轨第 3 篇主线笔记。与 `06_polarization_formalism.zh.md` 联动给出含自旋的 DWBA；与 `99_appendix_EST_seperable_HVH_Esym.md` 联动给出复光学势 $V_0$ 下的微扰处理；与 `04_T_and_U_operators.zh.md` 联动指出 DWBA 是两体 $T$ 算符的两势重写、是三体 AGS $U_{\beta\alpha}$ 的弱耦合极限。
 
 约定：薛定谔表象、$\hbar=1$、约化质量 $\mu$、单中心两体（多通道时再具体化）。势 $V$ 不显含时；分波公式中按主线惯例 $V$ 取局域中心；推广到非局域、含自旋、多通道的写法在对应小节给出。
 
@@ -21,14 +21,14 @@ $$
 适用范围列三类典型情形：
 
 - 反应散射 $a + A \to b + B$：入射、出射通道各取光学势作畸变源，$V_1$ 是把核状态从 $|A\rangle$ 改到 $|B\rangle$ 的转移算符。这是核反应理论的"DWBA 工业"（核子转移、电磁、电弱跃迁）。
-- 弹性散射的 Coulomb 加短程势：$V_0 = V_C$，$V_1 = V_{SR}$，畸变波是 Coulomb 波。这就是 `coulomb_scattering.zh.md:305` 的 Coulomb-distorted Born，本篇把它一般化。
+- 弹性散射的 Coulomb 加短程势：$V_0 = V_C$，$V_1 = V_{SR}$，畸变波是 Coulomb 波。这就是 `07_coulomb_scattering.zh.md:305` 的 Coulomb-distorted Born，本篇把它一般化。
 - 光学势加弱微扰：复光学势 $V_0 = U(r) + iW(r)$ 提供吸收的弹性背景，$V_1$ 是被忽略的细节（如非中心耦合、isovector 修正、非局域成分）。
 
 与极化形式联动（A 篇）：$V_0$、$V_1$ 在自旋空间是矩阵，畸变波 $\chi^{(\pm)}$ 在自旋分量上是 $(2s_a+1)(2s_A+1)$ 维向量，DWBA 矩阵元就是自旋空间的双线性形式。这给出 polarized 反应的 M 矩阵。
 
 ## Born 级数回顾与失效图像
 
-`T_and_U_operators.zh.md:296` 的两体 $T$ 方程
+`04_T_and_U_operators.zh.md:296` 的两体 $T$ 方程
 
 $$
 T(E) = V + V G_0^{(+)}(E)\, T(E) \tag{LS-T}
@@ -48,7 +48,7 @@ $$
 T \approx V \quad\Longrightarrow\quad f^B(\mathbf k_f \leftarrow \mathbf k_i) = -\frac{\mu}{2\pi}\int d^3 r\, e^{-i\mathbf q\cdot\mathbf r}\, V(\mathbf r) \tag{f-B}
 $$
 
-$\mathbf q = \mathbf k_f - \mathbf k_i$；这正是 `S_matrix_and_cross_section.zh.md:506` 给出的标准 Born 公式。
+$\mathbf q = \mathbf k_f - \mathbf k_i$；这正是 `03_S_matrix_and_cross_section.zh.md:506` 给出的标准 Born 公式。
 
 何时 Born 级数发散
 
@@ -56,10 +56,10 @@ $\mathbf q = \mathbf k_f - \mathbf k_i$；这正是 `S_matrix_and_cross_section.
 
 - $V$ 强到产生束缚态。$T(E)$ 在 $E = E_b < 0$ 处有极点，$\|VG_0^{(+)}\|$ 在阈值附近不再小于 1。
 - $V$ 强到产生共振。$E$ 接近共振位置时 Born 级数缓慢收敛。
-- $V$ 是长程势。`coulomb_scattering.zh.md:21` 已分析：Coulomb 让自由参考动力学失效，Cook 判据破坏，纯 Born 公式 $\text{(f-B)}$ 直接发散（$V_C$ 的 Fourier 在 $\mathbf q\to 0$ 处奇异）。
+- $V$ 是长程势。`07_coulomb_scattering.zh.md:21` 已分析：Coulomb 让自由参考动力学失效，Cook 判据破坏，纯 Born 公式 $\text{(f-B)}$ 直接发散（$V_C$ 的 Fourier 在 $\mathbf q\to 0$ 处奇异）。
 - $V$ 含吸收虚部 $iW$，$|W|$ 与 $|U|$ 同阶。光学势是这种情形，Born 完全捕捉不到吸收引起的 elastic 衰减。
 
-DWBA 的存活条件：以上四种"强 $V$" 都可以通过分块 $V = V_0 + V_1$ 重新组织——把强、长程、共振制造、吸收的部分塞进 $V_0$，把仍然弱的部分留在 $V_1$。$V_0$ 的精确处理由数值积分径向方程或 EST/separable 展开（`appendix_EST_seperable_HVH_Esym.md:97`）完成；$V_1$ 的处理由本篇主公式 $\text{(DWBA-master)}$ 完成。
+DWBA 的存活条件：以上四种"强 $V$" 都可以通过分块 $V = V_0 + V_1$ 重新组织——把强、长程、共振制造、吸收的部分塞进 $V_0$，把仍然弱的部分留在 $V_1$。$V_0$ 的精确处理由数值积分径向方程或 EST/separable 展开（`99_appendix_EST_seperable_HVH_Esym.md:97`）完成；$V_1$ 的处理由本篇主公式 $\text{(DWBA-master)}$ 完成。
 
 ## 两势分解与畸变波
 
@@ -98,7 +98,7 @@ $$
 
 数值实现上 $\chi^{(\pm)}$ 由数值积分径向 Schrödinger 方程（仅 $V_0$ 项）得到——这是已知怎么做的部分。
 
-完整精确态 $|\psi_\alpha^{(\pm)}\rangle$ 满足含全 $V$ 的 LS 方程（`T_and_U_operators.zh.md:204`）
+完整精确态 $|\psi_\alpha^{(\pm)}\rangle$ 满足含全 $V$ 的 LS 方程（`04_T_and_U_operators.zh.md:204`）
 
 $$
 |\psi_\alpha^{(+)}\rangle = |\alpha\rangle + G_0^{(+)}(E_\alpha)\,(V_0 + V_1)\,|\psi_\alpha^{(+)}\rangle
@@ -118,7 +118,7 @@ $$
 |\psi_\alpha^{(+)}\rangle = |\chi_\alpha^{(+)}\rangle + G_0'^{(+)}(E_\alpha)\, V_1\, |\psi_\alpha^{(+)}\rangle \tag{psi-LS-prime}
 $$
 
-这就是 DWBA 的核心方程：把全 $V$ 下的 LS 方程换成以 $H'$ 为参考、$V_1$ 为相互作用的 LS 方程。畸变波 $\chi^{(+)}$ 取代了平面波 $|\alpha\rangle$，$G_0'^{(+)}$ 取代了 $G_0^{(+)}$。形式上完全平行 `T_and_U_operators.zh.md:204`。
+这就是 DWBA 的核心方程：把全 $V$ 下的 LS 方程换成以 $H'$ 为参考、$V_1$ 为相互作用的 LS 方程。畸变波 $\chi^{(+)}$ 取代了平面波 $|\alpha\rangle$，$G_0'^{(+)}$ 取代了 $G_0^{(+)}$。形式上完全平行 `04_T_and_U_operators.zh.md:204`。
 
 ### 两势 T 矩阵元的 Gell-Mann–Goldberger 公式
 
@@ -154,7 +154,7 @@ $$
 T_{fi} = \langle\beta|V|\psi_\alpha^{(+)}\rangle = \langle\beta|V_0|\chi_\alpha^{(+)}\rangle + \langle\beta|V_0 G_0'^{(+)} V_1|\psi_\alpha^{(+)}\rangle + \langle\beta|V_1|\psi_\alpha^{(+)}\rangle
 $$
 
-把后两项合并并利用 $\langle\beta|(1 + V_0 G_0'^{(+)}) = \langle\chi_\beta^{(-)}|$（这是 $\text{(chi-LS)}$ 的对偶版本对 $H'$ 演化得到的关系，类比 `T_and_U_operators.zh.md:248` 的 $\Omega_+|\alpha\rangle = (1 + G_0^{(+)} T)|\alpha\rangle$）：
+把后两项合并并利用 $\langle\beta|(1 + V_0 G_0'^{(+)}) = \langle\chi_\beta^{(-)}|$（这是 $\text{(chi-LS)}$ 的对偶版本对 $H'$ 演化得到的关系，类比 `04_T_and_U_operators.zh.md:248` 的 $\Omega_+|\alpha\rangle = (1 + G_0^{(+)} T)|\alpha\rangle$）：
 
 $$
 T_{fi} = \underbrace{\langle\beta|V_0|\chi_\alpha^{(+)}\rangle}_{\equiv T_{fi}^{(0)}} + \langle\chi_\beta^{(-)}|V_1|\psi_\alpha^{(+)}\rangle \tag{GMG-clean}
@@ -217,13 +217,13 @@ $$
 
 ### Coulomb 加短程势的特例
 
-取 $V_0 = V_C$，$V_1 = V_{SR}$。畸变波就是 Coulomb 波（`coulomb_scattering.zh.md:177`-185 的 $\psi_C^{(\pm)}$）。$\text{(T-DWBA)}$ 化为
+取 $V_0 = V_C$，$V_1 = V_{SR}$。畸变波就是 Coulomb 波（`07_coulomb_scattering.zh.md:177`-185 的 $\psi_C^{(\pm)}$）。$\text{(T-DWBA)}$ 化为
 
 $$
 T_{fi}^{\rm DWBA} = T_C(\beta\leftarrow\alpha) + \langle\psi_C^{(-)}(\mathbf k_f)|V_{SR}|\psi_C^{(+)}(\mathbf k_i)\rangle \tag{T-DWBA-Coul}
 $$
 
-第一项给 Rutherford 振幅 $f_C$（`coulomb_scattering.zh.md:190`），第二项给 $f_{SR}^{\rm CB}$（`coulomb_scattering.zh.md:311`）。总散射振幅 $f = f_C + f_{SR}^{\rm CB}$ 与 `coulomb_scattering.zh.md:264` 的 $\text{(f-decomp)}$ 完全一致。
+第一项给 Rutherford 振幅 $f_C$（`07_coulomb_scattering.zh.md:190`），第二项给 $f_{SR}^{\rm CB}$（`07_coulomb_scattering.zh.md:311`）。总散射振幅 $f = f_C + f_{SR}^{\rm CB}$ 与 `07_coulomb_scattering.zh.md:264` 的 $\text{(f-decomp)}$ 完全一致。
 
 这一致性是结构上必须的：B 篇是本篇的 $V_0 = V_C, V_1 = V_{SR}$ 特例，公式不可能不一致。但 B 篇先做了 Dollard 修正（因为 $V_C$ 长程），本篇把那一层抽象掉——只要承认 $\chi^{(\pm)}$ 存在（无论是经过 Dollard 还是直接 Cook 判据保证），DWBA 的代数结构对 $V_0$ 是否长程一视同仁。
 
@@ -258,7 +258,7 @@ $$
 \Bigl[-\frac{d^2}{dr^2} + \frac{l(l+1)}{r^2} + 2\mu V_0(r) - k^2\Bigr] \chi_l(k, r) = 0 \tag{rad-chi}
 $$
 
-满足 $\chi_l(k, 0) = 0$、渐近 $\chi_l(k, r) \to \sin(kr - l\pi/2 + \delta_l^{(0)}(k))$（$V_0$ 短程时）或 $F_l, G_l$ 组合（$V_0 = V_C$ 时；`coulomb_scattering.zh.md:276`）。
+满足 $\chi_l(k, 0) = 0$、渐近 $\chi_l(k, r) \to \sin(kr - l\pi/2 + \delta_l^{(0)}(k))$（$V_0$ 短程时）或 $F_l, G_l$ 组合（$V_0 = V_C$ 时；`07_coulomb_scattering.zh.md:276`）。
 
 self-derive DWBA 跃迁矩阵元的分波展开。三维 DWBA 矩阵元
 
@@ -290,7 +290,7 @@ $$
 M_{\rm DWBA}^{\rm el}(\theta) = \frac{(4\pi)^2}{k^2}\sum_l (2l+1)\, e^{2i\delta_l^{(0)}(k)}\, I_l(k, k)\, P_l(\cos\theta) \tag{M-DWBA-el}
 $$
 
-把振幅约定 $f = -(\mu/2\pi) M$ 代入并跟 `partial_wave_projection.zh.md:360` 的 $f(\theta) = \sum_l(2l+1) f_l P_l(\cos\theta)$ 对照：
+把振幅约定 $f = -(\mu/2\pi) M$ 代入并跟 `05_partial_wave_projection.zh.md:360` 的 $f(\theta) = \sum_l(2l+1) f_l P_l(\cos\theta)$ 对照：
 
 $$
 f_l^{\rm DWBA, el}(k) = -\frac{8\pi\mu}{k^2}\, e^{2i\delta_l^{(0)}}\, I_l(k, k) \tag{fl-DWBA}
@@ -310,15 +310,15 @@ $$
 \delta_l^{(1), B}(k) \to -2\mu k \int_0^\infty dr\, r^2\, j_l(kr)^2\, V_1(r)
 $$
 
-这正是 `partial_wave_projection.zh.md:348` 的纯 Born 相移。
+这正是 `05_partial_wave_projection.zh.md:348` 的纯 Born 相移。
 
-$V_0 = V_C$：$\chi_l(\eta, kr) = F_l(\eta, kr)$（`coulomb_scattering.zh.md:106`），$\delta_l^{(0)} = \sigma_l(\eta)$，$\text{(delta1-DWBA)}$ 化为 `coulomb_scattering.zh.md:352` 的 $\delta_l^{SR, \rm CB}$ 公式。
+$V_0 = V_C$：$\chi_l(\eta, kr) = F_l(\eta, kr)$（`07_coulomb_scattering.zh.md:106`），$\delta_l^{(0)} = \sigma_l(\eta)$，$\text{(delta1-DWBA)}$ 化为 `07_coulomb_scattering.zh.md:352` 的 $\delta_l^{SR, \rm CB}$ 公式。
 
 ### 一般情形
 
-非局域 $V_0$（如 separable 势 `appendix_EST_seperable_HVH_Esym.md:97`）：$\chi_l^{(\pm)}$ 仍由相应 LS 方程给出，DWBA 矩阵元改为算符形式 $\langle\chi_l^{(-)}|V_1|\chi_l^{(+)}\rangle$ 在动量空间的积分；分波关系式 $\text{(fl-DWBA)}$ 形式不变。
+非局域 $V_0$（如 separable 势 `99_appendix_EST_seperable_HVH_Esym.md:97`）：$\chi_l^{(\pm)}$ 仍由相应 LS 方程给出，DWBA 矩阵元改为算符形式 $\langle\chi_l^{(-)}|V_1|\chi_l^{(+)}\rangle$ 在动量空间的积分；分波关系式 $\text{(fl-DWBA)}$ 形式不变。
 
-非中心 $V_1$（含自旋-轨道、张量）：分波耦合 $l \to l \pm 2$ 等，$I_l$ 推广为耦合矩阵 $I_{l'l}$；这是 `partial_wave_projection.zh.md:396` 类型的耦合通道扩展。
+非中心 $V_1$（含自旋-轨道、张量）：分波耦合 $l \to l \pm 2$ 等，$I_l$ 推广为耦合矩阵 $I_{l'l}$；这是 `05_partial_wave_projection.zh.md:396` 类型的耦合通道扩展。
 
 含自旋的 DWBA：见后面"极化 DWBA"节。
 
@@ -332,7 +332,7 @@ $$
 H_\alpha = h_a + h_A + K_\alpha + U_\alpha(r_\alpha),\qquad H_\beta = h_b + h_B + K_\beta + U_\beta(r_\beta) \tag{H-channel}
 $$
 
-其中 $K$ 是相对动能，$U$ 是该通道的光学势（实部 + 吸收）。$h_a, h_A$ 是核内部哈密顿量。这与 `T_and_U_operators.zh.md:407` 的三体通道哈密顿量结构一致。
+其中 $K$ 是相对动能，$U$ 是该通道的光学势（实部 + 吸收）。$h_a, h_A$ 是核内部哈密顿量。这与 `04_T_and_U_operators.zh.md:407` 的三体通道哈密顿量结构一致。
 
 DWBA 选 $V_0 = U_\alpha$（入射通道光学势）或 $V_0 = U_\beta$（出射通道光学势，对应 prior 还是 post form），$V_1 = V_{aA\to bB}$ 是把核状态从 $|A\rangle$ 改到 $|B\rangle$（含可能的核子转移）的算符。
 
@@ -364,13 +364,13 @@ $$
 
 ### 与多通道 LS 方程的关系
 
-`partial_wave_projection.zh.md:396` 的耦合通道 LS 方程 $T^J_{l'l}$ 是精确多通道处理。DWBA 是它的"一阶在 $V_1$ 上"截断：把通道间耦合矩阵元 $V^J_{l'l}$ 中的对角部分（自身光学势）放进 $V_0$，把非对角部分（通道转移）放进 $V_1$，对 $V_1$ 一阶 Born。当通道间耦合弱时（即 elastic dominates over reaction），DWBA 准；当通道间耦合强时（如重核破坏散射），需要耦合通道（CC）方法。
+`05_partial_wave_projection.zh.md:396` 的耦合通道 LS 方程 $T^J_{l'l}$ 是精确多通道处理。DWBA 是它的"一阶在 $V_1$ 上"截断：把通道间耦合矩阵元 $V^J_{l'l}$ 中的对角部分（自身光学势）放进 $V_0$，把非对角部分（通道转移）放进 $V_1$，对 $V_1$ 一阶 Born。当通道间耦合弱时（即 elastic dominates over reaction），DWBA 准；当通道间耦合强时（如重核破坏散射），需要耦合通道（CC）方法。
 
 ## 光学势加 DWBA 的核物理实践
 
 ### 复光学势作 $V_0$
 
-`appendix_EST_seperable_HVH_Esym.md:13` 的 Woods-Saxon 光学势
+`99_appendix_EST_seperable_HVH_Esym.md:13` 的 Woods-Saxon 光学势
 
 $$
 U(r) = -V_0\, f(r) - i\,W_0\, f_I(r) \tag{WS}
@@ -384,11 +384,11 @@ $$
 
 $\chi_l$ 是复值函数，模 $|\chi_l(k, r)|$ 在内部（$r < R$）随 $W_0$ 衰减——这是吸收的物理体现：粒子进入核内后部分 flux 被非弹性 / 吸收通道夺走。
 
-分波相移 $\delta_l^{(0)}(k) = \delta_l^R(k) + i\delta_l^I(k)$ 复数，分波 S 矩阵 $|S_l| = |e^{2i\delta_l^{(0)}}| = e^{-2\delta_l^I} < 1$（吸收使幺正性破坏，转入未明示通道）。这与 `appendix_EST_seperable_HVH_Esym.md:33` 的描述一致。
+分波相移 $\delta_l^{(0)}(k) = \delta_l^R(k) + i\delta_l^I(k)$ 复数，分波 S 矩阵 $|S_l| = |e^{2i\delta_l^{(0)}}| = e^{-2\delta_l^I} < 1$（吸收使幺正性破坏，转入未明示通道）。这与 `99_appendix_EST_seperable_HVH_Esym.md:33` 的描述一致。
 
 ### EST 与 DWBA 的分工
 
-EST（`appendix_EST_seperable_HVH_Esym.md:121`-129）把光学势 $U$ 转写为有限秩 separable 形式 $U_{\rm sep} = \sum_n |g_n\rangle \lambda_n \langle g_n|$，使弹性 LS 方程退化为代数方程，$\chi^{(\pm)}$ 闭式可得。
+EST（`99_appendix_EST_seperable_HVH_Esym.md:121`-129）把光学势 $U$ 转写为有限秩 separable 形式 $U_{\rm sep} = \sum_n |g_n\rangle \lambda_n \langle g_n|$，使弹性 LS 方程退化为代数方程，$\chi^{(\pm)}$ 闭式可得。
 
 DWBA 则把 $U$ 当作精确背景，对剩余微扰 $V_1$ 做一阶 Born。两者的分工：
 
@@ -423,21 +423,21 @@ $$
 
 ### DWBA 的 M 矩阵
 
-`polarization_formalism.zh.md:41` 定义 M 矩阵 $M_{m'_b m'_B; m_a m_A}(\mathbf k', \mathbf k)$；DWBA 跃迁矩阵元 $\text{(T-DWBA-react)}$ 在自旋指标上展开得
+`06_polarization_formalism.zh.md:41` 定义 M 矩阵 $M_{m'_b m'_B; m_a m_A}(\mathbf k', \mathbf k)$；DWBA 跃迁矩阵元 $\text{(T-DWBA-react)}$ 在自旋指标上展开得
 
 $$
 M_{m'_b m'_B; m_a m_A}^{\rm DWBA} = -\frac{\mu_\beta}{2\pi}\, \langle \chi_\beta^{(-), m'_b m'_B}(\mathbf k_\beta) | V_{aA\to bB} | \chi_\alpha^{(+), m_a m_A}(\mathbf k_\alpha)\rangle \tag{M-DWBA}
 $$
 
-带有完整的入射、出射自旋指标。$V_1$ 的自旋结构（中心、自旋-翻转、张量）决定 M 的算符分解（A 篇主公式 `polarization_formalism.zh.md:60` 的具体化）。
+带有完整的入射、出射自旋指标。$V_1$ 的自旋结构（中心、自旋-翻转、张量）决定 M 的算符分解（A 篇主公式 `06_polarization_formalism.zh.md:60` 的具体化）。
 
 ### dpol 应用
 
 氘核 $d$ 加靶核 $A$ 的弹性 / 反应散射，$d$ 自旋 1：M 矩阵 $M_{m'_d m'_a; m_d m_a}$ 是 $3 \times 3$（$s_a = 0$ 简化情形）。光学势 $V_0 = U_C(r) + U(r) + U_{LS}(r) \mathbf L\cdot\mathbf s_d + U_T(r) S_{12}(\hat r)$ 含自旋-轨道 + 张量。
 
-DWBA 给出张量分析力 $iT_{11}, T_{20}, T_{21}, T_{22}$ 的能量依赖：直接由 $\text{(M-DWBA)}$ 经 `polarization_formalism.zh.md:80`-200 的极化代数得到。这是 dpol polarimeter 的理论基底——光学势参数（特别是张量项 $U_T$）从 dpol 测量值反推得到。
+DWBA 给出张量分析力 $iT_{11}, T_{20}, T_{21}, T_{22}$ 的能量依赖：直接由 $\text{(M-DWBA)}$ 经 `06_polarization_formalism.zh.md:80`-200 的极化代数得到。这是 dpol polarimeter 的理论基底——光学势参数（特别是张量项 $U_T$）从 dpol 测量值反推得到。
 
-注：含 Coulomb 时 $V_0$ 应取 $U_C + U_{\rm nuc}$，畸变波是 Coulomb-distorted nuclear waves。`polarization_formalism.zh.md:538` 提到的 "含 Coulomb 长程势的修正" 在本框架内自动包含。
+注：含 Coulomb 时 $V_0$ 应取 $U_C + U_{\rm nuc}$，畸变波是 Coulomb-distorted nuclear waves。`06_polarization_formalism.zh.md:538` 提到的 "含 Coulomb 长程势的修正" 在本框架内自动包含。
 
 ## DWBA 何时准、何时不准
 
@@ -468,7 +468,7 @@ DWBA 失效的下一步：
 
 ### 与 EST 的对照
 
-EST 是"弹性散射的精确 separable 化"（`appendix_EST_seperable_HVH_Esym.md:121`）；它在 elastic channel 内是精确的，但只处理弹性。DWBA 是"非弹性 / 反应的微扰"；它给出反应振幅但需要 elastic background 已知（来自 EST、Numerov 或其它精确弹性求解）。
+EST 是"弹性散射的精确 separable 化"（`99_appendix_EST_seperable_HVH_Esym.md:121`）；它在 elastic channel 内是精确的，但只处理弹性。DWBA 是"非弹性 / 反应的微扰"；它给出反应振幅但需要 elastic background 已知（来自 EST、Numerov 或其它精确弹性求解）。
 
 两者互补：EST 提供 $\chi^{(\pm)}$ 的高效计算，DWBA 提供反应振幅的微扰公式。
 
@@ -476,21 +476,21 @@ EST 是"弹性散射的精确 separable 化"（`appendix_EST_seperable_HVH_Esym.
 
 | 主线知识点 | 对账位置 | 本篇对应位置 |
 |:--|:--|:--|
-| 两体 LS 方程 $T = V + VG_0 T$ | `T_and_U_operators.zh.md:296` | $\text{(LS-T)}$ + $\text{(psi-LS-prime)}$ |
-| Born 级数与一阶 Born | `Green_operator.zh.md:116` + `S_matrix_and_cross_section.zh.md:506` | "Born 级数回顾" + 纯 Born 退化 |
-| 波算符 $\Omega_\pm$ 与渐进态 | `T_and_U_operators.zh.md:80` | 畸变波 Møller 算符 $\text{(chi-Mol)}$ |
-| 通道哈密顿量 $H_\alpha$ | `T_and_U_operators.zh.md:407` | 反应通道 $\text{(H-channel)}$ |
-| Coulomb-distorted Born | `coulomb_scattering.zh.md:311` | DWBA 的 $V_0 = V_C, V_1 = V_{SR}$ 特例 $\text{(T-DWBA-Coul)}$ |
-| Coulomb 波 $F_l$ 与 $\sigma_l$ | `coulomb_scattering.zh.md:106` | 分波 DWBA 退化检验 |
-| 分波 LS 方程 | `partial_wave_projection.zh.md:340` | $\text{(rad-chi)}$ + $\text{(M-DWBA-el)}$ |
-| 分波纯 Born 相移 | `partial_wave_projection.zh.md:348` | $V_0 = 0$ 退化 $\text{(delta1-DWBA)}$ |
-| 耦合通道 $T^J_{l'l}$ | `partial_wave_projection.zh.md:396` | DWBA 是其 $V_1$ 一阶截断 |
-| M 矩阵定义 | `polarization_formalism.zh.md:41` | DWBA 极化矩阵元 $\text{(M-DWBA)}$ |
-| Wigner D 函数 | `partial_wave_projection.zh.md:226` | DWBA 旋转协变性 |
-| Woods-Saxon 光学势 | `appendix_EST_seperable_HVH_Esym.md:13` | DWBA 复 $V_0$ 实例 |
-| EST separable 形式 | `appendix_EST_seperable_HVH_Esym.md:121` | EST 与 DWBA 互补 |
-| Coulomb 加短程势分解 | `coulomb_scattering.zh.md:264` | DWBA 一致性 |
-| AGS 三体 $U_{\beta\alpha}$ | `T_and_U_operators.zh.md:519` | DWBA 是 AGS 弱耦合极限 |
+| 两体 LS 方程 $T = V + VG_0 T$ | `04_T_and_U_operators.zh.md:296` | $\text{(LS-T)}$ + $\text{(psi-LS-prime)}$ |
+| Born 级数与一阶 Born | `02_Green_operator.zh.md:116` + `03_S_matrix_and_cross_section.zh.md:506` | "Born 级数回顾" + 纯 Born 退化 |
+| 波算符 $\Omega_\pm$ 与渐进态 | `04_T_and_U_operators.zh.md:80` | 畸变波 Møller 算符 $\text{(chi-Mol)}$ |
+| 通道哈密顿量 $H_\alpha$ | `04_T_and_U_operators.zh.md:407` | 反应通道 $\text{(H-channel)}$ |
+| Coulomb-distorted Born | `07_coulomb_scattering.zh.md:311` | DWBA 的 $V_0 = V_C, V_1 = V_{SR}$ 特例 $\text{(T-DWBA-Coul)}$ |
+| Coulomb 波 $F_l$ 与 $\sigma_l$ | `07_coulomb_scattering.zh.md:106` | 分波 DWBA 退化检验 |
+| 分波 LS 方程 | `05_partial_wave_projection.zh.md:340` | $\text{(rad-chi)}$ + $\text{(M-DWBA-el)}$ |
+| 分波纯 Born 相移 | `05_partial_wave_projection.zh.md:348` | $V_0 = 0$ 退化 $\text{(delta1-DWBA)}$ |
+| 耦合通道 $T^J_{l'l}$ | `05_partial_wave_projection.zh.md:396` | DWBA 是其 $V_1$ 一阶截断 |
+| M 矩阵定义 | `06_polarization_formalism.zh.md:41` | DWBA 极化矩阵元 $\text{(M-DWBA)}$ |
+| Wigner D 函数 | `05_partial_wave_projection.zh.md:226` | DWBA 旋转协变性 |
+| Woods-Saxon 光学势 | `99_appendix_EST_seperable_HVH_Esym.md:13` | DWBA 复 $V_0$ 实例 |
+| EST separable 形式 | `99_appendix_EST_seperable_HVH_Esym.md:121` | EST 与 DWBA 互补 |
+| Coulomb 加短程势分解 | `07_coulomb_scattering.zh.md:264` | DWBA 一致性 |
+| AGS 三体 $U_{\beta\alpha}$ | `04_T_and_U_operators.zh.md:519` | DWBA 是 AGS 弱耦合极限 |
 
 每一条都可用 `grep -n` 在源文件中校验。
 
@@ -498,8 +498,8 @@ EST 是"弹性散射的精确 separable 化"（`appendix_EST_seperable_HVH_Esym.
 
 - 数值 DWBA 演示（指向 `examples/12_dwba_demo`）：用 ${}^{40}\text{Ca}(p, p')$ 集体 $3^-$ 激发为标度模型，KD03 全局光学势 $U(r)$ 数值积分得复畸变波 $\chi_l(k, r)$，3- 跃迁形状因子 $\rho_{tr}^{(3)}(r)$ 取集体模型，按 $\text{(T-DWBA-react)}$ 数值求积。绘 $d\sigma/d\Omega(\theta)$ 曲线，与 PDG / EXFOR 数据对比。退化检验：$U \to 0$ 给出纯 Born，$E_p \to$ 高能极限给出 PWBA（plane-wave Born approximation）。
 - 高阶 DWBA / Distorted-Wave Born Series：把 $\text{(psi-LS-prime)}$ 迭代到二阶、三阶，给出 $\langle\chi^{(-)}|V_1 G_0' V_1|\chi^{(+)}\rangle$ 等中间态求和；适用于双核子转移 (p, t)、二阶集体激发；与 sequential vs simultaneous 转移的物理区分。
-- 耦合通道 (CC) 方法：把多通道 LS 方程 `partial_wave_projection.zh.md:396` 精确求解，不再对 $V_1$ 做 Born；FRESCO / ECIS / CHUCK 等代码的物理基底；与 DWBA 在弱耦合极限下重合的检验。
+- 耦合通道 (CC) 方法：把多通道 LS 方程 `05_partial_wave_projection.zh.md:396` 精确求解，不再对 $V_1$ 做 Born；FRESCO / ECIS / CHUCK 等代码的物理基底；与 DWBA 在弱耦合极限下重合的检验。
 - DWBA 在转移反应 (d, p) 中的具体核形状因子：分离反应顶点 $\langle p | V_{np} | d\rangle$ 与束缚态波函数 $\phi_{nlj}^{(B)}(r)$；spectroscopic factor $S_{nlj}$ 的提取流程；ADWA（Johnson-Soper）对 zero-range vs finite-range 的处理；与 deuteron breakup 的 CDCC 方案对照。
-- 与 Faddeev / AGS 三体散射的关系：DWBA 是 AGS（`T_and_U_operators.zh.md:595`）的弱耦合极限——把 AGS 方程组中通道间耦合 $T_\gamma G_0 U_{\gamma\alpha}$ 截断到一阶，且 $V_0$ 取相应通道光学势时退化为 DWBA。在三体破坏 $(d, p n)$、$(p, 2p)$ 等情形下三体精确处理与 DWBA 的差别可达数倍；这是核物理三体方法的判据。
+- 与 Faddeev / AGS 三体散射的关系：DWBA 是 AGS（`04_T_and_U_operators.zh.md:595`）的弱耦合极限——把 AGS 方程组中通道间耦合 $T_\gamma G_0 U_{\gamma\alpha}$ 截断到一阶，且 $V_0$ 取相应通道光学势时退化为 DWBA。在三体破坏 $(d, p n)$、$(p, 2p)$ 等情形下三体精确处理与 DWBA 的差别可达数倍；这是核物理三体方法的判据。
 - 屏蔽 Coulomb 与 DWBA 的相对论推广：电子-核电磁过程（电子散射 $(e, e')$）在 Born 近似下给出形状因子 $F(q^2)$，DWBA 给出 Coulomb-distorted 修正（"Mott 修正"），重核（$Z > 50$）下不可忽略；Dirac 方程下 $\chi^{(\pm)}$ 改为 Dirac 自旋子，结构上完全平行。
 - DWBA 在弱相互作用过程中的应用：$(\nu, e^-)$ 反应、$(p, n)$ Gamow-Teller 跃迁、$\beta$ 衰变内的"过去式 DWBA"（弱矩阵元在核 distorted wave 基底上的修正）；与电弱标准模型的核结构耦合。

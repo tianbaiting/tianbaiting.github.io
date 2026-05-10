@@ -1,6 +1,6 @@
 # DWBA 数值演示
 
-主线 `../dwba.zh.md` 把 DWBA 主公式 $\text{(T-DWBA)}$ 在 `../dwba.zh.md:178` 写出，再在 `../dwba.zh.md:251` 节给出局域中心势的分波形式 $\text{(delta1-DWBA)}$，并把 Coulomb 加短程势 $V_0 = V_C, V_1 = V_{SR}$ 列为 `../dwba.zh.md:216` 的标准退化情形。本篇把这条退化做到底：把同一组 $V = V_C + V_{SR}$ 喂给三种方法——纯平面波 Born（PWBA）、Coulomb-distorted DWBA、Numerov 全相移——逐步看 DWBA 在弱耦合区的二阶残差、在强耦合区的失效、以及 PWBA 在长程 Coulomb 面前的彻底崩溃。
+主线 `../08_dwba.zh.md` 把 DWBA 主公式 $\text{(T-DWBA)}$ 在 `../08_dwba.zh.md:178` 写出，再在 `../08_dwba.zh.md:251` 节给出局域中心势的分波形式 $\text{(delta1-DWBA)}$，并把 Coulomb 加短程势 $V_0 = V_C, V_1 = V_{SR}$ 列为 `../08_dwba.zh.md:216` 的标准退化情形。本篇把这条退化做到底：把同一组 $V = V_C + V_{SR}$ 喂给三种方法——纯平面波 Born（PWBA）、Coulomb-distorted DWBA、Numerov 全相移——逐步看 DWBA 在弱耦合区的二阶残差、在强耦合区的失效、以及 PWBA 在长程 Coulomb 面前的彻底崩溃。
 
 约定与 11 篇一致：$\hbar = 1$、$2m = 1$、$E = k^2$、$\mu = 1/2$。底层 Numerov + Coulomb 波引擎直接 import 自 `11_coulomb_demo.py`（`sigma_l_array`、`numerov_coulomb`、`extract_total_phase`、`f_coulomb`、`f_short_range`），本篇只新增 DWBA 相关的三块代码：$F_l(\eta, kr)$ 归一化、Coulomb-distorted 相移积分、Gaussian 的平面波 Born Fourier。
 
@@ -17,9 +17,9 @@ $$
 
 ### 三种振幅
 
-主线 `../dwba.zh.md:240` 把 DWBA 放在两个极限之间：$V_0 = 0$ 退化到纯 Born，$V_0 = V_C$ 落到 Coulomb-distorted Born。本篇同时上演这三种。
+主线 `../08_dwba.zh.md:240` 把 DWBA 放在两个极限之间：$V_0 = 0$ 退化到纯 Born，$V_0 = V_C$ 落到 Coulomb-distorted Born。本篇同时上演这三种。
 
-PWBA 端（`../dwba.zh.md:232` 的退化情形）。把 $V$ 整体当作微扰
+PWBA 端（`../08_dwba.zh.md:232` 的退化情形）。把 $V$ 整体当作微扰
 
 $$
 f^{PWBA}(\theta) = -\frac{1}{4\pi} \int d^3 r\, e^{-i\mathbf q\cdot\mathbf r}\, V(\mathbf r),
@@ -27,7 +27,7 @@ f^{PWBA}(\theta) = -\frac{1}{4\pi} \int d^3 r\, e^{-i\mathbf q\cdot\mathbf r}\, 
 \mathbf q = \mathbf k_f - \mathbf k_i.
 $$
 
-$V_C$ 的 Fourier 在 $\mathbf q\to 0$ 处发散（主线 `../dwba.zh.md:59` 已经把这一条列入"Born 级数失效"的判据），即使引入屏蔽截断，长程尾部对前向的贡献也无法摆脱对截断的敏感依赖。物理上 PWBA 对 Coulomb 不存在，本篇的处理就是干脆只对 $V_{SR}$ 部分做平面波 Born——这个选择本身就是 PWBA 在 Coulomb 下的物理叙述。Gaussian 短程势的 Fourier 闭式
+$V_C$ 的 Fourier 在 $\mathbf q\to 0$ 处发散（主线 `../08_dwba.zh.md:59` 已经把这一条列入"Born 级数失效"的判据），即使引入屏蔽截断，长程尾部对前向的贡献也无法摆脱对截断的敏感依赖。物理上 PWBA 对 Coulomb 不存在，本篇的处理就是干脆只对 $V_{SR}$ 部分做平面波 Born——这个选择本身就是 PWBA 在 Coulomb 下的物理叙述。Gaussian 短程势的 Fourier 闭式
 
 $$
 \widetilde V_{SR}(\mathbf q) = \int d^3 r\, e^{-i\mathbf q\cdot\mathbf r}\, V_{SR}(r)
@@ -43,13 +43,13 @@ $$
 
 这是后面所有 PWBA 曲线的来源。它完全没有任何 Coulomb 信息。
 
-DWBA 端（`../dwba.zh.md:223` 的 $\text{(T-DWBA-Coul)}$）。把 $V_0 = V_C$ 精确解掉——畸变波就是 Coulomb 波 $F_l(\eta, kr)$，分波相移就是 Sommerfeld $\sigma_l$（11 篇已经数值验证）。$V_1 = V_{SR}$ 以一阶 Born 处理，主线 `../dwba.zh.md:302` 的 $\text{(delta1-DWBA)}$ 在 $\mu = 1/2$ 下退化为
+DWBA 端（`../08_dwba.zh.md:223` 的 $\text{(T-DWBA-Coul)}$）。把 $V_0 = V_C$ 精确解掉——畸变波就是 Coulomb 波 $F_l(\eta, kr)$，分波相移就是 Sommerfeld $\sigma_l$（11 篇已经数值验证）。$V_1 = V_{SR}$ 以一阶 Born 处理，主线 `../08_dwba.zh.md:302` 的 $\text{(delta1-DWBA)}$ 在 $\mu = 1/2$ 下退化为
 
 $$
 \delta_l^{SR,DWBA}(k) = -\frac{1}{k} \int_0^\infty dr\, F_l(\eta, kr)^2\, V_{SR}(r). \tag{delta-DWBA}
 $$
 
-振幅由 11 篇已使用的分波公式（`../coulomb_scattering.zh.md:284` 的 $\text{(fSR-pw)}$）组装
+振幅由 11 篇已使用的分波公式（`../07_coulomb_scattering.zh.md:284` 的 $\text{(fSR-pw)}$）组装
 
 $$
 f^{DWBA}(\theta) = f_C(\theta) + \frac{1}{2ik}\sum_l (2l+1)\, e^{2i\sigma_l}\,\bigl[e^{2i\delta_l^{SR,DWBA}} - 1\bigr] P_l(\cos\theta).
@@ -101,11 +101,11 @@ $$
 
 ![DWBA 相对误差对 V0 的双对数标度，θ=90°](./assets/12_dwba_demo/dwba_error_vs_VSR.png)
 
-这张图是 DWBA 的"何时准、何时不准"主线 `../dwba.zh.md:442` 的数值显形。三段结构清晰：
+这张图是 DWBA 的"何时准、何时不准"主线 `../08_dwba.zh.md:442` 的数值显形。三段结构清晰：
 
-- $V_0 \lesssim 0.5$：$\mathcal R \approx 2\text{-}3 \times 10^{-3}$，平台。理论上 DWBA 一阶截断的残差是 $O(V_1^2)$（主线 `../dwba.zh.md:205`），$|f^{\rm exact}|$ 主体是 $|f_C|$（与 $V_0$ 无关），所以 $\mathcal R \sim |\text{二阶残差}|/|f_C| \sim V_0^2$ 量级——但当 $V_0$ 太小时 Numerov 提取 $\delta_l^{\rm exact}$ 的数值噪声底（$\sim 10^{-4}$ 每分波）反而成了主导，平台来自 $|\delta_l^{SR,\rm exact} - \delta_l^{SR,DWBA}|$ 的 Numerov 误差，不再是 DWBA 的物理二阶项。
-- $V_0 \in [0.5, 3]$：$\mathcal R$ 从 $3\times 10^{-3}$ 增长到 $5\times 10^{-2}$，斜率上接近 $V_0^2$（图上虚线 slope-2 参考线）。这是 DWBA 一阶截断的标志——主线 `../dwba.zh.md:208` 给出的 $|\langle V_1 G_0' V_1\rangle / \langle V_1\rangle|$ 二阶判据在这一段量化生效。
-- $V_0 \gtrsim 3$：$\mathcal R$ 突破 $10\%$ 并继续上扬到 $V_0 = 5$ 处的 $34\%$。每分波 $|\delta_l^{SR}| \sim 0.1$ 量级开始显著超过 $1$（s 波），主线 `../dwba.zh.md:449` 的"$|\delta_l^{(1)}| \ll 1$"准则被 violation，DWBA 失效。这一段需要二阶 DWBA 或耦合通道（CC）。
+- $V_0 \lesssim 0.5$：$\mathcal R \approx 2\text{-}3 \times 10^{-3}$，平台。理论上 DWBA 一阶截断的残差是 $O(V_1^2)$（主线 `../08_dwba.zh.md:205`），$|f^{\rm exact}|$ 主体是 $|f_C|$（与 $V_0$ 无关），所以 $\mathcal R \sim |\text{二阶残差}|/|f_C| \sim V_0^2$ 量级——但当 $V_0$ 太小时 Numerov 提取 $\delta_l^{\rm exact}$ 的数值噪声底（$\sim 10^{-4}$ 每分波）反而成了主导，平台来自 $|\delta_l^{SR,\rm exact} - \delta_l^{SR,DWBA}|$ 的 Numerov 误差，不再是 DWBA 的物理二阶项。
+- $V_0 \in [0.5, 3]$：$\mathcal R$ 从 $3\times 10^{-3}$ 增长到 $5\times 10^{-2}$，斜率上接近 $V_0^2$（图上虚线 slope-2 参考线）。这是 DWBA 一阶截断的标志——主线 `../08_dwba.zh.md:208` 给出的 $|\langle V_1 G_0' V_1\rangle / \langle V_1\rangle|$ 二阶判据在这一段量化生效。
+- $V_0 \gtrsim 3$：$\mathcal R$ 突破 $10\%$ 并继续上扬到 $V_0 = 5$ 处的 $34\%$。每分波 $|\delta_l^{SR}| \sim 0.1$ 量级开始显著超过 $1$（s 波），主线 `../08_dwba.zh.md:449` 的"$|\delta_l^{(1)}| \ll 1$"准则被 violation，DWBA 失效。这一段需要二阶 DWBA 或耦合通道（CC）。
 
 数值表（程序输出节选）
 
@@ -122,7 +122,7 @@ $$
 
 ## 分波相移的对照
 
-主线 `../dwba.zh.md:302` 的 $\text{(delta1-DWBA)}$ 在 $V_0 = V_C$ 退化下化为本篇的 $\text{(delta-DWBA)}$。把它与 Numerov 提取的 $\delta_l^{SR,\rm exact}$ 直接画在一张图上。
+主线 `../08_dwba.zh.md:302` 的 $\text{(delta1-DWBA)}$ 在 $V_0 = V_C$ 退化下化为本篇的 $\text{(delta-DWBA)}$。把它与 Numerov 提取的 $\delta_l^{SR,\rm exact}$ 直接画在一张图上。
 
 ![DWBA 一阶相移与精确相移对比，l=0..3，V0=1.0 与 V0=3.0](./assets/12_dwba_demo/phase_shifts_compare.png)
 
@@ -132,7 +132,7 @@ $$
 
 物理意义解读：
 
-- $V_0$ 弱时 DWBA 估计与精确曲线在 $l = 0, 1$ 两点已经吻合到几个百分点；高 $l$ 因为 $F_l^2(\eta, kr)$ 在原点附近被离心势压成 $r^{2(l+1)}$，与高斯短程势 $V_{SR}$ 在 $r \lesssim R$ 重叠区域被显著削弱，相移天然小。这是主线 `../dwba.zh.md:302` 公式中 $F_l^2 V_{SR}$ 整体由 "Coulomb 波在原点附近的衰减" 决定的具体表现。
+- $V_0$ 弱时 DWBA 估计与精确曲线在 $l = 0, 1$ 两点已经吻合到几个百分点；高 $l$ 因为 $F_l^2(\eta, kr)$ 在原点附近被离心势压成 $r^{2(l+1)}$，与高斯短程势 $V_{SR}$ 在 $r \lesssim R$ 重叠区域被显著削弱，相移天然小。这是主线 `../08_dwba.zh.md:302` 公式中 $F_l^2 V_{SR}$ 整体由 "Coulomb 波在原点附近的衰减" 决定的具体表现。
 - 11 篇 §三精确得到的 $\delta_0^{SR} = 0.21, \delta_1^{SR} = 0.023, \delta_2^{SR} = 0.0015$（在 $V_0 = 4$ 下）与本图右半 $V_0 = 3$ 趋势一致——更强的 $V_0$ 让所有分波的 $\delta$ 升上去，但 s 波始终主导。
 
 ## 强耦合下的崩溃图谱
@@ -163,27 +163,27 @@ DWBA 失效的物理机制可以从分波层面理解：$V_0 = 3.0$ 时 $\delta_
 
 | 主线知识点 | 对账位置 | 本篇位置 |
 |:--|:--|:--|
-| DWBA 主公式 $\text{(T-DWBA)}$ | `../dwba.zh.md:178` | §模型势与三种方法 |
-| 两势分解 $V = V_0 + V_1$ 与畸变波 LS | `../dwba.zh.md:64`-`../dwba.zh.md:121` | §模型势 |
-| 纯 Born 退化 $V_0 = 0$ | `../dwba.zh.md:232` | §三种振幅 (PWBA 端) |
-| Coulomb-distorted Born 退化 $V_0 = V_C, V_1 = V_{SR}$ | `../dwba.zh.md:223` | §三种振幅 (DWBA 端) |
-| 分波 DWBA 相移 $\text{(delta1-DWBA)}$ | `../dwba.zh.md:302` | $\text{(delta-DWBA)}$ |
-| 一阶截断的 $O(V_1^2)$ 残差 | `../dwba.zh.md:205` | §DWBA 误差对 V_SR 的标度 |
-| 何时准准则 $|\delta_l^{(1)}| \ll 1$ | `../dwba.zh.md:449` | §分波相移的对照 |
-| Born 级数对 Coulomb 失效 | `../dwba.zh.md:59` | §三种振幅 (PWBA 端) |
-| 失效后的下一步（二阶 DWBA / CC） | `../dwba.zh.md:465` | §强耦合下的崩溃图谱 |
-| Coulomb-distorted Born 公式 $\text{(delta-CB)}$ | `../coulomb_scattering.zh.md:352` | $\text{(delta-DWBA)}$ |
-| 短程分波振幅 $\text{(fSR-pw)}$ | `../coulomb_scattering.zh.md:284` | §三种振幅 (DWBA 端) |
-| Coulomb 闭式 $\text{(fC)}$ | `../coulomb_scattering.zh.md:191` | §三种振幅 (DWBA 端) |
+| DWBA 主公式 $\text{(T-DWBA)}$ | `../08_dwba.zh.md:178` | §模型势与三种方法 |
+| 两势分解 $V = V_0 + V_1$ 与畸变波 LS | `../08_dwba.zh.md:64`-`../08_dwba.zh.md:121` | §模型势 |
+| 纯 Born 退化 $V_0 = 0$ | `../08_dwba.zh.md:232` | §三种振幅 (PWBA 端) |
+| Coulomb-distorted Born 退化 $V_0 = V_C, V_1 = V_{SR}$ | `../08_dwba.zh.md:223` | §三种振幅 (DWBA 端) |
+| 分波 DWBA 相移 $\text{(delta1-DWBA)}$ | `../08_dwba.zh.md:302` | $\text{(delta-DWBA)}$ |
+| 一阶截断的 $O(V_1^2)$ 残差 | `../08_dwba.zh.md:205` | §DWBA 误差对 V_SR 的标度 |
+| 何时准准则 $|\delta_l^{(1)}| \ll 1$ | `../08_dwba.zh.md:449` | §分波相移的对照 |
+| Born 级数对 Coulomb 失效 | `../08_dwba.zh.md:59` | §三种振幅 (PWBA 端) |
+| 失效后的下一步（二阶 DWBA / CC） | `../08_dwba.zh.md:465` | §强耦合下的崩溃图谱 |
+| Coulomb-distorted Born 公式 $\text{(delta-CB)}$ | `../07_coulomb_scattering.zh.md:352` | $\text{(delta-DWBA)}$ |
+| 短程分波振幅 $\text{(fSR-pw)}$ | `../07_coulomb_scattering.zh.md:284` | §三种振幅 (DWBA 端) |
+| Coulomb 闭式 $\text{(fC)}$ | `../07_coulomb_scattering.zh.md:191` | §三种振幅 (DWBA 端) |
 | Numerov + Richardson 引擎 | `11_coulomb_demo.zh.md:96` | §模型势与三种方法 |
 | Sommerfeld 相移与 $F_l$ 数值实现 | `11_coulomb_demo.zh.md:60` | §三种振幅 (DWBA 端) |
 | Coulomb-nuclear 干涉中角度主导 | `11_coulomb_demo.zh.md:204` | §强耦合下的崩溃图谱 |
 
-每条都可用 `grep -n` 在源文件中校验。引用 `../dwba.zh.md` 的条目共 9 条，超过最低 3 条要求。
+每条都可用 `grep -n` 在源文件中校验。引用 `../08_dwba.zh.md` 的条目共 9 条，超过最低 3 条要求。
 
 ## next-step
 
-- 二阶 DWBA 数值实现：在本篇框架里加 `delta_dwba_2nd(l, k, eta, V0)`，按 $\delta_l^{(2)} \sim \int F_l V_{SR} G_0'^l V_{SR} F_l$ 的 Lippmann-Schwinger 二阶项做径向积分，验证主线 `../dwba.zh.md:465` 的"二阶 DWBA"在 $V_0 \in [2, 5]$ 区段把 $\mathcal R$ 压回 $V_0^4$ 标度。
-- 把 $V_0$ 改为复光学势 $V_0 = U(r) + iW(r)$（主线 `../dwba.zh.md:373` 的 Woods-Saxon），$\chi_l$ 变复值，分波 S 矩阵 $|S_l| < 1$，验证吸收下 DWBA 公式的代数结构不变（主线 `../dwba.zh.md:387`），并对比 EST separable 表示得到的 $\chi^{(\pm)}$（主线 `../dwba.zh.md:390`）。
-- 推到反应 $\beta \neq \alpha$ 的情形：取 $V_1$ 是非弹性跃迁形状因子 $\rho_{tr}^{(\lambda)}(r)$，用主线 `../dwba.zh.md:189` 的 $\text{(T-DWBA-react)}$ 算 $(p, p')$ 集体激发的微分截面；与 KD03 全局光学势 + EXFOR 数据对照（主线 `../dwba.zh.md:402` 的 ${}^{40}\text{Ca}(p, p')$ 实例）。
-- 含自旋的 DWBA：把 $V_0$ 加上 $V_{LS}(r)\,\mathbf L\cdot\mathbf S$，畸变波在耦合基 $|(l, s) j m_j\rangle$ 中分块，验证主线 `../dwba.zh.md:429` 的 $\text{(M-DWBA)}$ 给出的张量分析力，对接 dpol 框架。
+- 二阶 DWBA 数值实现：在本篇框架里加 `delta_dwba_2nd(l, k, eta, V0)`，按 $\delta_l^{(2)} \sim \int F_l V_{SR} G_0'^l V_{SR} F_l$ 的 Lippmann-Schwinger 二阶项做径向积分，验证主线 `../08_dwba.zh.md:465` 的"二阶 DWBA"在 $V_0 \in [2, 5]$ 区段把 $\mathcal R$ 压回 $V_0^4$ 标度。
+- 把 $V_0$ 改为复光学势 $V_0 = U(r) + iW(r)$（主线 `../08_dwba.zh.md:373` 的 Woods-Saxon），$\chi_l$ 变复值，分波 S 矩阵 $|S_l| < 1$，验证吸收下 DWBA 公式的代数结构不变（主线 `../08_dwba.zh.md:387`），并对比 EST separable 表示得到的 $\chi^{(\pm)}$（主线 `../08_dwba.zh.md:390`）。
+- 推到反应 $\beta \neq \alpha$ 的情形：取 $V_1$ 是非弹性跃迁形状因子 $\rho_{tr}^{(\lambda)}(r)$，用主线 `../08_dwba.zh.md:189` 的 $\text{(T-DWBA-react)}$ 算 $(p, p')$ 集体激发的微分截面；与 KD03 全局光学势 + EXFOR 数据对照（主线 `../08_dwba.zh.md:402` 的 ${}^{40}\text{Ca}(p, p')$ 实例）。
+- 含自旋的 DWBA：把 $V_0$ 加上 $V_{LS}(r)\,\mathbf L\cdot\mathbf S$，畸变波在耦合基 $|(l, s) j m_j\rangle$ 中分块，验证主线 `../08_dwba.zh.md:429` 的 $\text{(M-DWBA)}$ 给出的张量分析力，对接 dpol 框架。

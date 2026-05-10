@@ -6,9 +6,9 @@
 
 ## 目标
 
-- 把 `partial_wave_projection.zh.md:340` 的分波 LS 方程在最便宜的中心势上落地：写出 s 波相移的解析公式。
+- 把 `05_partial_wave_projection.zh.md:340` 的分波 LS 方程在最便宜的中心势上落地：写出 s 波相移的解析公式。
 - 把"低能两参数（$a$，$r_e$）足够"这一核工程惯用语，作为 $k\cot\delta_0$ 解析展开的直接结果导出。
-- 把 `Green_operator.zh.md:478` 中"束缚态 = 物理面实极点"的结论第二次具体化：方阱的束缚态由超越方程在正虚轴 $k = i\kappa$ 上的根给出。
+- 把 `02_Green_operator.zh.md:478` 中"束缚态 = 物理面实极点"的结论第二次具体化：方阱的束缚态由超越方程在正虚轴 $k = i\kappa$ 上的根给出。
 - 用 Levinson 定理把"束缚态数"和"低能相移"绑成一个整数关系，给数值结果一个非平凡的检验点。
 
 ## 势的定义
@@ -112,7 +112,7 @@ $$
 f_0(k) = \frac{1}{k\cot\delta_0(k) - ik}
 $$
 
-可见极点条件是 $k\cot\delta_0(k) = ik$，代入匹配条件即上面的 $\bar K\cot(\bar K R) = -\kappa$（$k = i\kappa$）。这条超越方程数值找根，根的位置 $\kappa_n$ 给出束缚态能量 $E_n = -\kappa_n^2$。极点结构与 `Green_operator.zh.md:478` 中"束缚态是物理面上的实极点"的论断对应：方阱的物理面上恰好有 $n_0$ 个 $k = i\kappa_n$ 极点，散射振幅在这些点处发散。
+可见极点条件是 $k\cot\delta_0(k) = ik$，代入匹配条件即上面的 $\bar K\cot(\bar K R) = -\kappa$（$k = i\kappa$）。这条超越方程数值找根，根的位置 $\kappa_n$ 给出束缚态能量 $E_n = -\kappa_n^2$。极点结构与 `02_Green_operator.zh.md:478` 中"束缚态是物理面上的实极点"的论断对应：方阱的物理面上恰好有 $n_0$ 个 $k = i\kappa_n$ 极点，散射振幅在这些点处发散。
 
 ## 数值与图
 
@@ -159,12 +159,12 @@ $a(V_0)$ 在 $V_0 \in [0, 30]$。两条红色虚线 $V_0 = (\pi/2)^2 \approx 2.4
 
 | 主线笔记 | 方阱 s 波中的对应 |
 |:--|:--|
-| `partial_wave_projection.zh.md:340`，分波 LS 方程 $T_l = V_l + V_l\, G_0\, T_l$ | 中心势下分离成各 $l$ 独立。s 波径向方程的解析解直接绕过积分方程，给 $\delta_0(k)$ 闭式。 |
-| `partial_wave_projection.zh.md:366`，$f_l = e^{i\delta_l}\sin\delta_l/k$ | 代入 $\delta_0$ 解析式得到 $f_0(k)$；总截面 $\sigma_0 = 4\pi |f_0|^2 = 4\pi\sin^2\delta_0/k^2$。 |
-| `partial_wave_projection.zh.md:378`，$S_l = e^{2i\delta_l}$，$|S_l|=1$ | 直接由 $\delta_0$ 实数得到，sanity check (3) 数值验证。 |
-| `Green_operator.zh.md:478`，束缚态 = 物理面实极点 | 方阱物理面上有 $n_0$ 个 $k = i\kappa_n$ 极点；$n_0 = \lfloor K_0 R/\pi + 1/2\rfloor$。 |
-| `S_matrix_and_cross_section.zh.md:451`，光学定理 $\operatorname{Im}f(\theta=0) = (k/4\pi)\sigma_\text{tot}$ | s 波单分波情形：$f_0 = e^{i\delta_0}\sin\delta_0/k$，$\operatorname{Im}f_0 = \sin^2\delta_0/k$，乘 $4\pi/k$ 等于 $\sigma_0$，自动恒等。 |
-| `T_and_U_operators.zh.md:296`，$T = V + VG_0 T$ | 对方阱求 on-shell $T_0(k,k;E)$ 不需要解积分方程：用 $T_0 = -e^{i\delta_0}\sin\delta_0/(\pi\mu k)$ 反代即可。 |
+| `05_partial_wave_projection.zh.md:340`，分波 LS 方程 $T_l = V_l + V_l\, G_0\, T_l$ | 中心势下分离成各 $l$ 独立。s 波径向方程的解析解直接绕过积分方程，给 $\delta_0(k)$ 闭式。 |
+| `05_partial_wave_projection.zh.md:366`，$f_l = e^{i\delta_l}\sin\delta_l/k$ | 代入 $\delta_0$ 解析式得到 $f_0(k)$；总截面 $\sigma_0 = 4\pi |f_0|^2 = 4\pi\sin^2\delta_0/k^2$。 |
+| `05_partial_wave_projection.zh.md:378`，$S_l = e^{2i\delta_l}$，$|S_l|=1$ | 直接由 $\delta_0$ 实数得到，sanity check (3) 数值验证。 |
+| `02_Green_operator.zh.md:478`，束缚态 = 物理面实极点 | 方阱物理面上有 $n_0$ 个 $k = i\kappa_n$ 极点；$n_0 = \lfloor K_0 R/\pi + 1/2\rfloor$。 |
+| `03_S_matrix_and_cross_section.zh.md:451`，光学定理 $\operatorname{Im}f(\theta=0) = (k/4\pi)\sigma_\text{tot}$ | s 波单分波情形：$f_0 = e^{i\delta_0}\sin\delta_0/k$，$\operatorname{Im}f_0 = \sin^2\delta_0/k$，乘 $4\pi/k$ 等于 $\sigma_0$，自动恒等。 |
+| `04_T_and_U_operators.zh.md:296`，$T = V + VG_0 T$ | 对方阱求 on-shell $T_0(k,k;E)$ 不需要解积分方程：用 $T_0 = -e^{i\delta_0}\sin\delta_0/(\pi\mu k)$ 反代即可。 |
 
 低能两参数 $(a, r_e)$ 与解析延拓极点之间还有一个有名的关系（Bargmann 不等式、ERE 与 Jost 函数的低能展开），将在第 5 篇 separable rank-1 模型里以最干净的代数形式重复出现。
 

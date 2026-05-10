@@ -1,8 +1,8 @@
-# 时间反演与细致平衡
+# ch09 时间反演与细致平衡
 
-`polarization_formalism.zh.md:470` 一节给了字称守恒对 M 矩阵结构的约束，时间反演那一段（`polarization_formalism.zh.md:492`）只勾勒了一个不变性条件 (T) 与两条直接推论；本篇把它展开成完整的形式链：从反幺正算符 $\Theta$ 的代数性质出发，导出 Møller 算符在 T 反演下的交换关系 $\Theta\Omega_+\Theta^{-1}=\Omega_-$，进而得到 $\Theta S \Theta^{-1} = S^\dagger$、T 矩阵的反互关系 $T_{\beta\alpha} = T_{\alpha'\beta'}$、截面间的细致平衡公式（含自旋统计因子）以及极化观测量的 T 约束。
+`06_polarization_formalism.zh.md:470` 一节给了字称守恒对 M 矩阵结构的约束，时间反演那一段（`06_polarization_formalism.zh.md:492`）只勾勒了一个不变性条件 (T) 与两条直接推论；本篇把它展开成完整的形式链：从反幺正算符 $\Theta$ 的代数性质出发，导出 Møller 算符在 T 反演下的交换关系 $\Theta\Omega_+\Theta^{-1}=\Omega_-$，进而得到 $\Theta S \Theta^{-1} = S^\dagger$、T 矩阵的反互关系 $T_{\beta\alpha} = T_{\alpha'\beta'}$、截面间的细致平衡公式（含自旋统计因子）以及极化观测量的 T 约束。
 
-定位：本篇是"理论闭环轨"的第 1 篇形式补全。前提是 `S_matrix_and_cross_section.zh.md` 的 Møller / S / T 链条与 `polarization_formalism.zh.md` 的 M 矩阵 / 自旋张量基底；不再重复其推导。`polarization_formalism.zh.md:295` 给出的 $A_y = 2\,\mathrm{Re}(a^*b)/(|a|^2+|b|^2)$ 中"为什么是 Re 而不是 Im"这一约定根源，本篇要把字称约束与 T 反演的双重叠加单独抽出做一次干净的代数推导。
+定位：本篇是"理论闭环轨"的第 1 篇形式补全。前提是 `03_S_matrix_and_cross_section.zh.md` 的 Møller / S / T 链条与 `06_polarization_formalism.zh.md` 的 M 矩阵 / 自旋张量基底；不再重复其推导。`06_polarization_formalism.zh.md:295` 给出的 $A_y = 2\,\mathrm{Re}(a^*b)/(|a|^2+|b|^2)$ 中"为什么是 Re 而不是 Im"这一约定根源，本篇要把字称约束与 T 反演的双重叠加单独抽出做一次干净的代数推导。
 
 约定：$\hbar = 1$；$\Theta$ 表示完整的多粒子时间反演算符（含自旋部分）；自旋 1/2 取 $\Theta = i\sigma_y K$、自旋 $j$ 取 $\Theta = e^{-i\pi J_y} K$（$K$ 是相对于 $|j,m\rangle$ 基的复共轭算符），相位约定 Condon-Shortley。粒子标记 $\alpha = (\mathbf k, m_a, m_A; \text{species})$ 对应入射通道，$\beta$ 对应出射通道；$\alpha' = \Theta \alpha$ 表示动量与自旋全部反向后的"T 共轭"通道。
 
@@ -102,7 +102,7 @@ T 对易破坏的典型情形：
 
 ### Ω± 互换
 
-`S_matrix_and_cross_section.zh.md:138` 给的强极限定义
+`03_S_matrix_and_cross_section.zh.md:138` 给的强极限定义
 
 $$
 \Omega_+ = \operatorname*{s\text{-}lim}_{t\to-\infty} e^{iHt} e^{-iH_0 t},\qquad \Omega_- = \operatorname*{s\text{-}lim}_{t\to+\infty} e^{iHt} e^{-iH_0 t}.
@@ -130,7 +130,7 @@ $$
 
 ### Θ S Θ⁻¹ = S†
 
-由 `S_matrix_and_cross_section.zh.md:222` 的 $S = \Omega_-^\dagger \Omega_+$：
+由 `03_S_matrix_and_cross_section.zh.md:222` 的 $S = \Omega_-^\dagger \Omega_+$：
 
 $$
 \Theta S \Theta^{-1} = \Theta\Omega_-^\dagger\Theta^{-1}\,\Theta\Omega_+\Theta^{-1} = (\Theta\Omega_-\Theta^{-1})^\dagger\,\Omega_- = \Omega_+^\dagger\,\Omega_-.
@@ -148,7 +148,7 @@ $$
 
 ### Θ T Θ⁻¹
 
-`T_and_U_operators.zh.md:332` 给出 $T(z) = V + V G(z) V$，$G(z) = (z - H)^{-1}$。$V$ 在 T 下不变（势能对易于 $\Theta$）；$G(z)$ 含 $i$ 隐参数（$z = E + i 0$），故
+`04_T_and_U_operators.zh.md:332` 给出 $T(z) = V + V G(z) V$，$G(z) = (z - H)^{-1}$。$V$ 在 T 下不变（势能对易于 $\Theta$）；$G(z)$ 含 $i$ 隐参数（$z = E + i 0$），故
 
 $$
 \Theta G(E + i0) \Theta^{-1} = (E - i0 - H)^{-1} = G(E - i0).
@@ -221,7 +221,7 @@ $$
 
 ### 与 (T) 公式的等价
 
-`polarization_formalism.zh.md:497` 给的 M 矩阵形式
+`06_polarization_formalism.zh.md:497` 给的 M 矩阵形式
 
 $$
 M_{m'_b m'_B; m_a m_A}(-\hat{\mathbf k}, -\hat{\mathbf k}') = \prod_i (-1)^{s_i - m_i + s'_i - m'_i}\, M^*_{-m_a, -m_A;\, -m'_b, -m'_B}(\hat{\mathbf k}', \hat{\mathbf k})
@@ -273,7 +273,7 @@ $$
 
 ### A_y 的双重约束推导
 
-回到 spin-1/2 + spin-0 弹性散射。`polarization_formalism.zh.md:237` 的 M 矩阵在字称约束下为 $M = a\,I + b\,\boldsymbol\sigma\!\cdot\!\hat{\mathbf n}$。在 (T-reciprocity) 下要求
+回到 spin-1/2 + spin-0 弹性散射。`06_polarization_formalism.zh.md:237` 的 M 矩阵在字称约束下为 $M = a\,I + b\,\boldsymbol\sigma\!\cdot\!\hat{\mathbf n}$。在 (T-reciprocity) 下要求
 
 $$
 M(-\hat{\mathbf k}, -\hat{\mathbf k}')_{m'\to m'',\,m\to m'''} = (-1)^{1/2-m+1/2-m'}\, M^*_{-m, -m'''; -m''', -m'}(\hat{\mathbf k}', \hat{\mathbf k})
@@ -297,7 +297,7 @@ $$
 
 ### 为何 A_y = Re 而非 Im
 
-`polarization_formalism.zh.md:295` 的 $A_y = 2\,\mathrm{Re}(a^*b)/(|a|^2+|b|^2)$ 中"Re"的根源：
+`06_polarization_formalism.zh.md:295` 的 $A_y = 2\,\mathrm{Re}(a^*b)/(|a|^2+|b|^2)$ 中"Re"的根源：
 
 字称约束去掉 M 矩阵中赝标量项 $\boldsymbol\sigma\!\cdot\!\hat{\mathbf l}, \boldsymbol\sigma\!\cdot\!\hat{\mathbf m}$，剩下的 $a\,I + b\,\sigma_n$ 是字称允许的最一般形式。计算 $A_y \propto \mathrm{Tr}[M\sigma_n M^\dagger]$ 直接得 $a^*b + ab^* = 2\,\mathrm{Re}(a^*b)$。
 
@@ -307,7 +307,7 @@ T 反演的额外贡献：要求 $a, b$ 满足某种 reciprocity。在弹性 spi
 
 ### Spin-1 张量极化的 T 约束
 
-`polarization_formalism.zh.md:451` 给出字称约束下 spin-1 + spin-0 的 analyzing power 张量 $T_{kq}$ 中非零分量
+`06_polarization_formalism.zh.md:451` 给出字称约束下 spin-1 + spin-0 的 analyzing power 张量 $T_{kq}$ 中非零分量
 
 $$
 i T_{11},\; T_{20},\; T_{21},\; T_{22}
@@ -324,7 +324,7 @@ $$
 
 ### 极化转移系数的 reciprocity
 
-`polarization_formalism.zh.md:309` 定义出射极化矢量 $\mathbf P_\text{out}$。极化转移系数 $D_{ij}$（入射极化沿 $j$、出射极化沿 $i$）满足 T 反演下的关系
+`06_polarization_formalism.zh.md:309` 定义出射极化矢量 $\mathbf P_\text{out}$。极化转移系数 $D_{ij}$（入射极化沿 $j$、出射极化沿 $i$）满足 T 反演下的关系
 
 $$
 D_{ij}(\hat{\mathbf k}'\leftarrow\hat{\mathbf k}) = D_{ji}(-\hat{\mathbf k}\leftarrow -\hat{\mathbf k}'). \tag{D-rec}
@@ -384,7 +384,7 @@ $$
 
 ### 反应通道下的 detailed balance
 
-`T_and_U_operators.zh.md:519` 的 AGS 跃迁算符 $U_{\beta\alpha}$ 描述三体（或多通道两体）从入射通道 $\alpha$ 到出射通道 $\beta$ 的有效跃迁。T 反演在通道空间中把 $\alpha\leftrightarrow\beta'$、$\beta\leftrightarrow\alpha'$ 对调
+`04_T_and_U_operators.zh.md:519` 的 AGS 跃迁算符 $U_{\beta\alpha}$ 描述三体（或多通道两体）从入射通道 $\alpha$ 到出射通道 $\beta$ 的有效跃迁。T 反演在通道空间中把 $\alpha\leftrightarrow\beta'$、$\beta\leftrightarrow\alpha'$ 对调
 
 $$
 \Theta\, U_{\beta\alpha}(E)\, \Theta^{-1} = U_{\alpha'\beta'}^\dagger(E) \tag{Theta-U}
@@ -400,30 +400,30 @@ $$
 
 ### 与 Friedrichs / 分波耦合的衔接
 
-`friedrichsModel.zh.md:79` 单通道模型不显式涉及 detailed balance（弹性退化平凡）；推广到多通道 Friedrichs（一个离散态耦合多个连续谱）时，连续谱通道间的截面满足 (detbal)。
+`01_friedrichsModel.zh.md:79` 单通道模型不显式涉及 detailed balance（弹性退化平凡）；推广到多通道 Friedrichs（一个离散态耦合多个连续谱）时，连续谱通道间的截面满足 (detbal)。
 
-`partial_wave_projection.zh.md:396` 的耦合通道分波 LS 方程 $T^J_{l'l}$ 是"通道指标 = $(l, s)$"的版本。T 反演给出 $T^J_{l'l, s's}(k', k) = T^J_{ll', ss'}(k, k')$（指标对调 + 动量交换；自旋张量已经对称化到分波基底里），这是 (T-reciprocity) 在分波基底下的具体形式。Stapp 等价相移参数 $\bar\delta_l$、$\epsilon_J$ 实数性的根源即此（self-derive：T 反演让 $S^J$ 在适当基底下对称，对称酉矩阵可参数化为 Stapp 形式）。
+`05_partial_wave_projection.zh.md:396` 的耦合通道分波 LS 方程 $T^J_{l'l}$ 是"通道指标 = $(l, s)$"的版本。T 反演给出 $T^J_{l'l, s's}(k', k) = T^J_{ll', ss'}(k, k')$（指标对调 + 动量交换；自旋张量已经对称化到分波基底里），这是 (T-reciprocity) 在分波基底下的具体形式。Stapp 等价相移参数 $\bar\delta_l$、$\epsilon_J$ 实数性的根源即此（self-derive：T 反演让 $S^J$ 在适当基底下对称，对称酉矩阵可参数化为 Stapp 形式）。
 
 ## 与主线笔记的对账
 
 | 主线知识点 | 对账位置 | 本篇位置 |
 |:--|:--|:--|
-| Møller 算符强极限定义 | `S_matrix_and_cross_section.zh.md:138` | (Theta-Omega) 推导 |
-| $S = \Omega_-^\dagger\Omega_+$ | `S_matrix_and_cross_section.zh.md:222` | (Theta-S) 推导 |
-| on-shell $S = 1 - 2\pi i\delta(E) T$ | `T_and_U_operators.zh.md:380` | (T-reciprocity) 矩阵元化 |
-| $T = V + V G V$ | `T_and_U_operators.zh.md:332` | (Theta-T) 推导 |
-| $f = -(2\pi)^2 \mu\, t$ | `S_matrix_and_cross_section.zh.md:307` | 截面公式 (detbal) |
-| $d\sigma/d\Omega = |f|^2$ | `S_matrix_and_cross_section.zh.md:420` | (detbal) 推导 |
-| 光学定理 $\mathrm{Im}\,f = (k/4\pi)\sigma_\text{tot}$ | `S_matrix_and_cross_section.zh.md:451` | T 反演下保持（酉性） |
-| M 矩阵字称约束 (P) | `polarization_formalism.zh.md:477` | $A_y$ 双重约束分析 |
-| M 矩阵 T 反演约束 (T) | `polarization_formalism.zh.md:497` | (T-reciprocity) 翻译 |
-| spin-1/2 + 0 的 $A_y$ | `polarization_formalism.zh.md:295` | $A_y = \mathrm{Re}$ 推导 |
-| 张量极化 $T_{kq}$ 非零分量 | `polarization_formalism.zh.md:454` | spin-1 T 约束 |
-| 出射极化 $\mathbf P_\text{out}$ | `polarization_formalism.zh.md:309` | (D-rec) 极化转移 |
-| Wolfenstein 5 振幅 | `polarization_formalism.zh.md:342` | 独立观测量计数 |
-| 耦合通道 $T^J_{l'l}$ | `partial_wave_projection.zh.md:396` | 分波 reciprocity |
-| AGS 跃迁算符 $U_{\beta\alpha}$ | `T_and_U_operators.zh.md:519` | (Theta-U) |
-| Friedrichs 离散-连续耦合 | `friedrichsModel.zh.md:79` | 多通道 detailed balance |
+| Møller 算符强极限定义 | `03_S_matrix_and_cross_section.zh.md:138` | (Theta-Omega) 推导 |
+| $S = \Omega_-^\dagger\Omega_+$ | `03_S_matrix_and_cross_section.zh.md:222` | (Theta-S) 推导 |
+| on-shell $S = 1 - 2\pi i\delta(E) T$ | `04_T_and_U_operators.zh.md:380` | (T-reciprocity) 矩阵元化 |
+| $T = V + V G V$ | `04_T_and_U_operators.zh.md:332` | (Theta-T) 推导 |
+| $f = -(2\pi)^2 \mu\, t$ | `03_S_matrix_and_cross_section.zh.md:307` | 截面公式 (detbal) |
+| $d\sigma/d\Omega = |f|^2$ | `03_S_matrix_and_cross_section.zh.md:420` | (detbal) 推导 |
+| 光学定理 $\mathrm{Im}\,f = (k/4\pi)\sigma_\text{tot}$ | `03_S_matrix_and_cross_section.zh.md:451` | T 反演下保持（酉性） |
+| M 矩阵字称约束 (P) | `06_polarization_formalism.zh.md:477` | $A_y$ 双重约束分析 |
+| M 矩阵 T 反演约束 (T) | `06_polarization_formalism.zh.md:497` | (T-reciprocity) 翻译 |
+| spin-1/2 + 0 的 $A_y$ | `06_polarization_formalism.zh.md:295` | $A_y = \mathrm{Re}$ 推导 |
+| 张量极化 $T_{kq}$ 非零分量 | `06_polarization_formalism.zh.md:454` | spin-1 T 约束 |
+| 出射极化 $\mathbf P_\text{out}$ | `06_polarization_formalism.zh.md:309` | (D-rec) 极化转移 |
+| Wolfenstein 5 振幅 | `06_polarization_formalism.zh.md:342` | 独立观测量计数 |
+| 耦合通道 $T^J_{l'l}$ | `05_partial_wave_projection.zh.md:396` | 分波 reciprocity |
+| AGS 跃迁算符 $U_{\beta\alpha}$ | `04_T_and_U_operators.zh.md:519` | (Theta-U) |
+| Friedrichs 离散-连续耦合 | `01_friedrichsModel.zh.md:79` | 多通道 detailed balance |
 
 每条均可用 `grep -n` 在源文件中校验。
 
@@ -435,6 +435,6 @@ $$
 - $A_y = P_y$ 等同性的数值演示：在 Yukawa + spin-orbit 模型中数值算 $a(\theta), b(\theta)$，画 $A_y(\theta)$ 与从 unpolarized beam 推出的 $P_y(\theta)$ 重合曲线，作为 (Ay-Py) 的可视化。
 - Stapp 相移参数的实数性：从带张量耦合的 ${}^3S_1$-${}^3D_1$ NN 势数值解耦合通道 LS 方程，提取 $S^{J=1}$ 矩阵；把 (Theta-T) 翻译为对 $S$ 的对称性约束（$S^{J=1}$ 的 off-diagonal 元相等），数值验证 $S^J = S^{J\,T}$ 到机器精度。
 - T 破缺信号的计算：在 $D = 0$ 的 SM 计算之上引入小 T 破缺扰动 $\delta H$，数值算反应中子 $\beta$ 衰变的 $D$ 项作为 $\delta H$ 的函数；与 T-保持基底下 final-state interaction 给出的"伪 T-odd"信号区分。
-- 三体 detailed balance：把 (detbal-3) 应用到 $d + p \to {}^3\mathrm{He} + \gamma$ 与 $\gamma + {}^3\mathrm{He} \to d + p$ 间的截面比较；与 AGS `T_and_U_operators.zh.md:598` 数值解的 $U_{\beta\alpha}$ 矩阵元一致性检验。
-- Coulomb 修正下的 T 反演：长程 Coulomb 相位 $\sigma_l$ 是实的、与 T 反演兼容；但 Coulomb-renormalized T 矩阵 $T^\text{SR}$ 的反互关系需仔细处理（`coulomb_scattering.zh.md:326` 已用 $\psi_C^{(-)} = [\psi_C^{(+)}(-\mathbf k)]^*$ 暗示这一点）。明确写出 long-range + short-range 分解下 (T-reciprocity) 的修正版本。
+- 三体 detailed balance：把 (detbal-3) 应用到 $d + p \to {}^3\mathrm{He} + \gamma$ 与 $\gamma + {}^3\mathrm{He} \to d + p$ 间的截面比较；与 AGS `04_T_and_U_operators.zh.md:598` 数值解的 $U_{\beta\alpha}$ 矩阵元一致性检验。
+- Coulomb 修正下的 T 反演：长程 Coulomb 相位 $\sigma_l$ 是实的、与 T 反演兼容；但 Coulomb-renormalized T 矩阵 $T^\text{SR}$ 的反互关系需仔细处理（`07_coulomb_scattering.zh.md:326` 已用 $\psi_C^{(-)} = [\psi_C^{(+)}(-\mathbf k)]^*$ 暗示这一点）。明确写出 long-range + short-range 分解下 (T-reciprocity) 的修正版本。
 - dpol 测量的极化转移系数 reciprocity 校准：实验上对 ${}^4\mathrm{He}(\vec d, \vec d){}^4\mathrm{He}$ 弹性散射测 $D_{ij}(\theta)$ 全表，校验 (D-rec) 在 $\theta \to \theta$（弹性）下的简化版本，作为 polarimeter 系统误差的诊断。

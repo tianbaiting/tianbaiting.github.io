@@ -1,4 +1,4 @@
-# S 矩阵与散射截面
+# ch03 S 矩阵与散射截面
 
 本文沿 Taylor《Scattering Theory: Quantum Theory of Nonrelativistic Collisions》第 2–3 章的思路，在薛定谔表象下建立非相对论散射的核心框架：渐近条件 → Møller 算符 → 入出态与 S 算符 → T 矩阵 → 微分截面 → 光学定理。
 
