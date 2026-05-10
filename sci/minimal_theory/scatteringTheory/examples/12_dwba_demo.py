@@ -9,7 +9,7 @@ Three amplitudes for V = V_C + V_SR with V_SR(r) = -V0 exp(-r^2 / R^2):
   exact : f_C exact + Numerov on V_C+V_SR, delta_l^{SR} = phi^{tot} - sigma_l.
 
 Convention: hbar = 2m = 1, mu = 1/2 so (2 mu / hbar^2 k) in (delta-CB) of
-coulomb_scattering.zh.md:352 reduces to (1/k). dependencies: numpy + matplotlib.
+07_coulomb_scattering.zh.md:352 reduces to (1/k). dependencies: numpy + matplotlib.
 """
 from pathlib import Path
 import sys
@@ -49,7 +49,7 @@ def coulomb_F(l, k, eta):
 
 
 def delta_dwba(l, k, eta, V0):
-    """delta_l^{SR,DWBA} = -(1/k) int F_l^2 V_SR dr ; (delta-CB) of coulomb_scattering.zh.md:352."""
+    """delta_l^{SR,DWBA} = -(1/k) int F_l^2 V_SR dr ; (delta-CB) of 07_coulomb_scattering.zh.md:352."""
     r, F = coulomb_F(l, k, eta)
     return -(1.0 / k) * np.trapezoid(F ** 2 * V_SR(r, V0), r)
 

@@ -154,15 +154,6 @@
       "url": "/MickeyMiaoMiao/firefoxplug/"
     },
     {
-      "id": "sci/todolist.zh",
-      "title": "todo",
-      "language": "zh",
-      "category": "category",
-      "path": "sci/todolist.zh.md",
-      "size": 2826,
-      "url": "/sci/todolist/"
-    },
-    {
       "id": "日本生存指南/去日本前打包",
       "title": "登机前打包",
       "language": "zh",
@@ -321,7 +312,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/cheatshet/scattering_faddeev.zh.md",
-      "size": 6523,
+      "size": 6544,
       "url": "/sci/cheatshet/scattering_faddeev/"
     },
     {
@@ -1072,112 +1063,112 @@
       "url": "/sci/minimal_theory/functionnalAna/C4spectral/"
     },
     {
-      "id": "sci/minimal_theory/scatteringTheory/time_reversal_detailed_balance.zh",
-      "title": "时间反演与细致平衡",
+      "id": "sci/minimal_theory/scatteringTheory/03_S_matrix_and_cross_section.zh",
+      "title": "ch03 S 矩阵与散射截面",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/time_reversal_detailed_balance.zh.md",
-      "size": 21633,
-      "url": "/sci/minimal_theory/scatteringTheory/time_reversal_detailed_balance/"
+      "path": "sci/minimal_theory/scatteringTheory/03_S_matrix_and_cross_section.zh.md",
+      "size": 16560,
+      "url": "/sci/minimal_theory/scatteringTheory/03_S_matrix_and_cross_section/"
     },
     {
-      "id": "sci/minimal_theory/scatteringTheory/partial_wave_projection.zh",
-      "title": "分波投影与角动量耦合：从抽象算符到数值可解方程",
+      "id": "sci/minimal_theory/scatteringTheory/06_polarization_formalism.zh",
+      "title": "ch06 极化形式与自旋观测量",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/partial_wave_projection.zh.md",
-      "size": 18944,
-      "url": "/sci/minimal_theory/scatteringTheory/partial_wave_projection/"
+      "path": "sci/minimal_theory/scatteringTheory/06_polarization_formalism.zh.md",
+      "size": 23864,
+      "url": "/sci/minimal_theory/scatteringTheory/06_polarization_formalism/"
     },
     {
-      "id": "sci/minimal_theory/scatteringTheory/Green_operator.zh",
-      "title": "格林算符与格林函数",
+      "id": "sci/minimal_theory/scatteringTheory/10_jost_analyticity.zh",
+      "title": "ch10 Jost 函数与解析性",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/Green_operator.zh.md",
-      "size": 8039,
-      "url": "/sci/minimal_theory/scatteringTheory/Green_operator/"
+      "path": "sci/minimal_theory/scatteringTheory/10_jost_analyticity.zh.md",
+      "size": 25084,
+      "url": "/sci/minimal_theory/scatteringTheory/10_jost_analyticity/"
     },
     {
-      "id": "sci/minimal_theory/scatteringTheory/coulomb_scattering.zh",
-      "title": "Coulomb 散射的完整形式",
+      "id": "sci/minimal_theory/scatteringTheory/01_friedrichsModel.zh",
+      "title": "ch01 Friedrichs 模型",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/coulomb_scattering.zh.md",
-      "size": 16072,
-      "url": "/sci/minimal_theory/scatteringTheory/coulomb_scattering/"
+      "path": "sci/minimal_theory/scatteringTheory/01_friedrichsModel.zh.md",
+      "size": 8553,
+      "url": "/sci/minimal_theory/scatteringTheory/01_friedrichsModel/"
     },
     {
-      "id": "sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section.zh",
-      "title": "S 矩阵与散射截面",
+      "id": "sci/minimal_theory/scatteringTheory/07_coulomb_scattering.zh",
+      "title": "ch07 Coulomb 散射的完整形式",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section.zh.md",
-      "size": 16555,
-      "url": "/sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section/"
+      "path": "sci/minimal_theory/scatteringTheory/07_coulomb_scattering.zh.md",
+      "size": 16134,
+      "url": "/sci/minimal_theory/scatteringTheory/07_coulomb_scattering/"
     },
     {
-      "id": "sci/minimal_theory/scatteringTheory/dwba.zh",
-      "title": "畸变波 Born 近似",
+      "id": "sci/minimal_theory/scatteringTheory/05_partial_wave_projection.zh",
+      "title": "ch05 分波投影与角动量耦合：从抽象算符到数值可解方程",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/dwba.zh.md",
-      "size": 21615,
-      "url": "/sci/minimal_theory/scatteringTheory/dwba/"
+      "path": "sci/minimal_theory/scatteringTheory/05_partial_wave_projection.zh.md",
+      "size": 18949,
+      "url": "/sci/minimal_theory/scatteringTheory/05_partial_wave_projection/"
     },
     {
-      "id": "sci/minimal_theory/scatteringTheory/polarization_formalism.zh",
-      "title": "极化形式与自旋观测量",
+      "id": "sci/minimal_theory/scatteringTheory/08_dwba.zh",
+      "title": "ch08 畸变波 Born 近似",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/polarization_formalism.zh.md",
-      "size": 23805,
-      "url": "/sci/minimal_theory/scatteringTheory/polarization_formalism/"
+      "path": "sci/minimal_theory/scatteringTheory/08_dwba.zh.md",
+      "size": 21776,
+      "url": "/sci/minimal_theory/scatteringTheory/08_dwba/"
     },
     {
-      "id": "sci/minimal_theory/scatteringTheory/effective_range_levinson.zh",
-      "title": "有效力程理论与 Levinson 系统化",
+      "id": "sci/minimal_theory/scatteringTheory/02_Green_operator.zh",
+      "title": "ch02 格林算符与格林函数",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/effective_range_levinson.zh.md",
-      "size": 23038,
-      "url": "/sci/minimal_theory/scatteringTheory/effective_range_levinson/"
+      "path": "sci/minimal_theory/scatteringTheory/02_Green_operator.zh.md",
+      "size": 8044,
+      "url": "/sci/minimal_theory/scatteringTheory/02_Green_operator/"
     },
     {
-      "id": "sci/minimal_theory/scatteringTheory/T_and_U_operators.zh",
-      "title": "从波算符到 T 算符，再到三体 AGS 的 U 算符",
+      "id": "sci/minimal_theory/scatteringTheory/11_effective_range_levinson.zh",
+      "title": "ch11 有效力程理论与 Levinson 系统化",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/T_and_U_operators.zh.md",
-      "size": 10918,
-      "url": "/sci/minimal_theory/scatteringTheory/T_and_U_operators/"
+      "path": "sci/minimal_theory/scatteringTheory/11_effective_range_levinson.zh.md",
+      "size": 23124,
+      "url": "/sci/minimal_theory/scatteringTheory/11_effective_range_levinson/"
     },
     {
-      "id": "sci/minimal_theory/scatteringTheory/friedrichsModel.zh",
-      "title": "Friedrichs 模型",
+      "id": "sci/minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym",
+      "title": "appendix · Woods-Saxon 光学势的 EST Separable 化及其与对称能的联系",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/friedrichsModel.zh.md",
-      "size": 8548,
-      "url": "/sci/minimal_theory/scatteringTheory/friedrichsModel/"
+      "path": "sci/minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym.md",
+      "size": 8411,
+      "url": "/sci/minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym/"
     },
     {
-      "id": "sci/minimal_theory/scatteringTheory/jost_analyticity.zh",
-      "title": "Jost 函数与解析性",
+      "id": "sci/minimal_theory/scatteringTheory/09_time_reversal_detailed_balance.zh",
+      "title": "ch09 时间反演与细致平衡",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/jost_analyticity.zh.md",
-      "size": 24980,
-      "url": "/sci/minimal_theory/scatteringTheory/jost_analyticity/"
+      "path": "sci/minimal_theory/scatteringTheory/09_time_reversal_detailed_balance.zh.md",
+      "size": 21740,
+      "url": "/sci/minimal_theory/scatteringTheory/09_time_reversal_detailed_balance/"
     },
     {
-      "id": "sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym",
-      "title": "Woods-Saxon 光学势的 EST Separable 化及其与对称能的联系",
+      "id": "sci/minimal_theory/scatteringTheory/04_T_and_U_operators.zh",
+      "title": "ch04 从波算符到 T 算符，再到三体 AGS 的 U 算符",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym.md",
-      "size": 8400,
-      "url": "/sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym/"
+      "path": "sci/minimal_theory/scatteringTheory/04_T_and_U_operators.zh.md",
+      "size": 10923,
+      "url": "/sci/minimal_theory/scatteringTheory/04_T_and_U_operators/"
     },
     {
       "id": "sci/minimal_theory/scatteringTheory/examples/01_1d_delta.zh",
@@ -1185,7 +1176,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/examples/01_1d_delta.zh.md",
-      "size": 7634,
+      "size": 7661,
       "url": "/sci/minimal_theory/scatteringTheory/examples/01_1d_delta/"
     },
     {
@@ -1194,7 +1185,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/examples/13_jost_demo.zh.md",
-      "size": 9047,
+      "size": 9143,
       "url": "/sci/minimal_theory/scatteringTheory/examples/13_jost_demo/"
     },
     {
@@ -1203,7 +1194,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/examples/10_polarization_demo.zh.md",
-      "size": 8845,
+      "size": 8905,
       "url": "/sci/minimal_theory/scatteringTheory/examples/10_polarization_demo/"
     },
     {
@@ -1212,7 +1203,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/examples/07_well_barrier_1d.zh.md",
-      "size": 6392,
+      "size": 6422,
       "url": "/sci/minimal_theory/scatteringTheory/examples/07_well_barrier_1d/"
     },
     {
@@ -1221,7 +1212,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/examples/04_yukawa.zh.md",
-      "size": 6307,
+      "size": 6334,
       "url": "/sci/minimal_theory/scatteringTheory/examples/04_yukawa/"
     },
     {
@@ -1230,7 +1221,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/examples/08_centrifugal_barrier.zh.md",
-      "size": 9006,
+      "size": 9033,
       "url": "/sci/minimal_theory/scatteringTheory/examples/08_centrifugal_barrier/"
     },
     {
@@ -1239,7 +1230,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/examples/11_coulomb_demo.zh.md",
-      "size": 10261,
+      "size": 10360,
       "url": "/sci/minimal_theory/scatteringTheory/examples/11_coulomb_demo/"
     },
     {
@@ -1248,7 +1239,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/examples/09_feshbach_two_channel.zh.md",
-      "size": 8265,
+      "size": 8310,
       "url": "/sci/minimal_theory/scatteringTheory/examples/09_feshbach_two_channel/"
     },
     {
@@ -1257,7 +1248,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/examples/02_square_well_3d.zh.md",
-      "size": 6454,
+      "size": 6481,
       "url": "/sci/minimal_theory/scatteringTheory/examples/02_square_well_3d/"
     },
     {
@@ -1266,7 +1257,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/examples/06_numerical_pipeline.zh.md",
-      "size": 6847,
+      "size": 6871,
       "url": "/sci/minimal_theory/scatteringTheory/examples/06_numerical_pipeline/"
     },
     {
@@ -1275,7 +1266,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/examples/03_delta_shell.zh.md",
-      "size": 7887,
+      "size": 7914,
       "url": "/sci/minimal_theory/scatteringTheory/examples/03_delta_shell/"
     },
     {
@@ -1284,7 +1275,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/examples/05_separable_rank1.zh.md",
-      "size": 8645,
+      "size": 8681,
       "url": "/sci/minimal_theory/scatteringTheory/examples/05_separable_rank1/"
     },
     {
@@ -1293,7 +1284,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/examples/14_ere_levinson_demo.zh.md",
-      "size": 10009,
+      "size": 10096,
       "url": "/sci/minimal_theory/scatteringTheory/examples/14_ere_levinson_demo/"
     },
     {
@@ -1302,7 +1293,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/minimal_theory/scatteringTheory/examples/12_dwba_demo.zh.md",
-      "size": 10084,
+      "size": 10195,
       "url": "/sci/minimal_theory/scatteringTheory/examples/12_dwba_demo/"
     },
     {
@@ -1794,14 +1785,14 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 199,
+    "total_nodes": 198,
     "total_links": 0,
     "languages": {
-      "zh": 170,
+      "zh": 169,
       "en": 29
     },
     "categories": {
-      "category": 26,
+      "category": 25,
       "main": 2,
       "page": 171
     },
@@ -1811,6 +1802,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-05-10 00:51:30.332500"
+    "generated_at": "2026-05-10 03:47:11.042974"
   }
 }

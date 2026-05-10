@@ -183,13 +183,6 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/life/%E5%81%A5%E5%BA%B7/%E9%BC%BB%E7%82%8E/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/sci/todolist/</loc>
-        <lastmod>2026-05-10</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/todolist/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/todolist/"/>
-    </url>
-    <url>
         <loc>https://tianbaiting.github.io/sci/cheatshet/bashrc/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
@@ -750,88 +743,88 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/functionnalAna/RHS/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/Green_operator/</loc>
+        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/01_friedrichsModel/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/Green_operator/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/Green_operator/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/01_friedrichsModel/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/01_friedrichsModel/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section/</loc>
+        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/02_Green_operator/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/02_Green_operator/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/02_Green_operator/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/T_and_U_operators/</loc>
+        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/03_S_matrix_and_cross_section/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/T_and_U_operators/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/T_and_U_operators/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/03_S_matrix_and_cross_section/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/03_S_matrix_and_cross_section/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym/</loc>
+        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/04_T_and_U_operators/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/04_T_and_U_operators/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/04_T_and_U_operators/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/coulomb_scattering/</loc>
+        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/05_partial_wave_projection/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/coulomb_scattering/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/coulomb_scattering/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/05_partial_wave_projection/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/05_partial_wave_projection/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/dwba/</loc>
+        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/06_polarization_formalism/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/dwba/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/dwba/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/06_polarization_formalism/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/06_polarization_formalism/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/effective_range_levinson/</loc>
+        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/07_coulomb_scattering/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/effective_range_levinson/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/effective_range_levinson/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/07_coulomb_scattering/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/07_coulomb_scattering/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/friedrichsModel/</loc>
+        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/08_dwba/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/friedrichsModel/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/friedrichsModel/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/08_dwba/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/08_dwba/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/jost_analyticity/</loc>
+        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/09_time_reversal_detailed_balance/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/jost_analyticity/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/jost_analyticity/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/09_time_reversal_detailed_balance/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/09_time_reversal_detailed_balance/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/partial_wave_projection/</loc>
+        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/10_jost_analyticity/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/partial_wave_projection/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/partial_wave_projection/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/10_jost_analyticity/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/10_jost_analyticity/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/polarization_formalism/</loc>
+        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/11_effective_range_levinson/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/polarization_formalism/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/polarization_formalism/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/11_effective_range_levinson/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/11_effective_range_levinson/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/time_reversal_detailed_balance/</loc>
+        <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/time_reversal_detailed_balance/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/time_reversal_detailed_balance/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym/"/>
     </url>
     <url>
         <loc>https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/examples/01_1d_delta/</loc>
@@ -1401,13 +1394,6 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/life/%E5%81%A5%E5%BA%B7/%E9%BC%BB%E7%82%8E/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/en/sci/todolist/</loc>
-        <lastmod>2026-05-10</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/todolist/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/todolist/"/>
-    </url>
-    <url>
         <loc>https://tianbaiting.github.io/en/sci/cheatshet/bashrc/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
@@ -1974,88 +1960,88 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/functionnalAna/RHS/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/Green_operator/</loc>
+        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/01_friedrichsModel/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/Green_operator/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/Green_operator/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/01_friedrichsModel/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/01_friedrichsModel/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section/</loc>
+        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/02_Green_operator/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/S_matrix_and_cross_section/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/02_Green_operator/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/02_Green_operator/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/T_and_U_operators/</loc>
+        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/03_S_matrix_and_cross_section/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/T_and_U_operators/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/T_and_U_operators/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/03_S_matrix_and_cross_section/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/03_S_matrix_and_cross_section/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym/</loc>
+        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/04_T_and_U_operators/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/appendix_EST_seperable_HVH_Esym/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/04_T_and_U_operators/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/04_T_and_U_operators/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/coulomb_scattering/</loc>
+        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/05_partial_wave_projection/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/coulomb_scattering/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/coulomb_scattering/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/05_partial_wave_projection/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/05_partial_wave_projection/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/dwba/</loc>
+        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/06_polarization_formalism/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/dwba/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/dwba/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/06_polarization_formalism/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/06_polarization_formalism/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/effective_range_levinson/</loc>
+        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/07_coulomb_scattering/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/effective_range_levinson/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/effective_range_levinson/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/07_coulomb_scattering/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/07_coulomb_scattering/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/friedrichsModel/</loc>
+        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/08_dwba/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/friedrichsModel/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/friedrichsModel/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/08_dwba/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/08_dwba/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/jost_analyticity/</loc>
+        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/09_time_reversal_detailed_balance/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/jost_analyticity/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/jost_analyticity/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/09_time_reversal_detailed_balance/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/09_time_reversal_detailed_balance/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/partial_wave_projection/</loc>
+        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/10_jost_analyticity/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/partial_wave_projection/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/partial_wave_projection/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/10_jost_analyticity/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/10_jost_analyticity/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/polarization_formalism/</loc>
+        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/11_effective_range_levinson/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/polarization_formalism/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/polarization_formalism/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/11_effective_range_levinson/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/11_effective_range_levinson/"/>
     </url>
     <url>
-        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/time_reversal_detailed_balance/</loc>
+        <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym/</loc>
         <lastmod>2026-05-10</lastmod>
         <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/time_reversal_detailed_balance/"/>
-        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/time_reversal_detailed_balance/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://tianbaiting.github.io/sci/minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym/"/>
     </url>
     <url>
         <loc>https://tianbaiting.github.io/en/sci/minimal_theory/scatteringTheory/examples/01_1d_delta/</loc>
