@@ -191,3 +191,177 @@ void recoNebulaTrack(const char* ridffile = "/home/s057/exp/exp2505_s057/anaroot
     // TArtSAMURAIParameters::Delete(); // If it's a singleton managed this way
 }
 ```
+
+---
+
+## Real TArtCalibNEBULA pipeline
+
+### 1. Raw decode (`LoadData`, `TArtCalibNEBULA.cc:64-204`)
+
+- Keeps only `device == SAMURAI` and detector ∈ `{NEBULA1Q, NEBULA1T, …, NEBULA4Q, NEBULA4T}`.
+- HPC channels are skipped (line 121).
+- TDC leading (`edge==0`) → `fTURaw / fTDRaw` + `TUMulti / TDMulti`++; trailing → `fTURaw_Trailing / fTDRaw_Trailing` (lines 159-173).
+- QDC: U/D → `fQURaw / fQDRaw` (lines 187-202).
+
+### 2. Calibration (`ReconstructData`, `TArtCalibNEBULA.cc:207-400`)
+
+#### TRef subtraction
+
+```
+turaw_subtref = turaw - turaw_ref
+tdraw_subtref = tdraw - tdraw_ref
+```
+
+#### Charge calibration
+
+```
+quped   = quraw - QUPed
+qdped   = qdraw - QDPed
+qucal   = quped * QUCal
+qdcal   = qdped * QDCal
+qaveped = sqrt(quped * qdped)
+qavecal = QAveCal * sqrt(qucal * qdcal)
+```
+
+#### TDC linear calibration
+
+```
+tucal = turaw_subtref * TUCal + TUOff
+tdcal = tdraw_subtref * TDCal + TDOff
+```
+
+#### Slewing (the key non-linearity)
+
+If `TUSlwLog[0] != 0`, a **5-term log polynomial** is used (`TArtCalibNEBULA.cc:291-307`):
+
+$$
+t_u^\text{slw} = t_u^\text{cal} - \sum_{k=0}^{4} c_k \, [\log(q_u^\text{ped})]^{k+1}
+$$
+
+(the k=2 term is double-weighted). Otherwise the classic 1/√q form is applied:
+
+$$
+t_u^\text{slw} = t_u^\text{cal} - \frac{\text{TUSlw}}{\sqrt{q_u^\text{ped}}}
+$$
+
+#### Position reconstruction
+
+```
+dtcal = tdcal - tucal
+dtslw = tdslw - tuslw
+PosCal = dtcal * DTCal + DTOff
+PosSlw = dtslw * DTCal + DTOff
+
+pos[0] = DetPos[0] + posxoff
+pos[1] = PosSlw    + DetPos[1] + posyoff
+pos[2] = DetPos[2] + poszoff
+```
+
+The effective light velocity inside the bar is encoded in `DTCal` (mm per ns or per TDC-channel difference).
+
+#### Charge attenuation correction
+
+$$
+q_\text{ave}^\text{cal} \leftarrow \frac{q_\text{ave}^\text{cal}}{1 + y^2 \cdot \text{QAveCalAtt}}
+$$
+
+#### TOF hypotheses
+
+```
+TTOFGamma   = taveslw - L / 29.979   // γ (c = 29.979 cm/ns)
+TTOFNeutron = taveslw - L / 20.       // β ≈ 2/3
+```
+
+---
+
+## `TArtNEBULAFilter` — 5 cut algorithms
+
+| Cut | Lines | Algorithm |
+|---|---|---|
+| `IHitMin(ihitmin_n, ihitmin_v)` | 34-58 | Require ≥ ihitmin of `{TURaw, TDRaw, QURaw, QDRaw}` in `(0, 4096]` (separate NEUT/VETO thresholds) |
+| `Threshold(thr_n, thr_v)` | 85-112 | `QAveCal` threshold (NEUT and VETO separately) |
+| `TOF(tmin, tmax)` | 115-137 | `TAveSlw` window on NEUT only |
+| `Veto(VetoNum)` | 140-196 | Scan `SubLayer==0` bars; find smallest-layer veto hit `VetoHitMin`; if it's layer 1 drop everything, else drop all NEUT with `Layer > VetoHitMin` |
+| `HitMinPos / HitMinTime / HitMinPos2` | 200-406 | Keep one earliest-position or earliest-time NEUT per layer group |
+
+> `SubLayer == 0` → VETO; `SubLayer ∈ {1, 2}` → NEUT sublayers.
+
+---
+
+## `TArtRecoNeutron` actual logic (`TArtRecoNeutron.cc:57-125`)
+
+⚠️ **No clustering.** Each surviving `TArtNEBULAPla` produces exactly one `TArtNeutron`. Cluster logic must be added by the user.
+
+```cpp
+m = 939.565 MeV                  // neutron mass
+time = pla->GetTAveSlwT0()
+mevee = pla->GetQAveCal()
+pos = pla->GetPos()              // (x,y,z) in lab
+
+β_i = pos[i] / (time * 29.979 cm/ns)
+γ   = 1 / sqrt(1 - β·β)
+p_i = m * γ * β_i
+E   = sqrt(m^2 + p·p) - m
+θ   = atan( sqrt(p_x^2 + p_y·p_z) / p_z )
+```
+
+> Note: `sqrt(p_x^2 + p_y*p_z)` is the literal expression in source (`TArtRecoNeutron.cc:105`); this looks like a typo for `p_y^2`. Verify against your anaroot version before using θ.
+
+---
+
+## NEBULA parameter file (`db/NEBULA.csv`)
+
+Full column header (`db/NEBULA.csv:1`):
+
+```
+ID, NAME, FPl, Layer, SubLayer, PosX, PosY, PosZ,
+TUCal, TUOff, TUSlw, QUCal, QUPed,
+TDCal, TDOff, TDSlw, QDCal, QDPed,
+DTCal, DTOff, TAveOff,
+tu_det, tu_geo, tu_ch, td_det, td_geo, td_ch,
+qu_geo, qu_ch, qd_geo, qd_ch,
+is_tref, is_hpc, id_hpc, Ignore
+```
+
+184 module rows. Deployment census:
+
+| Layer | SubLayer | Type | Count | PosZ (mm) |
+|---|---|---|---|---|
+| 1 | 0 | VETO / reference | 13 | — |
+| 2 | 0 | VETO / reference | 18 | — |
+| 3 | 0 | VETO front wall | 14 | 11493.72 / 11508.72 (staggered) |
+| 3 | 1 | **NEUT front SL1** | **30** | **13895.2** |
+| 3 | 2 | **NEUT front SL2** | **30** | **14025.2** (+130) |
+| 4 | 0 | VETO rear wall | 16 | 12339.72 / 12354.72 |
+| 4 | 1 | **NEUT rear SL1** | **30** | **14741.2** |
+| 4 | 2 | **NEUT rear SL2** | **30** | **14871.2** (+130) |
+| 5 | 0 | bookkeeping | 3 | — |
+
+**Total: 120 NEUT + ~61 VETO**. The Geant4 Dayone preset has 120+24 — the deployed array includes additional structural veto/reference bars.
+
+X span -1901.8 → +1647.8 mm, pitch 122.4 mm (30 bars × 122.4 ≈ 3672 mm wide).
+
+### Typical calibration values
+
+- `TUCal, TDCal ≈ 0.0976` ns/ch (TDC LSB)
+- `QUCal, QDCal ≈ 0.035–0.048` MeVee/ch
+- `QUPed, QDPed ≈ 100–145` ch
+- `DTCal = 1`, `DTOff ≈ -20…+30 mm`
+- `TUSlw, TDSlw = 0` (classic slewing disabled in current CSV; the XML uses `<TUSlwLog>` polynomial coefficients instead)
+
+### Magnet-centered frame
+
+`db/NEBULA_Pos_FromMagCenter.csv` has the same module IDs but `PosZ ≈ 9784…10374 mm` (magnet center is ~4111 mm upstream of NEBULA front). Use this frame for RK tracing and TOF.
+
+### HPC (anti-veto)
+
+`db/NEBULAHPC.csv` columns: `NAME, FPl, Layer, SubLayer, PosX, PosY, PosZ, TCal, TOff, tdc_geo, tdc_ch`. **16 HPC paddles** at `Z = 9442.3 mm`, single TDC channel each (no Q, no TU/TD split). They sit in front of NEBULA to veto charged particles.
+
+---
+
+## References (`../refs/`)
+
+- `Kondo_NIMA_967_163826_NEBULA_calibration.pdf` — Kondo et al., NIM A 967 (2020) 163826
+- `NEBULA_workshop_Kondo.pdf` — light attenuation, time resolution, efficiency
+- `Detector-NEBULA.pdf` — RIKEN SAMURAI NEBULA datasheet
+- `Kondo_arXiv_2412.17887_QFS_review.pdf` — multi-neutron review (NEBULA-Plus)

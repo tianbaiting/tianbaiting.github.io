@@ -328,11 +328,148 @@ private:
 - Many other signal processing variables (e.g., trailing, width, slw) for detailed analysis of detector response characteristics.
 fFlightLength：粒子从反应点到探测器的飞行距离。
 fFlightAngle：粒子入射角度。
-5. 多重击中与参考信号
-fTUMulti / fTDMulti：上/下端多重击中计数。
-fTURawRef / fTDRawRef：参考时间信号（如触发参考）。
-fTURaw_SubTRef / fTDRaw_SubTRef：与参考信号的差值。
-6. 其他
-fHit：是否被击中（0/1），用于事件筛选。
-还有大量信号处理相关变量（如 trailing、width、slw），用于详细分析探测器响应特性。
+---
+
+## Concrete NEBULA configuration
+
+### Module size and material (NEBULAConstruction)
+
+- Material: both NEUT and VETO are `G4_PLASTIC_SC_VINYLTOLUENE` (≈ BC-408 equivalent); world `G4_Galactic` (`NEBULAConstruction.cc:48-49`).
+- Default sizes (`TNEBULASimParameter::fNeutSize`, `fVetoSize`, `TNEBULASimParameter.cc:13`):
+  - NEUT: `(12, 180, 12) mm` placeholder
+  - VETO: `(32, 1, 190) mm` placeholder
+- **Dayone CSV overrides** (`configs/simulation/geometry/NEBULA_Dayone.csv:3-4`):
+  - **NEUT: 120 × 1800 × 120 mm** (one BC-408 bar = 12 cm × 12 cm × 180 cm)
+  - **VETO: 320 × 1900 × 10 mm**
+
+### Array layout (NEBULA_Dayone.csv + NEBULA_Detectors_Dayone.csv)
+
+`NEBULA_Dayone.csv` global header (relative to lab origin):
+
+```
+Position 0 0 7249.72 mm     # array front face (= 11117 − 3867.28)
+NeutSize 120 1800 120 mm
+VetoSize 320 1900 10 mm
+Angle    0 0 0
+TimeReso 0.17*sqrt(2) ns
+```
+
+`NEBULA_Detectors_Dayone.csv` columns: `ID, DetectorType, Layer, SubLayer, PositionX, PositionY, PositionZ, AngleX, AngleY, AngleZ`. 144 rows total:
+
+| Block | ID | Type | Layer | SubLayer | Count | PosZ (mm, array frame) |
+|---|---|---|---|---|---|---|
+| Neut L1 SL1 | 1–30 | NEUT | 1 | 1 | 30 | 0 |
+| Neut L1 SL2 | 31–60 | NEUT | 1 | 2 | 30 | 130 |
+| Neut L2 SL1 | 61–90 | NEUT | 2 | 1 | 30 | 846 |
+| Neut L2 SL2 | 91–120 | NEUT | 2 | 2 | 30 | 976 |
+| Veto L1 | 121–132 | VETO | 1 | 0 | 12 | ≈ -275 / -260 (zig-zag) |
+| Veto L2 | 133–144 | VETO | 2 | 0 | 12 | ≈ 571 / 586 |
+
+- NEUT X range: 1901.8 → -1647.8 mm, **pitch 122.4 mm**.
+- NEUT inter-layer gap: **846 mm**; intra-layer sublayer gap: **130 mm**.
+- VETO pitch: 310 mm.
+- `NEBULASD` is attached to every module (`DeutDetectorConstruction.cc:299, 304`); logical volumes named `NeutronDetector` / `VetoDetector`.
+
+> The deployed anaroot DB (`db/NEBULA.20250625.xml`) shows **120 NEUT + ~61 VETO + 16 HPC** modules. The Dayone simulator preset (120+24) is the baseline design.
+>
+> **Layer numbering convention differs across files**: the simulator (`NEBULA_Detectors_Dayone.csv`) uses **Layer 1/2** for the front/rear NEUT walls; anaroot (`db/NEBULA.csv`) uses **Layer 3/4** in the SAMURAI-wide scheme (Layers 1/2 are reserved for upstream detectors). The two numberings refer to the same physical walls.
+
+---
+
+## NEBULA signal model (NEBULASD + Converter)
+
+### `NEBULASD::ProcessHits` (`NEBULASD.cc:31-120`)
+
+Per step (`energyDeposit > 0`, charged particles) stores a `TSimData` into TClonesArray `NEBULASimData` with the same field set as `FragmentSD` plus `fPreKineticEnergy / fPostKineticEnergy` and a full module copy-number stack.
+
+### MeVee conversion (Birks/Fox)
+
+`NEBULASimDataConverter_TArtNEBULAPla::MeVtoMeVee` (`NEBULASimDataConverter_TArtNEBULAPla.cc:193`) applies a 4-parameter Fox light-yield function:
+
+```
+L(E) = a1·E − a2·(1 − exp(−a3·E^a4))
+```
+
+| Particle | a1 | a2 | a3 | a4 |
+|---|---|---|---|---|
+| e±, μ±, π± | 1.0 | 0 | 0 | 1 |
+| proton | 0.902713 | 7.55009 | 0.0990013 | 0.736281 |
+| deuteron | 0.891575 | 12.2122 | 0.0702262 | 0.782977 |
+| triton, He3, alpha | (separate coefficients) | | | |
+| Li7/Be9/B11/C12 | heavy-ion fallback | | | |
+
+### Two-PMT attenuation + smearing (`NEBULASimDataConverter_TArtNEBULAPla.cc:65-180`)
+
+Parameters (`TNEBULASimParameter.cc:13-19`):
+
+```
+V_scinti     = 158 mm/ns       # scintillator light velocity
+AttLen_Neut  = 6680 mm
+AttLen_Veto  = 2580 mm
+TimeReso     = 0.17*sqrt(2) ns
+```
+
+Per module the earliest-hit `(t, y)` is kept, then:
+
+$$
+\begin{aligned}
+t_u &= t + \Delta y_u / V_\text{scinti} + \mathcal{N}(0, \sigma_t)\\
+t_d &= t + \Delta y_d / V_\text{scinti} + \mathcal{N}(0, \sigma_t)\\
+q_u &= L\, e^{-\Delta y_u/\lambda},\quad q_d = L\, e^{-\Delta y_d/\lambda}\\
+\bar{t} &= \tfrac{1}{2}(t_u + t_d) - \tfrac{Y_\text{siz}}{2 V_\text{scinti}}\\
+\Delta t &= t_d - t_u\\
+y_\text{reco} &= \tfrac{1}{2}\Delta t\, V_\text{scinti} + y_\text{module}\\
+\bar q &= \sqrt{q_u q_d}\, e^{Y_\text{siz}/2\lambda}
+\end{aligned}
+$$
+
+Filled `TArtNEBULAPla` fields (`...Converter.cc:112-179`): `ID, Layer, SubLayer, DetectorName, DetPos (true), Pos (reco), TAveCal, QUCal, QDCal, QAveCal`. Output branch `NEBULAPla` (size 144).
+
+---
+
+## NEBULA vs NEBULA-Plus hardware comparison
+
+> **Bottom line: the hardware is not identical.** NEBULA-Plus adds new modules and a different DAQ on top of the existing NEBULA, running in parallel as a combined multi-neutron system.
+
+| Item | NEBULA (2012) | NEBULA-Plus (~2020 onward) |
+|---|---|---|
+| Funding / team | RIKEN / Tokyo Tech / Tohoku | LPC Caen + ANR-14-CE33-0022 |
+| NEUT modules | **120 deployed** (240 design) | **+90 added** on top of NEBULA |
+| NEUT bar material | Saint-Gobain **BC-408** plastic | Same plastic scintillator |
+| NEUT bar size | 12 × 12 × 180 cm | thickness **≈ +30 %** (~15–16 × 12 × 180 cm) |
+| NEUT geometry | 2 walls × 2 sublayers × 30 bars | extra layers, near-double depth |
+| VETO | 1 × 32 × 190 cm × 48 bars BC-408 | charged-particle veto with similar plastic |
+| PMT readout | Hamamatsu **R7724ASSY** (both ends) | two-end PMT (see nebula-plus.in2p3.fr) |
+| DAQ | SAMURAI VME **TDC + QDC**, triggered | **FASTER (LPC Caen) triggerless**, 240 channels |
+| 1n efficiency | ~32.5 % (Kondo NIMA 2020) … ~40 % (half setup) | **≈ ×2** improvement |
+| 4n efficiency | baseline | **≈ ×10** improvement |
+| ⟨T⟩ time resolution | ≈ 0.16 ns | similar |
+| Y position resolution | ≈ 2.6 cm | similar |
+| Distance from target | ~10 m (typical Coulomb breakup) | co-located with NEBULA |
+| Primary reference | Kondo, **NIM A 967 (2020) 163826** | Kondo et al., **arXiv:2412.17887** review |
+
+### Physics motivation for the upgrade
+
+Multi-neutron decays (4n, 5n, dripline studies) need much higher coincidence efficiency than the original NEBULA can deliver (a few percent at 4n). NEBULA-Plus improves this through:
+
+1. **Thicker bars** → higher single-bar np elastic-scattering probability → roughly doubled 1n efficiency.
+2. **More layers** → multi-hit events become separable → up to ×10 better multi-neutron efficiency.
+3. **FASTER triggerless DAQ** → no multi-hit trigger dead time, full waveform readout enables offline multi-hit reconstruction.
+
+Deployment / electronics / HV maps live at the project site [nebula-plus.in2p3.fr](https://nebula-plus.in2p3.fr/).
+
+---
+
+## References (`../refs/`)
+
+- `NEBULA_workshop_Kondo.pdf` — Kondo, "SAMURAI Neutron Detector (NEBULA)" workshop talk
+- `Detector-NEBULA.pdf` — RIKEN SAMURAI NEBULA datasheet
+- `Kondo_NIMA_967_163826_NEBULA_calibration.pdf` — Kondo et al., NIM A 967 (2020) 163826
+- `Kondo_arXiv_2412.17887_QFS_review.pdf` — Kondo et al. (2024) multi-neutron review covering NEBULA-Plus
+
+Online:
+
+- [NEBULA-Plus project (LPC Caen)](https://nebula-plus.in2p3.fr/)
+- [Kobayashi et al., SAMURAI spectrometer, NIM B 317 (2013) 294](https://ribf.riken.jp/RIBF-TAC05/10_SAMURAI.pdf)
+- [Kondo et al., NIM B 463 (2020) 173 — SAMURAI recent progress](https://www.sciencedirect.com/science/article/pii/S0168583X19303891)
 

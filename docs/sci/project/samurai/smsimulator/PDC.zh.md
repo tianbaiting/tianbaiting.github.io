@@ -193,3 +193,113 @@ G4bool FragmentSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
     }
 }
 ```
+
+---
+
+## smsimulator5.5 中的 PDC 具体配置 (源码精确数值)
+
+以下数值与文件:行号一一对应，来自 `libs/smg4lib/src/construction/`。
+
+### 气体材料
+
+- 气体混合物：**75% Ar + 25% i-C4H10**，1 atm，由 `G4_Ar` 与 `G4_BUTANE` 按摩尔体积 24.055 L/mol 配置，材料命名 `mat_PDC` (`PDCConstruction.cc:32-42`)。
+- 注意：anaroot 文档中也提到可换 `Ar + 50% C2H6`，但 Geant4 模型默认使用 Ar/iC4H10。
+
+### 几何
+
+单个 PDC 室（`PDCenc`）：
+- 整体气体盒：G4Box 半边长 `(1700/2, 800/2, 190/2) mm`，即 **1700 × 800 × 190 mm** (`PDCConstruction.cc:98-102`)。
+- U 层灵敏体：G4Box `(840, 390, 4) mm`，本地坐标 `(0, 0, -12) mm`，物理体 `PDCSD_U` (`PDCConstruction.cc:105-108`)。
+- X 层灵敏体：G4Box `(840, 390, 8) mm`，本地坐标 `(0, 0, 0) mm`，物理体 `PDCSD_X` (`PDCConstruction.cc:111-114`)。
+- V 层灵敏体：G4Box `(840, 390, 8) mm`，本地坐标 `(0, 0, +12) mm`，物理体 `PDCSD_V` (`PDCConstruction.cc:117-120`)。
+- **沿本地 +z 方向的层顺序：U → X → V**，三层皆为整体气体盒，丝不在几何中显式建模。
+
+### 实验室坐标摆放 (双室 PDC1 + PDC2)
+
+默认值（单室）在 `PDCConstruction.cc:25-26`：`fPosition = (400, 0, 4100) mm`，`fAngle = 57 deg`（PDC1 配置，B=1.3 T）；先按 `−fAngle` 绕 Y 轴旋转，再做 `G4PVPlacement` (`PDCConstruction.cc:78-81`)。
+
+运行时双室位置由 macro 命令注入（`DeutDetectorConstructionMessenger.cc:75-94`，分发于 `DeutDetectorConstruction.cc:554-575`）：
+
+```bash
+# configs/simulation/macros/export_ips_geometry_example.mac (lines 19-21)
+/samurai/geometry/PDC/Angle 69 deg
+/samurai/geometry/PDC/Position1 70 0 400 cm
+/samurai/geometry/PDC/Position2 70 0 500 cm
+```
+
+GDML dump 显示 PDC1 在实验室坐标 `(-3483.46, 0, 2086.98) mm`、PDC2 在 `(-4417.04, 0, 2445.35) mm`（绕 Y=69° 旋转，`configs/simulation/macros/detector_geometry.gdml:870-876`）。
+
+### 灵敏体 (FragmentSD) 数据流
+
+`FragmentSD` 实例 (`/PDC_U`, `/PDC_X`, `/PDC_V`) 在 `DeutDetectorConstruction.cc:311-323` 绑定到 U/X/V 逻辑体。`FragmentSD::ProcessHits` 筛选条件 `parentid == 0 && PDGCharge != 0`（仅主粒子带电）后，把每一步打成 `TSimData` 入 TClonesArray `FragSimData`（由 `FragSimDataInitializer.cc:17-31` 分配）。
+
+每步记录字段：
+
+| 字段 | 含义 | 单位/类型 |
+|---|---|---|
+| `fParentID, fTrackID, fStepNo` | Geant4 轨迹标识 | int |
+| `fZ, fA, fPDGCode, fParticleName` | 粒子标识 | — |
+| `fDetectorName` | `GetVolume(1)` 名 → "U"/"X"/"V" | string |
+| `fID` | `GetVolume(1)` 拷贝号 (区分 PDC1/PDC2) | int |
+| `fModuleName` | 最内层体名 | string |
+| `fCharge, fMass` | — | e, MeV |
+| `fPreMomentum/fPostMomentum` | TLorentzVector | MeV |
+| `fPrePosition/fPostPosition` | 3-向量 | mm |
+| `fPreTime/fPostTime` | — | ns |
+| `fEnergyDeposit` | 步长能量沉积 | MeV |
+| `fFlightLength` | 到材料入口距离 | mm |
+| `fIsAccepted = kTRUE` | flag | bool |
+
+> **Geant4 几何 ≠ 真实丝阵列**。这里的 U/X/V 是整体气体盒，"丝"概念出现在分析端 (`analysis_pdc_reco`) 与 anaroot `SAMURAIPDC.xml` 中。模拟生成的 `FragSimData` 直接给出 3D 击中点，后续在分析模块里按真实丝几何离散化得到模拟 hit。
+
+---
+
+## 真实硬件中的 PDC 丝阵列 (来自 anaroot SAMURAIPDC.xml)
+
+数据库给出 PDC1+PDC2 实际丝排布（详见 [anaroot PDC 重建文档](../anaroot/anaroot_pdc.md)）：
+
+| 层 | anodedir | id_plane | wirez (mm) | 备注 |
+|---|---|---|---|---|
+| 0 | U | 81 | 40 | PDC1 第 1 层 |
+| 1 | X | 82 | 24 | PDC1 第 2 层 |
+| 2 | V | 83 | 8 | PDC1 第 3 层 |
+| 3 | U | 84 | -576 | PDC2 第 1 层 |
+| 4 | X | 85 | -592 | PDC2 第 2 层 |
+| 5 | V | 86 | -608 | PDC2 第 3 层 |
+
+- 每层 **136 根丝**，间距 **12 mm**，wirepos 范围 `-822..+822 mm`；V 层 wire id 倒序排列。
+- 所有丝标记焦面 **F13**，det=37；总丝数 ≈ 816（`SAMURAIPDC_fit.csv:1-817`）。
+- **PDC1 与 PDC2 沿 z 方向间隔约 616 mm**（PDC1 中心 z≈24 mm，PDC2 中心 z≈-592 mm）。
+
+> 注：`SAMURAIPDC_fit.csv` 列头为
+> `ID, NAME, FPL, layer, id_plane, anodedir, wireid, wirepos, wirez, tzero_offset, det, geo, ch`
+> 模拟与重建必须使用同一套丝几何，否则 hit→track 阶段会出现系统偏移。
+
+---
+
+## 端到端工作流
+
+```bash
+# 1. 构建
+cd /home/tian/workspace/dpol/smsimulator5.5
+./build.sh
+
+# 2. 用包含 PDC1/PDC2 双室配置的 macro 运行模拟
+bin/sim_deuteron configs/simulation/macros/export_ips_geometry_example.mac
+
+# 3. PDC 径迹/动量重建
+bin/reconstruct_target_momentum --config configs/reconstruction/default.yaml
+```
+
+可视化 PDC 丝阵列：
+
+```bash
+python scripts/visualization/plot_pdc_wires.py
+```
+
+---
+
+## 参考资料（本地 PDF 已存）
+
+- `../refs/Detector-PDC.pdf` — RIKEN SAMURAI 官方 PDC 详细参数
+- `../refs/NEBULA_workshop_Kondo.pdf` — Kondo NEBULA workshop 报告（含 SAMURAI 全谱仪布局）

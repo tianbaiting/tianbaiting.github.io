@@ -104,25 +104,112 @@ TClonesArray *pdc_trk_array = (TClonesArray *)sman->FindDataContainer("SAMURAIPD
 - Processing: In `TArtCalibPDCTrack::ReconstructData()`, hits are first classified (by layer/direction), then geometric methods (e.g., weighted centroid, line fitting) are used to reconstruct track parameters.
 - Output: Reconstructed track parameters (position, angle, chi2, etc.) are written to TArtDCTrack objects via `SetAngle`, `SetPosition`, etc.
 
-### Typical Implementation (Weighted Centroid Example)
+### Real algorithm: 4-parameter MIGRAD fit (`TArtCalibPDCTrack.cc:9-336`)
 
-1. Hit Classification  
-   Classify all hits by wire direction (u/x/v/y), store in separate buffers.
+`TArtCalibPDCTrack` is **not** a weighted-centroid fitter. The earlier description above is a simplification — the actual code uses `TMinuit/MIGRAD` to minimise a χ² over four track parameters.
 
-2. Calculate Weighted Centroid for Each Direction  
-   For each layer, calculate the weighted average position (weight is usually drift time difference or signal strength).
+**1. Hard-coded layer geometry** (`TArtCalibPDCTrack.cc:36-43`):
 
-3. Line Fitting to Obtain Angles  
-   Fit a straight line to the centroid points to get the slope (angle):  
-   - X direction: a = (x2 - x1)/(z2 - z1)
-   - Y direction: b = (y2 - y1)/(z2 - z1)  
-   Or use least squares fitting with multiple points.
+```
+PDC1 = U, X, V
+PDC2 = U, X, V
+nlayer_y = 0     // no dedicated Y plane
+```
 
-4. Write to TArtDCTrack  
-   Use `SetAngle(a, 0)` and `SetAngle(b, 1)` to store the fitted angles in TArtDCTrack's ca[0] and ca[1].
+**2. Fit parameters and bounds** (`TArtCalibPDCTrack.cc:122-133`):
 
-5. Access Later  
-   Use `GetAngle(0)` and `GetAngle(1)` to retrieve the X and Y angles.
+| Parameter | Meaning | Range |
+|---|---|---|
+| `x0`   | x intercept at z=0 | ±1000 mm |
+| `y0`   | y intercept at z=0 | ± 800 mm |
+| `k_xz` | dx/dz | ±100 |
+| `k_yz` | dy/dz | ±100 |
+
+`TMinuit::mnexcm("MIGRAD", ...)` does the χ² minimisation.
+
+**3. χ² evaluation** (`Chi2Calculation`, `TArtCalibPDCTrack.cc:224-336`):
+
+For each plane the valid hits (`TDC>0 && TrailTDC>0`) are reduced to a **TOT-weighted wire centroid**:
+
+$$
+w_i = |\,\text{TDC}_i - \text{TrailTDC}_i\,|,\qquad
+\bar{x}_\text{layer} = \frac{\sum_i w_i\,x_i}{\sum_i w_i}
+$$
+
+The model prediction is projected onto the wire direction:
+- U plane: `U_pred = (x + y)/√2`
+- V plane: `V_pred = (x − y)/√2`
+- X plane: `x` directly
+
+Residual² is accumulated to form the χ².
+
+**4. Write `TArtDCTrack`** (`TArtCalibPDCTrack.cc:151-158`):
+
+```cpp
+trk->SetPosition(x0, 0);
+trk->SetPosition(y0, 1);
+trk->SetAngle(atan(k_xz), 0);
+trk->SetAngle(atan(k_yz), 1);
+trk->SetNDF(2);
+trk->SetNumHitLayer(nhit_total);
+trk->SetChi2(chi2_sum);
+```
+
+**5. No χ²/ndf cut in the current build**: the `if (chi2 < 10000)` filter is commented out (lines 148, 162-168), so the output contains poor-quality tracks. Downstream code must add its own `Chi2/NDF` cut.
+
+### Accessor pattern
+
+```cpp
+TArtDCTrack* trk = (TArtDCTrack*)pdc_trk_array->At(i);
+double x  = trk->GetPosition(0);   // x0 at z=0
+double y  = trk->GetPosition(1);   // y0 at z=0
+double ax = trk->GetAngle(0);      // atan(dx/dz)
+double ay = trk->GetAngle(1);      // atan(dy/dz)
+double chi2 = trk->GetChi2();
+int    nhit = trk->GetNumHitLayer();
+```
+
+### SAMURAIPDC.xml / SAMURAIPDC_fit.csv schema
+
+CSV header (`SAMURAIPDC_fit.csv:1`):
+
+```
+ID, NAME, FPL, layer, id_plane, anodedir, wireid, wirepos, wirez, tzero_offset, det, geo, ch
+```
+
+≈ 816 wires total, all on `FPL=13`, `det=37`.
+
+| layer | anodedir | id_plane | wirez (mm) | first wirepos | geo start | Notes |
+|---|---|---|---|---|---|---|
+| 0 | U | 81 | 40 | -822 | 0 | PDC1 plane 1 |
+| 1 | X | 82 | 24 | -822 | 2 | PDC1 plane 2 |
+| 2 | V | 83 | 8 | +822 (desc.) | 4 | PDC1 plane 3 |
+| 3 | U | 84 | -576 | -822 | 8 | PDC2 plane 1 |
+| 4 | X | 85 | -592 | -822 | 10 | PDC2 plane 2 |
+| 5 | V | 86 | -608 | +822 (desc.) | 13 | PDC2 plane 3 |
+
+- 136 wires per plane, **pitch 12 mm**, `wirepos ∈ [-822, +822] mm`.
+- **PDC1 vs PDC2 separated by ≈ 616 mm in z** (PDC1 mean z ≈ 24 mm, PDC2 mean z ≈ -592 mm).
+- V layer's `wireid` is reversed wrt `wirepos`.
+
+Example row:
+
+```
+1,PDC_0_0,13,0,81,U,0,-822,40,0,37,0,0
+```
+
+> All `(geo, ch)` actually used in the run must be present in `SAMURAIPDC.xml`, otherwise the `TArtRIDFMap` lookup fails and hit reconstruction throws.
+
+### PDC track to target
+
+⚠️ The main anaroot pipeline (`Macros/SAMURAI/RKtrace/RecoTrack_wSks.C`, `TArtRecoFragment`) uses **FDC1+FDC2**, not PDC, for SKS-based Runge-Kutta back-tracing to the target.
+
+PDC-to-target lives in two parallel places:
+
+1. **User scripts** under `anaroot/tbt_try/` (`recoPDCdataTosamurai.C`, etc.)
+2. **Simulator-side RK + NN** in `smsimulator5.5/libs/analysis_pdc_reco/` (see [smsimulator PDC reco](../smsimulator/PDC.md), driven by `bin/reconstruct_target_momentum`)
+
+Both must read the same `SAMURAIPDC.xml` to stay consistent.
 
 ---
 

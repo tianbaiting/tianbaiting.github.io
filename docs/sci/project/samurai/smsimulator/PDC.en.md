@@ -180,3 +180,116 @@ G4bool FragmentSD::ProcessHits(G4Step* aStep, G4TouchableHistory*)
     }
 }
 ```
+
+---
+
+## Concrete PDC configuration in smsimulator5.5
+
+All numbers below cite `libs/smg4lib/src/construction/` of `smsimulator5.5/`.
+
+### Gas
+
+- Mixture: **75% Ar + 25% i-C4H10** at 1 atm, built from `G4_Ar` + `G4_BUTANE` with molar volume 24.055 L/mol (`PDCConstruction.cc:32-42`). Material name `mat_PDC`.
+- The anaroot docs also mention `Ar + 50% C2H6` as an alternative, but the Geant4 model defaults to Ar/iC4H10.
+
+### Geometry of a single chamber
+
+- Gas enclosure `PDCenc`: G4Box with half-extents `(1700/2, 800/2, 190/2) mm` → **1700 × 800 × 190 mm** (`PDCConstruction.cc:98-102`).
+- U layer: G4Box `(840, 390, 4) mm` at local `(0, 0, -12) mm`, physvol `PDCSD_U` (`PDCConstruction.cc:105-108`).
+- X layer: G4Box `(840, 390, 8) mm` at local `(0, 0, 0) mm`, physvol `PDCSD_X` (`PDCConstruction.cc:111-114`).
+- V layer: G4Box `(840, 390, 8) mm` at local `(0, 0, +12) mm`, physvol `PDCSD_V` (`PDCConstruction.cc:117-120`).
+- Layer order along local +z is **U → X → V**. All three are bulk gas — individual wires are not modelled in Geant4 geometry.
+
+### Lab placement (PDC1 + PDC2)
+
+Default (single-chamber) values (`PDCConstruction.cc:25-26`): `fPosition = (400, 0, 4100) mm`, `fAngle = 57°` (PDC1 at B = 1.3 T). The chamber is first rotated by `-fAngle` about Y, then placed via `G4PVPlacement` (`PDCConstruction.cc:78-81`).
+
+For the dual-chamber configuration the positions come from macro commands (`DeutDetectorConstructionMessenger.cc:75-94`):
+
+```bash
+# configs/simulation/macros/export_ips_geometry_example.mac (lines 19-21)
+/samurai/geometry/PDC/Angle 69 deg
+/samurai/geometry/PDC/Position1 70 0 400 cm
+/samurai/geometry/PDC/Position2 70 0 500 cm
+```
+
+GDML dump shows PDC1 at lab `(-3483.46, 0, 2086.98) mm`, PDC2 at `(-4417.04, 0, 2445.35) mm` after a 69° Y-rotation (`detector_geometry.gdml:870-876`).
+
+### Sensitive-detector data flow
+
+Three `FragmentSD` instances (`/PDC_U`, `/PDC_X`, `/PDC_V`) are bound to the U/X/V logical volumes (`DeutDetectorConstruction.cc:311-323`). `FragmentSD::ProcessHits` records only steps with `parentid == 0 && PDGCharge != 0` (primary charged particles) and pushes a `TSimData` into `TClonesArray "FragSimData"` (allocated by `FragSimDataInitializer.cc:17-31`).
+
+Per-step fields stored:
+
+| Field | Meaning | Unit |
+|---|---|---|
+| `fParentID, fTrackID, fStepNo` | Geant4 track IDs | int |
+| `fZ, fA, fPDGCode, fParticleName` | Particle ID | — |
+| `fDetectorName` | `GetVolume(1)` name → "U"/"X"/"V" | string |
+| `fID` | `GetVolume(1)` copy number (distinguishes PDC1 vs PDC2) | int |
+| `fModuleName` | innermost volume name | string |
+| `fCharge, fMass` | — | e, MeV |
+| `fPreMomentum, fPostMomentum` | TLorentzVector | MeV |
+| `fPrePosition, fPostPosition` | 3-vector | mm |
+| `fPreTime, fPostTime` | — | ns |
+| `fEnergyDeposit` | step energy deposit | MeV |
+| `fFlightLength` | distance to material entrance | mm |
+| `fIsAccepted = kTRUE` | flag | bool |
+
+> **Geant4 geometry ≠ real wire array.** The U/X/V volumes are bulk gas. Wires only appear at the analysis stage (`analysis_pdc_reco`) and inside the anaroot `SAMURAIPDC.xml` database. The simulator's `FragSimData` gives a 3D hit point; downstream code discretises it onto the real wire geometry to produce mock hits.
+
+---
+
+## Real PDC wire array (from anaroot SAMURAIPDC.xml)
+
+The anaroot database describes the true PDC1+PDC2 wire layout (see [anaroot PDC reco doc](../anaroot/anaroot_pdc.md)):
+
+| Layer | anodedir | id_plane | wirez (mm) | Notes |
+|---|---|---|---|---|
+| 0 | U | 81 | 40 | PDC1 plane 1 |
+| 1 | X | 82 | 24 | PDC1 plane 2 |
+| 2 | V | 83 | 8 | PDC1 plane 3 |
+| 3 | U | 84 | -576 | PDC2 plane 1 |
+| 4 | X | 85 | -592 | PDC2 plane 2 |
+| 5 | V | 86 | -608 | PDC2 plane 3 |
+
+- **136 wires per plane, pitch 12 mm**, `wirepos ∈ [-822, +822] mm`. V-layer wireid is reversed.
+- All planes are on focal plane **F13**, `det = 37`. Total ≈ 816 wires (`SAMURAIPDC_fit.csv`).
+- **PDC1 vs PDC2 are separated by ≈ 616 mm in z** (PDC1 mean z ≈ 24 mm, PDC2 mean z ≈ -592 mm).
+
+CSV header:
+
+```
+ID, NAME, FPL, layer, id_plane, anodedir, wireid, wirepos, wirez, tzero_offset, det, geo, ch
+```
+
+> The simulator and anaroot must share a single wire geometry, otherwise the hit→track stage develops a systematic offset.
+
+---
+
+## End-to-end workflow
+
+```bash
+# 1. Build
+cd /home/tian/workspace/dpol/smsimulator5.5
+./build.sh
+
+# 2. Run the dual-chamber simulation
+bin/sim_deuteron configs/simulation/macros/export_ips_geometry_example.mac
+
+# 3. PDC track + target-momentum reconstruction
+bin/reconstruct_target_momentum --config configs/reconstruction/default.yaml
+```
+
+Visualise the PDC wire array:
+
+```bash
+python scripts/visualization/plot_pdc_wires.py
+```
+
+---
+
+## References (local PDFs in `../refs/`)
+
+- `Detector-PDC.pdf` — RIKEN SAMURAI official PDC datasheet
+- `NEBULA_workshop_Kondo.pdf` — Kondo NEBULA workshop (full SAMURAI spectrometer layout)

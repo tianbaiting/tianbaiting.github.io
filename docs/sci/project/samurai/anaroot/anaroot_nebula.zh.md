@@ -232,3 +232,186 @@ void recoNebulaTrack(const char* ridffile = "/home/s057/exp/exp2505_s057/anaroot
     // TArtSAMURAIParameters::Delete(); // If it's a singleton managed this way
 }
 ```
+
+---
+
+## TArtCalibNEBULA 真实校准链 (源码精确流程)
+
+### 1. 原始解码 (`LoadData`, `TArtCalibNEBULA.cc:64-204`)
+
+- 保留 `device == SAMURAI` 且 detector ∈ `{NEBULA1Q, NEBULA1T, NEBULA2Q, NEBULA2T, NEBULA3Q, NEBULA3T, NEBULA4Q, NEBULA4T}` 的数据段。
+- 跳过 HPC 通道（`TArtCalibNEBULA.cc:121`）。
+- TDC leading (edge==0) → `fTURaw / fTDRaw` + `TUMulti / TDMulti` 自增；trailing (edge==1) → `fTURaw_Trailing / fTDRaw_Trailing`（行 159-173）。
+- QDC：U/D 端各 → `fQURaw / fQDRaw`（行 187-202）。
+
+### 2. 校准 (`ReconstructData`, `TArtCalibNEBULA.cc:207-400`)
+
+#### a. TRef 减除
+
+每个 geo 反查参考时间 `tref`（行 500-513）：
+
+```
+turaw_subtref = turaw - turaw_ref
+tdraw_subtref = tdraw - tdraw_ref
+```
+
+#### b. QDC 校准 + 平均
+
+```
+quped = quraw - QUPed
+qdped = qdraw - QDPed
+qucal = quped * QUCal
+qdcal = qdped * QDCal
+qaveped = sqrt(quped * qdped)
+qavecal = QAveCal * sqrt(qucal * qdcal)
+```
+
+#### c. TDC 线性校准
+
+```
+tucal = turaw_subtref * TUCal + TUOff
+tdcal = tdraw_subtref * TDCal + TDOff
+```
+
+#### d. Slewing 修正（关键非线性）
+
+如果参数 `TUSlwLog[0] != 0`，使用 **5 项对数多项式**（`TArtCalibNEBULA.cc:291-307`）：
+
+$$
+t_u^\text{slw} = t_u^\text{cal} - \sum_{k=0}^{4} c_k\, \big[\log(q_u^\text{ped})\big]^{k+1}
+$$
+
+其中 $k=2$ 项被双重加权（实现细节）。否则回退到经典 1/√q 公式（行 309-310）：
+
+$$
+t_u^\text{slw} = t_u^\text{cal} - \frac{\text{TUSlw}}{\sqrt{q_u^\text{ped}}}
+$$
+
+下端同理。
+
+#### e. 位置重建
+
+```
+dtcal = tdcal - tucal
+dtslw = tdslw - tuslw
+
+PosCal = dtcal * DTCal + DTOff
+PosSlw = dtslw * DTCal + DTOff
+```
+
+最终 `pos[]`（`TArtCalibNEBULA.cc:329-340`）：
+
+```cpp
+pos[0] = DetPos[0] + posxoff;           // X 由 bar id 直接给出（无每事件随机化）
+pos[1] = PosSlw + DetPos[1] + posyoff;  // Y 由 ΔT 重建
+pos[2] = DetPos[2] + poszoff;           // Z 由 bar id 给出
+```
+
+#### f. QAveCal 光衰减修正 (`TArtCalibNEBULA.cc:339`)
+
+$$
+q_\text{ave}^\text{cal} \leftarrow \frac{q_\text{ave}^\text{cal}}{1 + y^2\cdot \text{QAveCalAtt}}
+$$
+
+#### g. TOF（飞行时间）
+
+```cpp
+TTOFGamma   = taveslw - L / 29.979;   // c, cm/ns → 即 γ 假设
+TTOFNeutron = taveslw - L / 20.;      // β = 20/29.979 ≈ 2/3 假设
+```
+
+---
+
+## TArtNEBULAFilter 5 种切除算法 (`TArtNEBULAFilter.cc`)
+
+| 切除 | 行号 | 算法 |
+|---|---|---|
+| `IHitMin(ihitmin_n, ihitmin_v)` | 34-58 | 要求 `{TURaw, TDRaw, QURaw, QDRaw}` 中处在 `(0, 4096]` 的数 ≥ ihitmin（NEUT/VETO 各自阈值） |
+| `Threshold(thr_n, thr_v)` | 85-112 | `QAveCal` 阈值，NEUT 与 VETO 分别切 |
+| `TOF(tmin, tmax)` | 115-137 | 仅 NEUT，按 `TAveSlw` 时间窗 |
+| `Veto(VetoNum)` | 140-196 | 扫所有 `SubLayer==0` veto bar，找最小 layer 的 veto 击中 `VetoHitMin`；若 `VetoHitMin == 1` 全部丢弃；否则丢弃所有 `Layer > VetoHitMin` 的 NEUT |
+| `HitMinPos / HitMinTime / HitMinPos2` | 200-406 | 每 layer-group 保留最早位置或最早时间的 1 个 NEUT |
+
+> SubLayer 区分：`SubLayer == 0` → VETO；`SubLayer ∈ {1, 2}` → NEUT 双副层。
+
+---
+
+## TArtRecoNeutron 实际逻辑 (`TArtRecoNeutron.cc:57-125`)
+
+⚠️ **无聚类（no clustering）**。每个通过 Filter 的 `TArtNEBULAPla` 直接产生一个 `TArtNeutron`。聚类逻辑需要用户自己加。
+
+每个 neutron 计算：
+
+```cpp
+m = 939.565 MeV          // 中子质量
+time = pla->GetTAveSlwT0()
+mevee = pla->GetQAveCal()
+pos = pla->GetPos()      // (x, y, z) 在 lab
+β_i = pos[i] / (time * 29.979 cm/ns)
+γ   = 1 / sqrt(1 - β·β)
+p_i = m * γ * β_i
+E   = sqrt(m^2 + p·p) - m
+θ   = atan( sqrt(p_x^2 + p_y·p_z) / p_z )
+```
+
+> 注：上式中 `sqrt(p_x^2 + p_y*p_z)` 是源码实际写法（`TArtRecoNeutron.cc:105`），看起来像是 `p_y^2` 的笔误，使用时建议核对版本。
+
+---
+
+## NEBULA 参数库 (db/NEBULA.csv) 列头与配置
+
+`NEBULA.csv` 完整列头（`db/NEBULA.csv:1`）：
+
+```
+ID, NAME, FPl, Layer, SubLayer, PosX, PosY, PosZ,
+TUCal, TUOff, TUSlw, QUCal, QUPed,
+TDCal, TDOff, TDSlw, QDCal, QDPed,
+DTCal, DTOff, TAveOff,
+tu_det, tu_geo, tu_ch,
+td_det, td_geo, td_ch,
+qu_geo, qu_ch, qd_geo, qd_ch,
+is_tref, is_hpc, id_hpc, Ignore
+```
+
+184 模块行。模块分布：
+
+| Layer | SubLayer | 类型 | 数量 | PosZ (mm) |
+|---|---|---|---|---|
+| 1 | 0 | VETO/参考 | 13 | — |
+| 2 | 0 | VETO/参考 | 18 | — |
+| 3 | 0 | VETO 前墙 | 14 | 11493.72 / 11508.72 (staggered) |
+| 3 | 1 | **NEUT 前墙 SL1** | **30** | **13895.2** |
+| 3 | 2 | **NEUT 前墙 SL2** | **30** | **14025.2** (+130) |
+| 4 | 0 | VETO 后墙 | 16 | 12339.72 / 12354.72 |
+| 4 | 1 | **NEUT 后墙 SL1** | **30** | **14741.2** |
+| 4 | 2 | **NEUT 后墙 SL2** | **30** | **14871.2** (+130) |
+| 5 | 0 | 簿记 | 3 | — |
+
+**部署计：120 NEUT + ~61 VETO 模块**（与 Geant4 Dayone 模型 120+24 略有差异；真实实验有更多结构性 VETO/参考 bar）。
+
+X 方向跨度 `-1901.8..+1647.8 mm`，pitch 122.4 mm → 30 bar × 122.4 ≈ 3672 mm 宽。
+
+### 典型标定数值范围
+
+- `TUCal, TDCal ≈ 0.0976` ns/ch (TDC LSB)
+- `QUCal, QDCal ≈ 0.035–0.048` MeVee/ch
+- `QUPed, QDPed ≈ 100–145` ch
+- `DTCal = 1`，`DTOff ≈ -20..+30 mm`（光在 bar 中的等效速度编码在 DTCal 里）
+- `TUSlw, TDSlw = 0`（当前 CSV 关闭经典 slewing；XML 通过 `<TUSlwLog>` 提供对数多项式系数）
+
+### 磁中心坐标系
+
+`db/NEBULA_Pos_FromMagCenter.csv` 提供相同模块 ID 但 `PosZ ≈ 9784..10374 mm`（磁中心相对 lab 偏移 ≈ 4111 mm 上游）。RK 追踪与 TOF 计算用这套坐标更方便。
+
+### HPC (反符合)
+
+`db/NEBULAHPC.csv` 列头：`NAME, FPl, Layer, SubLayer, PosX, PosY, PosZ, TCal, TOff, tdc_geo, tdc_ch`，共 **16 个 HPC paddle**，置于 `Layer 1 SubLayer 1, Z = 9442.3 mm`，单 TDC 通道（无 Q、无 TU/TD 区分）。在 NEBULA 前面挡带电粒子。
+
+---
+
+## 参考资料
+
+- `../refs/Kondo_NIMA_967_163826_NEBULA_calibration.pdf` — NEBULA 完整标定方法论（Kondo et al., NIM A 967 (2020) 163826）
+- `../refs/NEBULA_workshop_Kondo.pdf` — 含光衰减、时间分辨、效率测量
+- `../refs/Detector-NEBULA.pdf` — RIKEN SAMURAI 官方 NEBULA 介绍页
+- `../refs/Kondo_arXiv_2412.17887_QFS_review.pdf` — 多中子重建综述（含 NEBULA-Plus）

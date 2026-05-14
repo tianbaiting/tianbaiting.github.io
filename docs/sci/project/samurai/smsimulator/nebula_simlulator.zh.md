@@ -331,6 +331,169 @@ private:
 
 
 
+## NEBULA 几何具体配置 (源码精确数值)
+
+### 模块尺寸与材料 (NEBULAConstruction)
+
+- 材料：NEUT 与 VETO 模块均为 `G4_PLASTIC_SC_VINYLTOLUENE`（聚乙烯甲苯，等效 BC-408），世界体 `G4_Galactic` (`NEBULAConstruction.cc:48-49`)。
+- 模块默认尺寸（`TNEBULASimParameter::fNeutSize`, `fVetoSize`, 在 `TNEBULASimParameter.cc:13`）：
+  - NEUT： `(12, 180, 12) mm` 占位值
+  - VETO： `(32, 1, 190) mm` 占位值
+- **Dayone CSV 覆盖**（`configs/simulation/geometry/NEBULA_Dayone.csv:3-4`）：
+  - **NEUT：120 × 1800 × 120 mm**（一根 BC-408 条 12 cm × 12 cm × 180 cm）
+  - **VETO：320 × 1900 × 10 mm**（薄塑料反符合板）
+
+### 阵列布置 (NEBULA_Dayone.csv + NEBULA_Detectors_Dayone.csv)
+
+`NEBULA_Dayone.csv` 头部全局参数：
+
+```
+Position 0 0 7249.72 mm        # 阵列前面板原点（lab，= 11117 - 3867.28）
+NeutSize 120 1800 120 mm
+VetoSize 320 1900 10 mm
+Angle    0 0 0
+TimeReso 0.17*sqrt(2) ns       # 单端 PMT 时间分辨
+Q_factor ...
+```
+
+`NEBULA_Detectors_Dayone.csv` 列头：`ID, DetectorType, Layer, SubLayer, PositionX, PositionY, PositionZ, AngleX, AngleY, AngleZ`，共 144 行：
+
+| 区段 | ID | DetectorType | Layer | SubLayer | 数量 | PosZ (mm, 相对阵列原点) |
+|---|---|---|---|---|---|---|
+| Neut L1 SL1 | 1–30 | NEUT | 1 | 1 | 30 | 0 |
+| Neut L1 SL2 | 31–60 | NEUT | 1 | 2 | 30 | 130 |
+| Neut L2 SL1 | 61–90 | NEUT | 2 | 1 | 30 | 846 |
+| Neut L2 SL2 | 91–120 | NEUT | 2 | 2 | 30 | 976 |
+| Veto L1 | 121–132 | VETO | 1 | 0 | 12 | ≈ -275 / -260（zig-zag） |
+| Veto L2 | 133–144 | VETO | 2 | 0 | 12 | ≈ 571 / 586 |
+
+- 单条 NEUT 在 X 方向：1901.8 → -1647.8 mm，**间距 122.4 mm**。
+- NEUT 两层间距 **846 mm**；同层副层间距 **130 mm**（双层结构便于位置/时间冗余）。
+- VETO bar 在 X 方向：1832 → -1578 mm，**间距 310 mm**。
+- 每模块绑定 `NEBULASD`（`DeutDetectorConstruction.cc:299, 304`），逻辑体名 `NeutronDetector` / `VetoDetector`。
+
+> 注：anaroot 真实数据库（`db/NEBULA.20250625.xml`）显示部署中实际是 **120 NEUT + 61 VETO + 16 HPC 反符合**，VETO 数量与 SubLayer=0 含义略有差异；模拟用 Dayone 拓扑作为基准。
+>
+> **Layer 编号约定差异**：simulator (`NEBULA_Detectors_Dayone.csv`) 用 **Layer 1/2** 表示前/后 NEUT 墙；anaroot (`db/NEBULA.csv`) 用 SAMURAI 全谱仪编号体系下的 **Layer 3/4** 表示同一对墙（Layer 1/2 留给上游探测器）。两套数字指同一物理墙。
+
+---
+
+## NEBULA 信号模型 (NEBULASD + Converter)
+
+### NEBULASD::ProcessHits (`NEBULASD.cc:31-120`)
+
+对所有带电粒子步长 `energyDeposit > 0` 入 TClonesArray `NEBULASimData`，每步 `TSimData` 包含：
+
+| 字段 | 含义 |
+|---|---|
+| `fModuleID` | 拷贝号栈（多层）|
+| `fID` | 模块号 1–144 |
+| `fParticleName` | Geant4 粒子名 |
+| `fDetectorName` | `"NEUT_SD"` / `"VETO_SD"` |
+| `fEnergyDeposit` | MeV |
+| `fPrePosition / fPostPosition` | mm |
+| `fPreTime / fPostTime` | ns |
+| `fPreKineticEnergy / fPostKineticEnergy` | MeV |
+| `fPreMomentum / fPostMomentum` | 4-向量 MeV |
+
+### 光产额 (MeVee) 转换：Birks/Fox 参数化
+
+`NEBULASimDataConverter_TArtNEBULAPla::MeVtoMeVee` (`NEBULASimDataConverter_TArtNEBULAPla.cc:193`) 按粒子类型应用 Fox 形式 4-参数标度：
+
+```
+L(E) = a1·E - a2·(1 - exp(-a3·E^a4))
+```
+
+| 粒子 | a1 | a2 | a3 | a4 |
+|---|---|---|---|---|
+| e±, μ±, π± (轻子/介子) | 1.0 | 0 | 0 | 1 |
+| proton | 0.902713 | 7.55009 | 0.0990013 | 0.736281 |
+| deuteron | 0.891575 | 12.2122 | 0.0702262 | 0.782977 |
+| triton, He3, alpha | (各有不同系数，见源码) | | | |
+| Li7/Be9/B11/C12 | 重离子回退分支 | | | |
+
+### 双端 PMT 衰减 + 时间模型 (`NEBULASimDataConverter_TArtNEBULAPla.cc:65-180`)
+
+参数 (`TNEBULASimParameter.cc:13-19`)：
+
+```
+V_scinti  = 158 mm/ns        # 闪烁体内光速
+AttLen_Neut = 6680 mm         # NEUT bar 衰减长度
+AttLen_Veto = 2580 mm         # VETO bar 衰减长度
+TimeReso  = 0.17*sqrt(2) ns   # 单端时间分辨
+```
+
+每模块按最早击中点 `(t, y)` 聚合，再做 PMT 响应：
+
+$$
+\begin{aligned}
+t_u &= t + \frac{\Delta y_u}{V_\text{scinti}} + \mathcal{N}(0, \sigma_t)\\
+t_d &= t + \frac{\Delta y_d}{V_\text{scinti}} + \mathcal{N}(0, \sigma_t)\\
+q_u &= L \cdot e^{-\Delta y_u/\lambda_\text{att}},\quad q_d = L \cdot e^{-\Delta y_d/\lambda_\text{att}}\\
+\bar{t} &= \tfrac{1}{2}(t_u+t_d) - \tfrac{Y_\text{siz}}{2 V_\text{scinti}}\\
+\Delta t &= t_d - t_u\\
+y_\text{reco} &= \tfrac{1}{2}\Delta t\, V_\text{scinti} + y_\text{module}\\
+\bar{q} &= \sqrt{q_u q_d}\,e^{Y_\text{siz}/2\lambda_\text{att}}
+\end{aligned}
+$$
+
+输出 `TArtNEBULAPla` 字段填充（`...Converter.cc:112-179`）：
+`ID, Layer, SubLayer, DetectorName ("Neut1"…"Veto144"), DetPos(true center), Pos(reco hit), TAveCal=t̄, QUCal=qu, QDCal=qd, QAveCal=q̄`。
+
+Branch 名：`NEBULAPla`（TClonesArray of `TArtNEBULAPla`，size = `fNeutNum + fVetoNum = 144`）。
+
+---
+
+## NEBULA vs NEBULA-Plus 硬件对比
+
+> **结论：硬件不一致。** NEBULA-Plus 是在原 NEBULA 基础上增加新模块阵列并换装新 DAQ。两者并行运行，构成多中子探测系统。
+
+| 项目 | NEBULA (2012) | NEBULA-Plus (~2020-至今) |
+|---|---|---|
+| 资助/团队 | RIKEN / Tokyo Tech / Tohoku | LPC Caen + ANR-14-CE33-0022 |
+| NEUT 模块数 | **120 部署**（240 设计上限） | **+90 新增** (在 NEBULA 基础上) |
+| NEUT bar 材料 | Saint-Gobain **BC-408** 塑料闪烁体 | 同型塑料闪烁体 |
+| NEUT bar 尺寸 | 12 cm × 12 cm × 180 cm | **厚度 ≈ +30%**（约 15-16 cm × 12 cm × 180 cm） |
+| NEUT 布局 | 2 墙 × 2 副层 × 30 根 | 增加层数，几何近似翻倍 |
+| VETO | 1 cm × 32 cm × 190 cm × 48 根 BC-408 | 同样配备 charged-particle veto |
+| PMT 读出 | Hamamatsu **R7724ASSY** 双端 | 双端 PMT（型号见 nebula-plus.in2p3.fr） |
+| DAQ | SAMURAI VME **TDC + QDC** 触发式 | **FASTER (LPC Caen) 无触发**，240 通道 |
+| 单中子效率 | ≈ 32.5% (Kondo NIM A 2020) 至 ≈ 40% (半阵列) | **≈ ×2** 提升 |
+| 4n 效率 | 基线 | **≈ ×10** 提升 |
+| 时间分辨 ⟨T⟩ | ≈ 0.16 ns | (类似) |
+| Y 位置分辨 | ≈ 2.6 cm | (类似) |
+| 距靶距离 | ~10 m（典型 Coulomb breakup 配置） | 与 NEBULA 协同 |
+| 主要参考 | Kondo, **NIM A 967 (2020) 163826** | Kondo et al., **arXiv:2412.17887** review |
+
+### NEBULA-Plus 改进的物理动机
+
+多中子事件中（如 4n, 5n 事件，弱束缚/连续态核研究），原 NEBULA 的层数与 bar 厚度导致 4n 检测效率较低（几个百分点）。NEBULA-Plus 通过：
+
+1. **加厚 bar** 提升单 bar 中子-质子弹性散射几率 → 单中子效率近翻倍；
+2. **增加层数** → 多重击中事件可分离，提升 multi-n 效率高达 ×10；
+3. **改用 FASTER 无触发 DAQ** → 消除复杂多 hit 触发死时间，全波形读取便于离线 multi-hit 重建。
+
+详细 deployment/electronics/HV 映射见项目主页 [nebula-plus.in2p3.fr](https://nebula-plus.in2p3.fr/)。
+
+---
+
+## 参考资料 (本地 PDF + 在线)
+
+本地下载至 `docs/sci/project/samurai/refs/`：
+
+- `NEBULA_workshop_Kondo.pdf` — Kondo, "SAMURAI Neutron Detector (NEBULA)" 工作坊报告（含完整设计图与目标效率）
+- `Detector-NEBULA.pdf` — RIKEN SAMURAI 官方 NEBULA 介绍页
+- `Kondo_NIMA_967_163826_NEBULA_calibration.pdf` — Kondo et al., **NIM A 967 (2020) 163826** "Calibration methods of the neutron detector array NEBULA"
+- `Kondo_arXiv_2412.17887_QFS_review.pdf` — Kondo et al. (2024) 多中子探测最新综述，含 NEBULA-Plus 性能
+
+在线：
+
+- [NEBULA-Plus 项目主页 (LPC Caen)](https://nebula-plus.in2p3.fr/)
+- [Kobayashi et al., SAMURAI spectrometer, NIM B 317 (2013) 294](https://ribf.riken.jp/RIBF-TAC05/10_SAMURAI.pdf)
+- [Kondo et al., NIM B 463 (2020) 173 — SAMURAI 最新进展](https://www.sciencedirect.com/science/article/pii/S0168583X19303891)
+
+---
+
 ## 附录：在 MkDocs 中启用 Mermaid 图表
 
 要在文档中正确显示 Mermaid 流程图，需要在 `mkdocs.yml` 配置文件中添加以下扩展。
