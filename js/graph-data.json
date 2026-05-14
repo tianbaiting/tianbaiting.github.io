@@ -1523,11 +1523,11 @@
     },
     {
       "id": "sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction.en",
-      "title": "Anaroot Nebula Reconstructionfunction",
+      "title": "TArtCalibNEBULA::ReconstructData — Full Walk-through",
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction.en.md",
-      "size": 2369,
+      "size": 5505,
       "url": "/en/sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction/"
     },
     {
@@ -1536,7 +1536,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot_pdc.zh.md",
-      "size": 7380,
+      "size": 10584,
       "url": "/sci/project/samurai/anaroot/anaroot_pdc/"
     },
     {
@@ -1590,7 +1590,7 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot_pdc.en.md",
-      "size": 10021,
+      "size": 12879,
       "url": "/en/sci/project/samurai/anaroot/anaroot_pdc/"
     },
     {
@@ -1599,7 +1599,7 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot_nebula.en.md",
-      "size": 9608,
+      "size": 15233,
       "url": "/en/sci/project/samurai/anaroot/anaroot_nebula/"
     },
     {
@@ -1608,7 +1608,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/anaroot/anaroot_nebula.zh.md",
-      "size": 8343,
+      "size": 13408,
       "url": "/sci/project/samurai/anaroot/anaroot_nebula/"
     },
     {
@@ -1617,7 +1617,7 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/PDC.en.md",
-      "size": 8444,
+      "size": 13302,
       "url": "/en/sci/project/samurai/smsimulator/PDC/"
     },
     {
@@ -1626,7 +1626,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/PDC.zh.md",
-      "size": 5012,
+      "size": 8835,
       "url": "/sci/project/samurai/smsimulator/PDC/"
     },
     {
@@ -1635,7 +1635,7 @@
       "language": "en",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/nebula_simlulator.en.md",
-      "size": 16709,
+      "size": 23433,
       "url": "/en/sci/project/samurai/smsimulator/nebula_simlulator/"
     },
     {
@@ -1662,7 +1662,7 @@
       "language": "zh",
       "category": "page",
       "path": "sci/project/samurai/smsimulator/nebula_simlulator.zh.md",
-      "size": 13133,
+      "size": 19392,
       "url": "/sci/project/samurai/smsimulator/nebula_simlulator/"
     },
     {
@@ -1802,6 +1802,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-05-10 03:47:11.042974"
+    "generated_at": "2026-05-14 10:51:01.269172"
   }
 }

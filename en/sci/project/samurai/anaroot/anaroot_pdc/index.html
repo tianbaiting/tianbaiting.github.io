@@ -3487,7 +3487,7 @@
   
     <li class="md-nav__item">
       <a href="../anaroot_nebula_reconstructionfunction/" class="md-nav__link">
-        Anaroot nebula reconstructionfunction
+        TArtCalibNEBULA::ReconstructData — Full Walk-through
       </a>
     </li>
   
@@ -4114,34 +4114,169 @@
 <li>Processing: In <code>TArtCalibPDCTrack::ReconstructData()</code>, hits are first classified (by layer/direction), then geometric methods (e.g., weighted centroid, line fitting) are used to reconstruct track parameters.</li>
 <li>Output: Reconstructed track parameters (position, angle, chi2, etc.) are written to TArtDCTrack objects via <code>SetAngle</code>, <code>SetPosition</code>, etc.</li>
 </ul>
-<h3 id="typical-implementation-weighted-centroid-example">Typical Implementation (Weighted Centroid Example)<a class="headerlink" href="#typical-implementation-weighted-centroid-example" title="Permanent link">#</a></h3>
+<h3 id="real-algorithm-4-parameter-migrad-fit-tartcalibpdctrackcc9-336">Real algorithm: 4-parameter MIGRAD fit (<code>TArtCalibPDCTrack.cc:9-336</code>)<a class="headerlink" href="#real-algorithm-4-parameter-migrad-fit-tartcalibpdctrackcc9-336" title="Permanent link">#</a></h3>
+<p><code>TArtCalibPDCTrack</code> is <strong>not</strong> a weighted-centroid fitter. The earlier description above is a simplification — the actual code uses <code>TMinuit/MIGRAD</code> to minimise a χ² over four track parameters.</p>
+<p><strong>1. Hard-coded layer geometry</strong> (<code>TArtCalibPDCTrack.cc:36-43</code>):</p>
+<div class="highlight"><pre><span></span><code>PDC1 = U, X, V
+PDC2 = U, X, V
+nlayer_y = 0     // no dedicated Y plane
+</code></pre></div>
+<p><strong>2. Fit parameters and bounds</strong> (<code>TArtCalibPDCTrack.cc:122-133</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Meaning</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x0</code></td>
+<td>x intercept at z=0</td>
+<td>±1000 mm</td>
+</tr>
+<tr>
+<td><code>y0</code></td>
+<td>y intercept at z=0</td>
+<td>± 800 mm</td>
+</tr>
+<tr>
+<td><code>k_xz</code></td>
+<td>dx/dz</td>
+<td>±100</td>
+</tr>
+<tr>
+<td><code>k_yz</code></td>
+<td>dy/dz</td>
+<td>±100</td>
+</tr>
+</tbody>
+</table>
+<p><code>TMinuit::mnexcm("MIGRAD", ...)</code> does the χ² minimisation.</p>
+<p><strong>3. χ² evaluation</strong> (<code>Chi2Calculation</code>, <code>TArtCalibPDCTrack.cc:224-336</code>):</p>
+<p>For each plane the valid hits (<code>TDC&gt;0 &amp;&amp; TrailTDC&gt;0</code>) are reduced to a <strong>TOT-weighted wire centroid</strong>:</p>
+<div class="arithmatex">\[
+w_i = |\,\text{TDC}_i - \text{TrailTDC}_i\,|,\qquad
+\bar{x}_\text{layer} = \frac{\sum_i w_i\,x_i}{\sum_i w_i}
+\]</div>
+<p>The model prediction is projected onto the wire direction:<br />
+- U plane: <code>U_pred = (x + y)/√2</code><br />
+- V plane: <code>V_pred = (x − y)/√2</code><br />
+- X plane: <code>x</code> directly</p>
+<p>Residual² is accumulated to form the χ².</p>
+<p><strong>4. Write <code>TArtDCTrack</code></strong> (<code>TArtCalibPDCTrack.cc:151-158</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="n">trk</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">trk</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">trk</span><span class="o">-&gt;</span><span class="n">SetAngle</span><span class="p">(</span><span class="n">atan</span><span class="p">(</span><span class="n">k_xz</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">trk</span><span class="o">-&gt;</span><span class="n">SetAngle</span><span class="p">(</span><span class="n">atan</span><span class="p">(</span><span class="n">k_yz</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">trk</span><span class="o">-&gt;</span><span class="n">SetNDF</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">trk</span><span class="o">-&gt;</span><span class="n">SetNumHitLayer</span><span class="p">(</span><span class="n">nhit_total</span><span class="p">);</span>
+<span class="n">trk</span><span class="o">-&gt;</span><span class="n">SetChi2</span><span class="p">(</span><span class="n">chi2_sum</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>5. No χ²/ndf cut in the current build</strong>: the <code>if (chi2 &lt; 10000)</code> filter is commented out (lines 148, 162-168), so the output contains poor-quality tracks. Downstream code must add its own <code>Chi2/NDF</code> cut.</p>
+<h3 id="accessor-pattern">Accessor pattern<a class="headerlink" href="#accessor-pattern" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">TArtDCTrack</span><span class="o">*</span><span class="w"> </span><span class="n">trk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TArtDCTrack</span><span class="o">*</span><span class="p">)</span><span class="n">pdc_trk_array</span><span class="o">-&gt;</span><span class="n">At</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetPosition</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">   </span><span class="c1">// x0 at z=0</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetPosition</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">   </span><span class="c1">// y0 at z=0</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">ax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetAngle</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">      </span><span class="c1">// atan(dx/dz)</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">ay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetAngle</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">      </span><span class="c1">// atan(dy/dz)</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">chi2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetChi2</span><span class="p">();</span>
+<span class="kt">int</span><span class="w">    </span><span class="n">nhit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetNumHitLayer</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="samuraipdcxml--samuraipdc_fitcsv-schema">SAMURAIPDC.xml / SAMURAIPDC_fit.csv schema<a class="headerlink" href="#samuraipdcxml--samuraipdc_fitcsv-schema" title="Permanent link">#</a></h3>
+<p>CSV header (<code>SAMURAIPDC_fit.csv:1</code>):</p>
+<div class="highlight"><pre><span></span><code>ID, NAME, FPL, layer, id_plane, anodedir, wireid, wirepos, wirez, tzero_offset, det, geo, ch
+</code></pre></div>
+<p>≈ 816 wires total, all on <code>FPL=13</code>, <code>det=37</code>.</p>
+<table>
+<thead>
+<tr>
+<th>layer</th>
+<th>anodedir</th>
+<th>id_plane</th>
+<th>wirez (mm)</th>
+<th>first wirepos</th>
+<th>geo start</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>U</td>
+<td>81</td>
+<td>40</td>
+<td>-822</td>
+<td>0</td>
+<td>PDC1 plane 1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>X</td>
+<td>82</td>
+<td>24</td>
+<td>-822</td>
+<td>2</td>
+<td>PDC1 plane 2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>V</td>
+<td>83</td>
+<td>8</td>
+<td>+822 (desc.)</td>
+<td>4</td>
+<td>PDC1 plane 3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>U</td>
+<td>84</td>
+<td>-576</td>
+<td>-822</td>
+<td>8</td>
+<td>PDC2 plane 1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>X</td>
+<td>85</td>
+<td>-592</td>
+<td>-822</td>
+<td>10</td>
+<td>PDC2 plane 2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>V</td>
+<td>86</td>
+<td>-608</td>
+<td>+822 (desc.)</td>
+<td>13</td>
+<td>PDC2 plane 3</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>136 wires per plane, <strong>pitch 12 mm</strong>, <code>wirepos ∈ [-822, +822] mm</code>.</li>
+<li><strong>PDC1 vs PDC2 separated by ≈ 616 mm in z</strong> (PDC1 mean z ≈ 24 mm, PDC2 mean z ≈ -592 mm).</li>
+<li>V layer's <code>wireid</code> is reversed wrt <code>wirepos</code>.</li>
+</ul>
+<p>Example row:</p>
+<div class="highlight"><pre><span></span><code>1,PDC_0_0,13,0,81,U,0,-822,40,0,37,0,0
+</code></pre></div>
+<blockquote>
+<p>All <code>(geo, ch)</code> actually used in the run must be present in <code>SAMURAIPDC.xml</code>, otherwise the <code>TArtRIDFMap</code> lookup fails and hit reconstruction throws.</p>
+</blockquote>
+<h3 id="pdc-track-to-target">PDC track to target<a class="headerlink" href="#pdc-track-to-target" title="Permanent link">#</a></h3>
+<p>⚠️ The main anaroot pipeline (<code>Macros/SAMURAI/RKtrace/RecoTrack_wSks.C</code>, <code>TArtRecoFragment</code>) uses <strong>FDC1+FDC2</strong>, not PDC, for SKS-based Runge-Kutta back-tracing to the target.</p>
+<p>PDC-to-target lives in two parallel places:</p>
 <ol>
-<li>
-<p>Hit Classification<br />
-   Classify all hits by wire direction (u/x/v/y), store in separate buffers.</p>
-</li>
-<li>
-<p>Calculate Weighted Centroid for Each Direction<br />
-   For each layer, calculate the weighted average position (weight is usually drift time difference or signal strength).</p>
-</li>
-<li>
-<p>Line Fitting to Obtain Angles<br />
-   Fit a straight line to the centroid points to get the slope (angle):  </p>
-</li>
-<li>X direction: a = (x2 - x1)/(z2 - z1)</li>
-<li>
-<p>Y direction: b = (y2 - y1)/(z2 - z1)<br />
-   Or use least squares fitting with multiple points.</p>
-</li>
-<li>
-<p>Write to TArtDCTrack<br />
-   Use <code>SetAngle(a, 0)</code> and <code>SetAngle(b, 1)</code> to store the fitted angles in TArtDCTrack's ca[0] and ca[1].</p>
-</li>
-<li>
-<p>Access Later<br />
-   Use <code>GetAngle(0)</code> and <code>GetAngle(1)</code> to retrieve the X and Y angles.</p>
-</li>
+<li><strong>User scripts</strong> under <code>anaroot/tbt_try/</code> (<code>recoPDCdataTosamurai.C</code>, etc.)</li>
+<li><strong>Simulator-side RK + NN</strong> in <code>smsimulator5.5/libs/analysis_pdc_reco/</code> (see <a href="../../smsimulator/PDC/">smsimulator PDC reco</a>, driven by <code>bin/reconstruct_target_momentum</code>)</li>
 </ol>
+<p>Both must read the same <code>SAMURAIPDC.xml</code> to stay consistent.</p>
 <hr />
 <h2 id="notes-on-momentum">Notes on Momentum<a class="headerlink" href="#notes-on-momentum" title="Permanent link">#</a></h2>
 <p>PDC is a multi-wire drift chamber and can only measure the spatial trajectory (x, y, a, b) of a particle. It cannot determine momentum alone. Momentum reconstruction requires magnetic field information and the spectrometer's transfer matrix (or field tracking algorithms), usually involving tracks at multiple positions (e.g., FDC1, FDC2, BDC, PDC) and magnetic field parameters.</p>
@@ -4247,7 +4382,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 20, 2026 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 20, 2026 10:56:55 UTC">2026-04-20</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 14, 2026 10:48:52 UTC"><span class="timeago" datetime="2026-05-14T10:48:52+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 14, 2026 10:48:52 UTC">2026-05-14</span>
       
         <br>
         Created:

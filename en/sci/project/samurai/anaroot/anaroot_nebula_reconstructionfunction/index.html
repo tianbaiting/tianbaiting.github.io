@@ -21,7 +21,7 @@
       
       
         
-          <title>Anaroot nebula reconstructionfunction - TBT个人网站</title>
+          <title>TArtCalibNEBULA::ReconstructData — Full Walk-through - TBT个人网站</title>
         
       
       
@@ -80,6 +80,11 @@
       <label class="md-overlay" for="__drawer"></label>
       <div data-md-component="skip">
         
+          
+          <a href="#tartcalibnebulareconstructdata--full-walk-through" class="md-skip">
+            Skip to content
+          </a>
+        
       </div>
       <div data-md-component="announce">
         
@@ -109,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Anaroot nebula reconstructionfunction
+              TArtCalibNEBULA::ReconstructData — Full Walk-through
             
           </span>
         </div>
@@ -3487,10 +3492,105 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          TArtCalibNEBULA::ReconstructData — Full Walk-through
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Anaroot nebula reconstructionfunction
+        TArtCalibNEBULA::ReconstructData — Full Walk-through
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overall-flow" class="md-nav__link">
+    Overall flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-formulas" class="md-nav__link">
+    Key formulas
+  </a>
+  
+    <nav class="md-nav" aria-label="Key formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-calibration--slewing" class="md-nav__link">
+    Time calibration &amp; slewing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charge-calibration" class="md-nav__link">
+    Charge calibration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-reconstruction" class="md-nav__link">
+    Position reconstruction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attenuation-correction-on-charge" class="md-nav__link">
+    Attenuation correction on charge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tof-hypotheses" class="md-nav__link">
+    TOF hypotheses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3868,6 +3968,85 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overall-flow" class="md-nav__link">
+    Overall flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-formulas" class="md-nav__link">
+    Key formulas
+  </a>
+  
+    <nav class="md-nav" aria-label="Key formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-calibration--slewing" class="md-nav__link">
+    Time calibration &amp; slewing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charge-calibration" class="md-nav__link">
+    Charge calibration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-reconstruction" class="md-nav__link">
+    Position reconstruction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attenuation-correction-on-charge" class="md-nav__link">
+    Attenuation correction on charge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tof-hypotheses" class="md-nav__link">
+    TOF hypotheses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    Source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                     </div>
@@ -3884,21 +4063,136 @@
 
 
 
-<p>This code implements the <code>TArtCalibNEBULA::ReconstructData()</code> method, whose main function is to reconstruct and calibrate physical quantities for each plastic scintillator (Pla) detector unit in the NEBULA detector.</p>
-<p>First, the function checks whether the raw data has been loaded (<code>fDataLoaded</code>); if not, it calls <code>LoadData()</code> to load it. Then, it defines three position offsets (<code>posxoff</code>, <code>posyoff</code>, <code>poszoff</code>), all currently set to 0, which can be adjusted later as needed for the experiment.</p>
-<p>The main loop iterates over all NEBULA detector units (using <code>GetNumNEBULAPla()</code> and <code>GetNEBULAPla(i)</code>). For each unit, it looks up its parameter object (<code>para</code>) by ID; if the parameter is not found, it skips to the next unit. If the unit is a reference signal (<code>Tref</code>), it is also skipped.</p>
-<p>Next, the code retrieves the reference times (<code>tref</code>) for the upper (U) and lower (D) signals, and calculates raw times, widths, energies, and other physical quantities. It also attempts to obtain the global T0 calibration (if available) for subsequent time corrections.</p>
-<p>The code then determines the hit type (<code>hit</code>) based on the validity of the raw energy and time signals, and processes the energy signals by subtracting the pedestal, calibrating, applying logarithmic transformations, and calculating various energy-related variables. Time signals are also corrected using the reference time, linear calibration, and slewing correction (a nonlinear correction dependent on energy), and time differences and averages are computed.</p>
-<p>Position reconstruction is based on the time difference and geometric information from the parameter table, ultimately yielding 3D spatial coordinates. The code also corrects for light attenuation effects based on position and energy. Finally, it calculates the flight length, angle, and time-of-flight (TOF) for different particles, such as gamma rays and neutrons.</p>
-<p>All computed results are written back to the <code>TArtNEBULAPla</code> object via a series of <code>Set</code> methods, and the data is marked as reconstructed. After the loop, the <code>fReconstructed</code> flag is set to true, indicating that all detector unit data for this event have been reconstructed.</p>
-<p>Overall, this method implements the complete reconstruction process from raw signals to physical quantities (energy, time, position, TOF, etc.), and is a core step in NEBULA detector data analysis.</p>
+<h1 id="tartcalibnebulareconstructdata--full-walk-through">TArtCalibNEBULA::ReconstructData — Full Walk-through<a class="headerlink" href="#tartcalibnebulareconstructdata--full-walk-through" title="Permanent link">#</a></h1>
+<p>This code implements the <code>TArtCalibNEBULA::ReconstructData()</code> method, which reconstructs and calibrates physical quantities for each NEBULA plastic-scintillator (Pla) module.</p>
+<h2 id="overall-flow">Overall flow<a class="headerlink" href="#overall-flow" title="Permanent link">#</a></h2>
+<ol>
+<li>If raw data are not yet loaded (<code>fDataLoaded</code> is <code>false</code>) call <code>LoadData()</code>.</li>
+<li>Three position offsets (<code>posxoff</code>, <code>posyoff</code>, <code>poszoff</code>) are declared. Currently all set to 0 — placeholders for future bar-level alignment.</li>
+<li>Loop over all NEBULA Pla modules (<code>GetNumNEBULAPla()</code> / <code>GetNEBULAPla(i)</code>).</li>
+<li>For each module:</li>
+<li>Look up its parameter object (<code>para</code>) by ID. If missing → skip.</li>
+<li>If the module is a <code>Tref</code> (timing reference) channel → skip.</li>
+<li>Retrieve reference times <code>tref_u</code>, <code>tref_d</code> for both PMT ends.</li>
+<li>Compute raw widths (leading − trailing), TRef-subtracted times, raw charges, etc.</li>
+<li>Optional global T0 calibration (<code>fT0Array</code>).</li>
+<li>Mark hit type via <code>hit</code> bitmask of finite QU/QD/TU/TD signals.</li>
+<li>Subtract pedestals, apply linear calibration, optional log transform, compute averages and ratios.</li>
+<li>Apply slewing correction (5-term log-polynomial form if <code>TUSlwLog[0]!=0</code>, otherwise classic <code>TUSlw/sqrt(quped)</code>).</li>
+<li>Reconstruct position from time difference <code>dt = tdslw − tuslw</code> and the geometric parameters in <code>para</code>.</li>
+<li>Correct for light attenuation in charge using reconstructed Y.</li>
+<li>Compute flight length / angle and TOF for gamma and neutron hypotheses.</li>
+<li>Write all results back to the <code>TArtNEBULAPla</code> object via <code>Set...</code> methods and mark the module as reconstructed.</li>
+<li>After the loop, set <code>fReconstructed = true</code>.</li>
+</ol>
+<p>This pipeline turns raw PMT signals into the physics-grade quantities (energy in MeVee, calibrated time, 3D hit position, TOF) used by downstream NEBULA analysis.</p>
+<h2 id="key-formulas">Key formulas<a class="headerlink" href="#key-formulas" title="Permanent link">#</a></h2>
+<h3 id="time-calibration--slewing">Time calibration &amp; slewing<a class="headerlink" href="#time-calibration--slewing" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>turaw_subtref = turaw - turaw_ref
+tucal         = turaw_subtref * TUCal + TUOff
+tuslw         = tucal - sum_{k=0..4} c_k * log(quped)^(k+1)   # if log-poly
+              = tucal - TUSlw / sqrt(quped)                    # otherwise
+</code></pre></div>
+<p>Same form for the lower PMT. The slewing correction is the leading non-linearity in time reconstruction.</p>
+<h3 id="charge-calibration">Charge calibration<a class="headerlink" href="#charge-calibration" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>quped   = quraw - QUPed
+qucal   = quped * QUCal
+qaveped = sqrt(quped * qdped)
+qavecal = QAveCal * sqrt(qucal * qdcal)
+</code></pre></div>
+<h3 id="position-reconstruction">Position reconstruction<a class="headerlink" href="#position-reconstruction" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>dtcal = tdcal - tucal
+dtslw = tdslw - tuslw
+PosCal = dtcal * DTCal + DTOff
+PosSlw = dtslw * DTCal + DTOff
+
+pos[0] = DetPos[0] + posxoff
+pos[1] = PosSlw    + DetPos[1] + posyoff
+pos[2] = DetPos[2] + poszoff
+</code></pre></div>
+<p>The effective light velocity inside the BC-408 bar is encoded in <code>DTCal</code> (mm per ns or per TDC channel difference, depending on units).</p>
+<h3 id="attenuation-correction-on-charge">Attenuation correction on charge<a class="headerlink" href="#attenuation-correction-on-charge" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>qavecal /= 1 + posY^2 * QAveCalAtt
+</code></pre></div>
+<p>This removes the position-dependent attenuation along the bar so that the final <code>QAveCal</code> is a position-independent estimate of deposited light (proportional to MeVee).</p>
+<h3 id="tof-hypotheses">TOF hypotheses<a class="headerlink" href="#tof-hypotheses" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>TTOFGamma   = taveslw - L / 29.979   # photons (c = 29.979 cm/ns)
+TTOFNeutron = taveslw - L / 20.       # β ≈ 2/3 neutron prior
+</code></pre></div>
+<h2 id="source">Source<a class="headerlink" href="#source" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">TArtCalibNEBULA::ReconstructData</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">fDataLoaded</span><span class="p">)</span><span class="w"> </span><span class="n">LoadData</span><span class="p">();</span>
+<span class="w">  </span><span class="c1">// Common offsets — placeholders for future per-bar alignment.</span>
+<span class="w">  </span><span class="n">Double_t</span><span class="w"> </span><span class="n">posxoff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="n">Double_t</span><span class="w"> </span><span class="n">posyoff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="n">Double_t</span><span class="w"> </span><span class="n">poszoff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="n">Int_t</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">GetNumNEBULAPla</span><span class="p">();</span><span class="o">++</span><span class="n">i</span><span class="p">){</span>
+<span class="w">    </span><span class="n">TArtNEBULAPla</span><span class="o">*</span><span class="w"> </span><span class="n">pla</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetNEBULAPla</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Int_t</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pla</span><span class="o">-&gt;</span><span class="n">GetID</span><span class="p">();</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">TArtNEBULAPlaPara</span><span class="o">*</span><span class="w"> </span><span class="n">para</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FindNEBULAPlaPara</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">para</span><span class="p">){</span>
+<span class="w">      </span><span class="n">TArtCore</span><span class="o">::</span><span class="n">Info</span><span class="p">(</span><span class="n">__FILE__</span><span class="p">,</span><span class="s">&quot;cannot find para %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">);</span>
+<span class="w">      </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">para</span><span class="o">-&gt;</span><span class="n">IsTref</span><span class="p">())</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// TRef subtraction</span>
+<span class="w">    </span><span class="n">TArtRIDFMap</span><span class="w"> </span><span class="n">map_u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">para</span><span class="o">-&gt;</span><span class="n">GetMapTU</span><span class="p">();</span>
+<span class="w">    </span><span class="n">TArtRIDFMap</span><span class="w"> </span><span class="n">map_d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">para</span><span class="o">-&gt;</span><span class="n">GetMapTD</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">turaw_ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetTRef</span><span class="p">(</span><span class="n">map_u</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">tdraw_ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetTRef</span><span class="p">(</span><span class="n">map_d</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">turaw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pla</span><span class="o">-&gt;</span><span class="n">GetTURaw</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">tdraw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pla</span><span class="o">-&gt;</span><span class="n">GetTDRaw</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">turaw_subtref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">turaw</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">turaw_ref</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">tdraw_subtref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tdraw</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">tdraw_ref</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">turaw_width</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">pla</span><span class="o">-&gt;</span><span class="n">GetTURaw_Trailing</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">pla</span><span class="o">-&gt;</span><span class="n">GetTURaw</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">tdraw_width</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">pla</span><span class="o">-&gt;</span><span class="n">GetTDRaw_Trailing</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">pla</span><span class="o">-&gt;</span><span class="n">GetTDRaw</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">quraw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pla</span><span class="o">-&gt;</span><span class="n">GetQURaw</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">qdraw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pla</span><span class="o">-&gt;</span><span class="n">GetQDRaw</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">t0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TArtMath</span><span class="o">::</span><span class="n">InvalidNum</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">fT0Array</span><span class="p">){</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">fT0Array</span><span class="o">-&gt;</span><span class="n">GetEntries</span><span class="p">()){</span>
+<span class="w">        </span><span class="n">TArtCore</span><span class="o">::</span><span class="n">Error</span><span class="p">(</span><span class="n">__FILE__</span><span class="p">,</span><span class="s">&quot;CalibSAMURAIT0 seems not to be reconstructed; cannot reconstruct CalibSAMURAITZero.&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="w">        </span><span class="n">t0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">TArtTZero</span><span class="o">*</span><span class="p">)</span><span class="n">fT0Array</span><span class="o">-&gt;</span><span class="n">At</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">-&gt;</span><span class="n">GetTZeroSlw</span><span class="p">();</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Hit type bitmask</span>
+<span class="w">    </span><span class="n">Int_t</span><span class="w"> </span><span class="n">hit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">TMath</span><span class="o">::</span><span class="n">Finite</span><span class="p">(</span><span class="n">quraw</span><span class="p">))</span><span class="w"> </span><span class="n">hit</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">TMath</span><span class="o">::</span><span class="n">Finite</span><span class="p">(</span><span class="n">qdraw</span><span class="p">))</span><span class="w"> </span><span class="n">hit</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">TMath</span><span class="o">::</span><span class="n">Finite</span><span class="p">(</span><span class="n">turaw</span><span class="p">))</span><span class="w"> </span><span class="n">hit</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">TMath</span><span class="o">::</span><span class="n">Finite</span><span class="p">(</span><span class="n">tdraw</span><span class="p">))</span><span class="w"> </span><span class="n">hit</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Charge: pedestal subtraction, calibration, averages</span>
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">quped</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">quraw</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">para</span><span class="o">-&gt;</span><span class="n">GetQUPed</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">qdped</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">qdraw</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">para</span><span class="o">-&gt;</span><span class="n">GetQDPed</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">qucal</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">quped</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">para</span><span class="o">-&gt;</span><span class="n">GetQUCal</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">qdcal</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">qdped</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">para</span><span class="o">-&gt;</span><span class="n">GetQDCal</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">qaveped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">quped</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">qdped</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Double_t</span><span class="w"> </span><span class="n">qavecal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">para</span><span class="o">-&gt;</span><span class="n">GetQAveCal</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">qucal</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">qdcal</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// ... (linear TDC calibration, slewing, position reconstruction,</span>
+<span class="w">    </span><span class="c1">//      attenuation correction, TOF, etc.)</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="n">fReconstructed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">#</a></h2>
+<ul>
+<li><code>anaroot_nebula.md</code> — complete reconstruction pipeline including <code>LoadData</code>, <code>TArtRecoNeutron</code>, <code>TArtNEBULAFilter</code>.</li>
+<li><code>../smsimulator/nebula_simlulator.md</code> — corresponding Geant4 detector model used to validate this reconstruction.</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 25, 2026 11:33:13 UTC"><span class="timeago" datetime="2026-02-25T11:33:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 25, 2026 11:33:13 UTC">2026-02-25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 14, 2026 10:48:52 UTC"><span class="timeago" datetime="2026-05-14T10:48:52+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 14, 2026 10:48:52 UTC">2026-05-14</span>
       
         <br>
         Created:

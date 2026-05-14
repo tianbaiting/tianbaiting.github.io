@@ -4076,37 +4076,190 @@
 <h3 id="数据流简述">数据流简述<a class="headerlink" href="#数据流简述" title="Permanent link">#</a></h3>
 <ul>
 <li>输入：PDC的所有 hit（TArtDCHit），每个 hit 有空间位置（x/y/z）、漂移时间等。</li>
-<li>处理：在 <code>TArtCalibPDCTrack::ReconstructData()</code> 中，先将 hit 分类（按层、方向），然后用几何方法（如加权重心、直线拟合等）重建出径迹的空间参数。</li>
+<li>处理：在 <code>TArtCalibPDCTrack::ReconstructData()</code> 中，先将 hit 按层/方向分类，然后用 <strong>TMinuit/MIGRAD 4-参数最小二乘</strong> 拟合直线径迹（详见下方"真实算法"小节，并非加权重心法）。</li>
 <li>输出：重建出的径迹参数（位置、角度、chi2等）通过 <code>SetAngle</code>、<code>SetPosition</code> 等接口写入 TArtDCTrack 对象。</li>
 </ul>
-<h3 id="典型实现流程以加权重心法为例">典型实现流程（以加权重心法为例）<a class="headerlink" href="#典型实现流程以加权重心法为例" title="Permanent link">#</a></h3>
+<h3 id="tartcalibpdchit-真实实现-tartcalibpdchitcc24-76">TArtCalibPDCHit 真实实现 (<code>TArtCalibPDCHit.cc:24-76</code>)<a class="headerlink" href="#tartcalibpdchit-真实实现-tartcalibpdchitcc24-76" title="Permanent link">#</a></h3>
+<ul>
+<li>读取 RIDF 中 detector tag = <code>PDC</code> 的所有段。</li>
+<li>对每条 TDC 数据 (<code>ch ≤ 63</code>, 仅 <code>edge ∈ {0, 1}</code>) 通过 <code>TArtRIDFMap(fpl, detector, geo, ch)</code> 反查参数 <code>TArtDCHitPara</code>，填出每根丝一条 <code>TArtDCHit</code>：</li>
+<li><code>edge == 0</code> → leading edge → <code>fTDC</code></li>
+<li><code>edge == 1</code> → trailing edge → <code>fTrailTDC</code></li>
+<li><code>TArtDCHit</code> 字段 (<code>TArtDCHit.hh:5-86</code>)：<code>fTDC, fTrailTDC, fLayer, fWireID, fAnodeDir, fWirePos, fWireZ, fPosition</code> 等。</li>
+</ul>
+<h3 id="tartcalibpdctrack-真实算法4-参数-migrad-拟合">TArtCalibPDCTrack 真实算法（4-参数 MIGRAD 拟合）<a class="headerlink" href="#tartcalibpdctrack-真实算法4-参数-migrad-拟合" title="Permanent link">#</a></h3>
+<p>源码位置：<code>TArtCalibPDCTrack.cc:9-336</code>。</p>
+<p><strong>1. 层几何硬编码</strong> (<code>TArtCalibPDCTrack.cc:36-43</code>)：</p>
+<div class="highlight"><pre><span></span><code>PDC1 = U, X, V
+PDC2 = U, X, V
+nlayer_y = 0     // 没有独立的 Y 层
+</code></pre></div>
+<p><strong>2. 拟合参数与边界</strong> (<code>TArtCalibPDCTrack.cc:122-133</code>)：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+<th>边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x0</code></td>
+<td>径迹在 z=0 处的 x 截距</td>
+<td>±1000 mm</td>
+</tr>
+<tr>
+<td><code>y0</code></td>
+<td>径迹在 z=0 处的 y 截距</td>
+<td>± 800 mm</td>
+</tr>
+<tr>
+<td><code>k_xz</code></td>
+<td>dx/dz</td>
+<td>±100</td>
+</tr>
+<tr>
+<td><code>k_yz</code></td>
+<td>dy/dz</td>
+<td>±100</td>
+</tr>
+</tbody>
+</table>
+<p>调用 <code>TMinuit::mnexcm("MIGRAD", ...)</code> 做 χ² 极小化。</p>
+<p><strong>3. χ² 计算</strong> (<code>Chi2Calculation</code>, <code>TArtCalibPDCTrack.cc:224-336</code>)：</p>
+<ul>
+<li>每层把所有有效 hit (<code>TDC&gt;0 &amp;&amp; TrailTDC&gt;0</code>) 按 <strong>TOT 加权丝心</strong> 聚合：</li>
+</ul>
+<div class="arithmatex">\[
+w_i = |\,\text{TDC}_i - \text{TrailTDC}_i\,|,\qquad
+\bar{x}_\text{layer} = \frac{\sum_i w_i\,x_i}{\sum_i w_i}
+\]</div>
+<ul>
+<li>对 U 层：先把模型预测点 (x_pred, y_pred, z) 投影到 U 方向：<span class="arithmatex">\(U_\text{pred} = (x + y)/\sqrt{2}\)</span>；</li>
+<li>对 V 层：<span class="arithmatex">\(V_\text{pred} = (x - y)/\sqrt{2}\)</span>；</li>
+<li>对 X 层：直接用 x；</li>
+<li>残差平方累加给出 χ²。</li>
+</ul>
+<p><strong>4. 写入 <code>TArtDCTrack</code></strong> (<code>TArtCalibPDCTrack.cc:151-158</code>)：</p>
+<div class="highlight"><pre><span></span><code><span class="n">trk</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">trk</span><span class="o">-&gt;</span><span class="n">SetPosition</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">trk</span><span class="o">-&gt;</span><span class="n">SetAngle</span><span class="p">(</span><span class="n">atan</span><span class="p">(</span><span class="n">k_xz</span><span class="p">),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="n">trk</span><span class="o">-&gt;</span><span class="n">SetAngle</span><span class="p">(</span><span class="n">atan</span><span class="p">(</span><span class="n">k_yz</span><span class="p">),</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="n">trk</span><span class="o">-&gt;</span><span class="n">SetNDF</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">trk</span><span class="o">-&gt;</span><span class="n">SetNumHitLayer</span><span class="p">(</span><span class="n">nhit_total</span><span class="p">);</span>
+<span class="n">trk</span><span class="o">-&gt;</span><span class="n">SetChi2</span><span class="p">(</span><span class="n">chi2_sum</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>5. 注意：当前版本无 χ²/ndf 切除</strong><br />
+源码中 <code>if (chi2 &lt; 10000)</code> 行被注释掉（<code>TArtCalibPDCTrack.cc:148, 162-168</code>），意味着重建产物里会包含质量很差的径迹，下游分析需自行加 <code>Chi2/NDF</code> 切。</p>
+<h3 id="后续访问">后续访问<a class="headerlink" href="#后续访问" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">TArtDCTrack</span><span class="o">*</span><span class="w"> </span><span class="n">trk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TArtDCTrack</span><span class="o">*</span><span class="p">)</span><span class="n">pdc_trk_array</span><span class="o">-&gt;</span><span class="n">At</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetPosition</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">   </span><span class="c1">// x0 at z=0</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetPosition</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">   </span><span class="c1">// y0 at z=0</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">ax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetAngle</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">      </span><span class="c1">// atan(dx/dz)</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">ay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetAngle</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">      </span><span class="c1">// atan(dy/dz)</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">chi2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetChi2</span><span class="p">();</span>
+<span class="kt">int</span><span class="w">    </span><span class="n">nhit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trk</span><span class="o">-&gt;</span><span class="n">GetNumHitLayer</span><span class="p">();</span>
+</code></pre></div>
+<hr />
+<h2 id="samuraipdcxml--samuraipdc_fitcsv-参数库详解">SAMURAIPDC.xml / SAMURAIPDC_fit.csv 参数库详解<a class="headerlink" href="#samuraipdcxml--samuraipdc_fitcsv-参数库详解" title="Permanent link">#</a></h2>
+<p>CSV 列头 (<code>SAMURAIPDC_fit.csv:1</code>)：</p>
+<div class="highlight"><pre><span></span><code>ID, NAME, FPL, layer, id_plane, anodedir, wireid, wirepos, wirez, tzero_offset, det, geo, ch
+</code></pre></div>
+<p>总 ≈ 816 条丝记录，全部 <code>FPL=13</code>（F13 焦面），<code>det=37</code>。</p>
+<p>层结构表：</p>
+<table>
+<thead>
+<tr>
+<th>layer</th>
+<th>anodedir</th>
+<th>id_plane</th>
+<th>wirez (mm)</th>
+<th>wire 起始位置</th>
+<th>geo 起始</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>U</td>
+<td>81</td>
+<td>40</td>
+<td>-822 mm</td>
+<td>0</td>
+<td>PDC1 第 1 层</td>
+</tr>
+<tr>
+<td>1</td>
+<td>X</td>
+<td>82</td>
+<td>24</td>
+<td>-822 mm</td>
+<td>2</td>
+<td>PDC1 第 2 层</td>
+</tr>
+<tr>
+<td>2</td>
+<td>V</td>
+<td>83</td>
+<td>8</td>
+<td>+822 mm (倒序)</td>
+<td>4</td>
+<td>PDC1 第 3 层</td>
+</tr>
+<tr>
+<td>3</td>
+<td>U</td>
+<td>84</td>
+<td>-576</td>
+<td>-822 mm</td>
+<td>8</td>
+<td>PDC2 第 1 层</td>
+</tr>
+<tr>
+<td>4</td>
+<td>X</td>
+<td>85</td>
+<td>-592</td>
+<td>-822 mm</td>
+<td>10</td>
+<td>PDC2 第 2 层</td>
+</tr>
+<tr>
+<td>5</td>
+<td>V</td>
+<td>86</td>
+<td>-608</td>
+<td>+822 mm (倒序)</td>
+<td>13</td>
+<td>PDC2 第 3 层</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>每层 <strong>136 根丝</strong>，<strong>间距 12 mm</strong>；wirepos 范围 <code>-822..+822 mm</code>。</li>
+<li><strong>PDC1 中心 z ≈ 24 mm，PDC2 中心 z ≈ -592 mm，间距约 616 mm</strong>（这是焦面本地坐标，不是实验室坐标；实验室坐标由谱仪几何参数另行加上 PDC 中心位置与旋转）。</li>
+<li>V 层把 <code>wireid</code> 从 0 → 135 对应到 <code>wirepos</code> 从 <code>+822</code> → <code>-798</code>，即倒序排列。</li>
+</ul>
+<p>示例行：</p>
+<div class="highlight"><pre><span></span><code>1,PDC_0_0,13,0,81,U,0,-822,40,0,37,0,0
+2,PDC_0_1,13,0,81,U,1,-810,40,0,37,0,1
+...
+137,PDC_1_0,13,1,82,X,0,-822,24,0,37,2,9
+</code></pre></div>
+<blockquote>
+<p>重要：<code>SAMURAIPDC.xml</code> 文件必须把所有实际用到的 (geo, ch) 都列全，否则 <code>TArtRIDFMap</code> 反查为空，hit 重建报错。</p>
+</blockquote>
+<hr />
+<h2 id="pdc-track-到靶点动量重建">PDC track 到靶点动量重建<a class="headerlink" href="#pdc-track-到靶点动量重建" title="Permanent link">#</a></h2>
+<p>⚠️ <strong>anaroot 主线不直接用 PDC 做靶点重建</strong>。<code>Macros/SAMURAI/RKtrace/RecoTrack_wSks.C</code> 中 <code>TArtRecoFragment::ReconstructData()</code> 使用 <strong>FDC1 + FDC2</strong>（不是 PDC）的径迹喂入 SKS-derived Runge-Kutta tracer，反推 <code>PrimaryPosition()</code> 作为靶顶点。</p>
+<p>PDC 的 target 外推在两条独立路线：</p>
 <ol>
-<li>
-<p>hit 分类<br />
-   按照丝的方向（u/x/v/y）将所有 hit 分类，分别存入不同的缓冲区。</p>
-</li>
-<li>
-<p>计算每个方向的加权重心<br />
-   对每一层的 hit，计算加权平均位置（权重通常为漂移时间差或信号强度）。</p>
-</li>
-<li>
-<p>拟合直线，得到角度<br />
-   用加权重心点进行直线拟合，得到斜率（即角度）：  </p>
-</li>
-<li>X方向：a = (x2 - x1)/(z2 - z1)</li>
-<li>
-<p>Y方向：b = (y2 - y1)/(z2 - z1)<br />
-   或者用多点最小二乘法拟合。</p>
-</li>
-<li>
-<p>写入 TArtDCTrack<br />
-   用 <code>SetAngle(a, 0)</code> 和 <code>SetAngle(b, 1)</code> 把拟合得到的角度存入 TArtDCTrack 的 ca[0] 和 ca[1]。</p>
-</li>
-<li>
-<p>后续访问<br />
-   通过 <code>GetAngle(0)</code> 和 <code>GetAngle(1)</code> 读取 X、Y 方向的角度。</p>
-</li>
+<li><strong>用户脚本</strong>：<code>anaroot/tbt_try/recoPDCdataTosamurai.C</code> 等</li>
+<li><strong>simulator 端 RK + NN</strong>：<code>smsimulator5.5/libs/analysis_pdc_reco/</code>（详见 <a href="../../smsimulator/PDC/">smsimulator PDC reco</a> 与 <code>bin/reconstruct_target_momentum</code>）</li>
 </ol>
+<p>两条路线都需读取同一份 <code>SAMURAIPDC.xml</code> 以保持丝几何一致。</p>
 <p>PDC 只是一个多丝漂移室，只能测量粒子的空间轨迹（x、y、a、b），不能单独测出动量。<br />
 动量的获得需要结合磁场信息和谱仪的传输矩阵（或磁场追踪算法），通常要用到碎片在多个位置的径迹（如FDC1、FDC2、BDC、PDC等）和磁场参数。</p>
 <p>代码示例：<br />
@@ -4210,7 +4363,7 @@ void recoPDCTrack(const char* ridffile = &quot;/home/s057/exp/exp2505_s057/anaro
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年4月20日 10:56:55 UTC"><span class="timeago" datetime="2026-04-20T10:56:55+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年4月20日 10:56:55 UTC">2026-04-20</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月14日 10:48:52 UTC"><span class="timeago" datetime="2026-05-14T10:48:52+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月14日 10:48:52 UTC">2026-05-14</span>
       
         <br>
         创建日期:
