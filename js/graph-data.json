@@ -10,15 +10,6 @@
       "url": "/howtomakewebsite/"
     },
     {
-      "id": "index.zh",
-      "title": "主页",
-      "language": "zh",
-      "category": "main",
-      "path": "index.zh.md",
-      "size": 2965,
-      "url": "/"
-    },
-    {
       "id": "index.en",
       "title": "main",
       "language": "en",
@@ -28,22 +19,112 @@
       "url": "/en/"
     },
     {
-      "id": "life/schedule.zh",
-      "title": "作息时间表",
+      "id": "index.zh",
+      "title": "主页",
       "language": "zh",
-      "category": "category",
-      "path": "life/schedule.zh.md",
-      "size": 516,
-      "url": "/life/schedule/"
+      "category": "main",
+      "path": "index.zh.md",
+      "size": 2965,
+      "url": "/"
     },
     {
-      "id": "life/subtleSCI.zh",
-      "title": "subtle definition in sci",
+      "id": "日本生存指南/japanese",
+      "title": "## 五十音图",
+      "language": "en",
+      "category": "category",
+      "path": "日本生存指南/japanese.md",
+      "size": 3928,
+      "url": "/en/日本生存指南/japanese/"
+    },
+    {
+      "id": "日本生存指南/去日本前打包",
+      "title": "登机前打包",
       "language": "zh",
       "category": "category",
-      "path": "life/subtleSCI.zh.md",
-      "size": 1464,
-      "url": "/life/subtleSCI/"
+      "path": "日本生存指南/去日本前打包.md",
+      "size": 327,
+      "url": "/日本生存指南/去日本前打包/"
+    },
+    {
+      "id": "日本生存指南/接收快递",
+      "title": "接受快递",
+      "language": "zh",
+      "category": "category",
+      "path": "日本生存指南/接收快递.md",
+      "size": 164,
+      "url": "/日本生存指南/接收快递/"
+    },
+    {
+      "id": "日本生存指南/电话卡",
+      "title": "电话卡",
+      "language": "zh",
+      "category": "category",
+      "path": "日本生存指南/电话卡.md",
+      "size": 1756,
+      "url": "/日本生存指南/电话卡/"
+    },
+    {
+      "id": "日本生存指南/银行卡",
+      "title": "银行卡",
+      "language": "zh",
+      "category": "category",
+      "path": "日本生存指南/银行卡.md",
+      "size": 874,
+      "url": "/日本生存指南/银行卡/"
+    },
+    {
+      "id": "日本生存指南/日版手机felica芯片",
+      "title": "Xperia 日版刷机后 FeliCa/Suica",
+      "language": "zh",
+      "category": "category",
+      "path": "日本生存指南/日版手机felica芯片.md",
+      "size": 17759,
+      "url": "/日本生存指南/日版手机felica芯片/"
+    },
+    {
+      "id": "日本生存指南/落地todo.zh",
+      "title": "落地Todo",
+      "language": "zh",
+      "category": "category",
+      "path": "日本生存指南/落地todo.zh.md",
+      "size": 520,
+      "url": "/日本生存指南/落地todo/"
+    },
+    {
+      "id": "日本生存指南/垃圾分类",
+      "title": "垃圾分类",
+      "language": "zh",
+      "category": "category",
+      "path": "日本生存指南/垃圾分类.md",
+      "size": 2297,
+      "url": "/日本生存指南/垃圾分类/"
+    },
+    {
+      "id": "日本生存指南/吃",
+      "title": "吃",
+      "language": "zh",
+      "category": "category",
+      "path": "日本生存指南/吃.md",
+      "size": 40,
+      "url": "/日本生存指南/吃/"
+    },
+    {
+      "id": "日本生存指南/电子支付-交通卡",
+      "title": "日本电子支付 - 交通卡",
+      "language": "zh",
+      "category": "category",
+      "path": "日本生存指南/电子支付-交通卡.md",
+      "size": 1397,
+      "url": "/日本生存指南/电子支付-交通卡/"
+    },
+    {
+      "id": "life/焦虑.zh",
+      "title": "焦虑",
+      "language": "zh",
+      "category": "category",
+      "path": "life/焦虑.zh.md",
+      "size": 579,
+      "url": "/life/焦虑/"
     },
     {
       "id": "life/z30_DeepSky.zh",
@@ -64,22 +145,22 @@
       "url": "/life/twist/"
     },
     {
-      "id": "life/食物中毒",
-      "title": "易发中毒食物",
+      "id": "life/schedule.zh",
+      "title": "作息时间表",
       "language": "zh",
       "category": "category",
-      "path": "life/食物中毒.md",
-      "size": 1319,
-      "url": "/life/食物中毒/"
+      "path": "life/schedule.zh.md",
+      "size": 516,
+      "url": "/life/schedule/"
     },
     {
-      "id": "life/焦虑.zh",
-      "title": "焦虑",
+      "id": "life/subtleSCI.zh",
+      "title": "subtle definition in sci",
       "language": "zh",
       "category": "category",
-      "path": "life/焦虑.zh.md",
-      "size": 579,
-      "url": "/life/焦虑/"
+      "path": "life/subtleSCI.zh.md",
+      "size": 1464,
+      "url": "/life/subtleSCI/"
     },
     {
       "id": "life/食物安全温度.zh",
@@ -100,31 +181,13 @@
       "url": "/life/flavor/"
     },
     {
-      "id": "MickeyMiaoMiao/opvpn",
-      "title": "hide:",
+      "id": "life/食物中毒",
+      "title": "易发中毒食物",
       "language": "zh",
       "category": "category",
-      "path": "MickeyMiaoMiao/opvpn.md",
-      "size": 3141,
-      "url": "/MickeyMiaoMiao/opvpn/"
-    },
-    {
-      "id": "MickeyMiaoMiao/linuxUseWin.zh",
-      "title": "linux下面使用win独占的软件",
-      "language": "zh",
-      "category": "category",
-      "path": "MickeyMiaoMiao/linuxUseWin.zh.md",
-      "size": 143,
-      "url": "/MickeyMiaoMiao/linuxUseWin/"
-    },
-    {
-      "id": "MickeyMiaoMiao/adblock.zh",
-      "title": "adblock 元素",
-      "language": "zh",
-      "category": "category",
-      "path": "MickeyMiaoMiao/adblock.zh.md",
-      "size": 207,
-      "url": "/MickeyMiaoMiao/adblock/"
+      "path": "life/食物中毒.md",
+      "size": 1319,
+      "url": "/life/食物中毒/"
     },
     {
       "id": "MickeyMiaoMiao/gost.zh",
@@ -154,94 +217,175 @@
       "url": "/MickeyMiaoMiao/firefoxplug/"
     },
     {
-      "id": "日本生存指南/去日本前打包",
-      "title": "登机前打包",
+      "id": "MickeyMiaoMiao/adblock.zh",
+      "title": "adblock 元素",
       "language": "zh",
       "category": "category",
-      "path": "日本生存指南/去日本前打包.md",
-      "size": 327,
-      "url": "/日本生存指南/去日本前打包/"
+      "path": "MickeyMiaoMiao/adblock.zh.md",
+      "size": 207,
+      "url": "/MickeyMiaoMiao/adblock/"
     },
     {
-      "id": "日本生存指南/japanese",
-      "title": "## 五十音图",
+      "id": "MickeyMiaoMiao/opvpn",
+      "title": "hide:",
+      "language": "zh",
+      "category": "category",
+      "path": "MickeyMiaoMiao/opvpn.md",
+      "size": 3141,
+      "url": "/MickeyMiaoMiao/opvpn/"
+    },
+    {
+      "id": "MickeyMiaoMiao/linuxUseWin.zh",
+      "title": "linux下面使用win独占的软件",
+      "language": "zh",
+      "category": "category",
+      "path": "MickeyMiaoMiao/linuxUseWin.zh.md",
+      "size": 143,
+      "url": "/MickeyMiaoMiao/linuxUseWin/"
+    },
+    {
+      "id": "sci/cheatshet/git.en",
+      "title": "git cheatsheat",
       "language": "en",
-      "category": "category",
-      "path": "日本生存指南/japanese.md",
-      "size": 3928,
-      "url": "/en/日本生存指南/japanese/"
+      "category": "page",
+      "path": "sci/cheatshet/git.en.md",
+      "size": 1425,
+      "url": "/en/sci/cheatshet/git/"
     },
     {
-      "id": "日本生存指南/银行卡",
-      "title": "银行卡",
+      "id": "sci/cheatshet/bashrc.zh",
+      "title": "~/.bashrc: executed by bash(1) for non-login shells.",
       "language": "zh",
-      "category": "category",
-      "path": "日本生存指南/银行卡.md",
-      "size": 874,
-      "url": "/日本生存指南/银行卡/"
+      "category": "page",
+      "path": "sci/cheatshet/bashrc.zh.md",
+      "size": 4527,
+      "url": "/sci/cheatshet/bashrc/"
     },
     {
-      "id": "日本生存指南/日版手机felica芯片",
-      "title": "Xperia 日版刷机后 FeliCa/Suica",
+      "id": "sci/cheatshet/docker.zh",
+      "title": "Docker",
       "language": "zh",
-      "category": "category",
-      "path": "日本生存指南/日版手机felica芯片.md",
-      "size": 17759,
-      "url": "/日本生存指南/日版手机felica芯片/"
+      "category": "page",
+      "path": "sci/cheatshet/docker.zh.md",
+      "size": 1906,
+      "url": "/sci/cheatshet/docker/"
     },
     {
-      "id": "日本生存指南/吃",
-      "title": "吃",
+      "id": "sci/cheatshet/debian_printer_connection.zh",
+      "title": "Debian 接网络打印机",
       "language": "zh",
-      "category": "category",
-      "path": "日本生存指南/吃.md",
-      "size": 40,
-      "url": "/日本生存指南/吃/"
+      "category": "page",
+      "path": "sci/cheatshet/debian_printer_connection.zh.md",
+      "size": 1631,
+      "url": "/sci/cheatshet/debian_printer_connection/"
     },
     {
-      "id": "日本生存指南/接收快递",
-      "title": "接受快递",
+      "id": "sci/cheatshet/vimrc.zh",
+      "title": "Vimrc",
       "language": "zh",
-      "category": "category",
-      "path": "日本生存指南/接收快递.md",
-      "size": 164,
-      "url": "/日本生存指南/接收快递/"
+      "category": "page",
+      "path": "sci/cheatshet/vimrc.zh.md",
+      "size": 2162,
+      "url": "/sci/cheatshet/vimrc/"
     },
     {
-      "id": "日本生存指南/垃圾分类",
-      "title": "垃圾分类",
+      "id": "sci/cheatshet/nuclear_source.zh",
+      "title": "☢ 精选核科学资源 ☢",
       "language": "zh",
-      "category": "category",
-      "path": "日本生存指南/垃圾分类.md",
-      "size": 2297,
-      "url": "/日本生存指南/垃圾分类/"
+      "category": "page",
+      "path": "sci/cheatshet/nuclear_source.zh.md",
+      "size": 5985,
+      "url": "/sci/cheatshet/nuclear_source/"
     },
     {
-      "id": "日本生存指南/电子支付-交通卡",
-      "title": "日本电子支付 - 交通卡",
+      "id": "sci/cheatshet/git.zh",
+      "title": "git 备忘单",
       "language": "zh",
-      "category": "category",
-      "path": "日本生存指南/电子支付-交通卡.md",
-      "size": 1397,
-      "url": "/日本生存指南/电子支付-交通卡/"
+      "category": "page",
+      "path": "sci/cheatshet/git.zh.md",
+      "size": 866,
+      "url": "/sci/cheatshet/git/"
     },
     {
-      "id": "日本生存指南/电话卡",
-      "title": "电话卡",
+      "id": "sci/cheatshet/tmux.zh",
+      "title": "tmux 常用命令与快捷键速查表",
       "language": "zh",
-      "category": "category",
-      "path": "日本生存指南/电话卡.md",
-      "size": 1756,
-      "url": "/日本生存指南/电话卡/"
+      "category": "page",
+      "path": "sci/cheatshet/tmux.zh.md",
+      "size": 5260,
+      "url": "/sci/cheatshet/tmux/"
     },
     {
-      "id": "日本生存指南/落地todo.zh",
-      "title": "落地Todo",
+      "id": "sci/cheatshet/docker.en",
+      "title": "Docker",
+      "language": "en",
+      "category": "page",
+      "path": "sci/cheatshet/docker.en.md",
+      "size": 0,
+      "url": "/en/sci/cheatshet/docker/"
+    },
+    {
+      "id": "sci/cheatshet/scattering_faddeev.zh",
+      "title": "Scattering Faddeev",
       "language": "zh",
-      "category": "category",
-      "path": "日本生存指南/落地todo.zh.md",
-      "size": 520,
-      "url": "/日本生存指南/落地todo/"
+      "category": "page",
+      "path": "sci/cheatshet/scattering_faddeev.zh.md",
+      "size": 6544,
+      "url": "/sci/cheatshet/scattering_faddeev/"
+    },
+    {
+      "id": "sci/cheatshet/termux.zh",
+      "title": "Termux",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/cheatshet/termux.zh.md",
+      "size": 2566,
+      "url": "/sci/cheatshet/termux/"
+    },
+    {
+      "id": "sci/cheatshet/shell.en",
+      "title": "Shell",
+      "language": "en",
+      "category": "page",
+      "path": "sci/cheatshet/shell.en.md",
+      "size": 328,
+      "url": "/en/sci/cheatshet/shell/"
+    },
+    {
+      "id": "sci/cheatshet/tailscale_dns_refused.zh",
+      "title": "Tailscale MagicDNS 冷查询 REFUSED：从 direct 模式切回 systemd-resolved",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/cheatshet/tailscale_dns_refused.zh.md",
+      "size": 4507,
+      "url": "/sci/cheatshet/tailscale_dns_refused/"
+    },
+    {
+      "id": "sci/cheatshet/linux.zh",
+      "title": "Linux",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/cheatshet/linux.zh.md",
+      "size": 443,
+      "url": "/sci/cheatshet/linux/"
+    },
+    {
+      "id": "sci/cheatshet/number_order_dimension.zh",
+      "title": "Number Order Dimension",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/cheatshet/number_order_dimension.zh.md",
+      "size": 3809,
+      "url": "/sci/cheatshet/number_order_dimension/"
+    },
+    {
+      "id": "sci/cheatshet/site.en",
+      "title": "网页相关知识",
+      "language": "en",
+      "category": "page",
+      "path": "sci/cheatshet/site.en.md",
+      "size": 8,
+      "url": "/en/sci/cheatshet/site/"
     },
     {
       "id": "sci/cheatshet/shell.zh",
@@ -262,175 +406,49 @@
       "url": "/sci/cheatshet/root_geant4_install/"
     },
     {
-      "id": "sci/cheatshet/nuclear_source.zh",
-      "title": "☢ 精选核科学资源 ☢",
+      "id": "sci/minimal_theory/qft_schwartz_ref.zh",
+      "title": "Schwartz QFT 资源",
       "language": "zh",
       "category": "page",
-      "path": "sci/cheatshet/nuclear_source.zh.md",
-      "size": 5985,
-      "url": "/sci/cheatshet/nuclear_source/"
+      "path": "sci/minimal_theory/qft_schwartz_ref.zh.md",
+      "size": 4017,
+      "url": "/sci/minimal_theory/qft_schwartz_ref/"
     },
     {
-      "id": "sci/cheatshet/git.en",
-      "title": "git cheatsheat",
-      "language": "en",
-      "category": "page",
-      "path": "sci/cheatshet/git.en.md",
-      "size": 1425,
-      "url": "/en/sci/cheatshet/git/"
-    },
-    {
-      "id": "sci/cheatshet/git.zh",
-      "title": "git 备忘单",
+      "id": "sci/minimal_theory/riggedHilbertSpace.zh",
+      "title": "装备希尔伯特空间与 Dirac 形式的严格化",
       "language": "zh",
       "category": "page",
-      "path": "sci/cheatshet/git.zh.md",
-      "size": 866,
-      "url": "/sci/cheatshet/git/"
+      "path": "sci/minimal_theory/riggedHilbertSpace.zh.md",
+      "size": 8114,
+      "url": "/sci/minimal_theory/riggedHilbertSpace/"
     },
     {
-      "id": "sci/cheatshet/bashrc.zh",
-      "title": "~/.bashrc: executed by bash(1) for non-login shells.",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/cheatshet/bashrc.zh.md",
-      "size": 4527,
-      "url": "/sci/cheatshet/bashrc/"
-    },
-    {
-      "id": "sci/cheatshet/site.en",
-      "title": "网页相关知识",
-      "language": "en",
-      "category": "page",
-      "path": "sci/cheatshet/site.en.md",
-      "size": 8,
-      "url": "/en/sci/cheatshet/site/"
-    },
-    {
-      "id": "sci/cheatshet/scattering_faddeev.zh",
-      "title": "Scattering Faddeev",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/cheatshet/scattering_faddeev.zh.md",
-      "size": 6544,
-      "url": "/sci/cheatshet/scattering_faddeev/"
-    },
-    {
-      "id": "sci/cheatshet/vimrc.zh",
-      "title": "Vimrc",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/cheatshet/vimrc.zh.md",
-      "size": 2162,
-      "url": "/sci/cheatshet/vimrc/"
-    },
-    {
-      "id": "sci/cheatshet/debian_printer_connection.zh",
-      "title": "Debian 接网络打印机",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/cheatshet/debian_printer_connection.zh.md",
-      "size": 1631,
-      "url": "/sci/cheatshet/debian_printer_connection/"
-    },
-    {
-      "id": "sci/cheatshet/linux.zh",
-      "title": "Linux",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/cheatshet/linux.zh.md",
-      "size": 443,
-      "url": "/sci/cheatshet/linux/"
-    },
-    {
-      "id": "sci/cheatshet/docker.en",
-      "title": "Docker",
-      "language": "en",
-      "category": "page",
-      "path": "sci/cheatshet/docker.en.md",
-      "size": 0,
-      "url": "/en/sci/cheatshet/docker/"
-    },
-    {
-      "id": "sci/cheatshet/docker.zh",
-      "title": "Docker",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/cheatshet/docker.zh.md",
-      "size": 1906,
-      "url": "/sci/cheatshet/docker/"
-    },
-    {
-      "id": "sci/cheatshet/shell.en",
-      "title": "Shell",
-      "language": "en",
-      "category": "page",
-      "path": "sci/cheatshet/shell.en.md",
-      "size": 328,
-      "url": "/en/sci/cheatshet/shell/"
-    },
-    {
-      "id": "sci/cheatshet/number_order_dimension.zh",
-      "title": "Number Order Dimension",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/cheatshet/number_order_dimension.zh.md",
-      "size": 3809,
-      "url": "/sci/cheatshet/number_order_dimension/"
-    },
-    {
-      "id": "sci/cheatshet/tmux.zh",
-      "title": "tmux 常用命令与快捷键速查表",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/cheatshet/tmux.zh.md",
-      "size": 2665,
-      "url": "/sci/cheatshet/tmux/"
-    },
-    {
-      "id": "sci/cheatshet/termux.zh",
-      "title": "Termux",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/cheatshet/termux.zh.md",
-      "size": 2566,
-      "url": "/sci/cheatshet/termux/"
-    },
-    {
-      "id": "sci/project/example",
-      "title": "hello world",
-      "language": "en",
-      "category": "page",
-      "path": "sci/project/example.md",
-      "size": 13,
-      "url": "/en/sci/project/example/"
-    },
-    {
-      "id": "sci/minimal_theory/ladderOpearator.zh",
-      "title": "升降算符的构造",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/ladderOpearator.zh.md",
-      "size": 9050,
-      "url": "/sci/minimal_theory/ladderOpearator/"
-    },
-    {
-      "id": "sci/minimal_theory/TransmissionLineEq.en",
+      "id": "sci/minimal_theory/TransmissionLineEq.zh",
       "title": "Transmissionlineeq",
-      "language": "en",
-      "category": "page",
-      "path": "sci/minimal_theory/TransmissionLineEq.en.md",
-      "size": 5637,
-      "url": "/en/sci/minimal_theory/TransmissionLineEq/"
-    },
-    {
-      "id": "sci/minimal_theory/dead_time.zh",
-      "title": "Dead Time",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/dead_time.zh.md",
-      "size": 3369,
-      "url": "/sci/minimal_theory/dead_time/"
+      "path": "sci/minimal_theory/TransmissionLineEq.zh.md",
+      "size": 4927,
+      "url": "/sci/minimal_theory/TransmissionLineEq/"
+    },
+    {
+      "id": "sci/minimal_theory/scatering_theory.zh",
+      "title": "散射理论",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatering_theory.zh.md",
+      "size": 5105,
+      "url": "/sci/minimal_theory/scatering_theory/"
+    },
+    {
+      "id": "sci/minimal_theory/resolvent.zh",
+      "title": "resolvent",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/resolvent.zh.md",
+      "size": 39734,
+      "url": "/sci/minimal_theory/resolvent/"
     },
     {
       "id": "sci/minimal_theory/resolvent_resonateState.zh",
@@ -442,22 +460,22 @@
       "url": "/sci/minimal_theory/resolvent_resonateState/"
     },
     {
-      "id": "sci/minimal_theory/qft_schwartz_ref.zh",
-      "title": "Schwartz QFT 资源",
+      "id": "sci/minimal_theory/functionalAna_SpecThe.zh",
+      "title": "泛函分析 谱理论 预解resolvent算符",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/qft_schwartz_ref.zh.md",
-      "size": 4017,
-      "url": "/sci/minimal_theory/qft_schwartz_ref/"
+      "path": "sci/minimal_theory/functionalAna_SpecThe.zh.md",
+      "size": 11876,
+      "url": "/sci/minimal_theory/functionalAna_SpecThe/"
     },
     {
-      "id": "sci/minimal_theory/TransmissionLineEq.zh",
+      "id": "sci/minimal_theory/TransmissionLineEq.en",
       "title": "Transmissionlineeq",
-      "language": "zh",
+      "language": "en",
       "category": "page",
-      "path": "sci/minimal_theory/TransmissionLineEq.zh.md",
-      "size": 4927,
-      "url": "/sci/minimal_theory/TransmissionLineEq/"
+      "path": "sci/minimal_theory/TransmissionLineEq.en.md",
+      "size": 5637,
+      "url": "/en/sci/minimal_theory/TransmissionLineEq/"
     },
     {
       "id": "sci/minimal_theory/scatteringTheoryBook.zh",
@@ -478,15 +496,6 @@
       "url": "/sci/minimal_theory/qft_whatisfield/"
     },
     {
-      "id": "sci/minimal_theory/directProductAndSum.zh",
-      "title": "直积 / 直和 / 张量积 辨析",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/directProductAndSum.zh.md",
-      "size": 11372,
-      "url": "/sci/minimal_theory/directProductAndSum/"
-    },
-    {
       "id": "sci/minimal_theory/linearspace.zh",
       "title": "线性空间、对偶空间与量子态",
       "language": "zh",
@@ -496,175 +505,40 @@
       "url": "/sci/minimal_theory/linearspace/"
     },
     {
-      "id": "sci/minimal_theory/resolvent.zh",
-      "title": "resolvent",
+      "id": "sci/minimal_theory/directProductAndSum.zh",
+      "title": "直积 / 直和 / 张量积 辨析",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/resolvent.zh.md",
-      "size": 39734,
-      "url": "/sci/minimal_theory/resolvent/"
+      "path": "sci/minimal_theory/directProductAndSum.zh.md",
+      "size": 11372,
+      "url": "/sci/minimal_theory/directProductAndSum/"
     },
     {
-      "id": "sci/minimal_theory/functionalAna_SpecThe.zh",
-      "title": "泛函分析 谱理论 预解resolvent算符",
+      "id": "sci/minimal_theory/dead_time.zh",
+      "title": "Dead Time",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/functionalAna_SpecThe.zh.md",
-      "size": 11876,
-      "url": "/sci/minimal_theory/functionalAna_SpecThe/"
+      "path": "sci/minimal_theory/dead_time.zh.md",
+      "size": 3369,
+      "url": "/sci/minimal_theory/dead_time/"
     },
     {
-      "id": "sci/minimal_theory/riggedHilbertSpace.zh",
-      "title": "装备希尔伯特空间与 Dirac 形式的严格化",
+      "id": "sci/minimal_theory/ladderOpearator.zh",
+      "title": "升降算符的构造",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_theory/riggedHilbertSpace.zh.md",
-      "size": 8114,
-      "url": "/sci/minimal_theory/riggedHilbertSpace/"
+      "path": "sci/minimal_theory/ladderOpearator.zh.md",
+      "size": 9050,
+      "url": "/sci/minimal_theory/ladderOpearator/"
     },
     {
-      "id": "sci/minimal_theory/scatering_theory.zh",
-      "title": "散射理论",
-      "language": "zh",
+      "id": "sci/project/example",
+      "title": "hello world",
+      "language": "en",
       "category": "page",
-      "path": "sci/minimal_theory/scatering_theory.zh.md",
-      "size": 5105,
-      "url": "/sci/minimal_theory/scatering_theory/"
-    },
-    {
-      "id": "sci/minimal_code/vscode_lsp.zh",
-      "title": "VS Code C/C++ include 报错",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/vscode_lsp.zh.md",
-      "size": 3513,
-      "url": "/sci/minimal_code/vscode_lsp/"
-    },
-    {
-      "id": "sci/minimal_code/vscode_plug.zh",
-      "title": "VS Code 插件开发指南",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/vscode_plug.zh.md",
-      "size": 1075,
-      "url": "/sci/minimal_code/vscode_plug/"
-    },
-    {
-      "id": "sci/minimal_code/ctags.zh",
-      "title": "`ctags` 使用教程（C/C++）",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/ctags.zh.md",
-      "size": 3252,
-      "url": "/sci/minimal_code/ctags/"
-    },
-    {
-      "id": "sci/minimal_code/yazi.zh",
-      "title": "快捷键",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/yazi.zh.md",
-      "size": 2717,
-      "url": "/sci/minimal_code/yazi/"
-    },
-    {
-      "id": "sci/minimal_code/jupyternotebook.zh",
-      "title": "列出所有可用的魔法命令",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/jupyternotebook.zh.md",
-      "size": 6153,
-      "url": "/sci/minimal_code/jupyternotebook/"
-    },
-    {
-      "id": "sci/minimal_code/cpp_package.zh",
-      "title": "cpp 包管理 以及 依赖管理",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/cpp_package.zh.md",
-      "size": 738,
-      "url": "/sci/minimal_code/cpp_package/"
-    },
-    {
-      "id": "sci/minimal_code/Operating_system.zh",
-      "title": "装系统",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/Operating_system.zh.md",
-      "size": 92,
-      "url": "/sci/minimal_code/Operating_system/"
-    },
-    {
-      "id": "sci/minimal_code/待解决的小问题",
-      "title": "to be solved",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/待解决的小问题.md",
-      "size": 714,
-      "url": "/sci/minimal_code/待解决的小问题/"
-    },
-    {
-      "id": "sci/minimal_code/vscode_env_path.zh",
-      "title": "Vscode Env Path",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/vscode_env_path.zh.md",
-      "size": 2976,
-      "url": "/sci/minimal_code/vscode_env_path/"
-    },
-    {
-      "id": "sci/minimal_code/gemni_use_wen2cli.zh",
-      "title": "Gemini 限制与付费",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/gemni_use_wen2cli.zh.md",
-      "size": 1919,
-      "url": "/sci/minimal_code/gemni_use_wen2cli/"
-    },
-    {
-      "id": "sci/minimal_code/local_rag.zh",
-      "title": "本地论文 RAG",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/local_rag.zh.md",
-      "size": 14324,
-      "url": "/sci/minimal_code/local_rag/"
-    },
-    {
-      "id": "sci/minimal_code/vscodevimPlug.zh",
-      "title": "vscode vim 插件",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/vscodevimPlug.zh.md",
-      "size": 28,
-      "url": "/sci/minimal_code/vscodevimPlug/"
-    },
-    {
-      "id": "sci/minimal_code/fzf.zh",
-      "title": "FZF 模糊搜索工具完全教程",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/fzf.zh.md",
-      "size": 6091,
-      "url": "/sci/minimal_code/fzf/"
-    },
-    {
-      "id": "sci/minimal_code/root_visual_geant4.zh",
-      "title": "Root Visual Geant4",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/root_visual_geant4.zh.md",
-      "size": 4492,
-      "url": "/sci/minimal_code/root_visual_geant4/"
-    },
-    {
-      "id": "sci/minimal_code/format_guidelines.zh",
-      "title": "Format Guidelines",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/format_guidelines.zh.md",
-      "size": 1103,
-      "url": "/sci/minimal_code/format_guidelines/"
+      "path": "sci/project/example.md",
+      "size": 13,
+      "url": "/en/sci/project/example/"
     },
     {
       "id": "sci/minimal_code/jupyternotebook.en",
@@ -676,13 +550,121 @@
       "url": "/en/sci/minimal_code/jupyternotebook/"
     },
     {
-      "id": "sci/minimal_code/gdb.zh",
-      "title": "gdb 调试",
+      "id": "sci/minimal_code/latex_graphics.zh",
+      "title": "latex include graphics",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_code/gdb.zh.md",
-      "size": 3822,
-      "url": "/sci/minimal_code/gdb/"
+      "path": "sci/minimal_code/latex_graphics.zh.md",
+      "size": 544,
+      "url": "/sci/minimal_code/latex_graphics/"
+    },
+    {
+      "id": "sci/minimal_code/cmake.zh",
+      "title": "cmake项目",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/cmake.zh.md",
+      "size": 8955,
+      "url": "/sci/minimal_code/cmake/"
+    },
+    {
+      "id": "sci/minimal_code/python_lib_self.zh",
+      "title": "python 包的创建与使用",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/python_lib_self.zh.md",
+      "size": 6074,
+      "url": "/sci/minimal_code/python_lib_self/"
+    },
+    {
+      "id": "sci/minimal_code/root_visual_geant4.zh",
+      "title": "Root Visual Geant4",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/root_visual_geant4.zh.md",
+      "size": 4492,
+      "url": "/sci/minimal_code/root_visual_geant4/"
+    },
+    {
+      "id": "sci/minimal_code/c++project.zh",
+      "title": "c++项目",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/c++project.zh.md",
+      "size": 9318,
+      "url": "/sci/minimal_code/c++project/"
+    },
+    {
+      "id": "sci/minimal_code/python_def_class.zh",
+      "title": "LorentzVector 类的定义与用法",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/python_def_class.zh.md",
+      "size": 2939,
+      "url": "/sci/minimal_code/python_def_class/"
+    },
+    {
+      "id": "sci/minimal_code/vscodevimPlug.zh",
+      "title": "vscode vim 插件",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/vscodevimPlug.zh.md",
+      "size": 28,
+      "url": "/sci/minimal_code/vscodevimPlug/"
+    },
+    {
+      "id": "sci/minimal_code/format_guidelines.zh",
+      "title": "Format Guidelines",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/format_guidelines.zh.md",
+      "size": 1103,
+      "url": "/sci/minimal_code/format_guidelines/"
+    },
+    {
+      "id": "sci/minimal_code/jupytext.zh",
+      "title": "jupytext 工作流",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/jupytext.zh.md",
+      "size": 11621,
+      "url": "/sci/minimal_code/jupytext/"
+    },
+    {
+      "id": "sci/minimal_code/class_dataTransport.zh",
+      "title": "类间数据依赖与解耦",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/class_dataTransport.zh.md",
+      "size": 5393,
+      "url": "/sci/minimal_code/class_dataTransport/"
+    },
+    {
+      "id": "sci/minimal_code/local_rag.zh",
+      "title": "本地论文 RAG",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/local_rag.zh.md",
+      "size": 14324,
+      "url": "/sci/minimal_code/local_rag/"
+    },
+    {
+      "id": "sci/minimal_code/gemni_use_wen2cli.zh",
+      "title": "Gemini 限制与付费",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/gemni_use_wen2cli.zh.md",
+      "size": 1919,
+      "url": "/sci/minimal_code/gemni_use_wen2cli/"
+    },
+    {
+      "id": "sci/minimal_code/fzf.zh",
+      "title": "FZF 模糊搜索工具完全教程",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/fzf.zh.md",
+      "size": 6091,
+      "url": "/sci/minimal_code/fzf/"
     },
     {
       "id": "sci/minimal_code/cernrootData.zh",
@@ -694,6 +676,15 @@
       "url": "/sci/minimal_code/cernrootData/"
     },
     {
+      "id": "sci/minimal_code/server_clouddirve_example.zh",
+      "title": "Nextcloud + OpenVPN 部署",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/server_clouddirve_example.zh.md",
+      "size": 6424,
+      "url": "/sci/minimal_code/server_clouddirve_example/"
+    },
+    {
       "id": "sci/minimal_code/log.zh",
       "title": "日志记录",
       "language": "zh",
@@ -701,42 +692,6 @@
       "path": "sci/minimal_code/log.zh.md",
       "size": 11154,
       "url": "/sci/minimal_code/log/"
-    },
-    {
-      "id": "sci/minimal_code/latex_graphics.zh",
-      "title": "latex include graphics",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/latex_graphics.zh.md",
-      "size": 544,
-      "url": "/sci/minimal_code/latex_graphics/"
-    },
-    {
-      "id": "sci/minimal_code/color_scheme.en",
-      "title": "Color Scheme",
-      "language": "en",
-      "category": "page",
-      "path": "sci/minimal_code/color_scheme.en.md",
-      "size": 4442,
-      "url": "/en/sci/minimal_code/color_scheme/"
-    },
-    {
-      "id": "sci/minimal_code/server_clouddirve.zh",
-      "title": "私有云盘搭建",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/server_clouddirve.zh.md",
-      "size": 4063,
-      "url": "/sci/minimal_code/server_clouddirve/"
-    },
-    {
-      "id": "sci/minimal_code/cernrootDic.zh",
-      "title": "root 字典",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/cernrootDic.zh.md",
-      "size": 3076,
-      "url": "/sci/minimal_code/cernrootDic/"
     },
     {
       "id": "sci/minimal_code/geant4_oop.zh",
@@ -748,31 +703,22 @@
       "url": "/sci/minimal_code/geant4_oop/"
     },
     {
-      "id": "sci/minimal_code/git.zh",
-      "title": "Git",
+      "id": "sci/minimal_code/vscode_lsp.zh",
+      "title": "VS Code C/C++ include 报错",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_code/git.zh.md",
-      "size": 6127,
-      "url": "/sci/minimal_code/git/"
+      "path": "sci/minimal_code/vscode_lsp.zh.md",
+      "size": 3513,
+      "url": "/sci/minimal_code/vscode_lsp/"
     },
     {
-      "id": "sci/minimal_code/format_guidelines.en",
-      "title": "Format Guidelines",
-      "language": "en",
+      "id": "sci/minimal_code/gdb.zh",
+      "title": "gdb 调试",
+      "language": "zh",
       "category": "page",
-      "path": "sci/minimal_code/format_guidelines.en.md",
-      "size": 2719,
-      "url": "/en/sci/minimal_code/format_guidelines/"
-    },
-    {
-      "id": "sci/minimal_code/latex_graphics.en",
-      "title": "latex include graphics",
-      "language": "en",
-      "category": "page",
-      "path": "sci/minimal_code/latex_graphics.en.md",
-      "size": 544,
-      "url": "/en/sci/minimal_code/latex_graphics/"
+      "path": "sci/minimal_code/gdb.zh.md",
+      "size": 3822,
+      "url": "/sci/minimal_code/gdb/"
     },
     {
       "id": "sci/minimal_code/HighPerfomenceCompute.zh",
@@ -793,49 +739,31 @@
       "url": "/sci/minimal_code/root_opener/"
     },
     {
-      "id": "sci/minimal_code/python_venv.zh",
-      "title": "Python 虚拟环境",
+      "id": "sci/minimal_code/vscode_env_path.zh",
+      "title": "Vscode Env Path",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_code/python_venv.zh.md",
-      "size": 1281,
-      "url": "/sci/minimal_code/python_venv/"
+      "path": "sci/minimal_code/vscode_env_path.zh.md",
+      "size": 2976,
+      "url": "/sci/minimal_code/vscode_env_path/"
     },
     {
-      "id": "sci/minimal_code/root_plot.en",
-      "title": "root_plot",
-      "language": "en",
-      "category": "page",
-      "path": "sci/minimal_code/root_plot.en.md",
-      "size": 3058,
-      "url": "/en/sci/minimal_code/root_plot/"
-    },
-    {
-      "id": "sci/minimal_code/class_dataTransport.zh",
-      "title": "类间数据依赖与解耦",
+      "id": "sci/minimal_code/cernrootDic.zh",
+      "title": "root 字典",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_code/class_dataTransport.zh.md",
-      "size": 5393,
-      "url": "/sci/minimal_code/class_dataTransport/"
+      "path": "sci/minimal_code/cernrootDic.zh.md",
+      "size": 3076,
+      "url": "/sci/minimal_code/cernrootDic/"
     },
     {
-      "id": "sci/minimal_code/sshfs.zh",
-      "title": "sshfs：把远程目录当本地盘用",
+      "id": "sci/minimal_code/zsh.zh",
+      "title": "Zsh 环境一键配置脚本",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_code/sshfs.zh.md",
-      "size": 3389,
-      "url": "/sci/minimal_code/sshfs/"
-    },
-    {
-      "id": "sci/minimal_code/python_lib_self.zh",
-      "title": "python 包的创建与使用",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/python_lib_self.zh.md",
-      "size": 6074,
-      "url": "/sci/minimal_code/python_lib_self/"
+      "path": "sci/minimal_code/zsh.zh.md",
+      "size": 4371,
+      "url": "/sci/minimal_code/zsh/"
     },
     {
       "id": "sci/minimal_code/system_runtime_check.zh",
@@ -847,6 +775,24 @@
       "url": "/sci/minimal_code/system_runtime_check/"
     },
     {
+      "id": "sci/minimal_code/getEnv.zh",
+      "title": "获取环境变量",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/getEnv.zh.md",
+      "size": 2686,
+      "url": "/sci/minimal_code/getEnv/"
+    },
+    {
+      "id": "sci/minimal_code/format_guidelines.en",
+      "title": "Format Guidelines",
+      "language": "en",
+      "category": "page",
+      "path": "sci/minimal_code/format_guidelines.en.md",
+      "size": 2719,
+      "url": "/en/sci/minimal_code/format_guidelines/"
+    },
+    {
       "id": "sci/minimal_code/project_structure.zh",
       "title": "核物理项目目录结构",
       "language": "zh",
@@ -856,40 +802,40 @@
       "url": "/sci/minimal_code/project_structure/"
     },
     {
-      "id": "sci/minimal_code/rootFindLib.zh",
-      "title": "ROOT 库管理与单元测试",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/rootFindLib.zh.md",
-      "size": 8087,
-      "url": "/sci/minimal_code/rootFindLib/"
-    },
-    {
-      "id": "sci/minimal_code/server_clouddirve_example.zh",
-      "title": "Nextcloud + OpenVPN 部署",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/server_clouddirve_example.zh.md",
-      "size": 6424,
-      "url": "/sci/minimal_code/server_clouddirve_example/"
-    },
-    {
-      "id": "sci/minimal_code/root_plot.zh",
+      "id": "sci/minimal_code/root_plot.en",
       "title": "root_plot",
-      "language": "zh",
+      "language": "en",
       "category": "page",
-      "path": "sci/minimal_code/root_plot.zh.md",
+      "path": "sci/minimal_code/root_plot.en.md",
       "size": 3058,
-      "url": "/sci/minimal_code/root_plot/"
+      "url": "/en/sci/minimal_code/root_plot/"
     },
     {
-      "id": "sci/minimal_code/freerdp_disconnect.zh",
-      "title": "FreeRDP 正确退出",
+      "id": "sci/minimal_code/ctags.zh",
+      "title": "`ctags` 使用教程（C/C++）",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_code/freerdp_disconnect.zh.md",
-      "size": 1964,
-      "url": "/sci/minimal_code/freerdp_disconnect/"
+      "path": "sci/minimal_code/ctags.zh.md",
+      "size": 3252,
+      "url": "/sci/minimal_code/ctags/"
+    },
+    {
+      "id": "sci/minimal_code/vim_neovim.zh",
+      "title": "Vim Neovim",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/vim_neovim.zh.md",
+      "size": 1206,
+      "url": "/sci/minimal_code/vim_neovim/"
+    },
+    {
+      "id": "sci/minimal_code/vscode_plug.zh",
+      "title": "VS Code 插件开发指南",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/vscode_plug.zh.md",
+      "size": 1075,
+      "url": "/sci/minimal_code/vscode_plug/"
     },
     {
       "id": "sci/minimal_code/linux_swap.zh",
@@ -901,31 +847,112 @@
       "url": "/sci/minimal_code/linux_swap/"
     },
     {
-      "id": "sci/minimal_code/cmake.zh",
-      "title": "cmake项目",
+      "id": "sci/minimal_code/git.zh",
+      "title": "Git",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_code/cmake.zh.md",
-      "size": 8955,
-      "url": "/sci/minimal_code/cmake/"
+      "path": "sci/minimal_code/git.zh.md",
+      "size": 6127,
+      "url": "/sci/minimal_code/git/"
     },
     {
-      "id": "sci/minimal_code/c++project.zh",
-      "title": "c++项目",
+      "id": "sci/minimal_code/freerdp_disconnect.zh",
+      "title": "FreeRDP 正确退出",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_code/c++project.zh.md",
-      "size": 9318,
-      "url": "/sci/minimal_code/c++project/"
+      "path": "sci/minimal_code/freerdp_disconnect.zh.md",
+      "size": 1964,
+      "url": "/sci/minimal_code/freerdp_disconnect/"
     },
     {
-      "id": "sci/minimal_code/zsh.zh",
-      "title": "Zsh 环境一键配置脚本",
+      "id": "sci/minimal_code/rootFindLib.zh",
+      "title": "ROOT 库管理与单元测试",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_code/zsh.zh.md",
-      "size": 4371,
-      "url": "/sci/minimal_code/zsh/"
+      "path": "sci/minimal_code/rootFindLib.zh.md",
+      "size": 8087,
+      "url": "/sci/minimal_code/rootFindLib/"
+    },
+    {
+      "id": "sci/minimal_code/待解决的小问题",
+      "title": "to be solved",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/待解决的小问题.md",
+      "size": 714,
+      "url": "/sci/minimal_code/待解决的小问题/"
+    },
+    {
+      "id": "sci/minimal_code/python_venv.zh",
+      "title": "Python 虚拟环境",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/python_venv.zh.md",
+      "size": 1281,
+      "url": "/sci/minimal_code/python_venv/"
+    },
+    {
+      "id": "sci/minimal_code/cpp_package.zh",
+      "title": "cpp 包管理 以及 依赖管理",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/cpp_package.zh.md",
+      "size": 738,
+      "url": "/sci/minimal_code/cpp_package/"
+    },
+    {
+      "id": "sci/minimal_code/jupyternotebook.zh",
+      "title": "列出所有可用的魔法命令",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/jupyternotebook.zh.md",
+      "size": 6153,
+      "url": "/sci/minimal_code/jupyternotebook/"
+    },
+    {
+      "id": "sci/minimal_code/vscodetunnel.zh",
+      "title": "VS Code Tunnel",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/vscodetunnel.zh.md",
+      "size": 1025,
+      "url": "/sci/minimal_code/vscodetunnel/"
+    },
+    {
+      "id": "sci/minimal_code/Operating_system.zh",
+      "title": "装系统",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/Operating_system.zh.md",
+      "size": 92,
+      "url": "/sci/minimal_code/Operating_system/"
+    },
+    {
+      "id": "sci/minimal_code/latex_graphics.en",
+      "title": "latex include graphics",
+      "language": "en",
+      "category": "page",
+      "path": "sci/minimal_code/latex_graphics.en.md",
+      "size": 544,
+      "url": "/en/sci/minimal_code/latex_graphics/"
+    },
+    {
+      "id": "sci/minimal_code/termux.zh",
+      "title": "Termux 装 Ubuntu + VS Code",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/termux.zh.md",
+      "size": 5136,
+      "url": "/sci/minimal_code/termux/"
+    },
+    {
+      "id": "sci/minimal_code/server_clouddirve.zh",
+      "title": "私有云盘搭建",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/server_clouddirve.zh.md",
+      "size": 4063,
+      "url": "/sci/minimal_code/server_clouddirve/"
     },
     {
       "id": "sci/minimal_code/env_manage.zh",
@@ -946,535 +973,49 @@
       "url": "/sci/minimal_code/color_scheme/"
     },
     {
-      "id": "sci/minimal_code/getEnv.zh",
-      "title": "获取环境变量",
+      "id": "sci/minimal_code/yazi.zh",
+      "title": "快捷键",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_code/getEnv.zh.md",
-      "size": 2686,
-      "url": "/sci/minimal_code/getEnv/"
+      "path": "sci/minimal_code/yazi.zh.md",
+      "size": 2717,
+      "url": "/sci/minimal_code/yazi/"
     },
     {
-      "id": "sci/minimal_code/jupytext.zh",
-      "title": "jupytext 工作流",
+      "id": "sci/minimal_code/root_plot.zh",
+      "title": "root_plot",
       "language": "zh",
       "category": "page",
-      "path": "sci/minimal_code/jupytext.zh.md",
-      "size": 11621,
-      "url": "/sci/minimal_code/jupytext/"
+      "path": "sci/minimal_code/root_plot.zh.md",
+      "size": 3058,
+      "url": "/sci/minimal_code/root_plot/"
     },
     {
-      "id": "sci/minimal_code/vscodetunnel.zh",
-      "title": "VS Code Tunnel",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/vscodetunnel.zh.md",
-      "size": 1025,
-      "url": "/sci/minimal_code/vscodetunnel/"
-    },
-    {
-      "id": "sci/minimal_code/python_def_class.zh",
-      "title": "LorentzVector 类的定义与用法",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/python_def_class.zh.md",
-      "size": 2939,
-      "url": "/sci/minimal_code/python_def_class/"
-    },
-    {
-      "id": "sci/minimal_code/termux.zh",
-      "title": "Termux 装 Ubuntu + VS Code",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/termux.zh.md",
-      "size": 5136,
-      "url": "/sci/minimal_code/termux/"
-    },
-    {
-      "id": "sci/minimal_code/vim_neovim.zh",
-      "title": "Vim Neovim",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_code/vim_neovim.zh.md",
-      "size": 1206,
-      "url": "/sci/minimal_code/vim_neovim/"
-    },
-    {
-      "id": "sci/minimal_theory/functionnalAna/C5unboudPhysics.zh",
-      "title": "无界算子和量子力学中的应用",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/functionnalAna/C5unboudPhysics.zh.md",
-      "size": 113,
-      "url": "/sci/minimal_theory/functionnalAna/C5unboudPhysics/"
-    },
-    {
-      "id": "sci/minimal_theory/functionnalAna/C0xu.zh",
-      "title": "泛函序言",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/functionnalAna/C0xu.zh.md",
-      "size": 85,
-      "url": "/sci/minimal_theory/functionnalAna/C0xu/"
-    },
-    {
-      "id": "sci/minimal_theory/functionnalAna/C1space.zh",
-      "title": "空间",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/functionnalAna/C1space.zh.md",
-      "size": 2455,
-      "url": "/sci/minimal_theory/functionnalAna/C1space/"
-    },
-    {
-      "id": "sci/minimal_theory/functionnalAna/C2operatorFunctional.zh",
-      "title": "算子和泛函 -空间上的作用",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/functionnalAna/C2operatorFunctional.zh.md",
-      "size": 1176,
-      "url": "/sci/minimal_theory/functionnalAna/C2operatorFunctional/"
-    },
-    {
-      "id": "sci/minimal_theory/functionnalAna/C3fourFundamentalTheo.zh",
-      "title": "泛函四大基石定理",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/functionnalAna/C3fourFundamentalTheo.zh.md",
-      "size": 2251,
-      "url": "/sci/minimal_theory/functionnalAna/C3fourFundamentalTheo/"
-    },
-    {
-      "id": "sci/minimal_theory/functionnalAna/RHS.zh",
-      "title": "装备希尔伯特空间",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/functionnalAna/RHS.zh.md",
-      "size": 92,
-      "url": "/sci/minimal_theory/functionnalAna/RHS/"
-    },
-    {
-      "id": "sci/minimal_theory/functionnalAna/C4spectral.zh",
-      "title": "谱理论",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/functionnalAna/C4spectral.zh.md",
-      "size": 7533,
-      "url": "/sci/minimal_theory/functionnalAna/C4spectral/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/03_S_matrix_and_cross_section.zh",
-      "title": "ch03 S 矩阵与散射截面",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/03_S_matrix_and_cross_section.zh.md",
-      "size": 16560,
-      "url": "/sci/minimal_theory/scatteringTheory/03_S_matrix_and_cross_section/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/06_polarization_formalism.zh",
-      "title": "ch06 极化形式与自旋观测量",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/06_polarization_formalism.zh.md",
-      "size": 23864,
-      "url": "/sci/minimal_theory/scatteringTheory/06_polarization_formalism/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/10_jost_analyticity.zh",
-      "title": "ch10 Jost 函数与解析性",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/10_jost_analyticity.zh.md",
-      "size": 25084,
-      "url": "/sci/minimal_theory/scatteringTheory/10_jost_analyticity/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/01_friedrichsModel.zh",
-      "title": "ch01 Friedrichs 模型",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/01_friedrichsModel.zh.md",
-      "size": 8553,
-      "url": "/sci/minimal_theory/scatteringTheory/01_friedrichsModel/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/07_coulomb_scattering.zh",
-      "title": "ch07 Coulomb 散射的完整形式",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/07_coulomb_scattering.zh.md",
-      "size": 16134,
-      "url": "/sci/minimal_theory/scatteringTheory/07_coulomb_scattering/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/05_partial_wave_projection.zh",
-      "title": "ch05 分波投影与角动量耦合：从抽象算符到数值可解方程",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/05_partial_wave_projection.zh.md",
-      "size": 18949,
-      "url": "/sci/minimal_theory/scatteringTheory/05_partial_wave_projection/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/08_dwba.zh",
-      "title": "ch08 畸变波 Born 近似",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/08_dwba.zh.md",
-      "size": 21776,
-      "url": "/sci/minimal_theory/scatteringTheory/08_dwba/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/02_Green_operator.zh",
-      "title": "ch02 格林算符与格林函数",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/02_Green_operator.zh.md",
-      "size": 8044,
-      "url": "/sci/minimal_theory/scatteringTheory/02_Green_operator/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/11_effective_range_levinson.zh",
-      "title": "ch11 有效力程理论与 Levinson 系统化",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/11_effective_range_levinson.zh.md",
-      "size": 23124,
-      "url": "/sci/minimal_theory/scatteringTheory/11_effective_range_levinson/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym",
-      "title": "appendix · Woods-Saxon 光学势的 EST Separable 化及其与对称能的联系",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym.md",
-      "size": 8411,
-      "url": "/sci/minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/09_time_reversal_detailed_balance.zh",
-      "title": "ch09 时间反演与细致平衡",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/09_time_reversal_detailed_balance.zh.md",
-      "size": 21740,
-      "url": "/sci/minimal_theory/scatteringTheory/09_time_reversal_detailed_balance/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/04_T_and_U_operators.zh",
-      "title": "ch04 从波算符到 T 算符，再到三体 AGS 的 U 算符",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/04_T_and_U_operators.zh.md",
-      "size": 10923,
-      "url": "/sci/minimal_theory/scatteringTheory/04_T_and_U_operators/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/examples/01_1d_delta.zh",
-      "title": "一维 delta 势",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/examples/01_1d_delta.zh.md",
-      "size": 7661,
-      "url": "/sci/minimal_theory/scatteringTheory/examples/01_1d_delta/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/examples/13_jost_demo.zh",
-      "title": "Jost 函数的数值演示",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/examples/13_jost_demo.zh.md",
-      "size": 9143,
-      "url": "/sci/minimal_theory/scatteringTheory/examples/13_jost_demo/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/examples/10_polarization_demo.zh",
-      "title": "极化散射的数值演示",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/examples/10_polarization_demo.zh.md",
-      "size": 8905,
-      "url": "/sci/minimal_theory/scatteringTheory/examples/10_polarization_demo/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/examples/07_well_barrier_1d.zh",
-      "title": "一维势阱加势垒：α 衰变图像",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/examples/07_well_barrier_1d.zh.md",
-      "size": 6422,
-      "url": "/sci/minimal_theory/scatteringTheory/examples/07_well_barrier_1d/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/examples/04_yukawa.zh",
-      "title": "Yukawa 势与 Born 近似",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/examples/04_yukawa.zh.md",
-      "size": 6334,
-      "url": "/sci/minimal_theory/scatteringTheory/examples/04_yukawa/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/examples/08_centrifugal_barrier.zh",
-      "title": "离心位垒与高分波 shape 共振",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/examples/08_centrifugal_barrier.zh.md",
-      "size": 9033,
-      "url": "/sci/minimal_theory/scatteringTheory/examples/08_centrifugal_barrier/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/examples/11_coulomb_demo.zh",
-      "title": "Coulomb 散射的数值演示",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/examples/11_coulomb_demo.zh.md",
-      "size": 10360,
-      "url": "/sci/minimal_theory/scatteringTheory/examples/11_coulomb_demo/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/examples/09_feshbach_two_channel.zh",
-      "title": "双通道 Feshbach 共振",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/examples/09_feshbach_two_channel.zh.md",
-      "size": 8310,
-      "url": "/sci/minimal_theory/scatteringTheory/examples/09_feshbach_two_channel/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/examples/02_square_well_3d.zh",
-      "title": "三维方阱 s 波散射",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/examples/02_square_well_3d.zh.md",
-      "size": 6481,
-      "url": "/sci/minimal_theory/scatteringTheory/examples/02_square_well_3d/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/examples/06_numerical_pipeline.zh",
-      "title": "数值实验：分波相移与截面的统一流程",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/examples/06_numerical_pipeline.zh.md",
-      "size": 6871,
-      "url": "/sci/minimal_theory/scatteringTheory/examples/06_numerical_pipeline/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/examples/03_delta_shell.zh",
-      "title": "三维 delta 壳层势的散射与共振",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/examples/03_delta_shell.zh.md",
-      "size": 7914,
-      "url": "/sci/minimal_theory/scatteringTheory/examples/03_delta_shell/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/examples/05_separable_rank1.zh",
-      "title": "秩 1 separable 势与解析 T 矩阵",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/examples/05_separable_rank1.zh.md",
-      "size": 8681,
-      "url": "/sci/minimal_theory/scatteringTheory/examples/05_separable_rank1/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/examples/14_ere_levinson_demo.zh",
-      "title": "有效力程展开与 Levinson 定理的数值演示",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/examples/14_ere_levinson_demo.zh.md",
-      "size": 10096,
-      "url": "/sci/minimal_theory/scatteringTheory/examples/14_ere_levinson_demo/"
-    },
-    {
-      "id": "sci/minimal_theory/scatteringTheory/examples/12_dwba_demo.zh",
-      "title": "DWBA 数值演示",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/minimal_theory/scatteringTheory/examples/12_dwba_demo.zh.md",
-      "size": 10195,
-      "url": "/sci/minimal_theory/scatteringTheory/examples/12_dwba_demo/"
-    },
-    {
-      "id": "sci/project/faddeev/construct_basis.zh",
-      "title": "Construct Basis",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/faddeev/construct_basis.zh.md",
-      "size": 4456,
-      "url": "/sci/project/faddeev/construct_basis/"
-    },
-    {
-      "id": "sci/project/faddeev/PeopelTree.zh",
-      "title": "faddeev 学术谱系图",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/faddeev/PeopelTree.zh.md",
-      "size": 2294,
-      "url": "/sci/project/faddeev/PeopelTree/"
-    },
-    {
-      "id": "sci/project/faddeev/faddeev_WavePacket.zh",
-      "title": "faddeev方程 的Wave-packet continuum discretisation",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/faddeev/faddeev_WavePacket.zh.md",
-      "size": 23051,
-      "url": "/sci/project/faddeev/faddeev_WavePacket/"
-    },
-    {
-      "id": "sci/project/D_polar_exp/polar_measure_and_axis.en",
-      "title": "Polar Measure And Axis",
+      "id": "sci/minimal_code/color_scheme.en",
+      "title": "Color Scheme",
       "language": "en",
       "category": "page",
-      "path": "sci/project/D_polar_exp/polar_measure_and_axis.en.md",
-      "size": 21330,
-      "url": "/en/sci/project/D_polar_exp/polar_measure_and_axis/"
+      "path": "sci/minimal_code/color_scheme.en.md",
+      "size": 4442,
+      "url": "/en/sci/minimal_code/color_scheme/"
     },
     {
-      "id": "sci/project/D_polar_exp/faddeevWPCD.zh",
-      "title": "Faddeevwpcd",
+      "id": "sci/minimal_code/sshfs.zh",
+      "title": "sshfs：把远程目录当本地盘用",
       "language": "zh",
       "category": "page",
-      "path": "sci/project/D_polar_exp/faddeevWPCD.zh.md",
-      "size": 5345,
-      "url": "/sci/project/D_polar_exp/faddeevWPCD/"
+      "path": "sci/minimal_code/sshfs.zh.md",
+      "size": 3389,
+      "url": "/sci/minimal_code/sshfs/"
     },
     {
-      "id": "sci/project/D_polar_exp/my_polarimeter.en",
-      "title": "My Polarimeter",
+      "id": "sci/project/samurai/detector_samurai.en",
+      "title": "SAMURAI Charged Particle Detectors",
       "language": "en",
       "category": "page",
-      "path": "sci/project/D_polar_exp/my_polarimeter.en.md",
-      "size": 1373,
-      "url": "/en/sci/project/D_polar_exp/my_polarimeter/"
-    },
-    {
-      "id": "sci/project/D_polar_exp/my_polarimeter.zh",
-      "title": "My Polarimeter",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/D_polar_exp/my_polarimeter.zh.md",
-      "size": 1006,
-      "url": "/sci/project/D_polar_exp/my_polarimeter/"
-    },
-    {
-      "id": "sci/project/D_polar_exp/todo_list",
-      "title": "To do list",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/D_polar_exp/todo_list.md",
-      "size": 26,
-      "url": "/sci/project/D_polar_exp/todo_list/"
-    },
-    {
-      "id": "sci/project/D_polar_exp/polar_measure_and_axis.zh",
-      "title": "Polar Measure And Axis",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/D_polar_exp/polar_measure_and_axis.zh.md",
-      "size": 12870,
-      "url": "/sci/project/D_polar_exp/polar_measure_and_axis/"
-    },
-    {
-      "id": "sci/project/D_polar_exp/caogao",
-      "title": "Caogao",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/D_polar_exp/caogao.md",
-      "size": 3478,
-      "url": "/sci/project/D_polar_exp/caogao/"
-    },
-    {
-      "id": "sci/project/D_polar_exp/other_polarmeter.zh",
-      "title": "Other Polarmeter",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/D_polar_exp/other_polarmeter.zh.md",
-      "size": 9435,
-      "url": "/sci/project/D_polar_exp/other_polarmeter/"
-    },
-    {
-      "id": "sci/project/D_polar_exp/stastic.zh",
-      "title": "Stastic",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/D_polar_exp/stastic.zh.md",
-      "size": 2919,
-      "url": "/sci/project/D_polar_exp/stastic/"
-    },
-    {
-      "id": "sci/project/D_polar_exp/scintillator.zh",
-      "title": "Scintillator",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/D_polar_exp/scintillator.zh.md",
-      "size": 4682,
-      "url": "/sci/project/D_polar_exp/scintillator/"
-    },
-    {
-      "id": "sci/project/D_polar_exp/spherical_operator",
-      "title": "To show some relation",
-      "language": "en",
-      "category": "page",
-      "path": "sci/project/D_polar_exp/spherical_operator.md",
-      "size": 9134,
-      "url": "/en/sci/project/D_polar_exp/spherical_operator/"
-    },
-    {
-      "id": "sci/project/D_polar_exp/other_polarmeter.en",
-      "title": "Other Polarmeter",
-      "language": "en",
-      "category": "page",
-      "path": "sci/project/D_polar_exp/other_polarmeter.en.md",
-      "size": 12510,
-      "url": "/en/sci/project/D_polar_exp/other_polarmeter/"
-    },
-    {
-      "id": "sci/project/D_polar_exp/riken_web_source.zh",
-      "title": "Riken Web Source",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/D_polar_exp/riken_web_source.zh.md",
-      "size": 421,
-      "url": "/sci/project/D_polar_exp/riken_web_source/"
-    },
-    {
-      "id": "sci/project/D_polar_exp/d_breakup_theory.zh",
-      "title": "氘核破裂理论上可以如何计算",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/D_polar_exp/d_breakup_theory.zh.md",
-      "size": 451,
-      "url": "/sci/project/D_polar_exp/d_breakup_theory/"
-    },
-    {
-      "id": "sci/project/D_polar_exp/sw-api.zh",
-      "title": "Sw Api",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/D_polar_exp/sw-api.zh.md",
-      "size": 4391,
-      "url": "/sci/project/D_polar_exp/sw-api/"
-    },
-    {
-      "id": "sci/project/D_polar_exp/Sipm_PMT.zh",
-      "title": "Sipm Pmt",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/D_polar_exp/Sipm_PMT.zh.md",
-      "size": 12529,
-      "url": "/sci/project/D_polar_exp/Sipm_PMT/"
-    },
-    {
-      "id": "sci/project/D_polar_exp/lane_hvh_esym.zh",
-      "title": "Lane 关系、光学势、EST 展开与 HVH 推导对称能",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/D_polar_exp/lane_hvh_esym.zh.md",
-      "size": 13727,
-      "url": "/sci/project/D_polar_exp/lane_hvh_esym/"
+      "path": "sci/project/samurai/detector_samurai.en.md",
+      "size": 3463,
+      "url": "/en/sci/project/samurai/detector_samurai/"
     },
     {
       "id": "sci/project/samurai/detector_samurai.zh",
@@ -1495,85 +1036,184 @@
       "url": "/en/sci/project/samurai/pdc/"
     },
     {
-      "id": "sci/project/samurai/detector_samurai.en",
-      "title": "SAMURAI Charged Particle Detectors",
+      "id": "sci/project/D_polar_exp/sw-api.zh",
+      "title": "Sw Api",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/D_polar_exp/sw-api.zh.md",
+      "size": 4391,
+      "url": "/sci/project/D_polar_exp/sw-api/"
+    },
+    {
+      "id": "sci/project/D_polar_exp/caogao",
+      "title": "Caogao",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/D_polar_exp/caogao.md",
+      "size": 3478,
+      "url": "/sci/project/D_polar_exp/caogao/"
+    },
+    {
+      "id": "sci/project/D_polar_exp/stastic.zh",
+      "title": "Stastic",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/D_polar_exp/stastic.zh.md",
+      "size": 2919,
+      "url": "/sci/project/D_polar_exp/stastic/"
+    },
+    {
+      "id": "sci/project/D_polar_exp/other_polarmeter.en",
+      "title": "Other Polarmeter",
       "language": "en",
       "category": "page",
-      "path": "sci/project/samurai/detector_samurai.en.md",
-      "size": 3463,
-      "url": "/en/sci/project/samurai/detector_samurai/"
+      "path": "sci/project/D_polar_exp/other_polarmeter.en.md",
+      "size": 12510,
+      "url": "/en/sci/project/D_polar_exp/other_polarmeter/"
     },
     {
-      "id": "sci/project/samurai/anaroot/anaroot2version.zh",
-      "title": "ANAROOT 详细中文文档",
+      "id": "sci/project/D_polar_exp/riken_web_source.zh",
+      "title": "Riken Web Source",
       "language": "zh",
       "category": "page",
-      "path": "sci/project/samurai/anaroot/anaroot2version.zh.md",
-      "size": 53511,
-      "url": "/sci/project/samurai/anaroot/anaroot2version/"
+      "path": "sci/project/D_polar_exp/riken_web_source.zh.md",
+      "size": 421,
+      "url": "/sci/project/D_polar_exp/riken_web_source/"
     },
     {
-      "id": "sci/project/samurai/anaroot/RIDF.en",
-      "title": "RIDF Data Block",
+      "id": "sci/project/D_polar_exp/lane_hvh_esym.zh",
+      "title": "Lane 关系、光学势、EST 展开与 HVH 推导对称能",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/D_polar_exp/lane_hvh_esym.zh.md",
+      "size": 13727,
+      "url": "/sci/project/D_polar_exp/lane_hvh_esym/"
+    },
+    {
+      "id": "sci/project/D_polar_exp/todo_list",
+      "title": "To do list",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/D_polar_exp/todo_list.md",
+      "size": 26,
+      "url": "/sci/project/D_polar_exp/todo_list/"
+    },
+    {
+      "id": "sci/project/D_polar_exp/faddeevWPCD.zh",
+      "title": "Faddeevwpcd",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/D_polar_exp/faddeevWPCD.zh.md",
+      "size": 5345,
+      "url": "/sci/project/D_polar_exp/faddeevWPCD/"
+    },
+    {
+      "id": "sci/project/D_polar_exp/spherical_operator",
+      "title": "To show some relation",
       "language": "en",
       "category": "page",
-      "path": "sci/project/samurai/anaroot/RIDF.en.md",
-      "size": 10249,
-      "url": "/en/sci/project/samurai/anaroot/RIDF/"
+      "path": "sci/project/D_polar_exp/spherical_operator.md",
+      "size": 9134,
+      "url": "/en/sci/project/D_polar_exp/spherical_operator/"
     },
     {
-      "id": "sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction.en",
-      "title": "TArtCalibNEBULA::ReconstructData — Full Walk-through",
+      "id": "sci/project/D_polar_exp/Sipm_PMT.zh",
+      "title": "Sipm Pmt",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/D_polar_exp/Sipm_PMT.zh.md",
+      "size": 12529,
+      "url": "/sci/project/D_polar_exp/Sipm_PMT/"
+    },
+    {
+      "id": "sci/project/D_polar_exp/d_breakup_theory.zh",
+      "title": "氘核破裂理论上可以如何计算",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/D_polar_exp/d_breakup_theory.zh.md",
+      "size": 451,
+      "url": "/sci/project/D_polar_exp/d_breakup_theory/"
+    },
+    {
+      "id": "sci/project/D_polar_exp/my_polarimeter.en",
+      "title": "My Polarimeter",
       "language": "en",
       "category": "page",
-      "path": "sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction.en.md",
-      "size": 5505,
-      "url": "/en/sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction/"
+      "path": "sci/project/D_polar_exp/my_polarimeter.en.md",
+      "size": 1373,
+      "url": "/en/sci/project/D_polar_exp/my_polarimeter/"
     },
     {
-      "id": "sci/project/samurai/anaroot/anaroot_pdc.zh",
-      "title": "重建与校准相关的C++类库",
+      "id": "sci/project/D_polar_exp/other_polarmeter.zh",
+      "title": "Other Polarmeter",
       "language": "zh",
       "category": "page",
-      "path": "sci/project/samurai/anaroot/anaroot_pdc.zh.md",
-      "size": 10584,
-      "url": "/sci/project/samurai/anaroot/anaroot_pdc/"
+      "path": "sci/project/D_polar_exp/other_polarmeter.zh.md",
+      "size": 9435,
+      "url": "/sci/project/D_polar_exp/other_polarmeter/"
     },
     {
-      "id": "sci/project/samurai/anaroot/anaroot_decoder.zh",
-      "title": "Anaroot Decoder",
+      "id": "sci/project/D_polar_exp/polar_measure_and_axis.zh",
+      "title": "Polar Measure And Axis",
       "language": "zh",
       "category": "page",
-      "path": "sci/project/samurai/anaroot/anaroot_decoder.zh.md",
-      "size": 1836,
-      "url": "/sci/project/samurai/anaroot/anaroot_decoder/"
+      "path": "sci/project/D_polar_exp/polar_measure_and_axis.zh.md",
+      "size": 12870,
+      "url": "/sci/project/D_polar_exp/polar_measure_and_axis/"
     },
     {
-      "id": "sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction.zh",
-      "title": "Anaroot Nebula Reconstructionfunction",
+      "id": "sci/project/D_polar_exp/scintillator.zh",
+      "title": "Scintillator",
       "language": "zh",
       "category": "page",
-      "path": "sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction.zh.md",
-      "size": 7401,
-      "url": "/sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction/"
+      "path": "sci/project/D_polar_exp/scintillator.zh.md",
+      "size": 4682,
+      "url": "/sci/project/D_polar_exp/scintillator/"
     },
     {
-      "id": "sci/project/samurai/anaroot/anaroot.zh",
-      "title": "ANAROOT 综合分析框架：",
-      "language": "zh",
-      "category": "page",
-      "path": "sci/project/samurai/anaroot/anaroot.zh.md",
-      "size": 47388,
-      "url": "/sci/project/samurai/anaroot/anaroot/"
-    },
-    {
-      "id": "sci/project/samurai/anaroot/anaroot2version.en",
-      "title": "ANAROOT documentation",
+      "id": "sci/project/D_polar_exp/polar_measure_and_axis.en",
+      "title": "Polar Measure And Axis",
       "language": "en",
       "category": "page",
-      "path": "sci/project/samurai/anaroot/anaroot2version.en.md",
-      "size": 5737,
-      "url": "/en/sci/project/samurai/anaroot/anaroot2version/"
+      "path": "sci/project/D_polar_exp/polar_measure_and_axis.en.md",
+      "size": 21330,
+      "url": "/en/sci/project/D_polar_exp/polar_measure_and_axis/"
+    },
+    {
+      "id": "sci/project/D_polar_exp/my_polarimeter.zh",
+      "title": "My Polarimeter",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/D_polar_exp/my_polarimeter.zh.md",
+      "size": 1006,
+      "url": "/sci/project/D_polar_exp/my_polarimeter/"
+    },
+    {
+      "id": "sci/project/faddeev/construct_basis.zh",
+      "title": "Construct Basis",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/faddeev/construct_basis.zh.md",
+      "size": 4456,
+      "url": "/sci/project/faddeev/construct_basis/"
+    },
+    {
+      "id": "sci/project/faddeev/faddeev_WavePacket.zh",
+      "title": "faddeev方程 的Wave-packet continuum discretisation",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/faddeev/faddeev_WavePacket.zh.md",
+      "size": 23051,
+      "url": "/sci/project/faddeev/faddeev_WavePacket/"
+    },
+    {
+      "id": "sci/project/faddeev/PeopelTree.zh",
+      "title": "faddeev 学术谱系图",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/faddeev/PeopelTree.zh.md",
+      "size": 2294,
+      "url": "/sci/project/faddeev/PeopelTree/"
     },
     {
       "id": "sci/project/samurai/anaroot/RIDF.zh",
@@ -1585,6 +1225,33 @@
       "url": "/sci/project/samurai/anaroot/RIDF/"
     },
     {
+      "id": "sci/project/samurai/anaroot/anaroot_pdc.zh",
+      "title": "重建与校准相关的C++类库",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/samurai/anaroot/anaroot_pdc.zh.md",
+      "size": 10584,
+      "url": "/sci/project/samurai/anaroot/anaroot_pdc/"
+    },
+    {
+      "id": "sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction.en",
+      "title": "TArtCalibNEBULA::ReconstructData — Full Walk-through",
+      "language": "en",
+      "category": "page",
+      "path": "sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction.en.md",
+      "size": 5505,
+      "url": "/en/sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction/"
+    },
+    {
+      "id": "sci/project/samurai/anaroot/anaroot.zh",
+      "title": "ANAROOT 综合分析框架：",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/samurai/anaroot/anaroot.zh.md",
+      "size": 47388,
+      "url": "/sci/project/samurai/anaroot/anaroot/"
+    },
+    {
       "id": "sci/project/samurai/anaroot/anaroot_pdc.en",
       "title": "C++ Libraries for PDC Reconstruction and Calibration",
       "language": "en",
@@ -1592,6 +1259,51 @@
       "path": "sci/project/samurai/anaroot/anaroot_pdc.en.md",
       "size": 12879,
       "url": "/en/sci/project/samurai/anaroot/anaroot_pdc/"
+    },
+    {
+      "id": "sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction.zh",
+      "title": "Anaroot Nebula Reconstructionfunction",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction.zh.md",
+      "size": 7401,
+      "url": "/sci/project/samurai/anaroot/anaroot_nebula_reconstructionfunction/"
+    },
+    {
+      "id": "sci/project/samurai/anaroot/anaroot2version.zh",
+      "title": "ANAROOT 详细中文文档",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/samurai/anaroot/anaroot2version.zh.md",
+      "size": 53511,
+      "url": "/sci/project/samurai/anaroot/anaroot2version/"
+    },
+    {
+      "id": "sci/project/samurai/anaroot/anaroot_decoder.zh",
+      "title": "Anaroot Decoder",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/samurai/anaroot/anaroot_decoder.zh.md",
+      "size": 1836,
+      "url": "/sci/project/samurai/anaroot/anaroot_decoder/"
+    },
+    {
+      "id": "sci/project/samurai/anaroot/anaroot2version.en",
+      "title": "ANAROOT documentation",
+      "language": "en",
+      "category": "page",
+      "path": "sci/project/samurai/anaroot/anaroot2version.en.md",
+      "size": 5737,
+      "url": "/en/sci/project/samurai/anaroot/anaroot2version/"
+    },
+    {
+      "id": "sci/project/samurai/anaroot/RIDF.en",
+      "title": "RIDF Data Block",
+      "language": "en",
+      "category": "page",
+      "path": "sci/project/samurai/anaroot/RIDF.en.md",
+      "size": 10249,
+      "url": "/en/sci/project/samurai/anaroot/RIDF/"
     },
     {
       "id": "sci/project/samurai/anaroot/anaroot_nebula.en",
@@ -1612,40 +1324,13 @@
       "url": "/sci/project/samurai/anaroot/anaroot_nebula/"
     },
     {
-      "id": "sci/project/samurai/smsimulator/PDC.en",
-      "title": "PDC Drift Chamber Simulation Plan",
-      "language": "en",
-      "category": "page",
-      "path": "sci/project/samurai/smsimulator/PDC.en.md",
-      "size": 13302,
-      "url": "/en/sci/project/samurai/smsimulator/PDC/"
-    },
-    {
-      "id": "sci/project/samurai/smsimulator/PDC.zh",
-      "title": "PDC 漂移室模拟方案",
+      "id": "sci/project/samurai/smsimulator/FDC2.zh",
+      "title": "Fdc2",
       "language": "zh",
       "category": "page",
-      "path": "sci/project/samurai/smsimulator/PDC.zh.md",
-      "size": 8835,
-      "url": "/sci/project/samurai/smsimulator/PDC/"
-    },
-    {
-      "id": "sci/project/samurai/smsimulator/nebula_simlulator.en",
-      "title": "Nebula Simlulator",
-      "language": "en",
-      "category": "page",
-      "path": "sci/project/samurai/smsimulator/nebula_simlulator.en.md",
-      "size": 23433,
-      "url": "/en/sci/project/samurai/smsimulator/nebula_simlulator/"
-    },
-    {
-      "id": "sci/project/samurai/smsimulator/FDC2.en",
-      "title": "Fdc2",
-      "language": "en",
-      "category": "page",
-      "path": "sci/project/samurai/smsimulator/FDC2.en.md",
-      "size": 4959,
-      "url": "/en/sci/project/samurai/smsimulator/FDC2/"
+      "path": "sci/project/samurai/smsimulator/FDC2.zh.md",
+      "size": 3729,
+      "url": "/sci/project/samurai/smsimulator/FDC2/"
     },
     {
       "id": "sci/project/samurai/smsimulator/smsimulator.en",
@@ -1657,6 +1342,42 @@
       "url": "/en/sci/project/samurai/smsimulator/smsimulator/"
     },
     {
+      "id": "sci/project/samurai/smsimulator/FDC2.en",
+      "title": "Fdc2",
+      "language": "en",
+      "category": "page",
+      "path": "sci/project/samurai/smsimulator/FDC2.en.md",
+      "size": 4959,
+      "url": "/en/sci/project/samurai/smsimulator/FDC2/"
+    },
+    {
+      "id": "sci/project/samurai/smsimulator/smsimulator_tutor.zh",
+      "title": "Smsimulator Tutor",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/samurai/smsimulator/smsimulator_tutor.zh.md",
+      "size": 960,
+      "url": "/sci/project/samurai/smsimulator/smsimulator_tutor/"
+    },
+    {
+      "id": "sci/project/samurai/smsimulator/PDC.en",
+      "title": "PDC Drift Chamber Simulation Plan",
+      "language": "en",
+      "category": "page",
+      "path": "sci/project/samurai/smsimulator/PDC.en.md",
+      "size": 13302,
+      "url": "/en/sci/project/samurai/smsimulator/PDC/"
+    },
+    {
+      "id": "sci/project/samurai/smsimulator/nebula_simlulator.en",
+      "title": "Nebula Simlulator",
+      "language": "en",
+      "category": "page",
+      "path": "sci/project/samurai/smsimulator/nebula_simlulator.en.md",
+      "size": 23433,
+      "url": "/en/sci/project/samurai/smsimulator/nebula_simlulator/"
+    },
+    {
       "id": "sci/project/samurai/smsimulator/nebula_simlulator.zh",
       "title": "mkdocs.yml",
       "language": "zh",
@@ -1666,13 +1387,13 @@
       "url": "/sci/project/samurai/smsimulator/nebula_simlulator/"
     },
     {
-      "id": "sci/project/samurai/smsimulator/FDC2.zh",
-      "title": "Fdc2",
+      "id": "sci/project/samurai/smsimulator/PDC.zh",
+      "title": "PDC 漂移室模拟方案",
       "language": "zh",
       "category": "page",
-      "path": "sci/project/samurai/smsimulator/FDC2.zh.md",
-      "size": 3729,
-      "url": "/sci/project/samurai/smsimulator/FDC2/"
+      "path": "sci/project/samurai/smsimulator/PDC.zh.md",
+      "size": 8835,
+      "url": "/sci/project/samurai/smsimulator/PDC/"
     },
     {
       "id": "sci/project/samurai/smsimulator/smsimulator.zh",
@@ -1684,13 +1405,310 @@
       "url": "/sci/project/samurai/smsimulator/smsimulator/"
     },
     {
-      "id": "sci/project/samurai/smsimulator/smsimulator_tutor.zh",
-      "title": "Smsimulator Tutor",
+      "id": "sci/minimal_theory/functionnalAna/C1space.zh",
+      "title": "空间",
       "language": "zh",
       "category": "page",
-      "path": "sci/project/samurai/smsimulator/smsimulator_tutor.zh.md",
-      "size": 960,
-      "url": "/sci/project/samurai/smsimulator/smsimulator_tutor/"
+      "path": "sci/minimal_theory/functionnalAna/C1space.zh.md",
+      "size": 2455,
+      "url": "/sci/minimal_theory/functionnalAna/C1space/"
+    },
+    {
+      "id": "sci/minimal_theory/functionnalAna/C4spectral.zh",
+      "title": "谱理论",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/functionnalAna/C4spectral.zh.md",
+      "size": 7533,
+      "url": "/sci/minimal_theory/functionnalAna/C4spectral/"
+    },
+    {
+      "id": "sci/minimal_theory/functionnalAna/C5unboudPhysics.zh",
+      "title": "无界算子和量子力学中的应用",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/functionnalAna/C5unboudPhysics.zh.md",
+      "size": 113,
+      "url": "/sci/minimal_theory/functionnalAna/C5unboudPhysics/"
+    },
+    {
+      "id": "sci/minimal_theory/functionnalAna/RHS.zh",
+      "title": "装备希尔伯特空间",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/functionnalAna/RHS.zh.md",
+      "size": 92,
+      "url": "/sci/minimal_theory/functionnalAna/RHS/"
+    },
+    {
+      "id": "sci/minimal_theory/functionnalAna/C2operatorFunctional.zh",
+      "title": "算子和泛函 -空间上的作用",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/functionnalAna/C2operatorFunctional.zh.md",
+      "size": 1176,
+      "url": "/sci/minimal_theory/functionnalAna/C2operatorFunctional/"
+    },
+    {
+      "id": "sci/minimal_theory/functionnalAna/C0xu.zh",
+      "title": "泛函序言",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/functionnalAna/C0xu.zh.md",
+      "size": 85,
+      "url": "/sci/minimal_theory/functionnalAna/C0xu/"
+    },
+    {
+      "id": "sci/minimal_theory/functionnalAna/C3fourFundamentalTheo.zh",
+      "title": "泛函四大基石定理",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/functionnalAna/C3fourFundamentalTheo.zh.md",
+      "size": 2251,
+      "url": "/sci/minimal_theory/functionnalAna/C3fourFundamentalTheo/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/04_T_and_U_operators.zh",
+      "title": "ch04 从波算符到 T 算符，再到三体 AGS 的 U 算符",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/04_T_and_U_operators.zh.md",
+      "size": 10923,
+      "url": "/sci/minimal_theory/scatteringTheory/04_T_and_U_operators/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym",
+      "title": "appendix · Woods-Saxon 光学势的 EST Separable 化及其与对称能的联系",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym.md",
+      "size": 8411,
+      "url": "/sci/minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/07_coulomb_scattering.zh",
+      "title": "ch07 Coulomb 散射的完整形式",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/07_coulomb_scattering.zh.md",
+      "size": 16134,
+      "url": "/sci/minimal_theory/scatteringTheory/07_coulomb_scattering/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/05_partial_wave_projection.zh",
+      "title": "ch05 分波投影与角动量耦合：从抽象算符到数值可解方程",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/05_partial_wave_projection.zh.md",
+      "size": 18949,
+      "url": "/sci/minimal_theory/scatteringTheory/05_partial_wave_projection/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/09_time_reversal_detailed_balance.zh",
+      "title": "ch09 时间反演与细致平衡",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/09_time_reversal_detailed_balance.zh.md",
+      "size": 21740,
+      "url": "/sci/minimal_theory/scatteringTheory/09_time_reversal_detailed_balance/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/11_effective_range_levinson.zh",
+      "title": "ch11 有效力程理论与 Levinson 系统化",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/11_effective_range_levinson.zh.md",
+      "size": 23124,
+      "url": "/sci/minimal_theory/scatteringTheory/11_effective_range_levinson/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/03_S_matrix_and_cross_section.zh",
+      "title": "ch03 S 矩阵与散射截面",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/03_S_matrix_and_cross_section.zh.md",
+      "size": 16560,
+      "url": "/sci/minimal_theory/scatteringTheory/03_S_matrix_and_cross_section/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/08_dwba.zh",
+      "title": "ch08 畸变波 Born 近似",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/08_dwba.zh.md",
+      "size": 21776,
+      "url": "/sci/minimal_theory/scatteringTheory/08_dwba/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/10_jost_analyticity.zh",
+      "title": "ch10 Jost 函数与解析性",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/10_jost_analyticity.zh.md",
+      "size": 25084,
+      "url": "/sci/minimal_theory/scatteringTheory/10_jost_analyticity/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/02_Green_operator.zh",
+      "title": "ch02 格林算符与格林函数",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/02_Green_operator.zh.md",
+      "size": 8044,
+      "url": "/sci/minimal_theory/scatteringTheory/02_Green_operator/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/06_polarization_formalism.zh",
+      "title": "ch06 极化形式与自旋观测量",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/06_polarization_formalism.zh.md",
+      "size": 23864,
+      "url": "/sci/minimal_theory/scatteringTheory/06_polarization_formalism/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/01_friedrichsModel.zh",
+      "title": "ch01 Friedrichs 模型",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/01_friedrichsModel.zh.md",
+      "size": 8553,
+      "url": "/sci/minimal_theory/scatteringTheory/01_friedrichsModel/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/03_delta_shell.zh",
+      "title": "三维 delta 壳层势的散射与共振",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/03_delta_shell.zh.md",
+      "size": 7914,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/03_delta_shell/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/09_feshbach_two_channel.zh",
+      "title": "双通道 Feshbach 共振",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/09_feshbach_two_channel.zh.md",
+      "size": 8310,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/09_feshbach_two_channel/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/08_centrifugal_barrier.zh",
+      "title": "离心位垒与高分波 shape 共振",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/08_centrifugal_barrier.zh.md",
+      "size": 9033,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/08_centrifugal_barrier/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/07_well_barrier_1d.zh",
+      "title": "一维势阱加势垒：α 衰变图像",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/07_well_barrier_1d.zh.md",
+      "size": 6422,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/07_well_barrier_1d/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/10_polarization_demo.zh",
+      "title": "极化散射的数值演示",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/10_polarization_demo.zh.md",
+      "size": 8905,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/10_polarization_demo/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/13_jost_demo.zh",
+      "title": "Jost 函数的数值演示",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/13_jost_demo.zh.md",
+      "size": 9143,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/13_jost_demo/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/06_numerical_pipeline.zh",
+      "title": "数值实验：分波相移与截面的统一流程",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/06_numerical_pipeline.zh.md",
+      "size": 6871,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/06_numerical_pipeline/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/02_square_well_3d.zh",
+      "title": "三维方阱 s 波散射",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/02_square_well_3d.zh.md",
+      "size": 6481,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/02_square_well_3d/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/12_dwba_demo.zh",
+      "title": "DWBA 数值演示",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/12_dwba_demo.zh.md",
+      "size": 10195,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/12_dwba_demo/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/01_1d_delta.zh",
+      "title": "一维 delta 势",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/01_1d_delta.zh.md",
+      "size": 7661,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/01_1d_delta/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/11_coulomb_demo.zh",
+      "title": "Coulomb 散射的数值演示",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/11_coulomb_demo.zh.md",
+      "size": 10360,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/11_coulomb_demo/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/04_yukawa.zh",
+      "title": "Yukawa 势与 Born 近似",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/04_yukawa.zh.md",
+      "size": 6334,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/04_yukawa/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/05_separable_rank1.zh",
+      "title": "秩 1 separable 势与解析 T 矩阵",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/05_separable_rank1.zh.md",
+      "size": 8681,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/05_separable_rank1/"
+    },
+    {
+      "id": "sci/minimal_theory/scatteringTheory/examples/14_ere_levinson_demo.zh",
+      "title": "有效力程展开与 Levinson 定理的数值演示",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_theory/scatteringTheory/examples/14_ere_levinson_demo.zh.md",
+      "size": 10096,
+      "url": "/sci/minimal_theory/scatteringTheory/examples/14_ere_levinson_demo/"
+    },
+    {
+      "id": "MickeyMiaoMiao/useful_tips/有趣的插件",
+      "title": "有趣的插件",
+      "language": "zh",
+      "category": "page",
+      "path": "MickeyMiaoMiao/useful_tips/有趣的插件.md",
+      "size": 17,
+      "url": "/MickeyMiaoMiao/useful_tips/有趣的插件/"
     },
     {
       "id": "MickeyMiaoMiao/useful_tips/overleaf_vscode插件",
@@ -1720,15 +1738,6 @@
       "url": "/MickeyMiaoMiao/useful_tips/如何安装多个版本的vscode/"
     },
     {
-      "id": "MickeyMiaoMiao/useful_tips/有趣的插件",
-      "title": "有趣的插件",
-      "language": "zh",
-      "category": "page",
-      "path": "MickeyMiaoMiao/useful_tips/有趣的插件.md",
-      "size": 17,
-      "url": "/MickeyMiaoMiao/useful_tips/有趣的插件/"
-    },
-    {
       "id": "life/健康/鼻炎.zh",
       "title": "鼻炎管理",
       "language": "zh",
@@ -1745,6 +1754,15 @@
       "path": "life/健康/workout_diet.zh.md",
       "size": 9861,
       "url": "/life/健康/workout_diet/"
+    },
+    {
+      "id": "life/workout/骨盆.zh",
+      "title": "骨盆 Pelvis",
+      "language": "zh",
+      "category": "page",
+      "path": "life/workout/骨盆.zh.md",
+      "size": 2057,
+      "url": "/life/workout/骨盆/"
     },
     {
       "id": "life/workout/二哈背部.zh",
@@ -1772,29 +1790,20 @@
       "path": "life/workout/肩胛.zh.md",
       "size": 1153,
       "url": "/life/workout/肩胛/"
-    },
-    {
-      "id": "life/workout/骨盆.zh",
-      "title": "骨盆 Pelvis",
-      "language": "zh",
-      "category": "page",
-      "path": "life/workout/骨盆.zh.md",
-      "size": 2057,
-      "url": "/life/workout/骨盆/"
     }
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 198,
+    "total_nodes": 199,
     "total_links": 0,
     "languages": {
-      "zh": 169,
+      "zh": 170,
       "en": 29
     },
     "categories": {
       "category": 25,
       "main": 2,
-      "page": 171
+      "page": 172
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1802,6 +1811,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-05-14 10:51:01.269172"
+    "generated_at": "2026-06-07 09:15:54.838385"
   }
 }

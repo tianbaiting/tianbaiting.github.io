@@ -1012,6 +1012,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_1" tabindex="0" aria-expanded="true">
@@ -1186,6 +1188,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../tailscale_dns_refused/" class="md-nav__link">
+        Tailscale MagicDNS 冷查询 REFUSED：从 direct 模式切回 systemd-resolved
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../termux/" class="md-nav__link">
         termux 运行ubuntu
       </a>
@@ -1232,6 +1248,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ctrlb--触发帮助显示所有快捷键" class="md-nav__link">
+    ctrl+b ? 触发帮助显示所有快捷键。
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#会话session管理" class="md-nav__link">
@@ -1381,12 +1404,66 @@
     同步输入
   </a>
   
+    <nav class="md-nav" aria-label="同步输入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#三层定位" class="md-nav__link">
+    三层定位
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#简写规则" class="md-nav__link">
+    简写规则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#实用示例" class="md-nav__link">
+    实用示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#发送命令到-pane" class="md-nav__link">
-    发送命令到 pane
+  <a href="#发送命令到-pane--捕获-pane-内容" class="md-nav__link">
+    发送命令到 pane / 捕获 pane 内容
   </a>
+  
+    <nav class="md-nav" aria-label="发送命令到 pane / 捕获 pane 内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-keys" class="md-nav__link">
+    send-keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capture-pane" class="md-nav__link">
+    capture-pane
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#典型用法" class="md-nav__link">
+    典型用法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4097,6 +4174,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ctrlb--触发帮助显示所有快捷键" class="md-nav__link">
+    ctrl+b ? 触发帮助显示所有快捷键。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#会话session管理" class="md-nav__link">
     会话（session）管理
   </a>
@@ -4244,12 +4328,66 @@
     同步输入
   </a>
   
+    <nav class="md-nav" aria-label="同步输入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#三层定位" class="md-nav__link">
+    三层定位
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#简写规则" class="md-nav__link">
+    简写规则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#实用示例" class="md-nav__link">
+    实用示例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#发送命令到-pane" class="md-nav__link">
-    发送命令到 pane
+  <a href="#发送命令到-pane--捕获-pane-内容" class="md-nav__link">
+    发送命令到 pane / 捕获 pane 内容
   </a>
+  
+    <nav class="md-nav" aria-label="发送命令到 pane / 捕获 pane 内容">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#send-keys" class="md-nav__link">
+    send-keys
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capture-pane" class="md-nav__link">
+    capture-pane
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#典型用法" class="md-nav__link">
+    典型用法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4310,7 +4448,7 @@
 <p>默认前缀键：Ctrl + b<br />
 以下快捷键均在按下前缀键后触发（除特别说明）</p>
 </blockquote>
-<hr />
+<h2 id="ctrlb--触发帮助显示所有快捷键">ctrl+b ? 触发帮助显示所有快捷键。<a class="headerlink" href="#ctrlb--触发帮助显示所有快捷键" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code>session（会话）
   └── window（窗口）
         └── pane（面板）
@@ -4410,9 +4548,156 @@ tmux<span class="w"> </span>load-buffer<span class="w"> </span>file
 Ctrl+b : setw synchronize-panes off
 </code></pre></div>
 <p>（多个 pane 同时输入）</p>
+<p><div class="highlight"><pre><span></span><code>---
+
+## `-t` 目标指定规则
+
+tmux 命令行中的 `-t` 参数用来定位 session / window / pane，格式为：
+</code></pre></div><br />
+session_name:window_index.pane_index<br />
+<div class="highlight"><pre><span></span><code>### 怎么查看当前有哪些目标
+
+```bash
+tmux list-sessions                        # 列出所有 session
+tmux list-windows -t session_name         # 列出某 session 的所有 window
+tmux list-panes -t session_name:0         # 列出某 window 的所有 pane
+tmux list-panes -t session_name:0.1       # 也可只看某个 pane
+</code></pre></div></p>
+<h3 id="三层定位">三层定位<a class="headerlink" href="#三层定位" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>-t session_name           # 只指定 session
+-t session_name:0         # 指定 session + window（按编号）
+-t session_name:0.1       # 指定 session + window + pane（按编号）
+</code></pre></div>
+<h3 id="简写规则">简写规则<a class="headerlink" href="#简写规则" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>简写</th>
+<th>含义</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>abc</code></td>
+<td>session <code>abc</code></td>
+<td>等同于 <code>-t abc</code></td>
+</tr>
+<tr>
+<td><code>abc:2</code></td>
+<td>session <code>abc</code> 的 window 2</td>
+<td>可用窗口名替代编号</td>
+</tr>
+<tr>
+<td><code>abc:2.0</code></td>
+<td>session <code>abc</code> 的 window 2 pane 0</td>
+<td>完整定位</td>
+</tr>
+<tr>
+<td><code>:2</code></td>
+<td>当前 session 的 window 2</td>
+<td>省略 session 名 = 当前 session</td>
+</tr>
+<tr>
+<td><code>:2.1</code></td>
+<td>当前 session 的 window 2 pane 1</td>
+<td></td>
+</tr>
+<tr>
+<td><code>.3</code></td>
+<td>当前 window 的 pane 3</td>
+<td>省略 session:window = 当前</td>
+</tr>
+<tr>
+<td><code>={regex}</code></td>
+<td>匹配窗口标题的正则</td>
+<td>如 <code>-t =log</code> 匹配标题含 log 的窗口</td>
+</tr>
+<tr>
+<td><code>%1</code></td>
+<td>匹配 pane id</td>
+<td><code>tmux list-panes</code> 可看到 <code>%0</code> <code>%1</code> 等</td>
+</tr>
+</tbody>
+</table>
+<h3 id="实用示例">实用示例<a class="headerlink" href="#实用示例" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 在指定 pane 执行命令</span>
+tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>dev:1.0<span class="w"> </span><span class="s1">&#39;make test&#39;</span><span class="w"> </span>Enter
+
+<span class="c1"># 向另一个 session 的 window 发送命令</span>
+tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>build:0<span class="w"> </span><span class="s1">&#39;cargo build&#39;</span><span class="w"> </span>Enter
+
+<span class="c1"># 捕获指定 pane 的内容</span>
+tmux<span class="w"> </span>capture-pane<span class="w"> </span>-t<span class="w"> </span>dev:1.0<span class="w"> </span>-p
+
+<span class="c1"># 关闭指定 session 的某个 window</span>
+tmux<span class="w"> </span>kill-window<span class="w"> </span>-t<span class="w"> </span>dev:3
+
+<span class="c1"># 选择指定 session 的某个 pane</span>
+tmux<span class="w"> </span><span class="k">select</span>-pane<span class="w"> </span>-t<span class="w"> </span>dev:0.1
+</code></pre></div>
+<blockquote>
+<p><strong>提示</strong>：pane 编号可通过 <code>tmux list-panes</code> 查看，或在 tmux 内用 <code>Ctrl+b q</code> 短暂显示各 pane 编号。</p>
+</blockquote>
 <hr />
-<h2 id="发送命令到-pane">发送命令到 pane<a class="headerlink" href="#发送命令到-pane" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>pane<span class="w"> </span><span class="s1">&#39;cmd&#39;</span><span class="w"> </span>Enter
+<h2 id="发送命令到-pane--捕获-pane-内容">发送命令到 pane / 捕获 pane 内容<a class="headerlink" href="#发送命令到-pane--捕获-pane-内容" title="Permanent link">#</a></h2>
+<h3 id="send-keys">send-keys<a class="headerlink" href="#send-keys" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span><span class="s1">&#39;ls -la&#39;</span><span class="w"> </span>Enter<span class="w">          </span><span class="c1"># 向 pane 发送命令</span>
+tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>dev:2.0<span class="w"> </span><span class="s1">&#39;make&#39;</span><span class="w"> </span>Enter<span class="w">         </span><span class="c1"># 指定 session:window.pane</span>
+tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>C-c<span class="w">                      </span><span class="c1"># 发送 Ctrl-c（中断）</span>
+tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>C-l<span class="w">                      </span><span class="c1"># 发送 Ctrl-l（清屏）</span>
+</code></pre></div>
+<h3 id="capture-pane">capture-pane<a class="headerlink" href="#capture-pane" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>tmux<span class="w"> </span>capture-pane<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>.1<span class="w">                       </span><span class="c1"># 捕获 pane 内容到缓冲区</span>
+tmux<span class="w"> </span>capture-pane<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>-p<span class="w">                    </span><span class="c1"># -p 直接打印到 stdout（不存缓冲区）</span>
+tmux<span class="w"> </span>capture-pane<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>-p<span class="w"> </span>-S<span class="w"> </span>-50<span class="w">             </span><span class="c1"># -S -50 捕获最近50行历史</span>
+tmux<span class="w"> </span>capture-pane<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>-p<span class="w"> </span>-S<span class="w"> </span>-<span class="w">               </span><span class="c1"># -S - 捕获全部历史</span>
+tmux<span class="w"> </span>capture-pane<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>-p<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-20<span class="w">         </span><span class="c1"># 配合管道取最后20行</span>
+tmux<span class="w"> </span>capture-pane<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>-p<span class="w"> </span>-E<span class="w"> </span><span class="m">30</span><span class="w">              </span><span class="c1"># -E 30 截止到第30行</span>
+</code></pre></div>
+<p>参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-p</code></td>
+<td>打印到 stdout 而非存入缓冲区</td>
+</tr>
+<tr>
+<td><code>-S -N</code></td>
+<td>起始行：从历史第 N 行开始（<code>-</code> 表示最开头）</td>
+</tr>
+<tr>
+<td><code>-E N</code></td>
+<td>结束行：到第 N 行截止（默认到底部）</td>
+</tr>
+<tr>
+<td><code>-J</code></td>
+<td>合并被 wrap 的行</td>
+</tr>
+<tr>
+<td><code>-e</code></td>
+<td>保留转义序列（颜色等）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="典型用法">典型用法<a class="headerlink" href="#典型用法" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 抓取另一个 pane 的输出并判断是否编译成功</span>
+<span class="k">if</span><span class="w"> </span>tmux<span class="w"> </span>capture-pane<span class="w"> </span>-t<span class="w"> </span>build:0.0<span class="w"> </span>-p<span class="w"> </span>-S<span class="w"> </span>-5<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;编译失败&quot;</span>
+<span class="k">fi</span>
+
+<span class="c1"># 保存 pane 全部历史到文件</span>
+tmux<span class="w"> </span>capture-pane<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>-p<span class="w"> </span>-S<span class="w"> </span>-<span class="w"> </span>&gt;<span class="w"> </span>output.log
+
+<span class="c1"># 捕获后存入指定缓冲区</span>
+tmux<span class="w"> </span>capture-pane<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>-b<span class="w"> </span>mybuf
+tmux<span class="w"> </span>save-buffer<span class="w"> </span>-b<span class="w"> </span>mybuf<span class="w"> </span>output.txt
 </code></pre></div>
 <hr />
 <h2 id="服务器管理">服务器管理<a class="headerlink" href="#服务器管理" title="Permanent link">#</a></h2>
@@ -4450,7 +4735,7 @@ Ctrl+b :        # 命令模式
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年5月7日 09:12:45 UTC"><span class="timeago" datetime="2026-05-07T09:12:45+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年5月7日 09:12:45 UTC">2026-05-07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年6月7日 09:14:22 UTC"><span class="timeago" datetime="2026-06-07T09:14:22+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年6月7日 09:14:22 UTC">2026-06-07</span>
       
         <br>
         Created:
