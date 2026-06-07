@@ -3,6 +3,7 @@
 > 默认前缀键：Ctrl + b  
 > 以下快捷键均在按下前缀键后触发（除特别说明）
 
+ctrl+b ? 触发帮助显示所有快捷键。
 ---
 
 ```
@@ -165,12 +166,117 @@ Ctrl+b : setw synchronize-panes off
 
 （多个 pane 同时输入）
 
+```
+
 ---
 
-## 发送命令到 pane
+## `-t` 目标指定规则
+
+tmux 命令行中的 `-t` 参数用来定位 session / window / pane，格式为：
+
+```
+session_name:window_index.pane_index
+```
+
+### 怎么查看当前有哪些目标
 
 ```bash
-tmux send-keys -t pane 'cmd' Enter
+tmux list-sessions                        # 列出所有 session
+tmux list-windows -t session_name         # 列出某 session 的所有 window
+tmux list-panes -t session_name:0         # 列出某 window 的所有 pane
+tmux list-panes -t session_name:0.1       # 也可只看某个 pane
+```
+
+### 三层定位
+
+```
+-t session_name           # 只指定 session
+-t session_name:0         # 指定 session + window（按编号）
+-t session_name:0.1       # 指定 session + window + pane（按编号）
+```
+
+### 简写规则
+
+| 简写 | 含义 | 说明 |
+|------|------|------|
+| `abc` | session `abc` | 等同于 `-t abc` |
+| `abc:2` | session `abc` 的 window 2 | 可用窗口名替代编号 |
+| `abc:2.0` | session `abc` 的 window 2 pane 0 | 完整定位 |
+| `:2` | 当前 session 的 window 2 | 省略 session 名 = 当前 session |
+| `:2.1` | 当前 session 的 window 2 pane 1 | |
+| `.3` | 当前 window 的 pane 3 | 省略 session:window = 当前 |
+| `={regex}` | 匹配窗口标题的正则 | 如 `-t =log` 匹配标题含 log 的窗口 |
+| `%1` | 匹配 pane id | `tmux list-panes` 可看到 `%0` `%1` 等 |
+
+### 实用示例
+
+```bash
+# 在指定 pane 执行命令
+tmux send-keys -t dev:1.0 'make test' Enter
+
+# 向另一个 session 的 window 发送命令
+tmux send-keys -t build:0 'cargo build' Enter
+
+# 捕获指定 pane 的内容
+tmux capture-pane -t dev:1.0 -p
+
+# 关闭指定 session 的某个 window
+tmux kill-window -t dev:3
+
+# 选择指定 session 的某个 pane
+tmux select-pane -t dev:0.1
+```
+
+> **提示**：pane 编号可通过 `tmux list-panes` 查看，或在 tmux 内用 `Ctrl+b q` 短暂显示各 pane 编号。
+
+---
+
+## 发送命令到 pane / 捕获 pane 内容
+
+### send-keys
+
+```bash
+tmux send-keys -t 0.1 'ls -la' Enter          # 向 pane 发送命令
+tmux send-keys -t dev:2.0 'make' Enter         # 指定 session:window.pane
+tmux send-keys -t 0.0 C-c                      # 发送 Ctrl-c（中断）
+tmux send-keys -t 0.0 C-l                      # 发送 Ctrl-l（清屏）
+```
+
+### capture-pane
+
+```bash
+tmux capture-pane -t 0.1                       # 捕获 pane 内容到缓冲区
+tmux capture-pane -t 0.1 -p                    # -p 直接打印到 stdout（不存缓冲区）
+tmux capture-pane -t 0.1 -p -S -50             # -S -50 捕获最近50行历史
+tmux capture-pane -t 0.1 -p -S -               # -S - 捕获全部历史
+tmux capture-pane -t 0.1 -p | tail -20         # 配合管道取最后20行
+tmux capture-pane -t 0.1 -p -E 30              # -E 30 截止到第30行
+```
+
+参数说明：
+
+| 参数 | 含义 |
+|------|------|
+| `-p` | 打印到 stdout 而非存入缓冲区 |
+| `-S -N` | 起始行：从历史第 N 行开始（`-` 表示最开头） |
+| `-E N` | 结束行：到第 N 行截止（默认到底部） |
+| `-J` | 合并被 wrap 的行 |
+| `-e` | 保留转义序列（颜色等） |
+
+### 典型用法
+
+```bash
+# 抓取另一个 pane 的输出并判断是否编译成功
+if tmux capture-pane -t build:0.0 -p -S -5 | grep -q "error"; then
+    echo "编译失败"
+fi
+
+# 保存 pane 全部历史到文件
+tmux capture-pane -t 0.0 -p -S - > output.log
+
+# 捕获后存入指定缓冲区
+tmux capture-pane -t 0.0 -b mybuf
+tmux save-buffer -b mybuf output.txt
 ```
 
 ---
