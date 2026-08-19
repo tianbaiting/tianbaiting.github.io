@@ -3357,6 +3357,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3407,6 +3409,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4091,15 +4107,15 @@ cmake<span class="w"> </span>-DCMAKE_EXPORT_COMPILE_COMMANDS<span class="o">=</s
 <!-- end list -->
 
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="nt">"configurations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CMake&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;defines&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">      </span><span class="nt">&quot;compileCommands&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${workspaceFolder}/build/compile_commands.json&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;configurationProvider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ms-vscode.cmake-tools&quot;</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CMake"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"defines"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">      </span><span class="nt">"compileCommands"</span><span class="p">:</span><span class="w"> </span><span class="s2">"${workspaceFolder}/build/compile_commands.json"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"configurationProvider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ms-vscode.cmake-tools"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>配置说明:</p>
@@ -4124,23 +4140,23 @@ cmake<span class="w"> </span>-DCMAKE_EXPORT_COMPILE_COMMANDS<span class="o">=</s
 </ol>
 <p>一个简单的示例如下：</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="nt">"configurations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Linux&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;includePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">&quot;${workspaceFolder}/**&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;/usr/include/&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;/usr/local/include/&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s2">&quot;path/to/your/custom/library/include&quot;</span><span class="w"> </span><span class="c1">// 在这里添加你自己的库路径</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Linux"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"includePath"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"${workspaceFolder}/**"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"/usr/include/"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"/usr/local/include/"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"path/to/your/custom/library/include"</span><span class="w"> </span><span class="c1">// 在这里添加你自己的库路径</span>
 <span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;defines&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">      </span><span class="nt">&quot;compilerPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/usr/bin/gcc&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;cStandard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c17&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;cppStandard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;c++17&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;intelliSenseMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;linux-gcc-x64&quot;</span>
+<span class="w">      </span><span class="nt">"defines"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">      </span><span class="nt">"compilerPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/usr/bin/gcc"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"cStandard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c17"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"cppStandard"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c++17"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"intelliSenseMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"linux-gcc-x64"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>配置说明:</p>
@@ -4161,7 +4177,7 @@ cmake<span class="w"> </span>-DCMAKE_EXPORT_COMPILE_COMMANDS<span class="o">=</s
 </li>
 <li>
 <p>（可选） 为了避免与 VS Code 默认的 C/C++ 插件（<code>ms-vscode.cpptools</code>）的 IntelliSense 引擎冲突，你可以在 VS Code 的设置 (<code>settings.json</code>) 中禁用默认引擎：</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&quot;C_Cpp.intelliSenseEngine&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;disabled&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">"C_Cpp.intelliSenseEngine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"disabled"</span>
 </code></pre></div>
 </li>
 </ol>

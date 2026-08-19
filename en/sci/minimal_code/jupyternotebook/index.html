@@ -3366,6 +3366,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3416,6 +3418,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4130,12 +4146,12 @@
      <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ipykernel
 </code></pre></div></li>
 <li>For R, use <code>IRkernel</code>:<br />
-     <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;IRkernel&quot;</span><span class="p">)</span>
+     <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">"IRkernel"</span><span class="p">)</span>
 <span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">()</span>
 </code></pre></div></li>
 <li>For Julia, use <code>IJulia</code>:<br />
      <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">Pkg</span>
-<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;IJulia&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">"IJulia"</span><span class="p">)</span>
 </code></pre></div></li>
 <li>
 <p>For C#, use <code>dotnet-interactive</code>:<br />
@@ -4172,7 +4188,7 @@ clingkernel<span class="w"> </span>install<span class="w"> </span>--sys-prefix
 <p>Using the <code>subprocess</code> Module<br />
    Use the <code>subprocess</code> module in Python to run Bash scripts. For example:<br />
    <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
-<span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">&#39;sh&#39;</span><span class="p">,</span> <span class="s1">&#39;script.sh&#39;</span><span class="p">])</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">'sh'</span><span class="p">,</span> <span class="s1">'script.sh'</span><span class="p">])</span>
 </code></pre></div></p>
 </li>
 <li>
@@ -4208,8 +4224,8 @@ This will start a ROOT-flavored notebook server on your computer.</p>
 <p>ROOT offers a C++ kernel that transforms the notebook into a ROOT prompt. Features include embedded graphics, syntax highlighting, and tab completion.</p>
 <p>Example of plotting a histogram in a C++ ROOTbook:<br />
 <div class="highlight"><pre><span></span><code><span class="n">TCanvas</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
-<span class="n">TH1F</span><span class="w"> </span><span class="n">h</span><span class="p">(</span><span class="s">&quot;h&quot;</span><span class="p">,</span><span class="s">&quot;ROOT Histo;X;Y&quot;</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">-4</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
-<span class="n">h</span><span class="p">.</span><span class="n">FillRandom</span><span class="p">(</span><span class="s">&quot;gaus&quot;</span><span class="p">);</span>
+<span class="n">TH1F</span><span class="w"> </span><span class="n">h</span><span class="p">(</span><span class="s">"h"</span><span class="p">,</span><span class="s">"ROOT Histo;X;Y"</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">-4</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">h</span><span class="p">.</span><span class="n">FillRandom</span><span class="p">(</span><span class="s">"gaus"</span><span class="p">);</span>
 <span class="n">h</span><span class="p">.</span><span class="n">Draw</span><span class="p">();</span>
 <span class="n">c</span><span class="p">.</span><span class="n">Draw</span><span class="p">();</span>
 </code></pre></div></p>
@@ -4218,18 +4234,18 @@ This will start a ROOT-flavored notebook server on your computer.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">ROOT</span>
 </code></pre></div><br />
 Example:<br />
-<div class="highlight"><pre><span></span><code><span class="n">c</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TCanvas</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
-<span class="n">h</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TH1F</span><span class="p">(</span><span class="s2">&quot;h&quot;</span><span class="p">,</span><span class="s2">&quot;ROOT Histo;X;Y&quot;</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">c</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TCanvas</span><span class="p">(</span><span class="s2">"c"</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TH1F</span><span class="p">(</span><span class="s2">"h"</span><span class="p">,</span><span class="s2">"ROOT Histo;X;Y"</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div><br />
 You can also mix Python and C++ in the same notebook using the %%cpp magic:<br />
 <div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">cpp</span>
-<span class="n">h</span><span class="o">-&gt;</span><span class="n">FillRandom</span><span class="p">(</span><span class="s">&quot;gaus&quot;</span><span class="p">);</span>
+<span class="n">h</span><span class="o">-&gt;</span><span class="n">FillRandom</span><span class="p">(</span><span class="s">"gaus"</span><span class="p">);</span>
 <span class="n">h</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">();</span>
 <span class="n">c</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">();</span>
 </code></pre></div></p>
 <h2 id="ipyplot">ipyplot<a class="headerlink" href="#ipyplot" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">video_paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;my_video.mp4&quot;</span><span class="p">]</span>
-<span class="n">video_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;My Video&quot;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="n">video_paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"my_video.mp4"</span><span class="p">]</span>
+<span class="n">video_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"My Video"</span><span class="p">]</span>
 <span class="n">ipyplot</span><span class="o">.</span><span class="n">plot_videos</span><span class="p">(</span><span class="n">video_paths</span><span class="p">,</span> <span class="n">video_labels</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">320</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -4242,17 +4258,17 @@ You can also mix Python and C++ in the same notebook using the %%cpp magic:<br /
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;X-axis&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Y-axis&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Matplotlib Plot&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"X-axis"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Y-axis"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Matplotlib Plot"</span><span class="p">)</span>
 
 <span class="c1"># 2. Save the matplotlib plot to a temporary file</span>
-<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.png&quot;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">tmp_file</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">".png"</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">tmp_file</span><span class="p">:</span>
     <span class="n">temp_filename</span> <span class="o">=</span> <span class="n">tmp_file</span><span class="o">.</span><span class="n">name</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">temp_filename</span><span class="p">)</span>
 
 <span class="c1"># 3. Display the temporary image file using ipyplot</span>
-<span class="n">ipyplot</span><span class="o">.</span><span class="n">plot_images</span><span class="p">([</span><span class="n">temp_filename</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Matplotlib Plot&quot;</span><span class="p">],</span> <span class="n">img_width</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">ipyplot</span><span class="o">.</span><span class="n">plot_images</span><span class="p">([</span><span class="n">temp_filename</span><span class="p">],</span> <span class="p">[</span><span class="s2">"Matplotlib Plot"</span><span class="p">],</span> <span class="n">img_width</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
 
 <span class="c1"># 4. Clean up the temporary file</span>
 <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">temp_filename</span><span class="p">)</span>

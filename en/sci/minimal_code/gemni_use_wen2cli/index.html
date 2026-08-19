@@ -3369,6 +3369,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3419,6 +3421,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4208,13 +4224,13 @@
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">google.generativeai</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">genai</span>
 
 <span class="c1"># 必须使用与付费GCP项目关联的API Key</span>
-<span class="n">genai</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;YOUR_PAID_API_KEY&quot;</span><span class="p">)</span>
+<span class="n">genai</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">"YOUR_PAID_API_KEY"</span><span class="p">)</span>
 
 <span class="c1"># 明确指定要使用的Pro模型</span>
 <span class="c1"># 如果API Key是免费版，执行这行代码会失败</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">GenerativeModel</span><span class="p">(</span><span class="s1">&#39;gemini-1.5-pro-latest&#39;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">GenerativeModel</span><span class="p">(</span><span class="s1">'gemini-1.5-pro-latest'</span><span class="p">)</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate_content</span><span class="p">(</span><span class="s2">&quot;讲一个关于程序员的笑话&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate_content</span><span class="p">(</span><span class="s2">"讲一个关于程序员的笑话"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div>
 <hr />

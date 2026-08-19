@@ -3267,6 +3267,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3317,6 +3319,20 @@
     <li class="md-nav__item">
       <a href="../../../faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4440,7 +4456,7 @@
 <span class="n">G4ThreeVector</span><span class="w"> </span><span class="n">pdc1_pos_lab</span><span class="p">{</span><span class="n">fPDC1Pos</span><span class="p">};</span><span class="w"> </span>
 <span class="n">pdc1_pos_lab</span><span class="p">.</span><span class="n">rotateY</span><span class="p">(</span><span class="n">pdc_angle</span><span class="p">);</span><span class="w">  </span><span class="c1">// coordinate transform</span>
 <span class="n">G4Transform3D</span><span class="w"> </span><span class="n">pdc1_trans</span><span class="p">{</span><span class="n">pdc1_rm</span><span class="p">,</span><span class="w"> </span><span class="n">pdc1_pos_lab</span><span class="p">};</span>
-<span class="k">new</span><span class="w"> </span><span class="n">G4PVPlacement</span><span class="p">{</span><span class="n">pdc1_trans</span><span class="p">,</span><span class="w"> </span><span class="n">pdc_log</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PDC1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">expHall_log</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span>
+<span class="k">new</span><span class="w"> </span><span class="n">G4PVPlacement</span><span class="p">{</span><span class="n">pdc1_trans</span><span class="p">,</span><span class="w"> </span><span class="n">pdc_log</span><span class="p">,</span><span class="w"> </span><span class="s">"PDC1"</span><span class="p">,</span><span class="w"> </span><span class="n">expHall_log</span><span class="p">,</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span>
 
 <span class="c1">// Lines 236-240: save to simulation parameters</span>
 <span class="n">frag_prm</span><span class="o">-&gt;</span><span class="n">fPDC1Position</span><span class="p">.</span><span class="n">SetXYZ</span><span class="p">(</span>
@@ -4468,7 +4484,7 @@ Core method is ProcessHits():</p>
 <span class="p">{</span>
 <span class="w">    </span><span class="c1">// 1. Get the data manager</span>
 <span class="w">    </span><span class="n">SimDataManager</span><span class="w"> </span><span class="o">*</span><span class="n">sman</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SimDataManager</span><span class="o">::</span><span class="n">GetSimDataManager</span><span class="p">();</span>
-<span class="w">    </span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">SimDataArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindSimDataArray</span><span class="p">(</span><span class="s">&quot;FragSimData&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">SimDataArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindSimDataArray</span><span class="p">(</span><span class="s">"FragSimData"</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// 2. Extract step information</span>
 <span class="w">    </span><span class="n">G4StepPoint</span><span class="o">*</span><span class="w"> </span><span class="n">preStepPoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">aStep</span><span class="o">-&gt;</span><span class="n">GetPreStepPoint</span><span class="p">();</span>
@@ -4480,7 +4496,7 @@ Core method is ProcessHits():</p>
 <span class="w">        </span><span class="c1">// 4. Create a TSimData object and fill fields</span>
 <span class="w">        </span><span class="n">TSimData</span><span class="o">*</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TSimData</span><span class="p">();</span>
 <span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">fTrackID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trackid</span><span class="p">;</span>
-<span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">fDetectorName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">detectorName</span><span class="p">;</span><span class="w">  </span><span class="c1">// &quot;U&quot;, &quot;X&quot;, &quot;V&quot;</span>
+<span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">fDetectorName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">detectorName</span><span class="p">;</span><span class="w">  </span><span class="c1">// "U", "X", "V"</span>
 <span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">fPrePosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prePosition</span><span class="p">;</span>
 <span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">fPostPosition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">postPosition</span><span class="p">;</span>
 <span class="w">        </span><span class="n">data</span><span class="o">-&gt;</span><span class="n">fPreMomentum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">preMomentum</span><span class="p">;</span>

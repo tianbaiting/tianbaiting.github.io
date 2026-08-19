@@ -3410,6 +3410,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3460,6 +3462,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4208,38 +4224,38 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <span class="c1"># #define SPDLOG_HEADER_ONLY</span>
 </code></pre></div>
 <p>基础用法（C++）：</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;spdlog/spdlog.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;spdlog/sinks/basic_file_sink.h&quot;</span><span class="c1">       // 文件输出</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;spdlog/sinks/stdout_color_sinks.h&quot;</span><span class="c1">    // 彩色控制台输出</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"spdlog/spdlog.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"spdlog/sinks/basic_file_sink.h"</span><span class="w">       </span><span class="c1">// 文件输出</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"spdlog/sinks/stdout_color_sinks.h"</span><span class="w">    </span><span class="c1">// 彩色控制台输出</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">test_spdlog</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// 控制台日志（带颜色）</span>
-<span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Welcome to spdlog!&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;Some error message with arg: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 使用 {} 格式化</span>
+<span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">info</span><span class="p">(</span><span class="s">"Welcome to spdlog!"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">error</span><span class="p">(</span><span class="s">"Some error message with arg: {}"</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 使用 {} 格式化</span>
 
-<span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Easy padding in numbers like {:08d}&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">);</span>
+<span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">warn</span><span class="p">(</span><span class="s">"Easy padding in numbers like {:08d}"</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// 运行时修改级别</span>
 <span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">set_level</span><span class="p">(</span><span class="n">spdlog</span><span class="o">::</span><span class="n">level</span><span class="o">::</span><span class="n">debug</span><span class="p">);</span>
-<span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;This message should be displayed..&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">debug</span><span class="p">(</span><span class="s">"This message should be displayed.."</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// 文件日志</span>
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">file_logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spdlog</span><span class="o">::</span><span class="n">basic_logger_mt</span><span class="p">(</span><span class="s">&quot;file_logger&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;logs/analysis.log&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">file_logger</span><span class="o">-&gt;</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Saving event data to disk...&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">file_logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spdlog</span><span class="o">::</span><span class="n">basic_logger_mt</span><span class="p">(</span><span class="s">"file_logger"</span><span class="p">,</span><span class="w"> </span><span class="s">"logs/analysis.log"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">file_logger</span><span class="o">-&gt;</span><span class="n">info</span><span class="p">(</span><span class="s">"Saving event data to disk..."</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>异步模式（物理分析推荐）：</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;spdlog/async.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;spdlog/sinks/basic_file_sink.h&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"spdlog/async.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"spdlog/sinks/basic_file_sink.h"</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">async_example</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// 队列大小 8192，线程池大小 1</span>
 <span class="w">    </span><span class="n">spdlog</span><span class="o">::</span><span class="n">init_thread_pool</span><span class="p">(</span><span class="mi">8192</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
 
-<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">async_logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spdlog</span><span class="o">::</span><span class="n">basic_logger_mt</span><span class="o">&lt;</span><span class="n">spdlog</span><span class="o">::</span><span class="n">async_factory</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;async_file_logger&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;logs/async_log.txt&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">async_logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spdlog</span><span class="o">::</span><span class="n">basic_logger_mt</span><span class="o">&lt;</span><span class="n">spdlog</span><span class="o">::</span><span class="n">async_factory</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"async_file_logger"</span><span class="p">,</span><span class="w"> </span><span class="s">"logs/async_log.txt"</span><span class="p">);</span>
 
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000000</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">async_logger</span><span class="o">-&gt;</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;Processing Event ID: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<span class="w">        </span><span class="n">async_logger</span><span class="o">-&gt;</span><span class="n">info</span><span class="p">(</span><span class="s">"Processing Event ID: {}"</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -4249,7 +4265,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <li>注意：需要 C++17，并且需要编译库文件（不像 spdlog 那么容易 header-only 集成）。</li>
 </ul>
 <p>基础用法（C++）：</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;quill/Quill.h&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"quill/Quill.h"</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// 启动后台线程</span>
@@ -4262,8 +4278,8 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <span class="w">    </span><span class="n">logger</span><span class="o">-&gt;</span><span class="n">set_log_level</span><span class="p">(</span><span class="n">quill</span><span class="o">::</span><span class="n">LogLevel</span><span class="o">::</span><span class="n">Debug</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// 记录</span>
-<span class="w">    </span><span class="n">LOG_INFO</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello from {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Quill&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">LOG_ERROR</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Event processing failed! Error code: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">404</span><span class="p">);</span>
+<span class="w">    </span><span class="n">LOG_INFO</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span><span class="w"> </span><span class="s">"Hello from {}"</span><span class="p">,</span><span class="w"> </span><span class="s">"Quill"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">LOG_ERROR</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span><span class="w"> </span><span class="s">"Event processing failed! Error code: {}"</span><span class="p">,</span><span class="w"> </span><span class="mi">404</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// 主线程几乎不耗时，格式化工作在后台线程完成</span>
 <span class="p">}</span>
@@ -4303,27 +4319,27 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <span class="c1"># 简单配置，直接输出到控制台</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
     <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>  <span class="c1"># DEBUG &lt; INFO &lt; WARNING &lt; ERROR &lt; CRITICAL</span>
-    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(name)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span>
-    <span class="n">datefmt</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span>
+    <span class="nb">format</span><span class="o">=</span><span class="s1">'</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(name)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">'</span><span class="p">,</span>
+    <span class="n">datefmt</span><span class="o">=</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S'</span>
 <span class="p">)</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;这是一条调试信息（不会显示，因为级别是 INFO）&quot;</span><span class="p">)</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;开始处理 run_01.root&quot;</span><span class="p">)</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;探测器 A 电压不稳定&quot;</span><span class="p">)</span>
-<span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;无法打开文件！&quot;</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">"这是一条调试信息（不会显示，因为级别是 INFO）"</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"开始处理 run_01.root"</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">"探测器 A 电压不稳定"</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">"无法打开文件！"</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="进阶用法同时输出到文件和屏幕">进阶用法：同时输出到文件和屏幕<a class="headerlink" href="#进阶用法同时输出到文件和屏幕" title="Permanent link">#</a></h3>
 <p>在物理分析脚本中，通常希望屏幕只显示进度和错误，而详细调试信息保存到文件。</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
 <span class="c1"># 1. 创建 Logger</span>
-<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;MyAnalysis&quot;</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">"MyAnalysis"</span><span class="p">)</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>  <span class="c1"># 总开关设为最低级别</span>
 
 <span class="c1"># 2. 创建 Handler</span>
 
 <span class="c1"># Handler A: 输出到文件（记录所有细节）</span>
-<span class="n">file_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="s2">&quot;analysis_debug.log&quot;</span><span class="p">)</span>
+<span class="n">file_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="s2">"analysis_debug.log"</span><span class="p">)</span>
 <span class="n">file_handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
 
 <span class="c1"># Handler B: 输出到屏幕（只看重要信息）</span>
@@ -4331,7 +4347,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <span class="n">console_handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
 
 <span class="c1"># 3. 设置格式（Formatter）</span>
-<span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">'</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">'</span><span class="p">)</span>
 <span class="n">file_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
 <span class="n">console_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
 
@@ -4340,9 +4356,9 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">console_handler</span><span class="p">)</span>
 
 <span class="c1"># 测试</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;变量 x = 42, y = 100 (只会出现在文件中)&quot;</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;正在处理第 1000 个事例 (同时出现在屏幕和文件)&quot;</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;分割错误！(同时出现在屏幕和文件)&quot;</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">"变量 x = 42, y = 100 (只会出现在文件中)"</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"正在处理第 1000 个事例 (同时出现在屏幕和文件)"</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">"分割错误！(同时出现在屏幕和文件)"</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="附录最佳实践建议">附录：最佳实践建议<a class="headerlink" href="#附录最佳实践建议" title="Permanent link">#</a></h2>
 <ul>
@@ -4352,9 +4368,9 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <li>使用条件编译（C++）：对于高开销的 TRACE 级别日志，可以用宏在 Release 模式下移除，做到零开销。</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="cp">#define SPDLOG_ACTIVE_LEVEL SPDLOG_LEVEL_INFO</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;spdlog/spdlog.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"spdlog/spdlog.h"</span>
 <span class="c1">// SPDLOG_DEBUG 宏在编译时会被优化掉（如果活跃级别为 INFO）</span>
-<span class="n">SPDLOG_DEBUG</span><span class="p">(</span><span class="s">&quot;This code is removed in compilation if active level is INFO&quot;</span><span class="p">);</span>
+<span class="n">SPDLOG_DEBUG</span><span class="p">(</span><span class="s">"This code is removed in compilation if active level is INFO"</span><span class="p">);</span>
 </code></pre></div>
 <ul>
 <li>结构化日志（Structured Logging）：如果日志需要被脚本（如 Elasticsearch/Kibana）分析，尽量保持格式统一，或使用 JSON 格式的日志（spdlog 和 Python logging 都有 JSON 扩展）。</li>
@@ -4382,17 +4398,17 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 </ol>
 <p>libs/utils/include/Logger.h</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#pragma once</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;spdlog/spdlog.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;spdlog/fmt/ostr.h&quot;</span><span class="c1"> // 支持自定义类型的输出</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"spdlog/spdlog.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"spdlog/fmt/ostr.h"</span><span class="w"> </span><span class="c1">// 支持自定义类型的输出</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">MyProject</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">    </span><span class="c1">// 初始化日志系统</span>
-<span class="w">    </span><span class="c1">// level: &quot;trace&quot;, &quot;debug&quot;, &quot;info&quot;, &quot;warn&quot;, &quot;error&quot;, &quot;off&quot;</span>
+<span class="w">    </span><span class="c1">// level: "trace", "debug", "info", "warn", "error", "off"</span>
 <span class="w">    </span><span class="c1">// log_file: 如果为空，则不输出到文件</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">InitLogger</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;info&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">log_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">InitLogger</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"info"</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">log_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">""</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// 获取核心 Logger 实例（可选，通常直接用 spdlog 宏即可）</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">spdlog</span><span class="o">::</span><span class="n">logger</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GetLogger</span><span class="p">();</span>
@@ -4406,9 +4422,9 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <span class="cp">#define LOG_ERROR(...) spdlog::error(__VA_ARGS__)</span>
 </code></pre></div>
 <p>libs/utils/src/Logger.cpp</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Logger.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;spdlog/sinks/stdout_color_sinks.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;spdlog/sinks/basic_file_sink.h&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"Logger.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"spdlog/sinks/stdout_color_sinks.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"spdlog/sinks/basic_file_sink.h"</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">MyProject</span><span class="w"> </span><span class="p">{</span>
@@ -4427,20 +4443,20 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">        </span><span class="c1">// 3. 创建组合 Logger</span>
-<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">spdlog</span><span class="o">::</span><span class="n">logger</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;multi_sink&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">begin</span><span class="p">(</span><span class="n">sinks</span><span class="p">),</span><span class="w"> </span><span class="n">end</span><span class="p">(</span><span class="n">sinks</span><span class="p">));</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">spdlog</span><span class="o">::</span><span class="n">logger</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"multi_sink"</span><span class="p">,</span><span class="w"> </span><span class="n">begin</span><span class="p">(</span><span class="n">sinks</span><span class="p">),</span><span class="w"> </span><span class="n">end</span><span class="p">(</span><span class="n">sinks</span><span class="p">));</span>
 
 <span class="w">        </span><span class="c1">// 设置默认 Logger，这样就可以直接用 spdlog::info 等 API 了</span>
 <span class="w">        </span><span class="n">spdlog</span><span class="o">::</span><span class="n">set_default_logger</span><span class="p">(</span><span class="n">logger</span><span class="p">);</span>
 
 <span class="w">        </span><span class="c1">// 4. 设置级别</span>
 <span class="w">        </span><span class="n">spdlog</span><span class="o">::</span><span class="n">level</span><span class="o">::</span><span class="n">level_enum</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spdlog</span><span class="o">::</span><span class="n">level</span><span class="o">::</span><span class="n">info</span><span class="p">;</span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">level_str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;trace&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spdlog</span><span class="o">::</span><span class="n">level</span><span class="o">::</span><span class="n">trace</span><span class="p">;</span>
-<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">level_str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;debug&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spdlog</span><span class="o">::</span><span class="n">level</span><span class="o">::</span><span class="n">debug</span><span class="p">;</span>
-<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">level_str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;warn&quot;</span><span class="p">)</span><span class="w">  </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spdlog</span><span class="o">::</span><span class="n">level</span><span class="o">::</span><span class="n">warn</span><span class="p">;</span>
-<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">level_str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;error&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spdlog</span><span class="o">::</span><span class="n">level</span><span class="o">::</span><span class="n">err</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">level_str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"trace"</span><span class="p">)</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spdlog</span><span class="o">::</span><span class="n">level</span><span class="o">::</span><span class="n">trace</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">level_str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"debug"</span><span class="p">)</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spdlog</span><span class="o">::</span><span class="n">level</span><span class="o">::</span><span class="n">debug</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">level_str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"warn"</span><span class="p">)</span><span class="w">  </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spdlog</span><span class="o">::</span><span class="n">level</span><span class="o">::</span><span class="n">warn</span><span class="p">;</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">level_str</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"error"</span><span class="p">)</span><span class="w"> </span><span class="n">level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spdlog</span><span class="o">::</span><span class="n">level</span><span class="o">::</span><span class="n">err</span><span class="p">;</span>
 
 <span class="w">        </span><span class="n">spdlog</span><span class="o">::</span><span class="n">set_level</span><span class="p">(</span><span class="n">level</span><span class="p">);</span>
-<span class="w">        </span><span class="n">spdlog</span><span class="o">::</span><span class="n">set_pattern</span><span class="p">(</span><span class="s">&quot;[%Y-%m-%d %H:%M:%S.%e] [%^%l%$] %v&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 格式：时间 [级别] 内容</span>
+<span class="w">        </span><span class="n">spdlog</span><span class="o">::</span><span class="n">set_pattern</span><span class="p">(</span><span class="s">"[%Y-%m-%d %H:%M:%S.%e] [%^%l%$] %v"</span><span class="p">);</span><span class="w"> </span><span class="c1">// 格式：时间 [级别] 内容</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -4449,24 +4465,24 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 在你的算法库中，永远不要设置日志级别，只负责“汇报”。</li>
 </ol>
 <p>libs/reconstruction/src/Clusterizer.cpp</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Logger.h&quot;</span><span class="c1"> // 引用我们封装的头文件</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Clusterizer.h&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"Logger.h"</span><span class="w"> </span><span class="c1">// 引用我们封装的头文件</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"Clusterizer.h"</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">Clusterizer::Run</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Hit</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">hits</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// DEBUG: 只有在调试模式才会打印，生产模式下这是无操作（No-op），极快</span>
-<span class="w">    </span><span class="n">LOG_DEBUG</span><span class="p">(</span><span class="s">&quot;Starting clustering on {} hits.&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hits</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="w">    </span><span class="n">LOG_DEBUG</span><span class="p">(</span><span class="s">"Starting clustering on {} hits."</span><span class="p">,</span><span class="w"> </span><span class="n">hits</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
 
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">hit</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">hits</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// TRACE: 极其详细的内部逻辑</span>
-<span class="w">        </span><span class="n">LOG_TRACE</span><span class="p">(</span><span class="s">&quot;Processing hit at ({}, {}, {})&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hit</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">hit</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">hit</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
+<span class="w">        </span><span class="n">LOG_TRACE</span><span class="p">(</span><span class="s">"Processing hit at ({}, {}, {})"</span><span class="p">,</span><span class="w"> </span><span class="n">hit</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">hit</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">hit</span><span class="p">.</span><span class="n">z</span><span class="p">);</span>
 
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">hit</span><span class="p">.</span><span class="n">energy</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">// WARN: 数据异常，无论什么模式都应该打印</span>
-<span class="w">            </span><span class="n">LOG_WARN</span><span class="p">(</span><span class="s">&quot;Found hit with negative energy: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hit</span><span class="p">.</span><span class="n">energy</span><span class="p">);</span>
+<span class="w">            </span><span class="n">LOG_WARN</span><span class="p">(</span><span class="s">"Found hit with negative energy: {}"</span><span class="p">,</span><span class="w"> </span><span class="n">hit</span><span class="p">.</span><span class="n">energy</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="n">LOG_DEBUG</span><span class="p">(</span><span class="s">&quot;Clustering finished. Found {} clusters.&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">clusters_</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="w">    </span><span class="n">LOG_DEBUG</span><span class="p">(</span><span class="s">"Clustering finished. Found {} clusters."</span><span class="p">,</span><span class="w"> </span><span class="n">clusters_</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
 <span class="p">}</span>
 </code></pre></div>
 <ol>
@@ -4474,22 +4490,22 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 在测试代码中，我们需要看到所有的细节来排查 Bug。</li>
 </ol>
 <p>tests/unit/test_reco.cpp</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;gtest/gtest.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Logger.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Clusterizer.h&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"gtest/gtest.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"Logger.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"Clusterizer.h"</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">InitGoogleTest</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// 【关键】在这里初始化日志，设置为 DEBUG 或 TRACE 级别</span>
 <span class="w">    </span><span class="c1">// 这样所有库里的 LOG_DEBUG 都会打印到屏幕上</span>
-<span class="w">    </span><span class="n">MyProject</span><span class="o">::</span><span class="n">InitLogger</span><span class="p">(</span><span class="s">&quot;debug&quot;</span><span class="p">);</span><span class="w"> </span>
+<span class="w">    </span><span class="n">MyProject</span><span class="o">::</span><span class="n">InitLogger</span><span class="p">(</span><span class="s">"debug"</span><span class="p">);</span><span class="w"> </span>
 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">RUN_ALL_TESTS</span><span class="p">();</span>
 <span class="p">}</span>
 
 <span class="n">TEST</span><span class="p">(</span><span class="n">RecoTest</span><span class="p">,</span><span class="w"> </span><span class="n">SimpleCluster</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Test started...&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 这会显示</span>
+<span class="w">    </span><span class="n">LOG_INFO</span><span class="p">(</span><span class="s">"Test started..."</span><span class="p">);</span><span class="w"> </span><span class="c1">// 这会显示</span>
 <span class="w">    </span><span class="c1">// ... 调用 Clusterizer</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -4498,16 +4514,16 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 在真正跑数据的 main.cpp 中，我们设置为 INFO 或 WARN，并手动添加进度条逻辑。</li>
 </ol>
 <p>apps/run_reco/main.cpp</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Logger.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Clusterizer.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span><span class="c1"> // 用于计时</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"Logger.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"Clusterizer.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span><span class="w"> </span><span class="c1">// 用于计时</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// 1. 初始化：生产环境通常只看 INFO (进度) 和 WARN/ERROR</span>
 <span class="w">    </span><span class="c1">//    可以通过命令行参数解析 argv 来动态决定是否开启 debug</span>
-<span class="w">    </span><span class="n">MyProject</span><span class="o">::</span><span class="n">InitLogger</span><span class="p">(</span><span class="s">&quot;info&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;logs/reco_job_123.log&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">MyProject</span><span class="o">::</span><span class="n">InitLogger</span><span class="p">(</span><span class="s">"info"</span><span class="p">,</span><span class="w"> </span><span class="s">"logs/reco_job_123.log"</span><span class="p">);</span>
 
-<span class="w">    </span><span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Reconstruction job started.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">LOG_INFO</span><span class="p">(</span><span class="s">"Reconstruction job started."</span><span class="p">);</span>
 
 <span class="w">    </span><span class="c1">// 模拟 Event Loop</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">total_events</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span>
@@ -4525,11 +4541,11 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">elapsed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="p">;</span>
 <span class="w">            </span><span class="kt">double</span><span class="w"> </span><span class="n">fps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">elapsed</span><span class="p">.</span><span class="n">count</span><span class="p">();</span>
 
-<span class="w">            </span><span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Processed {}/{} events. Speed: {:.2f} Hz&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">total_events</span><span class="p">,</span><span class="w"> </span><span class="n">fps</span><span class="p">);</span>
+<span class="w">            </span><span class="n">LOG_INFO</span><span class="p">(</span><span class="s">"Processed {}/{} events. Speed: {:.2f} Hz"</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">total_events</span><span class="p">,</span><span class="w"> </span><span class="n">fps</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="n">LOG_INFO</span><span class="p">(</span><span class="s">&quot;Job finished successfully.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">LOG_INFO</span><span class="p">(</span><span class="s">"Job finished successfully."</span><span class="p">);</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>

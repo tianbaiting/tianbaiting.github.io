@@ -3363,6 +3363,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3413,6 +3415,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4089,20 +4105,20 @@
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="c1"># Script to open a ROOT file in a TBrowser</span>
 
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Usage: </span><span class="nv">$0</span><span class="s2"> &lt;path_to_root_file&gt;&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> &lt;path_to_root_file&gt;"</span>
 <span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="k">fi</span>
 
 <span class="c1"># Check if the file exists</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Error: File not found at </span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Error: File not found at </span><span class="nv">$1</span><span class="s2">"</span>
 <span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="k">fi</span>
 
 <span class="c1"># Launch ROOT, open the file, and start a TBrowser.</span>
 <span class="c1"># The -l flag prevents the splash screen.</span>
-root<span class="w"> </span>-l<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;new TBrowser()&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+root<span class="w"> </span>-l<span class="w"> </span>-e<span class="w"> </span><span class="s2">"new TBrowser()"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
 </code></pre></div></p>
 <hr />
 <h3 id="步骤-2-授予脚本执行权限">步骤 2: 授予脚本执行权限<a class="headerlink" href="#步骤-2-授予脚本执行权限" title="Permanent link">#</a></h3>
@@ -4116,11 +4132,11 @@ root<span class="w"> </span>-l<span class="w"> </span>-e<span class="w"> </span>
 <p>这通过在 <code>~/.local/share/mime/packages/</code> 目录下创建一个XML文件来完成。</p>
 <p>文件路径: <code>/home/tbt/.local/share/mime/packages/application-x-root.xml</code></p>
 <p>文件内容:<br />
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;mime-info</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.freedesktop.org/standards/shared-mime-info&quot;</span><span class="nt">&gt;</span>
-<span class="w">  </span><span class="nt">&lt;mime-type</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;application/x-root&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;mime-info</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://www.freedesktop.org/standards/shared-mime-info"</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;mime-type</span><span class="w"> </span><span class="na">type=</span><span class="s">"application/x-root"</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;comment&gt;</span>CERN<span class="w"> </span>ROOT<span class="w"> </span>File<span class="nt">&lt;/comment&gt;</span>
-<span class="w">    </span><span class="nt">&lt;glob</span><span class="w"> </span><span class="na">pattern=</span><span class="s">&quot;*.root&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;glob</span><span class="w"> </span><span class="na">pattern=</span><span class="s">"*.root"</span><span class="nt">/&gt;</span>
 <span class="w">  </span><span class="nt">&lt;/mime-type&gt;</span>
 <span class="nt">&lt;/mime-info&gt;</span>
 </code></pre></div></p>

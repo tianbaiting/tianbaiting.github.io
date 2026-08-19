@@ -3322,6 +3322,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3372,6 +3374,20 @@
     <li class="md-nav__item">
       <a href="../../faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4022,9 +4038,9 @@ Sub main()
      Set swApp = Application.SldWorks
      Set swModel = swApp.ActiveDoc
      If swModel Is Nothing Then
-          MsgBox &quot;请先打开一个 SolidWorks 文件！&quot;
+          MsgBox "请先打开一个 SolidWorks 文件！"
      Else
-          MsgBox &quot;当前文件名: &quot; &amp; swModel.GetTitle
+          MsgBox "当前文件名: " &amp; swModel.GetTitle
      End If
 End Sub
 </code></pre></div></li>
@@ -4039,15 +4055,15 @@ End Sub
     <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">win32com.client</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-     <span class="n">swApp</span> <span class="o">=</span> <span class="n">win32com</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">Dispatch</span><span class="p">(</span><span class="s2">&quot;SldWorks.Application&quot;</span><span class="p">)</span>
+     <span class="n">swApp</span> <span class="o">=</span> <span class="n">win32com</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">Dispatch</span><span class="p">(</span><span class="s2">"SldWorks.Application"</span><span class="p">)</span>
      <span class="n">swApp</span><span class="o">.</span><span class="n">Visible</span> <span class="o">=</span> <span class="kc">True</span>
      <span class="n">model</span> <span class="o">=</span> <span class="n">swApp</span><span class="o">.</span><span class="n">ActiveDoc</span>
      <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;请先打开一个 SolidWorks 文件！&quot;</span><span class="p">)</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">"请先打开一个 SolidWorks 文件！"</span><span class="p">)</span>
      <span class="k">else</span><span class="p">:</span>
-          <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;当前文件名: </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">GetTitle</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+          <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"当前文件名: </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">GetTitle</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
      <span class="n">main</span><span class="p">()</span>
 </code></pre></div></p>
 <p>如下代码所展示，这是一个绘制长方体的命令。</p>
@@ -4060,46 +4076,46 @@ End Sub
 
 <span class="k">try</span><span class="p">:</span>
     <span class="c1"># 启动SolidWorks应用</span>
-    <span class="n">swApp</span> <span class="o">=</span> <span class="n">win32com</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">Dispatch</span><span class="p">(</span><span class="s2">&quot;SldWorks.Application&quot;</span><span class="p">)</span>
+    <span class="n">swApp</span> <span class="o">=</span> <span class="n">win32com</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">Dispatch</span><span class="p">(</span><span class="s2">"SldWorks.Application"</span><span class="p">)</span>
     <span class="n">swApp</span><span class="o">.</span><span class="n">Visible</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="c1"># 新建一个零件文档</span>
     <span class="n">part</span> <span class="o">=</span> <span class="n">swApp</span><span class="o">.</span><span class="n">NewDocument</span><span class="p">(</span>
-        <span class="sa">r</span><span class="s2">&quot;C:\Users\Public\Documents\SOLIDWORKS\SOLIDWORKS 2023\samples\tutorial\advdrawings\part.prtdot&quot;</span><span class="p">,</span>
+        <span class="sa">r</span><span class="s2">"C:\Users\Public\Documents\SOLIDWORKS\SOLIDWORKS 2023\samples\tutorial\advdrawings\part.prtdot"</span><span class="p">,</span>
         <span class="mi">0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span>
     <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">part</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;创建零件失败，请检查模板路径。&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"创建零件失败，请检查模板路径。"</span><span class="p">)</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;成功创建新零件！&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"成功创建新零件！"</span><span class="p">)</span>
 
     <span class="c1"># 获取激活文档</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">swApp</span><span class="o">.</span><span class="n">ActiveDoc</span>
 
     <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;未能获取激活的SolidWorks文档。请确保已成功创建零件。&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"未能获取激活的SolidWorks文档。请确保已成功创建零件。"</span><span class="p">)</span>
         <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="c1"># 选择前视基准面</span>
-    <span class="n">plane_name</span> <span class="o">=</span> <span class="s2">&quot;Front Plane&quot;</span>  <span class="c1"># 英文版SolidWorks</span>
+    <span class="n">plane_name</span> <span class="o">=</span> <span class="s2">"Front Plane"</span>  <span class="c1"># 英文版SolidWorks</span>
 
     <span class="c1"># 新建草图</span>
     <span class="n">model</span><span class="o">.</span><span class="n">SketchManager</span><span class="o">.</span><span class="n">InsertSketch</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;已进入草图编辑模式。&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"已进入草图编辑模式。"</span><span class="p">)</span>
 
     <span class="c1"># 绘制矩形</span>
     <span class="n">model</span><span class="o">.</span><span class="n">SketchManager</span><span class="o">.</span><span class="n">CreateCenterRectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;已绘制矩形。&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"已绘制矩形。"</span><span class="p">)</span>
 
     <span class="c1"># 退出草图</span>
     <span class="n">model</span><span class="o">.</span><span class="n">SketchManager</span><span class="o">.</span><span class="n">InsertSketch</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;已退出草图。&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"已退出草图。"</span><span class="p">)</span>
 
     <span class="c1"># 选择草图</span>
-    <span class="n">sketch_name</span> <span class="o">=</span> <span class="s2">&quot;Sketch1&quot;</span>  <span class="c1"># 英文版SolidWorks</span>
-    <span class="c1"># sketch_name = &quot;草图1&quot;   # 中文版SolidWorks</span>
+    <span class="n">sketch_name</span> <span class="o">=</span> <span class="s2">"Sketch1"</span>  <span class="c1"># 英文版SolidWorks</span>
+    <span class="c1"># sketch_name = "草图1"   # 中文版SolidWorks</span>
 
     <span class="c1"># 拉伸草图</span>
     <span class="n">featureMgr</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">FeatureManager</span>
@@ -4111,11 +4127,11 @@ End Sub
     <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">feature</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;创建拉伸特征失败。&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"创建拉伸特征失败。"</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;长方体已创建。&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"长方体已创建。"</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;发生错误: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"发生错误: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
 <p>待解决的问题，布尔值一直有些问题。发现了问题所在。 是由于python的数据类型和visual basic的并不一致。比如说visual basic的整数型数据0在python要用<code>arg1 = win32com.client.VARIANT(16387, 0)</code>来转化。</p>
 <p>详见</p>
@@ -4124,7 +4140,7 @@ End Sub
 <p><a href="https://www.youtube.com/watch?v=HQVsASdG0jo&amp;ab_channel=RoboMechMinds">youtube</a></p>
 <p>对于我来说，运行<code>C:\Users\tbt\anaconda3\Lib\site-packages\win32com\client\makepy.py</code>处的代码</p>
 <p>找到<img alt="1746813908270" src="../assets/sw-api.zh/1746813908270.png" /><img alt="1746814173261" src="../assets/sw-api.zh/1746814173261.png" />，就会出现如下代码，便能在6DD4B124-4733-4DFF-97A8-52F70924D514x0x31x0.py文件里找到。 该makepy生成了要用到的宏文件的定义</p>
-<div class="highlight"><pre><span></span><code>PS C:\workspace\D_Polarization\sw-api&gt;  python -u &quot;c:\Users\tbt\anaconda3\pkgs\pywin32-305-py310h2bbff1b_0\Lib\site-packages\win32com\client\makepy.py&quot;
+<div class="highlight"><pre><span></span><code>PS C:\workspace\D_Polarization\sw-api&gt;  python -u "c:\Users\tbt\anaconda3\pkgs\pywin32-305-py310h2bbff1b_0\Lib\site-packages\win32com\client\makepy.py"
 Generating to C:\Users\tbt\Nutstore\1\physics\nuclear\D_nuclear_experiment\.conda\lib\site-packages\win32com\gen_py\6DD4B124-4733-4DFF-97A8-52F70924D514x0x31x0.py
 Building definitions from type library...
 Generating...

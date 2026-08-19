@@ -3452,6 +3452,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3502,6 +3504,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4345,7 +4361,7 @@ ctags<span class="w"> </span>-R<span class="w"> </span>--languages<span class="o
 <span class="w">  </span>--exclude<span class="o">=</span>.git<span class="w"> </span>--exclude<span class="o">=</span>build<span class="w"> </span>--exclude<span class="o">=</span>bin<span class="w"> </span>--exclude<span class="o">=</span>.cache<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-f<span class="w"> </span>.tags
 
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;updated .tags&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"updated .tags"</span>
 </code></pre></div>
 <p>然后：</p>
 <div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>scripts/dev/update_tags.sh
@@ -4387,12 +4403,12 @@ cmake<span class="w"> </span>..<span class="w"> </span>-DCMAKE_EXPORT_COMPILE_CO
 <h3 id="a4-vscode-使用-clangd">A.4 VSCode 使用 <code>clangd</code><a class="headerlink" href="#a4-vscode-使用-clangd" title="Permanent link">#</a></h3>
 <p><code>settings.json</code> 示例：</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;clangd.path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/usr/bin/clangd&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;clangd.arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;--compile-commands-dir=clangd_db&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;--background-index&quot;</span>
+<span class="w">  </span><span class="nt">"clangd.path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/usr/bin/clangd"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"clangd.arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">"--compile-commands-dir=clangd_db"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"--background-index"</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;C_Cpp.intelliSenseEngine&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Disabled&quot;</span>
+<span class="w">  </span><span class="nt">"C_Cpp.intelliSenseEngine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Disabled"</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>说明：</p>
@@ -4402,16 +4418,16 @@ cmake<span class="w"> </span>..<span class="w"> </span>-DCMAKE_EXPORT_COMPILE_CO
 </ul>
 <h3 id="a5-neovim-使用-clangd">A.5 Neovim 使用 <code>clangd</code><a class="headerlink" href="#a5-neovim-使用-clangd" title="Permanent link">#</a></h3>
 <p><code>lspconfig</code> 最小示例：</p>
-<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">lspconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">require</span><span class="p">(</span><span class="s2">&quot;lspconfig&quot;</span><span class="p">)</span>
-<span class="kd">local</span><span class="w"> </span><span class="nv">util</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">require</span><span class="p">(</span><span class="s2">&quot;lspconfig.util&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">lspconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">require</span><span class="p">(</span><span class="s2">"lspconfig"</span><span class="p">)</span>
+<span class="kd">local</span><span class="w"> </span><span class="nv">util</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">require</span><span class="p">(</span><span class="s2">"lspconfig.util"</span><span class="p">)</span>
 
 <span class="nv">lspconfig</span><span class="p">.</span><span class="py">clangd</span><span class="p">.</span><span class="nf">setup</span><span class="p">({</span>
 <span class="w">  </span><span class="nv">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;clangd&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;--background-index&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;--compile-commands-dir=clangd_db&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"clangd"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"--background-index"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"--compile-commands-dir=clangd_db"</span><span class="p">,</span>
 <span class="w">  </span><span class="p">},</span>
-<span class="w">  </span><span class="nv">root_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">util</span><span class="p">.</span><span class="nf">root_pattern</span><span class="p">(</span><span class="s2">&quot;.clangd&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;compile_commands.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;.git&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="nv">root_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">util</span><span class="p">.</span><span class="nf">root_pattern</span><span class="p">(</span><span class="s2">".clangd"</span><span class="p">,</span><span class="w"> </span><span class="s2">"compile_commands.json"</span><span class="p">,</span><span class="w"> </span><span class="s2">".git"</span><span class="p">),</span>
 <span class="p">})</span>
 </code></pre></div>
 <h3 id="a6-clangd-与-ctags-关系">A.6 <code>clangd</code> 与 <code>ctags</code> 关系<a class="headerlink" href="#a6-clangd-与-ctags-关系" title="Permanent link">#</a></h3>

@@ -3267,6 +3267,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3317,6 +3319,20 @@
     <li class="md-nav__item">
       <a href="../../../faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4132,39 +4148,39 @@
 <div class="highlight"><pre><span></span><code>#include &lt;fstream&gt; // Add file stream header
 #include &lt;iostream&gt; // Add to use std::cerr
 
-void convertRIDFtoReadable(const char* ridfFile = &quot;/home/s057/exp/exp2505_s057/anaroot/users/tbt/ridf/data0013.ridf&quot;) {
+void convertRIDFtoReadable(const char* ridfFile = "/home/s057/exp/exp2505_s057/anaroot/users/tbt/ridf/data0013.ridf") {
     // Load necessary libraries
-    gSystem-&gt;Load(&quot;libanacore.so&quot;);
+    gSystem-&gt;Load("libanacore.so");
 
     // Open RIDF file
     TArtEventStore *estore = new TArtEventStore();
     if (!estore-&gt;Open(ridfFile)) {
-        std::cerr &lt;&lt; &quot;Error: Failed to open RIDF file: &quot; &lt;&lt; ridfFile &lt;&lt; std::endl;
+        std::cerr &lt;&lt; "Error: Failed to open RIDF file: " &lt;&lt; ridfFile &lt;&lt; std::endl;
         return;
     }
 
     TArtRawEventObject *rawevent = estore-&gt;GetRawEventObject();
 
     // Open output file
-    std::ofstream outFile(&quot;readable.txt&quot;);
+    std::ofstream outFile("readable.txt");
     if (!outFile.is_open()) {
-        std::cerr &lt;&lt; &quot;Error: Failed to open output file: readable.txt&quot; &lt;&lt; std::endl;
+        std::cerr &lt;&lt; "Error: Failed to open output file: readable.txt" &lt;&lt; std::endl;
         return;
     }
 
     int neve = 0; // Event counter
     while (estore-&gt;GetNextEvent() &amp;&amp; neve &lt; 10) { // Only process the first 10 blocks
-        outFile &lt;&lt; &quot;==================== Event &quot; &lt;&lt; neve + 1 &lt;&lt; &quot; ====================&quot; &lt;&lt; std::endl;
+        outFile &lt;&lt; "==================== Event " &lt;&lt; neve + 1 &lt;&lt; " ====================" &lt;&lt; std::endl;
 
         // Iterate over all segments in the current event
         for (int i = 0; i &lt; rawevent-&gt;GetNumSeg(); i++) {
             TArtRawSegmentObject *seg = rawevent-&gt;GetSegment(i);
-            outFile &lt;&lt; &quot;Segment &quot; &lt;&lt; i + 1 &lt;&lt; &quot;:&quot; &lt;&lt; std::endl;
-            outFile &lt;&lt; &quot;  Device: &quot; &lt;&lt; seg-&gt;GetDevice() &lt;&lt; std::endl;
-            outFile &lt;&lt; &quot;  FP: &quot; &lt;&lt; seg-&gt;GetFP() &lt;&lt; std::endl;
-            outFile &lt;&lt; &quot;  Detector: &quot; &lt;&lt; seg-&gt;GetDetector() &lt;&lt; std::endl;
-            outFile &lt;&lt; &quot;  Module: &quot; &lt;&lt; seg-&gt;GetModule() &lt;&lt; std::endl;
-            outFile &lt;&lt; &quot;  NumData: &quot; &lt;&lt; seg-&gt;GetNumData() &lt;&lt; std::endl;
+            outFile &lt;&lt; "Segment " &lt;&lt; i + 1 &lt;&lt; ":" &lt;&lt; std::endl;
+            outFile &lt;&lt; "  Device: " &lt;&lt; seg-&gt;GetDevice() &lt;&lt; std::endl;
+            outFile &lt;&lt; "  FP: " &lt;&lt; seg-&gt;GetFP() &lt;&lt; std::endl;
+            outFile &lt;&lt; "  Detector: " &lt;&lt; seg-&gt;GetDetector() &lt;&lt; std::endl;
+            outFile &lt;&lt; "  Module: " &lt;&lt; seg-&gt;GetModule() &lt;&lt; std::endl;
+            outFile &lt;&lt; "  NumData: " &lt;&lt; seg-&gt;GetNumData() &lt;&lt; std::endl;
 
             // Iterate over all data points in the segment
             for (int j = 0; j &lt; seg-&gt;GetNumData(); j++) {
@@ -4176,13 +4192,13 @@ void convertRIDFtoReadable(const char* ridfFile = &quot;/home/s057/exp/exp2505_s
                 int det = d-&gt;GetDetectorID();
                 int id = d-&gt;GetDatatypeID();
 
-                outFile &lt;&lt; &quot;    Data &quot; &lt;&lt; j + 1 &lt;&lt; &quot;:&quot; &lt;&lt; std::endl;
-                outFile &lt;&lt; &quot;      Geo: &quot; &lt;&lt; geo &lt;&lt; std::endl;
-                outFile &lt;&lt; &quot;      Channel: &quot; &lt;&lt; ch &lt;&lt; std::endl;
-                outFile &lt;&lt; &quot;      Value: &quot; &lt;&lt; val &lt;&lt; std::endl;
-                outFile &lt;&lt; &quot;      Category ID: &quot; &lt;&lt; cat &lt;&lt; std::endl;
-                outFile &lt;&lt; &quot;      Detector ID: &quot; &lt;&lt; det &lt;&lt; std::endl;
-                outFile &lt;&lt; &quot;      Datatype ID: &quot; &lt;&lt; id &lt;&lt; std::endl;
+                outFile &lt;&lt; "    Data " &lt;&lt; j + 1 &lt;&lt; ":" &lt;&lt; std::endl;
+                outFile &lt;&lt; "      Geo: " &lt;&lt; geo &lt;&lt; std::endl;
+                outFile &lt;&lt; "      Channel: " &lt;&lt; ch &lt;&lt; std::endl;
+                outFile &lt;&lt; "      Value: " &lt;&lt; val &lt;&lt; std::endl;
+                outFile &lt;&lt; "      Category ID: " &lt;&lt; cat &lt;&lt; std::endl;
+                outFile &lt;&lt; "      Detector ID: " &lt;&lt; det &lt;&lt; std::endl;
+                outFile &lt;&lt; "      Datatype ID: " &lt;&lt; id &lt;&lt; std::endl;
             }
         }
 
@@ -4190,12 +4206,12 @@ void convertRIDFtoReadable(const char* ridfFile = &quot;/home/s057/exp/exp2505_s
         neve++;
     }
 
-    outFile &lt;&lt; &quot;Conversion completed. Processed &quot; &lt;&lt; neve &lt;&lt; &quot; blocks.&quot; &lt;&lt; std::endl;
+    outFile &lt;&lt; "Conversion completed. Processed " &lt;&lt; neve &lt;&lt; " blocks." &lt;&lt; std::endl;
 
     // Close output file
     outFile.close();
 
-    std::cout &lt;&lt; &quot;Conversion completed. Results saved to readable.txt&quot; &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Conversion completed. Results saved to readable.txt" &lt;&lt; std::endl;
 }
 </code></pre></div></p>
 <p>source:</p>

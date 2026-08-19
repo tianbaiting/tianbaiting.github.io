@@ -3390,6 +3390,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3440,6 +3442,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4159,13 +4175,13 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">calculate_momentum</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">velocity</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculates momentum.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Calculates momentum."""</span>
     <span class="k">if</span> <span class="n">mass</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">velocity</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">0</span>
     <span class="k">return</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">calculate_energy</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">velocity</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculates kinetic energy using a simple formula.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Calculates kinetic energy using a simple formula."""</span>
     <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">velocity</span><span class="o">**</span><span class="mi">2</span>
 </code></pre></div>
 <p><code>my_particle_lib/plotting.py</code>:</p>
@@ -4174,13 +4190,13 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">plot_energy_vs_velocity</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span> <span class="n">velocities</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plots energy as a function of velocity.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""Plots energy as a function of velocity."""</span>
     <span class="n">energies</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">velocities</span><span class="p">]</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">velocities</span><span class="p">,</span> <span class="n">energies</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Velocity (m/s)&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Kinetic Energy (J)&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Energy vs. Velocity for mass=</span><span class="si">{</span><span class="n">mass</span><span class="si">}</span><span class="s2">kg&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Velocity (m/s)"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Kinetic Energy (J)"</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Energy vs. Velocity for mass=</span><span class="si">{</span><span class="n">mass</span><span class="si">}</span><span class="s2">kg"</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
@@ -4192,7 +4208,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">.kinematics</span><span class="w"> </span><span class="kn">import</span> <span class="n">calculate_momentum</span><span class="p">,</span> <span class="n">calculate_energy</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_energy_vs_velocity</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Particle analysis library loaded!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Particle analysis library loaded!"</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="3-在主程序中调用">3. 在主程序中调用<a class="headerlink" href="#3-在主程序中调用" title="Permanent link">#</a></h4>
 <p>现在，在与 <code>my_particle_lib</code> 目录同级的 <code>main_analysis.py</code> 文件中，你可以这样调用你的包：</p>
@@ -4205,12 +4221,12 @@
 <span class="c1"># --- 调用方式 1: 如果 __init__.py 中导入了函数 ---</span>
 <span class="c1"># 这是最方便的调用方式</span>
 <span class="n">momentum</span> <span class="o">=</span> <span class="n">ppl</span><span class="o">.</span><span class="n">calculate_momentum</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">velocity</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Momentum: </span><span class="si">{</span><span class="n">momentum</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Momentum: </span><span class="si">{</span><span class="n">momentum</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># --- 调用方式 2: 通过访问具体模块 ---</span>
 <span class="c1"># 即使 __init__.py 是空的，这种方式也永远有效</span>
 <span class="n">energy</span> <span class="o">=</span> <span class="n">ppl</span><span class="o">.</span><span class="n">kinematics</span><span class="o">.</span><span class="n">calculate_energy</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">velocity</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kinetic Energy: </span><span class="si">{</span><span class="n">energy</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Kinetic Energy: </span><span class="si">{</span><span class="n">energy</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="c1"># 调用绘图函数</span>
 <span class="n">velocities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
@@ -4252,28 +4268,28 @@
 <p><code>pyproject.toml</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 使用 setuptools 作为构建后端</span>
 <span class="k">[build-system]</span>
-<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&gt;=61.0&quot;</span><span class="p">]</span>
-<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;setuptools.build_meta&quot;</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"setuptools&gt;=61.0"</span><span class="p">]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"setuptools.build_meta"</span>
 
 <span class="c1"># 项目元数据</span>
 <span class="k">[project]</span>
-<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;my-particle-lib&quot;</span><span class="w"> </span><span class="c1"># 包在 PyPI 上的名称，通常用连字符</span>
-<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.0.1&quot;</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"my-particle-lib"</span><span class="w"> </span><span class="c1"># 包在 PyPI 上的名称，通常用连字符</span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"0.0.1"</span>
 <span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="p">=</span><span class="s2">&quot;Your Name&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">=</span><span class="s2">&quot;your.email@example.com&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="p">=</span><span class="s2">"Your Name"</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">=</span><span class="s2">"your.email@example.com"</span><span class="w"> </span><span class="p">},</span>
 <span class="p">]</span>
-<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A simple library for basic particle physics calculations.&quot;</span>
-<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.8&quot;</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"A simple library for basic particle physics calculations."</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"README.md"</span>
+<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"&gt;=3.8"</span>
 <span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;License :: OSI Approved :: MIT License&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"Programming Language :: Python :: 3"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"License :: OSI Approved :: MIT License"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"Operating System :: OS Independent"</span><span class="p">,</span>
 <span class="p">]</span>
 <span class="c1"># 项目依赖，安装此包时会自动安装这些依赖</span>
 <span class="n">dependencies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;numpy&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;matplotlib&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"numpy"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"matplotlib"</span><span class="p">,</span>
 <span class="p">]</span>
 </code></pre></div>
 <h4 id="3-在本地以可编辑模式安装包">3. 在本地以“可编辑模式”安装包<a class="headerlink" href="#3-在本地以可编辑模式安装包" title="Permanent link">#</a></h4>
@@ -4297,7 +4313,7 @@
 
 <span class="c1"># 现在你可以像使用 numpy 一样使用自己的包了</span>
 <span class="n">momentum</span> <span class="o">=</span> <span class="n">ppl</span><span class="o">.</span><span class="n">calculate_momentum</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Momentum: </span><span class="si">{</span><span class="n">momentum</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Momentum: </span><span class="si">{</span><span class="n">momentum</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="n">velocities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">ppl</span><span class="o">.</span><span class="n">plot_energy_vs_velocity</span><span class="p">(</span><span class="n">mass</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">velocities</span><span class="o">=</span><span class="n">velocities</span><span class="p">)</span>

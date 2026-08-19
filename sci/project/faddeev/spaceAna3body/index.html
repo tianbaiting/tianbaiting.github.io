@@ -1,0 +1,5906 @@
+
+  <!doctype html>
+  <html lang="zh" class="no-js">
+    <head>
+      
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        
+        
+        
+          <link rel="canonical" href="https://tianbaiting.github.io/sci/project/faddeev/spaceAna3body/">
+        
+        
+          <link rel="prev" href="../faddeev_WavePacket/">
+        
+        
+          <link rel="next" href="../../samurai/detector_samurai/">
+        
+        <link rel="icon" href="../../../../assets/images/favicon.png">
+        <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.0.4">
+      
+      
+        
+          <title>量子三体的空间结构和解法 - TBT个人网站</title>
+        
+      
+      
+        <link rel="stylesheet" href="../../../../assets/stylesheets/main.9c788c91.min.css">
+        
+          
+          <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
+        
+        
+
+      
+      
+      
+        
+          
+          
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+          <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        
+      
+      
+        <link rel="stylesheet" href="../../../../css/timeago.css">
+      
+        <link rel="stylesheet" href="../../../../css/counter.css">
+      
+        <link rel="stylesheet" href="../../../../css/graph.css">
+      
+      
+        <link rel="stylesheet" href="../../../../css/counter.css">
+      
+      <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      
+        
+
+      
+      
+      
+    </head>
+    
+    
+      
+      
+      
+      
+      
+      <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink">
+    
+      <script src="../../../../js/scheme.js" type="text/javascript"></script>
+      
+      
+      <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+      <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+      <label class="md-overlay" for="__drawer"></label>
+      <div data-md-component="skip">
+        
+          
+          <a href="#量子三体的空间结构和解法" class="md-skip">
+            跳转至
+          </a>
+        
+      </div>
+      <div data-md-component="announce">
+        
+      </div>
+      
+      
+        
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="TBT个人网站" class="md-header__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TBT个人网站
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              量子三体的空间结构和解法
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      <div class="md-header-nav__scheme md-header-nav__button md-source__icon md-icon">
+  <a
+    href="javascript:toggleScheme();"
+    title="Toggle theme"
+    class="theme-toggle"
+  >
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5 1.43 1.43L4.93 20.5 3.5 19.07 19.07 3.5m-6.18 2.43L11.41 5 9.97 6l.42-1.7L9 3.24l1.75-.12.58-1.65L12 3.1l1.73.03-1.35 1.13.51 1.67m-3.3 3.61-1.16-.73-1.12.78.34-1.32-1.09-.83 1.36-.09.45-1.29.51 1.27 1.36.03-1.05.87.4 1.31M19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58 2.77-1.15-.24 3.35-2.53-2.2m4.33-2.7 1.15-2.77 2.2 2.54-3.35.23m1.15-4.96-1.14-2.78 3.34.24-2.2 2.54M9.63 18.93l2.77 1.15-2.53 2.19-.24-3.34Z"/></svg>
+  </a>
+</div>
+
+
+  <div class="md-header__button md-lang">
+    
+      <a href="./" hreflang="zh">简体中文</a>
+    
+      <a href="../../../../en/sci/project/faddeev/spaceAna3body/" hreflang="en">English</a>
+    
+  </div>
+
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+      
+      <div class="md-container" data-md-component="container">
+        
+        
+          
+            
+              
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../.." class="md-tabs__link">
+      主页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../../howtomakewebsite/" class="md-tabs__link">
+      网站制作
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../MickeyMiaoMiao/adblock/" class="md-tabs__link">
+        MickeyMiaoMiao
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../life/flavor/" class="md-tabs__link">
+        Life
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../cheatshet/bashrc/" class="md-tabs__link md-tabs__link--active">
+        Sci
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-tabs__link">
+        日本生存指南
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+            
+          
+        
+        <main class="md-main" data-md-component="main">
+          <div class="md-main__inner md-grid">
+            
+              
+                
+                <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="TBT个人网站" class="md-nav__button md-logo" aria-label="TBT个人网站" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    TBT个人网站
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../howtomakewebsite/" class="md-nav__link">
+        网站制作
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          MickeyMiaoMiao
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="MickeyMiaoMiao" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          MickeyMiaoMiao
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/adblock/" class="md-nav__link">
+        adblock 元素
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/citetree/" class="md-nav__link">
+        引文网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/firefoxplug/" class="md-nav__link">
+        浏览器插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/gost/" class="md-nav__link">
+        gost 代理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/linuxUseWin/" class="md-nav__link">
+        linuxUseWin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/opvpn/" class="md-nav__link">
+        opvpn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_7" tabindex="0" aria-expanded="false">
+          Useful tips
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Useful tips" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Useful tips
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/overleaf_vscode%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        overleaf插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/%E5%88%A9%E7%94%A8%E7%A7%BB%E5%8A%A8%E8%AE%BE%E5%A4%87%E5%88%86%E5%B1%8F/" class="md-nav__link">
+        移动设备作为电脑的分屏
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84vscode/" class="md-nav__link">
+        如何安装多个版本的code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../MickeyMiaoMiao/useful_tips/%E6%9C%89%E8%B6%A3%E7%9A%84%E6%8F%92%E4%BB%B6/" class="md-nav__link">
+        有趣的插件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Life
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Life" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Life
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/flavor/" class="md-nav__link">
+        川菜味型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/schedule/" class="md-nav__link">
+        作息时间表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/subtleSCI/" class="md-nav__link">
+        subtle definition in sci
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/twist/" class="md-nav__link">
+        手腕不适尺侧腕屈肌 与 肱桡肌
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/z30_DeepSky/" class="md-nav__link">
+        深空摄影
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/%E7%84%A6%E8%99%91/" class="md-nav__link">
+        焦虑
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/%E9%A3%9F%E7%89%A9%E4%B8%AD%E6%AF%92/" class="md-nav__link">
+        易发中毒食物
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/%E9%A3%9F%E7%89%A9%E5%AE%89%E5%85%A8%E6%B8%A9%E5%BA%A6/" class="md-nav__link">
+        食物安全温度
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_9" type="checkbox" id="__nav_4_9" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_9" tabindex="0" aria-expanded="false">
+          Workout
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Workout" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_9">
+          <span class="md-nav__icon md-icon"></span>
+          Workout
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/workout/%E4%BA%8C%E5%93%88%E8%83%8C%E9%83%A8/" class="md-nav__link">
+        二哈背部
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/workout/%E8%82%A9%E8%83%9B/" class="md-nav__link">
+        肩胛
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/workout/%E9%AA%A8%E7%9B%86/" class="md-nav__link">
+        骨盆 Pelvis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/workout/%E9%AA%A8%E7%9B%86kai/" class="md-nav__link">
+        骨盆kai
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_10" type="checkbox" id="__nav_4_10" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_10" tabindex="0" aria-expanded="false">
+          健康
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="健康" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          健康
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/%E5%81%A5%E5%BA%B7/workout_diet/" class="md-nav__link">
+        营养
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../life/%E5%81%A5%E5%BA%B7/%E9%BC%BB%E7%82%8E/" class="md-nav__link">
+        鼻炎管理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="true">
+          Sci
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sci" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Sci
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_1" tabindex="0" aria-expanded="false">
+          Cheatshet
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Cheatshet" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Cheatshet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/bashrc/" class="md-nav__link">
+        Bashrc
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/debian_printer_connection/" class="md-nav__link">
+        Debian 接网络打印机
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/docker/" class="md-nav__link">
+        docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/git/" class="md-nav__link">
+        git 备忘单
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/nuclear_source/" class="md-nav__link">
+        ☢ 精选核科学资源 ☢
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/number_order_dimension/" class="md-nav__link">
+        数量级估计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/root_geant4_install/" class="md-nav__link">
+        Root geant4 install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/scattering_faddeev/" class="md-nav__link">
+        散射理论与 Faddeev 方程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/shell/" class="md-nav__link">
+        Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/tailscale_dns_refused/" class="md-nav__link">
+        Tailscale MagicDNS 冷查询 REFUSED：从 direct 模式切回 systemd-resolved
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/termux/" class="md-nav__link">
+        termux 运行ubuntu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/tmux/" class="md-nav__link">
+        tmux 常用命令与快捷键速查表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cheatshet/vimrc/" class="md-nav__link">
+        vim配置文件
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" tabindex="0" aria-expanded="false">
+          Minimal code
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minimal code" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Minimal code
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/HighPerfomenceCompute/" class="md-nav__link">
+        高效能计算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/Operating_system/" class="md-nav__link">
+        装系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/c%2B%2Bproject/" class="md-nav__link">
+        c++项目
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/cernrootData/" class="md-nav__link">
+        CERN ROOT 数据结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/cernrootDic/" class="md-nav__link">
+        root 字典
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/class_dataTransport/" class="md-nav__link">
+        类间数据依赖与解耦
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/cmake/" class="md-nav__link">
+        cmake项目
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/color_scheme/" class="md-nav__link">
+        科研配图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/cpp_package/" class="md-nav__link">
+        cpp 包管理 以及 依赖管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/ctags/" class="md-nav__link">
+        ctags 使用教程（C/C++）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/env_manage/" class="md-nav__link">
+        环境管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/format_guidelines/" class="md-nav__link">
+        格式规范
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/freerdp_disconnect/" class="md-nav__link">
+        FreeRDP 正确退出
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/fzf/" class="md-nav__link">
+        FZF 模糊搜索工具完全教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/gdb/" class="md-nav__link">
+        gdb 调试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/geant4_oop/" class="md-nav__link">
+        Geant4 面向对象设计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/gemni_use_wen2cli/" class="md-nav__link">
+        Gemini 限制与付费
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/getEnv/" class="md-nav__link">
+        获取环境变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/git/" class="md-nav__link">
+        Git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/jupyternotebook/" class="md-nav__link">
+        jupyter notebook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/jupytext/" class="md-nav__link">
+        jupytext 工作流（Git 追踪 .py，而不是 .ipynb）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/latex_graphics/" class="md-nav__link">
+        latex include graphics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/linux_swap/" class="md-nav__link">
+        swap linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/local_rag/" class="md-nav__link">
+        本地论文 RAG
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/log/" class="md-nav__link">
+        日志记录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/project_structure/" class="md-nav__link">
+        核物理项目目录结构
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/python_def_class/" class="md-nav__link">
+        python 定义类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/python_lib_self/" class="md-nav__link">
+        python 包的创建与使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/python_venv/" class="md-nav__link">
+        Python 虚拟环境
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/rootFindLib/" class="md-nav__link">
+        ROOT 库管理与单元测试
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/root_opener/" class="md-nav__link">
+        ROOT 文件默认浏览器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/root_plot/" class="md-nav__link">
+        root_plot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/root_visual_geant4/" class="md-nav__link">
+        Root visual geant4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/server_clouddirve/" class="md-nav__link">
+        私有云盘搭建
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/server_clouddirve_example/" class="md-nav__link">
+        Server clouddirve example
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/sshfs/" class="md-nav__link">
+        sshfs：把远程目录当本地盘用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/system_runtime_check/" class="md-nav__link">
+        查找运行进程与远程会话
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/termux/" class="md-nav__link">
+        Termux 装 Ubuntu + VS Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vim_neovim/" class="md-nav__link">
+        Vim neovim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vscode_env_path/" class="md-nav__link">
+        Vscode env path
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vscode_lsp/" class="md-nav__link">
+        VS Code C/C++ include 报错
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vscode_plug/" class="md-nav__link">
+        VS Code 插件开发指南
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vscodetunnel/" class="md-nav__link">
+        VS Code Tunnel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/vscodevimPlug/" class="md-nav__link">
+        vscode vim 插件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/yazi/" class="md-nav__link">
+        快捷键
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/zsh/" class="md-nav__link">
+        Zsh 环境一键配置脚本
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_code/%E5%BE%85%E8%A7%A3%E5%86%B3%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/" class="md-nav__link">
+        to be solved
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" tabindex="0" aria-expanded="false">
+          Minimal theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Minimal theory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Minimal theory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/TransmissionLineEq/" class="md-nav__link">
+        TransmissionLineEq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/dead_time/" class="md-nav__link">
+        Dead time
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/directProductAndSum/" class="md-nav__link">
+        直积 / 直和 / 张量积 辨析
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/functionalAna_SpecThe/" class="md-nav__link">
+        泛函分析和谱理论初步
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/ladderOpearator/" class="md-nav__link">
+        升降算符的构造
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/linearspace/" class="md-nav__link">
+        线性空间、对偶空间与量子态
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/qft_schwartz_ref/" class="md-nav__link">
+        Schwartz QFT 资源
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/qft_whatisfield/" class="md-nav__link">
+        Qft whatisfield
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/resolvent/" class="md-nav__link">
+        resolvent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/resolvent_resonateState/" class="md-nav__link">
+        共振态 resolvent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/riggedHilbertSpace/" class="md-nav__link">
+        装备希尔伯特空间与 Dirac 形式的严格化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatering_theory/" class="md-nav__link">
+        散射理论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheoryBook/" class="md-nav__link">
+        散射理论书籍推荐
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/tensor_product_completeness/" class="md-nav__link">
+        张量积完备性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3_15" type="checkbox" id="__nav_5_3_15" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_15" tabindex="0" aria-expanded="false">
+          functionnalAna
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="functionnalAna" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_3_15">
+          <span class="md-nav__icon md-icon"></span>
+          functionnalAna
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/functionnalAna/C0xu/" class="md-nav__link">
+        泛函序言
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/functionnalAna/C1space/" class="md-nav__link">
+        空间
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/functionnalAna/C2operatorFunctional/" class="md-nav__link">
+        算子和泛函 -空间上的作用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/functionnalAna/C3fourFundamentalTheo/" class="md-nav__link">
+        泛函四大基石定理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/functionnalAna/C4spectral/" class="md-nav__link">
+        谱理论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/functionnalAna/C5unboudPhysics/" class="md-nav__link">
+        无界算子和量子力学中的应用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/functionnalAna/RHS/" class="md-nav__link">
+        装备希尔伯特空间
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3_16" type="checkbox" id="__nav_5_3_16" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_16" tabindex="0" aria-expanded="false">
+          scatteringTheory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="scatteringTheory" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_3_16">
+          <span class="md-nav__icon md-icon"></span>
+          scatteringTheory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/01_friedrichsModel/" class="md-nav__link">
+        ch01 Friedrichs 模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/02_Green_operator/" class="md-nav__link">
+        ch02 格林算符与格林函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/03_S_matrix_and_cross_section/" class="md-nav__link">
+        ch03 S 矩阵与散射截面
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/04_T_and_U_operators/" class="md-nav__link">
+        ch04 从波算符到 T 算符，再到三体 AGS 的 U 算符
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/05_partial_wave_projection/" class="md-nav__link">
+        ch05 分波投影与角动量耦合：从抽象算符到数值可解方程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/06_polarization_formalism/" class="md-nav__link">
+        ch06 极化形式与自旋观测量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/07_coulomb_scattering/" class="md-nav__link">
+        ch07 Coulomb 散射的完整形式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/08_dwba/" class="md-nav__link">
+        ch08 畸变波 Born 近似
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/09_time_reversal_detailed_balance/" class="md-nav__link">
+        ch09 时间反演与细致平衡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/10_jost_analyticity/" class="md-nav__link">
+        ch10 Jost 函数与解析性
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/11_effective_range_levinson/" class="md-nav__link">
+        ch11 有效力程理论与 Levinson 系统化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/99_appendix_EST_seperable_HVH_Esym/" class="md-nav__link">
+        appendix · Woods-Saxon 光学势的 EST Separable 化及其与对称能的联系
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_3_16_13" type="checkbox" id="__nav_5_3_16_13" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3_16_13" tabindex="0" aria-expanded="false">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Examples" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_3_16_13">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/01_1d_delta/" class="md-nav__link">
+        一维 delta 势
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/02_square_well_3d/" class="md-nav__link">
+        三维方阱 s 波散射
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/03_delta_shell/" class="md-nav__link">
+        三维 delta 壳层势的散射与共振
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/04_yukawa/" class="md-nav__link">
+        Yukawa 势与 Born 近似
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/05_separable_rank1/" class="md-nav__link">
+        秩 1 separable 势与解析 T 矩阵
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/06_numerical_pipeline/" class="md-nav__link">
+        数值实验：分波相移与截面的统一流程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/07_well_barrier_1d/" class="md-nav__link">
+        一维势阱加势垒：α 衰变图像
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/08_centrifugal_barrier/" class="md-nav__link">
+        离心位垒与高分波 shape 共振
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/09_feshbach_two_channel/" class="md-nav__link">
+        双通道 Feshbach 共振
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/10_polarization_demo/" class="md-nav__link">
+        极化散射的数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/11_coulomb_demo/" class="md-nav__link">
+        Coulomb 散射的数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/12_dwba_demo/" class="md-nav__link">
+        DWBA 数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/13_jost_demo/" class="md-nav__link">
+        Jost 函数的数值演示
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../minimal_theory/scatteringTheory/examples/14_ere_levinson_demo/" class="md-nav__link">
+        有效力程展开与 Levinson 定理的数值演示
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" tabindex="0" aria-expanded="true">
+          Project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Project" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Project
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../example/" class="md-nav__link">
+        hello world
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_2" type="checkbox" id="__nav_5_4_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4_2" tabindex="0" aria-expanded="false">
+          D polar exp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="D polar exp" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          D polar exp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/Sipm_PMT/" class="md-nav__link">
+        Sipm PMT参数对比
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/caogao/" class="md-nav__link">
+        Caogao
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/d_breakup_theory/" class="md-nav__link">
+        氘核破裂理论上可以如何计算
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/faddeevWPCD/" class="md-nav__link">
+        faddeevWPCD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/lane_hvh_esym/" class="md-nav__link">
+        Lane 关系、光学势、EST 展开与 HVH 推导对称能
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/my_polarimeter/" class="md-nav__link">
+        My polarimeter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/other_polarmeter/" class="md-nav__link">
+        其他研究组的 polarimeter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/polar_measure_and_axis/" class="md-nav__link">
+        氘核极化测量与极化轴确定
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/riken_web_source/" class="md-nav__link">
+        riken 常见资源
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/scintillator/" class="md-nav__link">
+        闪烁体光产额
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/spherical_operator/" class="md-nav__link">
+        To show some relation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/stastic/" class="md-nav__link">
+        统计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/sw-api/" class="md-nav__link">
+        solidworks api接口
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D_polar_exp/todo_list/" class="md-nav__link">
+        To do list
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_3" type="checkbox" id="__nav_5_4_3" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="true">
+          Faddeev
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Faddeev" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Faddeev
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PeopelTree/" class="md-nav__link">
+        faddeev 学术谱系图
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construct_basis/" class="md-nav__link">
+        Construct basis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faddeev_WavePacket/" class="md-nav__link">
+        faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          量子三体的空间结构和解法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        量子三体的空间结构和解法
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#第一章-空间结构三种完全不同的分解" class="md-nav__link">
+    第一章 空间结构：三种完全不同的“分解”
+  </a>
+  
+    <nav class="md-nav" aria-label="第一章 空间结构：三种完全不同的“分解”">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-去掉质心六个自由度变成两组相对坐标" class="md-nav__link">
+    1.1 去掉质心：六个自由度变成两组相对坐标
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-第一种分解tensor-product自由度的分解" class="md-nav__link">
+    1.2 第一种分解：Tensor product——自由度的分解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-第二种分解direct-sum对称性导致的分块" class="md-nav__link">
+    1.3 第二种分解：Direct sum——对称性导致的分块
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_4" type="checkbox" id="__nav_5_4_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4_4" tabindex="0" aria-expanded="false">
+          Samurai
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Samurai" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Samurai
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/detector_samurai/" class="md-nav__link">
+        SAMURAI 带电粒子探测器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_4_2" type="checkbox" id="__nav_5_4_4_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4_4_2" tabindex="0" aria-expanded="false">
+          Anaroot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Anaroot" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_4_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Anaroot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/anaroot/RIDF/" class="md-nav__link">
+        RIKEN RIDF 文件构成详解：数据块 (Block) 说明
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/anaroot/anaroot/" class="md-nav__link">
+        ANAROOT 综合分析框架：
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/anaroot/anaroot2version/" class="md-nav__link">
+        ANAROOT 详细中文文档
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/anaroot/anaroot_decoder/" class="md-nav__link">
+        Anaroot decoder
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/anaroot/anaroot_nebula/" class="md-nav__link">
+        Anaroot nebula
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/anaroot/anaroot_nebula_reconstructionfunction/" class="md-nav__link">
+        Anaroot nebula reconstructionfunction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/anaroot/anaroot_pdc/" class="md-nav__link">
+        anaroot pdcS
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_4_4_3" type="checkbox" id="__nav_5_4_4_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_4_4_3" tabindex="0" aria-expanded="false">
+          Smsimulator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Smsimulator" data-md-level="4">
+        <label class="md-nav__title" for="__nav_5_4_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Smsimulator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/smsimulator/FDC2/" class="md-nav__link">
+        FDC2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/smsimulator/PDC/" class="md-nav__link">
+        PDC 漂移室模拟方案
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/smsimulator/nebula_simlulator/" class="md-nav__link">
+        Nebula simlulator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/smsimulator/smsimulator/" class="md-nav__link">
+        smsimultor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../samurai/smsimulator/smsimulator_tutor/" class="md-nav__link">
+        smsimulator 教学
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          日本生存指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="日本生存指南" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          日本生存指南
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/japanese/" class="md-nav__link">
+        Japanese
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%8E%BB%E6%97%A5%E6%9C%AC%E5%89%8D%E6%89%93%E5%8C%85/" class="md-nav__link">
+        登机前打包
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%90%83/" class="md-nav__link">
+        吃
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E5%9E%83%E5%9C%BE%E5%88%86%E7%B1%BB/" class="md-nav__link">
+        垃圾分类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%8E%A5%E6%94%B6%E5%BF%AB%E9%80%92/" class="md-nav__link">
+        接受快递
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E6%97%A5%E7%89%88%E6%89%8B%E6%9C%BAfelica%E8%8A%AF%E7%89%87/" class="md-nav__link">
+        Xperia 日版刷机后 FeliCa/Suica
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E5%AD%90%E6%94%AF%E4%BB%98-%E4%BA%A4%E9%80%9A%E5%8D%A1/" class="md-nav__link">
+        日本电子支付 - 交通卡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E7%94%B5%E8%AF%9D%E5%8D%A1/" class="md-nav__link">
+        电话卡
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E8%90%BD%E5%9C%B0todo/" class="md-nav__link">
+        落地事宜
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%97%A5%E6%9C%AC%E7%94%9F%E5%AD%98%E6%8C%87%E5%8D%97/%E9%93%B6%E8%A1%8C%E5%8D%A1/" class="md-nav__link">
+        银行卡
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                    </div>
+                  </div>
+                </div>
+              
+              
+                
+                <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                  <div class="md-sidebar__scrollwrap">
+                    <div class="md-sidebar__inner">
+                      
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#第一章-空间结构三种完全不同的分解" class="md-nav__link">
+    第一章 空间结构：三种完全不同的“分解”
+  </a>
+  
+    <nav class="md-nav" aria-label="第一章 空间结构：三种完全不同的“分解”">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-去掉质心六个自由度变成两组相对坐标" class="md-nav__link">
+    1.1 去掉质心：六个自由度变成两组相对坐标
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-第一种分解tensor-product自由度的分解" class="md-nav__link">
+    1.2 第一种分解：Tensor product——自由度的分解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-第二种分解direct-sum对称性导致的分块" class="md-nav__link">
+    1.3 第二种分解：Direct sum——对称性导致的分块
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                    </div>
+                  </div>
+                </div>
+                
+              
+            
+            
+              <div class="md-content" data-md-component="content">
+                <article class="md-content__inner md-typeset">
+                  
+                    
+
+
+
+<h1 id="量子三体的空间结构和解法">量子三体的空间结构和解法<a class="headerlink" href="#量子三体的空间结构和解法" title="Permanent link">#</a></h1>
+<p>求解量子三体问题时，最容易产生的混乱，不是公式太多，而是**很多名字根本不在同一个层次上**。</p>
+<p>我们常常把下面这些词放在一起比较：</p>
+<ul>
+<li>Schrödinger equation；</li>
+<li>Faddeev；</li>
+<li>AGS；</li>
+<li>CDCC；</li>
+<li>hyperspherical harmonics；</li>
+<li>coordinate space / momentum space；</li>
+<li>FEM、B-spline、DVR；</li>
+<li>wave packet；</li>
+<li>Coulomb-Sturmian；</li>
+<li>separable expansion；</li>
+<li>GMRES、Lanczos、Arnoldi。</li>
+</ul>
+<p>但这些东西有的在回答“<strong>方程怎么组织</strong>”，有的在回答“<strong>空间怎么表示</strong>”，有的在回答“<strong>究竟截掉了什么</strong>”，还有的只是在回答“<strong>最后那台矩阵怎么解</strong>”。</p>
+<p>如果不先分层，很容易得到一种错觉：</p>
+<blockquote>
+<p>Faddeev、CDCC、B-spline、Coulomb-Sturmian 好像都是几种互相竞争的“三体算法”。</p>
+</blockquote>
+<p>其实不是。</p>
+<p>本文的主线只有一句话：先分清你在改写什么，再讨论你在近似什么。</p>
+<p>整篇文章都可以放进下面这条链：</p>
+<p>$$</p>
+<p>\begin{array}{c}<br />
+\text{物理 Hilbert 空间}\[1mm]<br />
+\downarrow\[1mm]<br />
+\text{对称性与通道结构}\[1mm]<br />
+\downarrow\[1mm]<br />
+\text{方程架构：Schrödinger / Faddeev / AGS / projected Schrödinger}\[1mm]<br />
+\downarrow\[1mm]<br />
+\text{表示：coordinate / momentum / hyperspherical}\[1mm]<br />
+\downarrow\[1mm]<br />
+\text{有限化：grid / FEM / spline / spectral / wave packet / CS / low rank}\[1mm]<br />
+\downarrow\[1mm]<br />
+\text{散射边界条件}\[1mm]<br />
+\downarrow\[1mm]<br />
+\text{有限维线性代数}<br />
+\end{array}<br />
+$$</p>
+<p>真正理解三体计算，关键不是记方法名，而是每看到一个方法都问四个问题：</p>
+<ol>
+<li>它改变的是**方程结构**，还是只改变**表示**？</li>
+<li>它是一个**精确重写**，还是一个**近似截断**？</li>
+<li>它真正压缩的是**波函数空间**，还是**算符**？</li>
+<li>三体散射的**无穷远边界条件**到底放在哪里？</li>
+</ol>
+<p>下面我们一层一层地把这条链走完。</p>
+<hr />
+<h2 id="第一章-空间结构三种完全不同的分解">第一章 空间结构：三种完全不同的“分解”<a class="headerlink" href="#第一章-空间结构三种完全不同的分解" title="Permanent link">#</a></h2>
+<p>三体理论里到处都在用“分解”这个词，但它至少有三种完全不同的数学含义。把它们分开，后面的讨论才不会混。</p>
+<h3 id="11-去掉质心六个自由度变成两组相对坐标">1.1 去掉质心：六个自由度变成两组相对坐标<a class="headerlink" href="#11-去掉质心六个自由度变成两组相对坐标" title="Permanent link">#</a></h3>
+<p>三个粒子本来有九个空间自由度。质心运动与内部结构无关，可以分离出去，于是只剩**六个相对自由度**。</p>
+<p>描述这六个自由度最常用的方式是 Jacobi 坐标：先任选两个粒子组成一个 pair，用</p>
+<div class="arithmatex">\[
+\mathbf x
+\]</div>
+<p>描述这个 pair 的内部相对运动，再用</p>
+<div class="arithmatex">\[
+\mathbf y
+\]</div>
+<p>描述第三个粒子（spectator）相对 pair 质心的运动。</p>
+<p>例如对于 <span class="arithmatex">\(n+p+A\)</span>，一种常见选择是</p>
+<div class="arithmatex">\[
+\mathbf x=\mathbf r_n-\mathbf r_p,
+\]</div>
+<div class="arithmatex">\[
+\mathbf y=\mathbf r_A-
+\frac{m_n\mathbf r_n+m_p\mathbf r_p}{m_n+m_p}.
+\]</div>
+<p>直观地说：<span class="arithmatex">\(\mathbf x\)</span> 看“中子和质子离多远”，<span class="arithmatex">\(\mathbf y\)</span> 看“氘核（np 的质心）离原子核多远”。</p>
+<h3 id="12-第一种分解tensor-product自由度的分解">1.2 第一种分解：Tensor product——自由度的分解<a class="headerlink" href="#12-第一种分解tensor-product自由度的分解" title="Permanent link">#</a></h3>
+<p>忽略自旋等内部自由度时，相对运动空间可以写为</p>
+<p>$$</p>
+<p>\mathcal H_{\rm rel}<br />
+\simeq<br />
+L^2(\mathbb R^3_x)<br />
+\otimes<br />
+L^2(\mathbb R^3_y).</p>
+<p>$$</p>
+<p>这里的 <span class="arithmatex">\(\otimes\)</span>（tensor product）表示：</p>
+<blockquote>
+<p><span class="arithmatex">\(\mathbf x\)</span> 和 <span class="arithmatex">\(\mathbf y\)</span> 是两个**独立**的自由度，完整状态需要**同时**描述它们。</p>
+</blockquote>
+<p>一个态是“一个 <span class="arithmatex">\(x\)</span> 的函数”乘上“一个 <span class="arithmatex">\(y\)</span> 的函数”的叠加；测度是 <span class="arithmatex">\(d^3x\,d^3y\)</span>；内积是先对 <span class="arithmatex">\(x\)</span> 积分再对 <span class="arithmatex">\(y\)</span> 积分。</p>
+<p>如果加入 spin、isospin，结构只是继续 tensor product：</p>
+<div class="arithmatex">\[
+\mathcal H
+=
+L^2(\mathbf x)
+\otimes
+L^2(\mathbf y)
+\otimes
+\mathcal H_{\rm spin}
+\otimes
+\mathcal H_{\rm isospin}
+\otimes\cdots.
+\]</div>
+<p>这是**自由度的分解**：空间变大是因为粒子多、自由度多。</p>
+<h3 id="13-第二种分解direct-sum对称性导致的分块">1.3 第二种分解：Direct sum——对称性导致的分块<a class="headerlink" href="#13-第二种分解direct-sum对称性导致的分块" title="Permanent link">#</a></h3>
+<p>三体 Hamiltonian 通常与总角动量、宇称、同位旋等守恒量对易：</p>
+<div class="arithmatex">\[
+[H,J^2]=0,
+\qquad
+[H,\Pi]=0.
+\]</div>
+<p>守恒量意味着：Hamiltonian 不会把一个 <span class="arithmatex">\(J^\pi T\)</span> sector 里的态“泄露”到另一个 sector。于是 Hilbert 空间可以写成</p>
+<p>$$</p>
+<h1 id="mathcal-h">\mathcal H<a class="headerlink" href="#mathcal-h" title="Permanent link">#</a></h1>
+<p>\bigoplus_{J^\pi T}<br />
+\mathcal H_{J^\pi T}.</p>
+<p>$$</p>
+<p>这里的 <span class="arithmatex">\(\oplus\)</span>（direct sum）表示：</p>
+<blockquote>
+<p>不同 <span class="arithmatex">\(J^\pi T\)</span> 的子空间**互不相交、互不混合**，可以各自独立求解。</p>
+</blockquote>
+<p>这是真正的空间直和。数值上，这意味着我们先算 <span class="arithmatex">\(J^\pi=0^+\)</span>，再算 <span class="arithmatex">\(1^-\)</span>……每个 sector 是一个独立的小问题，最后把结果按统计权重加起来。</p>
+<p>在一个固定 <span class="arithmatex">\(J\)</span> sector 内，再做 partial-wave expansion：</p>
+<div class="arithmatex">\[
+\Psi^{JM}
+=
+\sum_c
+u_c(x,y)\,
+\mathcal Y_c^{JM}
+(\hat x,\hat y,\sigma,\tau).
+\]</div>
+<p>这里 <span class="arithmatex">\(\mathcal Y_c^{JM}\)</span> 是把两份轨道角动量（<span class="arithmatex">\(l\)</span> 对 <span class="arithmatex">\(\mathbf x\)</span>、<span class="arithmatex">\(\lambda\)</span> 对 <span class="arithmatex">\(\mathbf y\)</span>）与自旋耦合到总 <span class="arithmatex">\(J\)</span> 的角向基函数；求和指标 <span class="arithmatex">\(c\)</span> 是 <strong>channel label</strong>，可能包含</p>
+<div class="arithmatex">\[
+l,\;s,\;j,\;\lambda,\;I,\ldots
+\]</div>
+<p>注意：这些量**通常并不分别守恒**，它们只是构造固定 <span class="arithmatex">\(J^\pi T\)</span> sector 基底的标签。真正守恒的只有 <span class="arithmatex">\(J^\pi\)</span>（和 <span class="arithmatex">\(T\)</span>）。</p>
+<p>固定 <span class="arithmatex">\(J\)</span> 之后，问题的空间结构变成</p>
+<p>$$</p>
+<p>\mathcal H_J<br />
+\simeq<br />
+\bigoplus_c<br />
+\left[<br />
+L^2(\mathbb R_+^x)<br />
+\otimes<br />
+L^2(\mathbb R_+^y)<br />
+\right].</p>
+<p>$$</p>
+<p>也就是说，原来的六维空间问题被整理成：</p>
+<blockquote>
+<p>一组**离散** channel label <span class="arithmatex">\(c\)</span>，外加两个**连续** radial variables <span class="arithmatex">\(x,y\)</span>。</p>
+</blockquote>
+<p>角向已经全部被对称性“吃掉”了，剩下的连续问题只有二维。这是所有三体计算的共同出发点。</p>
+<h3 id="14-第三种分解faddeev既非-tensor-product也非-direct-sum">1.4 第三种“分解”：Faddeev——既非 tensor product，也非 direct sum<a class="headerlink" href="#14-第三种分解faddeev既非-tensor-product也非-direct-sum" title="Permanent link">#</a></h3>
+<p>Faddeev 理论写</p>
+<p>$$</p>
+<p>\Psi=\psi_1+\psi_2+\psi_3.</p>
+<p>$$</p>
+<p>这看起来也像一种“分解”，但它与上面两种**完全不是一回事**：</p>
+<ul>
+<li>一般并没有 <span class="arithmatex">\(\langle\psi_\alpha|\psi_\beta\rangle=0\)</span>；</li>
+<li>也不能写 <span class="arithmatex">\(\mathcal H=\mathcal H_1\oplus\mathcal H_2\oplus\mathcal H_3\)</span>；</li>
+<li>三个 <span class="arithmatex">\(\psi_\alpha\)</span> 都是**同一个**三体 Hilbert 空间里的完整三体函数。</li>
+</ul>
+<p>Faddeev 做的不是“把空间切块”，而是把总波函数按 pair interaction topology 重新组织。</p>
+<p>具体为什么这样做、这样做换来了什么，我们在第三章详细推导。这里先记住：三种“分解”对应三个层次——自由度、对称性、方程结构。</p>
+<h3 id="15-三套-jacobi-坐标不是三个空间">1.5 三套 Jacobi 坐标不是三个空间<a class="headerlink" href="#15-三套-jacobi-坐标不是三个空间" title="Permanent link">#</a></h3>
+<p>三个粒子可以有三套 Jacobi partition：</p>
+<div class="arithmatex">\[
+(23)+1,
+\qquad
+(31)+2,
+\qquad
+(12)+3,
+\]</div>
+<p>分别记为</p>
+<div class="arithmatex">\[
+(\mathbf x_1,\mathbf y_1),
+\quad
+(\mathbf x_2,\mathbf y_2),
+\quad
+(\mathbf x_3,\mathbf y_3).
+\]</div>
+<p>它们并不是三个不同的 Hilbert 空间，而是**同一个**相对运动空间的三套坐标：</p>
+<div class="arithmatex">\[
+\mathcal H_1\simeq\mathcal H_2\simeq\mathcal H_3,
+\]</div>
+<p>彼此由 Jacobi transformation（一个线性的坐标变换加上 Jacobian）联系。</p>
+<p>一个好的类比是：</p>
+<blockquote>
+<p>同一个平面，你可以用 Cartesian coordinates，也可以用 polar coordinates；坐标不同，但点还是那些点。</p>
+</blockquote>
+<p>所以千万不要写成</p>
+<div class="arithmatex">\[
+\mathcal H
+=
+\mathcal H_1\oplus\mathcal H_2\oplus\mathcal H_3.
+\]</div>
+<p>三套 Jacobi 坐标之所以重要，不是因为它们“产生了三个空间”，而是因为**不同的 cluster topology 在不同的 Jacobi 坐标下最自然**。</p>
+<p>例如 <span class="arithmatex">\((23)+1\)</span> 这个通道的渐近区域是</p>
+<div class="arithmatex">\[
+x_1\sim\text{finite},
+\qquad
+y_1\to\infty,
+\]</div>
+<p>即“23 抱成一团、1 跑到无穷远”。这个几何结构在 <span class="arithmatex">\((x_1,y_1)\)</span> 坐标里一眼就能看见；换到另外两套坐标里，它会变得面目模糊。</p>
+<p>这正是 Faddeev 要利用的东西。</p>
+<h3 id="16-基底和子空间必须严格区分">1.6 基底和子空间必须严格区分<a class="headerlink" href="#16-基底和子空间必须严格区分" title="Permanent link">#</a></h3>
+<p>在进入各种方法之前，还要澄清一对容易混淆的概念。</p>
+<p>假设</p>
+<div class="arithmatex">\[
+\mathcal H_x=L^2(x),
+\]</div>
+<p>我们选择一组函数</p>
+<div class="arithmatex">\[
+\phi_1,\phi_2,\ldots,\phi_N.
+\]</div>
+<p>这些是 <strong>basis functions</strong>。它们张成</p>
+<div class="arithmatex">\[
+V_N
+=
+\operatorname{span}
+\{\phi_1,\ldots,\phi_N\}
+\subset\mathcal H_x.
+\]</div>
+<p>真正参与近似的，是这个有限维 <strong>subspace</strong> <span class="arithmatex">\(V_N\)</span>，而不是基底本身。对应的 projector（对正交基）为</p>
+<div class="arithmatex">\[
+P_N
+=
+\sum_{n=1}^N
+|\phi_n\rangle\langle\phi_n|.
+\]</div>
+<p>因此应当牢记：basis 是描述子空间的坐标，subspace 才是物理/数值近似本身。</p>
+<p>如果只是换了一组基底，但</p>
+<div class="arithmatex">\[
+\operatorname{span}\{\phi_n\}
+=
+\operatorname{span}\{\tilde\phi_n\},
+\]</div>
+<p>那么 model space 没有改变，近似结果也不会变。反之，只有增加新的独立方向，</p>
+<div class="arithmatex">\[
+V_N\subset V_{N+1},
+\]</div>
+<p>才真正扩大了近似空间。</p>
+<p>后面会看到：CDCC、wave packet、Coulomb-Sturmian 的争论焦点常常是“选什么基底”，但从数学上看，它们真正定义的是“选什么子空间、截掉什么”。</p>
+<hr />
+<h2 id="第二章-三体问题到底难在哪里">第二章 三体问题到底难在哪里<a class="headerlink" href="#第二章-三体问题到底难在哪里" title="Permanent link">#</a></h2>
+<h3 id="21-不只是六维很大">2.1 不只是“六维很大”<a class="headerlink" href="#21-不只是六维很大" title="Permanent link">#</a></h3>
+<p>把质心去掉以后，三体确实是六维相对坐标问题。partial-wave 分解之后剩两个连续径向变量，看似也不算夸张——现代 sparse matrix、FEM、spectral method、GPU 早就能在很多高维问题上工作。</p>
+<p>如果三体问题只是“维数高”，它不会直到今天仍然是专门的研究方向。</p>
+<h3 id="22-真正的困难无穷远不止有一种形状">2.2 真正的困难：无穷远不止有一种形状<a class="headerlink" href="#22-真正的困难无穷远不止有一种形状" title="Permanent link">#</a></h3>
+<p>三体**散射**真正棘手的地方，是 <span class="arithmatex">\(x,y\to\infty\)</span> 时系统可能处于好几种完全不同的组态：</p>
+<ol>
+<li>一个束缚 pair 加一个 spectator：</li>
+</ol>
+<div class="arithmatex">\[
+(23)+1;
+\]</div>
+<ol>
+<li>rearrangement 通道：</li>
+</ol>
+<div class="arithmatex">\[
+(31)+2;
+\]</div>
+<ol>
+<li>另一种 rearrangement：</li>
+</ol>
+<div class="arithmatex">\[
+(12)+3;
+\]</div>
+<ol>
+<li>三个粒子都互相远离（breakup）：</li>
+</ol>
+<div class="arithmatex">\[
+1+2+3;
+\]</div>
+<ol>
+<li>如果带电，Coulomb 长程相互作用在无穷远仍然存在。</li>
+</ol>
+<p>每一种组态在渐近区都有自己特有的波函数形状（束缚态尾巴、Coulomb 波、振荡的 breakup 波前）。所以难点在于：三体散射有多个彼此不同的 asymptotic topology。</p>
+<p>一个好的三体方法，往往不是单纯把矩阵做小，而是在**组织这些不同的无穷远结构**。</p>
+<h3 id="23-精确重写与近似截断最重要的一张表">2.3 精确重写与近似截断：最重要的一张表<a class="headerlink" href="#23-精确重写与近似截断最重要的一张表" title="Permanent link">#</a></h3>
+<p>现在可以给出整篇文章里最核心的一张表。它回答的问题是：各种常见操作，到底是**精确的重新表述**，还是**引入了近似**？</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>本质</th>
+<th>是否引入近似</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>换 Jacobi 坐标</td>
+<td>representation change</td>
+<td>否</td>
+</tr>
+<tr>
+<td>coordinate <span class="arithmatex">\(\leftrightarrow\)</span> momentum Fourier transform</td>
+<td>representation change</td>
+<td>否</td>
+</tr>
+<tr>
+<td>partial-wave decomposition（不截断）</td>
+<td>exact basis expansion</td>
+<td>否</td>
+</tr>
+<tr>
+<td>Faddeev decomposition</td>
+<td>exact equation reorganization</td>
+<td>否</td>
+</tr>
+<tr>
+<td>AGS reformulation</td>
+<td>exact operator reformulation</td>
+<td>否</td>
+</tr>
+<tr>
+<td>hyperspherical coordinate change</td>
+<td>representation / factorization</td>
+<td>否</td>
+</tr>
+<tr>
+<td>channel truncation <span class="arithmatex">\(J,l,\lambda\leq\cdots\)</span></td>
+<td>model-space truncation</td>
+<td>是</td>
+</tr>
+<tr>
+<td>CDCC continuum discretization</td>
+<td>cluster model-space projection</td>
+<td>是</td>
+</tr>
+<tr>
+<td>finite grid / FEM / spline basis</td>
+<td>finite-dimensional approximation</td>
+<td>是</td>
+</tr>
+<tr>
+<td>wave-packet discretization</td>
+<td>continuum coarse graining</td>
+<td>是</td>
+</tr>
+<tr>
+<td>Coulomb-Sturmian truncation</td>
+<td>finite spectral model space</td>
+<td>是</td>
+</tr>
+<tr>
+<td>separable finite-rank <span class="arithmatex">\(t\)</span></td>
+<td>operator compression</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<p>很多概念上的混乱，正来自把“<strong>重写问题</strong>”和“<strong>近似问题</strong>”混为一谈：</p>
+<ul>
+<li>Faddeev 分解是精确的——它只是把 Schrödinger 方程重新组织成等价形式；</li>
+<li>CDCC 的 continuum discretization 是近似——它真的丢掉了 model space 之外的物理。</li>
+</ul>
+<p>两者处在不同的层次，所以“Faddeev 和 CDCC 哪个好”这个问题本身就不完整：更合理的问法是“在同一个层次上，它们各自的选择是什么、代价是什么”。</p>
+<hr />
+<h2 id="第三章-方程架构schrödingercdccfaddeevags">第三章 方程架构：Schrödinger、CDCC、Faddeev、AGS<a class="headerlink" href="#第三章-方程架构schrödingercdccfaddeevags" title="Permanent link">#</a></h2>
+<p>现在进入链条的第三层：<strong>用什么样的方程来组织问题</strong>。这一层的选择（Schrödinger / Faddeev / AGS / projected Schrödinger）都是精确的方程重写，真正的近似在后面两层才出现。</p>
+<h3 id="31-最直接的办法直接解三体-schrödinger-方程">3.1 最直接的办法：直接解三体 Schrödinger 方程<a class="headerlink" href="#31-最直接的办法直接解三体-schrödinger-方程" title="Permanent link">#</a></h3>
+<p>Hamiltonian 写成</p>
+<div class="arithmatex">\[
+H
+=
+H_0+V_{12}+V_{23}+V_{31},
+\]</div>
+<p>其中 <span class="arithmatex">\(H_0\)</span> 是三体自由相对运动动能。直接求解</p>
+<div class="arithmatex">\[
+(E-H)\Psi=0.
+\]</div>
+<p>最直接的离散办法是两个 radial directions 都选有限维子空间：</p>
+<div class="arithmatex">\[
+L^2(x)
+\rightarrow
+V_x^{N_x},
+\qquad
+L^2(y)
+\rightarrow
+V_y^{N_y},
+\]</div>
+<p>于是</p>
+<div class="arithmatex">\[
+\mathcal H
+\rightarrow
+V_x^{N_x}\otimes V_y^{N_y},
+\]</div>
+<p>波函数展开为</p>
+<div class="arithmatex">\[
+\Psi_N(x,y)
+=
+\sum_{ij}
+C_{ij}
+B_i(x)C_j(y).
+\]</div>
+<p>最终得到矩阵问题。对 bound state，是广义本征值问题：</p>
+<p>$$</p>
+<p>HC=ESC.</p>
+<p>$$</p>
+<p>对散射问题（给定入射通道的 driven equation），是线性方程组：</p>
+<p>$$</p>
+<p>A(E)C=B.</p>
+<p>$$</p>
+<p>这种方法对 bound state 很自然：束缚态是 <span class="arithmatex">\(L^2\)</span> 的，有限 basis 加得足够多就能收敛。</p>
+<p>对于 scattering，麻烦来了：第二章列出的 elastic、rearrangement、breakup、Coulomb 长程，全部藏在**同一个** <span class="arithmatex">\(\Psi\)</span> 里，纠缠在一起。用一套坐标、一个有限 box 去同时逼近所有这些渐近行为，代价非常高。</p>
+<p>这正是 CDCC 和 Faddeev 各自出手的地方。</p>
+<h3 id="32-cdcc截断一个-tensor-factor">3.2 CDCC：截断一个 tensor factor<a class="headerlink" href="#32-cdcc截断一个-tensor-factor" title="Permanent link">#</a></h3>
+<p>考虑 <span class="arithmatex">\(n+p+A\)</span>。CDCC（Continuum Discretized Coupled Channels）首先做一个**物理上的选择**：认定 <span class="arithmatex">\((np)+A\)</span> 是最重要的 partition——中子和质子组成 projectile（例如氘核），与靶 <span class="arithmatex">\(A\)</span> 碰撞。</p>
+<p>于是 Hilbert 空间写为</p>
+<p>$$</p>
+<h1 id="mathcal-h_1">\mathcal H<a class="headerlink" href="#mathcal-h_1" title="Permanent link">#</a></h1>
+<p>\mathcal H_{np}<br />
+\otimes<br />
+\mathcal H_R.</p>
+<p>$$</p>
+<p>其中</p>
+<div class="arithmatex">\[
+\mathcal H_{np}=L^2(r)
+\]</div>
+<p>描述 projectile 内部运动（<span class="arithmatex">\(r\)</span> 是 <span class="arithmatex">\(n\)</span>–<span class="arithmatex">\(p\)</span> 距离），</p>
+<div class="arithmatex">\[
+\mathcal H_R=L^2(R)
+\]</div>
+<p>描述 projectile–target 相对运动。</p>
+<h4 id="321-cdcc-的核心是-model-space-projection">3.2.1 CDCC 的核心是 model-space projection<a class="headerlink" href="#321-cdcc-的核心是-model-space-projection" title="Permanent link">#</a></h4>
+<p>CDCC 首先做的是</p>
+<p>$$</p>
+<p>\mathcal H_{np}<br />
+\longrightarrow<br />
+P_{\rm int}\mathcal H_{np}.</p>
+<p>$$</p>
+<p>也就是只保留 projectile internal space 的一个有限 model space：</p>
+<div class="arithmatex">\[
+P_{\rm int}
+=
+\sum_{n=1}^{N}
+|\phi_n\rangle\langle\phi_n|.
+\]</div>
+<p>这些 <span class="arithmatex">\(\phi_n\)</span> 可以是：</p>
+<ul>
+<li>true bound states（真实的氘核基态等）；</li>
+<li>continuum bins（把连续谱按动量区间切块平均）；</li>
+<li>pseudostates（对角化某个辅助 Hamiltonian 得到的离散近似态）；</li>
+<li>Gaussian expansion states；</li>
+<li>THO states（transformed harmonic oscillator）；</li>
+<li>Sturmian states；</li>
+<li>box states（放在有限盒子里对角化）。</li>
+</ul>
+<p>这些是不同的 <strong>basis construction</strong>，但共同点是它们定义了同一个东西——projector <span class="arithmatex">\(P_{\rm int}\)</span>。</p>
+<p>因此 CDCC model space 是</p>
+<p>$$</p>
+<h1 id="mathcal-h_rm-cdcc">\mathcal H_{\rm CDCC}<a class="headerlink" href="#mathcal-h_rm-cdcc" title="Permanent link">#</a></h1>
+<p>P_{\rm int}\mathcal H_{np}<br />
+\otimes<br />
+\mathcal H_R,</p>
+<p>$$</p>
+<p>即</p>
+<p>$$</p>
+<p>P_{\rm int}\otimes I_R.</p>
+<p>$$</p>
+<p>也就是说：</p>
+<blockquote>
+<p>projectile 内部自由度被压缩成有限个 channel，而 projectile–target 分离 <span class="arithmatex">\(R\)</span> 仍保留为连续变量。</p>
+</blockquote>
+<p><strong>这一步才是 CDCC 真正的物理近似。</strong> 它假设：把入射通道之外最重要的物理（projectile 破碎、激发）压缩进 <span class="arithmatex">\((np)+A\)</span> 这个 partition 的有限内部空间，就足以描述散射。</p>
+<h4 id="322-为什么标准-cdcc-变成-coupled-ode">3.2.2 为什么标准 CDCC 变成 coupled ODE？<a class="headerlink" href="#322-为什么标准-cdcc-变成-coupled-ode" title="Permanent link">#</a></h4>
+<p>展开</p>
+<div class="arithmatex">\[
+\Psi(r,R)
+\approx
+\sum_n
+\phi_n(r)\chi_n(R).
+\]</div>
+<p>把它代入 Schrödinger 方程，两边左乘 <span class="arithmatex">\(\langle\phi_n|\)</span> 对 <span class="arithmatex">\(r\)</span> 投影（这是标准的 Galerkin 步骤），得到</p>
+<div class="arithmatex">\[
+\left[
+T_R+\epsilon_n-E
+\right]\chi_n(R)
++
+\sum_m
+V_{nm}(R)\chi_m(R)
+=0,
+\]</div>
+<p>其中 <span class="arithmatex">\(\epsilon_n\)</span> 是 <span class="arithmatex">\(\phi_n\)</span> 的内部能量，</p>
+<div class="arithmatex">\[
+V_{nm}(R)
+=
+\langle\phi_n|
+\,U_{nA}+U_{pA}\,
+|\phi_m\rangle(R)
+\]</div>
+<p>是作用在 <span class="arithmatex">\(R\)</span> 上的耦合势。做 partial waves 之后，这就是一组普通的 coupled radial ODE，可以用 Numerov 之类的方法传播求解。</p>
+<p>但要注意，coupled ODE 不是 CDCC 的定义，而只是常见的 numerical realization。它出现的唯一原因是：内部坐标 <span class="arithmatex">\(r\)</span> 已被有限维化（<span class="arithmatex">\(\phi_n\)</span>），而 <span class="arithmatex">\(R\)</span> 还保持连续，所以剩下的是一组关于 <span class="arithmatex">\(\chi_n(R)\)</span> 的常微分方程。</p>
+<h4 id="323-cdcc-完全可以进一步-finite-dimensionalize">3.2.3 CDCC 完全可以进一步 finite-dimensionalize<a class="headerlink" href="#323-cdcc-完全可以进一步-finite-dimensionalize" title="Permanent link">#</a></h4>
+<p>完全可以再把 <span class="arithmatex">\(R\)</span> 离散：</p>
+<div class="arithmatex">\[
+L^2(R)
+\rightarrow
+P_RL^2(R),
+\]</div>
+<p>于是</p>
+<p>$$</p>
+<p>P_{\rm int}\otimes P_R,</p>
+<p>$$</p>
+<p>展开为</p>
+<div class="arithmatex">\[
+\Psi
+=
+\sum_{ni}
+C_{ni}\phi_n(r)B_i(R).
+\]</div>
+<p>此时 CDCC 不再需要 coupled ODE，而直接变成 finite-dimensional Galerkin problem：</p>
+<div class="arithmatex">\[
+A(E)C=B.
+\]</div>
+<p>因此原则上可以有：</p>
+<ul>
+<li>FEM-CDCC；</li>
+<li>B-spline CDCC；</li>
+<li>DVR-CDCC；</li>
+<li>spectral CDCC；</li>
+<li>wave-packet CDCC；</li>
+<li>momentum-space CDCC。</li>
+</ul>
+<p>这些“变体”改变的都只是 <span class="arithmatex">\(R\)</span> 方向的数值表示，CDCC 的物理定义始终来自 <strong>projectile continuum model-space projection</strong>，而不是来自 Numerov 或 coupled differential equation。</p>
+<h3 id="33-faddeev按相互作用拓扑重组方程">3.3 Faddeev：按相互作用拓扑重组方程<a class="headerlink" href="#33-faddeev按相互作用拓扑重组方程" title="Permanent link">#</a></h3>
+<p>Faddeev 走的是另一条路：它不偏爱任何 partition，而是把 Hamiltonian 的结构本身利用起来。</p>
+<p>考虑</p>
+<div class="arithmatex">\[
+H=H_0+V_1+V_2+V_3,
+\]</div>
+<p>其中</p>
+<div class="arithmatex">\[
+V_1=V_{23},
+\qquad
+V_2=V_{31},
+\qquad
+V_3=V_{12}.
+\]</div>
+<p>Schrödinger 方程是</p>
+<div class="arithmatex">\[
+(E-H_0)\Psi
+=
+(V_1+V_2+V_3)\Psi.
+\]</div>
+<h4 id="331-推导从-schrödinger-到-faddeev-components">3.3.1 推导：从 Schrödinger 到 Faddeev components<a class="headerlink" href="#331-推导从-schrödinger-到-faddeev-components" title="Permanent link">#</a></h4>
+<p>令自由 resolvent</p>
+<div class="arithmatex">\[
+G_0(E)
+=
+\frac{1}{E-H_0+i0}.
+\]</div>
+<p>用 <span class="arithmatex">\(G_0\)</span> 作用在方程两边（对束缚态，<span class="arithmatex">\(\Psi\in L^2\)</span>，齐次解没有贡献，这一步是严格的）：</p>
+<div class="arithmatex">\[
+\Psi
+=
+G_0(V_1+V_2+V_3)\Psi.
+\]</div>
+<p>现在定义 Faddeev components</p>
+<p>$$</p>
+<h1 id="psi_alpha">\psi_\alpha<a class="headerlink" href="#psi_alpha" title="Permanent link">#</a></h1>
+<p>G_0V_\alpha\Psi,<br />
+\qquad<br />
+\alpha=1,2,3.</p>
+<p>$$</p>
+<p>那么立刻有</p>
+<div class="arithmatex">\[
+\Psi
+=
+\psi_1+\psi_2+\psi_3.
+\]</div>
+<p>（对散射问题，右边还要加上入射项，这不改变方程的结构。）</p>
+<p>把 <span class="arithmatex">\(\Psi=\sum_\beta\psi_\beta\)</span> 代回定义式：</p>
+<div class="arithmatex">\[
+\psi_\alpha
+=
+G_0V_\alpha\psi_\alpha
++
+G_0V_\alpha
+\sum_{\beta\neq\alpha}\psi_\beta.
+\]</div>
+<p>第一项正是 <span class="arithmatex">\(\alpha\)</span> 自己这个 pair 的两体 Lippmann–Schwinger 结构。把这部分“收编”进 two-body <span class="arithmatex">\(t\)</span> operator（在 Jacobi 坐标的 pair 变量上定义）：</p>
+<div class="arithmatex">\[
+t_\alpha
+=
+V_\alpha+V_\alpha G_0 t_\alpha,
+\]</div>
+<p>就得到标准的 Faddeev 方程：</p>
+<p>$$</p>
+<h1 id="psi_alpha_1">\psi_\alpha<a class="headerlink" href="#psi_alpha_1" title="Permanent link">#</a></h1>
+<p>G_0t_\alpha<br />
+\sum_{\beta\neq\alpha}\psi_\beta.</p>
+<p>$$</p>
+<p>注意最后的形式里，每个 component 只与**另外两个** component 耦合，而自己 pair 内部的无穷多次反复散射已经被 <span class="arithmatex">\(t_\alpha\)</span> 精确求和。</p>
+<h4 id="332-这一步到底解决了什么">3.3.2 这一步到底解决了什么？<a class="headerlink" href="#332-这一步到底解决了什么" title="Permanent link">#</a></h4>
+<p>Faddeev 不是为了“把一个六维函数变成三个更小的函数”——三个 <span class="arithmatex">\(\psi_\alpha\)</span> 各自仍然是完整的三体函数。</p>
+<p>真正的收益是**多重散射级数的重组**。如果直接用 Schrödinger 方程做 Born 展开，得到的是</p>
+<div class="arithmatex">\[
+G_0(V_1+V_2+V_3)G_0(V_1+V_2+V_3)\cdots
+\]</div>
+<p>所有可能的散射序列（粒子 1 撞 2、然后 2 撞 3、然后又是 1 撞 2……）混在一起，这个级数在三体情形收敛性很差（这正是两体理论直接推广到三体失败的地方）。</p>
+<p>Faddeev 重组之后：</p>
+<div class="arithmatex">\[
+V_{23}\text{ 内部的所有反复作用}
+\quad\longrightarrow\quad
+t_1\text{（被精确求和）}\longrightarrow \psi_1,
+\]</div>
+<div class="arithmatex">\[
+V_{31}\text{ 内部的所有反复作用}
+\quad\longrightarrow\quad
+\psi_2,
+\]</div>
+<div class="arithmatex">\[
+V_{12}\text{ 内部的所有反复作用}
+\quad\longrightarrow\quad
+\psi_3,
+\]</div>
+<p>剩下的耦合只描述 pair 之间的**交替**。所以比“相互作用责任分解”更准确的说法是：</p>
+<p>Faddeev 按 pair-scattering topology 组织多重散射。</p>
+<h4 id="333-components-不是正交子空间">3.3.3 components 不是正交子空间<a class="headerlink" href="#333-components-不是正交子空间" title="Permanent link">#</a></h4>
+<p>再强调一次结构上的要点。一般并不存在</p>
+<div class="arithmatex">\[
+\langle\psi_\alpha|\psi_\beta\rangle=0,
+\]</div>
+<p>也不能写</p>
+<div class="arithmatex">\[
+\mathcal H
+=
+\mathcal H_1\oplus\mathcal H_2\oplus\mathcal H_3.
+\]</div>
+<p>三个 Faddeev components 都属于同一个完整三体 Hilbert 空间。区别只是：<span class="arithmatex">\(\psi_1\)</span> 专门组织 pair (23) 的散射，<span class="arithmatex">\(\psi_2\)</span> 组织 (31)，<span class="arithmatex">\(\psi_3\)</span> 组织 (12)。</p>
+<p>Faddeev 分解的是相互作用责任，而不是正交空间。</p>
+<p>这也解释了一个实际问题：如果想简单地“把三套 Jacobi 坐标的 basis 加在一起”来表示波函数，会得到 overcomplete 的集合；Faddeev 正是通过 interaction topology 明确每个成分“负责什么”，从而避免了这种混乱。</p>
+<h4 id="334-为什么这对散射边界条件特别有用">3.3.4 为什么这对散射边界条件特别有用？<a class="headerlink" href="#334-为什么这对散射边界条件特别有用" title="Permanent link">#</a></h4>
+<p>每个 component 都可以放在最自然的 Jacobi 坐标中：</p>
+<div class="arithmatex">\[
+\psi_1(x_1,y_1),
+\qquad
+\psi_2(x_2,y_2),
+\qquad
+\psi_3(x_3,y_3).
+\]</div>
+<p>例如 <span class="arithmatex">\((23)+1\)</span> 通道的渐近区是</p>
+<div class="arithmatex">\[
+x_1\sim\text{pair size},
+\qquad
+y_1\to\infty.
+\]</div>
+<p>这个结构在 <span class="arithmatex">\((x_1,y_1)\)</span> 中非常简单：<span class="arithmatex">\(x_1\)</span> 方向是束缚态尾巴，<span class="arithmatex">\(y_1\)</span> 方向是出射波。如果你坚持用唯一一套坐标描述所有 rearrangement channels，那么其中一些渐近区域会变得非常扭曲。</p>
+<p>所以 Faddeev 的优势不在于“公式漂亮”，而在于让每一种 cluster asymptotics 都在自己的 natural coordinates 中出现。</p>
+<p>这直接回应了第二章的困难：多个 asymptotic topology 被分门别类地组织起来了。</p>
+<h4 id="335-一个重要限制普通-faddeev-最舒服的是短程相互作用">3.3.5 一个重要限制：普通 Faddeev 最舒服的是短程相互作用<a class="headerlink" href="#335-一个重要限制普通-faddeev-最舒服的是短程相互作用" title="Permanent link">#</a></h4>
+<p>对于 short-range potential，Faddeev kernel 的数学性质很好（compactness 等）。</p>
+<p>但 Coulomb</p>
+<div class="arithmatex">\[
+V_C(r)\sim\frac1r
+\]</div>
+<p>衰减太慢，长程尾巴在“无穷远”仍然在起作用，会破坏 short-range 理论中的许多理想性质。这就是为什么三个带电粒子或含显著 Coulomb 的三体问题里，常常要使用：</p>
+<ul>
+<li>screened Coulomb + renormalization（屏蔽后重整）；</li>
+<li>Faddeev–Merkuriev splitting（把势拆成短程和长程部分分别处理）；</li>
+<li>Coulomb-distorted basis / resolvent（把 Coulomb 放进传播子或基底）；</li>
+<li>Coulomb-Sturmian 等专门表示。</li>
+</ul>
+<p>这不是“数值小技巧”，而是长程相互作用**改变了散射理论的解析结构**：Coulomb 势下的渐近波不是平面波加球面波，而是 Coulomb 波函数 <span class="arithmatex">\(F_l(\eta,kr)\)</span>、<span class="arithmatex">\(G_l(\eta,kr)\)</span>。</p>
+<h4 id="336-faddeev-不是一种数值方法">3.3.6 Faddeev 不是一种数值方法<a class="headerlink" href="#336-faddeev-不是一种数值方法" title="Permanent link">#</a></h4>
+<p>Faddeev 方程抽象地写为</p>
+<div class="arithmatex">\[
+X=B+K(E)X,
+\]</div>
+<p>即</p>
+<p>$$</p>
+<p>[1-K(E)]X=B.</p>
+<p>$$</p>
+<p>这里 <span class="arithmatex">\(X\)</span> 是 Faddeev component vector。注意，到这里仍然没有规定：</p>
+<ul>
+<li>用坐标空间还是动量空间；</li>
+<li>FEM 还是 spline；</li>
+<li>grid 还是 spectral；</li>
+<li>wave packet 还是 Coulomb-Sturmian。</li>
+</ul>
+<p>这些都是下一层的问题。因此：</p>
+<p>Faddeev 是 equation architecture，不是 discretization scheme。</p>
+<h3 id="34-ags再往-operator-level-提升一步">3.4 AGS：再往 operator level 提升一步<a class="headerlink" href="#34-ags再往-operator-level-提升一步" title="Permanent link">#</a></h3>
+<p>Faddeev 通常直接求 wavefunction components <span class="arithmatex">\(\psi_\alpha\)</span>。AGS（Alt–Grassberger–Sandhas）更直接地求 channel-to-channel transition operators：</p>
+<div class="arithmatex">\[
+U_{\beta\alpha}.
+\]</div>
+<p>典型结构为</p>
+<div class="arithmatex">\[
+U_{\beta\alpha}
+=
+(1-\delta_{\beta\alpha})G_0^{-1}
++
+\sum_\gamma
+(1-\delta_{\beta\gamma})
+t_\gamma G_0U_{\gamma\alpha}.
+\]</div>
+<p>从逻辑上可以这样理解：</p>
+<p>$$</p>
+<p>\begin{array}{ccc}<br />
+\text{Schrödinger}<br />
+&amp;\to&amp;<br />
+\text{Faddeev}\<br />
+\Psi<br />
+&amp;&amp;<br />
+\psi_1,\psi_2,\psi_3\[2mm]<br />
+&amp;&amp;\downarrow\[-1mm]<br />
+&amp;&amp;<br />
+\text{AGS}\<br />
+&amp;&amp;<br />
+U_{\beta\alpha}<br />
+\end{array}<br />
+$$</p>
+<p>它们的差别不在“用了不同 mesh”，而在于**未知量处于不同抽象层**：波函数 → Faddeev 分量 → 跃迁算符。</p>
+<p>当最终目标本来就是 scattering amplitudes、<span class="arithmatex">\(S\)</span> matrix、transition matrix 时，operator formulation 往往最自然——<span class="arithmatex">\(U_{\beta\alpha}\)</span> 在适当的矩阵元下直接给出物理的振幅，而不需要先解出完整的波函数。</p>
+<h3 id="35-波函数路线-vs-算符路线两种求解思路的结构对比">3.5 波函数路线 vs 算符路线：两种求解思路的结构对比<a class="headerlink" href="#35-波函数路线-vs-算符路线两种求解思路的结构对比" title="Permanent link">#</a></h3>
+<p>上一节末尾说“未知量处于不同抽象层”。这个差别值得单独展开：它不是实现细节之争，而是贯穿整个散射理论的**两条根本路线**——求**态**（wavefunction route）还是求**算符**（operator route）。CDCC、直接 Schrödinger、Faddeev 都属于前者，AGS 是后者在三体里的标准形态。</p>
+<h4 id="351-两体热身同一个方程的两种读法">3.5.1 两体热身：同一个方程的两种读法<a class="headerlink" href="#351-两体热身同一个方程的两种读法" title="Permanent link">#</a></h4>
+<p>这对关系在两体散射里就已经完整存在。Lippmann–Schwinger 方程有两种等价写法（两体情形的详细推导见同目录的《faddeev方程 的 Wave-packet continuum discretisation》一文）。</p>
+<p><strong>求态的读法</strong>——未知量是散射态：</p>
+<div class="arithmatex">\[
+|\psi^+\rangle
+=
+|\phi\rangle
++
+G_0^{(+)}V|\psi^+\rangle.
+\]</div>
+<p><strong>求算符的读法</strong>——未知量是 T-matrix：</p>
+<div class="arithmatex">\[
+T
+=
+V+VG_0^{(+)}T.
+\]</div>
+<p>两者的桥梁是一个定义：</p>
+<div class="arithmatex">\[
+T|\phi\rangle
+\equiv
+V|\psi^+\rangle,
+\]</div>
+<p>即“用 <span class="arithmatex">\(T\)</span> 作用在自由入射态上”打包了“用 <span class="arithmatex">\(V\)</span> 作用在含全部散射效应的真实态上”。两个方程的核结构完全相同（都是 <span class="arithmatex">\(VG_0^{(+)}\)</span> 的迭代），信息上互相等价：知道态可以恢复算符，知道算符也能恢复散射态：</p>
+<div class="arithmatex">\[
+|\psi^+\rangle
+=
+|\phi\rangle+G_0^{(+)}T|\phi\rangle.
+\]</div>
+<p>但**直接产出**和**数值形态**很不一样——这正是三体里要对比的东西。</p>
+<p>三体把这对关系原样放大：</p>
+<p>$$</p>
+<p>\underbrace{\text{Schrödinger / Faddeev}}<em>{\text{求 }\Psi, \psi</em>\alpha}<br />
+\quad\longleftrightarrow\quad<br />
+\underbrace{\text{AGS}}<em _beta_alpha="\beta\alpha">{\text{求 }U</em>.}</p>
+<p>$$</p>
+<h4 id="352-未知量的家态空间-vs-算符空间">3.5.2 未知量的“家”：态空间 vs 算符空间<a class="headerlink" href="#352-未知量的家态空间-vs-算符空间" title="Permanent link">#</a></h4>
+<p>第一条结构差别是未知量生活的空间。</p>
+<p><strong>波函数路线</strong>：<span class="arithmatex">\(\Psi\in\mathcal H\)</span>——就是第一章里构造的态空间。partial-wave 加 momentum representation 之后，<span class="arithmatex">\(\psi(p,q)\)</span> 是 **2 个连续变量**的函数。</p>
+<p><strong>算符路线</strong>：<span class="arithmatex">\(U_{\beta\alpha}\)</span> 是 Hilbert 空间上的算符，属于算符空间 <span class="arithmatex">\(\mathcal B(\mathcal H)\)</span>（严格说由于奇异结构它并不有界，但作为“家”的定位是对的）。它的矩阵元</p>
+<div class="arithmatex">\[
+U(p,q;p',q')
+\]</div>
+<p>是 **4 个连续变量**的函数。</p>
+<p>$$</p>
+<p>\psi(p,q): 2 \text{个变量};<br />
+\qquad<br />
+U(p,q;p',q'): 4 \text{个变量。}</p>
+<p>$$</p>
+<p>初看算符路线“更大”。但指标结构给出了补偿。</p>
+<p>Faddeev 的自然指标是 <strong>pair component</strong> <span class="arithmatex">\(\alpha=1,2,3\)</span>：三个分量，每个都是完整的三体函数，合起来描述**一个**态。AGS 的自然指标是 <strong>channel 对</strong> <span class="arithmatex">\((\beta,\alpha)\)</span>：一个矩阵，行标末态通道，列标初态通道。</p>
+<p>rearrangement 通道，在态的语言里是渐近行为，在算符的语言里是矩阵下标。</p>
+<p>“从初态 <span class="arithmatex">\(\alpha\)</span> 散射到末态 <span class="arithmatex">\(\beta\)</span>（可能是 elastic、rearrangement 或 breakup）的振幅是多少”——这类问题在算符语言里是最自然的提问方式：它就是矩阵的一个元素。而在态的语言里，同一个信息藏在波函数尾部的渐近匹配中，需要额外步骤才能取出来。</p>
+<h4 id="353-各自直接产出什么">3.5.3 各自直接产出什么<a class="headerlink" href="#353-各自直接产出什么" title="Permanent link">#</a></h4>
+<p><strong>波函数路线的产出是完整的态结构</strong>：</p>
+<ul>
+<li>密度分布、内部几何、两体关联；</li>
+<li>动量谱、breakup 流；</li>
+<li>任意期望值 <span class="arithmatex">\(\langle O\rangle=\langle\Psi|O|\Psi\rangle\)</span>。</li>
+</ul>
+<p>但振幅不直接在手里：需要额外的渐近 matching 或投影，才能从 <span class="arithmatex">\(\Psi\)</span> 的尾部提取出 <span class="arithmatex">\(S\)</span> matrix。</p>
+<p><strong>算符路线的产出是实验量的原生形式</strong>：</p>
+<ul>
+<li>on-shell 矩阵元直接给出振幅，进而 <span class="arithmatex">\(S\)</span> matrix 与截面（至一个随约定变化的归一化因子）；</li>
+<li>束缚态和共振态表现为 <span class="arithmatex">\(U(E)\)</span> 在复能量平面上的极点。</li>
+</ul>
+<p>但态的结构信息基本丢失：算符知道的只是“从哪来、到哪去、幅值多少”，不再回答“束缚态长什么样”。</p>
+<p>于是选择路线的第一个判据是：</p>
+<p>你要的是态的结构，还是截面？</p>
+<h4 id="354-边界条件住在哪">3.5.4 边界条件住在哪<a class="headerlink" href="#354-边界条件住在哪" title="Permanent link">#</a></h4>
+<p>第二条判据是散射边界条件的实现位置（第六章会展开，这里先给结构性结论）。</p>
+<ul>
+<li><strong>波函数路线</strong>：散射条件“住”在实空间的无穷远——<span class="arithmatex">\(\Psi\)</span> 的尾部必须长成出射波的样子，或者通过 <span class="arithmatex">\(G_0^{(+)}\)</span> 隐式赋予；</li>
+<li><strong>算符路线</strong>：散射条件“住”在复能量平面的解析结构里——<span class="arithmatex">\(+i0\)</span> 处方规定边界的走向，物理内容体现在极点位置与留数中。</li>
+</ul>
+<p>波函数在实空间的无穷远处“看见”散射，算符在复能量平面上“看见”散射。</p>
+<h4 id="355-束缚态问题的对比">3.5.5 束缚态问题的对比<a class="headerlink" href="#355-束缚态问题的对比" title="Permanent link">#</a></h4>
+<p>对 bound state，两条路线的求解形态也很不一样：</p>
+<ul>
+<li><strong>态路线</strong>：<span class="arithmatex">\(HC=ESC\)</span>，广义本征值问题。能量和波函数**同时**得到——本征向量就是物理波函数，一举两得；</li>
+<li><strong>算符路线</strong>：扫描能量，找</li>
+</ul>
+<div class="arithmatex">\[
+\lambda[K(E)]=1
+\]</div>
+<p>或等价地 Fredholm 行列式条件</p>
+<div class="arithmatex">\[
+\det[1-K(E)]=0.
+\]</div>
+<p>能量找到了，波函数还要另外恢复。</p>
+<p>这就是为什么做束缚态结构研究的人偏爱波函数路线，做反应截面的人偏爱算符路线——这不是品味问题，而是产出直接对准目标的问题。</p>
+<h4 id="356-数值形态的典型配对">3.5.6 数值形态的典型配对<a class="headerlink" href="#356-数值形态的典型配对" title="Permanent link">#</a></h4>
+<p>把本层选择（求态还是求算符）与第四章的表示层选择交叉，得到四格（参见 §5.6）：</p>
+<table>
+<thead>
+<tr>
+<th>路线 × 表示</th>
+<th>典型数值形态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>波函数 × coordinate</td>
+<td>coupled PDE，sparse 矩阵（微分算符局域）</td>
+</tr>
+<tr>
+<td>波函数 × momentum</td>
+<td>积分方程，unknown <span class="arithmatex">\(\psi(p,q)\)</span>，dense 核</td>
+</tr>
+<tr>
+<td>算符 × momentum</td>
+<td>积分方程，unknown <span class="arithmatex">\(U(p,q;p',q')\)</span>，dense 核、奇异结构、on-shell 后处理</td>
+</tr>
+<tr>
+<td>算符 × coordinate</td>
+<td>少见（Green 函数的坐标表示）</td>
+</tr>
+</tbody>
+</table>
+<p>注意四种组合在逻辑上都存在，“AGS 必须 momentum space”并不成立——只是 momentum space 里 free resolvent 和 two-body <span class="arithmatex">\(t\)</span> 矩阵最简单（§4.2），所以算符路线几乎总是选它。<strong>路线与表示是两个独立的选择，不要绑死。</strong></p>
+<h4 id="357-一张对照表">3.5.7 一张对照表<a class="headerlink" href="#357-一张对照表" title="Permanent link">#</a></h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>波函数路线</th>
+<th>算符路线</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未知量</td>
+<td><span class="arithmatex">\(\Psi\)</span> / <span class="arithmatex">\(\psi_\alpha\)</span></td>
+<td><span class="arithmatex">\(U_{\beta\alpha}\)</span> / <span class="arithmatex">\(T\)</span></td>
+</tr>
+<tr>
+<td>所在空间</td>
+<td><span class="arithmatex">\(\mathcal H\)</span>（态空间）</td>
+<td><span class="arithmatex">\(\mathcal B(\mathcal H)\)</span>（算符空间）</td>
+</tr>
+<tr>
+<td>变量数（partial wave 后）</td>
+<td><span class="arithmatex">\(\psi(p,q)\)</span>：2</td>
+<td><span class="arithmatex">\(U(p,q;p',q')\)</span>：4</td>
+</tr>
+<tr>
+<td>自然指标</td>
+<td>pair component <span class="arithmatex">\(\alpha\)</span></td>
+<td>channel 对 <span class="arithmatex">\((\beta,\alpha)\)</span></td>
+</tr>
+<tr>
+<td>rearrangement 通道</td>
+<td>渐近行为，需 matching 提取</td>
+<td>矩阵下标，自动并列</td>
+</tr>
+<tr>
+<td>直接产出</td>
+<td>态结构（密度、动量谱、<span class="arithmatex">\(\langle O\rangle\)</span>）</td>
+<td>振幅、<span class="arithmatex">\(S\)</span> matrix、截面</td>
+</tr>
+<tr>
+<td>获取振幅</td>
+<td>渐近 matching / 投影</td>
+<td>on-shell 取值即得</td>
+</tr>
+<tr>
+<td>束缚态</td>
+<td><span class="arithmatex">\(HC=ESC\)</span>，附带波函数</td>
+<td><span class="arithmatex">\(\lambda[K(E)]=1\)</span> / <span class="arithmatex">\(\det[1-K]=0\)</span></td>
+</tr>
+<tr>
+<td>散射条件位置</td>
+<td>实空间无穷远</td>
+<td>复能量面解析结构</td>
+</tr>
+<tr>
+<td>典型数值形态</td>
+<td>coordinate：sparse PDE</td>
+<td>momentum：dense 积分方程</td>
+</tr>
+</tbody>
+</table>
+<h4 id="358-进阶off-shell-自由度与-partition-依赖">3.5.8 进阶：off-shell 自由度与 partition 依赖<a class="headerlink" href="#358-进阶off-shell-自由度与-partition-依赖" title="Permanent link">#</a></h4>
+<p>最后一点在读文献和比较计算结果时特别有用。</p>
+<p>波函数路线的解是唯一的（至整体相位）：<span class="arithmatex">\(\Psi\)</span> 就是一个态，不依赖任何约定。</p>
+<p>算符路线的解则不然。<span class="arithmatex">\(U_{\beta\alpha}(E)\)</span> 作为完整的算符，包含大量 <strong>off-shell</strong> 信息——初末动量不在能量壳上的矩阵元。而这些信息：</p>
+<ul>
+<li><strong>物理上不可观</strong>：可观测量（截面、振幅）只依赖 on-shell 取值；</li>
+<li><strong>依赖 partition/channel 约定</strong>：两篇文章的 AGS 算符即使 on-shell 振幅完全一致，off-shell 行为也可以不同。</li>
+</ul>
+<p>所以比较两个 AGS 计算时，先确认 channel 与 partition 约定是否相同。</p>
+<p>反过来，这片“不可观但可自由选择”的空间正是算符路线独有的操作余地：§5.9 的 separable expansion 之所以合法，就是因为 off-shell 自由度可以被拿来简化计算而不损失任何 on-shell 物理——只有当未知量本来就是算符时，“压缩算符”才是一个不改变可观测量的合法操作。</p>
+<h3 id="36-cdcc-与-faddeev-的核心区别">3.6 CDCC 与 Faddeev 的核心区别<a class="headerlink" href="#36-cdcc-与-faddeev-的核心区别" title="Permanent link">#</a></h3>
+<p>现在可以给出最核心的对比：</p>
+<blockquote>
+<p>CDCC：先选一个物理上重要的 cluster partition，再截断它的内部 continuum；<br />
+Faddeev：不偏爱任何一个 pair，把所有 pair-scattering topology 显式并列组织。</p>
+</blockquote>
+<p>更严格地说：</p>
+<ul>
+<li>Faddeev decomposition 在完整三体 Hamiltonian 下首先是**精确重写**；</li>
+<li>CDCC 的 <span class="arithmatex">\(P_{\rm int}\)</span> 是一个 <strong>model-space approximation</strong>。</li>
+</ul>
+<p>所以两者并不处于完全相同的层次：CDCC 是 model-space projection 的思想，Faddeev 是 equation decomposition 的思想。</p>
+<p>它们不是简单互斥的“两个算法”——原则上你甚至可以做“Faddeev 架构 + 类 CDCC 的基底”，只要分清哪一步是重写、哪一步是截断。</p>
+<hr />
+<h2 id="第四章-表示层coordinatemomentumhyperspherical">第四章 表示层：coordinate、momentum、hyperspherical<a class="headerlink" href="#第四章-表示层coordinatemomentumhyperspherical" title="Permanent link">#</a></h2>
+<p>有了方程架构之后，下一步才是选择 representation。<strong>这一步本身不产生任何物理近似</strong>——就像同一个向量用不同坐标系写出来，向量本身没变。</p>
+<h3 id="41-coordinate-space">4.1 Coordinate space<a class="headerlink" href="#41-coordinate-space" title="Permanent link">#</a></h3>
+<p>写成</p>
+<div class="arithmatex">\[
+\psi_\alpha
+=
+\psi_\alpha(x_\alpha,y_\alpha),
+\]</div>
+<p>partial-wave 分解后是</p>
+<div class="arithmatex">\[
+u_{\alpha c}(x,y).
+\]</div>
+<p>在坐标空间里，局域势的作用是最简单的乘法：</p>
+<div class="arithmatex">\[
+[V\psi](x)=V(x)\psi(x),
+\]</div>
+<p>但 kinetic energy 是微分算符。因此 coordinate-space Faddeev 通常成为 coupled 2D PDE。</p>
+<h3 id="42-momentum-space">4.2 Momentum space<a class="headerlink" href="#42-momentum-space" title="Permanent link">#</a></h3>
+<p>做 Fourier transform：</p>
+<div class="arithmatex">\[
+(x,y)
+\longleftrightarrow
+(p,q).
+\]</div>
+<p>自由 Hamiltonian 变成对角的乘法算符：</p>
+<div class="arithmatex">\[
+H_0
+=
+\frac{p^2}{2\mu_x}
++
+\frac{q^2}{2\mu_y}.
+\]</div>
+<p>于是自由 resolvent</p>
+<div class="arithmatex">\[
+G_0^{(+)}(E)
+=
+\frac{1}{E-H_0+i0}
+\]</div>
+<p>的结构非常直接（在 <span class="arithmatex">\(E\)</span> 固定时，它是 <span class="arithmatex">\((p,q)\)</span> 的有理函数）。Faddeev 方程变成积分方程：</p>
+<div class="arithmatex">\[
+\psi_c(p,q)
+=
+\sum_{c'}
+\int dp'\,dq'\,
+K_{cc'}(p,q;p',q')
+\psi_{c'}(p',q').
+\]</div>
+<p>代价是：local coordinate-space potential 变成 momentum-space nonlocal kernel <span class="arithmatex">\(V(p,p')\)</span>——原来是“每点乘一个数”，现在是“每个点耦合到所有点”。</p>
+<p>因此可以粗略记：coordinate space 里 local interaction 简单、传播难；momentum space 里 free propagation、resolvent、<span class="arithmatex">\(t\)</span>-matrix 都简单，代价是作用势变成 nonlocal kernel。</p>
+<p>coordinate 和 momentum 是 representation，不是两种不同的 Faddeev 理论。</p>
+<h3 id="43-hyperspherical-coordinates重新-factorize-六维空间">4.3 Hyperspherical coordinates：重新 factorize 六维空间<a class="headerlink" href="#43-hyperspherical-coordinates重新-factorize-六维空间" title="Permanent link">#</a></h3>
+<p>除了 cluster 分解，还可以采用六维 hyperspherical coordinates：</p>
+<div class="arithmatex">\[
+\rho=\sqrt{x^2+y^2},
+\]</div>
+<p>加上五个 hyperangles <span class="arithmatex">\(\Omega_5\)</span>。于是</p>
+<p>$$</p>
+<p>L^2(\mathbb R^6)<br />
+\simeq<br />
+L^2(\rho)<br />
+\otimes<br />
+L<sup>2(S</sup>5).</p>
+<p>$$</p>
+<p>展开</p>
+<div class="arithmatex">\[
+\Psi(\rho,\Omega)
+=
+\sum_K
+u_K(\rho)Y_K(\Omega),
+\]</div>
+<p>其中 <span class="arithmatex">\(K\)</span> 是 grand angular momentum，<span class="arithmatex">\(Y_K\)</span> 是 hyperspherical harmonics。然后截断 hyperangular basis：</p>
+<div class="arithmatex">\[
+K\le K_{\max}.
+\]</div>
+<p>而 <span class="arithmatex">\(\rho\)</span> 仍保持连续，于是得到 coupled hyperradial equations。</p>
+<p>这与 CDCC 恰好构成一组结构上的对照：</p>
+<div class="arithmatex">\[
+\text{CDCC:}
+\qquad
+P_{\rm internal}\otimes I_R,
+\]</div>
+<div class="arithmatex">\[
+\text{HH:}
+\qquad
+I_\rho\otimes P_{\Omega}.
+\]</div>
+<p>两者都在做“某一部分自由度有限化、另一部分保持连续”，只不过 Hilbert-space factorization 完全不同：CDCC 按物理 cluster 切，HH 按几何尺度（总大小 <span class="arithmatex">\(\rho\)</span> vs 内部形状 <span class="arithmatex">\(\Omega\)</span>）切。</p>
+<p>各自的代价也来自这个选择：CDCC 对“privileged partition 不明显”的体系不自然；HH 对 cluster 渐近（<span class="arithmatex">\(x\)</span> 小 <span class="arithmatex">\(y\)</span> 大）的描述收敛可能慢，因为 cluster 结构在超球坐标里不是自然变量。</p>
+<hr />
+<h2 id="第五章-有限化你究竟把哪个无限维对象变成有限维">第五章 有限化：你究竟把哪个无限维对象变成有限维<a class="headerlink" href="#第五章-有限化你究竟把哪个无限维对象变成有限维" title="Permanent link">#</a></h2>
+<p>这一层才轮到 FEM、B-spline、spectral、wave packet、Coulomb-Sturmian 等。它们首先回答同一个问题：</p>
+<blockquote>
+<p>我用什么有限集合来表示本来无限维的函数空间？</p>
+</blockquote>
+<h3 id="51-grid--finite-difference直接存函数值">5.1 Grid / finite difference：直接存函数值<a class="headerlink" href="#51-grid--finite-difference直接存函数值" title="Permanent link">#</a></h3>
+<p>选 grid 点</p>
+<div class="arithmatex">\[
+x_i,
+\qquad
+y_j,
+\]</div>
+<p>未知量直接是</p>
+<div class="arithmatex">\[
+u_{cij}=u_c(x_i,y_j).
+\]</div>
+<p>导数变成 differentiation matrix：</p>
+<div class="arithmatex">\[
+\frac{d^2}{dx^2}
+\longrightarrow
+D_x^{(2)}.
+\]</div>
+<p>最终得到</p>
+<div class="arithmatex">\[
+A\mathbf u=\mathbf b.
+\]</div>
+<p>它的直觉最简单：</p>
+<blockquote>
+<p>不问函数由什么 basis 组成，直接问它在很多离散点上的值。</p>
+</blockquote>
+<h3 id="52-fem用很多局部低阶函数拼起来">5.2 FEM：用很多局部低阶函数拼起来<a class="headerlink" href="#52-fem用很多局部低阶函数拼起来" title="Permanent link">#</a></h3>
+<p>构造局域 trial spaces：</p>
+<div class="arithmatex">\[
+V_x=\operatorname{span}\{B_i(x)\},
+\qquad
+V_y=\operatorname{span}\{C_j(y)\},
+\]</div>
+<p>于是</p>
+<div class="arithmatex">\[
+V_N=V_x\otimes V_y,
+\]</div>
+<p>展开</p>
+<div class="arithmatex">\[
+u_c(x,y)
+\approx
+\sum_{ij}
+C_{cij}B_i(x)C_j(y).
+\]</div>
+<p>然后做 Galerkin projection：</p>
+<div class="arithmatex">\[
+\langle B_iC_j|
+(E-H)|\Psi_N\rangle=0,
+\]</div>
+<p>得到矩阵方程。</p>
+<p>FEM 的重要特点是 <strong>local support</strong>：每个基函数只在一小块区域非零，因此微分算子产生的矩阵是 sparse 的。从 Hilbert-space 角度：</p>
+<p>FEM = 选择局域、分片的 finite-dimensional trial subspace。</p>
+<h3 id="53-b-spline兼具局域性和高阶光滑性">5.3 B-spline：兼具局域性和高阶光滑性<a class="headerlink" href="#53-b-spline兼具局域性和高阶光滑性" title="Permanent link">#</a></h3>
+<p>B-spline 不是新的三体理论。它只是选</p>
+<div class="arithmatex">\[
+V_x=\operatorname{span}\{B_i(x)\}
+\]</div>
+<p>作为 radial approximation space。它的典型优点是：</p>
+<ul>
+<li>compact/local support；</li>
+<li>高阶 smoothness；</li>
+<li>mesh placement 灵活（可以在波函数变化剧烈的区域加密）；</li>
+<li>differential matrices 稀疏；</li>
+<li>很适合半无限 radial coordinate。</li>
+</ul>
+<p>因此</p>
+<p>$$</p>
+<h1 id="textb-spline-faddeev">\text{B-spline Faddeev}<a class="headerlink" href="#textb-spline-faddeev" title="Permanent link">#</a></h1>
+<p>\text{Faddeev equation}<br />
++<br />
+\text{B-spline radial representation}.</p>
+<p>$$</p>
+<h3 id="54-global-spectral-expansion用少量全局函数描述整个区域">5.4 Global spectral expansion：用少量全局函数描述整个区域<a class="headerlink" href="#54-global-spectral-expansion用少量全局函数描述整个区域" title="Permanent link">#</a></h3>
+<p>写</p>
+<div class="arithmatex">\[
+u(x)
+\approx
+\sum_{n=0}^{N}
+c_n\phi_n(x),
+\]</div>
+<p>例如</p>
+<div class="arithmatex">\[
+\phi_n=
+\text{Chebyshev, Legendre, Laguerre},\ldots
+\]</div>
+<p>如果解足够 smooth，global basis 可能用很少的自由度取得很高的精度（指数收敛）。</p>
+<p>应当区分两个词：</p>
+<ul>
+<li><strong>basis expansion / Galerkin representation</strong> 是很广的概念，FEM、B-spline、spectral 都属于它；</li>
+<li>经典 <strong>spectral method</strong> 通常强调 global high-order basis 与快速收敛。</li>
+</ul>
+<p>FEM 强调 local basis，spectral method 强调 global basis——这是精度与稀疏性之间的经典取舍。</p>
+<h3 id="55-momentum-space-quadrature">5.5 Momentum-space quadrature<a class="headerlink" href="#55-momentum-space-quadrature" title="Permanent link">#</a></h3>
+<p>对 momentum-space Faddeev 积分方程，最直接的办法是 quadrature：</p>
+<div class="arithmatex">\[
+p\rightarrow p_i,
+\qquad
+q\rightarrow q_j,
+\]</div>
+<div class="arithmatex">\[
+\int dp\,p^2f(p)
+\approx
+\sum_i
+w_ip_i^2f(p_i).
+\]</div>
+<p>最终得到</p>
+<p>$$</p>
+<h1 id="psi_cij">\psi_{cij}<a class="headerlink" href="#psi_cij" title="Permanent link">#</a></h1>
+<p>\sum_{c'i'j'}<br />
+K_{cij,c'i'j'}<br />
+\psi_{c'i'j'},</p>
+<p>$$</p>
+<p>或者</p>
+<p>$$</p>
+<p>(I-K)\psi=b.</p>
+<p>$$</p>
+<h3 id="56-稀疏-vs-稠密coordinate-与-momentum-的数值代价">5.6 稀疏 vs 稠密：coordinate 与 momentum 的数值代价<a class="headerlink" href="#56-稀疏-vs-稠密coordinate-与-momentum-的数值代价" title="Permanent link">#</a></h3>
+<p>Coordinate FEM：</p>
+<div class="arithmatex">\[
+A_{cij,c'i'j'}C_{c'i'j'}
+=
+b_{cij}.
+\]</div>
+<p>Momentum quadrature：</p>
+<div class="arithmatex">\[
+(I-K)_{cij,c'i'j'}
+\psi_{c'i'j'}
+=
+b_{cij}.
+\]</div>
+<p>所以到了最低层，<strong>绝大多数方法最终都是有限维 linear algebra</strong>。但矩阵结构不同：</p>
+<ul>
+<li>coordinate local operators 往往产生 <strong>sparse</strong> 矩阵；</li>
+<li>momentum-space kernels 往往产生 <strong>dense / nonlocal</strong> 矩阵。</li>
+</ul>
+<p>这直接决定了后面究竟采用什么线性代数方法（见第八章）。</p>
+<h3 id="57-wave-packet不是把积分点离散而是直接造-continuum-model-space">5.7 Wave packet：不是“把积分点离散”，而是直接造 continuum model space<a class="headerlink" href="#57-wave-packet不是把积分点离散而是直接造-continuum-model-space" title="Permanent link">#</a></h3>
+<p>与简单 quadrature 不同，wave packet 真正构造 <span class="arithmatex">\(L^2\)</span> basis。</p>
+<p>把 momentum continuum 分成区间</p>
+<div class="arithmatex">\[
+\Delta_i=[p_i,p_{i+1}],
+\]</div>
+<p>定义 wave packet</p>
+<div class="arithmatex">\[
+|X_i\rangle
+=
+\frac{1}{\sqrt{N_i}}
+\int_{\Delta_i}
+dp\,f_i(p)|p\rangle.
+\]</div>
+<p>spectator 方向类似：</p>
+<div class="arithmatex">\[
+|Y_j\rangle
+=
+\frac{1}{\sqrt{M_j}}
+\int_{\Delta_j}
+dq\,g_j(q)|q\rangle.
+\]</div>
+<p>注意每个 <span class="arithmatex">\(|X_i\rangle\)</span> 都是**平方可积**的正常化态——这是它和“存格点值”的本质区别。于是你真正构造了一个有限维 <span class="arithmatex">\(L^2\)</span> model space：</p>
+<p>$$</p>
+<h1 id="v_n">V_N<a class="headerlink" href="#v_n" title="Permanent link">#</a></h1>
+<p>\operatorname{span}<br />
+{|X_iY_j\rangle},</p>
+<p>$$</p>
+<p>对应 projector</p>
+<div class="arithmatex">\[
+P_N
+=
+\sum_{ij}
+|X_iY_j\rangle
+\langle X_iY_j|.
+\]</div>
+<p>所以 wave-packet method 与其理解成“特殊 quadrature”，不如理解成把连续谱按有限能量区间 coarse grain，得到一组正常化的 <span class="arithmatex">\(L^2\)</span> states。</p>
+<p>这也是它与 CDCC continuum binning 很接近的地方：</p>
+<div class="arithmatex">\[
+|\phi_n\rangle
+\sim
+\int_{\Delta k_n}
+dk\,f_n(k)|\psi_k\rangle
+\]</div>
+<p>结构上完全类似。区别在于离散的彻底程度：</p>
+<div class="arithmatex">\[
+\text{standard CDCC}
+\sim
+P_x\otimes I_y,
+\]</div>
+<p>而 fully discretized wave-packet three-body calculation 更像</p>
+<div class="arithmatex">\[
+P_x\otimes P_y.
+\]</div>
+<p>即 spectator 连续变量也被 packet 化了，整个问题变成纯有限维。</p>
+<h3 id="58-coulomb-sturmianphysics-informed-basis-到底特殊在哪">5.8 Coulomb-Sturmian：physics-informed basis 到底特殊在哪<a class="headerlink" href="#58-coulomb-sturmianphysics-informed-basis-到底特殊在哪" title="Permanent link">#</a></h3>
+<p>这是最容易被一句“physics-informed basis”糊弄过去的地方。先说结论：</p>
+<p>Coulomb-Sturmian 不是一种新的 Faddeev 方程，而是一种专门适配 Coulomb <span class="arithmatex">\(1/r\)</span> 算符结构的离散 radial basis。</p>
+<h4 id="581-构造">5.8.1 构造<a class="headerlink" href="#581-构造" title="Permanent link">#</a></h4>
+<p>假设 radial function 是 <span class="arithmatex">\(u_l(r)\)</span>。任取一组 basis，可以写</p>
+<div class="arithmatex">\[
+u_l(r)
+\approx
+\sum_{n=0}^{N}
+c_n\phi_{nl}(r).
+\]</div>
+<p>如果选 harmonic-oscillator basis，函数形状天然和 <span class="arithmatex">\(r^2\)</span> 势联系紧密。如果选 Coulomb-Sturmian，basis 的定义本身包含 <span class="arithmatex">\(1/r\)</span> 结构。一种常见形式是</p>
+<div class="arithmatex">\[
+S_{nl}(r)
+\propto
+(2br)^{l+1}
+e^{-br}
+L_n^{2l+1}(2br),
+\]</div>
+<p>其中 <span class="arithmatex">\(b\)</span> 控制 radial scale，<span class="arithmatex">\(L_n^{2l+1}\)</span> 是伴随 Laguerre 多项式。它们可以看作一类 Sturm–Liouville 问题的本征函数，对应的 radial operator 中显式出现 Coulomb-like <span class="arithmatex">\(1/r\)</span> 项。</p>
+<p>所以所谓 <strong>physics-informed</strong> 不是玄学，而是：</p>
+<blockquote>
+<p>basis 的构造已经利用了我们事先知道的 Hamiltonian 结构。</p>
+</blockquote>
+<h4 id="582-内建-coulomb到底内建了什么">5.8.2 “内建 Coulomb”到底内建了什么？<a class="headerlink" href="#582-内建-coulomb到底内建了什么" title="Permanent link">#</a></h4>
+<p>这里必须说得非常精确。</p>
+<p>Coulomb-Sturmian basis **并不是**直接把真正的 scattering asymptotics</p>
+<div class="arithmatex">\[
+F_l(\eta,kr),
+\qquad
+G_l(\eta,kr)
+\]</div>
+<p>硬塞进 basis。事实上单个 CS basis function 通常仍是指数衰减、属于 <span class="arithmatex">\(L^2\)</span> 的离散函数。</p>
+<p>所以正确的说法不是：</p>
+<blockquote>
+<p>“CS basis 已经自动具有正确的 Coulomb scattering wave tail。”</p>
+</blockquote>
+<p>而是：</p>
+<p>CS basis 对 Coulomb Hamiltonian / Coulomb Green operator 的代数结构特别友好。</p>
+<p>这才是它真正的价值：它把“我们早就知道问题里有 <span class="arithmatex">\(1/r\)</span>”这条信息利用在 representation 上，而不是让有限 basis 从零开始重新拟合 Coulomb operator 的结构。</p>
+<h4 id="583-为什么-projector-里会出现-langlewidetildenl">5.8.3 为什么 projector 里会出现 <span class="arithmatex">\(\langle\widetilde{nl}|\)</span>？<a class="headerlink" href="#583-为什么-projector-里会出现-langlewidetildenl" title="Permanent link">#</a></h4>
+<p>Coulomb-Sturmian 常采用 biorthogonal representation：有两套互为 dual 的基</p>
+<div class="arithmatex">\[
+|nl\rangle,
+\qquad
+|\widetilde{nl}\rangle,
+\]</div>
+<p>满足</p>
+<div class="arithmatex">\[
+\langle\widetilde{nl}|n'l\rangle
+=
+\delta_{nn'}.
+\]</div>
+<p>因此 completeness relation 写成</p>
+<div class="arithmatex">\[
+I
+=
+\sum_{n=0}^{\infty}
+|nl\rangle
+\langle\widetilde{nl}|,
+\]</div>
+<p>截断后才是</p>
+<p>$$</p>
+<h1 id="p_n">P_N<a class="headerlink" href="#p_n" title="Permanent link">#</a></h1>
+<p>\sum_{n=0}^{N}<br />
+|nl\rangle<br />
+\langle\widetilde{nl}|.</p>
+<p>$$</p>
+<p><span class="arithmatex">\(P_N\)</span> 的意义非常朴素：</p>
+<blockquote>
+<p>把本来无限维的 radial function，投影到前 <span class="arithmatex">\(N+1\)</span> 个 CS functions 张成的 model space 中。</p>
+</blockquote>
+<p>于是</p>
+<div class="arithmatex">\[
+|f\rangle
+\longrightarrow
+P_N|f\rangle
+=
+\sum_{n=0}^{N}
+|nl\rangle
+\langle\widetilde{nl}|f\rangle,
+\]</div>
+<p>本来一个连续函数 <span class="arithmatex">\(f(r)\)</span>，现在由有限个 coefficient <span class="arithmatex">\((c_0,c_1,\ldots,c_N)\)</span> 表示。</p>
+<h4 id="584-三体里真正长什么样">5.8.4 三体里真正长什么样？<a class="headerlink" href="#584-三体里真正长什么样" title="Permanent link">#</a></h4>
+<p>三体 partial wave 后有两个 radial coordinates，因而更接近</p>
+<div class="arithmatex">\[
+|nl;\nu\lambda\rangle
+=
+|nl\rangle_x
+\otimes
+|\nu\lambda\rangle_y.
+\]</div>
+<p>波函数写成</p>
+<div class="arithmatex">\[
+u_c(x,y)
+\approx
+\sum_{n\nu}
+C_{n\nu}^{(c)}
+S_{nl}(x)
+S_{\nu\lambda}(y).
+\]</div>
+<p>于是连续函数 <span class="arithmatex">\(u_c(x,y)\)</span> 变成 coefficient matrix <span class="arithmatex">\(C_{n\nu}^{(c)}\)</span>。</p>
+<p>这就是所谓</p>
+<div class="arithmatex">\[
+\text{Faddeev equation}
++
+\text{Coulomb-Sturmian model space}
+\]</div>
+<p>真正的含义。它不是一句新的物理理论，而是四件不同的事：</p>
+<ol>
+<li>Faddeev 决定 equation architecture；</li>
+<li>partial waves 决定 angular/channel representation；</li>
+<li>CS 决定 radial finite-dimensional representation；</li>
+<li>Coulomb boundary/Green-function machinery 决定 scattering asymptotics 如何实现。</li>
+</ol>
+<p>这四件事不能混在一句话里——尤其是第 4 件：CS 是 Coulomb-adapted basis，但真正的 outgoing Coulomb scattering condition 仍然要由 Green function、matching 或其他散射构造来保证。</p>
+<h3 id="59-separable-expansion它压缩的不是-wavefunction而是-operator">5.9 Separable expansion：它压缩的不是 wavefunction，而是 operator<a class="headerlink" href="#59-separable-expansion它压缩的不是-wavefunction而是-operator" title="Permanent link">#</a></h3>
+<p>这一层与 FEM、B-spline、wave packet 又不完全一样。</p>
+<p>前面主要是在近似**态**</p>
+<div class="arithmatex">\[
+|\psi\rangle,
+\]</div>
+<p>而 separable expansion 更常见的是近似 two-body potential 或 <span class="arithmatex">\(t\)</span> operator：</p>
+<div class="arithmatex">\[
+t(E)
+\approx
+\sum_{m,n=1}^{r}
+|g_m\rangle
+\tau_{mn}(E)
+\langle g_n|.
+\]</div>
+<p>这是一个 finite-rank approximation，<span class="arithmatex">\(r\)</span> 是 rank。rank-1 时：</p>
+<div class="arithmatex">\[
+t
+=
+|g\rangle\tau(E)\langle g|.
+\]</div>
+<h4 id="为什么它能真正降低三体维数">为什么它能真正降低三体维数？<a class="headerlink" href="#为什么它能真正降低三体维数" title="Permanent link">#</a></h4>
+<p>原始 Faddeev unknown 是</p>
+<div class="arithmatex">\[
+\psi(p,q).
+\]</div>
+<p>如果</p>
+<div class="arithmatex">\[
+t=|g\rangle\tau\langle g|,
+\]</div>
+<p>pair momentum dependence 可以被 form factor <span class="arithmatex">\(g(p)\)</span> 吸收：</p>
+<div class="arithmatex">\[
+\psi(p,q)
+\sim
+g(p)F(q).
+\]</div>
+<p>于是</p>
+<div class="arithmatex">\[
+L^2(p)\otimes L^2(q)
+\]</div>
+<p>被部分压缩成</p>
+<p>$$</p>
+<p>\mathbb C^{r}<br />
+\otimes<br />
+L^2(q).</p>
+<p>$$</p>
+<p>也就是说，原来二维的 unknown <span class="arithmatex">\(\psi(p,q)\)</span> 可能变成一组一维 spectator functions</p>
+<div class="arithmatex">\[
+F_n(q).
+\]</div>
+<p>这是**结构性降维**，而不仅仅是 mesh refinement。普通 basis truncation 主要压缩 state space，separable expansion 主要压缩 operator rank——这是两种不同对象的压缩。</p>
+<hr />
+<h2 id="第六章-散射边界条件是独立的一层">第六章 散射边界条件是独立的一层<a class="headerlink" href="#第六章-散射边界条件是独立的一层" title="Permanent link">#</a></h2>
+<p>这是很多介绍最容易跳过的一步。</p>
+<p>对于 bound state，</p>
+<div class="arithmatex">\[
+\Psi\in L^2
+\]</div>
+<p>是自然的：波函数归一化、在无穷远衰减。任何足够丰富的有限 basis 都能逼近它。</p>
+<p>但 scattering eigenstate 严格来说**并不是**普通 <span class="arithmatex">\(L^2\)</span> normalizable state；它属于 generalized eigenstate 的框架，在无穷远是振荡的、不衰减的。</p>
+<p>因此你不能只说：</p>
+<blockquote>
+<p>“我已经选了 <span class="arithmatex">\(N\)</span> 个 basis，所以 scattering problem solved。”</p>
+</blockquote>
+<p>还必须回答：</p>
+<p>outgoing boundary condition 到底怎么实现？</p>
+<h3 id="61-coordinate-space-philosophy在大距离直接-matching">6.1 Coordinate-space philosophy：在大距离直接 matching<a class="headerlink" href="#61-coordinate-space-philosophy在大距离直接-matching" title="Permanent link">#</a></h3>
+<p>显式研究</p>
+<div class="arithmatex">\[
+x,y\to\infty
+\]</div>
+<p>时</p>
+<div class="arithmatex">\[
+\Psi
+\sim
+\Psi_{\rm incoming}
++
+\Psi_{\rm outgoing},
+\]</div>
+<p>然后在有限 numerical domain 的外边界，与已知 asymptotic solutions 匹配，提取 <span class="arithmatex">\(S\)</span> matrix。</p>
+<p>这个做法很直观，但三体 breakup 和 Coulomb 会让边界结构很复杂：breakup 渐近不是简单的出射球面波，Coulomb 渐近不是平面波。</p>
+<h3 id="62-momentumoperator-space-philosophy把-outgoing-条件放进-resolvent">6.2 Momentum/operator-space philosophy：把 outgoing 条件放进 resolvent<a class="headerlink" href="#62-momentumoperator-space-philosophy把-outgoing-条件放进-resolvent" title="Permanent link">#</a></h3>
+<p>使用</p>
+<p>$$</p>
+<h1 id="ge">G^{(+)}(E)<a class="headerlink" href="#ge" title="Permanent link">#</a></h1>
+<p>\frac{1}{E-H+i0}.</p>
+<p>$$</p>
+<p>其中</p>
+<div class="arithmatex">\[
++i0
+\]</div>
+<p>不是装饰符号，而是在能量实轴上选择正确的解析延拓，从而**规定** outgoing-wave boundary condition（这一点与两体 Lippmann–Schwinger 方程中的 <span class="arithmatex">\(+i\epsilon\)</span> 完全同理）。</p>
+<p>因此 coordinate-space 与 operator-space 的根本差别在于：coordinate methods 更多在 real-space infinity 上处理散射，operator methods 更多把散射条件编码在 resolvent 的 analytic structure 中。</p>
+<p>对于 Coulomb，这一问尤其重要——长程作用意味着“无穷远”的行为本身就被修改了（Coulomb 相移、对数扭曲的波前）。</p>
+<hr />
+<h2 id="第七章-一个具体例子同一个-npa-在不同方法里的样子">第七章 一个具体例子：同一个 <span class="arithmatex">\(n+p+A\)</span> 在不同方法里的样子<a class="headerlink" href="#第七章-一个具体例子同一个-npa-在不同方法里的样子" title="Permanent link">#</a></h2>
+<p>这一章把前面所有抽象概念落到一个具体问题上。假设 Hamiltonian 是</p>
+<div class="arithmatex">\[
+H
+=
+H_0
++V_{np}
++U_{nA}
++U_{pA}.
+\]</div>
+<h3 id="71-直接-schrödinger">7.1 直接 Schrödinger<a class="headerlink" href="#71-直接-schrödinger" title="Permanent link">#</a></h3>
+<p>选一套 Jacobi coordinates <span class="arithmatex">\((r,R)\)</span>：</p>
+<div class="arithmatex">\[
+(E-H)\Psi(r,R)=0.
+\]</div>
+<p>你直接面对一个两径向变量、多个 partial-wave channel 的 coupled problem。所有 breakup、rearrangement、elastic 结构都藏在同一个 <span class="arithmatex">\(\Psi\)</span> 里面。</p>
+<h3 id="72-cdcc">7.2 CDCC<a class="headerlink" href="#72-cdcc" title="Permanent link">#</a></h3>
+<p>先把 <span class="arithmatex">\(np\)</span> internal Hamiltonian 离散：</p>
+<div class="arithmatex">\[
+h_{np}\phi_n
+=
+\epsilon_n\phi_n,
+\]</div>
+<p>保留有限组 <span class="arithmatex">\(\{\phi_n\}_{n=1}^{N}\)</span>。然后</p>
+<div class="arithmatex">\[
+\Psi(r,R)
+\approx
+\sum_n
+\phi_n(r)\chi_n(R).
+\]</div>
+<p>于是问题变成 <span class="arithmatex">\(\chi_0(R),\chi_1(R),\ldots,\chi_N(R)\)</span> 之间的 coupled-channel propagation。它把 breakup continuum 转换成有限个 internal channels。</p>
+<h3 id="73-coordinate-space-faddeev">7.3 Coordinate-space Faddeev<a class="headerlink" href="#73-coordinate-space-faddeev" title="Permanent link">#</a></h3>
+<p>写</p>
+<div class="arithmatex">\[
+\Psi
+=
+\psi_{np}
++
+\psi_{nA}
++
+\psi_{pA}.
+\]</div>
+<p>每一个 component 用自己的 Jacobi coordinates：</p>
+<div class="arithmatex">\[
+\psi_{np}(x_{np},y_A),
+\qquad
+\psi_{nA}(x_{nA},y_p),
+\qquad
+\psi_{pA}(x_{pA},y_n).
+\]</div>
+<p>这样 <span class="arithmatex">\((np)+A\)</span>、<span class="arithmatex">\((nA)+p\)</span>、<span class="arithmatex">\((pA)+n\)</span> 三种 pair topology 都被显式保留，各自在自己的自然坐标里有简单的渐近。</p>
+<h3 id="74-momentum-space-faddeev--ags">7.4 Momentum-space Faddeev / AGS<a class="headerlink" href="#74-momentum-space-faddeev--ags" title="Permanent link">#</a></h3>
+<p>未知量变成</p>
+<div class="arithmatex">\[
+\psi_\alpha(p,q)
+\]</div>
+<p>或者 transition operator</p>
+<div class="arithmatex">\[
+U_{\beta\alpha}(p,q;p',q').
+\]</div>
+<p>free propagation 与 two-body <span class="arithmatex">\(t\)</span> matrices 在 momentum/operator language 中更自然。</p>
+<h3 id="75-这四种写法之间真正的关系">7.5 这四种写法之间真正的关系<a class="headerlink" href="#75-这四种写法之间真正的关系" title="Permanent link">#</a></h3>
+<p>$$</p>
+<p>\begin{array}{ccccc}<br />
+&amp; \text{full three-body problem} &amp; \[1mm]<br />
+&amp; \downarrow &amp; \[1mm]<br />
+\text{direct Schr.}<br />
+&amp;\qquad&amp;<br />
+\text{Faddeev/AGS exact reorganization}<br />
+\[2mm]<br />
+\downarrow<br />
+&amp;&amp;<br />
+\downarrow<br />
+\[2mm]<br />
+\text{choose representation}<br />
+&amp;&amp;<br />
+\text{choose representation}<br />
+\[2mm]<br />
+\downarrow<br />
+&amp;&amp;<br />
+\downarrow<br />
+\[2mm]<br />
+\text{grid/basis truncation}<br />
+&amp;&amp;<br />
+\text{grid/basis/rank truncation}<br />
+\end{array}<br />
+$$</p>
+<p>而 CDCC 则是在 full Schrödinger problem 上先引入一个 physically chosen cluster-space projection。</p>
+<p>四种写法求解的是**同一个物理问题**，区别只在于：在哪一层做了什么样的组织和近似。</p>
+<hr />
+<h2 id="第八章-最后的落脚点所有路线都变成线性代数">第八章 最后的落脚点：所有路线都变成线性代数<a class="headerlink" href="#第八章-最后的落脚点所有路线都变成线性代数" title="Permanent link">#</a></h2>
+<p>一旦你做了 channel truncation、basis truncation、quadrature 或 finite-rank approximation，无限维问题最终都变成有限维对象。</p>
+<h3 id="bound-state">Bound state<a class="headerlink" href="#bound-state" title="Permanent link">#</a></h3>
+<div class="arithmatex">\[
+HC=ESC.
+\]</div>
+<p>求广义本征值问题。</p>
+<h3 id="driven-scattering-problem">Driven scattering problem<a class="headerlink" href="#driven-scattering-problem" title="Permanent link">#</a></h3>
+<div class="arithmatex">\[
+A(E)C=B.
+\]</div>
+<p>求线性方程组。</p>
+<h3 id="faddeev-kernel-formulation">Faddeev kernel formulation<a class="headerlink" href="#faddeev-kernel-formulation" title="Permanent link">#</a></h3>
+<div class="arithmatex">\[
+K(E)C=C.
+\]</div>
+<p>bound state 可以通过寻找</p>
+<div class="arithmatex">\[
+\lambda_n[K(E)]=1
+\]</div>
+<p>确定（<span class="arithmatex">\(E\)</span> 扫描使最大本征值达到 1 的能量）。</p>
+<p>然后才轮到真正底层的 numerical linear algebra：</p>
+<ul>
+<li>LU；</li>
+<li>sparse direct solver；</li>
+<li>GMRES；</li>
+<li>BiCGSTAB；</li>
+<li>Arnoldi；</li>
+<li>Lanczos；</li>
+<li>Krylov subspace；</li>
+<li>preconditioner；</li>
+<li>low-rank compression。</li>
+</ul>
+<p>到了这一层以后，你处理的是矩阵结构、条件数、稀疏性和迭代收敛。这里已经与“三体物理”部分相当解耦——sparse 矩阵配 direct/Krylov 求解器，dense 矩阵配 GMRES + preconditioning，是纯粹数值线性代数的考量。</p>
+<hr />
+<h2 id="第九章-统一比较与心智地图">第九章 统一比较与心智地图<a class="headerlink" href="#第九章-统一比较与心智地图" title="Permanent link">#</a></h2>
+<h3 id="91-一张统一的比较表">9.1 一张统一的比较表<a class="headerlink" href="#91-一张统一的比较表" title="Permanent link">#</a></h3>
+<p>把前面所有讨论压缩成一张表：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>方程结构</th>
+<th>路线</th>
+<th>空间分解 / 表示</th>
+<th>真正截断什么</th>
+<th>主要优势</th>
+<th>主要难点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>direct Schrödinger</td>
+<td><span class="arithmatex">\((E-H)\Psi=0\)</span></td>
+<td>波函数</td>
+<td><span class="arithmatex">\(x\otimes y\)</span></td>
+<td><span class="arithmatex">\(P_x\otimes P_y\)</span>（grid/basis）</td>
+<td>概念直接</td>
+<td>多种三体 asymptotics 缠在一起</td>
+</tr>
+<tr>
+<td>CDCC</td>
+<td>projected Schrödinger</td>
+<td>波函数</td>
+<td>internal <span class="arithmatex">\(\otimes R\)</span></td>
+<td><span class="arithmatex">\(P_{\rm int}\otimes I_R\)</span></td>
+<td>适合明显 projectile+target 图像</td>
+<td>privileged partition 选择，model-space 收敛</td>
+</tr>
+<tr>
+<td>fully discrete CDCC</td>
+<td>projected Schrödinger</td>
+<td>波函数</td>
+<td>internal <span class="arithmatex">\(\otimes R\)</span></td>
+<td><span class="arithmatex">\(P_{\rm int}\otimes P_R\)</span></td>
+<td>直接 Galerkin 矩阵</td>
+<td>同上，加 <span class="arithmatex">\(R\)</span> 离散收敛</td>
+</tr>
+<tr>
+<td>coordinate Faddeev</td>
+<td>Faddeev components</td>
+<td>波函数</td>
+<td><span class="arithmatex">\((x_\alpha,y_\alpha)\)</span></td>
+<td>channels + grid/basis</td>
+<td>各 pair topology 渐近自然</td>
+<td>实现复杂，Coulomb 麻烦</td>
+</tr>
+<tr>
+<td>momentum Faddeev</td>
+<td>Faddeev components</td>
+<td>波函数</td>
+<td><span class="arithmatex">\((p_\alpha,q_\alpha)\)</span></td>
+<td>quadrature/basis</td>
+<td>resolvent、<span class="arithmatex">\(t\)</span>-matrix 自然</td>
+<td>dense kernel、奇异点处理</td>
+</tr>
+<tr>
+<td>wave-packet Faddeev</td>
+<td>Faddeev</td>
+<td>波函数</td>
+<td><span class="arithmatex">\((p,q)\)</span></td>
+<td><span class="arithmatex">\(P_p\otimes P_q\)</span></td>
+<td>真正 <span class="arithmatex">\(L^2\)</span> 离散 continuum</td>
+<td>bin 收敛 / 分辨率</td>
+</tr>
+<tr>
+<td>separable Faddeev</td>
+<td>Faddeev</td>
+<td>波函数（借算符压缩）</td>
+<td>pair + spectator</td>
+<td>finite-rank <span class="arithmatex">\(t\)</span></td>
+<td>结构性降维</td>
+<td>low-rank fidelity</td>
+</tr>
+<tr>
+<td>AGS</td>
+<td>transition operators</td>
+<td>算符</td>
+<td>momentum/operator space</td>
+<td>quadrature / separable rank</td>
+<td>直接面向 transition amplitudes</td>
+<td>kernel 与奇异性处理</td>
+</tr>
+<tr>
+<td>hyperspherical</td>
+<td>Schrödinger/Faddeev</td>
+<td>波函数</td>
+<td><span class="arithmatex">\(\rho\otimes\Omega_5\)</span></td>
+<td><span class="arithmatex">\(I_\rho\otimes P_\Omega\)</span>（<span class="arithmatex">\(K\le K_{\max}\)</span>）</td>
+<td>六维几何统一</td>
+<td>cluster asymptotics 收敛可能慢</td>
+</tr>
+<tr>
+<td>Coulomb-Sturmian</td>
+<td>（通常配 Faddeev）</td>
+<td>波函数</td>
+<td>CS radial basis</td>
+<td><span class="arithmatex">\(N_{\rm CS}\)</span></td>
+<td>Coulomb 算符表示友好</td>
+<td>scale/收敛，边界条件仍需单独处理</td>
+</tr>
+</tbody>
+</table>
+<p>这张表比“某某方法是 PDE、某某方法是 matrix”更本质——PDE、integral equation、matrix 最后都只是不同表示下的数值形态。其中「路线」一列回答的是 §3.5 的那条正交轴：未知量是**态**还是**算符**——它与方程结构、表示方式都是独立的选择。</p>
+<h3 id="92-一张分层的心智地图">9.2 一张分层的心智地图<a class="headerlink" href="#92-一张分层的心智地图" title="Permanent link">#</a></h3>
+<p>可以把量子三体计算想成这样一条从上到下的链：</p>
+<p>$$</p>
+<p>\begin{array}{c}<br />
+\textbf{Layer 0: Physics}\<br />
+H_0+V_{12}+V_{23}+V_{31}+V_{123}<br />
+\[3mm]<br />
+\downarrow<br />
+\[3mm]<br />
+\textbf{Layer 1: Symmetry / Hilbert-space organization}\<br />
+\mathcal H=\bigoplus_{J^\pi T}\mathcal H_{J^\pi T}<br />
+\[3mm]<br />
+\downarrow<br />
+\[3mm]<br />
+\textbf{Layer 2: Equation architecture}\<br />
+\text{Schrödinger / Faddeev / AGS / CDCC projection}<br />
+\[3mm]<br />
+\downarrow<br />
+\[3mm]<br />
+\textbf{Layer 3: Representation}\<br />
+(x,y),\;(p,q),\;(\rho,\Omega)<br />
+\[3mm]<br />
+\downarrow<br />
+\[3mm]<br />
+\textbf{Layer 4: Approximation / compression}\<br />
+P_{\rm ch},\;P_x,\;P_y,\;P_{\rm int},\;K_{\max},\;N_{\rm CS},\;\mathrm{rank}(t)<br />
+\[3mm]<br />
+\downarrow<br />
+\[3mm]<br />
+\textbf{Layer 5: Scattering realization}\<br />
+\text{matching / }G^{(+)}\text{ / Coulomb treatment}<br />
+\[3mm]<br />
+\downarrow<br />
+\[3mm]<br />
+\textbf{Layer 6: Linear algebra}\<br />
+HC=ESC,\quad AC=B,\quad [1-K]C=B<br />
+\end{array}<br />
+$$</p>
+<p>这张图最重要的地方不是分类漂亮，而是它告诉你：</p>
+<blockquote>
+<p>不同文章真正的“创新点”可能发生在完全不同的层。</p>
+</blockquote>
+<p>一篇文章可能物理方程完全没变，只是换了更好的 basis；另一篇可能 basis 很普通，但重新组织了 integral kernel；还有一篇可能前面全都一样，只是在 Coulomb boundary condition 或 preconditioner 上做了关键突破。把这些层分开，才不会被方法名牵着走。</p>
+<h3 id="93-看到一种新三体方法时问六个问题">9.3 看到一种新三体方法时，问六个问题<a class="headerlink" href="#93-看到一种新三体方法时问六个问题" title="Permanent link">#</a></h3>
+<p>以后读论文，建议不要先问“这属于哪一个流派”，而是按下面六个问题拆。</p>
+<p><strong>问题 1：物理 Hamiltonian 是什么？</strong></p>
+<div class="arithmatex">\[
+H=H_0+\sum_\alpha V_\alpha
+\]</div>
+<p>有没有 Coulomb？有没有 three-body force？有没有 optical/nonlocal interaction？</p>
+<p><strong>问题 2：equation architecture 是什么？</strong></p>
+<p>它解的是</p>
+<div class="arithmatex">\[
+(E-H)\Psi=0,
+\]</div>
+<p>还是</p>
+<div class="arithmatex">\[
+\Psi=\sum_\alpha\psi_\alpha,
+\]</div>
+<p>还是</p>
+<div class="arithmatex">\[
+U_{\beta\alpha}?
+\]</div>
+<p>这一层区分 Schrödinger / Faddeev / AGS / projected equations。其中还藏着一个正交的子问题（§3.5）：<strong>未知量是态还是算符？</strong>——前者直接给出态的结构，后者直接给出跃迁振幅，两条路线的产出、边界条件位置和数值形态都不同。</p>
+<p><strong>问题 3：用什么 representation？</strong></p>
+<div class="arithmatex">\[
+(x,y),
+\qquad
+(p,q),
+\qquad
+(\rho,\Omega),
+\]</div>
+<p>或者某种 mixed representation。这一步本身通常不产生物理近似。</p>
+<p><strong>问题 4：真正截断的是什么？</strong></p>
+<p>可能是</p>
+<div class="arithmatex">\[
+N_{\rm channel},
+\qquad
+P_x,\;P_y,
+\qquad
+P_{\rm internal},
+\qquad
+K_{\max},
+\qquad
+N_{\rm CS},
+\qquad
+\operatorname{rank}(t).
+\]</div>
+<p><strong>这一层才是真正决定 numerical approximation 的地方。</strong></p>
+<p><strong>问题 5：散射边界条件怎么实现？</strong></p>
+<p>是 explicit matching？还是 complex scaling？还是 absorbing boundary？还是</p>
+<div class="arithmatex">\[
+G^{(+)}(E)
+\]</div>
+<p>的 analytic prescription？对于 Coulomb，这一问尤其重要。</p>
+<p><strong>问题 6：最后矩阵怎么解？</strong></p>
+<p>只有到了最后，才问 sparse/dense、direct/iterative、Krylov/preconditioner。</p>
+<h3 id="94-最值得记住的几组不要混淆">9.4 最值得记住的几组“不要混淆”<a class="headerlink" href="#94-最值得记住的几组不要混淆" title="Permanent link">#</a></h3>
+<p><strong>Jacobi partitions <span class="arithmatex">\(\neq\)</span> Hilbert-space direct sum。</strong> 三套 Jacobi coordinates 是同一个空间的三套表示。</p>
+<p><strong>Faddeev decomposition <span class="arithmatex">\(\neq\)</span> orthogonal decomposition。</strong></p>
+<div class="arithmatex">\[
+\Psi=\psi_1+\psi_2+\psi_3
+\]</div>
+<p>是 interaction-topology organization，不是</p>
+<div class="arithmatex">\[
+\mathcal H=\mathcal H_1\oplus\mathcal H_2\oplus\mathcal H_3.
+\]</div>
+<p><strong>Faddeev <span class="arithmatex">\(\neq\)</span> numerical discretization。</strong> Faddeev 决定方程怎样重写。你仍然可以做 coordinate Faddeev、momentum Faddeev、FEM Faddeev、spline Faddeev、wave-packet Faddeev、Coulomb-Sturmian Faddeev、separable Faddeev。</p>
+<p><strong>CDCC <span class="arithmatex">\(\neq\)</span> coupled ODE。</strong> CDCC 的核心是 <span class="arithmatex">\(P_{\rm internal}\)</span>。coupled radial ODE 只是最常见实现。</p>
+<p><strong>Coulomb-Sturmian <span class="arithmatex">\(\neq\)</span> Coulomb boundary condition。</strong> CS 是 Coulomb-adapted basis。真正的 outgoing Coulomb scattering condition 仍然要由 Green function、matching 或其他散射构造来保证。</p>
+<p><strong>Separable expansion <span class="arithmatex">\(\neq\)</span> 普通 basis truncation。</strong> 普通 basis truncation 主要压缩 state space，separable expansion 主要压缩 operator rank。</p>
+<h3 id="95-cdcc-可以从-faddeev-数值体系借什么">9.5 CDCC 可以从 Faddeev 数值体系借什么？<a class="headerlink" href="#95-cdcc-可以从-faddeev-数值体系借什么" title="Permanent link">#</a></h3>
+<p>很多。因为 Faddeev 体系中大量所谓“方法”其实只是 numerical realization，与方程架构正交。CDCC 完全可以借：</p>
+<div class="arithmatex">\[
+\text{FEM},\quad
+\text{B-spline},\quad
+\text{DVR},\quad
+\text{spectral basis},\quad
+\text{wave packet},\quad
+\text{Coulomb-Sturmian},\quad
+\text{momentum-space integral equations},\quad
+\text{Krylov / low-rank / separable operator techniques}.
+\]</div>
+<p>真正不能简单照搬的是 Faddeev 的 <strong>multiple-partition architecture</strong>：不同 Jacobi basis 都属于同一个三体 Hilbert space，简单相加容易 overcomplete。Faddeev 正是通过 interaction topology 来解决这一点。</p>
+<p>反过来，Faddeev 体系也可以借 CDCC 的 pseudostate 思想来构造有限的内部基底。分层清楚之后，“借用”变成自然而然的事。</p>
+<hr />
+<h2 id="第十章-总结">第十章 总结<a class="headerlink" href="#第十章-总结" title="Permanent link">#</a></h2>
+<p>如果全文只记四句话，就是下面四句：</p>
+<p>第一句：Faddeev 主要解决“怎样组织三体散射 topology”。</p>
+<p>第二句：CDCC 主要解决“怎样把一个重要 cluster continuum 压缩成有限 model space”。</p>
+<p>第三句：FEM、B-spline、wave packet、Coulomb-Sturmian 等主要解决“怎样把剩余无限维对象数值表示出来”。</p>
+<p>第四句：波函数路线回答“态长什么样”，算符路线回答“跃迁振幅是多少”——动手前先想清楚你要哪个。</p>
+<p>而贯穿所有方法的核心问题始终是四个：</p>
+<p>$$</p>
+<p>\begin{array}{c}<br />
+\text{我在什么空间里？}\<br />
+\text{我怎样组织相互作用和渐近通道？}\<br />
+\text{我真正截断了什么？}\<br />
+\text{散射边界条件放在哪里？}<br />
+\end{array}<br />
+$$</p>
+<p>一旦这些问题能回答清楚，CDCC、Faddeev、AGS、hyperspherical、FEM、wave packet、Coulomb-Sturmian、separable expansion 就不会再是一堆互相竞争的术语。</p>
+<p>它们只是同一个量子三体问题，在**不同数学层次**上的不同选择。</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      最后更新:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年8月19日 01:16:49 UTC"><span class="timeago" datetime="2026-08-19T01:16:49+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年8月19日 01:16:49 UTC">2026-08-19</span>
+      
+        <br>
+        创建日期:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026年8月19日 01:16:49 UTC"><span class="timeago" datetime="2026-08-19T01:16:49+00:00" locale="zh"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026年8月19日 01:16:49 UTC">2026-08-19</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="tianbaiting/tianbaiting.github.io"
+        data-repo-id="R_kgDOOB38lw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOOB38l84Comp4"
+        data-mapping="url"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+  <script>
+    if (document.querySelector("body").getAttribute("data-md-color-scheme") === "slate") {
+      var giscus = document.querySelector("script[src*=giscus]")
+      giscus.setAttribute("data-theme", "https://gcore.jsdelivr.net/gh/TonyCrane/note/docs/css/giscus.css") 
+    }
+  </script>
+
+                  
+                </article>
+              </div>
+            
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+          </div>
+          
+            <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+              回到页面顶部
+            </a>
+          
+        </main>
+        
+          <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+        
+      </div>
+      <div class="md-dialog" data-md-component="dialog">
+        <div class="md-dialog__inner md-typeset"></div>
+      </div>
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["tabs", "content.tabs.link", "search.highlight", "navigation.top", "navigation.tracking", "navigation.tabs", "navigation.indexes", "search.share"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+      
+      
+        <script src="../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+        
+          <script src="../../../../js/timeago.min.js"></script>
+        
+          <script src="../../../../js/timeago_mkdocs_material.js"></script>
+        
+          <script src="../../../../js/mathjax.js"></script>
+        
+          <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+          <script src="https://d3js.org/d3.v7.min.js"></script>
+        
+          <script src="../../../../js/scheme.js"></script>
+        
+          <script src="../../../../js/graph.js"></script>
+        
+      
+    </body>
+  </html>
+  

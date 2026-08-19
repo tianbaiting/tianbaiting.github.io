@@ -3311,6 +3311,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3361,6 +3363,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -3983,20 +3999,20 @@
 <h2 id="定义-lorentzvector-类">定义 LorentzVector 类<a class="headerlink" href="#定义-lorentzvector-类" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">LorentzVector</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">px</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">py</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pz</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        初始化四维动量</span>
 <span class="sd">        px, py, pz: 三维动量分量</span>
 <span class="sd">        E: 能量</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">px</span> <span class="o">=</span> <span class="n">px</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">py</span> <span class="o">=</span> <span class="n">py</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pz</span> <span class="o">=</span> <span class="n">pz</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">E</span> <span class="o">=</span> <span class="n">E</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        四维动量加法</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="n">LorentzVector</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">px</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">px</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">py</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">py</span><span class="p">,</span>
@@ -4005,10 +4021,10 @@
         <span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">boost</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">beta_vec</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        对四维动量进行洛伦兹变换（boost）</span>
 <span class="sd">        beta_vec: 三维速度向量（单位c）</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">bx</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">bz</span> <span class="o">=</span> <span class="n">beta_vec</span>
         <span class="n">b2</span> <span class="o">=</span> <span class="n">bx</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">by</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">bz</span><span class="o">**</span><span class="mi">2</span>
         <span class="n">gamma</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">b2</span><span class="p">)</span>
@@ -4023,33 +4039,33 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">px</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">py</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pz</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">E</span> <span class="o">=</span> <span class="n">px_</span><span class="p">,</span> <span class="n">py_</span><span class="p">,</span> <span class="n">pz_</span><span class="p">,</span> <span class="n">E_</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">set_theta_phi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        设置极角（theta, phi），保持动量大小不变</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">px</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">py</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">pz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">px</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">py</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pz</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">p</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        返回三维动量大小</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">px</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">py</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">pz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        打印四维动量信息</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;LorentzVector(px=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">px</span><span class="si">}</span><span class="s2">, py=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">py</span><span class="si">}</span><span class="s2">, pz=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">pz</span><span class="si">}</span><span class="s2">, E=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">E</span><span class="si">}</span><span class="s2">)&quot;</span>
+<span class="sd">        """</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"LorentzVector(px=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">px</span><span class="si">}</span><span class="s2">, py=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">py</span><span class="si">}</span><span class="s2">, pz=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">pz</span><span class="si">}</span><span class="s2">, E=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">E</span><span class="si">}</span><span class="s2">)"</span>
 </code></pre></div>
 <h2 id="物理过程示例函数">物理过程示例函数<a class="headerlink" href="#物理过程示例函数" title="Permanent link">#</a></h2>
 <p>下面以质心系与实验室系的四动量变换为例，演示如何使用 LorentzVector 类。</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">P_lab</span><span class="p">(</span><span class="n">theta_D_c</span><span class="p">,</span> <span class="n">phi_D_c</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    输入：D在质心系下的极角</span>
 <span class="sd">    输出：D和质子在实验室系下的四动量</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="c1"># 假设已知常量 mP, pD, ED</span>
     <span class="c1"># mP: 质子质量</span>
     <span class="c1"># pD: D三动量大小</span>

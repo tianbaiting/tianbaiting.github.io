@@ -3536,6 +3536,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3586,6 +3588,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4454,7 +4470,7 @@ Ctrl+b s        # 列出会话并切换
 <div class="highlight"><pre><span></span><code>tmux<span class="w"> </span>new-window<span class="w"> </span>-n<span class="w"> </span>name
 tmux<span class="w"> </span>kill-window
 tmux<span class="w"> </span>rename-window<span class="w"> </span>name
-tmux<span class="w"> </span><span class="k">select</span>-window<span class="w"> </span>-t<span class="w"> </span><span class="m">1</span>
+tmux<span class="w"> </span>select-window<span class="w"> </span>-t<span class="w"> </span><span class="m">1</span>
 </code></pre></div>
 <h3 id="窗口快捷键">窗口：快捷键<a class="headerlink" href="#窗口快捷键" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>Ctrl+b c        # 新建窗口  
@@ -4470,7 +4486,7 @@ Ctrl+b 0-9      # 切换窗口编号
 <h2 id="面板pane管理">面板（pane）管理<a class="headerlink" href="#面板pane管理" title="Permanent link">#</a></h2>
 <h3 id="分割">分割<a class="headerlink" href="#分割" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>Ctrl+b %        # 垂直分割  
-Ctrl+b &quot;        # 水平分割
+Ctrl+b "        # 水平分割
 </code></pre></div>
 <h3 id="删除">删除<a class="headerlink" href="#删除" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>Ctrl+b x        # 关闭 pane
@@ -4604,10 +4620,10 @@ tmux list-panes -t session_name:0.1       # 也可只看某个 pane
 </table>
 <h3 id="实用示例">实用示例<a class="headerlink" href="#实用示例" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 在指定 pane 执行命令</span>
-tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>dev:1.0<span class="w"> </span><span class="s1">&#39;make test&#39;</span><span class="w"> </span>Enter
+tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>dev:1.0<span class="w"> </span><span class="s1">'make test'</span><span class="w"> </span>Enter
 
 <span class="c1"># 向另一个 session 的 window 发送命令</span>
-tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>build:0<span class="w"> </span><span class="s1">&#39;cargo build&#39;</span><span class="w"> </span>Enter
+tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>build:0<span class="w"> </span><span class="s1">'cargo build'</span><span class="w"> </span>Enter
 
 <span class="c1"># 捕获指定 pane 的内容</span>
 tmux<span class="w"> </span>capture-pane<span class="w"> </span>-t<span class="w"> </span>dev:1.0<span class="w"> </span>-p
@@ -4616,7 +4632,7 @@ tmux<span class="w"> </span>capture-pane<span class="w"> </span>-t<span class="w
 tmux<span class="w"> </span>kill-window<span class="w"> </span>-t<span class="w"> </span>dev:3
 
 <span class="c1"># 选择指定 session 的某个 pane</span>
-tmux<span class="w"> </span><span class="k">select</span>-pane<span class="w"> </span>-t<span class="w"> </span>dev:0.1
+tmux<span class="w"> </span>select-pane<span class="w"> </span>-t<span class="w"> </span>dev:0.1
 </code></pre></div>
 <blockquote>
 <p><strong>提示</strong>：pane 编号可通过 <code>tmux list-panes</code> 查看，或在 tmux 内用 <code>Ctrl+b q</code> 短暂显示各 pane 编号。</p>
@@ -4624,8 +4640,8 @@ tmux<span class="w"> </span><span class="k">select</span>-pane<span class="w"> <
 <hr />
 <h2 id="发送命令到-pane--捕获-pane-内容">发送命令到 pane / 捕获 pane 内容<a class="headerlink" href="#发送命令到-pane--捕获-pane-内容" title="Permanent link">#</a></h2>
 <h3 id="send-keys">send-keys<a class="headerlink" href="#send-keys" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span><span class="s1">&#39;ls -la&#39;</span><span class="w"> </span>Enter<span class="w">          </span><span class="c1"># 向 pane 发送命令</span>
-tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>dev:2.0<span class="w"> </span><span class="s1">&#39;make&#39;</span><span class="w"> </span>Enter<span class="w">         </span><span class="c1"># 指定 session:window.pane</span>
+<div class="highlight"><pre><span></span><code>tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span><span class="s1">'ls -la'</span><span class="w"> </span>Enter<span class="w">          </span><span class="c1"># 向 pane 发送命令</span>
+tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>dev:2.0<span class="w"> </span><span class="s1">'make'</span><span class="w"> </span>Enter<span class="w">         </span><span class="c1"># 指定 session:window.pane</span>
 tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>C-c<span class="w">                      </span><span class="c1"># 发送 Ctrl-c（中断）</span>
 tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span><span class="m">0</span>.0<span class="w"> </span>C-l<span class="w">                      </span><span class="c1"># 发送 Ctrl-l（清屏）</span>
 </code></pre></div>
@@ -4670,8 +4686,8 @@ tmux<span class="w"> </span>capture-pane<span class="w"> </span>-t<span class="w
 </table>
 <h3 id="典型用法">典型用法<a class="headerlink" href="#典型用法" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 抓取另一个 pane 的输出并判断是否编译成功</span>
-<span class="k">if</span><span class="w"> </span>tmux<span class="w"> </span>capture-pane<span class="w"> </span>-t<span class="w"> </span>build:0.0<span class="w"> </span>-p<span class="w"> </span>-S<span class="w"> </span>-5<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;编译失败&quot;</span>
+<span class="k">if</span><span class="w"> </span>tmux<span class="w"> </span>capture-pane<span class="w"> </span>-t<span class="w"> </span>build:0.0<span class="w"> </span>-p<span class="w"> </span>-S<span class="w"> </span>-5<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">"error"</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"编译失败"</span>
 <span class="k">fi</span>
 
 <span class="c1"># 保存 pane 全部历史到文件</span>
@@ -4701,7 +4717,7 @@ bind r source-file ~/.tmux.conf \; display "reloaded"</p>
 <h2 id="个人高频使用-top">个人高频使用 TOP<a class="headerlink" href="#个人高频使用-top" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code>Ctrl+b c        # 新窗口  
 Ctrl+b %        # 垂直分割  
-Ctrl+b &quot;        # 水平分割  
+Ctrl+b "        # 水平分割  
 Ctrl+b z        # 最大化 pane  
 Ctrl+b d        # detach  
 Ctrl+b [        # 滚动查看  

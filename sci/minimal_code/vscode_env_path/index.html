@@ -3293,6 +3293,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3343,6 +3345,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -3987,22 +4003,22 @@
 <p>编辑 <code>settings.json</code> 文件:<br />
     将以下内容粘贴到 <code>settings.json</code> 文件中，并把你第一步中复制的那些环境变量的值填入相应位置：</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;cmake.configureEnvironment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;TARTSYS&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;这里粘贴你从 &#39;echo $TARTSYS&#39; 得到的值&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;这里粘贴你从 &#39;echo $LD_LIBRARY_PATH&#39; 得到的值&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;PATH&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;这里粘贴你从 &#39;echo $PATH&#39; 得到的值&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;SMSIMDIR&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/tbt/workspace/kondo-smsimulator/smsimulator&quot;</span>
+<span class="w">    </span><span class="nt">"cmake.configureEnvironment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"TARTSYS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"这里粘贴你从 'echo $TARTSYS' 得到的值"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"LD_LIBRARY_PATH"</span><span class="p">:</span><span class="w"> </span><span class="s2">"这里粘贴你从 'echo $LD_LIBRARY_PATH' 得到的值"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"PATH"</span><span class="p">:</span><span class="w"> </span><span class="s2">"这里粘贴你从 'echo $PATH' 得到的值"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"SMSIMDIR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/home/tbt/workspace/kondo-smsimulator/smsimulator"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>示例：<br />
 假设你运行 <code>echo $TARTSYS</code> 得到 <code>/home/tbt/Software/anaroot/install</code>，那么你的 <code>settings.json</code> 文件看起来会是这样：</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;cmake.configureEnvironment&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;TARTSYS&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/tbt/Software/anaroot/install&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;LD_LIBRARY_PATH&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/tbt/workspace/kondo-smsimulator/smsimulator/install/lib:/home/tbt/Software/anaroot/install/lib:/home/tbt/Software/root/lib:...&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;PATH&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/tbt/Software/root/bin:/home/tbt/Software/geant4/install/bin:...&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;SMSIMDIR&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/home/tbt/workspace/kondo-smsimulator/smsimulator&quot;</span>
+<span class="w">    </span><span class="nt">"cmake.configureEnvironment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"TARTSYS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/home/tbt/Software/anaroot/install"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"LD_LIBRARY_PATH"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/home/tbt/workspace/kondo-smsimulator/smsimulator/install/lib:/home/tbt/Software/anaroot/install/lib:/home/tbt/Software/root/lib:..."</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"PATH"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/home/tbt/Software/root/bin:/home/tbt/Software/geant4/install/bin:..."</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"SMSIMDIR"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/home/tbt/workspace/kondo-smsimulator/smsimulator"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>

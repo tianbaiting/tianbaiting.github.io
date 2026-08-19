@@ -3431,6 +3431,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3481,6 +3483,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4307,7 +4323,7 @@ Ctrl-b ,
 
 # 垂直/水平分割窗格
 Ctrl-b %   # 垂直分割（左右）
-Ctrl-b &quot;   # 水平分割（上下）
+Ctrl-b "   # 水平分割（上下）
 
 # 在窗格间切换
 Ctrl-b o     # 切换到下一个窗格
@@ -4328,7 +4344,7 @@ Ctrl-b ]   # 粘贴
 tmux capture-pane -pS -1000 &gt; /tmp/tmux_scrollback.txt
 
 # 在脚本中发送按键到窗格
-tmux send-keys -t mysession:0.1 &#39;ls -la&#39; C-m
+tmux send-keys -t mysession:0.1 'ls -la' C-m
 </code></pre></div></p>
 <p>提示：tmux 配置文件 ~/.tmux.conf 可自定义前缀、快捷键和行为；tmux 功能更强、脚本化友好，适合复杂会话管理。</p>
 <h2 id="install-sofware--安装软件">install sofware / 安装软件<a class="headerlink" href="#install-sofware--安装软件" title="Permanent link">#</a></h2>
@@ -4397,7 +4413,7 @@ sudo<span class="w"> </span>cmake<span class="w"> </span>--install<span class="w
 </ul>
 <p>总之：优先使用系统与生态的包管理器，必要时再从源码构建并按照项目文档安装。</p>
 <h2 id="pipe--redirect">pipe &amp; Redirect<a class="headerlink" href="#pipe--redirect" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>ls | grep &quot;build&quot;
+<div class="highlight"><pre><span></span><code>ls | grep "build"
 </code></pre></div>
 <p>重定向 对文件的输出</p>
 <p>redirect : &gt; &amp; &lt; </p>
@@ -4449,7 +4465,7 @@ cmd<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>&
 </li>
 <li>
 <p>Here-string（短文本作为 stdin）：<br />
-<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>foo<span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;one foo two&quot;</span>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>foo<span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="s2">"one foo two"</span>
 </code></pre></div></p>
 </li>
 </ul>
@@ -4460,7 +4476,7 @@ ls<span class="w"> </span>-la<span class="w"> </span><span class="p">|</span><sp
 <h3 id="xargs-与-find-的常见搭配">xargs 与 find 的常见搭配<a class="headerlink" href="#xargs-与-find-的常见搭配" title="Permanent link">#</a></h3>
 <p>处理大量文件或带空格的文件名时用 -print0 与 -0：<br />
 <div class="highlight"><pre><span></span><code><span class="c1"># 并行压缩找到的文件（对大文件集有效）</span>
-find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.log&#39;</span><span class="w"> </span>-print0<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-0<span class="w"> </span>-n1<span class="w"> </span>-P4<span class="w"> </span>gzip
+find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s1">'*.log'</span><span class="w"> </span>-print0<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-0<span class="w"> </span>-n1<span class="w"> </span>-P4<span class="w"> </span>gzip
 </code></pre></div></p>
 <h3 id="进程替换process-substitution">进程替换（Process Substitution）<a class="headerlink" href="#进程替换process-substitution" title="Permanent link">#</a></h3>
 <p>在需要以文件名形式传递命令输出时：<br />
@@ -4494,18 +4510,18 @@ find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </spa
 <h3 id="环境变量与-path别名函数">环境变量与 PATH、别名、函数<a class="headerlink" href="#环境变量与-path别名函数" title="Permanent link">#</a></h3>
 <ul>
 <li>临时设置并导出变量：<br />
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">MYVAR</span><span class="o">=</span><span class="s2">&quot;value&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">MYVAR</span><span class="o">=</span><span class="s2">"value"</span>
 <span class="nb">echo</span><span class="w"> </span><span class="nv">$MYVAR</span>
 </code></pre></div></li>
 <li>修改 PATH：<br />
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
 </code></pre></div></li>
 <li>常用别名（放入 ~/.bashrc 或 ~/.zshrc）：<br />
-<div class="highlight"><pre><span></span><code><span class="nb">alias</span><span class="w"> </span><span class="nv">ll</span><span class="o">=</span><span class="s1">&#39;ls -la&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">alias</span><span class="w"> </span><span class="nv">ll</span><span class="o">=</span><span class="s1">'ls -la'</span>
 <span class="nb">unalias</span><span class="w"> </span>ll
 </code></pre></div></li>
 <li>定义简单函数：<br />
-<div class="highlight"><pre><span></span><code>mkcd<span class="o">()</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
+<div class="highlight"><pre><span></span><code>mkcd<span class="o">()</span><span class="w"> </span><span class="o">{</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
 </code></pre></div></li>
 </ul>
 <h3 id="常见小技巧与安全注意">常见小技巧与安全注意<a class="headerlink" href="#常见小技巧与安全注意" title="Permanent link">#</a></h3>

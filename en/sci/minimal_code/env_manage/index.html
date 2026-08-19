@@ -3478,6 +3478,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3528,6 +3530,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4453,11 +4469,11 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$EPREFIX
 <p>步骤 II：Bootstrap 镜像配置</p>
 <p>在执行引导脚本（<code>bootstrap-prefix.sh</code>）之前，设置必要的镜像变量以确保源码包下载的稳定性。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 1. 设置 Gentoo Portage 源码包镜像</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">GENTOO_MIRRORS</span><span class="o">=</span><span class="s2">&quot;http://mirror.nyist.edu.cn/gentoo&quot;</span><span class="w"> </span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GENTOO_MIRRORS</span><span class="o">=</span><span class="s2">"http://mirror.nyist.edu.cn/gentoo"</span><span class="w"> </span>
 <span class="c1"># 2. 设置 GNU 源码镜像</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">GNU_URL</span><span class="o">=</span><span class="s2">&quot;http://mirror.nyist.edu.cn/gnu&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">GNU_URL</span><span class="o">=</span><span class="s2">"http://mirror.nyist.edu.cn/gnu"</span>
 <span class="c1"># 3. 设置 Gentoo Portage 快照镜像</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">SNAPSHOT_URL</span><span class="o">=</span><span class="s2">&quot;http://mirror.nyist.edu.cn/gentoo/snapshots&quot;</span><span class="w"> </span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">SNAPSHOT_URL</span><span class="o">=</span><span class="s2">"http://mirror.nyist.edu.cn/gentoo/snapshots"</span><span class="w"> </span>
 </code></pre></div>
 <p>步骤 III：执行 Bootstrap 脚本</p>
 <p>获取并执行 <code>bootstrap-prefix.sh</code> 脚本。该脚本将自动下载 Portage 树、编译一个最小化的核心工具链（如 bash）和 Portage 本身。（注意：具体脚本的获取方法需参考官方文档，这里仅提供执行环境配置。）</p>
@@ -4472,7 +4488,7 @@ mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$EPREFIX
 </code></pre></div>
 <p>步骤 V：Distfiles 配置与同步</p>
 <p>在 <code>$EPREFIX/etc/portage/make.conf</code> 中配置源码包（Distfiles）的下载镜像：</p>
-<div class="highlight"><pre><span></span><code><span class="nv">GENTOO_MIRRORS</span><span class="o">=</span><span class="s2">&quot;https://mirror.nyist.edu.cn/gentoo&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nv">GENTOO_MIRRORS</span><span class="o">=</span><span class="s2">"https://mirror.nyist.edu.cn/gentoo"</span>
 </code></pre></div>
 <p>激活 Prefix 环境，并同步 Portage 树：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 激活脚本通常在 $EPREFIX/usr/bin/startprefix</span>

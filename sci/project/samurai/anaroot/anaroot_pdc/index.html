@@ -3249,6 +3249,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3299,6 +3301,20 @@
     <li class="md-nav__item">
       <a href="../../../faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -3973,7 +3989,7 @@
 <li>典型用法：<br />
 <div class="highlight"><pre><span></span><code><span class="n">TArtCalibPDCHit</span><span class="w"> </span><span class="o">*</span><span class="n">pdchitcalib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TArtCalibPDCHit</span><span class="p">();</span>
 <span class="n">pdchitcalib</span><span class="o">-&gt;</span><span class="n">ReconstructData</span><span class="p">();</span>
-<span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">pdc_hit_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">&quot;SAMURAIPDCHit&quot;</span><span class="p">);</span>
+<span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">pdc_hit_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">"SAMURAIPDCHit"</span><span class="p">);</span>
 </code></pre></div></li>
 </ul>
 <h2 id="tartcalibpdctrack">TArtCalibPDCTrack<a class="headerlink" href="#tartcalibpdctrack" title="Permanent link">#</a></h2>
@@ -3983,7 +3999,7 @@
 <li>典型用法：<br />
 <div class="highlight"><pre><span></span><code><span class="n">TArtCalibPDCTrack</span><span class="w"> </span><span class="o">*</span><span class="n">pdctrackcalib</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TArtCalibPDCTrack</span><span class="p">();</span>
 <span class="n">pdctrackcalib</span><span class="o">-&gt;</span><span class="n">ReconstructData</span><span class="p">();</span>
-<span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">pdc_trk_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">&quot;SAMURAIPDCTrack&quot;</span><span class="p">);</span>
+<span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">pdc_trk_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">"SAMURAIPDCTrack"</span><span class="p">);</span>
 </code></pre></div></li>
 </ul>
 <h2 id="tartdchit-和-tartdctrack">TArtDCHit 和 TArtDCTrack<a class="headerlink" href="#tartdchit-和-tartdctrack" title="Permanent link">#</a></h2>
@@ -4300,13 +4316,13 @@ w_i = |\,\text{TDC}_i - \text{TrailTDC}_i\,|,\qquad
 #include &lt;set&gt;
 #include &lt;vector&gt;
 #include &lt;iostream&gt;
-void recoPDCTrack(const char* ridffile = &quot;/home/s057/exp/exp2505_s057/anaroot/users/tbt/ridf/data0074.ridf&quot;) {
+void recoPDCTrack(const char* ridffile = "/home/s057/exp/exp2505_s057/anaroot/users/tbt/ridf/data0074.ridf") {
 
-  gSystem-&gt;Load(&quot;libXMLParser.so&quot;); // 先加载XML解析库
-    gSystem-&gt;Load(&quot;libanacore.so&quot;);
+  gSystem-&gt;Load("libXMLParser.so"); // 先加载XML解析库
+    gSystem-&gt;Load("libanacore.so");
     // 加载PDC参数
     TArtSAMURAIParameters *samuraiparameters = TArtSAMURAIParameters::Instance();
-    samuraiparameters-&gt;LoadParameter(&quot;../db/SAMURAIPDC.xml&quot;);
+    samuraiparameters-&gt;LoadParameter("../db/SAMURAIPDC.xml");
 
     // 打开RIDF文件
     TArtEventStore *estore = new TArtEventStore();
@@ -4317,32 +4333,32 @@ void recoPDCTrack(const char* ridffile = &quot;/home/s057/exp/exp2505_s057/anaro
     TArtCalibPDCTrack *pdctrackcalib = new TArtCalibPDCTrack();
 
     TArtStoreManager *sman = TArtStoreManager::Instance();
-    TClonesArray *pdc_hit_array = (TClonesArray *)sman-&gt;FindDataContainer(&quot;SAMURAIPDCHit&quot;);
-    TClonesArray *pdc_trk_array = (TClonesArray *)sman-&gt;FindDataContainer(&quot;SAMURAIPDCTrack&quot;);
+    TClonesArray *pdc_hit_array = (TClonesArray *)sman-&gt;FindDataContainer("SAMURAIPDCHit");
+    TClonesArray *pdc_trk_array = (TClonesArray *)sman-&gt;FindDataContainer("SAMURAIPDCTrack");
 
     // 获取输入文件名
     std::string inputFileName = std::string(ridffile);
-    size_t pos = inputFileName.find_last_of(&#39;/&#39;);
+    size_t pos = inputFileName.find_last_of('/');
     std::string fileName = (pos != std::string::npos) ? inputFileName.substr(pos + 1) : inputFileName;
 
     // 创建输出ROOT文件和TTree
-    const char* outputDir = &quot;./output&quot;;
-    std::string outroot = std::string(outputDir) + &quot;/&quot; + fileName + &quot;_pdc.root&quot;;
-    std::string outpng = std::string(outputDir) + &quot;/&quot; + fileName + &quot;_pdc_track_xy.png&quot;;
+    const char* outputDir = "./output";
+    std::string outroot = std::string(outputDir) + "/" + fileName + "_pdc.root";
+    std::string outpng = std::string(outputDir) + "/" + fileName + "_pdc_track_xy.png";
 
-    TFile *fout = new TFile(outroot.c_str(), &quot;RECREATE&quot;);
-    TTree *tree = new TTree(&quot;pdctree&quot;, &quot;PDC Track Tree&quot;);
+    TFile *fout = new TFile(outroot.c_str(), "RECREATE");
+    TTree *tree = new TTree("pdctree", "PDC Track Tree");
     int event, trackid, ndf, nhit;
     double x, y, ax, ay, chi2;
-    tree-&gt;Branch(&quot;event&quot;, &amp;event, &quot;event/I&quot;);
-    tree-&gt;Branch(&quot;trackid&quot;, &amp;trackid, &quot;trackid/I&quot;);
-    tree-&gt;Branch(&quot;x&quot;, &amp;x, &quot;x/D&quot;);
-    tree-&gt;Branch(&quot;y&quot;, &amp;y, &quot;y/D&quot;);
-    tree-&gt;Branch(&quot;ax&quot;, &amp;ax, &quot;ax/D&quot;);
-    tree-&gt;Branch(&quot;ay&quot;, &amp;ay, &quot;ay/D&quot;);
-    tree-&gt;Branch(&quot;chi2&quot;, &amp;chi2, &quot;chi2/D&quot;);
-    tree-&gt;Branch(&quot;ndf&quot;, &amp;ndf, &quot;ndf/I&quot;);
-    tree-&gt;Branch(&quot;nhit&quot;, &amp;nhit, &quot;nhit/I&quot;);
+    tree-&gt;Branch("event", &amp;event, "event/I");
+    tree-&gt;Branch("trackid", &amp;trackid, "trackid/I");
+    tree-&gt;Branch("x", &amp;x, "x/D");
+    tree-&gt;Branch("y", &amp;y, "y/D");
+    tree-&gt;Branch("ax", &amp;ax, "ax/D");
+    tree-&gt;Branch("ay", &amp;ay, "ay/D");
+    tree-&gt;Branch("chi2", &amp;chi2, "chi2/D");
+    tree-&gt;Branch("ndf", &amp;ndf, "ndf/I");
+    tree-&gt;Branch("nhit", &amp;nhit, "nhit/I");
 
     int neve = 0;
     while (estore-&gt;GetNextEvent() &amp;&amp; neve &lt; 1000) {
@@ -4364,24 +4380,24 @@ void recoPDCTrack(const char* ridffile = &quot;/home/s057/exp/exp2505_s057/anaro
             event = neve;
             trackid = i;
             tree-&gt;Fill();
-            std::cout &lt;&lt; &quot;Event: &quot; &lt;&lt; neve &lt;&lt; &quot;, Track ID: &quot; &lt;&lt; i 
-                      &lt;&lt; &quot;, X: &quot; &lt;&lt; x &lt;&lt; &quot;, Y: &quot; &lt;&lt; y 
-                      &lt;&lt; &quot;, Ax: &quot; &lt;&lt; ax &lt;&lt; &quot;, Ay: &quot; &lt;&lt; ay 
-                      &lt;&lt; &quot;, Chi2: &quot; &lt;&lt; chi2 
-                      &lt;&lt; &quot;, NDF: &quot; &lt;&lt; ndf 
-                      &lt;&lt; &quot;, NHits: &quot; &lt;&lt; nhit 
+            std::cout &lt;&lt; "Event: " &lt;&lt; neve &lt;&lt; ", Track ID: " &lt;&lt; i 
+                      &lt;&lt; ", X: " &lt;&lt; x &lt;&lt; ", Y: " &lt;&lt; y 
+                      &lt;&lt; ", Ax: " &lt;&lt; ax &lt;&lt; ", Ay: " &lt;&lt; ay 
+                      &lt;&lt; ", Chi2: " &lt;&lt; chi2 
+                      &lt;&lt; ", NDF: " &lt;&lt; ndf 
+                      &lt;&lt; ", NHits: " &lt;&lt; nhit 
                       &lt;&lt; std::endl;
         }
         neve++;
     }
     tree-&gt;Write();
 
-    TCanvas *c1 = new TCanvas(&quot;c1&quot;, &quot;PDC Track X-Y&quot;, 800, 600);
-    tree-&gt;Draw(&quot;y:x&gt;&gt;hxy&quot;, &quot;&quot;, &quot;COLZ&quot;);
+    TCanvas *c1 = new TCanvas("c1", "PDC Track X-Y", 800, 600);
+    tree-&gt;Draw("y:x&gt;&gt;hxy", "", "COLZ");
     c1-&gt;SaveAs(outpng.c_str());
     delete c1;
-    std::cout &lt;&lt; &quot;Output ROOT file: &quot; &lt;&lt; outroot &lt;&lt; std::endl;
-    std::cout &lt;&lt; &quot;Output PNG file: &quot; &lt;&lt; outpng &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Output ROOT file: " &lt;&lt; outroot &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Output PNG file: " &lt;&lt; outpng &lt;&lt; std::endl;
 
     fout-&gt;Close();
     delete pdchitcalib;

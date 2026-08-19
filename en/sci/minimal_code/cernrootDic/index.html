@@ -3376,6 +3376,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3426,6 +3428,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4122,7 +4138,7 @@
 
 <span class="c1">// 2. 显式列出你要生成字典的类</span>
 <span class="c1">// 格式：#pragma link C++ class 类名+;</span>
-<span class="c1">// 注意那个 &quot;+&quot; 号！它表示让 ROOT 自动处理 I/O 格式演变（Schema Evolution）</span>
+<span class="c1">// 注意那个 "+" 号！它表示让 ROOT 自动处理 I/O 格式演变（Schema Evolution）</span>
 <span class="cp">#pragma link C++ class MyParticle+;</span>
 <span class="cp">#pragma link C++ class EventHeader+;</span>
 
@@ -4140,7 +4156,7 @@
 <li>在你的类定义中加入 <code>ClassDef</code> 宏（建议做法，虽然不加也能跑，但存文件会受限）。</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="c1">// MyScript.C</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TObject.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"TObject.h"</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MyData</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">TObject</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 最好继承自 TObject</span>
 <span class="k">public</span><span class="o">:</span>
@@ -4158,7 +4174,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">root</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">.</span><span class="n">L</span><span class="w"> </span><span class="n">MyScript</span><span class="p">.</span><span class="n">C</span><span class="o">+</span>
 </code></pre></div>
 <p>或者在终端直接运行：</p>
-<div class="highlight"><pre><span></span><code>root<span class="w"> </span>-l<span class="w"> </span><span class="s1">&#39;MyScript.C+&#39;</span>
+<div class="highlight"><pre><span></span><code>root<span class="w"> </span>-l<span class="w"> </span><span class="s1">'MyScript.C+'</span>
 </code></pre></div>
 <p>原理：那个 <code>+</code> 号告诉 ROOT：“请调用编译器（g++）把这个脚本编译成动态库”。在这个过程中，ROOT 会自动检测类，自动在内存中生成字典，无需你手写 <code>LinkDef.h</code>（除非极其复杂的情况）。编译完后，它会生成一个 <code>MyScript_C.so</code>，下次运行会非常快。</p>
 <hr />
@@ -4168,7 +4184,7 @@
 <p>Header.h（类定义）：</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#ifndef HEADER_H</span>
 <span class="cp">#define HEADER_H</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TObject.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"TObject.h"</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MyParticle</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">TObject</span><span class="w"> </span><span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>

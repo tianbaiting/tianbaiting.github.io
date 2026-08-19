@@ -3249,6 +3249,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3299,6 +3301,20 @@
     <li class="md-nav__item">
       <a href="../../../faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4310,28 +4326,28 @@
 <p>具体代码实现详见下方示例（已集成于本文件后半部分）。</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code>#include &lt;iostream&gt;
-void recoNebulaTrack(const char* ridffile = &quot;/home/s057/exp/exp2505_s057/anaroot/users/tbt/ridf/data0073.ridf&quot;) {
-    gSystem-&gt;Load(&quot;libXMLParser.so&quot;);
-    gSystem-&gt;Load(&quot;libanacore.so&quot;);
+void recoNebulaTrack(const char* ridffile = "/home/s057/exp/exp2505_s057/anaroot/users/tbt/ridf/data0073.ridf") {
+    gSystem-&gt;Load("libXMLParser.so");
+    gSystem-&gt;Load("libanacore.so");
 
-    // It&#39;s good practice to set the include path if your custom classes are not in standard ROOT include paths
+    // It's good practice to set the include path if your custom classes are not in standard ROOT include paths
     // Adjust this path if your anaroot/users/tbt/src/include is different or if headers are elsewhere
-    gSystem-&gt;AddIncludePath(&quot;-I/home/s057/exp/exp2505_s057/anaroot/users/tbt/src/include&quot;);
-    gSystem-&gt;AddIncludePath(&quot;-I/home/s057/exp/exp2505_s057/anaroot/users/tbt/src/sources/Reconstruction/SAMURAI/include&quot;);
+    gSystem-&gt;AddIncludePath("-I/home/s057/exp/exp2505_s057/anaroot/users/tbt/src/include");
+    gSystem-&gt;AddIncludePath("-I/home/s057/exp/exp2505_s057/anaroot/users/tbt/src/sources/Reconstruction/SAMURAI/include");
 
 
     TArtSAMURAIParameters *param = TArtSAMURAIParameters::Instance();
     if (!param) {
-        std::cerr &lt;&lt; &quot;Error: Failed to get TArtSAMURAIParameters instance.&quot; &lt;&lt; std::endl;
+        std::cerr &lt;&lt; "Error: Failed to get TArtSAMURAIParameters instance." &lt;&lt; std::endl;
         return;
     }
 
 
-    param-&gt;LoadParameter((char*)&quot;/home/s057/exp/exp2505_s057/anaroot/users/tbt/db/NEBULA.2023_7_6.xml&quot;); 
+    param-&gt;LoadParameter((char*)"/home/s057/exp/exp2505_s057/anaroot/users/tbt/db/NEBULA.2023_7_6.xml"); 
 
     TArtEventStore *estore = new TArtEventStore();
     if (!estore-&gt;Open(ridffile)) {
-        std::cerr &lt;&lt; &quot;Error: Cannot open RIDF file: &quot; &lt;&lt; ridffile &lt;&lt; std::endl;
+        std::cerr &lt;&lt; "Error: Cannot open RIDF file: " &lt;&lt; ridffile &lt;&lt; std::endl;
         delete estore;
         return;
     }
@@ -4343,17 +4359,17 @@ void recoNebulaTrack(const char* ridffile = &quot;/home/s057/exp/exp2505_s057/an
 
     TArtStoreManager *sman = TArtStoreManager::Instance();
 
-    std::cout &lt;&lt; &quot;Starting event loop for NEBULA reconstruction...&quot; &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Starting event loop for NEBULA reconstruction..." &lt;&lt; std::endl;
     int neve = 0;
     while (estore-&gt;GetNextEvent() &amp;&amp; neve &lt; 10) { // Process first 10 events
-        std::cout &lt;&lt; &quot;========== Event &quot; &lt;&lt; neve + 1 &lt;&lt; &quot; ==========&quot; &lt;&lt; std::endl;
+        std::cout &lt;&lt; "========== Event " &lt;&lt; neve + 1 &lt;&lt; " ==========" &lt;&lt; std::endl;
 
         // 1. Clear data from previous event
         nebulahpc_calib-&gt;ClearData();
         nebulapla_calib-&gt;ClearData(); 
         reco_neutron-&gt;ClearData();
 
-        // 2. Reconstruct current event&#39;s data
+        // 2. Reconstruct current event's data
         // LoadRawData is typically called internally by ReconstructData if fDataLoaded is false.
         // If your framework requires explicit LoadRawData, uncomment the lines below.
         // nebulahpc_calib-&gt;LoadRawData(); 
@@ -4367,33 +4383,33 @@ void recoNebulaTrack(const char* ridffile = &quot;/home/s057/exp/exp2505_s057/an
 
         // Output HPC hits
         int n_hpc_hits = nebulahpc_calib-&gt;GetNumNEBULAHPC();
-        std::cout &lt;&lt; &quot;  NEBULA HPC Hits: &quot; &lt;&lt; n_hpc_hits &lt;&lt; std::endl;
+        std::cout &lt;&lt; "  NEBULA HPC Hits: " &lt;&lt; n_hpc_hits &lt;&lt; std::endl;
         for (int i = 0; i &lt; n_hpc_hits; ++i) {
             TArtNEBULAHPC* hit = nebulahpc_calib-&gt;GetNEBULAHPC(i);
             if (hit) {
-                std::cout &lt;&lt; &quot;    HPC Hit &quot; &lt;&lt; i
-                          &lt;&lt; &quot;: ID=&quot; &lt;&lt; hit-&gt;GetID()
-                          &lt;&lt; &quot;, Layer=&quot; &lt;&lt; hit-&gt;GetLayer()
-                          &lt;&lt; &quot;, SubLayer=&quot; &lt;&lt; hit-&gt;GetSubLayer()
-                          &lt;&lt; &quot;, TRaw=&quot; &lt;&lt; hit-&gt;GetTRaw()
-                          &lt;&lt; &quot;, TCal=&quot; &lt;&lt; hit-&gt;GetTCal()
+                std::cout &lt;&lt; "    HPC Hit " &lt;&lt; i
+                          &lt;&lt; ": ID=" &lt;&lt; hit-&gt;GetID()
+                          &lt;&lt; ", Layer=" &lt;&lt; hit-&gt;GetLayer()
+                          &lt;&lt; ", SubLayer=" &lt;&lt; hit-&gt;GetSubLayer()
+                          &lt;&lt; ", TRaw=" &lt;&lt; hit-&gt;GetTRaw()
+                          &lt;&lt; ", TCal=" &lt;&lt; hit-&gt;GetTCal()
                           &lt;&lt; std::endl;
             }
         }
 
         // Output Pla hits
         int n_pla_hits = nebulapla_calib-&gt;GetNumNEBULAPla();
-        std::cout &lt;&lt; &quot;  NEBULA Pla Hits: &quot; &lt;&lt; n_pla_hits &lt;&lt; std::endl;
+        std::cout &lt;&lt; "  NEBULA Pla Hits: " &lt;&lt; n_pla_hits &lt;&lt; std::endl;
         for (int i = 0; i &lt; n_pla_hits; ++i) {
             TArtNEBULAPla* pla_hit = nebulapla_calib-&gt;GetNEBULAPla(i);
             if (pla_hit) {
-                std::cout &lt;&lt; &quot;    Pla Hit &quot; &lt;&lt; i
-                          &lt;&lt; &quot;: ID=&quot; &lt;&lt; pla_hit-&gt;GetID()
-                          &lt;&lt; &quot;, Layer=&quot; &lt;&lt; pla_hit-&gt;GetLayer()
-                          &lt;&lt; &quot;, SubLayer=&quot; &lt;&lt; pla_hit-&gt;GetSubLayer()
-                          &lt;&lt; &quot;, QUAveCal=&quot; &lt;&lt; pla_hit-&gt;GetQAveCal()
-                          &lt;&lt; &quot;, TAveCal=&quot; &lt;&lt; pla_hit-&gt;GetTAveCal()
-                          &lt;&lt; &quot;, PosCal=&quot; &lt;&lt; pla_hit-&gt;GetPosCal()
+                std::cout &lt;&lt; "    Pla Hit " &lt;&lt; i
+                          &lt;&lt; ": ID=" &lt;&lt; pla_hit-&gt;GetID()
+                          &lt;&lt; ", Layer=" &lt;&lt; pla_hit-&gt;GetLayer()
+                          &lt;&lt; ", SubLayer=" &lt;&lt; pla_hit-&gt;GetSubLayer()
+                          &lt;&lt; ", QUAveCal=" &lt;&lt; pla_hit-&gt;GetQAveCal()
+                          &lt;&lt; ", TAveCal=" &lt;&lt; pla_hit-&gt;GetTAveCal()
+                          &lt;&lt; ", PosCal=" &lt;&lt; pla_hit-&gt;GetPosCal()
                           &lt;&lt; std::endl;
             }
         }
@@ -4401,16 +4417,16 @@ void recoNebulaTrack(const char* ridffile = &quot;/home/s057/exp/exp2505_s057/an
         // Output Neutron reconstruction results
         TClonesArray* neutron_array = reco_neutron-&gt;GetNeutronArray();
         int n_neutron = neutron_array ? neutron_array-&gt;GetEntriesFast() : 0;
-        std::cout &lt;&lt; &quot;  Reconstructed Neutrons: &quot; &lt;&lt; n_neutron &lt;&lt; std::endl;
+        std::cout &lt;&lt; "  Reconstructed Neutrons: " &lt;&lt; n_neutron &lt;&lt; std::endl;
         for (int i = 0; i &lt; n_neutron; ++i) {
             TArtNeutron* neutron = (TArtNeutron*)neutron_array-&gt;At(i);
             if (neutron) {
-                std::cout &lt;&lt; &quot;    Neutron &quot; &lt;&lt; i
-                          &lt;&lt; &quot;: Time=&quot; &lt;&lt; neutron-&gt;GetTime()
-                          &lt;&lt; &quot;, MeVee=&quot; &lt;&lt; neutron-&gt;GetMeVee()
-                          &lt;&lt; &quot;, PosX=&quot; &lt;&lt; neutron-&gt;GetPos(0)
-                          &lt;&lt; &quot;, PosY=&quot; &lt;&lt; neutron-&gt;GetPos(1)
-                          &lt;&lt; &quot;, PosZ=&quot; &lt;&lt; neutron-&gt;GetPos(2)
+                std::cout &lt;&lt; "    Neutron " &lt;&lt; i
+                          &lt;&lt; ": Time=" &lt;&lt; neutron-&gt;GetTime()
+                          &lt;&lt; ", MeVee=" &lt;&lt; neutron-&gt;GetMeVee()
+                          &lt;&lt; ", PosX=" &lt;&lt; neutron-&gt;GetPos(0)
+                          &lt;&lt; ", PosY=" &lt;&lt; neutron-&gt;GetPos(1)
+                          &lt;&lt; ", PosZ=" &lt;&lt; neutron-&gt;GetPos(2)
                           &lt;&lt; std::endl;
             }
         }
@@ -4419,15 +4435,15 @@ void recoNebulaTrack(const char* ridffile = &quot;/home/s057/exp/exp2505_s057/an
         neve++;
     }
 
-    std::cout &lt;&lt; &quot;Finished event loop. Processed &quot; &lt;&lt; neve &lt;&lt; &quot; events.&quot; &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Finished event loop. Processed " &lt;&lt; neve &lt;&lt; " events." &lt;&lt; std::endl;
 
     // Clean up
     delete nebulahpc_calib;
     delete nebulapla_calib;
     delete reco_neutron;
     delete estore;
-    // TArtStoreManager::Delete(); // If it&#39;s a singleton managed this way
-    // TArtSAMURAIParameters::Delete(); // If it&#39;s a singleton managed this way
+    // TArtStoreManager::Delete(); // If it's a singleton managed this way
+    // TArtSAMURAIParameters::Delete(); // If it's a singleton managed this way
 }
 </code></pre></div>
 <hr />

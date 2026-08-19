@@ -3396,6 +3396,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3446,6 +3448,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4188,12 +4204,12 @@ g++ -c mian.cc b.cc</p>
 <span class="k">extern</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="p">;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">);</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">//b.cc</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;您好&quot;</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"您好"</span><span class="p">;</span>
 </code></pre></div>
 <p>注意<br />
 - .o 文件是目标文件，不可直接运行，需要链接生成可执行文件。<br />
@@ -4212,7 +4228,7 @@ g++ -c mian.cc b.cc</p>
 <p>无法提供函数声明: 如果 b.cpp 提供的是一个函数 int get_value()，main.cpp 同样需要 extern int get_value(); 这样的“外部声明”。随着函数增多，在每个使用它的 .cpp 文件里都手写一遍声明，是一场维护灾难。</p>
 <p>有头文件的做法<br />
 <div class="highlight"><pre><span></span><code>#include &lt;iostream&gt;
-#include &quot;b.h&quot; // 包含接口说明书，编译器就知道 msg 是什么了
+#include "b.h" // 包含接口说明书，编译器就知道 msg 是什么了
 
 int main() {
     std::cout &lt;&lt; msg &lt;&lt; std::endl;
@@ -4225,9 +4241,9 @@ int main() {
 // “我这里对外提供一个名为 msg 的变量”
 extern const char* msg;
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>#include &quot;b.h&quot; // 包含自己的接口声明，确保实现与声明一致
+<div class="highlight"><pre><span></span><code>#include "b.h" // 包含自己的接口声明，确保实现与声明一致
 // 在源文件中“定义”实现
-const char* msg = &quot;Hello from b.cpp with header!&quot;;
+const char* msg = "Hello from b.cpp with header!";
 </code></pre></div>
 <p>include 相当于在预处理把 b.h 的内容直接插入到 main.cpp 和 b.cpp 里。这样 main.cpp 和 b.cpp 都能看到对 msg 的声明，编译器就知道 msg 是什么了。 所以头文件其实给的一个可以互相嵌套使用的声明域，不需要手动写所有的声明。可以减少重复，减少依赖（或者说是隐藏依赖）。</p>
 <h3 id="动态库-静态库">动态库 静态库<a class="headerlink" href="#动态库-静态库" title="Permanent link">#</a></h3>
@@ -4257,15 +4273,15 @@ g++<span class="w"> </span>main.cpp<span class="w"> </span>-L.<span class="w"> <
 <span class="k">extern</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="p">;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">// b.cc</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;b.h&quot;</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;您好&quot;</span><span class="p">;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"b.h"</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"您好"</span><span class="p">;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">// main.cpp</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;b.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"b.h"</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">);</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -4418,10 +4434,10 @@ make
 <h4 id="一个能测试的最小demo">一个能测试的最小demo<a class="headerlink" href="#一个能测试的最小demo" title="Permanent link">#</a></h4>
 <p>源文件，库文件，main.cpp, lib.cpp, lib.h</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;lib.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"lib.h"</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Hello, World!"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="w">    </span><span class="n">mylib_function</span><span class="p">();</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
@@ -4429,7 +4445,7 @@ make
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">mylib_function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello from mylib!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Hello from mylib!"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c"># 1. 设置CMake最低版本和项目信息</span>
@@ -4479,7 +4495,7 @@ make
 
 <span class="c"># 9. [进阶] 添加测试 (使用CTest)</span>
 <span class="nb">enable_testing</span><span class="p">()</span><span class="w"> </span><span class="c"># 开启测试功能</span>
-<span class="c"># 添加一个名为 &quot;BasicTest&quot; 的测试，它执行命令 ./hello</span>
+<span class="c"># 添加一个名为 "BasicTest" 的测试，它执行命令 ./hello</span>
 <span class="nb">add_test</span><span class="p">(</span><span class="s">NAME</span><span class="w"> </span><span class="s">BasicTest</span><span class="w"> </span><span class="s">COMMAND</span><span class="w"> </span><span class="s">hello</span><span class="p">)</span>
 <span class="c"># 运行测试: cd build &amp;&amp; ctest</span>
 </code></pre></div>

@@ -3345,6 +3345,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3395,6 +3397,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4100,13 +4116,13 @@ remote host has disconnected
 <p>解决方案：在远端 <code>.bashrc</code> 最顶部加一行守卫，让非交互 shell 立刻返回，跳过后续所有逻辑：</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># ~/.bashrc 第一行</span>
 <span class="k">case</span><span class="w"> </span><span class="nv">$-</span><span class="w"> </span><span class="k">in</span>
-<span class="w">    </span>*i*<span class="o">)</span><span class="w"> </span><span class="p">;;</span><span class="w">     </span><span class="c1"># 交互式 shell：$- 包含 &#39;i&#39;，什么都不做，继续往下</span>
+<span class="w">    </span>*i*<span class="o">)</span><span class="w"> </span><span class="p">;;</span><span class="w">     </span><span class="c1"># 交互式 shell：$- 包含 'i'，什么都不做，继续往下</span>
 <span class="w">    </span>*<span class="o">)</span><span class="w"> </span><span class="k">return</span><span class="p">;;</span><span class="w"> </span><span class="c1"># 非交互（sshfs/scp/rsync/ssh host cmd）：直接 return</span>
 <span class="k">esac</span>
 
 <span class="c1"># ↓ 下面所有 alias / PS1 / source / echo 都只对交互式生效</span>
-<span class="nb">alias</span><span class="w"> </span><span class="nv">ll</span><span class="o">=</span><span class="s1">&#39;ls -la&#39;</span>
-<span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;\u@\h:\w\$ &#39;</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">ll</span><span class="o">=</span><span class="s1">'ls -la'</span>
+<span class="nv">PS1</span><span class="o">=</span><span class="s1">'\u@\h:\w\$ '</span>
 <span class="c1"># ...</span>
 </code></pre></div>
 <p><code>$-</code> 是 bash 的当前 shell 选项标志。交互式 shell 包含 <code>i</code>，非交互式没有。<code>return</code> 在被 <code>source</code> 的脚本里直接退出当前文件而不退出 shell，正是这里需要的语义。</p>
@@ -4115,7 +4131,7 @@ remote host has disconnected
 </blockquote>
 <h3 id="自检远程的非交互-shell-是不是干净的">自检：远程的非交互 shell 是不是干净的<a class="headerlink" href="#自检远程的非交互-shell-是不是干净的" title="Permanent link">#</a></h3>
 <p>从本地跑一发：</p>
-<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>user@host<span class="w"> </span><span class="s1">&#39;true&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xxd<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>user@host<span class="w"> </span><span class="s1">'true'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xxd<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
 </code></pre></div>
 <p>正常情况是空输出（<code>true</code> 不打印任何东西）。如果有任何字节，说明 <code>.bashrc</code>（或 <code>.bash_profile</code>、<code>.profile</code>、系统级 <code>/etc/profile.d/*.sh</code>）里有人在非交互路径上 echo，sshfs 一定会出问题。逐个二分注释找出元凶。</p>
 <h2 id="常见报错速查">常见报错速查<a class="headerlink" href="#常见报错速查" title="Permanent link">#</a></h2>

@@ -3343,6 +3343,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3393,6 +3395,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4046,13 +4062,13 @@
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
 <span class="c1">// 获取环境变量</span>
-<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">getenv</span><span class="p">(</span><span class="s">&quot;MY_ENV_VAR&quot;</span><span class="p">);</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">getenv</span><span class="p">(</span><span class="s">"MY_ENV_VAR"</span><span class="p">);</span>
 
 <span class="c1">// 检查是否获取成功</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;MY_ENV_VAR 的值: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"MY_ENV_VAR 的值: "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;环境变量 MY_ENV_VAR 未设置!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"环境变量 MY_ENV_VAR 未设置!"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="w">    </span><span class="c1">// 可以在这里设置默认值或退出</span>
 <span class="p">}</span>
 </code></pre></div><br />
@@ -4060,40 +4076,40 @@
 <div class="highlight"><pre><span></span><code><span class="c1">// 假设 MY_ENV_VAR 是一个项目根目录的路径</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">base_dir</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">config_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base_dir</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;/config/settings.ini&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;配置路径: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">config_path</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">config_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base_dir</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">"/config/settings.ini"</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"配置路径: "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">config_path</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">#</a></h2>
 <p>获取：<br />
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
-<span class="c1"># 获取环境变量，如果未设置，则使用默认值 &quot;/path/to/default&quot;</span>
-<span class="n">my_env_var_value</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;MY_ENV_VAR&quot;</span><span class="p">,</span> <span class="s2">&quot;/path/to/default&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MY_ENV_VAR 的值: </span><span class="si">{</span><span class="n">my_env_var_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># 获取环境变量，如果未设置，则使用默认值 "/path/to/default"</span>
+<span class="n">my_env_var_value</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"MY_ENV_VAR"</span><span class="p">,</span> <span class="s2">"/path/to/default"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"MY_ENV_VAR 的值: </span><span class="si">{</span><span class="n">my_env_var_value</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div><br />
 使用：<br />
 <div class="highlight"><pre><span></span><code><span class="c1"># 假设 MY_ENV_VAR 是一个数据目录路径，使用 os.path.join 跨平台构造路径</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="n">data_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">my_env_var_value</span><span class="p">,</span> <span class="s2">&quot;simulation&quot;</span><span class="p">,</span> <span class="s2">&quot;output.root&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;数据文件路径: </span><span class="si">{</span><span class="n">data_file_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">data_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">my_env_var_value</span><span class="p">,</span> <span class="s2">"simulation"</span><span class="p">,</span> <span class="s2">"output.root"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"数据文件路径: </span><span class="si">{</span><span class="n">data_file_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div></p>
 <h2 id="bash">Bash<a class="headerlink" href="#bash" title="Permanent link">#</a></h2>
 <p>获取：<br />
 <div class="highlight"><pre><span></span><code><span class="c1"># 获取环境变量的值</span>
-<span class="nv">val</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$MY_ENV_VAR</span><span class="s2">&quot;</span>
+<span class="nv">val</span><span class="o">=</span><span class="s2">"</span><span class="nv">$MY_ENV_VAR</span><span class="s2">"</span>
 
 <span class="c1"># 检查是否非空</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$val</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;MY_ENV_VAR 的值: </span><span class="nv">$val</span><span class="s2">&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"</span><span class="nv">$val</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"MY_ENV_VAR 的值: </span><span class="nv">$val</span><span class="s2">"</span>
 <span class="k">fi</span>
 </code></pre></div><br />
 使用：<br />
 <div class="highlight"><pre><span></span><code><span class="c1"># 假设 $MY_ENV_VAR 是一个软件安装路径，使用花括号更安全</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Running script from directory: </span><span class="si">${</span><span class="nv">val</span><span class="si">}</span><span class="s2">/scripts&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Running script from directory: </span><span class="si">${</span><span class="nv">val</span><span class="si">}</span><span class="s2">/scripts"</span>
 
 <span class="c1"># 在执行命令时使用</span>
-<span class="s2">&quot;</span><span class="si">${</span><span class="nv">val</span><span class="si">}</span><span class="s2">/bin/run_simulation&quot;</span><span class="w"> </span>--input<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">val</span><span class="si">}</span><span class="s2">/data/input.dat&quot;</span>
+<span class="s2">"</span><span class="si">${</span><span class="nv">val</span><span class="si">}</span><span class="s2">/bin/run_simulation"</span><span class="w"> </span>--input<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">val</span><span class="si">}</span><span class="s2">/data/input.dat"</span>
 </code></pre></div></p>
 <h2 id="cmake">CMake<a class="headerlink" href="#cmake" title="Permanent link">#</a></h2>
 <p>获取（在 CMakeLists.txt 中）：<br />
@@ -4102,12 +4118,12 @@
 
 <span class="c"># 检查是否被设置</span>
 <span class="nb">if</span><span class="p">(</span><span class="s">MY_DIR_FROM_ENV</span><span class="p">)</span>
-<span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;MY_ENV_VAR (Env): $ENV{MY_ENV_VAR}&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;MY_DIR_FROM_ENV (CMake Var): ${MY_DIR_FROM_ENV}&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"MY_ENV_VAR (Env): $ENV{MY_ENV_VAR}"</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"MY_DIR_FROM_ENV (CMake Var): ${MY_DIR_FROM_ENV}"</span><span class="p">)</span>
 <span class="nb">else</span><span class="p">()</span>
 <span class="w">    </span><span class="c"># 如果未设置，使用默认值</span>
-<span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">MY_DIR_FROM_ENV</span><span class="w"> </span><span class="s2">&quot;/opt/myproject/default&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">&quot;MY_ENV_VAR 未设置，使用默认值: ${MY_DIR_FROM_ENV}&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">MY_DIR_FROM_ENV</span><span class="w"> </span><span class="s2">"/opt/myproject/default"</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">message</span><span class="p">(</span><span class="s">STATUS</span><span class="w"> </span><span class="s2">"MY_ENV_VAR 未设置，使用默认值: ${MY_DIR_FROM_ENV}"</span><span class="p">)</span>
 <span class="nb">endif</span><span class="p">()</span>
 </code></pre></div><br />
 使用：<br />
@@ -4138,7 +4154,7 @@
 
 <span class="c">% 定义命令获取环境变量</span>
 <span class="k">\newcommand</span><span class="nb">{</span><span class="k">\GetEnvVar</span><span class="nb">}</span>[1]<span class="nb">{</span><span class="c">%</span>
-    <span class="k">\directlua</span><span class="nb">{</span>tex.print(os.getenv(&quot;#1&quot;) or &quot;&quot;)<span class="nb">}</span><span class="c">%</span>
+    <span class="k">\directlua</span><span class="nb">{</span>tex.print(os.getenv("#1") or "")<span class="nb">}</span><span class="c">%</span>
 <span class="nb">}</span>
 
 <span class="k">\textbf</span><span class="nb">{</span>MY<span class="k">\_ENV\_VAR</span> 的值:<span class="nb">}</span><span class="k">\par</span>

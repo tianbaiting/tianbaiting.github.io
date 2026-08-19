@@ -3614,6 +3614,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3664,6 +3666,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4651,9 +4667,9 @@
 </ol>
 <h2 id="核心配置">核心配置<a class="headerlink" href="#核心配置" title="Permanent link">#</a></h2>
 <h3 id="新建-jupytexttoml">新建 <code>.jupytext.toml</code><a class="headerlink" href="#新建-jupytexttoml" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">formats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ipynb,py:percent&quot;</span>
-<span class="n">notebook_metadata_filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kernelspec,language_info,jupytext&quot;</span>
-<span class="n">cell_metadata_filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;-all&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="n">formats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ipynb,py:percent"</span>
+<span class="n">notebook_metadata_filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"kernelspec,language_info,jupytext"</span>
+<span class="n">cell_metadata_filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"-all"</span>
 </code></pre></div>
 <p>代码解释：</p>
 <ol>
@@ -4682,7 +4698,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
 <span class="n">REPO_ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">NOTEBOOK_ROOT</span> <span class="o">=</span> <span class="n">REPO_ROOT</span> <span class="o">/</span> <span class="s2">&quot;notebooks&quot;</span>
+<span class="n">NOTEBOOK_ROOT</span> <span class="o">=</span> <span class="n">REPO_ROOT</span> <span class="o">/</span> <span class="s2">"notebooks"</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">cmd</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">cwd</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -4703,11 +4719,11 @@
 
 <span class="k">def</span><span class="w"> </span><span class="nf">is_notebook_py</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="k">with</span> <span class="n">p</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">p</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">120</span><span class="p">:</span>
                     <span class="k">break</span>
-                <span class="k">if</span> <span class="s2">&quot;jupytext:&quot;</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">or</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;# </span><span class="si">%%</span><span class="s2">&quot;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="s2">"jupytext:"</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">or</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">"# </span><span class="si">%%</span><span class="s2">"</span><span class="p">):</span>
                     <span class="k">return</span> <span class="kc">True</span>
     <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">False</span>
@@ -4715,7 +4731,7 @@
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">staged_files</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">run</span><span class="p">([</span><span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;diff&quot;</span><span class="p">,</span> <span class="s2">&quot;--cached&quot;</span><span class="p">,</span> <span class="s2">&quot;--name-only&quot;</span><span class="p">,</span> <span class="s2">&quot;--diff-filter=ACMR&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">run</span><span class="p">([</span><span class="s2">"git"</span><span class="p">,</span> <span class="s2">"diff"</span><span class="p">,</span> <span class="s2">"--cached"</span><span class="p">,</span> <span class="s2">"--name-only"</span><span class="p">,</span> <span class="s2">"--diff-filter=ACMR"</span><span class="p">])</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">out</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">[]</span>
 
@@ -4730,8 +4746,8 @@
 <span class="k">def</span><span class="w"> </span><span class="nf">all_targets</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
     <span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">if</span> <span class="n">NOTEBOOK_ROOT</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
-        <span class="n">items</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">NOTEBOOK_ROOT</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*.ipynb&quot;</span><span class="p">))</span>
-        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">NOTEBOOK_ROOT</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*.py&quot;</span><span class="p">):</span>
+        <span class="n">items</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">NOTEBOOK_ROOT</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">"*.ipynb"</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">NOTEBOOK_ROOT</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">"*.py"</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">is_notebook_py</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
                 <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
@@ -4749,10 +4765,10 @@
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
             <span class="k">continue</span>
 
-        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">suffix</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;.py&quot;</span><span class="p">}:</span>
+        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">suffix</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">".ipynb"</span><span class="p">,</span> <span class="s2">".py"</span><span class="p">}:</span>
             <span class="k">continue</span>
 
-        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">&quot;.py&quot;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">is_notebook_py</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="ow">or</span> <span class="n">p</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.ipynb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+        <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">".py"</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">is_notebook_py</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="ow">or</span> <span class="n">p</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">".ipynb"</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
             <span class="k">continue</span>
 
         <span class="n">uniq</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)]</span> <span class="o">=</span> <span class="n">p</span>
@@ -4761,25 +4777,25 @@
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">sync_one</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;jupytext&quot;</span><span class="p">,</span> <span class="s2">&quot;--set-formats&quot;</span><span class="p">,</span> <span class="s2">&quot;ipynb,py:percent&quot;</span><span class="p">,</span> <span class="n">rel</span><span class="p">(</span><span class="n">p</span><span class="p">)],</span> <span class="n">cwd</span><span class="o">=</span><span class="n">REPO_ROOT</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;jupytext&quot;</span><span class="p">,</span> <span class="s2">&quot;--sync&quot;</span><span class="p">,</span> <span class="n">rel</span><span class="p">(</span><span class="n">p</span><span class="p">)],</span> <span class="n">cwd</span><span class="o">=</span><span class="n">REPO_ROOT</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">"jupytext"</span><span class="p">,</span> <span class="s2">"--set-formats"</span><span class="p">,</span> <span class="s2">"ipynb,py:percent"</span><span class="p">,</span> <span class="n">rel</span><span class="p">(</span><span class="n">p</span><span class="p">)],</span> <span class="n">cwd</span><span class="o">=</span><span class="n">REPO_ROOT</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">"jupytext"</span><span class="p">,</span> <span class="s2">"--sync"</span><span class="p">,</span> <span class="n">rel</span><span class="p">(</span><span class="n">p</span><span class="p">)],</span> <span class="n">cwd</span><span class="o">=</span><span class="n">REPO_ROOT</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    <span class="n">py</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">&quot;.py&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">&quot;.ipynb&quot;</span> <span class="k">else</span> <span class="n">p</span>
+    <span class="n">py</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">with_suffix</span><span class="p">(</span><span class="s2">".py"</span><span class="p">)</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">".ipynb"</span> <span class="k">else</span> <span class="n">p</span>
     <span class="k">return</span> <span class="n">py</span> <span class="k">if</span> <span class="n">py</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="k">else</span> <span class="kc">None</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">stage</span><span class="p">(</span><span class="n">paths</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">files</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">({</span><span class="n">rel</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">paths</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">exists</span><span class="p">()})</span>
     <span class="k">if</span> <span class="n">files</span><span class="p">:</span>
-        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;add&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">files</span><span class="p">],</span> <span class="n">cwd</span><span class="o">=</span><span class="n">REPO_ROOT</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">"git"</span><span class="p">,</span> <span class="s2">"add"</span><span class="p">,</span> <span class="o">*</span><span class="n">files</span><span class="p">],</span> <span class="n">cwd</span><span class="o">=</span><span class="n">REPO_ROOT</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="n">ap</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
-    <span class="n">ap</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;paths&quot;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
-    <span class="n">ap</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--all&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">)</span>
-    <span class="n">ap</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--staged&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">)</span>
-    <span class="n">ap</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--stage-updated&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">)</span>
+    <span class="n">ap</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"paths"</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s2">"*"</span><span class="p">)</span>
+    <span class="n">ap</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--all"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">)</span>
+    <span class="n">ap</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--staged"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">)</span>
+    <span class="n">ap</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">"--stage-updated"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">)</span>
     <span class="n">args</span> <span class="o">=</span> <span class="n">ap</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
 
     <span class="n">inputs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Path</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
@@ -4801,7 +4817,7 @@
             <span class="k">if</span> <span class="n">p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">updated_py</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">CalledProcessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="n">e</span><span class="o">.</span><span class="n">stderr</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">((</span><span class="n">e</span><span class="o">.</span><span class="n">stderr</span> <span class="ow">or</span> <span class="s2">""</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">e</span><span class="o">.</span><span class="n">returncode</span>
 
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">stage_updated</span><span class="p">:</span>
@@ -4810,7 +4826,7 @@
     <span class="k">return</span> <span class="mi">0</span>
 
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div>
 <p>代码解释（按功能块）：</p>
@@ -4839,8 +4855,8 @@
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 <span class="nb">set</span><span class="w"> </span>-euo<span class="w"> </span>pipefail
 
-<span class="nv">repo_root</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--show-toplevel<span class="k">)</span><span class="s2">&quot;</span>
-<span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$repo_root</span><span class="s2">&quot;</span>
+<span class="nv">repo_root</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--show-toplevel<span class="k">)</span><span class="s2">"</span>
+<span class="nb">cd</span><span class="w"> </span><span class="s2">"</span><span class="nv">$repo_root</span><span class="s2">"</span>
 
 python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--all<span class="w"> </span>--stage-updated
 </code></pre></div>
@@ -4854,8 +4870,8 @@ python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--a
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 <span class="nb">set</span><span class="w"> </span>-euo<span class="w"> </span>pipefail
 
-<span class="nv">repo_root</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--show-toplevel<span class="k">)</span><span class="s2">&quot;</span>
-<span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$repo_root</span><span class="s2">&quot;</span>
+<span class="nv">repo_root</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--show-toplevel<span class="k">)</span><span class="s2">"</span>
+<span class="nb">cd</span><span class="w"> </span><span class="s2">"</span><span class="nv">$repo_root</span><span class="s2">"</span>
 
 python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--all<span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
 </code></pre></div>
@@ -4869,8 +4885,8 @@ python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--a
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 <span class="nb">set</span><span class="w"> </span>-euo<span class="w"> </span>pipefail
 
-<span class="nv">repo_root</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--show-toplevel<span class="k">)</span><span class="s2">&quot;</span>
-<span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$repo_root</span><span class="s2">&quot;</span>
+<span class="nv">repo_root</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--show-toplevel<span class="k">)</span><span class="s2">"</span>
+<span class="nb">cd</span><span class="w"> </span><span class="s2">"</span><span class="nv">$repo_root</span><span class="s2">"</span>
 
 python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--all<span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
 </code></pre></div>
@@ -4883,8 +4899,8 @@ python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--a
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 <span class="nb">set</span><span class="w"> </span>-euo<span class="w"> </span>pipefail
 
-<span class="nv">repo_root</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--show-toplevel<span class="k">)</span><span class="s2">&quot;</span>
-<span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$repo_root</span><span class="s2">&quot;</span>
+<span class="nv">repo_root</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>git<span class="w"> </span>rev-parse<span class="w"> </span>--show-toplevel<span class="k">)</span><span class="s2">"</span>
+<span class="nb">cd</span><span class="w"> </span><span class="s2">"</span><span class="nv">$repo_root</span><span class="s2">"</span>
 
 python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--all<span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
 </code></pre></div>
@@ -4928,7 +4944,7 @@ git<span class="w"> </span>config<span class="w"> </span>core.hooksPath<span cla
 <li>这是迁移第一步，保证后续取消追踪 <code>.ipynb</code> 时不会丢可读源码。</li>
 </ol>
 <h3 id="取消-git-对-ipynb-的追踪保留本地文件">取消 Git 对 <code>.ipynb</code> 的追踪（保留本地文件）<a class="headerlink" href="#取消-git-对-ipynb-的追踪保留本地文件" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>ls-files<span class="w"> </span><span class="s1">&#39;*.ipynb&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-r<span class="w"> </span>git<span class="w"> </span>rm<span class="w"> </span>--cached
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>ls-files<span class="w"> </span><span class="s1">'*.ipynb'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-r<span class="w"> </span>git<span class="w"> </span>rm<span class="w"> </span>--cached
 </code></pre></div>
 <p>代码解释：</p>
 <ol>
@@ -4939,7 +4955,7 @@ git<span class="w"> </span>config<span class="w"> </span>core.hooksPath<span cla
 <h3 id="添加新文件并提交">添加新文件并提交<a class="headerlink" href="#添加新文件并提交" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.jupytext.toml<span class="w"> </span>.githooks<span class="w"> </span>tools/jupytext_sync.py
 git<span class="w"> </span>add<span class="w"> </span>notebooks/**/*.py
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;migrate notebooks to jupytext py tracking&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"migrate notebooks to jupytext py tracking"</span>
 </code></pre></div>
 <p>代码解释：</p>
 <ol>
@@ -5045,9 +5061,9 @@ chmod<span class="w"> </span>+x<span class="w"> </span>tools/jupytext_sync.py
 chmod<span class="w"> </span>+x<span class="w"> </span>.githooks/pre-commit<span class="w"> </span>.githooks/post-merge<span class="w"> </span>.githooks/post-checkout<span class="w"> </span>.githooks/post-rewrite
 git<span class="w"> </span>config<span class="w"> </span>core.hooksPath<span class="w"> </span>.githooks
 python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--all
-git<span class="w"> </span>ls-files<span class="w"> </span><span class="s1">&#39;*.ipynb&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-r<span class="w"> </span>git<span class="w"> </span>rm<span class="w"> </span>--cached
+git<span class="w"> </span>ls-files<span class="w"> </span><span class="s1">'*.ipynb'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-r<span class="w"> </span>git<span class="w"> </span>rm<span class="w"> </span>--cached
 git<span class="w"> </span>add<span class="w"> </span>.jupytext.toml<span class="w"> </span>.githooks<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>notebooks/**/*.py
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;migrate notebooks to jupytext py tracking&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"migrate notebooks to jupytext py tracking"</span>
 </code></pre></div>
 <p>代码解释：</p>
 <ol>
@@ -5066,7 +5082,7 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 <li>手动执行 <code>python3 tools/jupytext_sync.py --all</code> 后 <code>git diff</code> 为空。</li>
 </ol>
 <p>可直接执行：</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>ls-files<span class="w"> </span><span class="s1">&#39;*.ipynb&#39;</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>ls-files<span class="w"> </span><span class="s1">'*.ipynb'</span>
 git<span class="w"> </span>config<span class="w"> </span>--get<span class="w"> </span>core.hooksPath
 python3<span class="w"> </span>tools/jupytext_sync.py<span class="w"> </span>--all
 git<span class="w"> </span>diff<span class="w"> </span>--name-only

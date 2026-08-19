@@ -3383,6 +3383,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3433,6 +3435,20 @@
     <li class="md-nav__item">
       <a href="../../sci/project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sci/project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4220,7 +4236,7 @@ key server.key  # This file should be kept secret
 dh dh.pem
 server 10.8.0.0 255.255.255.0
 ifconfig-pool-persist ipp.txt
-push &quot;route 172.16.1.0 255.255.255.0&quot;
+push "route 172.16.1.0 255.255.255.0"
 keepalive 10 120
 cipher AES-256-CBC
 persist-key
@@ -4246,10 +4262,10 @@ duplicate-cn
 <p>背景： 当需要维护多个不同地点的网络的时候，经常需要频繁切换 VPN，效率极低。</p>
 <p>原因： Windows 版 OpenVPN 客户端安装时默认只安装一个 TAP 虚拟网卡，如果需要同时连接多个，则需要为每个 VPN 配置文件配置一个 TAP 虚拟网卡。</p>
 <p>增加虚拟网卡： 用管理员权限执行以下命令，即可增加一块 TAP 虚拟网卡，需要多块执行多次即可，然后在 ovpn 配置文件中增加 “nobind” 的配置项。</p>
-<p><div class="highlight"><pre><span></span><code><span class="s2">&quot;C:\Program Files\TAP-Windows\bin\addtap.bat&quot;</span>
+<p><div class="highlight"><pre><span></span><code><span class="s2">"C:\Program Files\TAP-Windows\bin\addtap.bat"</span>
 </code></pre></div><br />
 检查虚拟网卡：</p>
-<p><div class="highlight"><pre><span></span><code><span class="s2">&quot;C:\Program Files\OpenVPN\bin\openvpn&quot;</span><span class="w"> </span>--show-adapters
+<p><div class="highlight"><pre><span></span><code><span class="s2">"C:\Program Files\OpenVPN\bin\openvpn"</span><span class="w"> </span>--show-adapters
 </code></pre></div><br />
 当需要指定某个配置文件使用特定的虚拟网卡的时候可以将配置项设置如下：</p>
 <p>dev tap<br />

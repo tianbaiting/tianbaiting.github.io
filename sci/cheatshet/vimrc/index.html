@@ -3362,6 +3362,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3412,6 +3414,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4181,17 +4197,17 @@ K（可视模式）：将选中的行向上移动。
 <p><a href="https://github.com/amix/vimrc">Amix's Vimrc</a>：一个流行的 Vim 配置仓库，包含丰富的插件和优化。</p>
 <p><a href="https://vimawesome.com/">Vim Awesome</a>：一个插件资源网站，帮助用户扩展 Vim 的功能。</p>
 <p><a href="https://github.com/junegunn/vim-plug">https://github.com/junegunn/vim-plug</a></p>
-<div class="highlight"><pre><span></span><code>call plug#begin(&#39;~/.vim/plugged&#39;)
+<div class="highlight"><pre><span></span><code>call plug#begin('~/.vim/plugged')
 
-&quot; 示例插件
-&quot; Plug &#39;preservim/nerdtree&#39;         &quot; 文件树
-&quot; Plug &#39;junegunn/fzf&#39;, { &#39;do&#39;: &#39;./install --all&#39; } &quot; 模糊搜索
-&quot; Plug &#39;vim-airline/vim-airline&#39;    &quot; 状态栏
-&quot; Plug &#39;tpope/vim-fugitive&#39;         &quot; Git 集成
-&quot; Plug &#39;sheerun/vim-polyglot&#39;       &quot; 多语言支持
-&quot; Plug &#39;scrooloose/nerdcommenter&#39;   &quot; 快速注释
+" 示例插件
+" Plug 'preservim/nerdtree'         " 文件树
+" Plug 'junegunn/fzf', { 'do': './install --all' } " 模糊搜索
+" Plug 'vim-airline/vim-airline'    " 状态栏
+" Plug 'tpope/vim-fugitive'         " Git 集成
+" Plug 'sheerun/vim-polyglot'       " 多语言支持
+" Plug 'scrooloose/nerdcommenter'   " 快速注释
 
-Plug &#39;liuchengxu/vim-which-key&#39;
+Plug 'liuchengxu/vim-which-key'
 
 call plug#end()
 
@@ -4200,13 +4216,13 @@ call plug#end()
 
 set timeoutlen=50
 
-let g:mapleader = &quot;\&lt;Space&gt;&quot;
-let g:maplocalleader = &quot;,&quot;
-nnoremap &lt;silent&gt; &lt;leader&gt; :WhichKey &#39;&lt;Space&gt;&#39;&lt;CR&gt;
-nnoremap &lt;silent&gt; &lt;localleader&gt; :WhichKey &#39;,&#39;&lt;CR&gt;
+let g:mapleader = "\&lt;Space&gt;"
+let g:maplocalleader = ","
+nnoremap &lt;silent&gt; &lt;leader&gt; :WhichKey '&lt;Space&gt;'&lt;CR&gt;
+nnoremap &lt;silent&gt; &lt;localleader&gt; :WhichKey ','&lt;CR&gt;
 
 
-&quot; Mouse functionality
+" Mouse functionality
     set mouse=a
 </code></pre></div>
 <p>neovim与lazyvim详见<a href="../../minimal_code/vim_neovim/">vim_neovim.zh</a></p>

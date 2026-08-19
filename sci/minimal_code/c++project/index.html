@@ -3439,6 +3439,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3489,6 +3491,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4260,19 +4276,19 @@
 <p><code>myclass.cpp</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// filepath: myclass.cpp</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;myclass.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"myclass.h"</span>
 
 <span class="n">MyClass</span><span class="o">::</span><span class="n">MyClass</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="n">MyClass</span><span class="o">::</span><span class="n">printMessage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello from MyClass!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Hello from MyClass!"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 </li>
 <li>
 <p><code>main.cpp</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// filepath: main.cpp</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;myclass.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"myclass.h"</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">MyClass</span><span class="w"> </span><span class="n">myObject</span><span class="p">;</span>
@@ -4436,7 +4452,7 @@ g++<span class="w"> </span>-c<span class="w"> </span>main.cpp<span class="w"> </
 <ul>
 <li>单元测试: 使用<a href="https://github.com/google/googletest">GoogleTest</a>或<a href="https://github.com/catchorg/Catch2">Catch2</a>框架。例如，为<code>Particle</code>类编写一个测试：<br />
     <div class="highlight"><pre><span></span><code><span class="c1">// tests/unit_tests/test_Particle.cpp</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;EventModel/Particle.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"EventModel/Particle.h"</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gtest/gtest.h&gt;</span>
 
 <span class="n">TEST</span><span class="p">(</span><span class="n">ParticleTest</span><span class="p">,</span><span class="w"> </span><span class="n">InvariantMass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>

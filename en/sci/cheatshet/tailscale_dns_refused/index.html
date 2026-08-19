@@ -3350,6 +3350,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3400,6 +3402,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4057,7 +4073,7 @@
 <h2 id="现场抓证据">现场抓证据<a class="headerlink" href="#现场抓证据" title="Permanent link">#</a></h2>
 <p><code>dig</code> 直接打 Tailscale 的本地 DNS 入口看冷查询行为：</p>
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>h<span class="w"> </span><span class="k">in</span><span class="w"> </span>debian.org<span class="w"> </span>kernel.org<span class="w"> </span>python.org<span class="w"> </span>openstreetmap.org<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">  </span>dig<span class="w"> </span>+tries<span class="o">=</span><span class="m">1</span><span class="w"> </span>+timeout<span class="o">=</span><span class="m">5</span><span class="w"> </span>@100.100.100.100<span class="w"> </span><span class="nv">$h</span><span class="w"> </span>A<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;status|ANSWER:&#39;</span>
+<span class="w">  </span>dig<span class="w"> </span>+tries<span class="o">=</span><span class="m">1</span><span class="w"> </span>+timeout<span class="o">=</span><span class="m">5</span><span class="w"> </span>@100.100.100.100<span class="w"> </span><span class="nv">$h</span><span class="w"> </span>A<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'status|ANSWER:'</span>
 <span class="k">done</span>
 </code></pre></div>
 <p>结果：</p>
@@ -4099,7 +4115,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"
 
 <span class="c1"># 2. 临时给 resolv.conf 一个直连上游，让 apt 能解析镜像源</span>
 sudo<span class="w"> </span>rm<span class="w"> </span>/etc/resolv.conf
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;nameserver 1.1.1.1&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/resolv.conf
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'nameserver 1.1.1.1'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/resolv.conf
 
 <span class="c1"># 3. 安装 systemd-resolved，apt postinst 会自动 enable + 重置 symlink</span>
 sudo<span class="w"> </span>apt<span class="w"> </span>update

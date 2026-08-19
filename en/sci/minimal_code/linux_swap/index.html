@@ -3329,6 +3329,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3379,6 +3381,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4022,47 +4038,47 @@
 <div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 <span class="nb">set</span><span class="w"> </span>-euo<span class="w"> </span>pipefail
 
-<span class="nv">TARGET_GB</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="nv">16</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nv">SWAPFILE</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="k">:-</span><span class="p">/swapfile</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nv">SWAPPINESS</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SWAPPINESS</span><span class="k">:-</span><span class="nv">20</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nv">TARGET_GB</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="nv">16</span><span class="si">}</span><span class="s2">"</span>
+<span class="nv">SWAPFILE</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="k">:-</span><span class="p">/swapfile</span><span class="si">}</span><span class="s2">"</span>
+<span class="nv">SWAPPINESS</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">SWAPPINESS</span><span class="k">:-</span><span class="nv">20</span><span class="si">}</span><span class="s2">"</span>
 
-<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">EUID</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Please run with sudo: sudo bash </span><span class="nv">$0</span><span class="s2"> [swap_size_gb]&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">EUID</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Please run with sudo: sudo bash </span><span class="nv">$0</span><span class="s2"> [swap_size_gb]"</span>
 <span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="k">fi</span>
 
-<span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">TARGET_GB</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>^<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span>+$<span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>TARGET_GB<span class="w"> </span>&lt;<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Invalid swap size: </span><span class="si">${</span><span class="nv">TARGET_GB</span><span class="si">}</span><span class="s2">. Use a positive integer in GB.&quot;</span>
+<span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">TARGET_GB</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>^<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span>+$<span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>TARGET_GB<span class="w"> </span>&lt;<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Invalid swap size: </span><span class="si">${</span><span class="nv">TARGET_GB</span><span class="si">}</span><span class="s2">. Use a positive integer in GB."</span>
 <span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="k">fi</span>
 
-<span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SWAPPINESS</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>^<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span>+$<span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>SWAPPINESS<span class="w"> </span>&lt;<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>SWAPPINESS<span class="w"> </span>&gt;<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Invalid SWAPPINESS=</span><span class="si">${</span><span class="nv">SWAPPINESS</span><span class="si">}</span><span class="s2">. Must be 0..100.&quot;</span>
+<span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">SWAPPINESS</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>^<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span>+$<span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>SWAPPINESS<span class="w"> </span>&lt;<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>SWAPPINESS<span class="w"> </span>&gt;<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Invalid SWAPPINESS=</span><span class="si">${</span><span class="nv">SWAPPINESS</span><span class="si">}</span><span class="s2">. Must be 0..100."</span>
 <span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="k">fi</span>
 
 <span class="nv">TARGET_BYTES</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="nv">TARGET_GB</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="k">))</span>
 <span class="nv">NEED_KB</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="nv">TARGET_GB</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="k">))</span><span class="w"> </span><span class="c1"># swap size + 1GiB margin</span>
-<span class="nv">AVAIL_KB</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>df<span class="w"> </span>--output<span class="o">=</span>avail<span class="w"> </span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;NR==2{print $1}&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="nv">AVAIL_KB</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>df<span class="w"> </span>--output<span class="o">=</span>avail<span class="w"> </span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'NR==2{print $1}'</span><span class="k">)</span><span class="s2">"</span>
 
 <span class="k">if</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>AVAIL_KB<span class="w"> </span>&lt;<span class="w"> </span>NEED_KB<span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Not enough free space on /&quot;</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Available: </span><span class="k">$((</span><span class="w"> </span><span class="nv">AVAIL_KB</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="k">))</span><span class="s2"> GiB, Required: </span><span class="k">$((</span><span class="w"> </span><span class="nv">NEED_KB</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="k">))</span><span class="s2"> GiB&quot;</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Not enough free space on /"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Available: </span><span class="k">$((</span><span class="w"> </span><span class="nv">AVAIL_KB</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="k">))</span><span class="s2"> GiB, Required: </span><span class="k">$((</span><span class="w"> </span><span class="nv">NEED_KB</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="k">))</span><span class="s2"> GiB"</span>
 <span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
 <span class="k">fi</span>
 
 is_active_swapfile<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">  </span>swapon<span class="w"> </span>--noheadings<span class="w"> </span>--raw<span class="w"> </span>--output<span class="o">=</span>NAME<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-Fxq<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span>swapon<span class="w"> </span>--noheadings<span class="w"> </span>--raw<span class="w"> </span>--output<span class="o">=</span>NAME<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">'{print $1}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-Fxq<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">"</span>
 <span class="o">}</span>
 
 <span class="nv">need_create</span><span class="o">=</span><span class="m">0</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">  </span><span class="nv">CUR_BYTES</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>stat<span class="w"> </span>-c%s<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nv">CUR_BYTES</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>stat<span class="w"> </span>-c%s<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">"</span><span class="k">)</span><span class="s2">"</span>
 <span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">((</span><span class="w"> </span>CUR_BYTES<span class="w"> </span>!<span class="o">=</span><span class="w"> </span>TARGET_BYTES<span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span>is_active_swapfile<span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">      </span>swapoff<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">      </span>swapoff<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">"</span>
 <span class="w">    </span><span class="k">fi</span>
-<span class="w">    </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">    </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">"</span>
 <span class="w">    </span><span class="nv">need_create</span><span class="o">=</span><span class="m">1</span>
 <span class="w">  </span><span class="k">fi</span>
 <span class="k">else</span>
@@ -4070,37 +4086,37 @@ is_active_swapfile<span class="o">()</span><span class="w"> </span><span class="
 <span class="k">fi</span>
 
 <span class="k">if</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">need_create</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">))</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>fallocate<span class="w"> </span>-l<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">TARGET_GB</span><span class="si">}</span><span class="s2">G&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="nv">of</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="nv">TARGET_GB</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="k">))</span><span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress
+<span class="w">  </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span>fallocate<span class="w"> </span>-l<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">TARGET_GB</span><span class="si">}</span><span class="s2">G"</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="nv">of</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="nv">bs</span><span class="o">=</span>1M<span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="nv">TARGET_GB</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1024</span><span class="w"> </span><span class="k">))</span><span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress
 <span class="w">  </span><span class="k">fi</span>
-<span class="w">  </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="w">  </span>mkswap<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>&gt;/dev/null
+<span class="w">  </span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">"</span>
+<span class="w">  </span>mkswap<span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span>&gt;/dev/null
 <span class="k">fi</span>
 
 <span class="k">if</span><span class="w"> </span>!<span class="w"> </span>is_active_swapfile<span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">  </span>swapon<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">  </span>swapon<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">fi</span>
 
-<span class="nv">FSTAB_LINE</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2"> none swap sw,pri=10 0 0&quot;</span>
-<span class="k">if</span><span class="w"> </span>grep<span class="w"> </span>-Eq<span class="w"> </span><span class="s2">&quot;^[[:space:]]*</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="p">//</span><span class="se">\/</span><span class="p">/</span><span class="se">\\</span><span class="p">/</span><span class="si">}</span><span class="s2">[[:space:]]+none[[:space:]]+swap&quot;</span><span class="w"> </span>/etc/fstab<span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">  </span>sed<span class="w"> </span>-i<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;s|^[[:space:]]*</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="p">//</span><span class="se">\/</span><span class="p">/</span><span class="se">\\</span><span class="p">/</span><span class="si">}</span><span class="s2">[[:space:]]+none[[:space:]]+swap.*</span>$<span class="s2">|</span><span class="si">${</span><span class="nv">FSTAB_LINE</span><span class="si">}</span><span class="s2">|g&quot;</span><span class="w"> </span>/etc/fstab
+<span class="nv">FSTAB_LINE</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="si">}</span><span class="s2"> none swap sw,pri=10 0 0"</span>
+<span class="k">if</span><span class="w"> </span>grep<span class="w"> </span>-Eq<span class="w"> </span><span class="s2">"^[[:space:]]*</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="p">//</span><span class="se">\/</span><span class="p">/</span><span class="se">\\</span><span class="p">/</span><span class="si">}</span><span class="s2">[[:space:]]+none[[:space:]]+swap"</span><span class="w"> </span>/etc/fstab<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span>sed<span class="w"> </span>-i<span class="w"> </span>-E<span class="w"> </span><span class="s2">"s|^[[:space:]]*</span><span class="si">${</span><span class="nv">SWAPFILE</span><span class="p">//</span><span class="se">\/</span><span class="p">/</span><span class="se">\\</span><span class="p">/</span><span class="si">}</span><span class="s2">[[:space:]]+none[[:space:]]+swap.*</span>$<span class="s2">|</span><span class="si">${</span><span class="nv">FSTAB_LINE</span><span class="si">}</span><span class="s2">|g"</span><span class="w"> </span>/etc/fstab
 <span class="k">else</span>
-<span class="w">  </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;\n%s\n&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">FSTAB_LINE</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/fstab
+<span class="w">  </span><span class="nb">printf</span><span class="w"> </span><span class="s2">"\n%s\n"</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">FSTAB_LINE</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/fstab
 <span class="k">fi</span>
 
-<span class="nv">SYSCTL_FILE</span><span class="o">=</span><span class="s2">&quot;/etc/sysctl.d/99-swappiness.conf&quot;</span>
-<span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;vm.swappiness=%s\n&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SWAPPINESS</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SYSCTL_FILE</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nv">SYSCTL_FILE</span><span class="o">=</span><span class="s2">"/etc/sysctl.d/99-swappiness.conf"</span>
+<span class="nb">printf</span><span class="w"> </span><span class="s2">"vm.swappiness=%s\n"</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">SWAPPINESS</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">SYSCTL_FILE</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">if</span><span class="w"> </span>!<span class="w"> </span>sysctl<span class="w"> </span>--system<span class="w"> </span>&gt;/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">  </span>sysctl<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;vm.swappiness=</span><span class="si">${</span><span class="nv">SWAPPINESS</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span>&gt;/dev/null
+<span class="w">  </span>sysctl<span class="w"> </span>-w<span class="w"> </span><span class="s2">"vm.swappiness=</span><span class="si">${</span><span class="nv">SWAPPINESS</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span>&gt;/dev/null
 <span class="k">fi</span>
 
 <span class="nb">echo</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Done. Current swap status:&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Done. Current swap status:"</span>
 swapon<span class="w"> </span>--show
 <span class="nb">echo</span>
 free<span class="w"> </span>-h
 <span class="nb">echo</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Applied vm.swappiness=</span><span class="si">${</span><span class="nv">SWAPPINESS</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Applied vm.swappiness=</span><span class="si">${</span><span class="nv">SWAPPINESS</span><span class="si">}</span><span class="s2">"</span>
 </code></pre></div></p>
 <p>如果用户想用“休眠到磁盘”，swapfile 还涉及：</p>
 <p>resume= 内核参数</p>

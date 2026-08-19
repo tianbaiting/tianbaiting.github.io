@@ -3409,6 +3409,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3459,6 +3461,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4221,12 +4237,12 @@
     <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>ipykernel
 </code></pre></div></li>
 <li>对于 R，可以使用 <code>IRkernel</code>：<br />
-    <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;IRkernel&quot;</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">"IRkernel"</span><span class="p">)</span>
 <span class="n">IRkernel</span><span class="o">::</span><span class="nf">installspec</span><span class="p">()</span>
 </code></pre></div></li>
 <li>对于 Julia，可以使用 <code>IJulia</code>：<br />
     <div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">Pkg</span>
-<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;IJulia&quot;</span><span class="p">)</span>
+<span class="n">Pkg</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">"IJulia"</span><span class="p">)</span>
 </code></pre></div></li>
 <li>对于 C#，可以使用 <code>dotnet-interactive</code>：<br />
     <div class="highlight"><pre><span></span><code>dotnet<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>Microsoft.dotnet-interactive
@@ -4263,7 +4279,7 @@ clingkernel install --sys-prefix
 <p>使用 <code>subprocess</code> 模块<br />
     在 Python 代码中使用 <code>subprocess</code> 模块运行 Bash 脚本。例如：<br />
     <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
-<span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">&#39;sh&#39;</span><span class="p">,</span> <span class="s1">&#39;script.sh&#39;</span><span class="p">])</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s1">'sh'</span><span class="p">,</span> <span class="s1">'script.sh'</span><span class="p">])</span>
 </code></pre></div></p>
 </li>
 <li>
@@ -4297,8 +4313,8 @@ sh<span class="w"> </span>script.sh
 <p>ROOT 提供了一个 C++ Kernel，将 notebook 转变为一个 ROOT 提示符。该 Kernel 提供了嵌入式图形、语法高亮和自动补全等功能。</p>
 <p>以下是如何在 C++ ROOTbook 中绘制直方图的示例：<br />
 <div class="highlight"><pre><span></span><code><span class="n">TCanvas</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
-<span class="n">TH1F</span><span class="w"> </span><span class="n">h</span><span class="p">(</span><span class="s">&quot;h&quot;</span><span class="p">,</span><span class="s">&quot;ROOT Histo;X;Y&quot;</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">-4</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
-<span class="n">h</span><span class="p">.</span><span class="n">FillRandom</span><span class="p">(</span><span class="s">&quot;gaus&quot;</span><span class="p">);</span>
+<span class="n">TH1F</span><span class="w"> </span><span class="n">h</span><span class="p">(</span><span class="s">"h"</span><span class="p">,</span><span class="s">"ROOT Histo;X;Y"</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">-4</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">h</span><span class="p">.</span><span class="n">FillRandom</span><span class="p">(</span><span class="s">"gaus"</span><span class="p">);</span>
 <span class="n">h</span><span class="p">.</span><span class="n">Draw</span><span class="p">();</span>
 <span class="n">c</span><span class="p">.</span><span class="n">Draw</span><span class="p">();</span>
 </code></pre></div></p>
@@ -4307,21 +4323,21 @@ sh<span class="w"> </span>script.sh
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">ROOT</span>
 </code></pre></div><br />
 然后您可以编写如下代码：<br />
-<div class="highlight"><pre><span></span><code><span class="n">c</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TCanvas</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
-<span class="n">h</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TH1F</span><span class="p">(</span><span class="s2">&quot;h&quot;</span><span class="p">,</span><span class="s2">&quot;ROOT Histo;X;Y&quot;</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">c</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TCanvas</span><span class="p">(</span><span class="s2">"c"</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TH1F</span><span class="p">(</span><span class="s2">"h"</span><span class="p">,</span><span class="s2">"ROOT Histo;X;Y"</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div></p>
 <p>此外，您还可以通过使用 %%cpp 魔法命令在同一个 notebook 中混合使用 Python 和 C++：<br />
 <div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">cpp</span>
-<span class="n">h</span><span class="o">-&gt;</span><span class="n">FillRandom</span><span class="p">(</span><span class="s">&quot;gaus&quot;</span><span class="p">);</span>
+<span class="n">h</span><span class="o">-&gt;</span><span class="n">FillRandom</span><span class="p">(</span><span class="s">"gaus"</span><span class="p">);</span>
 <span class="n">h</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">();</span>
 <span class="n">c</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">();</span>
 </code></pre></div></p>
 <p>假如要在Jupyter里调用其他地方的函数，得:<br />
 <div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">cpp</span>
-<span class="cp">#pragma cling add_include_path(&quot;include&quot;)</span>
+<span class="cp">#pragma cling add_include_path("include")</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;/data4/tbt23/smsimulator5.5/anal_D_tbt/original_data_tbt/include/get_ratio.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;/data4/tbt23/smsimulator5.5/anal_D_tbt/original_data_tbt/src/get_ratio.cpp&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"/data4/tbt23/smsimulator5.5/anal_D_tbt/original_data_tbt/include/get_ratio.h"</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"/data4/tbt23/smsimulator5.5/anal_D_tbt/original_data_tbt/src/get_ratio.cpp"</span>
 </code></pre></div><br />
 目前我搞不清楚相对路径是相对的什么东西。特别是get_ratio.cpp里面应该怎么写.h文件的路径。但写绝对路径肯定没错...</p>
 <h3 id="jupyter-魔法命令">jupyter 魔法命令<a class="headerlink" href="#jupyter-魔法命令" title="Permanent link">#</a></h3>
@@ -4378,21 +4394,21 @@ sh<span class="w"> </span>script.sh
 <p><code>%%writefile</code><br />
     将单元内容写入文件。例如：<br />
     <div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">writefile</span> <span class="n">script</span><span class="o">.</span><span class="n">py</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, World!"</span><span class="p">)</span>
 </code></pre></div></p>
 </li>
 <li>
 <p><code>%%bash</code><br />
     在单元中运行 Bash 脚本。例如：<br />
     <div class="highlight"><pre><span></span><code>%%bash
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello from Bash&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Hello from Bash"</span>
 </code></pre></div></p>
 </li>
 <li>
 <p><code>%%capture</code><br />
     捕获单元输出并存储到变量中。例如：<br />
     <div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">capture</span> <span class="n">captured_output</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This will be captured&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"This will be captured"</span><span class="p">)</span>
 </code></pre></div></p>
 </li>
 </ol>
@@ -4434,8 +4450,8 @@ sh<span class="w"> </span>script.sh
 <li>Shift + O：切换单元输出的滚动模式</li>
 </ul>
 <h2 id="ipyplot">ipyplot<a class="headerlink" href="#ipyplot" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">video_paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;my_video.mp4&quot;</span><span class="p">]</span>
-<span class="n">video_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;My Video&quot;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="n">video_paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"my_video.mp4"</span><span class="p">]</span>
+<span class="n">video_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"My Video"</span><span class="p">]</span>
 <span class="n">ipyplot</span><span class="o">.</span><span class="n">plot_videos</span><span class="p">(</span><span class="n">video_paths</span><span class="p">,</span> <span class="n">video_labels</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">320</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -4448,17 +4464,17 @@ sh<span class="w"> </span>script.sh
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;X轴&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Y轴&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Matplotlib 图形&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"X轴"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Y轴"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Matplotlib 图形"</span><span class="p">)</span>
 
 <span class="c1"># 2. 创建一个临时文件来保存 matplotlib 图形</span>
-<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">&quot;.png&quot;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">tmp_file</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="s2">".png"</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">tmp_file</span><span class="p">:</span>
     <span class="n">temp_filename</span> <span class="o">=</span> <span class="n">tmp_file</span><span class="o">.</span><span class="n">name</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">temp_filename</span><span class="p">)</span>
 
 <span class="c1"># 3. 使用 ipyplot 显示临时图像文件</span>
-<span class="n">ipyplot</span><span class="o">.</span><span class="n">plot_images</span><span class="p">([</span><span class="n">temp_filename</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Matplotlib Plot&quot;</span><span class="p">],</span> <span class="n">img_width</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">ipyplot</span><span class="o">.</span><span class="n">plot_images</span><span class="p">([</span><span class="n">temp_filename</span><span class="p">],</span> <span class="p">[</span><span class="s2">"Matplotlib Plot"</span><span class="p">],</span> <span class="n">img_width</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
 
 <span class="c1"># 4. 清理临时文件</span>
 <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">temp_filename</span><span class="p">)</span>

@@ -3345,6 +3345,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3395,6 +3397,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4132,11 +4148,11 @@ newgrp<span class="w"> </span>docker<span class="w"> </span><span class="c1"># �
 <p>安装 Docker Compose<br />
     我们将从 GitHub Release 页面下载 Docker Compose 的二进制文件。</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 定义版本和目标路径</span>
-<span class="nv">COMPOSE_VERSION</span><span class="o">=</span><span class="s2">&quot;v2.27.0&quot;</span><span class="w"> </span><span class="c1"># 您可以去GitHub查看最新版本</span>
-<span class="nv">DESTINATION</span><span class="o">=</span><span class="s2">&quot;/usr/local/bin/docker-compose&quot;</span>
+<span class="nv">COMPOSE_VERSION</span><span class="o">=</span><span class="s2">"v2.27.0"</span><span class="w"> </span><span class="c1"># 您可以去GitHub查看最新版本</span>
+<span class="nv">DESTINATION</span><span class="o">=</span><span class="s2">"/usr/local/bin/docker-compose"</span>
 
 <span class="c1"># 下载</span>
-sudo<span class="w"> </span>curl<span class="w"> </span>-L<span class="w"> </span><span class="s2">&quot;https://github.com/docker/compose/releases/download/</span><span class="si">${</span><span class="nv">COMPOSE_VERSION</span><span class="si">}</span><span class="s2">/docker-compose-</span><span class="k">$(</span>uname<span class="w"> </span>-s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname<span class="w"> </span>-m<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">$DESTINATION</span>
+sudo<span class="w"> </span>curl<span class="w"> </span>-L<span class="w"> </span><span class="s2">"https://github.com/docker/compose/releases/download/</span><span class="si">${</span><span class="nv">COMPOSE_VERSION</span><span class="si">}</span><span class="s2">/docker-compose-</span><span class="k">$(</span>uname<span class="w"> </span>-s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname<span class="w"> </span>-m<span class="k">)</span><span class="s2">"</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">$DESTINATION</span>
 
 <span class="c1"># 添加执行权限</span>
 sudo<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span><span class="nv">$DESTINATION</span>
@@ -4165,7 +4181,7 @@ docker-compose<span class="w"> </span>--version
 <div class="highlight"><pre><span></span><code>nano<span class="w"> </span>docker-compose.yml
 </code></pre></div>
 <p>将以下内容完整地粘贴到文件中。</p>
-<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.8&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">'3.8'</span>
 
 <span class="nt">services</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># Nextcloud 主服务</span>
@@ -4174,7 +4190,7 @@ docker-compose<span class="w"> </span>--version
 <span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nextcloud_app</span>
 <span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
 <span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8080:80&quot;</span><span class="w"> </span><span class="c1"># 将服务器的8080端口映射到容器的80端口</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"8080:80"</span><span class="w"> </span><span class="c1"># 将服务器的8080端口映射到容器的80端口</span>
 <span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./nextcloud:/var/www/html</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./apps:/var/www/html/apps</span>

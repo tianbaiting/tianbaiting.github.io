@@ -3365,6 +3365,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3415,6 +3417,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4095,7 +4111,7 @@
 <div class="highlight"><pre><span></span><code><span class="cp">#ifndef MYPARTICLE_H</span>
 <span class="cp">#define MYPARTICLE_H</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;TObject.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"TObject.h"</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">MyParticle</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">TObject</span><span class="w"> </span><span class="p">{</span>
 <span class="k">private</span><span class="o">:</span>
@@ -4116,7 +4132,7 @@
 <span class="cp">#endif</span>
 </code></pre></div></p>
 <p>文件：<code>MyParticle.cxx</code><br />
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;MyParticle.h&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">"MyParticle.h"</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
 
 <span class="n">ClassImp</span><span class="p">(</span><span class="n">MyParticle</span><span class="p">);</span><span class="w"> </span><span class="c1">// 对应 ClassDef</span>
@@ -4165,13 +4181,13 @@
 <li>
 <p>动态加载（常用）：<br />
 <div class="highlight"><pre><span></span><code><span class="c1">// 在宏的开头</span>
-<span class="n">gSystem</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;/path/to/workdir/libMyParticle.so&quot;</span><span class="p">);</span>
+<span class="n">gSystem</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">"/path/to/workdir/libMyParticle.so"</span><span class="p">);</span>
 </code></pre></div></p>
 </li>
 <li>
 <p>R__LOAD_LIBRARY（推荐，在解析脚本前处理依赖）：<br />
 <div class="highlight"><pre><span></span><code><span class="c1">// myScript.C</span>
-<span class="n">R__LOAD_LIBRARY</span><span class="p">(</span><span class="s">&quot;/path/to/workdir/libMyParticle.so&quot;</span><span class="p">)</span>
+<span class="n">R__LOAD_LIBRARY</span><span class="p">(</span><span class="s">"/path/to/workdir/libMyParticle.so"</span><span class="p">)</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="n">myScript</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">MyParticle</span><span class="w"> </span><span class="nf">p</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
@@ -4181,8 +4197,8 @@
 </li>
 <li>
 <p>修改动态路径并以短名加载：<br />
-<div class="highlight"><pre><span></span><code><span class="n">gSystem</span><span class="o">-&gt;</span><span class="n">AddDynamicPath</span><span class="p">(</span><span class="s">&quot;/path/to/workdir&quot;</span><span class="p">);</span>
-<span class="n">gSystem</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">&quot;libMyParticle&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 或 gSystem-&gt;Load(&quot;MyParticle&quot;)，ROOT 会尝试补全</span>
+<div class="highlight"><pre><span></span><code><span class="n">gSystem</span><span class="o">-&gt;</span><span class="n">AddDynamicPath</span><span class="p">(</span><span class="s">"/path/to/workdir"</span><span class="p">);</span>
+<span class="n">gSystem</span><span class="o">-&gt;</span><span class="n">Load</span><span class="p">(</span><span class="s">"libMyParticle"</span><span class="p">);</span><span class="w"> </span><span class="c1">// 或 gSystem-&gt;Load("MyParticle")，ROOT 会尝试补全</span>
 </code></pre></div></p>
 </li>
 </ul>
@@ -4210,7 +4226,7 @@
 <h3 id="编写测试用例">编写测试用例<a class="headerlink" href="#编写测试用例" title="Permanent link">#</a></h3>
 <p>文件：<code>test_MyParticle.cpp</code><br />
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;gtest/gtest.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;MyParticle.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">"MyParticle.h"</span>
 
 <span class="c1">// 测试构造函数</span>
 <span class="n">TEST</span><span class="p">(</span><span class="n">MyParticleTest</span><span class="p">,</span><span class="w"> </span><span class="n">Constructor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>

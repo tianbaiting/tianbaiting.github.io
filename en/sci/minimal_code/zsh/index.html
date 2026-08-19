@@ -3471,6 +3471,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3521,6 +3523,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4320,15 +4336,15 @@
 
 <span class="c1"># 工具函数：如果没安装就安装</span>
 install_if_missing<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&gt;&gt;&gt; 安装 </span><span class="nv">$1</span><span class="s2"> ...&quot;</span>
-<span class="w">        </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"&gt;&gt;&gt; 安装 </span><span class="nv">$1</span><span class="s2"> ..."</span>
+<span class="w">        </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
 <span class="w">    </span><span class="k">else</span>
-<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&gt;&gt;&gt; </span><span class="nv">$1</span><span class="s2"> 已安装&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"&gt;&gt;&gt; </span><span class="nv">$1</span><span class="s2"> 已安装"</span>
 <span class="w">    </span><span class="k">fi</span>
 <span class="o">}</span>
 
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&gt;&gt;&gt; 更新系统...&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"&gt;&gt;&gt; 更新系统..."</span>
 sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span>-y
 
 <span class="c1"># 必要工具</span>
@@ -4341,20 +4357,20 @@ install_if_missing<span class="w"> </span>fzf
 <span class="c1">#  安装 starship</span>
 <span class="c1"># =========================</span>
 <span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="nb">command</span><span class="w"> </span>-v<span class="w"> </span>starship<span class="w"> </span><span class="p">&amp;</span>&gt;/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&gt;&gt;&gt; 安装 starship...&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"&gt;&gt;&gt; 安装 starship..."</span>
 <span class="w">    </span>curl<span class="w"> </span>-sS<span class="w"> </span>https://starship.rs/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>-y
 <span class="k">else</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&gt;&gt;&gt; starship 已安装&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"&gt;&gt;&gt; starship 已安装"</span>
 <span class="k">fi</span>
 
 <span class="c1"># =========================</span>
 <span class="c1">#  安装 oh-my-zsh</span>
 <span class="c1"># =========================</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.oh-my-zsh&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&gt;&gt;&gt; 安装 oh-my-zsh...&quot;</span>
-<span class="w">    </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>--unattended
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.oh-my-zsh"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"&gt;&gt;&gt; 安装 oh-my-zsh..."</span>
+<span class="w">    </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="k">)</span><span class="s2">"</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span>--unattended
 <span class="k">else</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&gt;&gt;&gt; oh-my-zsh 已安装&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"&gt;&gt;&gt; oh-my-zsh 已安装"</span>
 <span class="k">fi</span>
 
 <span class="c1"># =========================</span>
@@ -4363,53 +4379,53 @@ install_if_missing<span class="w"> </span>fzf
 <span class="nv">ZSH_CUSTOM</span><span class="o">=</span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.oh-my-zsh/custom</span><span class="si">}</span>
 
 <span class="c1"># autosuggestions</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ZSH_CUSTOM</span><span class="s2">/plugins/zsh-autosuggestions&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&gt;&gt;&gt; 安装 zsh-autosuggestions...&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">"</span><span class="nv">$ZSH_CUSTOM</span><span class="s2">/plugins/zsh-autosuggestions"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"&gt;&gt;&gt; 安装 zsh-autosuggestions..."</span>
 <span class="w">    </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-autosuggestions<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="si">}</span>/plugins/zsh-autosuggestions
 <span class="k">else</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&gt;&gt;&gt; zsh-autosuggestions 已安装&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"&gt;&gt;&gt; zsh-autosuggestions 已安装"</span>
 <span class="k">fi</span>
 
 <span class="c1"># syntax-highlighting</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ZSH_CUSTOM</span><span class="s2">/plugins/zsh-syntax-highlighting&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&gt;&gt;&gt; 安装 zsh-syntax-highlighting...&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">"</span><span class="nv">$ZSH_CUSTOM</span><span class="s2">/plugins/zsh-syntax-highlighting"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"&gt;&gt;&gt; 安装 zsh-syntax-highlighting..."</span>
 <span class="w">    </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-syntax-highlighting.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="si">}</span>/plugins/zsh-syntax-highlighting
 <span class="k">else</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&gt;&gt;&gt; zsh-syntax-highlighting 已安装&quot;</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"&gt;&gt;&gt; zsh-syntax-highlighting 已安装"</span>
 <span class="k">fi</span>
 
 <span class="c1"># =========================</span>
 <span class="c1">#  修改 zshrc</span>
 <span class="c1"># =========================</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&gt;&gt;&gt; 配置 .zshrc ...&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"&gt;&gt;&gt; 配置 .zshrc ..."</span>
 <span class="c1"># 主题改成 robbyrussell（默认简单主题，starship 会覆盖）</span>
-sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/^ZSH_THEME=.*$/ZSH_THEME=&quot;robbyrussell&quot;/&#39;</span><span class="w"> </span>~/.zshrc<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/^ZSH_THEME=.*$/ZSH_THEME="robbyrussell"/'</span><span class="w"> </span>~/.zshrc<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
 
 <span class="c1"># 插件配置</span>
-<span class="k">if</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">&quot;^plugins=&quot;</span><span class="w"> </span>~/.zshrc<span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/^plugins=(.*)$/plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf)/&#39;</span><span class="w"> </span>~/.zshrc
+<span class="k">if</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">"^plugins="</span><span class="w"> </span>~/.zshrc<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/^plugins=(.*)$/plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf)/'</span><span class="w"> </span>~/.zshrc
 <span class="k">else</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf)&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf)'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
 <span class="k">fi</span>
 
 <span class="c1"># starship 初始化</span>
-<span class="k">if</span><span class="w"> </span>!<span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;eval &quot;$(starship init zsh)&quot;&#39;</span><span class="w"> </span>~/.zshrc<span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;eval &quot;$(starship init zsh)&quot;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="k">if</span><span class="w"> </span>!<span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s1">'eval "$(starship init zsh)"'</span><span class="w"> </span>~/.zshrc<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'eval "$(starship init zsh)"'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
 <span class="k">fi</span>
 
 <span class="c1"># =========================</span>
 <span class="c1">#  切换默认 shell</span>
 <span class="c1"># =========================</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SHELL</span><span class="s2">&quot;</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&gt;&gt;&gt; 设置 zsh 为默认 shell...&quot;</span>
-<span class="w">    </span>chsh<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span><span class="s2">&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$SHELL</span><span class="s2">"</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">"</span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"&gt;&gt;&gt; 设置 zsh 为默认 shell..."</span>
+<span class="w">    </span>chsh<span class="w"> </span>-s<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>which<span class="w"> </span>zsh<span class="k">)</span><span class="s2">"</span>
 <span class="k">fi</span>
 
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;====================================&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;✅ 安装完成！请运行以下命令立即生效：&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;   source ~/.zshrc&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;   退出并重新登录即可启用 zsh&quot;</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;====================================&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"===================================="</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"✅ 安装完成！请运行以下命令立即生效："</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"   source ~/.zshrc"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"   退出并重新登录即可启用 zsh"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"===================================="</span>
 </code></pre></div>
 <h2 id="安装组件说明">安装组件说明<a class="headerlink" href="#安装组件说明" title="Permanent link">#</a></h2>
 <h3 id="核心组件">核心组件<a class="headerlink" href="#核心组件" title="Permanent link">#</a></h3>
@@ -4444,8 +4460,8 @@ nano<span class="w"> </span>~/.config/starship.toml
 </code></pre></div>
 <h4 id="添加自定义别名">添加自定义别名<a class="headerlink" href="#添加自定义别名" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="c1"># 编辑 ~/.zshrc</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;alias ll=&quot;ls -la&quot;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;alias ..=&quot;cd ..&quot;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'alias ll="ls -la"'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'alias ..="cd .."'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
 <span class="nb">source</span><span class="w"> </span>~/.zshrc
 </code></pre></div>
 <h2 id="系统要求">系统要求<a class="headerlink" href="#系统要求" title="Permanent link">#</a></h2>
@@ -4479,7 +4495,7 @@ ls<span class="w"> </span>-la<span class="w"> </span>~/.oh-my-zsh/custom/plugins
 which<span class="w"> </span>starship
 
 <span class="c1"># 手动添加到.zshrc</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;eval &quot;$(starship init zsh)&quot;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'eval "$(starship init zsh)"'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
 </code></pre></div>
 <h3 id="恢复默认设置">恢复默认设置<a class="headerlink" href="#恢复默认设置" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 切换回bash</span>

@@ -3471,6 +3471,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3521,6 +3523,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4409,7 +4425,7 @@
 <p>git rebase --onto master next topic</p>
 <div class="highlight"><pre><span></span><code>o---o---o---o master                             
     |        \
-    |           o&#39;--o&#39;--o&#39; topic
+    |           o'--o'--o' topic
     |
     o---o---o---o next           
 </code></pre></div>
@@ -4442,7 +4458,7 @@
 <hr />
 <h2 id="临时保存git-stash">临时保存：git stash<a class="headerlink" href="#临时保存git-stash" title="Permanent link">#</a></h2>
 <p>常用命令：<br />
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>stash<span class="w"> </span>push<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;message&quot;</span><span class="w">   </span><span class="c1"># 保存当前修改（推荐）</span>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>stash<span class="w"> </span>push<span class="w"> </span>-m<span class="w"> </span><span class="s2">"message"</span><span class="w">   </span><span class="c1"># 保存当前修改（推荐）</span>
 git<span class="w"> </span>stash<span class="w"> </span>list<span class="w">                </span><span class="c1"># 列出所有 stash</span>
 git<span class="w"> </span>stash<span class="w"> </span>apply<span class="w"> </span>&lt;stash@<span class="o">{</span>n<span class="o">}</span>&gt;<span class="w">   </span><span class="c1"># 应用某个 stash（不删除）</span>
 git<span class="w"> </span>stash<span class="w"> </span>pop<span class="w">                 </span><span class="c1"># 应用最近的 stash 并从堆栈中删除</span>
@@ -4451,7 +4467,7 @@ git<span class="w"> </span>stash<span class="w"> </span>clear<span class="w">   
 </code></pre></div></p>
 <p>工作流示例：<br />
 1. 在当前分支保存未完成的修改：<br />
-   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>stash<span class="w"> </span>push<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;WIP: 说明&quot;</span>
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>stash<span class="w"> </span>push<span class="w"> </span>-m<span class="w"> </span><span class="s2">"WIP: 说明"</span>
 </code></pre></div><br />
 2. 切换到 main 修复 bug、提交：<br />
    <div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>main
@@ -4480,7 +4496,7 @@ git<span class="w"> </span>stash<span class="w"> </span>pop
 <h3 id="附注标签annotated-tag推荐">附注标签（Annotated Tag，推荐）<a class="headerlink" href="#附注标签annotated-tag推荐" title="Permanent link">#</a></h3>
 <ul>
 <li>命令：<br />
-   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v1.0.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Release version 1.0.0&quot;</span>
+   <div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>v1.0.0<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Release version 1.0.0"</span>
 </code></pre></div></li>
 <li>本质：完整的 Git 对象，包含作者、日期、说明信息，并指向一个 Commit，适合标记发布里程碑。</li>
 <li>查看：<code>git show v1.0.0</code></li>

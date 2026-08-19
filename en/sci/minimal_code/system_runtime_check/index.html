@@ -3709,6 +3709,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3759,6 +3761,20 @@
     <li class="md-nav__item">
       <a href="../../project/faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -4788,7 +4804,7 @@
 <h2 id="一屏快速看当前运行了什么">一屏快速看当前运行了什么<a class="headerlink" href="#一屏快速看当前运行了什么" title="Permanent link">#</a></h2>
 <p>先跑下面这一组：</p>
 <div class="highlight"><pre><span></span><code>ps<span class="w"> </span>-eo<span class="w"> </span>pid,ppid,user,tty,stat,etime,cmd<span class="w"> </span>--sort<span class="o">=</span>etime
-pgrep<span class="w"> </span>-af<span class="w"> </span><span class="s1">&#39;ssh|sshd|xrdp|xrdp-sesman|tmux|python|root|geant4|smsimulator|anaroot|code-tunnel|tailscaled&#39;</span>
+pgrep<span class="w"> </span>-af<span class="w"> </span><span class="s1">'ssh|sshd|xrdp|xrdp-sesman|tmux|python|root|geant4|smsimulator|anaroot|code-tunnel|tailscaled'</span>
 ss<span class="w"> </span>-tulpn
 ss<span class="w"> </span>-tnp
 loginctl<span class="w"> </span>list-sessions
@@ -4803,7 +4819,7 @@ loginctl<span class="w"> </span>list-sessions
 </ul>
 <p>如果你只想先快速扫一眼，最常用的两条通常是：</p>
 <div class="highlight"><pre><span></span><code>ps<span class="w"> </span>-ef
-pgrep<span class="w"> </span>-af<span class="w"> </span><span class="s1">&#39;&lt;关键词&gt;&#39;</span>
+pgrep<span class="w"> </span>-af<span class="w"> </span><span class="s1">'&lt;关键词&gt;'</span>
 </code></pre></div>
 <h2 id="如何按名字找进程">如何按名字找进程<a class="headerlink" href="#如何按名字找进程" title="Permanent link">#</a></h2>
 <h3 id="最直接的方法pgrep--af">最直接的方法：<code>pgrep -af</code><a class="headerlink" href="#最直接的方法pgrep--af" title="Permanent link">#</a></h3>
@@ -4812,7 +4828,7 @@ pgrep<span class="w"> </span>-af<span class="w"> </span>xrdp
 pgrep<span class="w"> </span>-af<span class="w"> </span>tmux
 pgrep<span class="w"> </span>-af<span class="w"> </span>python
 pgrep<span class="w"> </span>-af<span class="w"> </span>root
-pgrep<span class="w"> </span>-af<span class="w"> </span><span class="s1">&#39;smsimulator|geant4|anaroot&#39;</span>
+pgrep<span class="w"> </span>-af<span class="w"> </span><span class="s1">'smsimulator|geant4|anaroot'</span>
 </code></pre></div>
 <p>这里推荐 <code>pgrep -af</code>，因为它会直接显示：</p>
 <ul>
@@ -4824,7 +4840,7 @@ pgrep<span class="w"> </span>-af<span class="w"> </span><span class="s1">&#39;sm
 </code></pre></div>
 <p>因为 <code>ps | grep</code> 很容易把 <code>grep</code> 自己也匹配出来。</p>
 <h3 id="查某一类远程相关程序">查某一类远程相关程序<a class="headerlink" href="#查某一类远程相关程序" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>pgrep<span class="w"> </span>-af<span class="w"> </span><span class="s1">&#39;(^|/)(ssh|sshd|sftp|scp|xrdp|xrdp-sesman|xfreerdp|wlfreerdp|remmina|gnome-remote-desktop|krdc)( |$)|sshfs|rdesktop&#39;</span>
+<div class="highlight"><pre><span></span><code>pgrep<span class="w"> </span>-af<span class="w"> </span><span class="s1">'(^|/)(ssh|sshd|sftp|scp|xrdp|xrdp-sesman|xfreerdp|wlfreerdp|remmina|gnome-remote-desktop|krdc)( |$)|sshfs|rdesktop'</span>
 </code></pre></div>
 <p>这条适合一次性扫：</p>
 <ul>
@@ -4972,10 +4988,10 @@ systemctl<span class="w"> </span>status<span class="w"> </span>tailscaled
 <p>这是查“这个桌面里到底开了哪些程序”的最好用方法之一。</p>
 <h2 id="ssh-场景怎么判断-ssh-断了但任务还在跑">SSH 场景：怎么判断 SSH 断了，但任务还在跑<a class="headerlink" href="#ssh-场景怎么判断-ssh-断了但任务还在跑" title="Permanent link">#</a></h2>
 <h3 id="先看-ssh-服务是否在监听">先看 SSH 服务是否在监听<a class="headerlink" href="#先看-ssh-服务是否在监听" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>ss<span class="w"> </span>-tulpn<span class="w"> </span><span class="p">|</span><span class="w"> </span>rg<span class="w"> </span><span class="s1">&#39;:22&#39;</span>
+<div class="highlight"><pre><span></span><code>ss<span class="w"> </span>-tulpn<span class="w"> </span><span class="p">|</span><span class="w"> </span>rg<span class="w"> </span><span class="s1">':22'</span>
 </code></pre></div>
 <h3 id="再看是否有活动连接">再看是否有活动连接<a class="headerlink" href="#再看是否有活动连接" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>ss<span class="w"> </span>-tnp<span class="w"> </span><span class="p">|</span><span class="w"> </span>rg<span class="w"> </span><span class="s1">&#39;:22&#39;</span>
+<div class="highlight"><pre><span></span><code>ss<span class="w"> </span>-tnp<span class="w"> </span><span class="p">|</span><span class="w"> </span>rg<span class="w"> </span><span class="s1">':22'</span>
 </code></pre></div>
 <p>如果这里没有 <code>ESTAB</code> 的 <code>:22</code> 连接，通常说明当前没有活跃 SSH 会话。</p>
 <h3 id="但-ssh-断了不代表任务没了">但 SSH 断了，不代表任务没了<a class="headerlink" href="#但-ssh-断了不代表任务没了" title="Permanent link">#</a></h3>
@@ -4998,7 +5014,7 @@ pgrep<span class="w"> </span>-af<span class="w"> </span>tmux
 <li>任务可能还在继续跑</li>
 </ul>
 <h3 id="看-ssh-断开的时间">看 SSH 断开的时间<a class="headerlink" href="#看-ssh-断开的时间" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>journalctl<span class="w"> </span>-u<span class="w"> </span>ssh<span class="w"> </span>--since<span class="w"> </span><span class="s2">&quot;2026-03-01&quot;</span>
+<div class="highlight"><pre><span></span><code>journalctl<span class="w"> </span>-u<span class="w"> </span>ssh<span class="w"> </span>--since<span class="w"> </span><span class="s2">"2026-03-01"</span>
 last<span class="w"> </span>-a
 </code></pre></div>
 <p>如果是 <code>sshd-session</code> 打出来的超时或读错误日志，通常能看到远端 IP 和断开时间。</p>
@@ -5007,7 +5023,7 @@ last<span class="w"> </span>-a
 <div class="highlight"><pre><span></span><code>pgrep<span class="w"> </span>-af<span class="w"> </span>xrdp
 systemctl<span class="w"> </span>status<span class="w"> </span>xrdp
 systemctl<span class="w"> </span>status<span class="w"> </span>xrdp-sesman
-ss<span class="w"> </span>-tulpn<span class="w"> </span><span class="p">|</span><span class="w"> </span>rg<span class="w"> </span><span class="s1">&#39;:3389&#39;</span>
+ss<span class="w"> </span>-tulpn<span class="w"> </span><span class="p">|</span><span class="w"> </span>rg<span class="w"> </span><span class="s1">':3389'</span>
 </code></pre></div>
 <h3 id="再看-xrdp-会话本身">再看 XRDP 会话本身<a class="headerlink" href="#再看-xrdp-会话本身" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>loginctl<span class="w"> </span>list-sessions
@@ -5029,10 +5045,10 @@ loginctl<span class="w"> </span>session-status<span class="w"> </span>&lt;sessio
 </code></pre></div>
 <h2 id="如何看模拟任务和分析任务是不是还在跑">如何看模拟任务和分析任务是不是还在跑<a class="headerlink" href="#如何看模拟任务和分析任务是不是还在跑" title="Permanent link">#</a></h2>
 <h3 id="先按名字扫">先按名字扫<a class="headerlink" href="#先按名字扫" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>pgrep<span class="w"> </span>-af<span class="w"> </span><span class="s1">&#39;smsimulator|geant4|anaroot|root|python|tmux&#39;</span>
+<div class="highlight"><pre><span></span><code>pgrep<span class="w"> </span>-af<span class="w"> </span><span class="s1">'smsimulator|geant4|anaroot|root|python|tmux'</span>
 </code></pre></div>
 <h3 id="再看完整命令行和运行时长">再看完整命令行和运行时长<a class="headerlink" href="#再看完整命令行和运行时长" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>ps<span class="w"> </span>-eo<span class="w"> </span>pid,ppid,user,%cpu,%mem,etime,cmd<span class="w"> </span>--sort<span class="o">=</span>-etime<span class="w"> </span><span class="p">|</span><span class="w"> </span>rg<span class="w"> </span><span class="s1">&#39;smsimulator|geant4|anaroot|root|python|tmux&#39;</span>
+<div class="highlight"><pre><span></span><code>ps<span class="w"> </span>-eo<span class="w"> </span>pid,ppid,user,%cpu,%mem,etime,cmd<span class="w"> </span>--sort<span class="o">=</span>-etime<span class="w"> </span><span class="p">|</span><span class="w"> </span>rg<span class="w"> </span><span class="s1">'smsimulator|geant4|anaroot|root|python|tmux'</span>
 </code></pre></div>
 <h3 id="如果任务藏在-tmux-里">如果任务藏在 <code>tmux</code> 里<a class="headerlink" href="#如果任务藏在-tmux-里" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>pgrep<span class="w"> </span>-af<span class="w"> </span>tmux
@@ -5041,7 +5057,7 @@ tmux<span class="w"> </span>ls
 <p>如果当前用户没有 <code>tmux</code> 会话权限或环境不对，先回到对应用户下再查。</p>
 <h3 id="看输出文件是否还在增长">看输出文件是否还在增长<a class="headerlink" href="#看输出文件是否还在增长" title="Permanent link">#</a></h3>
 <p>如果你怀疑某个模拟在持续写数据，可以同时查最近输出：</p>
-<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="se">\(</span><span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.root&#39;</span><span class="w"> </span>-o<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.ridf&#39;</span><span class="w"> </span>-o<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.csv&#39;</span><span class="w"> </span><span class="se">\)</span><span class="w"> </span>-printf<span class="w"> </span><span class="s1">&#39;%TY-%Tm-%Td %TH:%TM %p\n&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">30</span>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="se">\(</span><span class="w"> </span>-name<span class="w"> </span><span class="s1">'*.root'</span><span class="w"> </span>-o<span class="w"> </span>-name<span class="w"> </span><span class="s1">'*.ridf'</span><span class="w"> </span>-o<span class="w"> </span>-name<span class="w"> </span><span class="s1">'*.csv'</span><span class="w"> </span><span class="se">\)</span><span class="w"> </span>-printf<span class="w"> </span><span class="s1">'%TY-%Tm-%Td %TH:%TM %p\n'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">30</span>
 </code></pre></div>
 <p>如果你知道输出目录，更推荐只查特定路径，避免扫太慢。</p>
 <h2 id="如何看模拟数据本身包含什么">如何看模拟数据本身包含什么<a class="headerlink" href="#如何看模拟数据本身包含什么" title="Permanent link">#</a></h2>
@@ -5069,7 +5085,7 @@ NEBULASimDatainitializer::SetDataStore(false)
 <p>进入 ROOT 之后，常用的是：</p>
 <div class="highlight"><pre><span></span><code><span class="n">TTree</span><span class="o">::</span><span class="n">Print</span><span class="p">()</span>
 <span class="n">TTree</span><span class="o">::</span><span class="n">Show</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">TTree</span><span class="o">::</span><span class="n">Scan</span><span class="p">(</span><span class="s">&quot;branch_name&quot;</span><span class="p">)</span>
+<span class="n">TTree</span><span class="o">::</span><span class="n">Scan</span><span class="p">(</span><span class="s">"branch_name"</span><span class="p">)</span>
 <span class="n">tree</span><span class="o">-&gt;</span><span class="n">GetListOfBranches</span><span class="p">()</span>
 </code></pre></div>
 <p>如果你不清楚分支结构，先用 <code>TBrowser</code> 看最省事。</p>

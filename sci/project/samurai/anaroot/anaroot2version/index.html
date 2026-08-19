@@ -3249,6 +3249,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_5_4_3" tabindex="0" aria-expanded="false">
@@ -3299,6 +3301,20 @@
     <li class="md-nav__item">
       <a href="../../../faddeev/faddeev_WavePacket/" class="md-nav__link">
         faddeev方程 的Wave-packet continuum discretisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faddeev/spaceAna3body/" class="md-nav__link">
+        量子三体的空间结构和解法
       </a>
     </li>
   
@@ -5140,15 +5156,15 @@
 <h4 id="实例pdc数据分析脚本宏示例">实例：PDC数据分析脚本/宏示例<a class="headerlink" href="#实例pdc数据分析脚本宏示例" title="Permanent link">#</a></h4>
 <p>以下是一个概念性的ANAROOT分析宏 (C++ ROOT宏) 的骨架，用于演示如何处理SAMURAI PDC数据。实际代码需要根据具体的ANAROOT版本和实验配置进行调整。</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// MyPDCAnalysis.C</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">MyPDCAnalysis</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ridfFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;run0001.ridf&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">outRootFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pdc_hists.root&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">MyPDCAnalysis</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ridfFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"run0001.ridf"</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">outRootFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"pdc_hists.root"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// 1. ANAROOT环境初始化 (通常在rootlogon.C或setup.sh中完成)</span>
-<span class="w">    </span><span class="c1">// gSystem-&gt;Load(&quot;libanacore.so&quot;); // 等ANAROOT核心库</span>
-<span class="w">    </span><span class="c1">// gSystem-&gt;Load(&quot;libanasamurai.so&quot;); // 等SAMURAI相关库</span>
+<span class="w">    </span><span class="c1">// gSystem-&gt;Load("libanacore.so"); // 等ANAROOT核心库</span>
+<span class="w">    </span><span class="c1">// gSystem-&gt;Load("libanasamurai.so"); // 等SAMURAI相关库</span>
 
 <span class="w">    </span><span class="c1">// 2. 创建参数管理器并加载参数文件</span>
 <span class="w">    </span><span class="n">TArtSAMURAIParameters</span><span class="w"> </span><span class="o">*</span><span class="n">samuraiPara</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TArtSAMURAIParameters</span><span class="o">::</span><span class="n">Instance</span><span class="p">();</span>
-<span class="w">    </span><span class="n">samuraiPara</span><span class="o">-&gt;</span><span class="n">LoadParameter</span><span class="p">(</span><span class="s">&quot;db/SAMURAIBDC.xml&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// BDC参数</span>
-<span class="w">    </span><span class="n">samuraiPara</span><span class="o">-&gt;</span><span class="n">LoadParameter</span><span class="p">(</span><span class="s">&quot;db/SAMURAIFDC.xml&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// FDC参数</span>
+<span class="w">    </span><span class="n">samuraiPara</span><span class="o">-&gt;</span><span class="n">LoadParameter</span><span class="p">(</span><span class="s">"db/SAMURAIBDC.xml"</span><span class="p">);</span><span class="w"> </span><span class="c1">// BDC参数</span>
+<span class="w">    </span><span class="n">samuraiPara</span><span class="o">-&gt;</span><span class="n">LoadParameter</span><span class="p">(</span><span class="s">"db/SAMURAIFDC.xml"</span><span class="p">);</span><span class="w"> </span><span class="c1">// FDC参数</span>
 <span class="w">    </span><span class="c1">//... 其他必要的参数文件</span>
 
 <span class="w">    </span><span class="c1">// 3. 创建并配置EventStore</span>
@@ -5161,9 +5177,9 @@
 <span class="w">    </span><span class="c1">// TArtRecoDCTrack *recoTrack = new TArtRecoDCTrack(); // 假设有这样的径迹重建类</span>
 
 <span class="w">    </span><span class="c1">// 5. 预定直方图</span>
-<span class="w">    </span><span class="n">TFile</span><span class="w"> </span><span class="o">*</span><span class="n">outFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TFile</span><span class="p">(</span><span class="n">outRootFile</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;RECREATE&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">TH1F</span><span class="w"> </span><span class="o">*</span><span class="n">h_fdc_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH1F</span><span class="p">(</span><span class="s">&quot;h_fdc_x&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FDC Track X Position; X (mm); Counts&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
-<span class="w">    </span><span class="n">TH1F</span><span class="w"> </span><span class="o">*</span><span class="n">h_fdc_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH1F</span><span class="p">(</span><span class="s">&quot;h_fdc_p&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;FDC Track Momentum; p (MeV/c); Counts&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3000</span><span class="p">);</span>
+<span class="w">    </span><span class="n">TFile</span><span class="w"> </span><span class="o">*</span><span class="n">outFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TFile</span><span class="p">(</span><span class="n">outRootFile</span><span class="p">,</span><span class="w"> </span><span class="s">"RECREATE"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">TH1F</span><span class="w"> </span><span class="o">*</span><span class="n">h_fdc_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH1F</span><span class="p">(</span><span class="s">"h_fdc_x"</span><span class="p">,</span><span class="w"> </span><span class="s">"FDC Track X Position; X (mm); Counts"</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">-1000</span><span class="p">,</span><span class="w"> </span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">    </span><span class="n">TH1F</span><span class="w"> </span><span class="o">*</span><span class="n">h_fdc_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH1F</span><span class="p">(</span><span class="s">"h_fdc_p"</span><span class="p">,</span><span class="w"> </span><span class="s">"FDC Track Momentum; p (MeV/c); Counts"</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">3000</span><span class="p">);</span>
 <span class="w">    </span><span class="c1">//... 更多直方图</span>
 
 <span class="w">    </span><span class="c1">// 6. 事件循环</span>
@@ -5178,7 +5194,7 @@
 <span class="w">        </span><span class="c1">// recoTrack-&gt;ReconstructData(); // 依赖于刻度后的DCHit</span>
 
 <span class="w">        </span><span class="c1">// 7. 从StoreManager获取重建后的数据容器</span>
-<span class="w">        </span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">fdcTracks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">&quot;SAMURAIFDCTrack&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 假设重建径迹容器名为此</span>
+<span class="w">        </span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">fdcTracks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">"SAMURAIFDCTrack"</span><span class="p">);</span><span class="w"> </span><span class="c1">// 假设重建径迹容器名为此</span>
 
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fdcTracks</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">nTracks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fdcTracks</span><span class="o">-&gt;</span><span class="n">GetEntriesFast</span><span class="p">();</span>
@@ -5203,7 +5219,7 @@
 <span class="w">    </span><span class="c1">// delete calibBDC; delete calibFDC; delete recoTrack; // 若在此处创建</span>
 <span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">outFile</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Analysis finished. Output saved to &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">outRootFile</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Analysis finished. Output saved to "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">outRootFile</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>注意： 上述代码是一个高度简化的示例框架。实际的ANAROOT分析通常会使用 <code>TArtAnaLoop</code> 的派生类来组织分析逻辑，其中对象的创建和配置在 <code>Construct()</code> 方法中，事件处理在 <code>Calculate()</code> 方法中，清理工作在 <code>Destruct()</code> 方法中。数据容器的确切名称 (<code>"SAMURAIFDCTrack"</code>) 和 <code>TArtDCTrack</code> 类的方法名 (<code>GetPositionX</code>, <code>GetMomentum</code>) 需要参考具体的ANAROOT版本和SAMURAI分析模块的实现。</p>
@@ -5350,14 +5366,14 @@
 <h4 id="实例nebula数据分析脚本宏示例">实例：NEBULA数据分析脚本/宏示例<a class="headerlink" href="#实例nebula数据分析脚本宏示例" title="Permanent link">#</a></h4>
 <p>以下是一个概念性的ANAROOT分析宏 (C++ ROOT宏) 的骨架，用于演示如何处理NEBULA数据。</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// MyNEBULAAnalysis.C</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">MyNEBULAAnalysis</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ridfFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;run0001.ridf&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">outRootFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;nebula_hists.root&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="kt">void</span><span class="w"> </span><span class="n">MyNEBULAAnalysis</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">ridfFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"run0001.ridf"</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">outRootFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"nebula_hists.root"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// 1. ANAROOT环境初始化 (通常在rootlogon.C或setup.sh中完成)</span>
-<span class="w">    </span><span class="c1">// gSystem-&gt;Load(&quot;libanacore.so&quot;);</span>
-<span class="w">    </span><span class="c1">// gSystem-&gt;Load(&quot;libanasamurai.so&quot;); // 包含NEBULA相关类</span>
+<span class="w">    </span><span class="c1">// gSystem-&gt;Load("libanacore.so");</span>
+<span class="w">    </span><span class="c1">// gSystem-&gt;Load("libanasamurai.so"); // 包含NEBULA相关类</span>
 
 <span class="w">    </span><span class="c1">// 2. 创建参数管理器并加载参数文件</span>
 <span class="w">    </span><span class="n">TArtSAMURAIParameters</span><span class="w"> </span><span class="o">*</span><span class="n">samuraiPara</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TArtSAMURAIParameters</span><span class="o">::</span><span class="n">Instance</span><span class="p">();</span><span class="w"> </span><span class="c1">// 或者 TArtNEBULAParameters 若存在</span>
-<span class="w">    </span><span class="n">samuraiPara</span><span class="o">-&gt;</span><span class="n">LoadParameter</span><span class="p">(</span><span class="s">&quot;db/NEBULA.xml&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// NEBULA参数文件</span>
+<span class="w">    </span><span class="n">samuraiPara</span><span class="o">-&gt;</span><span class="n">LoadParameter</span><span class="p">(</span><span class="s">"db/NEBULA.xml"</span><span class="p">);</span><span class="w"> </span><span class="c1">// NEBULA参数文件</span>
 <span class="w">    </span><span class="c1">//... 其他必要的参数文件</span>
 
 <span class="w">    </span><span class="c1">// 3. 创建并配置EventStore</span>
@@ -5368,10 +5384,10 @@
 <span class="w">    </span><span class="n">TArtCalibNEBULA</span><span class="w"> </span><span class="o">*</span><span class="n">calibNEBULA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TArtCalibNEBULA</span><span class="p">();</span><span class="w"> </span><span class="c1">// 假设的NEBULA刻度类</span>
 
 <span class="w">    </span><span class="c1">// 5. 预定直方图</span>
-<span class="w">    </span><span class="n">TFile</span><span class="w"> </span><span class="o">*</span><span class="n">outFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TFile</span><span class="p">(</span><span class="n">outRootFile</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;RECREATE&quot;</span><span class="p">);</span>
-<span class="w">    </span><span class="n">TH1F</span><span class="w"> </span><span class="o">*</span><span class="n">h_nebula_tof</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH1F</span><span class="p">(</span><span class="s">&quot;h_nebula_tof&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NEBULA TOF; TOF (ns); Counts&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">);</span>
-<span class="w">    </span><span class="n">TH1F</span><span class="w"> </span><span class="o">*</span><span class="n">h_nebula_q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH1F</span><span class="p">(</span><span class="s">&quot;h_nebula_q&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NEBULA QDC (Mean); Q (MeVee); Counts&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
-<span class="w">    </span><span class="n">TH2F</span><span class="w"> </span><span class="o">*</span><span class="n">h_psd_q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH2F</span><span class="p">(</span><span class="s">&quot;h_psd_q&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;NEBULA PSD vs Q; Q (MeVee); PSD parameter&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">    </span><span class="n">TFile</span><span class="w"> </span><span class="o">*</span><span class="n">outFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TFile</span><span class="p">(</span><span class="n">outRootFile</span><span class="p">,</span><span class="w"> </span><span class="s">"RECREATE"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">TH1F</span><span class="w"> </span><span class="o">*</span><span class="n">h_nebula_tof</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH1F</span><span class="p">(</span><span class="s">"h_nebula_tof"</span><span class="p">,</span><span class="w"> </span><span class="s">"NEBULA TOF; TOF (ns); Counts"</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">500</span><span class="p">);</span>
+<span class="w">    </span><span class="n">TH1F</span><span class="w"> </span><span class="o">*</span><span class="n">h_nebula_q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH1F</span><span class="p">(</span><span class="s">"h_nebula_q"</span><span class="p">,</span><span class="w"> </span><span class="s">"NEBULA QDC (Mean); Q (MeVee); Counts"</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+<span class="w">    </span><span class="n">TH2F</span><span class="w"> </span><span class="o">*</span><span class="n">h_psd_q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH2F</span><span class="p">(</span><span class="s">"h_psd_q"</span><span class="p">,</span><span class="w"> </span><span class="s">"NEBULA PSD vs Q; Q (MeVee); PSD parameter"</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
 <span class="w">    </span><span class="c1">//... 更多直方图</span>
 
 <span class="w">    </span><span class="c1">// 6. 事件循环</span>
@@ -5381,7 +5397,7 @@
 <span class="w">        </span><span class="n">calibNEBULA</span><span class="o">-&gt;</span><span class="n">ReconstructData</span><span class="p">();</span><span class="w"> </span><span class="c1">// 执行NEBULA数据的刻度和初步处理</span>
 
 <span class="w">        </span><span class="c1">// 7. 从StoreManager获取NEBULA数据容器</span>
-<span class="w">        </span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">nebulaPlaArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">&quot;NEBULAPla&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 假设容器名为NEBULAPla</span>
+<span class="w">        </span><span class="n">TClonesArray</span><span class="w"> </span><span class="o">*</span><span class="n">nebulaPlaArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TClonesArray</span><span class="o">*</span><span class="p">)</span><span class="n">sman</span><span class="o">-&gt;</span><span class="n">FindDataContainer</span><span class="p">(</span><span class="s">"NEBULAPla"</span><span class="p">);</span><span class="w"> </span><span class="c1">// 假设容器名为NEBULAPla</span>
 
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nebulaPlaArray</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">nHits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nebulaPlaArray</span><span class="o">-&gt;</span><span class="n">GetEntriesFast</span><span class="p">();</span>
@@ -5411,7 +5427,7 @@
 <span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">calibNEBULA</span><span class="p">;</span>
 <span class="w">    </span><span class="k">delete</span><span class="w"> </span><span class="n">outFile</span><span class="p">;</span>
 
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;NEBULA analysis finished. Output saved to &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">outRootFile</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"NEBULA analysis finished. Output saved to "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">outRootFile</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>注意： 与PDC示例类似，这是一个概念性框架。实际使用中应通过派生 <code>TArtAnaLoop</code> 来实现。<code>TArtCalibNEBULA</code> 的具体方法和 <code>TArtNEBULAPla</code> 的成员函数（如 <code>GetTOF()</code>, <code>GetQ()</code>, <code>GetPSD()</code>）需要依据ANAROOT的实际定义。TOF的计算通常需要一个起始时间参考（如靶信号或束流塑料闪烁体信号），这可能需要在 <code>AnaLoop</code> 中额外处理。</p>
@@ -5794,16 +5810,16 @@
 <p>ANAROOT使用XML文件管理参数。以下是PDC (漂移室) 和NEBULA参数文件结构的示意性示例，具体标签和层级需参考实际ANAROOT模块的定义。</p>
 <p>PDC (Drift Chamber) 参数文件示例 (<code>SAMURAIFDC.xml</code> - 概念性)</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;SAMURAIFDCParameters&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Detector</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;FDC1&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;Layer</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;Wire</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Detector</span><span class="w"> </span><span class="na">name=</span><span class="s">"FDC1"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Layer</span><span class="w"> </span><span class="na">id=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Wire</span><span class="w"> </span><span class="na">id=</span><span class="s">"0"</span><span class="nt">&gt;</span>
 <span class="w">                </span><span class="nt">&lt;T0Offset&gt;</span>123.4<span class="nt">&lt;/T0Offset&gt;</span>
-<span class="w">                </span><span class="nt">&lt;TDCoeff</span><span class="w"> </span><span class="na">a=</span><span class="s">&quot;0.05&quot;</span><span class="w"> </span><span class="na">b=</span><span class="s">&quot;-1.2&quot;</span><span class="w"> </span><span class="na">c=</span><span class="s">&quot;15.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;Position</span><span class="w"> </span><span class="na">x=</span><span class="s">&quot;100.0&quot;</span><span class="w"> </span><span class="na">y=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">z=</span><span class="s">&quot;1500.0&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;TDCoeff</span><span class="w"> </span><span class="na">a=</span><span class="s">"0.05"</span><span class="w"> </span><span class="na">b=</span><span class="s">"-1.2"</span><span class="w"> </span><span class="na">c=</span><span class="s">"15.0"</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Position</span><span class="w"> </span><span class="na">x=</span><span class="s">"100.0"</span><span class="w"> </span><span class="na">y=</span><span class="s">"0.0"</span><span class="w"> </span><span class="na">z=</span><span class="s">"1500.0"</span><span class="nt">/&gt;</span>
 <span class="w">                </span><span class="nt">&lt;Resolution&gt;</span>0.2<span class="nt">&lt;/Resolution&gt;</span>
 <span class="w">            </span><span class="nt">&lt;/Wire&gt;</span>
 <span class="w">        </span><span class="nt">&lt;/Layer&gt;</span>
-<span class="w">        </span><span class="nt">&lt;Alignment</span><span class="w"> </span><span class="na">dx=</span><span class="s">&quot;0.1&quot;</span><span class="w"> </span><span class="na">dy=</span><span class="s">&quot;-0.05&quot;</span><span class="w"> </span><span class="na">dz=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">rx=</span><span class="s">&quot;0.001&quot;</span><span class="w"> </span><span class="na">ry=</span><span class="s">&quot;0.0&quot;</span><span class="w"> </span><span class="na">rz=</span><span class="s">&quot;-0.0005&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Alignment</span><span class="w"> </span><span class="na">dx=</span><span class="s">"0.1"</span><span class="w"> </span><span class="na">dy=</span><span class="s">"-0.05"</span><span class="w"> </span><span class="na">dz=</span><span class="s">"0.0"</span><span class="w"> </span><span class="na">rx=</span><span class="s">"0.001"</span><span class="w"> </span><span class="na">ry=</span><span class="s">"0.0"</span><span class="w"> </span><span class="na">rz=</span><span class="s">"-0.0005"</span><span class="nt">/&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/Detector&gt;</span>
 <span class="nt">&lt;/SAMURAIFDCParameters&gt;</span>
 </code></pre></div>
@@ -5814,14 +5830,14 @@
 <span class="w">        </span><span class="nt">&lt;PSDCutNeutronMin&gt;</span>0.8<span class="nt">&lt;/PSDCutNeutronMin&gt;</span>
 <span class="w">        </span><span class="nt">&lt;PSDCutNeutronMax&gt;</span>1.5<span class="nt">&lt;/PSDCutNeutronMax&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/Global&gt;</span>
-<span class="w">    </span><span class="nt">&lt;Bar</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;PMT</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span><span class="w"> </span><span class="nt">&lt;TDCToNsSlope&gt;</span>0.025<span class="nt">&lt;/TDCToNsSlope&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Bar</span><span class="w"> </span><span class="na">id=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;PMT</span><span class="w"> </span><span class="na">id=</span><span class="s">"0"</span><span class="nt">&gt;</span><span class="w"> </span><span class="nt">&lt;TDCToNsSlope&gt;</span>0.025<span class="nt">&lt;/TDCToNsSlope&gt;</span>
 <span class="w">            </span><span class="nt">&lt;TDCToNsOffset&gt;</span>-10.2<span class="nt">&lt;/TDCToNsOffset&gt;</span>
 <span class="w">            </span><span class="nt">&lt;QDCToMeVeeSlope&gt;</span>0.1<span class="nt">&lt;/QDCToMeVeeSlope&gt;</span>
 <span class="w">            </span><span class="nt">&lt;WalkCoeffA&gt;</span>50.0<span class="nt">&lt;/WalkCoeffA&gt;</span>
 <span class="w">            </span><span class="nt">&lt;WalkCoeffB&gt;</span>-0.5<span class="nt">&lt;/WalkCoeffB&gt;</span>
 <span class="w">        </span><span class="nt">&lt;/PMT&gt;</span>
-<span class="w">        </span><span class="nt">&lt;PMT</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span><span class="w"> </span><span class="nt">&lt;/PMT&gt;</span>
+<span class="w">        </span><span class="nt">&lt;PMT</span><span class="w"> </span><span class="na">id=</span><span class="s">"1"</span><span class="nt">&gt;</span><span class="w"> </span><span class="nt">&lt;/PMT&gt;</span>
 <span class="w">        </span><span class="nt">&lt;PositionCalibVeff&gt;</span>150.0<span class="nt">&lt;/PositionCalibVeff&gt;</span><span class="w"> </span><span class="nt">&lt;PositionCalibOffset&gt;</span>0.0<span class="nt">&lt;/PositionCalibOffset&gt;</span><span class="w"> </span><span class="nt">&lt;EnergyCalibNonLinearA&gt;</span>...<span class="nt">&lt;/EnergyCalibNonLinearA&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/Bar&gt;</span>
 <span class="nt">&lt;/NEBULAParameters&gt;</span>
