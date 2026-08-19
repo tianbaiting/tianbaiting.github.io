@@ -1,5 +1,10 @@
-# To show some relation
+# sperical operator & cartesian operator
 
+在一些文献里面，cartesian operator 所采用的符号并非 x y z, 而是SNL.
+
+具体而言，
+在madison坐标系下，
+$L=z$, $N = y = \frac{k_{in}\times k_{out}}{ | k_{in } \times k_{out} |  }$ ，$S=x = N \times L$ 
 
 ## density matirx
 
