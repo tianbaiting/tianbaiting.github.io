@@ -649,6 +649,15 @@
       "url": "/en/sci/minimal_code/latex_graphics/"
     },
     {
+      "id": "sci/minimal_code/root-httpserver.zh",
+      "title": "ROOT THttpServer：在线直方图的 Web API",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/minimal_code/root-httpserver.zh.md",
+      "size": 7022,
+      "url": "/sci/minimal_code/root-httpserver/"
+    },
+    {
       "id": "sci/minimal_code/git.zh",
       "title": "Git",
       "language": "zh",
@@ -944,6 +953,15 @@
       "path": "sci/cheatshet/tmux.zh.md",
       "size": 5260,
       "url": "/sci/cheatshet/tmux/"
+    },
+    {
+      "id": "sci/cheatshet/screen.zh",
+      "title": "screen",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/cheatshet/screen.zh.md",
+      "size": 67,
+      "url": "/sci/cheatshet/screen/"
     },
     {
       "id": "sci/cheatshet/bashrc.zh",
@@ -1441,15 +1459,6 @@
       "url": "/sci/project/D_polar_exp/other_polarmeter/"
     },
     {
-      "id": "sci/project/D_polar_exp/spherical_operator",
-      "title": "To show some relation",
-      "language": "en",
-      "category": "page",
-      "path": "sci/project/D_polar_exp/spherical_operator.md",
-      "size": 9134,
-      "url": "/en/sci/project/D_polar_exp/spherical_operator/"
-    },
-    {
       "id": "sci/project/D_polar_exp/polar_measure_and_axis.en",
       "title": "Polar Measure And Axis",
       "language": "en",
@@ -1520,6 +1529,15 @@
       "path": "sci/project/D_polar_exp/other_polarmeter.en.md",
       "size": 12510,
       "url": "/en/sci/project/D_polar_exp/other_polarmeter/"
+    },
+    {
+      "id": "sci/project/D_polar_exp/spherical_operator.zh",
+      "title": "sperical operator & cartesian operator",
+      "language": "zh",
+      "category": "page",
+      "path": "sci/project/D_polar_exp/spherical_operator.zh.md",
+      "size": 9320,
+      "url": "/sci/project/D_polar_exp/spherical_operator/"
     },
     {
       "id": "sci/project/D_polar_exp/polar_measure_and_axis.zh",
@@ -1812,16 +1830,16 @@
   ],
   "links": [],
   "statistics": {
-    "total_nodes": 201,
+    "total_nodes": 203,
     "total_links": 0,
     "languages": {
-      "en": 29,
-      "zh": 172
+      "en": 28,
+      "zh": 175
     },
     "categories": {
       "main": 2,
       "category": 25,
-      "page": 174
+      "page": 176
     },
     "generated_at": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io",
     "source_directory": "/home/runner/work/tianbaiting.github.io/tianbaiting.github.io/docs"
@@ -1829,6 +1847,6 @@
   "metadata": {
     "version": "1.0",
     "generator": "MkDocs Knowledge Graph Generator",
-    "generated_at": "2026-08-19 01:17:54.832350"
+    "generated_at": "2026-08-19 01:50:38.764233"
   }
 }
